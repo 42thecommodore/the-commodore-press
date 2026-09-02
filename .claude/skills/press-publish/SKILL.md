@@ -1,6 +1,9 @@
 ---
 name: press-publish
 description: Validate, build and publish the Commodore Press site. Use when the user wants to publish, deploy, ship, push live, or update the live Commodore Press site.
+argument-hint: "[what changed]"
+disable-model-invocation: true
+allowed-tools: Bash(npm run check) Bash(npm run build) Bash(git status:*) Bash(git diff:*) Bash(git log:*)
 ---
 
 # Publishing

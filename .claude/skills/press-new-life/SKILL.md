@@ -1,6 +1,8 @@
 ---
 name: press-new-life
 description: Add a Life to Wing II of the Commodore Press — research the person, write the entry to house standard, source a public-domain portrait, and make the duotone plate. Use when the user wants to add a life, a person, a biography, or a portrait to the Press.
+argument-hint: "[name of the person]"
+allowed-tools: Bash(npm run new:*) Bash(npm run plate:*) Bash(npm run check) WebSearch WebFetch Read Write Edit Glob Grep
 ---
 
 # Adding a Life

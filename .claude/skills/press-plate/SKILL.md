@@ -1,6 +1,8 @@
 ---
 name: press-plate
 description: Make a duotone portrait plate for a Commodore Press Life from a public-domain image, at the house size and finish. Use when the user wants to add, replace, or fix a portrait, plate, or image on the Press.
+argument-hint: "[image path] [life-id]"
+allowed-tools: Bash(npm run plate:*) Bash(npm run stats) Bash(npm run check) WebSearch WebFetch Read Glob
 ---
 
 # Making a plate

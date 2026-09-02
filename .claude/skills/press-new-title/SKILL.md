@@ -1,6 +1,8 @@
 ---
 name: press-new-title
 description: Commission and write a new title for Wing I of the Commodore Press — research it, fact-check every figure, write the entry to house standard, and shelve it. Use when the user wants to add a book, a title, an idea, or an entry to the Press.
+argument-hint: "[title of the new work]"
+allowed-tools: Bash(npm run new:*) Bash(npm run check) Bash(npm run stats) WebSearch WebFetch Read Write Edit Glob Grep
 ---
 
 # Commissioning a title

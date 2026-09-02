@@ -1,6 +1,8 @@
 ---
 name: press-factcheck
 description: Fact-check an existing Commodore Press entry against real sources — verify every figure, test the contested section, check that links still resolve, and issue a correction if something is wrong. Use when the user asks to check, verify, audit, or fact-check a title, life, or claim on the Press.
+argument-hint: "[title, life or claim to check]"
+allowed-tools: Bash(npm run check) Bash(npm run correct:*) WebSearch WebFetch Read Edit Glob Grep
 ---
 
 # Fact-checking an entry

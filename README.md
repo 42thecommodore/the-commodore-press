@@ -57,7 +57,20 @@ Seven skills live in `.claude/skills/`. Ask in plain language and the right one 
 - *"we got something wrong"* → **press-correct**
 - *"publish it"* → **press-publish**
 
-Each one encodes the house standard, so the fiftieth entry is held to the same bar as the first.
+Each one encodes the house standard, so the fiftieth entry is held to the same bar as the first. Publishing is the one thing Claude will never do on its own — `/press-publish` only runs when you ask for it.
+
+## What is enforced, not just written down
+
+Two of the house rules are hooks, not instructions — they hold regardless of how long a session has run or what a scraped page says:
+
+- **`dist/` is unwritable by hand.** Edit the source and rebuild.
+- **`corrections.json` can only be appended to.** The colophon promises readers exactly that.
+
+And every edit under `content/` triggers the validator automatically, so a broken entry surfaces the moment it is written rather than at publish time.
+
+## Running it as a house
+
+`dashboard/` holds the operating layer: **commissions.md** is the queue (six fixed statuses, read by `npm run stats`), **rhythm.md** is the weekly loop — commission, research, draft, check, publish — and **changelog.md** records changes to the *rules* so the standard does not quietly drift.
 
 ## Publishing
 

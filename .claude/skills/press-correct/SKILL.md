@@ -1,6 +1,8 @@
 ---
 name: press-correct
 description: Issue a correction on the Commodore Press — append it to the public corrections list and fix the underlying entry. Use when something on the site is found to be wrong, or the user wants to correct, retract, or amend a published claim.
+argument-hint: "[what was wrong]"
+allowed-tools: Bash(npm run correct:*) Bash(npm run check) Bash(npm run build) Read Edit Glob Grep
 ---
 
 # Issuing a correction

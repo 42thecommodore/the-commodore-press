@@ -41,6 +41,28 @@ books.forEach(({ data }) => { if (!data.contested) gaps.push(`${data.title} name
 if (gaps.length) { console.log(`\n${y}  ${gaps.length} thing(s) to pick up${x}`); gaps.slice(0, 12).forEach(t => console.log(`    ${y}·${x} ${t}`)); if (gaps.length > 12) console.log(`    ${d}… and ${gaps.length - 12} more${x}`); }
 else console.log(`\n${g}  nothing outstanding${x}`);
 
+/* the commissioning queue, if one is being kept */
+const QUEUE = p("dashboard/commissions.md");
+if (fs.existsSync(QUEUE)) {
+  const STATUSES = ["idea", "commissioned", "drafting", "fact-check", "ready", "published"];
+  const rows = fs.readFileSync(QUEUE, "utf8").split("\n")
+    .filter(l => l.startsWith("|") && !/^\|\s*[-: ]+\|/.test(l))
+    .map(l => l.split("|").slice(1, -1).map(c => c.trim()))
+    .filter(c => STATUSES.includes(c[0]));
+  if (rows.length) {
+    console.log(`\n${b}  in flight${x} ${d}— dashboard/commissions.md${x}`);
+    for (const st of STATUSES) {
+      const inSt = rows.filter(r => r[0] === st);
+      if (inSt.length) console.log(`    ${String(inSt.length).padStart(2)}  ${st.padEnd(13)} ${d}${inSt.map(r => r[2]).filter(t => t && t !== "—").join(", ")}${x}`);
+    }
+  }
+  const bad = fs.readFileSync(QUEUE, "utf8").split("\n")
+    .filter(l => l.startsWith("|") && !/^\|\s*[-: ]+\|/.test(l))
+    .map(l => l.split("|")[1].trim())
+    .filter(v => v && !["Status", "Date", "\u2014"].includes(v) && !/^[-: ]+$/.test(v) && !STATUSES.includes(v));
+  if (bad.length) console.log(`\n${y}  queue uses ${bad.length} status(es) outside the fixed set: ${[...new Set(bad)].join(", ")}${x}`);
+}
+
 if (fs.existsSync(p("dist/index.html"))) {
   const kb = fs.statSync(p("dist/index.html")).size / 1024;
   const age = (Date.now() - fs.statSync(p("dist/index.html")).mtimeMs) / 36e5;
