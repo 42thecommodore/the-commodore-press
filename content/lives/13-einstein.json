@@ -23,5 +23,17 @@
     "y": "2007",
     "why": "Written after the release of Einstein's personal letters, explaining the physics clearly while drawing a full human portrait — rebel, husband, refugee, sage."
   },
-  "contested": "For the physics itself, specialists send you to Abraham Pais's Subtle Is the Lord (1982), which is far more technical and far better on the science. Isaacson is the life; Pais is the work."
+  "contested": "For the physics itself, specialists send you to Abraham Pais's Subtle Is the Lord (1982), which is far more technical and far better on the science. Isaacson is the life; Pais is the work.",
+  "across": [
+    {
+      "to": "lives:marie-curie",
+      "label": "Marie Curie",
+      "txt": "— the other scientist of 1905 for whom position was not leverage."
+    },
+    {
+      "to": "press:compounding-machines",
+      "label": "Compounding Machines",
+      "txt": "— the counter-case to that entry's thesis: the century's most important papers came from no lab at all."
+    }
+  ]
 }

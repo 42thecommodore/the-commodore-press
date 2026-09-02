@@ -23,5 +23,17 @@
     "y": "1986",
     "why": "A Pulitzer-winning biography built on hundreds of interviews and thousands of FBI files — the most intimate and rigorous account of King as a man under unbearable pressure. For the sweeping movement history, Taylor Branch's America in the King Years trilogy is the monumental companion."
   },
-  "contested": "The FBI files Garrow works from are themselves a hostile and unreliable source, gathered by an agency actively trying to destroy King. That tension runs through the book. Garrow's own later handling of newly released FBI material drew significant criticism from historians over evidentiary standards — a reminder that the archive here is not neutral ground."
+  "contested": "The FBI files Garrow works from are themselves a hostile and unreliable source, gathered by an agency actively trying to destroy King. That tension runs through the book. Garrow's own later handling of newly released FBI material drew significant criticism from historians over evidentiary standards — a reminder that the archive here is not neutral ground.",
+  "across": [
+    {
+      "to": "lives:gandhi",
+      "label": "Mohandas K. Gandhi",
+      "txt": "— where the method came from."
+    },
+    {
+      "to": "press:concept-of-law",
+      "label": "The Concept of Law",
+      "txt": "— 'name the unjust law' presumes you can tell law from justice; the Letter argues inside the question Hart's book is about."
+    }
+  ]
 }

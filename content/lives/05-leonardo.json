@@ -23,5 +23,17 @@
     "y": "2017",
     "why": "Built directly from Leonardo's 7,200 surviving notebook pages, treating curiosity as the through-line of his life and work. Richly illustrated and accessible."
   },
-  "contested": "Isaacson writes to a template — the curious outsider genius — and art historians note the book is lighter on the art-historical scholarship than on the biography. For the specialist view of Leonardo as a painter, Martin Kemp remains the standard."
+  "contested": "Isaacson writes to a template — the curious outsider genius — and art historians note the book is lighter on the art-historical scholarship than on the biography. For the specialist view of Leonardo as a painter, Martin Kemp remains the standard.",
+  "across": [
+    {
+      "to": "lives:charles-darwin",
+      "label": "Charles Darwin",
+      "txt": "— the same method, observation over authority, run for twenty years on one question instead of a thousand."
+    },
+    {
+      "to": "manuals:ii",
+      "label": "Field Manual II · The map is not the territory",
+      "txt": "— he distrusted the map, which was Latin authority, and drew the territory himself."
+    }
+  ]
 }

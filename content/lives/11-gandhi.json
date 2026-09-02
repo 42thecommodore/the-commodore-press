@@ -23,5 +23,17 @@
     "y": "2013 / 2018",
     "why": "India's leading historian wrote the definitive modern two-volume life, built on archives across four continents. It neither worships nor debunks. Gandhi's own Story of My Experiments with Truth (1929) remains essential first-hand reading."
   },
-  "contested": "Guha is sympathetic, and the sharpest critique of Gandhi comes from a direction he handles gently: B. R. Ambedkar's argument that Gandhi's approach to caste protected the system it claimed to reform. Read Ambedkar's Annihilation of Caste, and Arundhati Roy's introduction to it, as the necessary counterweight."
+  "contested": "Guha is sympathetic, and the sharpest critique of Gandhi comes from a direction he handles gently: B. R. Ambedkar's argument that Gandhi's approach to caste protected the system it claimed to reform. Read Ambedkar's Annihilation of Caste, and Arundhati Roy's introduction to it, as the necessary counterweight.",
+  "across": [
+    {
+      "to": "lives:mlk",
+      "label": "Martin Luther King Jr.",
+      "txt": "— the method, exported: satyagraha fused with the Black church."
+    },
+    {
+      "to": "lives:mandela",
+      "label": "Nelson Mandela",
+      "txt": "— the same insistence that means and ends are one claim, tested at the moment of victory."
+    }
+  ]
 }

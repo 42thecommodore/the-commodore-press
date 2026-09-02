@@ -23,5 +23,17 @@
     "y": "1994",
     "why": "Mandela's own autobiography, drafted secretly in prison, is the indispensable account — intimate, restrained, and revealing of the discipline behind the icon. For an independent scholarly view, Anthony Sampson's authorized Mandela (1999) is the standard biography."
   },
-  "contested": "Long Walk to Freedom is an autobiography, substantially shaped with a collaborator and published at a specific political moment — it is a document of the transition as much as a record of a life. Read Sampson alongside it for the independent account."
+  "contested": "Long Walk to Freedom is an autobiography, substantially shaped with a collaborator and published at a specific political moment — it is a document of the transition as much as a record of a life. Read Sampson alongside it for the independent account.",
+  "across": [
+    {
+      "to": "lives:gandhi",
+      "label": "Mohandas K. Gandhi",
+      "txt": "— the method he inherited, and then had to practise from the winning side."
+    },
+    {
+      "to": "manuals:iv",
+      "label": "Field Manual IV · Power corrodes the compass, so make the correction structural",
+      "txt": "— one term, then out. The guardrail, practised."
+    }
+  ]
 }

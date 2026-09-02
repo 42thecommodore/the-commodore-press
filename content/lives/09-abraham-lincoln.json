@@ -23,5 +23,17 @@
     "y": "1995",
     "why": "A two-time Pulitzer winner's finest single-volume life: strictly evidence-based, following Lincoln's own knowledge at each moment, capturing his growth and his limits. For the cabinet drama, pair it with Doris Kearns Goodwin's Team of Rivals (2005)."
   },
-  "contested": "Donald's governing thesis — that Lincoln was fundamentally reactive, shaped by events rather than shaping them — is itself an interpretation, and one plenty of historians resist. It is a reading, not a neutral record."
+  "contested": "Donald's governing thesis — that Lincoln was fundamentally reactive, shaped by events rather than shaping them — is itself an interpretation, and one plenty of historians resist. It is a reading, not a neutral record.",
+  "across": [
+    {
+      "to": "lives:churchill",
+      "label": "Winston Churchill",
+      "txt": "— the other wartime leader whose words did structural work; two minutes against a career of them."
+    },
+    {
+      "to": "manuals:iv",
+      "label": "Field Manual IV · About seventy per cent of the information you wish you had",
+      "txt": "— patience as a decision rule: he waited on emancipation until the war could carry it."
+    }
+  ]
 }

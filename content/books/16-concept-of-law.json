@@ -80,6 +80,16 @@
       "to": "press:movable-type",
       "label": "Movable Type",
       "txt": "— fixity was an institutional achievement there too; the deepest rules are practices, not texts."
+    },
+    {
+      "to": "press:money-is-a-ledger",
+      "label": "Money Is a Ledger",
+      "txt": "— the rule of recognition, applied to whose ledger counts."
+    },
+    {
+      "to": "lives:mlk",
+      "label": "Martin Luther King Jr.",
+      "txt": "— King's Letter takes Aquinas's side of the argument Hart's book is about: whether an unjust law is law at all."
     }
   ],
   "reading": [

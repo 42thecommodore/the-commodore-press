@@ -23,5 +23,17 @@
     "y": "2004",
     "why": "Drawing on the long-suppressed Secret History of the Mongols and years of fieldwork, Weatherford overturns the cartoon villain and argues for Genghis Khan as an unlikely modernizer."
   },
-  "contested": "This is the most disputed pick on the shelf. Weatherford's revisionism is vivid and hugely influential in the popular view, but Mongol-studies specialists have criticised it as over-corrective, thin on some sources and prone to crediting the Mongols with developments that predate or postdate them. Read it against Timothy May or Christopher Atwood for the scholarly account."
+  "contested": "This is the most disputed pick on the shelf. Weatherford's revisionism is vivid and hugely influential in the popular view, but Mongol-studies specialists have criticised it as over-corrective, thin on some sources and prone to crediting the Mongols with developments that predate or postdate them. Read it against Timothy May or Christopher Atwood for the scholarly account.",
+  "across": [
+    {
+      "to": "manuals:iv",
+      "label": "Field Manual IV · Steal the engine. Refuse the cruelty",
+      "txt": "— the life this manual's condition was written for."
+    },
+    {
+      "to": "lives:napoleon",
+      "label": "Napoleon Bonaparte",
+      "txt": "— the other empire run on promotion by merit, and the other ledger of what it cost."
+    }
+  ]
 }

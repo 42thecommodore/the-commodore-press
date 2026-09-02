@@ -15,8 +15,8 @@ in it carries a named source.
 
 | Status | Wing | Working title | Why it earns a place | Source lead | Next action |
 |---|---|---|---|---|---|
-| idea | Lives | Henrietta Lacks | Already in the Atlas with no plate; the consent story is the point, and it is usually told wrong | Skloot, *The Immortal Life of Henrietta Lacks* | find a PD image, or write the entry plateless |
-| idea | Lives | Maurice Hilleman | Nine of the fourteen routine childhood vaccines; almost nobody knows the name | Offit, *Vaccinated* | plate + entry |
+| commissioned | Lives | Henrietta Lacks — plate | Entry is written; shows the press mark. The best-known photo is a family snapshot with unclear rights | Wikimedia Commons licence box | confirm a PD/CC image exists, else leave plateless on purpose |
+| commissioned | Lives | Maurice Hilleman — plate | Entry is written; shows the press mark | Wikimedia Commons / NIH or Merck archive rights | confirm licence, make plate |
 | idea | Press | — | Fields thin on the shelf: run `npm run stats` and look at what `field` values are underrepresented | — | pick one |
 
 ## Retired
@@ -26,4 +26,4 @@ house chose to publish, and when, is worth more than a tidy table.
 
 | Date | Wing | Title | Note |
 |---|---|---|---|
-| — | — | — | — |
+| 2026-09-01 | All | Cross-links for the 16 island entries | 41 links across 24 entries; every title and life now connects to at least one other wing |

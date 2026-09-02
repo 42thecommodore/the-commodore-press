@@ -23,5 +23,17 @@
     "y": "2010",
     "why": "A Pulitzer-winning biographer reading against hostile ancient sources to reconstruct a shrewd, capable ruler. Witty, rigorous, and it gives Cleopatra back her intelligence and agency."
   },
-  "contested": "Schiff is a literary biographer rather than a classicist, and specialists note that she reconstructs interior life the sources cannot support. For the scholarly version, Duane Roller's Cleopatra: A Biography (2010) is drier and more cautious about what is actually known."
+  "contested": "Schiff is a literary biographer rather than a classicist, and specialists note that she reconstructs interior life the sources cannot support. For the scholarly version, Duane Roller's Cleopatra: A Biography (2010) is drier and more cautious about what is actually known.",
+  "across": [
+    {
+      "to": "lives:julius-caesar",
+      "label": "Julius Caesar",
+      "txt": "— the same events from the other side, and the source of most of what was later said about her."
+    },
+    {
+      "to": "manuals:ii",
+      "label": "Field Manual II · The map is not the territory",
+      "txt": "— Plutarch's map was drawn by the winners; read the cartographer first."
+    }
+  ]
 }

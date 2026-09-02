@@ -23,5 +23,17 @@
     "y": "1995",
     "why": "The first biographer to use Curie's private papers and Polish-language sources, producing a fully human portrait — ambition, grief, scandal and genius alike."
   },
-  "contested": "Eve Curie's Madame Curie (1937) is the classic and is written by her daughter — beautiful, and hagiographic by design. Treat it as a memoir of a mother, not as an independent account."
+  "contested": "Eve Curie's Madame Curie (1937) is the classic and is written by her daughter — beautiful, and hagiographic by design. Treat it as a memoir of a mother, not as an independent account.",
+  "across": [
+    {
+      "to": "lives:einstein",
+      "label": "Albert Einstein",
+      "txt": "— the other outsider of the same decade; a shed and a patent office, and the establishment irrelevant to both."
+    },
+    {
+      "to": "atlas:hard",
+      "label": "The Atlas · The hard way is the right way",
+      "txt": "— fainting over books in Paris; the resistance was the signal."
+    }
+  ]
 }

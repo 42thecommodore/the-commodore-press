@@ -23,5 +23,17 @@
     "y": "2007",
     "why": "Offit, himself a vaccine inventor, interviewed Hilleman extensively in his final months. Both a biography of an irascible genius and a clear-eyed history of how vaccines are made."
   },
-  "contested": "Offit is a colleague and a public vaccine advocate, and the book is admiring by design — there is no critical distance here. The frequently quoted 'eight million lives a year' figure is an estimate with a wide range, not a measured quantity."
+  "contested": "Offit is a colleague and a public vaccine advocate, and the book is admiring by design — there is no critical distance here. The frequently quoted 'eight million lives a year' figure is an estimate with a wide range, not a measured quantity.",
+  "across": [
+    {
+      "to": "lives:henrietta-lacks",
+      "label": "Henrietta Lacks",
+      "txt": "— the other half of the same ledger, where the credit and the consent ran to different people."
+    },
+    {
+      "to": "lives:norman-borlaug",
+      "label": "Norman Borlaug",
+      "txt": "— the other life on this shelf measured in lives saved, and the other name almost nobody knows."
+    }
+  ]
 }

@@ -23,5 +23,17 @@
     "y": "2018",
     "why": "Drawing on newly released royal diaries and previously unseen papers, the most comprehensive single-volume life — admiring of 1940 but unsparing about the failures and prejudices."
   },
-  "contested": "Roberts is an admirer, and the same author supplies the Napoleon pick on this shelf — worth noticing. On the Bengal famine of 1943 in particular, Madhusree Mukerjee's Churchill's Secret War makes a far harsher case; historians dispute how much causal weight Churchill personally bears. The honest position is that this is actively argued, not settled."
+  "contested": "Roberts is an admirer, and the same author supplies the Napoleon pick on this shelf — worth noticing. On the Bengal famine of 1943 in particular, Madhusree Mukerjee's Churchill's Secret War makes a far harsher case; historians dispute how much causal weight Churchill personally bears. The honest position is that this is actively argued, not settled.",
+  "across": [
+    {
+      "to": "lives:abraham-lincoln",
+      "label": "Abraham Lincoln",
+      "txt": "— the other leader whose wilderness ended in the war he had predicted."
+    },
+    {
+      "to": "atlas:backup",
+      "label": "The Atlas · Get back up",
+      "txt": "— Gallipoli, the wilderness, then 1940. The principle, held for a decade."
+    }
+  ]
 }

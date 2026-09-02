@@ -80,6 +80,16 @@
       "to": "manuals:i",
       "label": "Field Manual I · Survive first, then bet big",
       "txt": "— patient capital is the institutional version of the same rule."
+    },
+    {
+      "to": "press:unix-bargain",
+      "label": "The Unix Bargain",
+      "txt": "— what one of those labs shipped when the ambitious version was cancelled."
+    },
+    {
+      "to": "lives:einstein",
+      "label": "Albert Einstein",
+      "txt": "— the standing counter-example: four papers, no lab."
     }
   ],
   "reading": [

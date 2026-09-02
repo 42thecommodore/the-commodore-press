@@ -29,6 +29,11 @@
       "to": "atlas",
       "label": "The Atlas · Debts & Lessons",
       "txt": "— Wing III borrows its name and its method from Book 1, where he thanks his teachers one by one."
+    },
+    {
+      "to": "lives:confucius",
+      "label": "Confucius",
+      "txt": "— the other tradition that put the ruler's character, not the ruler's power, at the centre."
     }
   ]
 }

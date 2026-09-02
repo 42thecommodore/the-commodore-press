@@ -29,6 +29,11 @@
       "to": "lives:fritz-haber",
       "label": "Fritz Haber",
       "txt": "— none of Borlaug's yields exist without Haber's nitrogen. The two entries are one story."
+    },
+    {
+      "to": "lives:maurice-hilleman",
+      "label": "Maurice Hilleman",
+      "txt": "— the same arithmetic, in vaccines rather than wheat."
     }
   ]
 }

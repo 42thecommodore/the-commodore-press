@@ -23,5 +23,17 @@
     "y": "2007",
     "why": "Chin works only from the most reliable early texts to separate the real man from centuries of legend — lucid, agenda-free, and the best modern starting point in English."
   },
-  "contested": "The Analects is a layered text compiled over generations, and scholars disagree sharply about which passages plausibly go back to Confucius himself. Any biography is therefore partly a reconstruction; read Chin knowing that the confident 'he said' is doing quiet interpretive work."
+  "contested": "The Analects is a layered text compiled over generations, and scholars disagree sharply about which passages plausibly go back to Confucius himself. Any biography is therefore partly a reconstruction; read Chin knowing that the confident 'he said' is doing quiet interpretive work.",
+  "across": [
+    {
+      "to": "lives:marcus-aurelius",
+      "label": "Marcus Aurelius",
+      "txt": "— the other ruler's manual that starts from example and reciprocity rather than force."
+    },
+    {
+      "to": "atlas:disc",
+      "label": "The Atlas · Discipline is freedom",
+      "txt": "— ritual as the rule you keep to yourself; the earliest recorded version."
+    }
+  ]
 }

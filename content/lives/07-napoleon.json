@@ -29,6 +29,11 @@
       "to": "manuals:iv",
       "label": "Field Manual IV · Prepare obsessively, then commit",
       "txt": "— the mechanic worth stealing, separated from the body count."
+    },
+    {
+      "to": "lives:genghis-khan",
+      "label": "Genghis Khan",
+      "txt": "— merit over bloodline, six centuries earlier and at greater scale."
     }
   ]
 }

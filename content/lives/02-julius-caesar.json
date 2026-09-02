@@ -29,6 +29,11 @@
       "to": "manuals:iv",
       "label": "Field Manual IV · The engine and the compass",
       "txt": "— the case study that makes the distinction necessary."
+    },
+    {
+      "to": "lives:cleopatra",
+      "label": "Cleopatra VII",
+      "txt": "— the ally whose reputation Rome spent two thousand years rewriting."
     }
   ]
 }
