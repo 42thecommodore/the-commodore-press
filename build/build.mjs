@@ -68,13 +68,16 @@ const DATA = safe([
 
 const words = n => n < 20 ? ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"][n]
   : n % 10 === 0 ? ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"][n / 10] : words(n - n % 10) + "-" + words(n % 10);
-const out = read("templates/shell.html")
-  .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{N_LIVES}}/g, words(LIVES.length))
-  .replace(/{{N_PEOPLE}}/g, words(PEOPLE.length)).replace(/{{N_MANUALS}}/g, words(MANUALS.length))
-  .replace(/{{N_LESSONS}}/g, words((SLIPWAY.book || []).length))
+const cap = s => s[0].toUpperCase() + s.slice(1);
+const fill = s => s
+  .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{W_BOOKS_CAP}}/g, cap(words(BOOKS.length)))
+  .replace(/{{W_LIVES_CAP}}/g, cap(words(LIVES.length))).replace(/{{W_PEOPLE_CAP}}/g, cap(words(PEOPLE.length)))
+  .replace(/{{N_LIVES}}/g, words(LIVES.length)).replace(/{{N_PEOPLE}}/g, words(PEOPLE.length))
+  .replace(/{{N_MANUALS}}/g, words(MANUALS.length)).replace(/{{N_LESSONS}}/g, words((SLIPWAY.book || []).length));
+const out = fill(read("templates/shell.html"))
   .replace("<!--CSS-->", () => read("theme/press.css"))
   .replace("<!--DATA-->", () => DATA)
-  .replace("<!--ENGINE-->", () => safe(read("theme/press.js")));
+  .replace("<!--ENGINE-->", () => safe(fill(read("theme/press.js"))));
 
 fs.mkdirSync(p("dist"), { recursive: true });
 fs.writeFileSync(p("dist/index.html"), out);

@@ -150,11 +150,11 @@ function renderFront(){
 
   const spines=(cols)=>cols.map((c,i)=>`<div class="sp" style="width:30px;height:${58+((i*13)%18)}px;background:${c}"></div>`).join("");
   document.getElementById("wings5").innerHTML=[
-    {w:"press",n:"Wing I",t:"The Press",ac:"var(--oxblood)",p:"Twenty ideas I keep circling back to, each with its timeline, its numbers and its objections.",
+    {w:"press",n:"Wing I",t:"The Press",ac:"var(--oxblood)",p:"{{W_BOOKS_CAP}} ideas I keep circling back to, each with its timeline, its numbers and its objections.",
      v:spines(["#0F4C46","#6B1E2A","#8C6A0F","#232E78"])},
-    {w:"lives",n:"Wing II",t:"Lives",ac:"#5A3A21",p:"Twenty-six people and the one book on each worth your time. Twenty-one famous, five you have never heard of.",
+    {w:"lives",n:"Wing II",t:"Lives",ac:"#5A3A21",p:"{{W_LIVES_CAP}} people and the one book on each worth your time. Twenty-one famous, five you have never heard of.",
      v:spines(["#4A3520","#2F4A3C","#5B2C3E","#26262B"])},
-    {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"Thirty-one sources as stars; the lines between them are the principles more than one of them handed me.",night:1,
+    {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"{{W_PEOPLE_CAP}} sources as stars; the lines between them are the principles more than one of them handed me.",night:1,
      v:`<div style="width:100%;height:74px;background:#0A0E1B;border-radius:2px"><svg width="100%" height="74" viewBox="0 0 210 74"><g stroke="#D8A657" stroke-width=".6" opacity=".5" fill="none"><path d="M28 50 82 26 140 44 182 20"/></g><g fill="#F6E9C8"><circle cx="28" cy="50" r="2.6"/><circle cx="82" cy="26" r="3.4"/><circle cx="140" cy="44" r="2.2"/><circle cx="182" cy="20" r="2.9"/></g></svg></div>`},
     {w:"manuals",n:"Wing IV",t:"Field Manuals",ac:"var(--navy)",p:"Four volumes of what I hold: compounding, clear thinking, the plan, and the bias to action.",
      v:`<div style="display:flex;flex-direction:column;gap:6px;width:100%;justify-content:flex-end;height:78px">${MANUALS.map(m=>`<div style="height:15px;background:var(--paper-2);border-left:3px solid ${m.accent}"></div>`).join("")}</div>`},
