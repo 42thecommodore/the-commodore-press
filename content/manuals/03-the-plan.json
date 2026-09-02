@@ -1,0 +1,70 @@
+{
+  "id": "iii",
+  "num": "III",
+  "title": "The Plan",
+  "accent": "#3E7A6B",
+  "dek": "What the best actually do, and the smallest hard step — the part that turns reading into a life.",
+  "entries": [
+    {
+      "k": "Borrowed judgment",
+      "h": "Assemble a board of directors you will never meet",
+      "p": [
+        "David Senra's finding, after a thousand biographies of the best who ever lived, is that they are all running remarkably similar software — and that you can simply take it. Reading lives at volume is the cheapest available way to borrow judgment you have not yet earned.",
+        "The trick is to read for mechanics rather than for inspiration: what did they actually do on a Tuesday, and what would that look like in my situation."
+      ],
+      "src": "after David Senra"
+    },
+    {
+      "k": "Scale of ambition",
+      "h": "Ten times is often easier than ten per cent",
+      "p": [
+        "A ten per cent improvement forces you to compete on the existing approach, where the incumbents are better resourced. A ten-times target usually forces a different approach entirely, where the competition is thinner. The larger goal can genuinely be the easier one.",
+        "The method that goes with it: question every requirement and name the person it came from, delete the part or process, simplify, accelerate, and only then automate — in that order, because automating something that should have been deleted is the most expensive mistake available."
+      ],
+      "src": "the ordering after Elon Musk"
+    },
+    {
+      "k": "The clock",
+      "h": "A life is about four thousand weeks",
+      "p": [
+        "Thinking in decades is comfortable because decades are abstract. Drawing the same span as a grid of weeks is not comfortable, and that discomfort is the useful part — it converts an abstraction into a quantity.",
+        "Memento mori is not morbid. It is the only reliable filter I have found for what is actually worth a week."
+      ],
+      "src": "the grid after Tim Urban"
+    },
+    {
+      "k": "Unscalable first",
+      "h": "Do the things that don't scale, right up until the day you must scale them",
+      "p": [
+        "Early on, the manual, unscalable, embarrassing version is the only one that produces real information. Systems built before there is anything to systematise are elaborate ways of avoiding contact with reality."
+      ],
+      "src": "after Paul Graham and Reid Hoffman"
+    },
+    {
+      "k": "Cadence",
+      "h": "Fifteen minutes on Sunday",
+      "p": [
+        "The rhythm that keeps any of this honest is small and weekly: what did I actually do, what did I say I would do, where did those differ, and what is the one thing next week turns on. Written down, because memory edits.",
+        "A system that needs daily tending rots. A system that needs fifteen minutes a week survives contact with a real life."
+      ]
+    }
+  ],
+  "heur": [
+    {
+      "b": "What would the ten-times version look like?",
+      "s": "Ask before the ten-per-cent version, not after."
+    },
+    {
+      "b": "Which requirement here is load-bearing, and who put it there?",
+      "s": "Name the person. Requirements without owners are usually inherited."
+    },
+    {
+      "b": "Is this worth a week of four thousand?",
+      "s": "The only filter that has ever worked on me."
+    },
+    {
+      "b": "What did I say I would do, and did I?",
+      "s": "Sunday, fifteen minutes, in writing."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "track",
+    "name": "Follow the track",
+    "gloss": "the non-rational knowing; trust the gut, then move"
+  },
+  {
+    "id": "hard",
+    "name": "The hard way is the right way",
+    "gloss": "the resistance is the signal, not the obstacle"
+  },
+  {
+    "id": "disc",
+    "name": "Discipline is freedom",
+    "gloss": "the rules you keep to yourself are what set you loose"
+  },
+  {
+    "id": "memento",
+    "name": "Memento mori",
+    "gloss": "time is the only asset with no second printing"
+  },
+  {
+    "id": "quit",
+    "name": "What you'd never quit",
+    "gloss": "find the thing no money could pay you to stop"
+  },
+  {
+    "id": "bet",
+    "name": "Bet on yourself",
+    "gloss": "increase your own risk until you have to win"
+  },
+  {
+    "id": "connect",
+    "name": "We don't heal alone",
+    "gloss": "connection over networking; nobody arrives solo"
+  },
+  {
+    "id": "misogi",
+    "name": "Do hard things",
+    "gloss": "deliberate overload changes who you are"
+  },
+  {
+    "id": "shame",
+    "name": "Shame stagnates",
+    "gloss": "self-understanding beats self-improvement"
+  },
+  {
+    "id": "public",
+    "name": "Build in public",
+    "gloss": "ship where people can see; give the credit away"
+  },
+  {
+    "id": "story",
+    "name": "Story is leverage",
+    "gloss": "sell the sizzle; the telling is half the work"
+  },
+  {
+    "id": "backup",
+    "name": "Get back up",
+    "gloss": "a man falls seven times — and rises"
+  }
+]

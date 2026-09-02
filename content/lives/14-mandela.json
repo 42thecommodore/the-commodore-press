@@ -1,0 +1,27 @@
+{
+  "id": "mandela",
+  "keep": "Refusing revenge can be the strongest move on the board — forgiveness, wielded as statecraft.",
+  "n": "Nelson Mandela",
+  "years": "1918–2013",
+  "place": "South Africa",
+  "field": "Politics & Reconciliation",
+  "group": "famous",
+  "cover": "#2F4A3C",
+  "spineC": "#1E3326",
+  "ink": "#EDF5F0",
+  "accent": "#B7D8C4",
+  "motif": "grid",
+  "lede": "He entered prison an angry young revolutionary and emerged an elder statesman whose greatest act was refusing the revenge his people had every reason to take.",
+  "copy": [
+    "Mandela spent twenty-seven years in prison — eighteen of them breaking rocks on Robben Island — for leading the armed wing of the struggle against apartheid, South Africa's system of legalized racial domination.",
+    "Released in 1990, he negotiated with the regime that had jailed him and steered a country widely expected to collapse into race war toward a peaceful, democratic transition. In 1994 he was elected its first Black president in the nation's first fully free vote, and then — crucially — served a single term and stepped down, a rarity among liberation heroes. The Truth and Reconciliation Commission he supported chose acknowledgment over retribution.",
+    "His enduring power lies in that discipline of forgiveness wielded as political strategy: proof that moral authority can be a form of statecraft, and that even the deepest injustice can sometimes be answered without perpetuating it."
+  ],
+  "bio": {
+    "t": "Long Walk to Freedom",
+    "a": "Nelson Mandela",
+    "y": "1994",
+    "why": "Mandela's own autobiography, drafted secretly in prison, is the indispensable account — intimate, restrained, and revealing of the discipline behind the icon. For an independent scholarly view, Anthony Sampson's authorized Mandela (1999) is the standard biography."
+  },
+  "contested": "Long Walk to Freedom is an autobiography, substantially shaped with a collaborator and published at a specific political moment — it is a document of the transition as much as a record of a life. Read Sampson alongside it for the independent account."
+}

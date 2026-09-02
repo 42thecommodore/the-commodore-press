@@ -1,0 +1,107 @@
+{
+  "id": "scaling-curve",
+  "keep": "A smooth curve in a proxy is still a bet dressed as a result. Plan around it; don't worship it.",
+  "title": "The Scaling Curve",
+  "sub": "A straight line on a log–log plot",
+  "field": "Technology",
+  "spineTitle": "The Scaling Curve",
+  "years": "2017–now",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "claim": "Capability became forecastable from spend. That turned research into capital allocation.",
+  "lede": "The most consequential empirical finding of the last decade is that loss falls predictably with compute, data, and parameters — and nobody fully knows why.",
+  "copy": [
+    "In 2020, Kaplan and co-authors showed that language model loss follows smooth power laws in model size, dataset size, and training compute, across many orders of magnitude. Not approximately: cleanly, over a range where you would expect any empirical relationship to fall apart. Two years later, DeepMind's Chinchilla paper corrected the recipe. For a fixed compute budget the field had been building models far too large and feeding them far too little — roughly twenty tokens per parameter, not two. A 70-billion-parameter model trained properly beat a 280-billion-parameter one trained on the same compute.",
+    "The strategic content is larger than the technical content. A predictable curve turns research into capital allocation. If you can forecast capability from spend, you can raise against it, build datacenters against it, and sign multi-year power contracts against it — which is exactly what happened, and it is why the constraint on frontier models migrated from ideas to electricity and land.",
+    "Rich Sutton's 'bitter lesson' is the philosophical companion: methods that ride general computation beat methods that encode human insight, and they beat them repeatedly, and the field keeps being annoyed about it. Every generation of researchers builds in the structure they believe is essential — grammar, features, search heuristics — and every generation watches a bigger, dumber, more general method take the crown a few years later.",
+    "What scaling laws don't tell you is where the curve bends, which capabilities appear at which point, or whether the measured quantity keeps tracking the thing anyone actually cares about. Next-token loss is a proxy. A smooth curve in the proxy can sit underneath very lumpy behaviour downstream, and every extrapolation past the measured range is a bet dressed as a result."
+  ],
+  "timeline": [
+    {
+      "y": "2017",
+      "t": "'Attention Is All You Need' introduces the transformer — the architecture that makes the scaling question answerable."
+    },
+    {
+      "y": "2020",
+      "t": "Kaplan et al. publish 'Scaling Laws for Neural Language Models'. Loss is a power law in compute, data and parameters."
+    },
+    {
+      "y": "2022",
+      "t": "Hoffmann et al. (Chinchilla) show the field has been undertraining: ~20 tokens per parameter is compute-optimal."
+    },
+    {
+      "y": "2023",
+      "t": "Schaeffer et al. argue 'emergent abilities' may be an artifact of discontinuous metrics rather than real phase changes."
+    },
+    {
+      "y": "2024–",
+      "t": "The binding constraint shifts from research ideas to power, land, and fab capacity."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Jared Kaplan",
+      "d": "Lead author of the 2020 scaling laws paper; a physicist by training, which shows in the method."
+    },
+    {
+      "n": "Jordan Hoffmann",
+      "d": "Lead author of Chinchilla, the result that quietly rewrote every training budget in the field."
+    },
+    {
+      "n": "Rich Sutton",
+      "d": "Wrote two pages in 2019 that the field has been arguing with ever since."
+    }
+  ],
+  "facts": [
+    {
+      "b": "2020",
+      "s": "Kaplan et al., 'Scaling Laws for Neural Language Models'"
+    },
+    {
+      "b": "20:1",
+      "s": "Chinchilla's compute-optimal tokens-per-parameter ratio"
+    },
+    {
+      "b": "70B",
+      "s": "Chinchilla's size — beating a 280B model trained on the same compute"
+    }
+  ],
+  "contested": "Whether 'emergent abilities' are real discontinuities or artifacts of discontinuous metrics is an open fight (Schaeffer et al., 2023). Data is a harder constraint than the original laws assumed. And a power law fitted over six orders of magnitude tells you nothing whatsoever about the seventh.",
+  "changed": "I used to read the curves as a law of nature. They're an empirical regularity of one architecture on one data distribution, measured over a specific range. That's still remarkable, and still enough to plan a datacenter around — it just isn't the same kind of statement as thermodynamics, and the difference matters when someone extrapolates.",
+  "across": [
+    {
+      "to": "manuals:ii",
+      "label": "Field Manual II · Power laws & bottlenecks",
+      "txt": "— the same distribution, met in the wild."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Scaling Laws for Neural Language Models",
+      "a": "Kaplan et al., 2020",
+      "u": "https://arxiv.org/abs/2001.08361",
+      "why": "The original. The plots are the argument; you can skim the prose."
+    },
+    {
+      "t": "Training Compute-Optimal Large Language Models",
+      "a": "Hoffmann et al., 2022",
+      "u": "https://arxiv.org/abs/2203.15556",
+      "why": "The correction, and a good lesson in how a whole field can be systematically wrong in the same direction."
+    },
+    {
+      "t": "The Bitter Lesson",
+      "a": "Rich Sutton, 2019",
+      "u": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
+      "why": "Two pages. Read it before you build in your clever prior."
+    },
+    {
+      "t": "Are Emergent Abilities of LLMs a Mirage?",
+      "a": "Schaeffer et al., 2023",
+      "u": "https://arxiv.org/abs/2304.15004",
+      "why": "The strongest published pushback on the most-repeated claim in the area."
+    }
+  ]
+}

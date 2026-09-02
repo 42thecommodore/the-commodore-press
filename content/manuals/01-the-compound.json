@@ -1,0 +1,100 @@
+{
+  "id": "i",
+  "num": "I",
+  "title": "The Compound",
+  "accent": "#A87B2E",
+  "dek": "What I think actually accumulates, and the order I think it accumulates in. Written as positions, not advice.",
+  "entries": [
+    {
+      "k": "The premise",
+      "h": "Almost every durable advantage is a small edge held for an unreasonable length of time",
+      "p": [
+        "Compounding is the only mechanism I know that reliably turns ordinary inputs into extraordinary outputs, and it is almost entirely unwatchable while it works. The curve is flat for a long time, and the flat part is where nearly everyone leaves.",
+        "So the edge I actually believe in is not intensity. It is the willingness to stay in the flat part of someone else's impatience — and the single biggest variable in any compounding equation is not the rate but the number of periods you survive."
+      ]
+    },
+    {
+      "k": "Agency",
+      "h": "The rarest thing is the refusal to accept the world as given",
+      "p": [
+        "Most people, most of the time, treat their circumstances as fixed and optimise inside them. Agency is the habit of asking which of these constraints is actually load-bearing — and then testing one. It reads as arrogance until it works, at which point it reads as vision.",
+        "It is trainable. Every time you find a constraint that turns out to be a convention, the prior shifts."
+      ]
+    },
+    {
+      "k": "Game selection",
+      "h": "The biggest decision is not how hard you play. It is which game",
+      "p": [
+        "Most people grind their whole lives to win a game they never chose — one handed to them by a school, a family, or an industry with its own reasons. Effort inside a badly chosen game is the most expensive thing there is, because it looks exactly like progress.",
+        "Choose the game on three tests: does it compound, do you have or can you build an unfair edge in it, and would you still want to be playing it in ten years if nobody were watching."
+      ]
+    },
+    {
+      "k": "Positioning",
+      "h": "Stop trying to be the best at one thing",
+      "p": [
+        "Being the best at one thing is a lottery with one winner. A stack of two or three things you are genuinely good at — where the combination is rare even if none of the parts is — is a position almost nobody can compete with, and it can be built deliberately.",
+        "Naval Ravikant's framing of specific knowledge is the sharpest version: knowledge you cannot be trained for, that is found by pursuing genuine curiosity rather than a curriculum."
+      ],
+      "src": "after Naval Ravikant"
+    },
+    {
+      "k": "Proof of work",
+      "h": "Nobody can see your potential. They can only see what you make",
+      "p": [
+        "Potential is invisible and unfundable. Artefacts are legible: they can be linked to, argued with, and used as evidence by someone deciding whether to bet on you. Making things in public is the highest-return way I know to manufacture luck, because it dramatically raises the surface area on which useful accidents can land.",
+        "The corollary is uncomfortable: an unshipped body of work is, to everyone else, indistinguishable from no work."
+      ]
+    },
+    {
+      "k": "The substrate",
+      "h": "Everything here runs on hardware",
+      "p": [
+        "Sleep, attention and physical condition are not adjacent to the work — they are the machine the work runs on. Degrade them and every other item in this manual degrades proportionally, silently, and in a way that feels like a character problem rather than a maintenance problem.",
+        "This is the least interesting section and the one with the highest realised return."
+      ]
+    },
+    {
+      "k": "Risk",
+      "h": "Survive first. Then bet big",
+      "p": [
+        "You cannot compound if you are out of the game. So the structure I want is: eliminate genuine ruin risk absolutely — the kind you do not come back from — and then take far more upside risk than feels comfortable inside that boundary.",
+        "Most people get this exactly backwards: they take small chronic risks with ruin (health, reputation, debt, the people who trust them) while being far too timid about the uncapped, survivable bets."
+      ]
+    },
+    {
+      "k": "Optionality",
+      "h": "Not knowing where you are going is a position, not a problem",
+      "p": [
+        "Optionality is a real asset with a real price, and early on it is usually cheap. The mistake is treating a lack of destination as a failure of nerve rather than as a portfolio choice — and then buying a destination too early just to stop feeling uncertain.",
+        "The discipline is to keep converting optionality into skill and evidence rather than hoarding it."
+      ]
+    },
+    {
+      "k": "Inversion",
+      "h": "Ask how people lose, then run the other way",
+      "p": [
+        "The question 'how do I win' has a thousand contested answers. 'How do people reliably lose' has maybe six, and they are boringly consistent: ruin risk, the wrong game, no proof of work, no compounding, bad company, and quitting in the flat part.",
+        "Avoiding the six is most of it."
+      ]
+    }
+  ],
+  "heur": [
+    {
+      "b": "Would I still choose this in ten years if nobody were watching?",
+      "s": "The game-selection test, in one line."
+    },
+    {
+      "b": "What is the smallest artefact that would make this legible to someone else?",
+      "s": "Ship that, then improve it."
+    },
+    {
+      "b": "Is this risk survivable if I am wrong?",
+      "s": "If yes, be far bolder. If no, do not take it at any odds."
+    },
+    {
+      "b": "Am I in the flat part, or is this actually not working?",
+      "s": "The hardest question in the manual, and worth asking on a schedule rather than on a feeling."
+    }
+  ]
+}

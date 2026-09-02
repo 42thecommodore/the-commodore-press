@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--
+  COMMODORE PRESS - a single-file site. No build step, no dependencies, no tracking.
+  DEPLOY: put this file on any static host (GitHub Pages, Netlify, Cloudflare Pages) as index.html.
+  EDIT: all content is plain data in the script block at the bottom of this file:
+    BOOKS / ADJACENT ... Wing I, The Press          LIVES ....... Wing II (portraits keyed by id in PLATES)
+    DOMAINS / PRINCIPLES / PEOPLE ... Wing III      MANUALS ..... Wing IV
+    SLIPWAY ......... Wing V, the trade book        CORRECTIONS . printed in the colophon
+  HOUSE RULES: every figure carries a named source; disputes go in `contested`;
+  corrections are appended, never silently patched; `keep` is the one-line takeaway.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commodore Press</title>
+<meta name="description" content="A working library in five wings: twenty ideas, twenty-six lives, thirty-one sources, four field manuals, and a trade book of operating lessons. Every claim carries its source and the place it is still argued.">
+<meta property="og:title" content="Commodore Press">
+<meta property="og:type" content="website">
+<meta property="og:description" content="A working library in five wings. Every claim carries its source and the place it is still argued.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1' stroke='%231E1C18' stroke-width='1.6'/%3E%3Cpath d='M11 1.5V20.5M1.5 11H20.5' stroke='%231E1C18' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+<!--CSS-->
+</style>
+</head>
+<body>
+
+<header class="mast" id="mast">
+  <div class="wrap mast-in">
+    <a class="mark" href="#home" onclick="go('home');return false;">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+        <circle cx="11" cy="11" r="10" fill="none" stroke-width="1.2"/>
+        <path d="M11 1V21M1 11H21" stroke-width="1.2"/>
+        <path d="M4 4 18 18M18 4 4 18" stroke-width=".7" opacity=".45"/>
+      </svg>
+      <b>Commodore Press</b>
+    </a>
+    <nav id="nav"></nav>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HOME ================= -->
+  <section class="wing on" data-wing="home">
+    <div class="wrap">
+      <div class="front">
+        <div>
+          <div class="lbl" data-reveal style="--d:820ms">A working library · Luca</div>
+          <h1>
+            <span><i style="--d:120ms">Read the sources.</i></span>
+            <span><i style="--d:230ms">Mark what is</i></span>
+            <span class="em"><i style="--d:340ms">still argued.</i></span>
+          </h1>
+          <p class="stand" data-reveal style="--d:900ms">Five wings of one method. Every claim here carries where it came from and where specialists disagree — because the disagreement is usually the part worth having.</p>
+          <div class="tally" data-reveal style="--d:1000ms" id="tally"></div>
+        </div>
+        <div class="today" data-reveal style="--d:400ms" id="todayCard"></div>
+      </div>
+
+      <div class="wings5" id="wings5"></div>
+
+      <div class="colophon" id="colophon">
+        <div class="lbl" style="padding-top:6px">Colophon</div>
+        <div class="body">
+          <p>This is a library, not a credential. It holds what I have read, what I think it means, and — deliberately, in every wing — the places where the people who know most still disagree. A claim without its dispute is half a claim.</p>
+          <p>The five wings are one method applied to five kinds of material. <b>The Press</b> is ideas; <b>Lives</b> is people worth a whole book; <b>The Atlas</b> is the sources I actually listen to and the principles more than one of them arrived at independently; <b>The Field Manuals</b> are what I hold, written as positions rather than advice; <b>The Slipway</b> is the trade book — the operating lessons of people who build things, kept the way sailors kept a chandlery: everything you need before setting out, each item marked with where it came from.</p>
+          <p>Set in EB Garamond and IBM Plex Mono. Assembled by hand and with AI assistance; figures are checked against a named source, and where I have corrected myself the correction stays visible rather than being quietly patched. The reading wings are set on paper. The Atlas is the only room kept dark, because a star chart is the one thing that genuinely needs a night sky.</p>
+          <p>The portraits in Lives are public-domain engravings, paintings and photographs, reduced to the house duotone and set as plates. A life without a safely public image — Henrietta Lacks, Maurice Hilleman — carries the press mark instead of a borrowed picture, which seems the more honest trade. One exception to public domain: the Mandela photograph is by South Africa The Good News (sagoodnews.co.za), used under CC BY 2.0. Everything else came through Wikimedia Commons.</p>
+          <div class="corr" id="corrections"></div>
+          <div class="lbl q" style="margin:30px 0 10px">Disclosure</div>
+          <p style="font-size:16.5px">This site was assembled by Luca with substantial help from an AI assistant (Anthropic's Claude) — drafting, checking figures against the named sources, and the build itself. The picks, positions and errors are mine; when an error is found it joins the corrections above instead of disappearing. Lines marked &ldquo;after&rdquo; a name are compressed notes of someone's idea, not their words, and nobody named on this site has endorsed it or its readings of them. Portraits are public-domain images, except one CC&nbsp;BY credit noted above. The page sets no cookies and runs no analytics; the night-reading switch is remembered only in your own browser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRESS ================= -->
+  <section class="wing" data-wing="press">
+    <div class="wrap">
+      <div class="wing-head">
+        <div>
+          <div class="lbl">Wing I · the ideas</div>
+          <h2>The Press</h2>
+        </div>
+        <div class="side" id="pressSide"></div>
+      </div>
+      <p class="wing-dek">Twenty ideas I keep circling back to. Each one carries the argument in a line, an essay, a dated timeline, the people who did the work, the numbers with their sources, the strongest objection I know of, and what I have changed my mind about since.</p>
+      <div class="hr"></div>
+      <div class="controls" id="pressControls"></div>
+      <div class="shelf" id="shelf"></div>
+      <div class="sec-head"><h3>Adjacent works</h3><span>Not books, still load-bearing.</span></div>
+      <div class="wide" id="wide"></div>
+    </div>
+  </section>
+
+  <!-- ================= LIVES ================= -->
+  <section class="wing" data-wing="lives">
+    <div class="wrap">
+      <div class="wing-head">
+        <div>
+          <div class="lbl">Wing II · the canon</div>
+          <h2>Lives That Withstood Time</h2>
+        </div>
+        <div class="side" id="livesSide"></div>
+      </div>
+      <p class="wing-dek">Twenty-six people whose influence genuinely outlasted them, and the one book on each worth your time. Twenty-one the world remembers; five it forgot but shouldn't. Reading lives at volume is the cheapest way to borrow judgment you have not yet earned — a board of directors you will never meet. Every pick carries a note on where specialists would argue with it, because "definitive" is a claim, not a fact.</p>
+      <div class="hr"></div>
+      <div class="controls" id="livesControls"></div>
+      <div class="shelf tight" id="livesShelf"></div>
+    </div>
+  </section>
+
+  <!-- ================= ATLAS ================= -->
+  <section class="wing" data-wing="atlas">
+    <div class="wrap">
+      <div class="wing-head">
+        <div>
+          <div class="lbl" style="color:var(--nbrass)">Wing III · the sources · kept dark</div>
+          <h2>Debts &amp; Lessons</h2>
+        </div>
+        <div class="side" id="atlasSide"></div>
+      </div>
+      <p class="wing-dek" style="color:var(--parchment-dim)">A constellation is a principle more than one source handed me independently, across totally different lives — a lion tracker, a surgeon, a fintech founder arriving at the same line. The repetitions are the part I trust. These are sources I listened to, not verdicts on the people — and the wing takes its name from Marcus Aurelius, whose Meditations open with a book of exactly this: debts and lessons, with names attached.</p>
+      <div class="sky-stage">
+        <canvas id="sky"></canvas>
+        <div class="sky-tools">
+          <button onclick="skyZoom(1.2)" title="Zoom in">+</button>
+          <button onclick="skyZoom(.83)" title="Zoom out">−</button>
+          <button onclick="skyReset()" title="Reset">⊙</button>
+        </div>
+        <div class="sky-legend" id="legend"></div>
+        <div class="sky-hint">drag to pan · scroll to zoom<br>click a star to open</div>
+      </div>
+      <div class="const-list" id="constList"></div>
+    </div>
+  </section>
+
+  <!-- ================= MANUALS ================= -->
+  <section class="wing" data-wing="manuals">
+    <div class="wrap">
+      <div class="wing-head">
+        <div>
+          <div class="lbl">Wing IV · the doctrine</div>
+          <h2>The Field Manuals</h2>
+        </div>
+        <div class="side" id="manualsSide"></div>
+      </div>
+      <p class="wing-dek">Four volumes of what I actually hold — written as positions I can be argued out of, not advice for anyone else. Where a position comes from someone, they are named; where I think it is over-claimed, that is marked too.</p>
+      <div class="hr"></div>
+      <div class="vols" id="vols"></div>
+      <div id="manualBody"></div>
+    </div>
+  </section>
+
+  <!-- ================= SLIPWAY ================= -->
+  <section class="wing" data-wing="slipway">
+    <div class="wrap">
+      <div class="wing-head">
+        <div>
+          <div class="lbl" style="color:var(--hail)">Wing V · the trade book</div>
+          <h2>The Slipway</h2>
+        </div>
+        <div class="side" id="slipSide"></div>
+      </div>
+      <p class="wing-dek">Where ships get built — as a set of ideas, not a shipyard tour. This wing is a commonplace book of the craft: operating lessons collected from people who have actually crossed the water, kept because each one changed what I did next. The other four wings are the chart room; this one is the toolbox.</p>
+      <div class="hr"></div>
+      <div class="sec-head"><h3>What more than one of them said</h3><span>The convergences — same lesson, independent lives.</span></div>
+      <div class="convs" id="convs"></div>
+      <div class="sec-head"><h3>The trade book</h3><span>Operating lessons, each with its source.</span></div>
+      <div id="tradebook"></div>
+      <div class="sec-head"><h3>The chandlery</h3><span>Notes on venture capital, taken from the other side of the table.</span></div>
+      <div id="chandlery"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div style="opacity:.62">Commodore Press</div>
+      <div>Luca · Los Angeles</div>
+      <div id="stat"></div>
+    </div>
+    <div>
+      <div><a href="#press" onclick="go('press');return false;">The Press</a></div>
+      <div><a href="#lives" onclick="go('lives');return false;">Lives</a></div>
+      <div><a href="#atlas" onclick="go('atlas');return false;">The Atlas</a></div>
+    </div>
+    <div>
+      <div><a href="#manuals" onclick="go('manuals');return false;">Field Manuals</a></div>
+      <div><a href="#slipway" onclick="go('slipway');return false;">The Slipway</a></div>
+      <div><a href="#home" onclick="go('home');return false;">Colophon</a></div>
+    </div>
+    <div class="grow">
+      <div style="opacity:.62"><kbd>/</kbd> search · <kbd>S</kbd> shelf view · <kbd>R</kbd> random · <kbd>←</kbd> <kbd>→</kbd> browse · <kbd>Esc</kbd> close</div>
+      <div>MMXXVI — no rights reserved, go read the sources</div>
+    </div>
+  </div>
+</footer>
+
+<div class="smodal" id="smodal" aria-hidden="true" role="dialog" aria-label="Search the library">
+  <div class="sbox">
+    <input id="sinput" type="search" placeholder="Search titles, lives, sources, lessons…" autocomplete="off" aria-label="Search">
+    <div class="shint mono">↵ opens the first result · Esc closes</div>
+    <div id="sresults" role="listbox"></div>
+  </div>
+</div>
+<div id="flip"></div>
+<div class="reader" id="reader" aria-hidden="true"><div class="rprog" id="rprog"></div><div class="sheet" id="sheet"></div></div>
+<div class="scrim" id="scrim" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="top">
+    <button class="x" onclick="closeDrawer()" aria-label="Close">✕</button>
+    <div class="region" id="dRegion"></div>
+    <h3 id="dName"></h3>
+    <div class="role" id="dRole"></div>
+  </div>
+  <div class="bd" id="dBody"></div>
+</aside>
+
+<script>
+<!--DATA-->
+<!--ENGINE-->
+</script>
+</body>
+</html>

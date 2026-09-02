@@ -1,0 +1,111 @@
+{
+  "id": "being-wrong",
+  "keep": "Say in advance what would change your mind — precisely enough that you can't renegotiate later.",
+  "title": "Being Wrong Productively",
+  "sub": "Fallibilism as an operating system",
+  "field": "History",
+  "spineTitle": "Being Wrong Productively",
+  "years": "1934–now",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "conic",
+  "claim": "State in advance what would change your mind. Everything else is decoration.",
+  "lede": "The useful question is never 'am I right' — it's 'what would I expect to see if I weren't, and have I actually looked'.",
+  "copy": [
+    "Popper's contribution was to move the demarcation line. A theory earns scientific status by forbidding something — by being exposed to a test it could fail. Naive falsificationism doesn't survive contact with real science: Duhem and Quine pointed out you can always rescue a theory by adjusting an auxiliary assumption, and Lakatos and Kuhn showed working scientists do exactly that, often correctly, for years at a time. But the underlying discipline survives all of it. Say in advance what would change your mind, and say it precisely enough that you can't renegotiate later.",
+    "Feynman's 1974 Caltech address gave the operational version. Cargo cult science has all the outward form — the papers, the apparatus, the vocabulary — and is missing 'a kind of leaning over backwards' to report everything that might make you look wrong, including the alternatives you considered and rejected and why. He was describing experimental integrity. It reads now as a description of most public argument.",
+    "The replication crisis is what the failure mode looks like at scale. The 2015 Reproducibility Project attempted 100 psychology studies; of the 97 with significant original effects, 36% replicated significantly. Not fraud, mostly — just a system in which every local incentive rewarded a positive result and nothing rewarded checking. The fix that worked best was boring and procedural: pre-registration, which is Popper's rule turned into paperwork.",
+    "The practical apparatus is small and unglamorous. Hold beliefs with explicit confidence rather than binary conviction. Write predictions down before outcomes, because otherwise you will reconstruct your reasoning and remember having been right. And distinguish 'I was wrong about the conclusion' from 'I was wrong about the process' — only the second should update how you think, and it's the one people skip."
+  ],
+  "timeline": [
+    {
+      "y": "1934",
+      "t": "Popper's 'Logik der Forschung' proposes falsifiability as the line between science and everything else."
+    },
+    {
+      "y": "1962",
+      "t": "Kuhn's 'Structure of Scientific Revolutions' describes what scientists actually do, which is not that."
+    },
+    {
+      "y": "1974",
+      "t": "Feynman's 'Cargo Cult Science' address: the ethic, stated operationally."
+    },
+    {
+      "y": "2011",
+      "t": "Simmons, Nelson and Simonsohn publish 'False-Positive Psychology' and name researcher degrees of freedom."
+    },
+    {
+      "y": "2015",
+      "t": "The Reproducibility Project: 36% of 97 psychology findings replicate significantly."
+    },
+    {
+      "y": "2015–",
+      "t": "Pre-registration and registered reports spread — Popper's rule as an administrative form."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Karl Popper",
+      "d": "Moved the question from 'how do we confirm theories' to 'how do we expose them'."
+    },
+    {
+      "n": "Richard Feynman",
+      "d": "Turned the epistemology into an ethic you could actually follow on a Tuesday."
+    },
+    {
+      "n": "Brian Nosek",
+      "d": "Ran the Reproducibility Project and built the infrastructure that made pre-registration routine."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1934",
+      "s": "Popper's Logik der Forschung — falsifiability as demarcation"
+    },
+    {
+      "b": "1974",
+      "s": "Feynman's 'Cargo Cult Science' commencement address"
+    },
+    {
+      "b": "36%",
+      "s": "Of 97 psychology findings replicated significantly in the 2015 Reproducibility Project"
+    }
+  ],
+  "contested": "Popper's falsificationism is not the consensus philosophy of science it's usually invoked as. Kuhn, Lakatos and Feyerabend all argued that scientists rightly protect promising theories from refutation for long stretches, and that a field abandoning every theory at the first anomaly would abandon all of them. Treat it as a personal heuristic, not a criterion.",
+  "changed": "I used to deploy 'that's unfalsifiable' as a conversation-ender. It's a weak move: almost nothing interesting is cleanly falsifiable in isolation, because you're always testing a bundle of assumptions at once. The stronger and more annoying question is 'what specific observation would move you, and by how much'.",
+  "across": [
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— the founding case of the method, and the founding case of a story told better than the evidence supports."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Cargo Cult Science",
+      "a": "Richard Feynman, 1974",
+      "u": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+      "why": "Fifteen minutes. The single highest-yield item on this entire shelf."
+    },
+    {
+      "t": "The Logic of Scientific Discovery",
+      "a": "Karl Popper",
+      "u": "https://en.wikipedia.org/wiki/The_Logic_of_Scientific_Discovery",
+      "why": "The source. Denser than the summaries suggest, and more qualified."
+    },
+    {
+      "t": "The Structure of Scientific Revolutions",
+      "a": "Thomas Kuhn",
+      "u": "https://en.wikipedia.org/wiki/The_Structure_of_Scientific_Revolutions",
+      "why": "The corrective. Read it as a description, not a licence."
+    },
+    {
+      "t": "Estimating the Reproducibility of Psychological Science",
+      "a": "Open Science Collaboration, 2015",
+      "u": "https://www.science.org/doi/10.1126/science.aac4716",
+      "why": "What the failure looks like when you measure it instead of arguing about it."
+    }
+  ]
+}

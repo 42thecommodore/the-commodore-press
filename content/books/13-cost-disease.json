@@ -1,0 +1,100 @@
+{
+  "id": "cost-disease",
+  "keep": "Baumol explains change over time, never gaps between places. Check which one you're staring at.",
+  "title": "The Cost Disease",
+  "sub": "Why the important things got expensive",
+  "field": "Economics",
+  "spineTitle": "The Cost Disease",
+  "years": "1966–now",
+  "cover": "#B4551D",
+  "spineC": "#8C3E11",
+  "ink": "#FCEEE0",
+  "accent": "#F7D2AB",
+  "motif": "lines",
+  "claim": "Half of it is a feature of growth. Half of it is a choice. The mix is the argument.",
+  "lede": "A Beethoven quartet takes exactly as many musician-hours as it did in 1826. Their wages went up anyway. That's the whole mechanism — except when it isn't.",
+  "copy": [
+    "Baumol and Bowen's 1966 study of the performing arts identified the effect. In sectors where productivity can't rise, wages still track the productive sectors, because workers can leave. So the relative price of live music, teaching, nursing and haircuts rises indefinitely, even with nothing going wrong anywhere. This is a feature of growth, not a pathology: societies get richer, and the labour-intensive things get relatively dearer. There is no fix and you shouldn't want one.",
+    "The problem is that Baumol gets invoked to explain cost growth it cannot account for. New York subway construction runs around $1.5 billion per kilometre against a global weighted average nearer $250 million, and the Transit Costs Project attributes that gap to procurement practice, consultant-heavy staffing, station overbuilding and litigation risk — not to musicians' wages. Baumol predicts that labour-intensive services get relatively more expensive over time within a country. It does not predict a five-fold gap between rich countries in the same decade.",
+    "The same test applies elsewhere. American health administration's share of spending is estimated anywhere from 15% to 31% depending on what you count — and the spread itself is informative, because a cost that can't be measured consistently is usually a cost that isn't a single thing. University non-teaching headcount has grown faster than faculty in most rich countries but at very different rates, which again is a cross-sectional difference Baumol can't produce.",
+    "The reason this matters is that the two diagnoses imply opposite policies. If it's Baumol, rising relative cost is the price of being rich and you should pay it and stop complaining. If it's institutional, the cost is a choice, other countries have made different ones, and you can go copy them. Almost every real case is a mixture, and the mixture is the whole argument."
+  ],
+  "timeline": [
+    {
+      "y": "1966",
+      "t": "Baumol and Bowen publish the performing-arts study and name the mechanism."
+    },
+    {
+      "y": "1967",
+      "t": "Baumol generalises it into the two-sector model of unbalanced growth."
+    },
+    {
+      "y": "2003",
+      "t": "Woolhandler and Himmelstein put US health administration at 31% of spending; the figure is contested immediately."
+    },
+    {
+      "y": "2012",
+      "t": "Baumol's 'The Cost Disease' restates the case and insists the news is mostly good."
+    },
+    {
+      "y": "2019–",
+      "t": "The Transit Costs Project starts comparing infrastructure costs across countries and finds gaps Baumol can't explain."
+    }
+  ],
+  "figures": [
+    {
+      "n": "William Baumol",
+      "d": "Identified a mechanism so clean it now gets blamed for everything expensive, which would have annoyed him."
+    },
+    {
+      "n": "Alon Levy",
+      "d": "Has done more than anyone to turn 'why is US transit so expensive' from a complaint into a dataset."
+    },
+    {
+      "n": "Brian Potter",
+      "d": "Writes the best current work on why construction productivity specifically failed to follow manufacturing."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1966",
+      "s": "Baumol & Bowen publish the performing-arts study"
+    },
+    {
+      "b": "$1.5B/km",
+      "s": "New York subway construction, against a ~$250M/km global weighted average"
+    },
+    {
+      "b": "15–31%",
+      "s": "Estimated share of US health spending going to administration — the spread is the story"
+    }
+  ],
+  "contested": "How much of infrastructure cost growth is genuine Baumol versus institutional dysfunction is unresolved and politically loaded. Cross-country comparisons are real but sensitive to tunnelling depth, land acquisition, station finish, labour law and how you handle contingency — and the Transit Costs Project itself is careful that its sample isn't fully representative.",
+  "changed": "I used Baumol as a general-purpose explanation for expensive things for years. The cross-country comparisons broke that habit: Baumol is a within-country trend over time, and it cannot generate a five-fold gap between two rich democracies building the same tunnel in the same decade. When someone reaches for Baumol, check whether the variation they're explaining is over time or across places.",
+  "reading": [
+    {
+      "t": "The Cost Disease: Why Computers Get Cheaper and Health Care Doesn't",
+      "a": "William J. Baumol",
+      "u": "https://yalebooks.yale.edu/book/9780300198157/the-cost-disease/",
+      "why": "From the source, and more optimistic than people who cite him."
+    },
+    {
+      "t": "Transit Costs Project",
+      "a": "Alon Levy et al., NYU Marron",
+      "u": "https://transitcosts.com/",
+      "why": "The data. Read the case studies, not just the headline numbers."
+    },
+    {
+      "t": "Construction Physics",
+      "a": "Brian Potter",
+      "u": "https://www.construction-physics.com/",
+      "why": "The best ongoing writing on why building things got harder."
+    },
+    {
+      "t": "Why Are the Prices So D*mn High?",
+      "a": "Helland & Tabarrok",
+      "u": "https://www.mercatus.org/research/books/why-are-prices-so-damn-high",
+      "why": "The strongest case that it really is mostly Baumol. Read it against Levy."
+    }
+  ]
+}

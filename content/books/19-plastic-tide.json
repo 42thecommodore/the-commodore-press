@@ -1,0 +1,111 @@
+{
+  "id": "plastic-tide",
+  "keep": "'Unknown' is not 'safe' — and a scary number with no methods section is not knowledge either.",
+  "title": "The Plastic Tide",
+  "sub": "Everywhere, and not yet understood",
+  "field": "Technology",
+  "spineTitle": "The Plastic Tide",
+  "years": "1907–now",
+  "cover": "#0E5568",
+  "spineC": "#0A3D4C",
+  "ink": "#EAF4F6",
+  "accent": "#9FD8DC",
+  "motif": "grid",
+  "claim": "We measured the tide before we understood the water. What microplastics do to us is genuinely unknown — which is not the same as safe.",
+  "lede": "In 2004 a marine biologist in Plymouth asked where all the ocean's plastic had gone, and coined a word for the answer: it hadn't gone anywhere. It had gotten smaller.",
+  "copy": [
+    "Richard Thompson's one-page Science paper, 'Lost at Sea: Where Is All the Plastic?', reported microscopic fragments and fibres throughout British waters and sediments — and in archived plankton samples reaching back to the 1960s. He needed a word for particles smaller than the eye tracks and settled on 'microplastics'. Twenty years later the word is in treaties, and the particles are in deep-sea trenches, Arctic ice, table salt, and — by recent detections — human blood and placentas.",
+    "The scale question has real numbers. Global production went from about two million tonnes in 1950 to more than four hundred million a year now; Jenna Jambeck's 2015 estimate put roughly eight million tonnes entering the ocean annually from coastal countries, with wide error bars that nobody disputes matter less than the order of magnitude. Fragmentation does the rest: sunlight and mechanics grind macro into micro into nano, so the count rises even where the mass doesn't.",
+    "The harm question is where honesty gets hard. Detection is not toxicity, and the most famous number in the field — that you eat a credit card's worth of plastic a week — came from a 2019 advocacy estimate that later peer-reviewed work found overstated by orders of magnitude. The WHO's 2019 review of drinking water found no evidence of risk at current levels, while grading the underlying data poor — a sentence both sides of the argument quote in halves.",
+    "Then 2024 delivered the first hard clinical signal: a New England Journal of Medicine study found polyethylene fragments in the carotid plaque of more than half of surgical patients examined, and those patients went on to heart attack, stroke or death at roughly four and a half times the rate of the rest over three years. Observational, confounded, immediately contested — and impossible to wave away. The field's real bottleneck is unglamorous: cheap, standardised measurement. You cannot regulate, price or fix what you cannot affordably count, which is why the interesting work in water right now looks less like activism and more like instrumentation."
+  ],
+  "timeline": [
+    {
+      "y": "1907",
+      "t": "Baekeland's Bakelite — the first fully synthetic plastic."
+    },
+    {
+      "y": "1972",
+      "t": "Carpenter and Smith report plastic particles in the Sargasso Sea."
+    },
+    {
+      "y": "2004",
+      "t": "Thompson coins 'microplastics' in Science."
+    },
+    {
+      "y": "2015",
+      "t": "Jambeck estimates ~8 million tonnes of plastic entering the ocean per year."
+    },
+    {
+      "y": "2019",
+      "t": "WHO reviews microplastics in drinking water: no demonstrated risk, poor data."
+    },
+    {
+      "y": "2024",
+      "t": "NEJM: microplastics in carotid plaque associated with ~4.5× cardiovascular events."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Richard Thompson",
+      "d": "Coined the word, built the field, and has spent twenty years telling both sides to calm down and measure."
+    },
+    {
+      "n": "Jenna Jambeck",
+      "d": "Put the ocean-input number on the map with transparent arithmetic and honest error bars."
+    },
+    {
+      "n": "Raffaele Marfella",
+      "d": "Led the atheroma study that moved the harm question from plausible to urgent."
+    }
+  ],
+  "facts": [
+    {
+      "b": "2004",
+      "s": "'Microplastics' coined — Thompson et al., Science"
+    },
+    {
+      "b": "~8 Mt",
+      "s": "Estimated annual flow of plastic into the ocean (Jambeck 2015; range 4.8–12.7)"
+    },
+    {
+      "b": "4.5×",
+      "s": "Hazard ratio for cardiovascular events with plaque microplastics (NEJM 2024, observational)"
+    }
+  ],
+  "contested": "Nearly every number. Lab contamination plagues detection; methods (spectroscopy versus visual counting) disagree; the credit-card factoid is advocacy arithmetic that peer review dismantled; and the NEJM result, the field's strongest clinical finding, drew immediate methodological letters. The honest position is double: the exposure is universal and rising, and the dose–response curve is still a blank axis.",
+  "changed": "I used to reach for the scariest number in the room. Spending time around water testing broke the habit: now I read the methods section first, and I have learned that 'we don't know yet' — said plainly, with the measurement plan attached — is more alarming to a serious listener than any borrowed statistic.",
+  "across": [
+    {
+      "to": "press:being-wrong",
+      "label": "Being Wrong Productively",
+      "txt": "— a field-sized case study in holding uncertainty without either panic or complacency."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Lost at Sea: Where Is All the Plastic?",
+      "a": "Thompson et al., Science 2004",
+      "u": "https://www.science.org/doi/10.1126/science.1094559",
+      "why": "One page. The founding document, and a model of saying only what you can show."
+    },
+    {
+      "t": "Plastic waste inputs from land into the ocean",
+      "a": "Jambeck et al., Science 2015",
+      "u": "https://www.science.org/doi/10.1126/science.1260352",
+      "why": "Where the eight-million-tonnes figure comes from, error bars and all."
+    },
+    {
+      "t": "Microplastics and Nanoplastics in Atheromas and Cardiovascular Events",
+      "a": "Marfella et al., NEJM 2024",
+      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2309822",
+      "why": "The clinical signal. Read the letters that follow it too."
+    },
+    {
+      "t": "Do Humans Eat One Credit Card per Week?",
+      "a": "Pletz, J. Hazardous Materials Letters 2022",
+      "u": "https://www.sciencedirect.com/science/article/pii/S2666911022000247",
+      "why": "The autopsy of the field's most famous number. Instructive far beyond plastics."
+    }
+  ]
+}

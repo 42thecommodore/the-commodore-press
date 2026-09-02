@@ -1,0 +1,19 @@
+{
+  "name": "commodore-press",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A working library in five wings. Sources live in content/; the site is built into dist/index.html.",
+  "type": "module",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "build": "node build/build.mjs",
+    "check": "node tools/validate.mjs",
+    "stats": "node tools/stats.mjs",
+    "publish:check": "npm run check && npm run build",
+    "new": "node tools/new.mjs",
+    "plate": "node tools/plate.mjs",
+    "correct": "node tools/correct.mjs",
+    "verify": "node tools/verify-migration.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

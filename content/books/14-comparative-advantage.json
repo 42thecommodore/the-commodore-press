@@ -1,0 +1,111 @@
+{
+  "id": "comparative-advantage",
+  "keep": "Your absolute skill is irrelevant. The ratio of what you give up is everything.",
+  "title": "Comparative Advantage",
+  "sub": "The one true, non-obvious idea",
+  "field": "Economics",
+  "spineTitle": "Comparative Advantage",
+  "years": "1817",
+  "cover": "#8C6A0F",
+  "spineC": "#6B5008",
+  "ink": "#FBF3DC",
+  "accent": "#F5DFA2",
+  "motif": "dots",
+  "claim": "True, non-trivial, two centuries old, and still argued against by people who understand it.",
+  "lede": "Asked to name one proposition in the social sciences that is both true and non-trivial, Samuelson named this one — and noted how long it takes people to believe it.",
+  "copy": [
+    "Ricardo's 1817 example is England and Portugal, cloth and wine. Portugal can produce both more cheaply in absolute terms. Trade still benefits both, because what each gives up to produce a unit of one good — the opportunity cost — differs. The better producer of everything should still specialise where its edge is largest and buy the rest. The result is counterintuitive enough that people who understand it perfectly still argue against it in practice, because it is stated in relative terms and human intuition runs on absolutes.",
+    "It scales down, which is why it's on this shelf rather than in a textbook. It's the argument for why a founder who is the best engineer in the building should not be writing the code, and why the fastest person on a team should hand off work they would genuinely do better themselves. Absolute skill is irrelevant. The ratio of what you give up is everything, and almost every overloaded competent person is violating this right now.",
+    "The honest caveats are large and usually omitted by people quoting Samuelson. The theorem says gains are available in aggregate, not that they're distributed. Ricardo assumed capital stayed home, which it conspicuously does not. And the compensation the welfare argument quietly assumes — winners pay losers — is politically optional and mostly hasn't happened.",
+    "Autor, Dorn and Hanson measured where the losses landed. Chinese import competition is associated with roughly 985,000 lost US manufacturing jobs between 1999 and 2011, and around 2.4 million across all sectors once you include supply chains and local demand effects — concentrated in specific commuting zones where wages and participation stayed depressed for at least a decade. Both things are true: the aggregate gains were real, and so were the concentrated, persistent, geographically specific losses."
+  ],
+  "timeline": [
+    {
+      "y": "1776",
+      "t": "Adam Smith makes the case for specialisation, but on absolute advantage."
+    },
+    {
+      "y": "1817",
+      "t": "Ricardo's 'Principles' states comparative advantage; the wine-and-cloth example is barely two pages."
+    },
+    {
+      "y": "1940s",
+      "t": "Stolper and Samuelson show who inside a country wins and loses — the distributional footnote that became the main event."
+    },
+    {
+      "y": "1969",
+      "t": "Samuelson answers Ulam's challenge: comparative advantage is the true, non-trivial proposition."
+    },
+    {
+      "y": "2013",
+      "t": "Autor, Dorn and Hanson measure the China shock's local labour-market effects."
+    },
+    {
+      "y": "2016–",
+      "t": "The distributional finding, not the theorem, drives a decade of trade politics."
+    }
+  ],
+  "figures": [
+    {
+      "n": "David Ricardo",
+      "d": "A stockbroker who retired rich and then wrote the argument economists have been re-explaining ever since."
+    },
+    {
+      "n": "Paul Samuelson",
+      "d": "Named it as economics' one true non-obvious result, and wrote about why nobody believes it."
+    },
+    {
+      "n": "David Autor",
+      "d": "Measured what the theorem's aggregate framing leaves out, and changed the politics of trade doing it."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1817",
+      "s": "On the Principles of Political Economy and Taxation"
+    },
+    {
+      "b": "985,000",
+      "s": "US manufacturing jobs attributed to the China shock, 1999–2011 (≈2.4M all sectors)"
+    },
+    {
+      "b": "10 yrs+",
+      "s": "How long affected local labour markets stayed depressed"
+    }
+  ],
+  "contested": "The theorem is not in dispute; its policy sufficiency is. Ricardo assumed immobile capital, adjustment is neither costless nor fast, and 'trade is good on net' and 'this trade policy is good' are separate claims that get deliberately conflated in both directions.",
+  "changed": "I used to deploy this as a conversation-ending fact and treat objectors as innumerate. The China shock literature is the reason I stopped. The theorem is still true; my use of it was sloppy, because I was answering a distributional question with an aggregate result and calling the other person confused.",
+  "across": [
+    {
+      "to": "manuals:ii",
+      "label": "Field Manual II · Second- and third-order thinking",
+      "txt": "— 'and then what, and to whom' is the question the aggregate answer skips."
+    }
+  ],
+  "reading": [
+    {
+      "t": "On the Principles of Political Economy and Taxation",
+      "a": "David Ricardo, 1817",
+      "u": "https://www.econlib.org/library/Ricardo/ricP.html",
+      "why": "Chapter 7 is the whole thing and it's shorter than this page."
+    },
+    {
+      "t": "Ricardo's Difficult Idea",
+      "a": "Paul Krugman",
+      "u": "https://web.mit.edu/krugman/www/ricardo.htm",
+      "why": "On why smart people refuse to believe a correct argument. Applies well beyond trade."
+    },
+    {
+      "t": "The China Syndrome",
+      "a": "Autor, Dorn & Hanson",
+      "u": "https://www.ddorn.net/papers/Autor-Dorn-Hanson-ChinaShock.pdf",
+      "why": "The measurement that reopened a settled question."
+    },
+    {
+      "t": "Stubborn Attachments",
+      "a": "Tyler Cowen",
+      "u": "https://press.stripe.com/stubborn-attachments",
+      "why": "For the framework in which aggregate gains and distributional losses can be weighed at all."
+    }
+  ]
+}

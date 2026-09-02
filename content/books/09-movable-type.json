@@ -1,0 +1,111 @@
+{
+  "id": "movable-type",
+  "keep": "The machine makes cheap copies; institutions make them trustworthy. Never confuse the two.",
+  "title": "Movable Type",
+  "sub": "What the press actually changed",
+  "field": "History",
+  "spineTitle": "Movable Type",
+  "years": "1450–1600",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "grid",
+  "claim": "Cities that got a press grew faster. Everything about why is still argued.",
+  "lede": "Gutenberg's press is the standard example of technology changing history, which is exactly why the historians who study it spend most of their time disagreeing about what it changed.",
+  "copy": [
+    "The mechanics arrived around 1450 in Mainz: movable metal type, an oil-based ink that would stick to it, and a screw press adapted from wine-making. Within fifty years presses were operating in roughly 205 European cities out of more than a thousand. That uneven adoption is what makes the period tractable, because it gives you something rare in history — a natural experiment.",
+    "Jeremiah Dittmar used it. Cities that adopted the press between 1450 and 1500 grew substantially faster over the following century than comparable cities that didn't, with no growth advantage beforehand. His difference-in-differences estimate puts the gap at at least 35 percentage points of population growth from 1500 to 1600, against a mean of about 30. Instrumenting adoption with distance from Mainz — presses spread outward from where the technology was — pushes the estimate higher still.",
+    "Elizabeth Eisenstein's argument is the classic one: print produced 'fixity'. Once a text could be reproduced identically thousands of times, errors stopped accumulating with each copy, results could be compared across distance, and standardised diagrams and tables became possible — which is a precondition for cumulative science rather than a consequence of it.",
+    "Adrian Johns wrote the strongest rebuttal. Early print was chaotic: piracy, unauthorised editions, garbled reprints and outright forgery were endemic, and readers had no reason to trust a printed book more than a manuscript. Fixity, he argues, was not a property of the press but an achievement — built slowly through guilds, licensing, reputational policing and law. If he's right, the causal arrow runs through institutions, and the machine was necessary but nowhere near sufficient."
+  ],
+  "timeline": [
+    {
+      "y": "~1450",
+      "t": "Gutenberg assembles movable metal type, oil-based ink and a screw press in Mainz."
+    },
+    {
+      "y": "1455",
+      "t": "The 42-line Bible demonstrates the output can match manuscript quality at scale."
+    },
+    {
+      "y": "1500",
+      "t": "Presses are operating in roughly 205 European cities; well over a thousand had none."
+    },
+    {
+      "y": "1517",
+      "t": "Luther's theses spread at a speed the church's enforcement machinery cannot match."
+    },
+    {
+      "y": "1979",
+      "t": "Eisenstein publishes 'The Printing Press as an Agent of Change' and defines the field."
+    },
+    {
+      "y": "1998",
+      "t": "Adrian Johns publishes 'The Nature of the Book' and argues fixity was made, not given."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Johannes Gutenberg",
+      "d": "Combined four existing technologies into one system and died in relative obscurity after losing the lawsuit."
+    },
+    {
+      "n": "Elizabeth Eisenstein",
+      "d": "Made the case that print's standardising effect was a precondition for modern science."
+    },
+    {
+      "n": "Adrian Johns",
+      "d": "Argued print's reliability was a social achievement, not a mechanical property — the sharpest counterargument in the field."
+    }
+  ],
+  "facts": [
+    {
+      "b": "205",
+      "s": "European cities with a printing press by 1500, out of more than 1,000"
+    },
+    {
+      "b": "35 pp",
+      "s": "Extra population growth, 1500–1600, for early-adopting cities (Dittmar's diff-in-diff floor)"
+    },
+    {
+      "b": "1998",
+      "s": "Johns publishes the rebuttal that split the field"
+    }
+  ],
+  "contested": "Dittmar's instrument — distance from Mainz — is doing a lot of work, and distance from Mainz correlates with plenty of other things, including trade routes and proximity to the commercial core of Europe. The correlation between presses and growth is robust; the causal identification is the part specialists argue over.",
+  "changed": "I used to treat 'the printing press caused the scientific revolution' as settled background. Johns' argument reframed it: the machine made cheap copies, and the trustworthiness of those copies had to be built afterwards by boring institutional work. That's the same pattern as the internet, which is why it stopped feeling like history.",
+  "across": [
+    {
+      "to": "press:republic-of-letters",
+      "label": "The Republic of Letters",
+      "txt": "— the institutions Johns says did the real work."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Information Technology and Economic Change: The Impact of the Printing Press",
+      "a": "Jeremiah Dittmar, QJE 2011",
+      "u": "https://academic.oup.com/qje/article-abstract/126/3/1133/1855353",
+      "why": "The quantitative core. The CEPR summary is free if the journal isn't."
+    },
+    {
+      "t": "The Printing Press as an Agent of Change",
+      "a": "Elizabeth Eisenstein",
+      "u": "https://en.wikipedia.org/wiki/Elizabeth_Eisenstein",
+      "why": "The thesis everyone is either building on or attacking."
+    },
+    {
+      "t": "The Nature of the Book: Print and Knowledge in the Making",
+      "a": "Adrian Johns",
+      "u": "https://press.uchicago.edu/ucp/books/book/chicago/N/bo3616282.html",
+      "why": "The rebuttal. Long, and worth it for the piracy chapters alone."
+    },
+    {
+      "t": "Information technology and economic change (summary)",
+      "a": "CEPR / VoxEU",
+      "u": "https://cepr.org/voxeu/columns/information-technology-and-economic-change-impact-printing-press",
+      "why": "Dittmar's findings in about a thousand words, with the numbers intact."
+    }
+  ]
+}

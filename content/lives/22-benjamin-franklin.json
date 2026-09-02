@@ -1,0 +1,34 @@
+{
+  "id": "benjamin-franklin",
+  "keep": "Retire from the shop as early as you can afford to — then spend the second half inventing institutions.",
+  "n": "Benjamin Franklin",
+  "years": "1706–1790",
+  "place": "America",
+  "field": "Print & Invention",
+  "group": "famous",
+  "cover": "#31456B",
+  "spineC": "#22314D",
+  "ink": "#EFF2FA",
+  "accent": "#C8D3EE",
+  "motif": "grid",
+  "lede": "A printer who retired at forty-two and spent the second half of his life inventing a country's institutions — the patron saint of every small press, this one included.",
+  "copy": [
+    "The runaway apprentice from Boston built Philadelphia's best print shop, made Poor Richard's Almanack a franchise, and retired from active business at forty-two — the pivot the whole life turns on. What followed: the experiments that made lightning electricity and won him the Copley Medal; the stove, the lightning rod and bifocals, none patented, on the stated principle that we should serve others freely with our inventions as we enjoy theirs.",
+    "His deeper trade was institutions. A subscription library, a fire company, a hospital, an academy that became a university, a learned society, a postal system — Franklin repeatedly noticed a missing piece of civic machinery and simply organised it, using the same club of tradesmen, the Junto, as his laboratory. Then the largest institution of all: he is the only man who signed the Declaration of Independence, the treaty with France he charmed into existence, the peace with Britain, and the Constitution.",
+    "The Autobiography gave the world its first great self-improvement programme — thirteen virtues, a weekly tracking chart, and the dry admission that he never mastered humility but learned to fake it profitably. Read it as he wrote it: a curated performance by history's shrewdest personal brand, wise about exactly how such performances work."
+  ],
+  "bio": {
+    "t": "Benjamin Franklin: An American Life",
+    "a": "Walter Isaacson",
+    "y": "2003",
+    "why": "The most readable full life, strongest on the printer and the diplomat. H.W. Brands's 'The First American' (2000) is the fuller scholarly alternative if you want one degree more depth."
+  },
+  "contested": "Isaacson writes to his house template — the ingenious, pragmatic outsider — and historians find him lighter on Franklin's decades as a slaveholder who turned abolitionist only late. The Autobiography, the foundation of the legend, is self-presentation by a master of it; treat it as an artifact to interpret, not a record to trust.",
+  "across": [
+    {
+      "to": "press:republic-of-letters",
+      "label": "The Republic of Letters",
+      "txt": "— Franklin was the network's American terminus, and worked it like a printer works a market."
+    }
+  ]
+}

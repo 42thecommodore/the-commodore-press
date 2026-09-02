@@ -1,0 +1,34 @@
+{
+  "id": "ernest-shackleton",
+  "keep": "Change the goal before you lose the crew. Better a live donkey than a dead lion.",
+  "n": "Ernest Shackleton",
+  "years": "1874–1922",
+  "place": "Anglo-Irish",
+  "field": "Exploration & Leadership",
+  "group": "famous",
+  "cover": "#14424E",
+  "spineC": "#0D2F38",
+  "ink": "#EAF3F5",
+  "accent": "#A8D4DC",
+  "motif": "lines",
+  "lede": "He failed at every goal he ever set — the Pole, the crossing — and brought every man home. The failure is why we study him.",
+  "copy": [
+    "In 1909 he turned back ninety-seven nautical miles from the South Pole — the hardest right decision in exploration history — because reaching it meant starving his men on the return. 'Better a live donkey than a dead lion,' he told his wife. The pattern was set: the goal was expendable, the crew was not.",
+    "The Endurance expedition of 1914–16 made the pattern immortal. The ship was crushed by pack ice before the Antarctic crossing even began; what followed was five months camped on drifting floes, three lifeboats to Elephant Island, then the voyage — Shackleton and five men sailing the 22-foot James Caird eight hundred miles across the worst ocean on earth to South Georgia, navigated by Frank Worsley with a sextant and four sightings, followed by a first-ever crossing of the island's glaciers to reach the whaling station. Every one of the twenty-eight came home.",
+    "The mechanics are studiable: he kept routines and rations theatrically fair, put the malcontents in his own tent, treated optimism as a discipline rather than a mood, and changed the mission's definition the moment reality changed — from crossing a continent to delivering twenty-eight men alive. He died at forty-seven at South Georgia, on the way back down, which is where they buried him, facing south."
+  ],
+  "bio": {
+    "t": "Endurance: Shackleton's Incredible Voyage",
+    "a": "Alfred Lansing",
+    "y": "1959",
+    "why": "Built from the crew's diaries and interviews with the survivors while they lived — narrative history at its absolute best, and still the book to give anyone who leads anything."
+  },
+  "contested": "Lansing is admiring by construction, and the leadership-industry halo since has outrun the record — Roland Huntford's harsher 1985 biography is the counterweight, though Huntford brings his own famous axe. Worsley's navigation, arguably the single greatest feat of the story, is chronically undercredited in the popular versions.",
+  "across": [
+    {
+      "to": "manuals:i",
+      "label": "Field Manual I · Survive first, then bet big",
+      "txt": "— the whole manual, lived in an open boat."
+    }
+  ]
+}

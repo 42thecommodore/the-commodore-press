@@ -1,0 +1,11 @@
+{
+  "_note": "Links that are genuinely http-only. Each needs a reason and the date it was checked, so the validator stays honest instead of silent. Re-check when the note goes stale.",
+  "http://www.incompleteideas.net/IncIdeas/BitterLesson.html": {
+    "why": "Sutton's own page. https serves a self-signed certificate, so browsers refuse it; http is the working link.",
+    "checked": "2026-09-01"
+  },
+  "http://republicofletters.stanford.edu/": {
+    "why": "Stanford's project site redirects https back to http (301).",
+    "checked": "2026-09-01"
+  }
+}

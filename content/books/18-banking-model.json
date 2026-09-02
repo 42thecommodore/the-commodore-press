@@ -1,0 +1,111 @@
+{
+  "id": "banking-model",
+  "keep": "Watch what a classroom trains people to do: receive deposits, or pose problems.",
+  "title": "The Banking Model",
+  "sub": "What teaching does to power",
+  "field": "History",
+  "spineTitle": "The Banking Model",
+  "years": "1963–now",
+  "cover": "#5E2A18",
+  "spineC": "#42200F",
+  "ink": "#FAEDDF",
+  "accent": "#EFB98A",
+  "motif": "dots",
+  "claim": "Education is never neutral: it either domesticates or liberates. Freire's claim, and the fight it started.",
+  "lede": "In 1963, in the Brazilian town of Angicos, some three hundred farm workers learned to read in forty-five days — starting from words they already carried: brick, work, land.",
+  "copy": [
+    "Paulo Freire's literacy method looked simple and wasn't. Instead of primers about Eva seeing the grape, his 'culture circles' began from generative words drawn from the workers' own lives — tijolo, brick, for construction labourers — broken into syllables and rebuilt into new words, while the circle discussed what bricks, work and land meant in their world. Reading arrived welded to the realisation that the world was made, and could be remade. The army noticed. After the 1964 coup Freire was jailed, then exiled for fifteen years.",
+    "'Pedagogy of the Oppressed', written in exile and published in English in 1970, names the enemy: banking education, in which the teacher deposits information into student-accounts who receive, file and store it. The alternative is problem-posing education — teacher and student investigating the world together — and the goal is conscientização: reading the word and the world at once. It became one of the most cited books in all of social science, and the founding text of critical pedagogy.",
+    "The critiques are serious, and not only hostile. The prose is dense with Hegel and hard to operationalise; the method travels badly without Freire-grade practitioners; the romance of 'the oppressed' can flatten the people it honours; and the strongest literacy evidence since points to structured, explicit instruction — deposits, as it were — for the mechanics of decoding. bell hooks, his most productive American inheritor, praised the liberation and named the blind spot: the sexism of the early text, which Freire later acknowledged.",
+    "And it became a culture-war object: assigned in thousands of education schools, banned from Tucson classrooms under Arizona's 2010 ethnic-studies law, waved as both bible and bogeyman by people who show no sign of having read it. Which is itself the cleanest demonstration of his thesis — nobody fights this hard over a neutral technology."
+  ],
+  "timeline": [
+    {
+      "y": "1963",
+      "t": "Angicos: some 300 workers reach basic literacy in 45 days of culture circles."
+    },
+    {
+      "y": "1964",
+      "t": "The military coup; Freire is jailed, then exiled — Bolivia, Chile, Geneva."
+    },
+    {
+      "y": "1968",
+      "t": "'Pedagogia do Oprimido' written in Chile; the English translation follows in 1970."
+    },
+    {
+      "y": "1980",
+      "t": "Freire returns to Brazil after amnesty."
+    },
+    {
+      "y": "1989",
+      "t": "Appointed secretary of education for São Paulo — theory meets a two-million-student system."
+    },
+    {
+      "y": "2010",
+      "t": "Arizona's HB 2281 leads to the book's removal from Tucson's dismantled ethnic-studies programme."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Paulo Freire",
+      "d": "A lawyer turned literacy organiser who treated reading as a political act, and paid for it with exile."
+    },
+    {
+      "n": "Elza Freire",
+      "d": "Teacher and collaborator; the culture-circle method grew out of work they built together."
+    },
+    {
+      "n": "bell hooks",
+      "d": "Carried Freire into the American classroom, kept the liberation, and named the blind spots."
+    }
+  ],
+  "facts": [
+    {
+      "b": "45 days",
+      "s": "From illiterate to reading at Angicos, 1963 — the demonstration that started everything"
+    },
+    {
+      "b": "1970",
+      "s": "'Pedagogy of the Oppressed' appears in English"
+    },
+    {
+      "b": "15 yrs",
+      "s": "Length of Freire's exile after the 1964 coup"
+    }
+  ],
+  "contested": "Almost everything: whether the method scales beyond charismatic practitioners, whether the empirical literacy evidence favours it (structured instruction has the stronger trial record for decoding), whether 'critical pedagogy' as practised keeps any of Freire's discipline, and — from his own allies — the early text's gender politics. The diagnosis wears better than the prescription.",
+  "changed": "I came to Freire as an admirer and left as a friendly witness. 'Education is never neutral' survives every objection I have found; the specific method survives fewer. I now hold the two separately — which, since holding contradictions consciously is what he called critical consciousness, feels like the Freirean move.",
+  "across": [
+    {
+      "to": "lives:gandhi",
+      "label": "Gandhi",
+      "txt": "— the other twentieth-century method whose moral clarity outran its portability."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Pedagogy of the Oppressed",
+      "a": "Paulo Freire, 1970",
+      "u": "https://en.wikipedia.org/wiki/Pedagogy_of_the_Oppressed",
+      "why": "Chapter 2 — the banking model — is the argument; read it before the commentary industry."
+    },
+    {
+      "t": "Teaching to Transgress",
+      "a": "bell hooks",
+      "u": "https://en.wikipedia.org/wiki/Teaching_to_Transgress",
+      "why": "The best sympathetic critique, from inside the tradition."
+    },
+    {
+      "t": "Paulo Freire",
+      "a": "Stanford Encyclopedia of Philosophy",
+      "u": "https://plato.stanford.edu/entries/freire/",
+      "why": "The scholarly map: what he argued, what stuck, what the objections are."
+    },
+    {
+      "t": "Instituto Paulo Freire",
+      "a": "São Paulo",
+      "u": "https://www.paulofreire.org/",
+      "why": "The archive, and what the tradition looks like where it started."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "listening-list",
+  "keep": "Four hours, seven pieces, all free. Start with Hamming, and read rather than skim.",
+  "title": "The Listening List",
+  "sub": "Seven things to put in your ears",
+  "field": "Adjacent",
+  "spineTitle": "The Listening List",
+  "years": "Ongoing",
+  "cover": "#2B3A45",
+  "spineC": "#1C2830",
+  "ink": "#EDF2F5",
+  "accent": "#A9C7D6",
+  "motif": "lines",
+  "claim": "Seven free pieces, about four hours total, disproportionately load-bearing.",
+  "lede": "Talks and essays that reorganised how I think, none of them longer than a commute.",
+  "copy": [
+    "Hamming's 'You and Your Research' is the one to start with — a Bell Labs mathematician explaining, bluntly, why most competent scientists never do important work. They don't work on important problems, they don't keep their door open, and they lack the specific courage required to look stupid on a hard problem in public. Feynman's 'Cargo Cult Science' is its ethical twin.",
+    "Sutton's 'Bitter Lesson' is two pages and has cost the machine learning field a decade of arguments it keeps re-having. Gabriel on why worse is better is the same shape of argument about software, and reading it alongside his later self-rebuttals is more useful than either alone.",
+    "Then the structural pieces: Ritchie's own account of how Unix evolved, Szabo on where money came from before anyone designed it, and Krugman's essay on why comparative advantage is so hard to believe — which is really an essay about why correct ideas fail to spread, and applies far outside economics."
+  ],
+  "facts": [
+    {
+      "b": "7",
+      "s": "Pieces, all free, all online"
+    },
+    {
+      "b": "1974–2019",
+      "s": "Range covered"
+    },
+    {
+      "b": "~4 hrs",
+      "s": "Total, if you read rather than skim"
+    }
+  ],
+  "reading": [
+    {
+      "t": "You and Your Research",
+      "a": "Richard Hamming",
+      "u": "https://www.cs.virginia.edu/~robins/YouAndYourResearch.html",
+      "why": "If you read one thing on this site, this."
+    },
+    {
+      "t": "Cargo Cult Science",
+      "a": "Richard Feynman",
+      "u": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+      "why": "Fifteen minutes, and it recalibrates what counts as honest."
+    },
+    {
+      "t": "The Bitter Lesson",
+      "a": "Rich Sutton",
+      "u": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
+      "why": "Two pages the field keeps having to relearn."
+    },
+    {
+      "t": "The Rise of Worse Is Better",
+      "a": "Richard Gabriel",
+      "u": "https://www.dreamsongs.com/RiseOfWorseIsBetter.html",
+      "why": "Then read the rebuttals he wrote against himself."
+    },
+    {
+      "t": "Shelling Out: The Origins of Money",
+      "a": "Nick Szabo",
+      "u": "https://nakamotoinstitute.org/shelling-out/",
+      "why": "Money before anyone designed money."
+    },
+    {
+      "t": "Ricardo's Difficult Idea",
+      "a": "Paul Krugman",
+      "u": "https://web.mit.edu/krugman/www/ricardo.htm",
+      "why": "Why correct arguments fail to spread. Applies everywhere."
+    },
+    {
+      "t": "The Evolution of the Unix Time-sharing System",
+      "a": "Dennis Ritchie",
+      "u": "https://www.bell-labs.com/usr/dmr/www/hist.html",
+      "why": "Primary source, and short."
+    }
+  ]
+}

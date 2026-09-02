@@ -1,0 +1,34 @@
+{
+  "id": "julius-caesar",
+  "keep": "Learn the template so you recognise it: the strongman who claims to rescue the republic he is dismantling.",
+  "n": "Julius Caesar",
+  "years": "100–44 BCE",
+  "place": "Rome",
+  "field": "Politics & War",
+  "group": "famous",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "rings",
+  "lede": "He turned the Roman Republic into something it could never undo.",
+  "copy": [
+    "A patrician of modest fortune and boundless ambition, Caesar climbed the ladder of Roman politics through debt, charm and audacity, then conquered Gaul in a campaign that killed or enslaved millions and made him the richest and most dangerous man in Rome.",
+    "When the Senate ordered him to disband his army he crossed the Rubicon with a single legion and plunged the Republic into civil war — a phrase that still means a point of no return. Victorious, he ruled as dictator, reformed the calendar we essentially still use, and was stabbed to death by senators hoping to save the Republic. They instead guaranteed its end: within a generation his heir Augustus founded the empire that would carry Caesar's own name forward as a title, surviving in “kaiser” and “tsar”.",
+    "He fascinates because he was at once a literary stylist, a military genius, a populist reformer and a tyrant — the original template for the strongman who claims to rescue a republic he is dismantling."
+  ],
+  "bio": {
+    "t": "Caesar: Life of a Colossus",
+    "a": "Adrian Goldsworthy",
+    "y": "2006",
+    "why": "A military historian by training, Goldsworthy grounds the myth in the realities of Roman politics and warfare — the most complete and readable single-volume life."
+  },
+  "contested": "Goldsworthy is the standard popular life, but he is comparatively sympathetic to his subject and light on the Gallic campaign as atrocity. Historians of the late Republic also differ on how far Caesar's ambition, rather than deeper structural failure, actually caused the collapse.",
+  "across": [
+    {
+      "to": "manuals:iv",
+      "label": "Field Manual IV · The engine and the compass",
+      "txt": "— the case study that makes the distinction necessary."
+    }
+  ]
+}

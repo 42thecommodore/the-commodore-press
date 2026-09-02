@@ -1,0 +1,27 @@
+{
+  "id": "confucius",
+  "keep": "A society is held together by example and reciprocity long before it is held by force.",
+  "n": "Confucius",
+  "years": "551–479 BCE",
+  "place": "China",
+  "field": "Philosophy & Ethics",
+  "group": "famous",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "lines",
+  "lede": "He held no great office, wrote no system of philosophy, and died believing he had failed.",
+  "copy": [
+    "Born into the minor nobility of the small state of Lu during an age of political collapse, the wandering teacher the West calls Confucius spent much of his life as an itinerant adviser, largely ignored by the rulers he hoped to reform. What he left instead was a way of being in the world, recorded by disciples in the terse sayings of the Analects.",
+    "His teaching placed the cultivation of character — ren, humaneness — at the centre of the good life, and insisted that a society is held together not by force but by ritual, reciprocity and the example of those who govern. “Do not impose on others what you yourself do not desire” is the Golden Rule in its earliest recorded negative form.",
+    "For two and a half millennia Confucian thought structured Chinese government, education and family life, and it remains the deep grammar of East Asian culture from Korea to Vietnam. To understand the values of roughly a fifth of humanity, you begin with a disappointed teacher who never knew the scale of his eventual influence."
+  ],
+  "bio": {
+    "t": "The Authentic Confucius: A Life of Thought and Politics",
+    "a": "Annping Chin",
+    "y": "2007",
+    "why": "Chin works only from the most reliable early texts to separate the real man from centuries of legend — lucid, agenda-free, and the best modern starting point in English."
+  },
+  "contested": "The Analects is a layered text compiled over generations, and scholars disagree sharply about which passages plausibly go back to Confucius himself. Any biography is therefore partly a reconstruction; read Chin knowing that the confident 'he said' is doing quiet interpretive work."
+}

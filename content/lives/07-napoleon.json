@@ -1,0 +1,34 @@
+{
+  "id": "napoleon",
+  "keep": "Out-prepare everyone, then commit totally — and keep the ledger of what the committing cost.",
+  "n": "Napoleon Bonaparte",
+  "years": "1769–1821",
+  "place": "France",
+  "field": "War & Statecraft",
+  "group": "famous",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "rings",
+  "lede": "The conqueror is only half the story. The reforms outlasted the wars.",
+  "copy": [
+    "A minor Corsican noble who spoke French with an accent and rose on the chaos of the Revolution, Napoleon made himself master of France and, briefly, of Europe. He was the greatest field commander of his age, fighting some sixty battles and losing only a handful, and his campaigns are still studied in war colleges.",
+    "As First Consul and Emperor he rebuilt the French state: the Napoleonic Code, which rationalized civil law around equality before the law and secure property, still underlies the legal systems of dozens of countries. He centralized administration, founded lycées and the Bank of France, and carried the Revolution's principles — and its contradictions — across the continent on bayonets. His invasion of Russia in 1812 destroyed his army and, eventually, his empire, ending in exile on a speck of rock in the South Atlantic.",
+    "He remains the archetype of the self-made strongman whose reforms outlasted his wars — admired and condemned, often in the same breath."
+  ],
+  "bio": {
+    "t": "Napoleon: A Life",
+    "a": "Andrew Roberts",
+    "y": "2014",
+    "why": "Roberts drew on Napoleon's 33,000 surviving letters and visited dozens of his battlefields. A sweeping, sympathetic but clear-eyed single-volume life that takes the statesman as seriously as the soldier."
+  },
+  "contested": "Roberts is an admirer, and has been criticised for underweighting the human cost of the wars and the reimposition of slavery in the French colonies in 1802. Philip Dwyer's two-volume life is the more critical counterweight; read one against the other rather than either alone.",
+  "across": [
+    {
+      "to": "manuals:iv",
+      "label": "Field Manual IV · Prepare obsessively, then commit",
+      "txt": "— the mechanic worth stealing, separated from the body count."
+    }
+  ]
+}

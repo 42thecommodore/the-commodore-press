@@ -1,0 +1,104 @@
+{
+  "id": "money-is-a-ledger",
+  "keep": "Never ask 'is it money'. Ask whose ledger, what finality, and who can reverse an entry.",
+  "title": "Money Is a Ledger",
+  "sub": "Tally sticks to instant settlement",
+  "field": "Economics",
+  "spineTitle": "Money Is a Ledger",
+  "years": "1100–now",
+  "cover": "#1D4A2C",
+  "spineC": "#12331D",
+  "ink": "#EDF4EC",
+  "accent": "#D5C27C",
+  "motif": "grid",
+  "claim": "The interesting question is never 'is it money'. It's whose ledger, and who can reverse an entry.",
+  "lede": "Money is mostly a record of who owes what to whom. The coins are a rounding error; the accounting is the technology.",
+  "copy": [
+    "The English Exchequer ran on tally sticks for roughly seven centuries: a notched hazel rod split lengthwise, the creditor keeping the longer 'stock' and the state the 'foil', with the grain of the wood making forgery impractical. They circulated as transferable debt — you could sell your claim on the Crown to someone else. When the Treasury finally burned the obsolete stock in 1834, the stoves overheated and took the Palace of Westminster with them, which is the single best fact in the history of accounting.",
+    "The pattern repeats. Medieval bills of exchange moved value across Europe without moving metal, and dodged usury rules while they were at it by hiding the interest in the exchange rate. Correspondent banking is a chain of ledger entries impersonating a payment. What actually changed in the twentieth century was not the nature of money but the settlement latency: days, then overnight batch, then real-time gross settlement, then systems that finalise in seconds.",
+    "Latency is not a technical detail — it's the whole economics. Every hour between 'the payment is made' and 'the payment is final' is an hour in which someone is exposed to someone else's failure, and that exposure has to be capitalised. Compress the window and you free the capital; compress it to zero and you've changed who needs to be a bank.",
+    "So the interesting question about any monetary technology isn't whether it's money. It's whose ledger, what finality, and who has the authority to reverse an entry. Cash is bearer-settled and final on handover. A card payment is a promise that can be clawed back for months. Those are different products wearing the same word, and almost every argument about payments is really an argument about reversibility."
+  ],
+  "timeline": [
+    {
+      "y": "~1100",
+      "t": "The English Exchequer adopts tally sticks; they will circulate as transferable government debt for centuries."
+    },
+    {
+      "y": "1300s",
+      "t": "Bills of exchange let Italian merchant banks move value across Europe without moving metal."
+    },
+    {
+      "y": "1694",
+      "t": "The Bank of England is founded to manage government debt, and issues notes against it."
+    },
+    {
+      "y": "1826",
+      "t": "Tallies are formally abolished. The accumulated sticks sit in storage for eight years."
+    },
+    {
+      "y": "1834",
+      "t": "Burning them overheats the stoves and destroys the Palace of Westminster."
+    },
+    {
+      "y": "1970s–",
+      "t": "Settlement latency collapses: batch, then real-time gross settlement, then instant."
+    }
+  ],
+  "figures": [
+    {
+      "n": "David Graeber",
+      "d": "Anthropologist who put credit before coinage and made the argument popular, if contested in its specifics."
+    },
+    {
+      "n": "Nick Szabo",
+      "d": "Wrote the best short piece on where money comes from before anyone designs it."
+    },
+    {
+      "n": "Walter Bagehot",
+      "d": "Described what a lender of last resort is for, in 1873, and was ignored until it mattered."
+    }
+  ],
+  "facts": [
+    {
+      "b": "~700 yrs",
+      "s": "Duration of the English tally stick system"
+    },
+    {
+      "b": "1834",
+      "s": "Burning the tallies destroys the Palace of Westminster"
+    },
+    {
+      "b": "Seconds",
+      "s": "Modern real-time settlement, down from multi-day float"
+    }
+  ],
+  "contested": "Graeber's 'Debt' popularised the credit-first account and remains contested by economic historians on specifics. The 'myth of barter' claim is well supported by anthropology — no one has found a barter economy that later invented money — but several of his historical set-pieces have been criticised as too neat, and a few are simply wrong on dates.",
+  "changed": "I spent a long time treating monetary debates as debates about the medium. They're almost always debates about finality and reversibility, which is why the same person can want irreversible settlement for their savings and chargebacks on their card and not be contradicting themselves.",
+  "reading": [
+    {
+      "t": "Debt: The First 5,000 Years",
+      "a": "David Graeber",
+      "u": "https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years",
+      "why": "Read it, then read a critical review. Both are worth your time."
+    },
+    {
+      "t": "Shelling Out: The Origins of Money",
+      "a": "Nick Szabo",
+      "u": "https://nakamotoinstitute.org/shelling-out/",
+      "why": "Short, strange, and the best thing written on why collectibles precede currency."
+    },
+    {
+      "t": "Money Changes Everything",
+      "a": "William Goetzmann",
+      "u": "https://press.princeton.edu/books/paperback/9780691178370/money-changes-everything",
+      "why": "The financial-instruments-as-technology view, with the receipts."
+    },
+    {
+      "t": "Tally stick",
+      "a": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tally_stick",
+      "why": "For the mechanism, the stock-and-foil terminology, and the fire."
+    }
+  ]
+}

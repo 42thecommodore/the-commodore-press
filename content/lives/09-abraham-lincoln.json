@@ -1,0 +1,27 @@
+{
+  "id": "abraham-lincoln",
+  "keep": "Patience is a political weapon, and two minutes of the right words can outlive four years of war.",
+  "n": "Abraham Lincoln",
+  "years": "1809–1865",
+  "place": "United States",
+  "field": "Politics & Leadership",
+  "group": "famous",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "lines",
+  "lede": "Roughly a year of formal schooling, and a prose style of biblical economy.",
+  "copy": [
+    "Born in a one-room Kentucky cabin, Lincoln became the president who held the United States together and ended American slavery. Largely self-taught — he read law by firelight — he possessed a political mind of extraordinary patience and cunning.",
+    "Elected in 1860, he watched the nation fracture and then led it through four years of the bloodiest war in its history. The Emancipation Proclamation turned the war into a struggle for freedom; the Gettysburg Address, two minutes long, redefined the country around the proposition that all men are created equal. He pushed the Thirteenth Amendment through Congress to abolish slavery permanently, and was assassinated days after the Confederacy's surrender, before he could shape the peace.",
+    "He endures as the central figure of the American experiment — proof, and also test, of whether a government “of the people, by the people, for the people” can survive its own contradictions."
+  ],
+  "bio": {
+    "t": "Lincoln",
+    "a": "David Herbert Donald",
+    "y": "1995",
+    "why": "A two-time Pulitzer winner's finest single-volume life: strictly evidence-based, following Lincoln's own knowledge at each moment, capturing his growth and his limits. For the cabinet drama, pair it with Doris Kearns Goodwin's Team of Rivals (2005)."
+  },
+  "contested": "Donald's governing thesis — that Lincoln was fundamentally reactive, shaped by events rather than shaping them — is itself an interpretation, and one plenty of historians resist. It is a reading, not a neutral record."
+}

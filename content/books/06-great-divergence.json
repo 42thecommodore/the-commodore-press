@@ -1,0 +1,111 @@
+{
+  "id": "great-divergence",
+  "keep": "Don't ask which explanation is right. Ask which constraint binds in the case in front of you.",
+  "title": "The Great Divergence",
+  "sub": "Why here, why then",
+  "field": "History",
+  "spineTitle": "The Great Divergence",
+  "years": "1500–1900",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "rings",
+  "claim": "The best unsettled argument in economics, and every industrial policy implicitly picks a side.",
+  "lede": "For most of history, living standards barely moved. Then, in one corner of one continent, they did — and the argument about why has not been settled in twenty-five years of trying.",
+  "copy": [
+    "The candidates are all partly right and mutually incompatible. Kenneth Pomeranz argued that Britain and the Yangzi delta were comparably developed until roughly 1750, and that coal in the right place plus New World land — 'ghost acreage' relieving the ecological ceiling — tipped the balance. Robert Allen argued it was relative prices: Britain had expensive labour and cheap energy, so labour-saving machines paid there and nowhere else, which explains why the spinning jenny was adopted in Lancashire and ignored in France.",
+    "Joel Mokyr argued for culture — a European Republic of Letters that made useful knowledge contestable, cumulative and public, and an Industrial Enlightenment connecting the people who theorised to the people who built. Then there are institutions (Acemoglu and Robinson's inclusive property rights and constrained executives), demography and human capital (Gregory Clark's downward mobility of the rich), and the material of empire, slavery and coerced trade, whose contribution to European capital formation is measured very differently by different historians.",
+    "The methodological problem underneath is that these explanations are not independent. Cheap coal makes steam pay, which makes engineering knowledge valuable, which makes a culture of tinkering rewarding, which builds institutions that protect tinkerers. Every account can absorb the others as downstream effects. That's why twenty-five years of excellent scholarship has narrowed the dating without settling the causation.",
+    "What makes this the right obsession is that the stakes are current. Every argument about industrial policy, energy prices, immigration or state capacity is an implicit bet on one of these explanations. If Allen is right, relative prices drive invention and energy costs are the policy lever. If Mokyr is right, the lever is who is allowed to argue with whom, and how cheaply ideas cross borders."
+  ],
+  "timeline": [
+    {
+      "y": "1750",
+      "t": "Pomeranz's estimated point of rough parity between Britain and the most advanced regions of China."
+    },
+    {
+      "y": "1776",
+      "t": "Watt's separate-condenser engine goes commercial — economic only where coal is cheap and labour dear."
+    },
+    {
+      "y": "1800s",
+      "t": "British real wages and energy prices diverge sharply from continental and Asian comparators."
+    },
+    {
+      "y": "2000",
+      "t": "Pomeranz publishes 'The Great Divergence' and names the debate."
+    },
+    {
+      "y": "2009",
+      "t": "Allen's 'The British Industrial Revolution in Global Perspective' puts relative prices at the centre."
+    },
+    {
+      "y": "2016",
+      "t": "Mokyr's 'A Culture of Growth' makes the case for the market for ideas."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Kenneth Pomeranz",
+      "d": "Historian of China who reframed the question by taking Asian development seriously as a baseline."
+    },
+    {
+      "n": "Robert C. Allen",
+      "d": "Reconstructed centuries of wage and price series, then argued the invention followed the prices."
+    },
+    {
+      "n": "Joel Mokyr",
+      "d": "Argues the decisive variable was a culture in which useful knowledge could be contested and shared."
+    }
+  ],
+  "facts": [
+    {
+      "b": "~1750",
+      "s": "Pomeranz's dating of comparable Anglo–Chinese development"
+    },
+    {
+      "b": "3",
+      "s": "Live explanations still standing: coal and colonies, relative prices, culture"
+    },
+    {
+      "b": "2000",
+      "s": "Pomeranz's book names the debate — unresolved a quarter century later"
+    }
+  ],
+  "contested": "Nearly all of it. Pomeranz's late-divergence dating has been challenged by wage, height and consumption data suggesting a gap opened earlier. Allen's price series are disputed at the seams. Clark's mechanism is the least accepted of the major accounts. Anyone who tells you it's solved is selling something.",
+  "changed": "I used to want a single cause and treated the debate as a horse race. I now think the honest position is that these are complements with a plausible feedback loop, and that the useful question isn't 'which one' but 'which one is the binding constraint in the case in front of me'.",
+  "across": [
+    {
+      "to": "press:movable-type",
+      "label": "Movable Type",
+      "txt": "— the one place in this debate where a natural experiment exists."
+    }
+  ],
+  "reading": [
+    {
+      "t": "The Great Divergence: China, Europe, and the Making of the Modern World Economy",
+      "a": "Kenneth Pomeranz",
+      "u": "https://press.princeton.edu/books/paperback/9780691217185/the-great-divergence",
+      "why": "Start here — it sets the terms everyone else argues in."
+    },
+    {
+      "t": "The British Industrial Revolution in Global Perspective",
+      "a": "Robert C. Allen",
+      "u": "https://www.nuff.ox.ac.uk/economics/history/Paper115/allen115.pdf",
+      "why": "The strongest mechanical account: prices in, machines out. This is his later restatement."
+    },
+    {
+      "t": "A Culture of Growth",
+      "a": "Joel Mokyr",
+      "u": "https://press.princeton.edu/books/hardcover/9780691168883/a-culture-of-growth",
+      "why": "The best case that the causal variable is intellectual, not material."
+    },
+    {
+      "t": "Random thoughts on critiques of Allen's theory",
+      "a": "pseudoerasmus",
+      "u": "https://pseudoerasmus.com/2016/12/01/allen/",
+      "why": "An unusually good survey of where the empirical objections actually bite."
+    }
+  ]
+}

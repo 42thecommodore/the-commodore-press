@@ -1,0 +1,32 @@
+[
+  {
+    "id": "found",
+    "label": "Founders & Operators",
+    "angle": -90
+  },
+  {
+    "id": "market",
+    "label": "Markets & Capital",
+    "angle": -30
+  },
+  {
+    "id": "mind",
+    "label": "Mind, Body & Behavior",
+    "angle": 30
+  },
+  {
+    "id": "craft",
+    "label": "Craft & Creation",
+    "angle": 90
+  },
+  {
+    "id": "recov",
+    "label": "Recovery & Resilience",
+    "angle": 150
+  },
+  {
+    "id": "inner",
+    "label": "Inner Work & Nature",
+    "angle": 210
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "id": "republic-of-letters",
+  "keep": "Make contribution legible and cheating expensive. The procedure is downstream of the culture.",
+  "title": "The Republic of Letters",
+  "sub": "The network before the network",
+  "field": "History",
+  "spineTitle": "The Republic of Letters",
+  "years": "1500–1800",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "lines",
+  "claim": "Peer review was invented as an administrative convenience by an overworked secretary.",
+  "lede": "Before there were journals or universities that mattered, European natural philosophers built a postal network with norms — and the norms were the technology.",
+  "copy": [
+    "Letters crossed borders and confessional lines carrying observations, instruments, seeds, recipes and disputes. Membership was earned by contribution rather than birth, correspondence was expected to be answered, priority disputes were adjudicated in public, and claims were supposed to be checkable by someone else. Henry Oldenburg, running the Royal Society's correspondence, sent submitted manuscripts out to knowledgeable readers before publishing them — inventing peer review as a way of managing his own workload.",
+    "Mokyr's argument is that this market for ideas — competitive, transnational, and insulated from any single sovereign's ability to shut it down — is what made the Industrial Enlightenment possible. Political fragmentation was the feature, not the bug: a scholar censored in one state moved to another and kept publishing, so no single bad decision could propagate. On this account China's greater political unity meant that when the centre decided something, it decided it everywhere.",
+    "The mechanism worth stealing is that the network made contribution legible and cheating expensive. Your reputation was your only asset, it was held by people you would never meet, and it could be destroyed in public by anyone who tried to reproduce your result and failed. Latin as a shared working language and the postal system as shared infrastructure did the rest.",
+    "The recognisable part is how much of modern science's social machinery — citation, priority, replication, reputation as currency — was invented by people writing letters, and how fragile it turned out to be once the volume rose. Every institution since has had to re-solve the same problem: how do you make contribution legible when there are too many contributors to know personally?"
+  ],
+  "timeline": [
+    {
+      "y": "1417",
+      "t": "Poggio Bracciolini recovers Lucretius; the humanist letter network is already doing the work of a library."
+    },
+    {
+      "y": "1662",
+      "t": "The Royal Society receives its charter; Oldenburg becomes its secretary and correspondence hub."
+    },
+    {
+      "y": "1665",
+      "t": "Philosophical Transactions is founded — the first scientific journal, and still running."
+    },
+    {
+      "y": "1660s–",
+      "t": "Oldenburg begins sending manuscripts to expert readers before publication: peer review, as an office practice."
+    },
+    {
+      "y": "1751–72",
+      "t": "The Encyclopédie compiles the network's output and gets banned twice, which slows it not at all."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Henry Oldenburg",
+      "d": "Secretary of the Royal Society and the single busiest node in seventeenth-century European science."
+    },
+    {
+      "n": "Marin Mersenne",
+      "d": "A friar in Paris who functioned as a human router between Descartes, Fermat, Galileo and Hobbes."
+    },
+    {
+      "n": "Maria Sibylla Merian",
+      "d": "Naturalist and illustrator whose work travelled the network on its merits at a time when very little by women did."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1665",
+      "s": "Philosophical Transactions founded — the first and longest-running scientific journal"
+    },
+    {
+      "b": "1662",
+      "s": "The Royal Society receives its charter; Oldenburg runs the correspondence"
+    },
+    {
+      "b": "20,000",
+      "s": "Letters in the CKCC corpus of 17th-century Dutch scholarly correspondence"
+    }
+  ],
+  "contested": "The fragmentation-was-good thesis has an obvious dark twin — fragmentation also produced centuries of European war — and comparative claims about Chinese intellectual life often rest on far thinner sources than the European side of the comparison. The counterfactual is doing heavy lifting.",
+  "changed": "I thought of peer review as a modern quality-control invention. It started as one man's inbox management, and the norms that made it work — public priority, checkable claims, reputation staked on being right — came first. The procedure is downstream of the culture, which is worth remembering when people propose fixing science by changing the procedure.",
+  "across": [
+    {
+      "to": "lives:isaac-newton",
+      "label": "Isaac Newton",
+      "txt": "— the network's most productive and least cooperative member."
+    }
+  ],
+  "reading": [
+    {
+      "t": "A Culture of Growth: The Origins of the Modern Economy",
+      "a": "Joel Mokyr",
+      "u": "https://press.princeton.edu/books/hardcover/9780691168883/a-culture-of-growth",
+      "why": "The economic argument for why an ideas market mattered more than any single idea."
+    },
+    {
+      "t": "Mapping the Republic of Letters",
+      "a": "Stanford University",
+      "u": "http://republicofletters.stanford.edu/",
+      "why": "See the network as a network. The visualisations change your intuitions about who mattered."
+    },
+    {
+      "t": "Leviathan and the Air-Pump",
+      "a": "Shapin & Schaffer",
+      "u": "https://press.princeton.edu/books/paperback/9780691178165/leviathan-and-the-air-pump",
+      "why": "On how 'a fact' got socially constructed as a category."
+    },
+    {
+      "t": "The Invention of Science",
+      "a": "David Wootton",
+      "u": "https://en.wikipedia.org/wiki/David_Wootton_(historian)",
+      "why": "Wootton argues against Shapin. Read them as a pair or don't bother."
+    }
+  ]
+}

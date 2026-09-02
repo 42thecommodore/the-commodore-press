@@ -1,0 +1,34 @@
+{
+  "id": "norman-borlaug",
+  "keep": "Applied science, done patiently in a field, can change the fate of nations.",
+  "n": "Norman Borlaug",
+  "years": "1914–2009",
+  "place": "United States",
+  "field": "Agriculture",
+  "group": "obscure",
+  "cover": "#3E6B3A",
+  "spineC": "#294A26",
+  "ink": "#EEF6EC",
+  "accent": "#C3DEB4",
+  "motif": "grid",
+  "lede": "Frequently called the man who saved more human lives than anyone who has ever lived — and most people have never heard of him.",
+  "copy": [
+    "An Iowa farm boy and plant pathologist, Borlaug spent the 1940s and 50s in Mexico crossbreeding thousands of wheat varieties to create high-yielding, disease-resistant, short-stalked strains that could carry heavy heads of grain without toppling.",
+    "When famine threatened India and Pakistan in the 1960s, his wheat — paired with modern methods — roughly doubled harvests within years and turned looming mass starvation into self-sufficiency. This was the Green Revolution, and it spread across Asia and Latin America. Estimates of the lives it saved from starvation run to a billion or more.",
+    "He won the Nobel Peace Prize in 1970 and spent his remaining decades fighting hunger in Africa and defending agricultural science against critics, while acknowledging the environmental trade-offs of intensive farming. Borlaug is the quiet patron saint of the idea that applied science, done patiently in the field, can change the fate of nations."
+  ],
+  "bio": {
+    "t": "The Man Who Fed the World",
+    "a": "Leon Hesser",
+    "y": "2006",
+    "why": "Hesser, an agricultural economist who worked alongside Borlaug in Pakistan, wrote the authorized biography with first-hand knowledge of the work. Warmly written and the fullest popular account."
+  },
+  "contested": "An authorized biography by a colleague is not an independent one. The 'saved a billion lives' figure is an estimate, and the Green Revolution's critics — on water depletion, fertiliser runoff, seed dependency and the concentration of gains among larger landholders — make arguments Hesser does not seriously engage. Both the achievement and the critique are real.",
+  "across": [
+    {
+      "to": "lives:fritz-haber",
+      "label": "Fritz Haber",
+      "txt": "— none of Borlaug's yields exist without Haber's nitrogen. The two entries are one story."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "theodore-roosevelt",
+  "keep": "The body, then the persona, then the office — agency can be manufactured, and audited.",
+  "n": "Theodore Roosevelt",
+  "years": "1858–1919",
+  "place": "United States",
+  "field": "Politics & Vigour",
+  "group": "famous",
+  "cover": "#4E5A2A",
+  "spineC": "#38411D",
+  "ink": "#F2F5E8",
+  "accent": "#D3E09E",
+  "motif": "dots",
+  "lede": "An asthmatic child built himself a body, then a persona, then a presidency — the most deliberate self-construction in American politics.",
+  "copy": [
+    "Told as a sickly boy that he had the mind but not the body, he made the body in a home gymnasium, and never stopped performing the result: boxing in the White House, eighteen-mile hikes for ambassadors, the 'strenuous life' as public doctrine. After his wife and mother died on the same day in 1884, he vanished into the Dakota Badlands as a working rancher — the grief-forged interlude that turned a Manhattan dandy into a plausible national character.",
+    "The career ran on velocity: reforming police commissioner, Rough Rider, governor, vice-president, and — after McKinley's assassination in 1901 — the youngest president in American history at forty-two. In office he sued the Northern Securities trust and won, brokered the coal strike as an honest broker between labour and capital, built the Panama Canal by means still argued about, and took the Nobel Peace Prize for ending the Russo-Japanese war.",
+    "The permanent legacy is land: some 230 million acres protected — national forests, parks, monuments, refuges — much of it by executive stroke under the Antiquities Act he signed in 1906. The record has its shadows, imperial and racial, and the conservation itself is now honestly told as entangled with dispossession. He remains the reference case for manufactured agency: the 'man in the arena' speech is autobiography disguised as philosophy."
+  ],
+  "bio": {
+    "t": "The Rise of Theodore Roosevelt",
+    "a": "Edmund Morris",
+    "y": "1979",
+    "why": "The Pulitzer-winning first volume of the trilogy, covering the self-construction up to the presidency — biography with the momentum of a novel. Continue with 'Theodore Rex' if the appetite holds."
+  },
+  "contested": "Morris is openly captivated by his subject, and the trilogy's admiration is part of its engine; the imperialism, the race views, and conservation's cost to native peoples get their full weight only in more recent scholarship. Read Morris for the arc, and the newer work for the bill.",
+  "across": [
+    {
+      "to": "manuals:iv",
+      "label": "Field Manual IV · The Operators",
+      "txt": "— the engine at full throttle, and the standing argument about the compass."
+    }
+  ]
+}

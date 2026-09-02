@@ -1,0 +1,482 @@
+[
+  {
+    "name": "Boyd Varty",
+    "domain": "inner",
+    "role": "Lion tracker; author, The Lion Tracker's Guide to Life",
+    "take": "Attention is the discipline of the tracker. The information is there — you have to teach yourself to see it.",
+    "p": [
+      "track",
+      "hard",
+      "connect",
+      "story",
+      "disc"
+    ],
+    "kept": [
+      "I don't know where we are going, but I know exactly how to get there.",
+      "Let the natural world be your teacher.",
+      "Things that looked like the end of people so often turn out to be the catalyst of their growth.",
+      "A great danger is the danger of no danger."
+    ]
+  },
+  {
+    "name": "Joe Hudson",
+    "domain": "inner",
+    "role": "Executive coach; Art of Accomplishment",
+    "take": "Self-understanding beats self-improvement. What you're ashamed of, you keep doing — so stop hiding it.",
+    "p": [
+      "hard",
+      "connect",
+      "shame",
+      "quit",
+      "track"
+    ],
+    "kept": [
+      "Anything you can get defensive about is true.",
+      "Unspoken expectations are premeditated resentments.",
+      "If you can't say no easily, you can't be trusted.",
+      "You guarantee failure privately by not exposing yourself to failure publicly."
+    ]
+  },
+  {
+    "name": "David Sutcliffe",
+    "domain": "inner",
+    "role": "Actor turned somatic coach",
+    "take": "External validation won't fill an internal void. The satisfaction is in the climb, not the summit.",
+    "p": [
+      "track",
+      "hard"
+    ],
+    "kept": [
+      "Extreme ownership: the buck stops here.",
+      "Take risks, take action — if it isn't working, try a different approach.",
+      "Just a walk can solve most of your problems.",
+      "We are not meant to be happy so much as to try — the satisfaction is in the climb."
+    ]
+  },
+  {
+    "name": "Adam Lane Smith",
+    "domain": "inner",
+    "role": "Psychotherapist; attachment",
+    "take": "You're built for challenge, not complication. Streamline the life — and you aren't meant to do it solo.",
+    "p": [
+      "connect",
+      "hard",
+      "track"
+    ],
+    "kept": [
+      "You are built for challenge, not complication — simplify the life.",
+      "There is no such thing as overworked, only under-rested.",
+      "When you're stuck, go to people who can show the way. Nobody is meant to operate solo."
+    ]
+  },
+  {
+    "name": "James Sexton",
+    "domain": "inner",
+    "role": "Trial lawyer; on relationships & human nature",
+    "take": "People want to know the rules. The real work is saying the thing you're not saying out loud.",
+    "p": [
+      "connect",
+      "track",
+      "memento"
+    ]
+  },
+  {
+    "name": "Michael Easter",
+    "domain": "mind",
+    "role": "Author, The Comfort Crisis & Scarcity Brain",
+    "take": "Almost everything that makes you better is hard. Choose to be slightly uncomfortable, on purpose.",
+    "p": [
+      "misogi",
+      "hard",
+      "quit",
+      "connect"
+    ],
+    "kept": [
+      "The vast majority of things that are good for us are hard.",
+      "We can spend our dopamine or invest it.",
+      "Boredom is a signal that the return on investment is running thin.",
+      "If you want to do things other people don't do, you have to do things other people aren't doing."
+    ]
+  },
+  {
+    "name": "Richard Thaler",
+    "domain": "mind",
+    "role": "Nobel laureate; behavioral economics",
+    "take": "Make what you want less of harder, and what you want more of easier. Design your own defaults.",
+    "p": [
+      "misogi"
+    ],
+    "kept": [
+      "Make it hard to do what you want less of, and easy to do what you want more of.",
+      "People save when a structure saves for them — design the default.",
+      "What is obvious to me that is not obvious to others?",
+      "The more bidders there are, the less you should bid."
+    ]
+  },
+  {
+    "name": "Andy Galpin",
+    "domain": "mind",
+    "role": "Exercise physiologist",
+    "take": "Adaptation is a byproduct of stress. If you want to change, you have to impose the demand.",
+    "p": [
+      "misogi",
+      "disc"
+    ],
+    "kept": [
+      "Adaptation happens as a byproduct of stress — impose the demand.",
+      "The primary driver of strength is intensity; of muscle, volume.",
+      "Soreness is not the measure of a good workout."
+    ]
+  },
+  {
+    "name": "Sahil Bloom",
+    "domain": "mind",
+    "role": "Writer; The 5 Types of Wealth",
+    "take": "Time is the asset of incalculable value. The billionaire would trade it all to be where you are now.",
+    "p": [
+      "memento",
+      "misogi",
+      "connect"
+    ],
+    "kept": [
+      "Time is life's toothpaste: you squeeze hardest when there's least left.",
+      "People are like bikes — stationary they're hard to steer, moving they're easy.",
+      "You cannot answer the big questions of life standing still.",
+      "Friends come as leaves, branches, and roots. Know which is which."
+    ]
+  },
+  {
+    "name": "Scott Galloway",
+    "domain": "mind",
+    "role": "NYU professor; Prof G",
+    "take": "Every great yes comes after a lot of no's. Control what you can and take as many shots as you can.",
+    "p": [
+      "hard",
+      "connect",
+      "bet"
+    ],
+    "kept": [
+      "Focus on the things you can control, and take as many shots as you can.",
+      "People are flawed — put away the scorecard and work from there.",
+      "What if the way you are going is actually okay?"
+    ]
+  },
+  {
+    "name": "Jason Calacanis",
+    "domain": "found",
+    "role": "Angel investor; This Week in Startups",
+    "take": "The system is so easy to win — why cheat? Have cool friends and build cool things.",
+    "p": [
+      "bet",
+      "connect",
+      "quit"
+    ],
+    "kept": [
+      "Once you're lucky, twice you're good.",
+      "Find your format, then iterate relentlessly.",
+      "When I challenge you I'm not disagreeing — I'm helping you sharpen the position.",
+      "Construct your life around what pulls you out of bed."
+    ]
+  },
+  {
+    "name": "Tommy Mello",
+    "domain": "found",
+    "role": "Founder, A1 Garage; home-service operator",
+    "take": "Do more than others — if it's easy, everyone's doing it. Share a future with people, not a past.",
+    "p": [
+      "quit",
+      "story",
+      "misogi"
+    ],
+    "kept": [
+      "Revenue is for vanity, profit is for sanity.",
+      "Just go for no — don't fear rejection.",
+      "Negotiate for things you don't think are possible.",
+      "Don't set a yearly goal; set weekly and monthly ones."
+    ]
+  },
+  {
+    "name": "Josh Stech",
+    "domain": "found",
+    "role": "Co-founder, Sundae",
+    "take": "Equity is selling pieces of yourself — the most valuable thing you own. Learn to sell. It's when, not if.",
+    "p": [
+      "bet",
+      "misogi",
+      "story"
+    ],
+    "kept": [
+      "Tough decisions, easy life; easy decisions, tough life — Jerzy Gregorek's line.",
+      "Early metrics can't be results; measure activity.",
+      "You are the average of the five people you spend the most time with, so pick people who leave you no option but to rise."
+    ]
+  },
+  {
+    "name": "Maor Shlomo",
+    "domain": "found",
+    "role": "Founder, Base44",
+    "take": "Build something you actually use. Building in public and giving credit worked extremely well.",
+    "p": [
+      "public",
+      "bet",
+      "quit"
+    ],
+    "kept": [
+      "Build something you actually use.",
+      "Ask daily: what do I need to work on, and what do I want to work on?",
+      "Don't be afraid of feedback."
+    ]
+  },
+  {
+    "name": "Mike Jones",
+    "domain": "found",
+    "role": "Investor/operator; Science Inc.",
+    "take": "The strength of a founder is building with people smarter than you. Purpose is not optional.",
+    "p": [
+      "connect",
+      "story"
+    ],
+    "kept": [
+      "Mercenary versus missionary founder — know which one you are.",
+      "Be good at asking for help.",
+      "It's not what I did previously; it's what am I going to do."
+    ]
+  },
+  {
+    "name": "John Morgan",
+    "domain": "found",
+    "role": "Operator; brand builder",
+    "take": "If work feels like play, it gets easier. Hunt with your hobbies. Sell the sizzle, not the steak.",
+    "p": [
+      "quit",
+      "story"
+    ],
+    "kept": [
+      "Failure can be your friend — do things you're interested in.",
+      "When work isn't work, you're a lot better at it. Hunt with your hobbies.",
+      "Bullets before bombs."
+    ]
+  },
+  {
+    "name": "Furqan Rydhan",
+    "domain": "found",
+    "role": "Founder/engineer",
+    "take": "Impatient with action, patient with results. Take the risks with the biggest leverage — survive first.",
+    "p": [
+      "quit",
+      "public",
+      "bet"
+    ],
+    "kept": [
+      "Impatient with action, patient with results.",
+      "For emerging tech there is only one rule: survive.",
+      "Think, decide, act — and shrink the delay before act."
+    ]
+  },
+  {
+    "name": "Daniel Broukhim",
+    "domain": "found",
+    "role": "Co-founder & co-CEO, FabFitFun",
+    "take": "Pivoted an agency into a membership platform without ego. Build the muscle, then the machine.",
+    "p": [
+      "bet",
+      "story",
+      "misogi"
+    ]
+  },
+  {
+    "name": "Reid Hoffman",
+    "domain": "found",
+    "role": "Co-founder, LinkedIn; Masters of Scale",
+    "take": "To build something big you do things that don't scale — right up until the day you have to scale them.",
+    "p": [
+      "bet",
+      "public",
+      "story"
+    ]
+  },
+  {
+    "name": "William Hockey",
+    "domain": "market",
+    "role": "Co-founder, Plaid & Column",
+    "take": "Good founders bet on themselves and take extreme risk. Find the boring thing you'll stay curious about for a decade.",
+    "p": [
+      "bet",
+      "quit"
+    ],
+    "kept": [
+      "Good founders bet on themselves and take extreme risk.",
+      "Venture money is like heroin — don't optimise the company for raising.",
+      "Find the most boring thing you can stay interested in for decades.",
+      "Resilience and persistence."
+    ]
+  },
+  {
+    "name": "Chris Camillo",
+    "domain": "market",
+    "role": "Investor; social arbitrage",
+    "take": "Don't cut your flowers to water your weeds. Compete only where you have an unfair, specific edge.",
+    "p": [
+      "quit",
+      "bet",
+      "misogi"
+    ],
+    "kept": [
+      "Don't cut your flowers to water your weeds.",
+      "Compete only where you have a specific, unfair advantage.",
+      "The riskiest thing you can do is spend this year standing where you stood last year."
+    ]
+  },
+  {
+    "name": "Mark Bertolini",
+    "domain": "market",
+    "role": "Former CEO, Aetna; co-CEO, Oscar Health",
+    "take": "Courage is moving without perfect information. Never waste a good crisis — there's opportunity in everything.",
+    "p": [
+      "memento",
+      "story",
+      "backup"
+    ],
+    "kept": [
+      "I thought I was right all the time; really I was right about a third of it. The point is deciding and moving.",
+      "Nothing should stay the same unless it stands on its own — challenge everything.",
+      "Never count anyone else's money.",
+      "Never waste a good crisis."
+    ]
+  },
+  {
+    "name": "Chris Josephs",
+    "domain": "market",
+    "role": "Co-founder, Autopilot",
+    "take": "Turned a transparency project into a product. Sunlight as strategy — memes made a dry issue land.",
+    "p": [
+      "public",
+      "story"
+    ],
+    "kept": [
+      "Sunlight as strategy: turn a transparency project into distribution.",
+      "Memes made a dry issue land with an audience that reads nothing else."
+    ]
+  },
+  {
+    "name": "Damon West",
+    "domain": "recov",
+    "role": "Author, The Coffee Bean; speaker",
+    "take": "Be the coffee bean — change the water you're in. Habits are the promises you keep to yourself.",
+    "p": [
+      "backup",
+      "disc"
+    ],
+    "kept": [
+      "Be the coffee bean — change the pot you're in.",
+      "You don't have to win every fight, but you have to fight every fight.",
+      "Find a way to do your time; don't let your time do you.",
+      "Integrity is what you do when no one is watching."
+    ]
+  },
+  {
+    "name": "Michael Chernow",
+    "domain": "recov",
+    "role": "Restaurateur; Kreatures of Habit",
+    "take": "On the other side of fear is freedom — so look for the fear. The one job in life: get back up.",
+    "p": [
+      "hard",
+      "shame",
+      "track",
+      "backup"
+    ],
+    "kept": [
+      "The hard way is the right way.",
+      "Anybody can change, anytime. Period.",
+      "Don't leave before the miracle happens.",
+      "On the other side of fear is freedom — look for the fear."
+    ]
+  },
+  {
+    "name": "Matt Boda",
+    "domain": "recov",
+    "role": "Filmmaker",
+    "take": "You're never alone and you're going to be okay. Being helpful to others is how you help yourself.",
+    "p": [
+      "backup",
+      "connect"
+    ],
+    "kept": [
+      "Being helpful to others is how you help yourself.",
+      "The only thing bigger than a drink or a drug was a dream.",
+      "Beyond all the connections — what can you, yourself, provide?"
+    ]
+  },
+  {
+    "name": "Teddy Tarantino",
+    "domain": "recov",
+    "role": "Long-term thinking",
+    "take": "Better to be clean dreaming about using than using dreaming about being clean. Follow your word.",
+    "p": [
+      "disc",
+      "backup"
+    ],
+    "kept": [
+      "Do the hard thing; do the right thing.",
+      "Every single relationship has boundaries.",
+      "Long-term thinking: do things for the long term, and follow your word."
+    ]
+  },
+  {
+    "name": "Jeremy London",
+    "domain": "recov",
+    "role": "Surgeon; discipline & consistency",
+    "take": "Dealing with fear is temporary; dealing with regret is permanent. Once you start, consistency compounds.",
+    "p": [
+      "disc",
+      "misogi",
+      "backup"
+    ],
+    "kept": [
+      "Dealing with fear is temporary; dealing with regret is permanent.",
+      "Be good every day rather than great every so often.",
+      "Only doing the work gets the work done.",
+      "Health is wealth — you can't buy back time."
+    ]
+  },
+  {
+    "name": "Brandon Novak",
+    "domain": "recov",
+    "role": "Author & speaker",
+    "take": "From total wreckage back to purpose. The point was never the fall — it's the daily decision to rebuild.",
+    "p": [
+      "backup",
+      "connect"
+    ]
+  },
+  {
+    "name": "Fred Again",
+    "domain": "craft",
+    "role": "Musician & producer",
+    "take": "Do the unconventional thing that works for you. You won't make the best thing every time — but make something.",
+    "p": [
+      "quit",
+      "track"
+    ],
+    "kept": [
+      "Do the unconventional thing that works for you.",
+      "You won't make the best thing every time — but make something.",
+      "Becoming an expert, and seeing someone as an expert, is beautiful."
+    ]
+  },
+  {
+    "name": "Sebastian Stan",
+    "domain": "craft",
+    "role": "Actor",
+    "take": "Step out and feel it — face the music. Life is lived in the gray; it can be both.",
+    "p": [
+      "hard",
+      "track"
+    ],
+    "kept": [
+      "Step out and feel it — face the music.",
+      "Life is lived in the gray; it can be both.",
+      "Rejection is healthy: coming back up."
+    ]
+  }
+]

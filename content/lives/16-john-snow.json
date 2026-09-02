@@ -1,0 +1,34 @@
+{
+  "id": "john-snow",
+  "keep": "Map the deaths house by house. Data collected with your own shoes beats a beautiful theory.",
+  "n": "John Snow",
+  "years": "1813–1858",
+  "place": "England",
+  "field": "Medicine & Epidemiology",
+  "group": "obscure",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "grid",
+  "lede": "The science that tracks every epidemic — including the most recent pandemic — effectively begins with him.",
+  "copy": [
+    "A self-made physician and pioneering anesthesiologist who gave Queen Victoria chloroform in childbirth, Snow rejected the reigning theory that cholera spread through foul air, or “miasma”.",
+    "During a savage 1854 outbreak in London's Soho he did something radical: he gathered data. He mapped the deaths house by house and found them clustered around a single public water pump on Broad Street. He persuaded the parish authorities to remove the pump handle — years before the germ that causes cholera was even seen.",
+    "Snow died at forty-five, his water theory still disputed. But his method — reasoning from carefully collected population data to the cause of disease — founded modern epidemiology and has since saved more lives than almost any battlefield victory."
+  ],
+  "bio": {
+    "t": "The Ghost Map",
+    "a": "Steven Johnson",
+    "y": "2006",
+    "why": "Turns the 1854 Broad Street outbreak into a gripping detective story, following Snow and the local curate Henry Whitehead as they crack the case. It doubles as a meditation on cities, data and disease."
+  },
+  "contested": "The story everyone tells — Snow removed the handle and stopped the outbreak — is not what the evidence shows. Whitehead's own data had fatal attacks falling from 142 on 1 September to 14 by 8 September, the day the handle came off: the outbreak was already collapsing. Snow himself never claimed the removal ended it. Whitehead's argument was subtler and better — that removal probably prevented a second outbreak, since the index case's father fell ill that same day.",
+  "across": [
+    {
+      "to": "press:being-wrong",
+      "label": "Being Wrong Productively",
+      "txt": "— the founding case of the method, and a founding case of a story told better than its evidence."
+    }
+  ]
+}

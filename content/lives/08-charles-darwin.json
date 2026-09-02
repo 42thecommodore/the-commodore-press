@@ -1,0 +1,34 @@
+{
+  "id": "charles-darwin",
+  "keep": "Spend twenty years looking for what would refute you. Then publish.",
+  "n": "Charles Darwin",
+  "years": "1809–1882",
+  "place": "England",
+  "field": "Science",
+  "group": "famous",
+  "cover": "#1D4A2C",
+  "spineC": "#12331D",
+  "ink": "#EDF4EC",
+  "accent": "#D5C27C",
+  "motif": "grid",
+  "lede": "He spent more than twenty years quietly amassing evidence before he dared publish, knowing the storm it would bring.",
+  "copy": [
+    "Darwin changed humanity's understanding of its own place in nature more profoundly than any thinker since Copernicus. A comfortable, cautious gentleman-naturalist, he spent five years circling the globe aboard HMS Beagle, then two decades gathering evidence.",
+    "On the Origin of Species (1859) proposed that all living things descend, with modification, from common ancestors, and that the engine of this branching is natural selection: heritable variation winnowed by the struggle to survive and reproduce. The idea needed no designer to explain the appearance of design, and it reorganized biology into a single connected science. Everything from medicine to ecology to genetics now rests on it.",
+    "He was a meticulous, almost obsessive observer — of barnacles, earthworms, orchids, pigeons — and a gentle, anxious man tormented by the implications of his own theory. That tension between the modest naturalist and the world-shaking idea is the heart of his story."
+  ],
+  "bio": {
+    "t": "Charles Darwin: Voyaging and The Power of Place (2 vols.)",
+    "a": "Janet Browne",
+    "y": "1995 / 2002",
+    "why": "By near-universal agreement the biography against which all others are judged. It places the science inside the full texture of Darwin's domestic life, networks and Victorian world."
+  },
+  "contested": "There is unusually little to dispute here — Browne is the consensus standard. The only real caveat is length: two volumes, and no one-volume substitute is nearly as good.",
+  "across": [
+    {
+      "to": "press:being-wrong",
+      "label": "Being Wrong Productively",
+      "txt": "— twenty years of looking for what would refute him is the discipline, made flesh."
+    }
+  ]
+}

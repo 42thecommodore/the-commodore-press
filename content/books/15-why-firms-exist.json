@@ -1,0 +1,111 @@
+{
+  "id": "why-firms-exist",
+  "keep": "Don't reorganise. Lower the cost of specifying and verifying the work, and the boundary moves itself.",
+  "title": "Why Firms Exist",
+  "sub": "Coase's undergraduate essay",
+  "field": "Economics",
+  "spineTitle": "Why Firms Exist",
+  "years": "1937–now",
+  "cover": "#5B2C6F",
+  "spineC": "#411F50",
+  "ink": "#F5EDF8",
+  "accent": "#DCB8EC",
+  "motif": "conic",
+  "claim": "If markets allocate so well, why is your company not a market? Coase asked at 21.",
+  "lede": "Economics spent a century explaining why markets allocate resources efficiently without noticing that inside every firm, markets have been abolished and replaced by orders.",
+  "copy": [
+    "Coase's question in 1937 is embarrassingly simple. If the price mechanism is the efficient way to coordinate production, why does anyone employ anybody? Why not contract for every task, every hour, in an open market? The answer is that using the market is not free. There are costs to discovering prices, negotiating terms, writing contracts, keeping secrets and enforcing agreements — and when those transaction costs exceed the cost of just telling someone what to do, you get a firm. The boundary of the firm sits exactly where those two costs cross.",
+    "Coase wrote it as, in his words, little more than an undergraduate essay, and it was largely ignored for thirty years before becoming one of the most cited papers in economics and earning him the Nobel in 1991. Oliver Williamson turned transaction costs into an operational theory of governance — why you buy some inputs and make others, especially when an asset is specific to one relationship and therefore hostage to it. Hart and Holmström then asked what a contract can and can't specify, and what happens to the residual.",
+    "The practical version is the most useful org-design tool I know. Every make-or-buy decision, every outsourcing debate, every argument about whether to hire a contractor or an employee, is a transaction-cost calculation wearing a business-strategy costume. And the answer moves: anything that lowers the cost of contracting — standardised interfaces, escrow, reputation systems, cheap search — pushes the boundary toward the market and shrinks firms.",
+    "Which is why the theory keeps predicting things. Containerisation and standardised parts lowered the cost of buying rather than making, and supply chains disaggregated across borders. Marketplaces lowered search and enforcement costs, and whole categories of employment turned into contracting. If software keeps eating the cost of specifying and monitoring work, Coase says the firm keeps shrinking — and the interesting question is which costs stubbornly refuse to fall."
+  ],
+  "timeline": [
+    {
+      "y": "1931",
+      "t": "Coase, an undergraduate on a travelling scholarship, tours American factories and asks why they aren't markets."
+    },
+    {
+      "y": "1937",
+      "t": "'The Nature of the Firm' appears in Economica and is politely ignored."
+    },
+    {
+      "y": "1960",
+      "t": "Coase's 'The Problem of Social Cost' does the same trick to externalities."
+    },
+    {
+      "y": "1975",
+      "t": "Williamson builds transaction-cost economics into an operational theory of governance."
+    },
+    {
+      "y": "1991",
+      "t": "Coase receives the Nobel, more than fifty years after the essay."
+    },
+    {
+      "y": "2016",
+      "t": "Hart and Holmström win for contract theory — the incomplete-contracts descendant."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Ronald Coase",
+      "d": "Asked the question nobody had asked, at 21, on a study trip, and then waited fifty years."
+    },
+    {
+      "n": "Oliver Williamson",
+      "d": "Turned an insight into a method: asset specificity, hold-up, and when to bring it in-house."
+    },
+    {
+      "n": "Oliver Hart & Bengt Holmström",
+      "d": "Worked out what happens when a contract can't specify everything — which is always."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1937",
+      "s": "'The Nature of the Firm' published in Economica"
+    },
+    {
+      "b": "21",
+      "s": "Coase's age on the 1931–32 study tour where he formed the question"
+    },
+    {
+      "b": "1991",
+      "s": "Nobel awarded — 54 years after the paper"
+    }
+  ],
+  "contested": "Transaction costs are notoriously hard to measure, which makes the theory easy to apply after the fact and hard to test in advance. Critics argue it explains any observed boundary equally well and therefore predicts nothing — a charge Williamson's asset-specificity work was largely an attempt to answer.",
+  "changed": "I used to think of company structure as culture and preference. It's mostly a cost calculation, and the calculation is knowable. The corollary I didn't expect: if you want a smaller org, don't reorganise — go lower the cost of specifying and verifying the work, and the boundary moves on its own.",
+  "across": [
+    {
+      "to": "press:the-box",
+      "label": "The Box",
+      "txt": "— the largest single reduction in the cost of buying rather than making, ever measured."
+    }
+  ],
+  "reading": [
+    {
+      "t": "The Nature of the Firm",
+      "a": "Ronald Coase, 1937",
+      "u": "https://onlinelibrary.wiley.com/doi/10.1111/j.1468-0335.1937.tb00002.x",
+      "why": "About twenty pages, no mathematics, and it reframes an entire field."
+    },
+    {
+      "t": "The Nature of the Firm (overview)",
+      "a": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/The_Nature_of_the_Firm",
+      "why": "For the lineage: Williamson, Hart, Holmström, and who won what."
+    },
+    {
+      "t": "Markets and Hierarchies",
+      "a": "Oliver Williamson",
+      "u": "https://en.wikipedia.org/wiki/Oliver_E._Williamson",
+      "why": "Where the theory becomes usable: asset specificity and the hold-up problem."
+    },
+    {
+      "t": "An Elegant Puzzle",
+      "a": "Will Larson",
+      "u": "https://press.stripe.com/an-elegant-puzzle",
+      "why": "Not about Coase at all, and the best practical companion to thinking about org boundaries."
+    }
+  ]
+}

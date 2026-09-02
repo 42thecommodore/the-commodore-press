@@ -1,0 +1,100 @@
+{
+  "id": "unix-bargain",
+  "keep": "Composability is bought with discoverability — know which side of the trade you're standing on.",
+  "title": "The Unix Bargain",
+  "sub": "Small tools, sharp edges, fifty years",
+  "field": "Technology",
+  "spineTitle": "The Unix Bargain",
+  "years": "1969–now",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "claim": "Composability bought with discoverability. Fifty years on, still the best trade in software.",
+  "lede": "Two people built it on a spare minicomputer after their employer cancelled the ambitious version. That constraint is the entire design.",
+  "copy": [
+    "Multics was the grand plan: a computing utility, everything for everyone, designed by committee across three organisations. Bell Labs pulled out. Ken Thompson and Dennis Ritchie then built something small on a discarded PDP-7, and in 1972 rewrote it in C — a language invented largely so the operating system could move. Portability is the load-bearing decision. An operating system you could carry to new hardware was one that could outlive its hardware, which is why code written in the seventies still runs and the machine it was written for is in a museum.",
+    "The bargain is explicit: programs do one thing, they speak plain text, and you compose them with pipes. You trade discoverability and safety for composability and leverage. It is a genuinely terrible interface for a novice and an extraordinary one for someone who has paid the learning cost — and that cost is real, not a personality defect, which is why every generation sincerely tries to replace it and mostly ends up shipping a nicer shell on top.",
+    "Plain text as the universal interface is the underrated half. It is lossy, unstructured, and constantly re-parsed, and it is also the reason a tool written in 1975 can be piped into a tool written last week by someone who has never heard of it. Every attempt to replace it with a richer typed protocol has bought correctness and paid in composability, which is the same trade running the other way.",
+    "The cultural legacy is stranger than the technical one. Richard Gabriel's 'worse is better' — the argument that the simpler, uglier, shippable design beats the correct and complete one — started as an observation about Unix and Lisp and became a general theory of how technology spreads. Gabriel then spent years arguing against himself in print, which is the most Unix thing about it."
+  ],
+  "timeline": [
+    {
+      "y": "1969",
+      "t": "Thompson writes the first Unix on a cast-off PDP-7 while his family is away for a month."
+    },
+    {
+      "y": "1972",
+      "t": "Ritchie's C matures; Unix is rewritten in it, making the system portable and therefore immortal."
+    },
+    {
+      "y": "1978",
+      "t": "Doug McIlroy states the philosophy: write programs that do one thing well and work together."
+    },
+    {
+      "y": "1983",
+      "t": "Thompson and Ritchie receive the Turing Award."
+    },
+    {
+      "y": "1991",
+      "t": "Linux begins as a student project and eventually inherits the entire bargain."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Ken Thompson",
+      "d": "Wrote the first version in three weeks. Also wrote the paper on trusting trust that should still frighten you."
+    },
+    {
+      "n": "Dennis Ritchie",
+      "d": "Created C. Approximately everything you use is written in it or in a descendant of it."
+    },
+    {
+      "n": "Doug McIlroy",
+      "d": "Invented the pipe and then wrote down the philosophy it implied, in that order."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1969",
+      "s": "First Unix, on a cast-off PDP-7 at Bell Labs"
+    },
+    {
+      "b": "1972",
+      "s": "Rewritten in C — the portability decision that made it permanent"
+    },
+    {
+      "b": "1978",
+      "s": "McIlroy states the Unix philosophy: do one thing well"
+    }
+  ],
+  "contested": "'Worse is better' is quoted as a rule; Gabriel himself argued both sides for years and never settled it. And the claim that Unix's design is why it won competes with a duller explanation — AT&T was forbidden by a consent decree from selling software, so it licensed Unix to universities almost for free, and a generation learned it because it was there.",
+  "changed": "I used to think the philosophy caused the success. The licensing accident probably did more. That doesn't make the philosophy wrong — it makes it the thing that let a free system stay useful for fifty years rather than the thing that spread it in the first place.",
+  "reading": [
+    {
+      "t": "The Unix Programming Environment",
+      "a": "Kernighan & Pike",
+      "u": "https://en.wikipedia.org/wiki/The_Unix_Programming_Environment",
+      "why": "Dated in specifics, undated in taste. The clearest statement of the aesthetic."
+    },
+    {
+      "t": "The Rise of Worse Is Better",
+      "a": "Richard P. Gabriel",
+      "u": "https://www.dreamsongs.com/RiseOfWorseIsBetter.html",
+      "why": "Then read his later self-rebuttals on the same site — the pair is the real argument."
+    },
+    {
+      "t": "The Evolution of the Unix Time-sharing System",
+      "a": "Dennis Ritchie",
+      "u": "https://www.bell-labs.com/usr/dmr/www/hist.html",
+      "why": "Primary source, from one of the two people who were there."
+    },
+    {
+      "t": "Working in Public",
+      "a": "Nadia Eghbal",
+      "u": "https://press.stripe.com/working-in-public",
+      "why": "The modern sequel: what happens to this model once the maintainers are unpaid."
+    }
+  ]
+}

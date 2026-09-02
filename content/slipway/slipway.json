@@ -1,0 +1,249 @@
+{
+  "convs": [
+    {
+      "b": "Get customers first.",
+      "s": "The ability to get customers separates the businesses that live from the ones that don't — and it cannot be outsourced.",
+      "who": "Nazar · Stech · Mello"
+    },
+    {
+      "b": "Bet on yourself; protect the ship.",
+      "s": "Take extreme but survivable risk. Ruin is the only unforgivable loss, and staying in the game is most of winning.",
+      "who": "Hockey · Rydhan · Nazar"
+    },
+    {
+      "b": "Execution beats the idea.",
+      "s": "There are no great ideas — only bad ones, and built ones. Tell everyone, iterate fast, and let the feedback do its work.",
+      "who": "Nazar · Cacioppo · Shlomo"
+    },
+    {
+      "b": "Who, not how.",
+      "s": "Build with people smarter than you, share a future with them rather than a past, and get good at asking for help.",
+      "who": "Mello · Jones · Stech"
+    },
+    {
+      "b": "Sell the feeling.",
+      "s": "Nobody buys a product; they buy a story about themselves. The telling is half the work.",
+      "who": "Morgan · White · Stech"
+    },
+    {
+      "b": "Pick a game worth decades.",
+      "s": "A boring niche you are genuinely curious about beats a glamorous one you will quit. Interest is the only fuel that lasts that long.",
+      "who": "Hockey · Cacioppo · Camillo"
+    }
+  ],
+  "book": [
+    {
+      "k": "Why",
+      "t": "Our issue is rarely figuring out what to do. It is figuring out why we don't do the things we already know we should.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Why",
+      "t": "Beyond all the resources, you need a big burning why to carry you through — otherwise the what and the how become the excuse.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Why",
+      "t": "A good life has a simple test: are you excited to get up?",
+      "a": "after Jason Calacanis"
+    },
+    {
+      "k": "Why",
+      "t": "Labour without a vision is just exhaustion.",
+      "a": "after Dovid Lichtenstein"
+    },
+    {
+      "k": "Starting",
+      "t": "In the beginning it isn't about perfection. It's about speed and momentum.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Starting",
+      "t": "Almost nobody regrets starting a business. The regret belongs to the people who kept meaning to.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Starting",
+      "t": "If there is no risk, there is no story.",
+      "a": "after Dovid Lichtenstein"
+    },
+    {
+      "k": "Ideas",
+      "t": "There is no such thing as a great business idea — there are bad ideas, and there is execution.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Ideas",
+      "t": "Tell everybody your idea. The feedback is worth more than the secrecy, and the social contract holds you to the work.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Ideas",
+      "t": "The best businesses take something already succeeding and figure out how to do it differently and better.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Ideas",
+      "t": "Don't pitch your solution — go into their problems first. They cannot know the solution yet.",
+      "a": "Rob Fitzpatrick's Mom Test"
+    },
+    {
+      "k": "Sales",
+      "t": "The single biggest thing separating successful businesses from the rest is the ability to get customers.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Sales",
+      "t": "You can't outsource sales and marketing. The best product isn't the most used — the best-sold product is.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Sales",
+      "t": "The golden rule of a sale: the prospect must feel you understand what they need. Everything else is decoration.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Sales",
+      "t": "Learn how to sell. It is not an if; it is a when.",
+      "a": "after Josh Stech"
+    },
+    {
+      "k": "Sales",
+      "t": "You don't sell a product, you sell a feeling. Sell the sizzle, not the steak.",
+      "a": "after John Morgan"
+    },
+    {
+      "k": "Marketing",
+      "t": "Good marketing attracts and repels. If nobody is saying the opposite of you, your message isn't landing.",
+      "a": "after Joe Liemandt"
+    },
+    {
+      "k": "Marketing",
+      "t": "“I don't sell fights — I sell holy-shit moments.” Ask what you are really selling.",
+      "a": "Dana White's line"
+    },
+    {
+      "k": "Money",
+      "t": "Investors invest in people, not ideas: people, product, progress, passion, persistence.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Money",
+      "t": "Don't raise money from anyone who can't afford to lose it.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Money",
+      "t": "Venture money is like heroin: you can end up optimising the company for raising instead of building.",
+      "a": "after William Hockey"
+    },
+    {
+      "k": "Money",
+      "t": "Scared money does not make money.",
+      "a": "after Greg Lavecchia"
+    },
+    {
+      "k": "Money",
+      "t": "Decide early which machine you are building: a lifestyle business that funds a life, or a liquidity business that ends in a sale. They run on different fuel.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "People",
+      "t": "Three hiring criteria: best at what they do, no assholes, works harder than everyone else.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "People",
+      "t": "The strength of a founder is building with people smarter than you — and being good at asking for help.",
+      "a": "after Mike Jones"
+    },
+    {
+      "k": "People",
+      "t": "Share a future with people, not just a past.",
+      "a": "after Tommy Mello"
+    },
+    {
+      "k": "People",
+      "t": "It's who, not how.",
+      "a": "Dan Sullivan's line, via Tommy Mello"
+    },
+    {
+      "k": "Scale",
+      "t": "Revenue is for vanity, profit is for sanity.",
+      "a": "after Tommy Mello"
+    },
+    {
+      "k": "Scale",
+      "t": "The hustler has to die for the leader to be born.",
+      "a": "after Tommy Mello"
+    },
+    {
+      "k": "Scale",
+      "t": "Early metrics can't be results. Measure activity.",
+      "a": "after Josh Stech"
+    },
+    {
+      "k": "Scale",
+      "t": "It takes roughly the same years to build something massive as something small. Choose accordingly.",
+      "a": "after Greg Lavecchia"
+    },
+    {
+      "k": "Risk",
+      "t": "Protect the downside and stay in the game; most of success is still being at the table.",
+      "a": "after Jason Nazar"
+    },
+    {
+      "k": "Risk",
+      "t": "For a young company there is one rule that outranks the others: survive.",
+      "a": "after Furqan Rydhan"
+    },
+    {
+      "k": "Craft",
+      "t": "Find the boring thing other people find boring, be genuinely interested in it, and stay for decades.",
+      "a": "after William Hockey"
+    },
+    {
+      "k": "Craft",
+      "t": "Iterate. Don't try to be right the first time, and don't spend long on what isn't working.",
+      "a": "after Christian Cacioppo"
+    },
+    {
+      "k": "Craft",
+      "t": "It is hard to compete against someone who is just there to have fun.",
+      "a": "overheard from a builder"
+    },
+    {
+      "k": "Self",
+      "t": "Tough decisions, easy life. Easy decisions, tough life.",
+      "a": "Jerzy Gregorek's line, via Josh Stech"
+    },
+    {
+      "k": "Self",
+      "t": "Not everyone is meant to be an entrepreneur; some are meant to be intrapreneurs. Both build.",
+      "a": "after Tommy Mello"
+    }
+  ],
+  "chandlery": [
+    {
+      "b": "The pipeline is the job.",
+      "s": "Sourcing, selecting, winning, investing, building — in that order, and mostly sourcing. Hundreds looked at a year; three or four chosen."
+    },
+    {
+      "b": "Capital is a commodity.",
+      "s": "The only differentiated things a young investor has are judgment, speed, and the willingness to be genuinely useful."
+    },
+    {
+      "b": "Keep an anti-portfolio.",
+      "s": "Celebrate the ones you passed on that won. It is the only honest scorecard in the business."
+    },
+    {
+      "b": "Conviction has a test.",
+      "s": "Write the check as if it is the last one you will ever write. If that thought changes the decision, it wasn't conviction."
+    },
+    {
+      "b": "One diligence question survives every deal.",
+      "s": "Why is this team uniquely positioned to tackle this market?"
+    }
+  ],
+  "note": "A note on the trade book: it is a commonplace book, not a syllabus. These are lines written down while listening to operators — on podcasts, in classrooms, across coffee tables — kept because each one changed what I did next. “After” a name means my compressed note of their idea, not their exact words; where a line is famous in its own right, the earlier author is named. Appearing here is a debt acknowledged, not an endorsement claimed — in either direction."
+}

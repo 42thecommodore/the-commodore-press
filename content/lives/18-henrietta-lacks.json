@@ -1,0 +1,27 @@
+{
+  "id": "henrietta-lacks",
+  "keep": "Of every dataset, ask who consented, who profited, and who was erased.",
+  "n": "Henrietta Lacks",
+  "years": "1920–1951",
+  "place": "United States",
+  "field": "Medicine",
+  "group": "obscure",
+  "cover": "#8A2352",
+  "spineC": "#66143A",
+  "ink": "#FBEAF1",
+  "accent": "#F2C2D6",
+  "motif": "rings",
+  "lede": "The woman behind the world's most-used cells was, for half a century, almost completely erased from the record.",
+  "copy": [
+    "A Black tobacco farmer and mother of five in Virginia, Henrietta Lacks died of cervical cancer at thirty-one. Without her knowledge or consent, doctors at Johns Hopkins took a sample of her tumour — and discovered that her cells, unlike any before, would grow and divide indefinitely in the lab. Named “HeLa”, they became the first immortal human cell line.",
+    "HeLa cells went on to underpin a staggering share of modern medicine: the polio vaccine was tested on them, and they have figured in research on cancer, AIDS, gene mapping, in-vitro fertilization and the COVID-19 vaccines. They have been grown by the ton and flown into space. For decades her family knew nothing of this, received nothing, and could not afford the health care her cells helped make possible — while companies profited.",
+    "Her story has become the central case study in the ethics of consent, race and the human cost behind scientific progress."
+  ],
+  "bio": {
+    "t": "The Immortal Life of Henrietta Lacks",
+    "a": "Rebecca Skloot",
+    "y": "2010",
+    "why": "Skloot spent a decade earning the trust of the Lacks family to braid three stories together — the science, the woman, and her descendants' reckoning with it. A landmark of narrative nonfiction that restored her name."
+  },
+  "contested": "The book's own relationship to consent has itself been debated: members of the Lacks family have at times disputed how their story was told and who benefited from telling it. That is not a reason to skip it — it is part of what the book is about, and worth reading with open eyes."
+}

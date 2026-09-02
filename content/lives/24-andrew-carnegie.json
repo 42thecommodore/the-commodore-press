@@ -1,0 +1,34 @@
+{
+  "id": "andrew-carnegie",
+  "keep": "Watch the costs and the profits take care of themselves. Then remember Homestead before you admire.",
+  "n": "Andrew Carnegie",
+  "years": "1835–1919",
+  "place": "Scotland / United States",
+  "field": "Industry & Giving",
+  "group": "famous",
+  "cover": "#7C3A26",
+  "spineC": "#5A2818",
+  "ink": "#FBEFE4",
+  "accent": "#F3C89A",
+  "motif": "grid",
+  "lede": "A bobbin boy at thirteen, the world's richest man at sixty-five, and author of the sentence that indicts every fortune including his own: the man who dies rich dies disgraced.",
+  "copy": [
+    "The Dunfermline weaver's son arrived in Pittsburgh at twelve, worked a cotton mill at thirteen, taught himself telegraphy, and rode the Pennsylvania Railroad's management ladder into capital. Steel made the fortune: he bet early and totally on the Bessemer process, built the Edgar Thomson works, and ran on one commandment — watch the costs, and the profits will take care of themselves. In 1901 he sold Carnegie Steel to J.P. Morgan's syndicate for $480 million, then the largest transaction in industrial history.",
+    "Homestead, 1892, is the permanent stain: a lockout at his own mill, Pinkertons and strikers dead, the union broken for a generation — while Carnegie, philosopher of labour's dignity in print, kept to Scotland and let Frick swing the club. No account of the giving survives without this chapter, and the serious biographies no longer try.",
+    "The giving itself was doctrine before it was charity. 'The Gospel of Wealth' (1889) argued the rich are trustees obligated to die poor, having administered their surplus for the community — and he nearly did: some 2,500 libraries, Carnegie Hall, the Peace Palace at The Hague, universities and pensions for teachers, most of the fortune gone before the end. The libraries were the perfect Carnegie instrument: infrastructure for self-improvement, offered to every town that would tax itself to stock and staff one."
+  ],
+  "bio": {
+    "t": "Andrew Carnegie",
+    "a": "David Nasaw",
+    "y": "2006",
+    "why": "The full modern life: unsparing on Homestead, alert to the self-mythologising, and still able to take the Gospel of Wealth seriously as ideas. Replaces the older admiring standards."
+  },
+  "contested": "How much Carnegie knew and directed at Homestead is still argued — his defenders blame Frick, the correspondence implicates them both. And the Gospel of Wealth reads either as the founding charter of modern philanthropy or as capitalism's most elegant apology for itself; a century of argument has not chosen.",
+  "across": [
+    {
+      "to": "lives:john-d-rockefeller",
+      "label": "John D. Rockefeller",
+      "txt": "— the other Gilded Age fortune, spent on the rival theory of giving."
+    }
+  ]
+}

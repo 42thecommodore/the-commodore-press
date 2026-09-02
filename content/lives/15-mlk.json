@@ -1,0 +1,27 @@
+{
+  "id": "mlk",
+  "keep": "Name the unjust law, disobey it openly, and make its moral price visible to everyone.",
+  "n": "Martin Luther King Jr.",
+  "years": "1929–1968",
+  "place": "United States",
+  "field": "Civil Rights",
+  "group": "famous",
+  "cover": "#5B2C3E",
+  "spineC": "#411C2B",
+  "ink": "#FAECF1",
+  "accent": "#EEC2D0",
+  "motif": "rings",
+  "lede": "A Baptist minister still in his twenties when the Montgomery bus boycott thrust him forward.",
+  "copy": [
+    "King became the moral voice of the American civil rights movement and one of the great orators in the English language. He fused the non-violent method of Gandhi with the cadences of the Black church and the promises of the American founding, and turned them on the machinery of segregation.",
+    "Through the Birmingham campaign, the March on Washington and its “I Have a Dream” speech, and the Selma marches, he helped force the Civil Rights Act of 1964 and the Voting Rights Act of 1965 — the dismantling of legal apartheid in the United States. He won the Nobel Peace Prize at thirty-five, the youngest laureate at the time. In his last years he widened his fight to poverty and the Vietnam War, losing some allies as he did.",
+    "Assassinated in Memphis at thirty-nine, he left a body of writing and speech — especially the “Letter from Birmingham Jail” — that remains a living argument about justice, conscience and the duty to disobey unjust laws."
+  ],
+  "bio": {
+    "t": "Bearing the Cross",
+    "a": "David J. Garrow",
+    "y": "1986",
+    "why": "A Pulitzer-winning biography built on hundreds of interviews and thousands of FBI files — the most intimate and rigorous account of King as a man under unbearable pressure. For the sweeping movement history, Taylor Branch's America in the King Years trilogy is the monumental companion."
+  },
+  "contested": "The FBI files Garrow works from are themselves a hostile and unreliable source, gathered by an agency actively trying to destroy King. That tension runs through the book. Garrow's own later handling of newly released FBI material drew significant criticism from historians over evidentiary standards — a reminder that the archive here is not neutral ground."
+}

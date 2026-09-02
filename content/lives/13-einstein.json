@@ -1,0 +1,27 @@
+{
+  "id": "einstein",
+  "keep": "Four papers from a patent office outweighed every institution of the age. Position is not the same as leverage.",
+  "n": "Albert Einstein",
+  "years": "1879–1955",
+  "place": "Germany / United States",
+  "field": "Science",
+  "group": "famous",
+  "cover": "#1B4A5A",
+  "spineC": "#103543",
+  "ink": "#EAF3F6",
+  "accent": "#A6D2E0",
+  "motif": "conic",
+  "lede": "In 1905 an unknown patent clerk in Bern published four papers that remade physics.",
+  "copy": [
+    "One explained the photoelectric effect and helped found quantum theory, another proved the reality of atoms, and another introduced special relativity with its almost unbelievable consequence that energy and mass are the same thing. A decade later his general theory of relativity reimagined gravity itself as the curving of space and time.",
+    "Einstein's ideas have been confirmed again and again — by bending starlight, by the GPS satellites that correct for relativistic time, by the detection of gravitational waves a century after he predicted them. He achieved something almost no scientist manages: he became a global symbol of human intellect, his face and wild hair instantly legible everywhere.",
+    "He was also a committed pacifist, a refugee from Nazi Germany, and a moral voice who warned about nuclear weapons whose possibility his own equation had revealed."
+  ],
+  "bio": {
+    "t": "Einstein: His Life and Universe",
+    "a": "Walter Isaacson",
+    "y": "2007",
+    "why": "Written after the release of Einstein's personal letters, explaining the physics clearly while drawing a full human portrait — rebel, husband, refugee, sage."
+  },
+  "contested": "For the physics itself, specialists send you to Abraham Pais's Subtle Is the Lord (1982), which is far more technical and far better on the science. Isaacson is the life; Pais is the work."
+}

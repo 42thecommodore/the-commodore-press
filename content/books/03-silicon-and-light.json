@@ -1,0 +1,107 @@
+{
+  "id": "silicon-and-light",
+  "keep": "Moore's Law was a schedule everyone agreed to believe. Coordination is a technology.",
+  "title": "Silicon &amp; Light",
+  "sub": "The least probable supply chain ever built",
+  "field": "Technology",
+  "spineTitle": "Silicon & Light",
+  "years": "1958–now",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "claim": "Moore's Law was never a law. It was a schedule everyone agreed to believe.",
+  "lede": "To print a modern chip you vaporise tin droplets with a laser, twice, to make light no lens can focus — so you use mirrors polished to the smoothness of a small country.",
+  "copy": [
+    "Extreme ultraviolet lithography works at 13.5 nanometres, a wavelength absorbed by air, glass, and essentially everything else. So the entire optical path runs in vacuum through multilayer Bragg mirrors that reflect by interference rather than refraction. The light source is a stream of molten tin droplets hit mid-flight by a pre-pulse to flatten them and then a main pulse from a carbon dioxide laser to turn them into plasma — fifty thousand times a second, every second, for years. One company on earth sells the machine. It took roughly two decades and a consortium of competitors to make it work at all.",
+    "Downstream, the concentration is just as extreme. Leading-edge logic is manufactured almost entirely in Taiwan and South Korea, by companies dependent on Japanese chemicals, Dutch machines, German optics, and American design software. Morris Chang's 1987 insight in founding TSMC — separate the fab from the designer, and the designers will come — created the entire fabless industry and, incidentally, one of the most geopolitically loaded chokepoints in the world economy.",
+    "Moore's Law is the part most often misunderstood. It was never a physical law; it was an industry roadmap. Moore observed a doubling trend in 1965 and the industry then organised its capital around meeting it, publishing coordinated technology roadmaps so equipment makers, materials suppliers and fabs all invested on the same schedule. It held for decades in large part because everyone believed it would and acted accordingly. A self-fulfilling prophecy backed by tens of billions in capex is a genuinely underrated kind of technology.",
+    "What makes this the right thing to be obsessed with is that it's the clearest counterexample to the idea that markets route around chokepoints. Here they didn't. The learning curves are steep enough, the capital lumps large enough, and the tacit process knowledge deep enough that a single supplier per layer turned out to be the stable configuration."
+  ],
+  "timeline": [
+    {
+      "y": "1958",
+      "t": "Jack Kilby demonstrates the first integrated circuit at Texas Instruments; Noyce's planar version follows in 1959."
+    },
+    {
+      "y": "1965",
+      "t": "Gordon Moore observes a doubling of components per chip, and accidentally writes an industry schedule."
+    },
+    {
+      "y": "1987",
+      "t": "Morris Chang founds TSMC, inventing the pure-play foundry and with it the fabless design industry."
+    },
+    {
+      "y": "1997",
+      "t": "An international consortium begins serious work on extreme ultraviolet lithography."
+    },
+    {
+      "y": "2019",
+      "t": "EUV finally reaches high-volume manufacturing, roughly two decades after the programme started."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Morris Chang",
+      "d": "Founded TSMC at 55 after a career at Texas Instruments, and split the industry along a line nobody had drawn."
+    },
+    {
+      "n": "Gordon Moore",
+      "d": "Made an observation in a trade magazine that the industry converted into a coordination device."
+    },
+    {
+      "n": "Martin van den Brink",
+      "d": "ASML's long-time technology chief; spent decades betting the company on a wavelength most people thought unusable."
+    }
+  ],
+  "facts": [
+    {
+      "b": "13.5 nm",
+      "s": "EUV wavelength — absorbed by air, so the optics run in vacuum"
+    },
+    {
+      "b": "50,000/s",
+      "s": "Tin droplets vaporised per second in ASML's light source"
+    },
+    {
+      "b": "1987",
+      "s": "TSMC founded, inventing the pure-play foundry model"
+    }
+  ],
+  "contested": "How much of leading-edge concentration is a genuine physical and learning-curve moat, versus decades of accumulated policy and subsidy choices, is actively argued — and it is the crux of every chip-sovereignty programme now underway. If it's mostly a moat, subsidies buy very little. If it's mostly policy, they might buy a lot.",
+  "changed": "I assumed the hard part was the physics. Reading about EUV's development, the hard part looks more like sustained organisational will: a twenty-year programme, through several plausible cancellation points, funded by companies that were also each other's customers. The physics was merely impossible; the governance was harder.",
+  "across": [
+    {
+      "to": "press:the-box",
+      "label": "The Box",
+      "txt": "— the other case where standards, not invention, were the binding constraint."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Chip War: The Fight for the World's Most Critical Technology",
+      "a": "Chris Miller",
+      "u": "https://www.christophermiller.net/semiconductors",
+      "why": "The geopolitical spine of the story, and strong on how the chokepoints formed."
+    },
+    {
+      "t": "Light and lasers: how EUV works",
+      "a": "ASML",
+      "u": "https://www.asml.com/en/technology/lithography-principles/light-and-lasers",
+      "why": "Primary source, from the only company that makes the machine."
+    },
+    {
+      "t": "Cramming More Components onto Integrated Circuits",
+      "a": "Gordon Moore, 1965",
+      "u": "https://en.wikipedia.org/wiki/Moore%27s_law",
+      "why": "Four pages. Note how modest the original claim is compared to what it became."
+    },
+    {
+      "t": "The Origins of Efficiency",
+      "a": "Brian Potter",
+      "u": "https://press.stripe.com/the-origins-of-efficiency",
+      "why": "For the general question of why some manufacturing learning curves run and others stall."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "leonardo",
+  "keep": "The same act of careful seeing underlies a great portrait and a true theory of nature.",
+  "n": "Leonardo da Vinci",
+  "years": "1452–1519",
+  "place": "Renaissance Italy",
+  "field": "Art & Science",
+  "group": "famous",
+  "cover": "#8C6A0F",
+  "spineC": "#6B5008",
+  "ink": "#FBF3DC",
+  "accent": "#F5DFA2",
+  "motif": "conic",
+  "lede": "Denied a formal Latin education, he turned his outsider's status into a method: he trusted observation over authority.",
+  "copy": [
+    "The illegitimate son of a Tuscan notary, Leonardo is the rare figure whose name has become shorthand for genius itself — and the reputation is earned twice over, as the painter of the Mona Lisa and The Last Supper, and as a scientist and engineer who anatomised the human body, sketched flying machines and grasped principles of geology, optics and hydraulics centuries early.",
+    "What unites the painter and the investigator is relentless curiosity. His notebooks — thousands of mirror-written pages — record a mind that wanted to know how a bird's wing works, why the sky is blue, how a heart valve closes. He finished little and published nothing scientific in his lifetime, so much of his anatomical and mechanical insight died with him and had to be rediscovered.",
+    "He endures as the supreme emblem of the union of art and science: proof that the same act of careful seeing underlies a great portrait and a true theory of nature."
+  ],
+  "bio": {
+    "t": "Leonardo da Vinci",
+    "a": "Walter Isaacson",
+    "y": "2017",
+    "why": "Built directly from Leonardo's 7,200 surviving notebook pages, treating curiosity as the through-line of his life and work. Richly illustrated and accessible."
+  },
+  "contested": "Isaacson writes to a template — the curious outsider genius — and art historians note the book is lighter on the art-historical scholarship than on the biography. For the specialist view of Leonardo as a painter, Martin Kemp remains the standard."
+}

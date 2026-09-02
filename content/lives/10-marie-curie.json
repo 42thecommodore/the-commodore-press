@@ -1,0 +1,27 @@
+{
+  "id": "marie-curie",
+  "keep": "Do the work so well that the establishment's locked doors become irrelevant.",
+  "n": "Marie Curie",
+  "years": "1867–1934",
+  "place": "Poland / France",
+  "field": "Science",
+  "group": "famous",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "conic",
+  "lede": "Her notebooks are still too radioactive to handle safely.",
+  "copy": [
+    "Maria Skłodowska left Russian-occupied Poland, where universities were closed to women, to study in Paris on almost no money, sometimes fainting from hunger over her books. As Marie Curie she discovered polonium and radium, coined the word “radioactivity”, and showed that it was a property of atoms themselves — cracking open the interior of matter.",
+    "She remains the only person to win Nobel Prizes in two different sciences (Physics in 1903, Chemistry in 1911), and she did it while facing relentless sexism and xenophobia from the French establishment. During the First World War she equipped and drove mobile X-ray units to the front, personally bringing radiography to wounded soldiers. The radiation that made her famous eventually killed her.",
+    "Curie opened the door to nuclear physics and to cancer radiotherapy, and stands as the founding icon of women in science — not as a symbol but as a working experimentalist of the first rank."
+  ],
+  "bio": {
+    "t": "Marie Curie: A Life",
+    "a": "Susan Quinn",
+    "y": "1995",
+    "why": "The first biographer to use Curie's private papers and Polish-language sources, producing a fully human portrait — ambition, grief, scandal and genius alike."
+  },
+  "contested": "Eve Curie's Madame Curie (1937) is the classic and is written by her daughter — beautiful, and hagiographic by design. Treat it as a memoir of a mother, not as an independent account."
+}

@@ -1,0 +1,115 @@
+{
+  "id": "water-in-the-west",
+  "keep": "Before repeating a statistic, find the denominator somebody chose for you.",
+  "title": "Water in the West",
+  "sub": "The hydraulic empire at home",
+  "field": "Economics",
+  "spineTitle": "Water in the West",
+  "years": "1902–now",
+  "cover": "#6E4A1C",
+  "spineC": "#4E340F",
+  "ink": "#F8F0DF",
+  "accent": "#EBCB8B",
+  "motif": "lines",
+  "claim": "The American West is not arid land with some cities on it. It is a plumbing project with a civilisation attached.",
+  "lede": "On 5 November 1913 the Owens River arrived in Los Angeles by aqueduct. William Mulholland's entire dedication speech was five words — 'There it is. Take it.' — and the modern West's operating system booted.",
+  "copy": [
+    "The aqueduct's backstory set the moral template: city agents quietly buying up Owens Valley land and water rights, a farming valley drained to grow a metropolis, dynamite on the pipeline through the 1920s. Marc Reisner's 'Cadillac Desert' (1986) told that story and the seventy years that followed — the Reclamation Act of 1902, Hoover Dam, the Central Valley Project, the State Water Project — as a single epic of subsidised water building an empire that ran, like all empires, on deficit spending. In this case, of rivers and aquifers.",
+    "The plumbing is astonishing on its own terms: water lifted nearly two thousand feet over the Tehachapis, a Central Valley that grows a huge share of America's fruit and nuts on land that would otherwise brown by June, groundwater basins along the coast — the Oxnard Plain's strawberry ground among them — pumped hard enough that the ocean pushes in underneath. The system works. The argument is about what 'works' is costing, and who pays.",
+    "Here is where the famous numbers need their denominators. 'Agriculture uses 80% of California's water' is true of developed human use, and closer to 40% if you count environmental flows in the ledger — both figures are honest, and each is deployed to win a different argument. 'A gallon per almond' is roughly right as arithmetic and useless as an indictment until you compare it with alfalfa, lawns, or the protein it displaces. Water statistics are counting choices wearing the costume of facts.",
+    "And the reckoning is structural, not rhetorical: the 1922 Colorado River Compact allocated more water than the river reliably carries, using flow estimates from unusually wet years, and seven states plus Mexico have been negotiating with that arithmetic ever since — urgently so since the reservoirs approached dead pool in 2022. The West's founding documents wrote cheques its hydrology cannot cash. Every fight over almonds, lawns and cities is a footnote to that one."
+  ],
+  "timeline": [
+    {
+      "y": "1902",
+      "t": "The Reclamation Act puts the federal government in the dam-building business."
+    },
+    {
+      "y": "1913",
+      "t": "The Los Angeles Aqueduct opens: 'There it is. Take it.'"
+    },
+    {
+      "y": "1922",
+      "t": "The Colorado River Compact divides the river — using optimistic flow numbers."
+    },
+    {
+      "y": "1935",
+      "t": "Hoover Dam rises; the era of the big concrete West begins."
+    },
+    {
+      "y": "1960",
+      "t": "California voters approve the State Water Project."
+    },
+    {
+      "y": "1986",
+      "t": "Reisner publishes 'Cadillac Desert'."
+    },
+    {
+      "y": "2022",
+      "t": "Mead and Powell near dead pool; the compact's arithmetic becomes front-page news."
+    }
+  ],
+  "figures": [
+    {
+      "n": "William Mulholland",
+      "d": "Self-taught engineer who moved a river to Los Angeles, and whose career ended when a dam he passed as safe failed."
+    },
+    {
+      "n": "Floyd Dominy",
+      "d": "Reclamation's most effective commissioner — the book's villain or hero, depending on which chapter you trust."
+    },
+    {
+      "n": "Marc Reisner",
+      "d": "Turned water policy into literature, and a generation of readers into water sceptics."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1913",
+      "s": "LA Aqueduct opens — 233 miles, gravity-fed the whole way"
+    },
+    {
+      "b": "80% / 40%",
+      "s": "Agriculture's share of California water — by developed use, or counting environmental flows"
+    },
+    {
+      "b": "1922",
+      "s": "Colorado Compact allocates the river on wet-year arithmetic"
+    }
+  ],
+  "contested": "Reisner wrote a polemic, and historians have dinged specifics — Owens Valley was more willing seller and less pure theft than the movie version, and dams did real things polemics undercount. The deeper contest is in the ledgers: nearly every headline water statistic changes sides depending on the denominator someone chose before you arrived.",
+  "changed": "I used to repeat the almond number at dinner. Then I learned to ask what the denominator was and whether environmental flows were in it, and the almond number stopped being an argument and became an invitation to do actual accounting. Water made me permanently suspicious of any statistic that arrives pre-aimed.",
+  "across": [
+    {
+      "to": "press:cost-disease",
+      "label": "The Cost Disease",
+      "txt": "— the same discipline: before explaining a number, check whether the variation is in the world or in the counting."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Cadillac Desert: The American West and Its Disappearing Water",
+      "a": "Marc Reisner",
+      "u": "https://en.wikipedia.org/wiki/Cadillac_Desert",
+      "why": "The epic. Read it, then read the correctives — in that order, for the pleasure of both."
+    },
+    {
+      "t": "Water Use in California",
+      "a": "Public Policy Institute of California",
+      "u": "https://www.ppic.org/publication/water-use-in-california/",
+      "why": "Where the 80%/40% split is laid out plainly. The denominator page."
+    },
+    {
+      "t": "Colorado River Compact",
+      "a": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Colorado_River_Compact",
+      "why": "The 1922 arithmetic and the century of consequences."
+    },
+    {
+      "t": "Los Angeles Aqueduct",
+      "a": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Los_Angeles_Aqueduct",
+      "why": "For the Owens Valley chronology as the records have it, movie versions aside."
+    }
+  ]
+}

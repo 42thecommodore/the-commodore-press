@@ -1,0 +1,107 @@
+{
+  "id": "the-box",
+  "keep": "A proprietary box is just a box; a universal one is an economic system. Give the standard away.",
+  "title": "The Box",
+  "sub": "How a steel rectangle rebuilt world trade",
+  "field": "Technology",
+  "spineTitle": "The Box",
+  "years": "1956–now",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "grid",
+  "claim": "The container was not a technology problem. It was a standards and labour problem.",
+  "lede": "On 26 April 1956 a converted tanker carried fifty-eight truck bodies from Newark to Houston, and the cost of moving a ton of cargo onto a ship fell by roughly ninety-seven per cent.",
+  "copy": [
+    "Before the container, loading a ship was a craft. Gangs of longshoremen stowed barrels, sacks, crates and drums by hand, fitting irregular cargo into an irregular hold. Loading and unloading could account for more than a third of the total cost of a voyage, and a ship could spend as long in port as at sea. New York and London each had more than fifty thousand registered dockworkers in the early 1950s. Marc Levinson's figures for the Ideal-X are the ones worth memorising: about $5.83 per ton to load a conventional ship, against 15.8 cents per ton for the container ship.",
+    "Malcom McLean was a trucking man, not a shipping man, which is the point. He was not trying to improve ships; he was trying to stop unloading his trailers. Being an outsider let him see the whole door-to-door journey as one system, and the industry's optimisation of each leg separately as the actual problem.",
+    "The hard part was never the steel box. It was standardisation — corner castings, lengths, stacking strength, twist-lock fittings — which required competitors to agree, and the agreement took roughly a decade of committee work that nobody puts in the story. And it was labour: containerisation destroyed a specific, powerful, well-organised craft, and the settlements with the dockworkers' unions were a precondition for the thing working at all. The technology was ready years before the institutions were.",
+    "The payoff shows up as an entire economic geography. Once freight cost approaches zero relative to goods value, it stops making sense to manufacture near your customers and starts making sense to manufacture wherever it is cheapest and ship. Levinson's numbers on the Asian export surge — Korean exports to the US tripling between 1969 and 1973, Taiwan's tripling in three years — describe a world being replumbed."
+  ],
+  "timeline": [
+    {
+      "y": "1956",
+      "t": "The Ideal-X sails from Newark to Houston with 58 truck bodies on deck. Loading costs collapse."
+    },
+    {
+      "y": "1961",
+      "t": "ISO standardisation work begins in earnest; the fight over dimensions and fittings takes most of a decade."
+    },
+    {
+      "y": "1966",
+      "t": "The first scheduled container service crosses the Atlantic."
+    },
+    {
+      "y": "1968–71",
+      "t": "Standards for corner fittings, lengths and stacking are settled, making any box fit any ship and any crane."
+    },
+    {
+      "y": "1969–73",
+      "t": "Korean exports to the United States triple; Taiwan's triple in three years."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Malcom McLean",
+      "d": "A trucking entrepreneur who mortgaged everything on the idea that ships were just a leg of a road journey."
+    },
+    {
+      "n": "Keith Tantlinger",
+      "d": "Designed the twist-lock corner fitting — then persuaded McLean to give the patent away so it could become a standard."
+    },
+    {
+      "n": "Marc Levinson",
+      "d": "The economist and historian who reconstructed the numbers and made the whole thing legible."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$5.83",
+      "s": "Cost per ton to load a conventional break-bulk ship, mid-1950s"
+    },
+    {
+      "b": "15.8¢",
+      "s": "Cost per ton to load the Ideal-X — about 2.7% of the old figure"
+    },
+    {
+      "b": "50,000+",
+      "s": "Registered dockworkers in New York and in London in the early 1950s"
+    }
+  ],
+  "contested": "The clean 'container caused globalisation' story overstates a single cause. Tariff reduction, jet freight, telecoms and port investment all moved together, and separating their contributions econometrically is hard. Some studies find the container's measured effect on trade volumes larger than tariff cuts; others find the timing too smeared to attribute cleanly.",
+  "changed": "I filed this under logistics for years — a cost-reduction story. It's really a standards story. The decisive act was Tantlinger's corner fitting being given away rather than licensed, because a proprietary container is just a box and a universal one is an economic system.",
+  "across": [
+    {
+      "to": "press:why-firms-exist",
+      "label": "Why Firms Exist",
+      "txt": "— lower the cost of contracting and the boundary of the firm moves. This is that, at ocean scale."
+    }
+  ],
+  "reading": [
+    {
+      "t": "The Box: How the Shipping Container Made the World Smaller and the World Economy Bigger",
+      "a": "Marc Levinson",
+      "u": "https://press.princeton.edu/books/paperback/9780691170817/the-box",
+      "why": "The book. Strongest on the labour negotiations, which everyone else skips."
+    },
+    {
+      "t": "The Box That Shrank the World",
+      "a": "Works That Work",
+      "u": "https://worksthatwork.com/2/intermodal-container",
+      "why": "Short, well-sourced, and where the per-ton loading figures are laid out plainly."
+    },
+    {
+      "t": "Containerization",
+      "a": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Containerization",
+      "why": "For the Ideal-X specifics and the standardisation chronology."
+    },
+    {
+      "t": "The Origins of Efficiency",
+      "a": "Brian Potter",
+      "u": "https://press.stripe.com/the-origins-of-efficiency",
+      "why": "The general theory this is a case study of."
+    }
+  ]
+}

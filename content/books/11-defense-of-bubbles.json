@@ -1,0 +1,111 @@
+{
+  "id": "defense-of-bubbles",
+  "keep": "Ask what's left standing when the money burns. Buildable assets forgive manias; fixed ones don't.",
+  "title": "In Defense of Bubbles",
+  "sub": "Mania as a coordination device",
+  "field": "Economics",
+  "spineTitle": "In Defense of Bubbles",
+  "years": "1636–now",
+  "cover": "#8A2352",
+  "spineC": "#66143A",
+  "ink": "#FBEAF1",
+  "accent": "#F2C2D6",
+  "motif": "rings",
+  "claim": "Some infrastructure only gets built by people who are collectively, temporarily wrong.",
+  "lede": "Britain's railway mania destroyed a generation of investors and left Britain with a railway network. Those are the same sentence.",
+  "copy": [
+    "At the peak in 1846, Parliament passed 263 Acts authorising some 9,500 miles of new railway; about a third of it was never built and a great deal of the capital was never seen again. What survived was a network. The dot-com bubble did the same trick with fibre: enormous sums went into laying capacity, an estimated 85 to 95% of it sat dark after the bust, and the next twenty years of internet traffic ran over infrastructure bought at prices no rational investor would have paid.",
+    "The argument, made most fully by Byrne Hobart and Tobias Huber, is that bubbles solve a coordination problem. Some investments are large, lumpy and complementary — they only pay if many people build at once — and no individual rational actor will move first. A mania is a mechanism for getting everyone to move at once by making them all wrong in the same direction simultaneously. The capital is destroyed; the asset isn't.",
+    "This is not a defence of every bubble, and the distinction that matters is what's left standing. A bubble in an asset that can be built — track, fibre, fabs, datacentres — leaves durable capital and a chastened balance sheet. A bubble in an asset fixed in supply, like urban land, mostly transfers wealth to incumbents and then breaks the banking system that financed it, which is a fair description of 2008.",
+    "The historical revision is worth having too. Tulip mania is the canonical bubble, and Anne Goldgar's archival work found the crash's actual economic damage to be small and concentrated among a narrow circle of traders. Most of the ruined-nation detail comes from later moralising pamphlets. The most famous bubble in history is mostly a story about how much we enjoy telling stories about bubbles."
+  ],
+  "timeline": [
+    {
+      "y": "1637",
+      "t": "The tulip market breaks. The economic damage is real, narrow, and nothing like the legend."
+    },
+    {
+      "y": "1846",
+      "t": "Railway mania peaks: 263 Acts, 9,500 miles authorised, roughly a third never built."
+    },
+    {
+      "y": "1996–2001",
+      "t": "Post-Telecom Act fibre buildout; the great majority of the capacity sits dark after the crash."
+    },
+    {
+      "y": "2007",
+      "t": "Goldgar's archival study reconstructs what actually happened in 1637 and to whom."
+    },
+    {
+      "y": "2008",
+      "t": "A bubble in fixed-supply assets demonstrates the other kind of outcome."
+    },
+    {
+      "y": "2024",
+      "t": "Hobart and Huber publish 'Boom' and make the coordination argument explicitly."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Anne Goldgar",
+      "d": "Went to the Dutch archives and found the most famous bubble in history was mostly a literary genre."
+    },
+    {
+      "n": "Charles Kindleberger",
+      "d": "Wrote the taxonomy of manias and panics everyone still argues inside of."
+    },
+    {
+      "n": "Byrne Hobart",
+      "d": "Makes the strongest modern case that some bubbles are load-bearing rather than pathological."
+    }
+  ],
+  "facts": [
+    {
+      "b": "9,500 mi",
+      "s": "British railway authorised by 263 Acts in 1846 alone; a third was never built"
+    },
+    {
+      "b": "85–95%",
+      "s": "Estimated share of 1990s-laid fibre still dark after the bust"
+    },
+    {
+      "b": "1637",
+      "s": "Tulip crash — far smaller in real economic effect than the legend"
+    }
+  ],
+  "contested": "Selection bias again: we count the bubbles that left useful infrastructure and quietly forget the ones that left nothing. 'Productive bubble' is far easier to identify afterwards than from inside. And the distribution matters — the people who bear the losses are rarely the ones who capture the surviving asset.",
+  "changed": "I used to think the lesson was 'bubbles are underrated'. It's narrower: bubbles in buildable, non-rival assets are underrated, and bubbles in fixed-supply assets are exactly as bad as everyone says. Which type you're in is knowable in advance, and it's the only part of the question that's decidable in advance.",
+  "across": [
+    {
+      "to": "manuals:i",
+      "label": "Field Manual I · Survive first, then bet big",
+      "txt": "— the personal version of the same asymmetry."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Boom: Bubbles and the End of Stagnation",
+      "a": "Byrne Hobart & Tobias Huber",
+      "u": "https://press.stripe.com/boom",
+      "why": "The clearest statement of the coordination argument."
+    },
+    {
+      "t": "Tulipmania: Money, Honor, and Knowledge in the Dutch Golden Age",
+      "a": "Anne Goldgar",
+      "u": "https://press.uchicago.edu/ucp/books/book/chicago/T/bo5751252.html",
+      "why": "Archival demolition of a story you almost certainly believe."
+    },
+    {
+      "t": "Manias, Panics, and Crashes",
+      "a": "Charles Kindleberger",
+      "u": "https://en.wikipedia.org/wiki/Manias,_Panics,_and_Crashes",
+      "why": "The standard taxonomy. Read for the pattern-matching, not the theory."
+    },
+    {
+      "t": "Railway Mania: 263 Acts, 9,500 miles, one year",
+      "a": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Railway_Mania",
+      "why": "For the Acts-and-mileage figures, which are more dramatic than the summaries suggest."
+    }
+  ]
+}

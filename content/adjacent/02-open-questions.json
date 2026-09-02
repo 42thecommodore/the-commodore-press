@@ -1,0 +1,68 @@
+{
+  "id": "open-questions",
+  "keep": "Confidence is cheapest for the people who haven't read the sources.",
+  "title": "Open Questions",
+  "sub": "Things on this shelf I can't resolve",
+  "field": "Adjacent",
+  "spineTitle": "Open Questions",
+  "years": "Unfinished",
+  "cover": "#4A2545",
+  "spineC": "#331830",
+  "ink": "#F7ECF5",
+  "accent": "#DDB4D4",
+  "motif": "conic",
+  "claim": "Five places where my own sources contradict each other, kept visible on purpose.",
+  "lede": "A standing list of the places where the sources genuinely contradict each other, and where a confident answer would be a bluff.",
+  "copy": [
+    "Did the great divergence open in 1500 or 1750? Allen's wage series and Pomeranz's comparative development can't both be fully right, and the resolution depends on price and consumption data still being reconstructed. I lean late, weakly, and mostly because Pomeranz's critics have to explain why the technologies diffused when they did.",
+    "Were the great industrial labs causal, or were they well-funded organisations sitting on a scientific wave that was breaking anyway? Nobody has a clean counterfactual, and every argument for rebuilding them assumes an answer to this.",
+    "Do scaling laws keep holding, and does the quantity they predict keep mattering? A power law fitted over six orders of magnitude tells you nothing about the seventh, and next-token loss is a proxy whose relationship to anything useful is itself an empirical question.",
+    "How much of American infrastructure cost is Baumol and how much is institutional? The decomposition hasn't been done convincingly, and both sides cite the same subway. And did the printing press cause the growth Dittmar measures, or did it follow the trade routes already causing it? His instrument is distance from Mainz, and Mainz was not randomly located."
+  ],
+  "facts": [
+    {
+      "b": "5",
+      "s": "Open questions currently on the list"
+    },
+    {
+      "b": "0",
+      "s": "Resolved by having a strong opinion about them"
+    },
+    {
+      "b": "∞",
+      "s": "Confidence available to people who haven't read the sources"
+    }
+  ],
+  "reading": [
+    {
+      "t": "The Great Divergence",
+      "a": "Kenneth Pomeranz",
+      "u": "https://press.princeton.edu/books/paperback/9780691217185/the-great-divergence",
+      "why": "Question one, from the side I lean toward."
+    },
+    {
+      "t": "Random thoughts on critiques of Allen",
+      "a": "pseudoerasmus",
+      "u": "https://pseudoerasmus.com/2016/12/01/allen/",
+      "why": "Question one, from the side that thinks I'm wrong."
+    },
+    {
+      "t": "Are Emergent Abilities of LLMs a Mirage?",
+      "a": "Schaeffer et al.",
+      "u": "https://arxiv.org/abs/2304.15004",
+      "why": "Question three, and the best-argued version of it."
+    },
+    {
+      "t": "Transit Costs Project",
+      "a": "Alon Levy et al.",
+      "u": "https://transitcosts.com/",
+      "why": "Question four. Note their own caveats about sample representativeness."
+    },
+    {
+      "t": "Information Technology and Economic Change",
+      "a": "Jeremiah Dittmar",
+      "u": "https://cepr.org/voxeu/columns/information-technology-and-economic-change-impact-printing-press",
+      "why": "Question five. Judge the instrument yourself."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "id": "finding-longitude",
+  "keep": "Specify the outcome, not the method — and remember that reproducibility, not brilliance, is what the prize is for.",
+  "title": "Finding Longitude",
+  "sub": "The problem that ate a century",
+  "field": "History",
+  "spineTitle": "Finding Longitude",
+  "years": "1714–1773",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "rings",
+  "claim": "A prize specified an outcome, not a method. It took sixty years and nobody won it.",
+  "lede": "Latitude you can read off the sky. Longitude requires knowing what time it is somewhere else — which, at sea, in 1714, was a scientific impossibility with a national body count.",
+  "copy": [
+    "Britain's Longitude Act of 1714 offered up to £20,000 for a practical method of determining longitude at sea, after a series of disasters made the problem politically unignorable. Two approaches competed. Lunar distances required good tables, clear skies, and about four hours of a navigator's arithmetic per fix. A sea-going clock accurate enough to carry Greenwich time across an ocean was considered impossible by every serious authority, because pendulums don't work on a moving ship and metal expands with heat.",
+    "John Harrison spent forty years being wrong in increasingly productive ways — H1, H2, H3, and finally H4, a large watch rather than a clock. On the 1761–62 crossing to Jamaica it came in five seconds slow after eighty-one days: a longitude error of about one nautical mile. That is a shattering result. What happened next is where the popular story and the archives part company.",
+    "The popular version is a stitch-up by a jealous Astronomer Royal. The archival version, reconstructed from the Board of Longitude papers, is duller and more interesting: the Board was a committee applying a statutory test to a one-off handmade object that could not yet be reproduced by anyone else. Reproducibility was precisely the point of the statute — a method only one man in England can execute is not a method. Harrison was funded by the Board for decades and ended up receiving £23,065 in total, a fortune. He never got the official prize, but then neither did anyone: it was never awarded.",
+    "The prize model is the part worth stealing, and the part worth being careful about. It specified an outcome rather than a method, paid on demonstrated performance, and stayed open for decades — all things a grant committee cannot do. It also took sixty years, consumed one man's working life, and the winning technology arrived alongside a rival method the tables had finally made practical. Both halves are the lesson."
+  ],
+  "timeline": [
+    {
+      "y": "1707",
+      "t": "Four ships and around 1,400 men are lost off the Scilly Isles, partly through navigational error."
+    },
+    {
+      "y": "1714",
+      "t": "The Longitude Act offers up to £20,000 and creates the Board of Longitude."
+    },
+    {
+      "y": "1737",
+      "t": "Harrison shows H1 to the Royal Society and receives the first of decades of Board funding."
+    },
+    {
+      "y": "1761–62",
+      "t": "H4 crosses to Jamaica and is five seconds slow after 81 days."
+    },
+    {
+      "y": "1765",
+      "t": "An interim £10,000 is awarded, conditional on Harrison explaining the mechanism so others can copy it."
+    },
+    {
+      "y": "1773",
+      "t": "Parliament grants a further £8,750. The statutory prize is never awarded — to Harrison or to anyone."
+    }
+  ],
+  "figures": [
+    {
+      "n": "John Harrison",
+      "d": "A carpenter turned clockmaker who solved a problem the Royal Society thought belonged to astronomy."
+    },
+    {
+      "n": "Nevil Maskelyne",
+      "d": "Astronomer Royal, villain of the popular account, and the man whose Nautical Almanac made lunars usable."
+    },
+    {
+      "n": "Larcum Kendall",
+      "d": "Made K1, the copy of H4 that proved the design was reproducible — the test that actually mattered."
+    }
+  ],
+  "facts": [
+    {
+      "b": "5 sec",
+      "s": "H4's error after an 81-day crossing — about one nautical mile of longitude"
+    },
+    {
+      "b": "£23,065",
+      "s": "Total Harrison received across Board grants, an interim award and Parliament"
+    },
+    {
+      "b": "£0",
+      "s": "Of the statutory £20,000 prize — it was never awarded, to anyone"
+    }
+  ],
+  "contested": "Dava Sobel's bestselling 'lone genius versus the establishment' framing has been substantially revised by historians working from the Board of Longitude archives. Harrison was funded by the Board for decades and finished wealthy; the astronomers' objections were partly technical — a handmade one-off is not yet a method — rather than purely political.",
+  "changed": "I read Sobel first, like everyone, and carried the villain version around for years. The archives changed my mind about Maskelyne specifically, and more usefully about the general shape: when an institution frustrates an inventor, the boring possibility is that the institution is enforcing a criterion the inventor hasn't met yet.",
+  "across": [
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— the other case where the tidy popular story is the one thing the primary sources don't support."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Longitude",
+      "a": "Dava Sobel",
+      "u": "https://en.wikipedia.org/wiki/Longitude_(book)",
+      "why": "Read it for the story, then read the next two to correct it."
+    },
+    {
+      "t": "Longitude found — Harrison's timekeepers",
+      "a": "Royal Museums Greenwich",
+      "u": "https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem",
+      "why": "The institution that holds the clocks, giving the payments record plainly."
+    },
+    {
+      "t": "The Board of Longitude Archive (digitised)",
+      "a": "Cambridge Digital Library",
+      "u": "https://cudl.lib.cam.ac.uk/collections/longitude",
+      "why": "The primary documents. Genuinely browsable, and it dissolves the villain story."
+    },
+    {
+      "t": "John Harrison",
+      "a": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/John_Harrison",
+      "why": "For the payment figures and the fact that the prize went unclaimed."
+    }
+  ]
+}

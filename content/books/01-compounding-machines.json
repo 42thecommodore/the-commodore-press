@@ -1,0 +1,111 @@
+{
+  "id": "compounding-machines",
+  "keep": "Patient capital, a factory down the hall, and one accountable person with a decade of budget — the whole recipe everyone skips.",
+  "title": "Compounding Machines",
+  "sub": "What Bell Labs, PARC, and DARPA knew",
+  "field": "Technology",
+  "spineTitle": "Compounding Machines",
+  "years": "1925–1979",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "conic",
+  "claim": "A few research organisations produced the century. The structure was the invention.",
+  "lede": "A handful of labs produced an absurd share of the twentieth century's inventions, and the thing they had in common was not talent density.",
+  "copy": [
+    "Bell Labs, running on a regulated monopoly's guaranteed revenue, produced the transistor in 1947, Shannon's information theory in 1948, the first practical silicon solar cell, the communications satellite, Unix and C, the charge-coupled device, and — by accident, while trying to eliminate noise from a horn antenna — the cosmic microwave background. Ten Nobel Prizes have gone to work done there. Xerox PARC, in roughly a decade, produced the Alto, Ethernet, the laser printer, Smalltalk, and most of the graphical interface you are looking at right now.",
+    "The common ingredients are unglamorous. Patient capital that didn't need quarterly returns. Researchers and the people who manufactured their output in the same building, so a physicist could walk to a machine shop and have a thing by Thursday. Program managers with real taste and real authority — DARPA's model is one manager, a few years, a budget, and no committee. And an explicit tolerance for work whose payoff could not be argued for in advance, which is the expensive part, because it means paying for failure on purpose.",
+    "The mechanism people underrate is proximity to manufacturing. Bell Labs was attached to Western Electric; what got invented got built, and what got built fed back corrections into what got invented. When that loop is broken — when the lab is a campus and the fab is an ocean away — the lab drifts toward papers, because papers are the only output it can still close the loop on.",
+    "The uncomfortable half of the story is what happened next. Bell Labs' funding model was a monopoly rent, and antitrust removed it. Xerox invented the personal computer and shipped almost none of it; Apple and Microsoft captured the value, which suggests the invention function and the commercialisation function are genuinely separate skills that rarely coexist. Whether these places were engines of progress or unusually well-documented lottery tickets is the argument that actually matters, because it determines whether any of it can be rebuilt."
+  ],
+  "timeline": [
+    {
+      "y": "1925",
+      "t": "Bell Telephone Laboratories incorporated as a separate research arm of AT&T and Western Electric."
+    },
+    {
+      "y": "1947",
+      "t": "Bardeen, Brattain and Shockley demonstrate the point-contact transistor two days before Christmas."
+    },
+    {
+      "y": "1948",
+      "t": "Claude Shannon publishes 'A Mathematical Theory of Communication' and invents information theory more or less alone."
+    },
+    {
+      "y": "1964",
+      "t": "Penzias and Wilson fail to get rid of a persistent hiss, and discover the cosmic microwave background."
+    },
+    {
+      "y": "1970",
+      "t": "Xerox founds PARC; within a decade it has the Alto, Ethernet, the laser printer, and the GUI."
+    },
+    {
+      "y": "1979",
+      "t": "Steve Jobs visits PARC. Xerox gets stock; the industry gets the interface."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Mervin Kelly",
+      "d": "Bell Labs president who designed the building so people from different disciplines were forced to walk past each other."
+    },
+    {
+      "n": "Claude Shannon",
+      "d": "Invented information theory, then rode a unicycle down the corridors of the institution that let him."
+    },
+    {
+      "n": "Bob Taylor",
+      "d": "Ran ARPA's IPTO, then PARC's computer lab. His talent was picking people and absorbing organisational damage on their behalf."
+    }
+  ],
+  "facts": [
+    {
+      "b": "10",
+      "s": "Nobel Prizes for work done at Bell Labs, 1937–2023"
+    },
+    {
+      "b": "1947",
+      "s": "Bardeen, Brattain and Shockley demonstrate the transistor"
+    },
+    {
+      "b": "~10 yrs",
+      "s": "PARC's window from founding to the Alto's peak influence"
+    }
+  ],
+  "contested": "Survivorship bias is the standing objection: we remember the labs that hit. Enormous corporate research budgets also produced enormous amounts of nothing, and the counterfactual — how much of this would have arrived anyway, slightly later, somewhere else — is genuinely unknown. Transistors were being chased in several countries at once.",
+  "changed": "I used to think the lesson was 'hire brilliant people and leave them alone.' I now think that's the part everyone copies and it doesn't work by itself. The harder, duller ingredients — a captive revenue stream, a factory down the hall, and one accountable person with a decade of budget — are what almost nobody reproduces.",
+  "across": [
+    {
+      "to": "manuals:i",
+      "label": "Field Manual I · Survive first, then bet big",
+      "txt": "— patient capital is the institutional version of the same rule."
+    }
+  ],
+  "reading": [
+    {
+      "t": "The Idea Factory: Bell Labs and the Great Age of American Innovation",
+      "a": "Jon Gertner",
+      "u": "https://en.wikipedia.org/wiki/The_Idea_Factory",
+      "why": "The best single account of how the building, the funding, and the management actually worked."
+    },
+    {
+      "t": "Dealers of Lightning: Xerox PARC and the Dawn of the Computer Age",
+      "a": "Michael Hiltzik",
+      "u": "https://en.wikipedia.org/wiki/Dealers_of_Lightning",
+      "why": "Read for the failure half: how a company invents the future and fails to sell it."
+    },
+    {
+      "t": "The Dream Machine",
+      "a": "M. Mitchell Waldrop",
+      "u": "https://press.stripe.com/the-dream-machine",
+      "why": "Licklider's story, and the clearest case that funding taste is a skill."
+    },
+    {
+      "t": "You and Your Research (lecture, 1986)",
+      "a": "Richard Hamming",
+      "u": "https://www.cs.virginia.edu/~robins/YouAndYourResearch.html",
+      "why": "An hour, free, and the most useful thing on this list. Start here."
+    }
+  ]
+}

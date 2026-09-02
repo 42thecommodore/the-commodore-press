@@ -1,0 +1,34 @@
+{
+  "id": "isaac-newton",
+  "keep": "Progress does not require tidy people. The revolution was made with one foot in the medieval world.",
+  "n": "Isaac Newton",
+  "years": "1643–1727",
+  "place": "England",
+  "field": "Science & Mathematics",
+  "group": "famous",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "grid",
+  "lede": "He was no cool rationalist. His physics grew partly out of a conviction that he was decoding the mind of God.",
+  "copy": [
+    "Newton did more than anyone to make the modern idea of a law-governed universe thinkable. A solitary, secretive and famously prickly man, he worked out the laws of motion and universal gravitation, invented calculus in parallel with Leibniz, and demonstrated that white light is a mixture of colours — any one of which would have secured his fame. The Principia Mathematica of 1687 showed that the same force pulling an apple to the ground holds the moon in its orbit, binding heaven and earth under a single mathematics.",
+    "He poured decades into alchemy and biblical chronology. The contradiction is the point: the Scientific Revolution was made by a man with one foot in the medieval world.",
+    "For more than two centuries his framework simply was physics. Even after Einstein, Newtonian mechanics remains the engineering bedrock on which bridges stand and spacecraft fly."
+  ],
+  "bio": {
+    "t": "Never at Rest: A Biography of Isaac Newton",
+    "a": "Richard S. Westfall",
+    "y": "1980",
+    "why": "Twenty years of work; the first biography built on the full manuscript record, including the alchemy and theology. Demanding but definitive. For a shorter entry point, James Gleick's Isaac Newton (2003) is superb."
+  },
+  "contested": "Westfall is genuinely the scholarly standard and little disputed as such — but it is forty-five years old, and the study of Newton's alchemy has moved considerably since (William Newman's work in particular). Read it as the frame and the newer scholarship as the update.",
+  "across": [
+    {
+      "to": "press:republic-of-letters",
+      "label": "The Republic of Letters",
+      "txt": "— Newton was the network's most productive and least cooperative member."
+    }
+  ]
+}

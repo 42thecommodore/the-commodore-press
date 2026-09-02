@@ -1,0 +1,34 @@
+{
+  "id": "marcus-aurelius",
+  "keep": "Keep a private ledger of your debts and lessons. Power is survivable only with the notebook kept up.",
+  "n": "Marcus Aurelius",
+  "years": "121–180",
+  "place": "Rome",
+  "field": "Philosophy & Power",
+  "group": "famous",
+  "cover": "#6B5330",
+  "spineC": "#4C3B20",
+  "ink": "#F6EFDD",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "The most powerful man alive kept a private notebook reminding himself not to be corrupted by it — and never meant anyone to read it.",
+  "copy": [
+    "Emperor from 161 to 180, Marcus spent most of his reign not in Rome but in army camps on the Danube, holding the frontier through plague and war. There, in Greek, for no audience but himself, he wrote the spiritual exercises we call the Meditations: reminders to meet the day's obstructions, flatterers and losses as material for practice rather than occasions for rage. Stoicism, in his hands, is not a theory but a discipline performed daily, in writing, under pressure.",
+    "The first book is nothing but gratitude with names attached — from my grandfather, good morals; from my mother, piety and generosity; from Rusticus, to read carefully and not be satisfied with a superficial understanding. He audits his own character as a ledger of debts to specific people. The Atlas wing of this house borrows its shape and its title from that book, because it is the best template ever written for honest accounting of where your operating system came from.",
+    "The standing irony is that philosophy's model king was succeeded by his own son Commodus, one of Rome's disasters — a fact used ever since to argue both that Stoicism cannot govern and that even it cannot fix inheritance. He remains the proof-of-concept everyone reaches for: that power and self-command can coexist, at least for one lifetime, provided the notebook is kept up."
+  ],
+  "bio": {
+    "t": "Meditations",
+    "a": "Marcus Aurelius, tr. Gregory Hays",
+    "y": "c. 170–180 / 2002",
+    "why": "The book on him is by him. Hays's translation is the most alive in English, and his introduction is the best short life of Marcus in print — start there, not with a biography."
+  },
+  "contested": "The text's survival is a near-miracle with a murky transmission history, and translations differ enough to change the philosophy — Hays reads freer, Hard and Long more literal; compare before quoting. The modern biography, McLynn's, is criticised by classicists for speculative psychology. And how much blame Marcus bears for Commodus is a two-thousand-year-old argument with no verdict.",
+  "across": [
+    {
+      "to": "atlas",
+      "label": "The Atlas · Debts & Lessons",
+      "txt": "— Wing III borrows its name and its method from Book 1, where he thanks his teachers one by one."
+    }
+  ]
+}

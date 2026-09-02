@@ -1,0 +1,111 @@
+{
+  "id": "concept-of-law",
+  "keep": "Of any institution, ask what its rule of recognition is — what the people running it actually treat as binding.",
+  "title": "The Concept of Law",
+  "sub": "What makes law law",
+  "field": "History",
+  "spineTitle": "The Concept of Law",
+  "years": "1958–2011",
+  "cover": "#243B53",
+  "spineC": "#182A3D",
+  "ink": "#EEF3F8",
+  "accent": "#9FC1DC",
+  "motif": "lines",
+  "claim": "A legal system is a union of primary and secondary rules — and the master rule is a social fact.",
+  "lede": "Strip away the robes and the Latin and ask the child's question: why is a law different from a gunman's order? Hart's answer reorganised an entire field.",
+  "copy": [
+    "The old answer, John Austin's, was that law is the command of a sovereign backed by threats — which makes the state a gunman writ large, and cannot explain most of what law actually does. Nobody threatens you into making a valid will. H.L.A. Hart's 1961 book replaced the picture: a legal system is a union of primary rules, which tell people what to do, and secondary rules, which tell officials how to recognise, change and adjudicate the primary ones.",
+    "The keystone is the rule of recognition — the ultimate test officials use for what counts as law — and Hart's most radical claim is that it is not itself law, or morality, or a command. It is a social fact: a practice, sustained by officials who treat it from the inside as a common public standard. A constitution binds because the people who operate the machine converge on treating it as binding. There is no deeper floor.",
+    "The famous fight came first. In 1958 Hart debated Lon Fuller in the Harvard Law Review over Nazi law: Hart insisted that calling a wicked rule 'law' is honest description, and that the moral question — obey or resist — is separate and clearer for it. Fuller answered that legality has an inner morality of its own — generality, publicity, consistency — that the Nazi system had already abandoned. Sixty-plus years on, first-year students are still assigned both papers, because neither side ever quite won.",
+    "Ronald Dworkin spent a career on the strongest objection: judges in hard cases reach for principles — no one may profit from his own wrong — that carry weight without passing any pedigree test, which suggests law is an interpretive practice, not a system of rules. Hart's posthumous Postscript conceded ground and dug in elsewhere; Scott Shapiro's Legality later rebuilt positivism on plans rather than rules. The argument is the field."
+  ],
+  "timeline": [
+    {
+      "y": "1832",
+      "t": "Austin's 'Province of Jurisprudence Determined': law as the sovereign's command, backed by threats."
+    },
+    {
+      "y": "1958",
+      "t": "Hart and Fuller debate in the Harvard Law Review over the grudge-informer cases of post-Nazi Germany."
+    },
+    {
+      "y": "1961",
+      "t": "'The Concept of Law' is published; the rule of recognition enters the vocabulary."
+    },
+    {
+      "y": "1967",
+      "t": "Dworkin's 'The Model of Rules' opens the interpretivist attack."
+    },
+    {
+      "y": "1994",
+      "t": "Hart's Postscript appears posthumously, answering Dworkin on some points and conceding others."
+    },
+    {
+      "y": "2011",
+      "t": "Shapiro's 'Legality' restates positivism as a planning theory — the argument continues."
+    }
+  ],
+  "figures": [
+    {
+      "n": "H.L.A. Hart",
+      "d": "A wartime intelligence officer turned Oxford professor who rebuilt jurisprudence with ordinary-language philosophy."
+    },
+    {
+      "n": "Lon Fuller",
+      "d": "Argued that legality has an inner morality — eight ways to fail to make law at all."
+    },
+    {
+      "n": "Ronald Dworkin",
+      "d": "Hart's student and sharpest critic; spent forty years arguing that principles won't pass a pedigree test."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1961",
+      "s": "'The Concept of Law' published — still the field's common starting point"
+    },
+    {
+      "b": "1958",
+      "s": "Hart–Fuller debate in the Harvard Law Review"
+    },
+    {
+      "b": "1994",
+      "s": "The Postscript — Hart's posthumous reply to Dworkin"
+    }
+  ],
+  "contested": "Whether the rule of recognition can incorporate moral tests (inclusive versus exclusive positivism) split Hart's own camp. Dworkin's challenge was never resolved so much as absorbed. And critics note the Postscript concedes enough that it is argued to this day how much of the original book survives its own second edition.",
+  "changed": "I came to Hart looking for a clean answer and left with a habit instead: asking of any institution — a company, a university, a game — what its rule of recognition is. What do the people running it actually treat as binding, from the inside? The answer is usually not what the documents say, and the gap is where the interesting failures live.",
+  "across": [
+    {
+      "to": "press:movable-type",
+      "label": "Movable Type",
+      "txt": "— fixity was an institutional achievement there too; the deepest rules are practices, not texts."
+    }
+  ],
+  "reading": [
+    {
+      "t": "The Concept of Law",
+      "a": "H.L.A. Hart, 1961",
+      "u": "https://en.wikipedia.org/wiki/The_Concept_of_Law",
+      "why": "Short, plainly written, and the rare classic that is genuinely the best entry point to itself."
+    },
+    {
+      "t": "Positivism and the Separation of Law and Morals",
+      "a": "Hart, Harvard Law Review 1958",
+      "u": "https://en.wikipedia.org/wiki/Hart%E2%80%93Fuller_debate",
+      "why": "Read with Fuller's reply — the pair is the whole debate in one sitting."
+    },
+    {
+      "t": "Taking Rights Seriously",
+      "a": "Ronald Dworkin",
+      "u": "https://en.wikipedia.org/wiki/Taking_Rights_Seriously",
+      "why": "The strongest sustained objection, from the man who made it his career."
+    },
+    {
+      "t": "Legality",
+      "a": "Scott Shapiro",
+      "u": "https://www.hup.harvard.edu/books/9780674725782",
+      "why": "Where the argument stands now: law as social plans, and a fair map of everything before it."
+    }
+  ]
+}
