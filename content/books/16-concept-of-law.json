@@ -90,6 +90,11 @@
       "to": "lives:mlk",
       "label": "Martin Luther King Jr.",
       "txt": "— King's Letter takes Aquinas's side of the argument Hart's book is about: whether an unjust law is law at all."
+    },
+    {
+      "to": "press:baptism-and-chain",
+      "label": "The Baptism and the Chain",
+      "txt": "— the rule of recognition has a cousin in the philosophy of language: a chain of use, not a definition, fixes what a name picks out."
     }
   ],
   "reading": [

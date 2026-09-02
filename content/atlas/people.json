@@ -478,5 +478,55 @@
       "Life is lived in the gray; it can be both.",
       "Rejection is healthy: coming back up."
     ]
+  },
+  {
+    "name": "Cynthia Boccara",
+    "domain": "mind",
+    "role": "Chiropractor; Major League Pickleball medical team — 'the Pickleball Doc'",
+    "take": "The joint that hurts is rarely the joint that failed. Look upstream and downstream before you treat the knee.",
+    "p": [
+      "backup",
+      "hard",
+      "disc"
+    ],
+    "kept": [
+      "Play until we're ninety, safely.",
+      "It is the innate intelligence in the body that does the healing — not me, not the tape, not the scraper.",
+      "The so-called knee problem in this sport is usually a lateral hamstring, and it starts with a glute that sits all day.",
+      "Warm up dynamically to turn on the line between brain and feet; people fall because that line was quiet."
+    ]
+  },
+  {
+    "name": "Ben Yahalom",
+    "domain": "found",
+    "role": "CEO, True Classic — bootstrapped to nine figures; first outside capital in 2025 at an $850M valuation",
+    "take": "Every dollar either generates revenue or visibly supports it. If a request can't say which, it doesn't pass.",
+    "p": [
+      "disc",
+      "bet",
+      "hard"
+    ],
+    "kept": [
+      "Before you hire: can we articulate the need, can AI do it, can we outsource it. The hire is the last resort.",
+      "Chefs reason from first principles; cooks follow recipes. Too many cooks in every kitchen is a hiring problem.",
+      "Performance branding — the ad converts and leaves a mark. Measure both, even though only one is on the P&L."
+    ]
+  },
+  {
+    "name": "Pablos Holman",
+    "domain": "craft",
+    "role": "Inventor and hacker; Deep Future",
+    "take": "Things are more malleable than you think. Find the assumption you are carrying that may not be true.",
+    "p": [
+      "hard",
+      "quit",
+      "bet"
+    ],
+    "kept": [
+      "My whole career I have only worked on things that are cool or interesting, and I will optimise that over everything else.",
+      "Go further with your boredom — the boring basics are where the needle moves.",
+      "What is the worst thing that can happen? Answer it honestly and most fear evaporates.",
+      "Do what you are good at and hire for what you are bad at."
+    ]
   }
 ]

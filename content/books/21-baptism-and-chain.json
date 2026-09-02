@@ -1,0 +1,134 @@
+{
+  "id": "baptism-and-chain",
+  "keep": "A name reaches its object through a chain of hands, not through a description — which is why a speaker, or a model, can be wrong about everything and still be talking about the right thing.",
+  "title": "The Baptism and the Chain",
+  "sub": "Kripke, the causal chain, and whether a language model's words refer",
+  "field": "Philosophy",
+  "spineTitle": "The Baptism & the Chain",
+  "years": "1970–2024",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "claim": "Reference is inherited, not earned. If that is true for us, it may be true for the machines trained on what we wrote.",
+  "lede": "Most people believe Einstein invented the atomic bomb. When they say so, they are still talking about Einstein.",
+  "copy": [
+    "In three lectures at Princeton in January 1970, delivered without notes, Saul Kripke took apart the theory of names that had held since Frege and Russell. On that theory a name was shorthand for a description — 'Aristotle' meant something like 'the teacher of Alexander' — and to use a name meaningfully you had to have the description in hand. Kripke's counter-examples are short and fatal. Dartmouth would still be Dartmouth if the Dart changed course. Someone who knows only that Cicero was 'a Roman orator' still refers to Cicero and not to the dozens of others that fits. And if Gödel had stolen his theorem from a man named Schmidt, 'Gödel' would still name the thief, not the genius.",
+    "His replacement is disarmingly mechanical. A name is attached to its object once, at a 'baptism', by pointing or by a description used only to fix the referent. After that it is passed from speaker to speaker like a parcel, each receiver intending to use it as the person they got it from did. The chain, not the content of anyone's head, is what keeps the name pointed at the thing. This is why a child, a tourist, or a person full of false beliefs can all refer successfully: they are downstream of the baptism, and that is enough.",
+    "The live question is whether a large language model is downstream too. Mandelkern and Linzen's 2024 answer is that it can be: the model's inputs are not bare strings but strings with histories of referential use, and Kripke never required sensory contact with the referent — a reader who learns of Peano from one sentence, and misremembers what he proved, refers to Peano all the same. The sticking point is intention. Kripke's chain requires each link to intend to use the name as the previous link did; a model has no intentions in the ordinary sense. The way through is to notice that Kripke's requirement is thinner than it looks — a small child satisfies it by simply conforming to how the people around her talk — and a model trained to conform to a speech community's usage may satisfy it the same way.",
+    "The part that should stay uncomfortable: a model cannot perform a baptism. It can pass a name along; it cannot attach one to the world. And where a corpus carries competing chains for the same name, Gareth Evans's 1973 refinement — reference follows the dominant causal source of the information, not the first link — does more work than Kripke's original, and nobody has yet applied it seriously to training data."
+  ],
+  "timeline": [
+    {
+      "y": "1892",
+      "t": "Frege's 'On Sense and Reference' sets up the description theory Kripke will spend three evenings dismantling."
+    },
+    {
+      "y": "1970",
+      "t": "20, 22 and 29 January: Kripke delivers the three 'Naming and Necessity' lectures to the Princeton Philosophy Colloquium."
+    },
+    {
+      "y": "1972",
+      "t": "The transcript appears in Davidson and Harman's Semantics of Natural Language."
+    },
+    {
+      "y": "1973",
+      "t": "Gareth Evans's 'The Causal Theory of Names' argues reference tracks the dominant source of a speaker's information, not the first baptism."
+    },
+    {
+      "y": "1980",
+      "t": "Harvard University Press issues the book version, with a new preface."
+    },
+    {
+      "y": "2024",
+      "t": "Mandelkern and Linzen, in Computational Linguistics, argue that a language model's words can refer because its training strings have natural histories."
+    }
+  ],
+  "figures": [
+    {
+      "n": "Saul Kripke",
+      "d": "Delivered the lectures at 29, without a text; the transcript became one of the century's most-cited works of philosophy."
+    },
+    {
+      "n": "Gottlob Frege & Bertrand Russell",
+      "d": "Authors of the description theory: a name abbreviates the description that uniquely picks out its bearer."
+    },
+    {
+      "n": "John Searle",
+      "d": "Softened descriptivism into a 'cluster' — enough of a weighted set of descriptions suffices. Kripke's Gödel case cuts it just the same."
+    },
+    {
+      "n": "Gareth Evans",
+      "d": "Kept the causal picture but moved the anchor from the first link to the dominant source of the speaker's information."
+    },
+    {
+      "n": "Matthew Mandelkern & Tal Linzen",
+      "d": "Applied the externalist tradition to language models and argued the inputs carry the histories reference needs."
+    }
+  ],
+  "facts": [
+    {
+      "b": "3",
+      "s": "lectures, 20–29 January 1970 — Princeton University Philosophy Colloquium; Kripke, Naming and Necessity, preface (Harvard, 1980)"
+    },
+    {
+      "b": "187–225",
+      "s": "pages of Evans's 'The Causal Theory of Names', Aristotelian Society Supplementary Volume 47 (1973)"
+    },
+    {
+      "b": "1191–1200",
+      "s": "pages of Mandelkern & Linzen, 'Do Language Models' Words Refer?', Computational Linguistics 50(3), 2024 — MIT Press"
+    }
+  ],
+  "contested": "Whether the 'thin' reading of intention is a reading of Kripke or a replacement for him is the honest argument, and it is not settled. Kripke's own text ties transmission to what the receiver 'must intend' (Naming and Necessity, pp. 96–97); the thin version relocates that to membership of a speech community, which is a different claim. Internalists — and most people's first instinct — reply that a system with no beliefs cannot be talking about anything, however good its histories. And the whole apparatus says nothing about whether a model understands; reference and understanding come apart, which is either the point or the problem depending on whom you ask.",
+  "changed": "This entry began as my own honors paper (UCLA, December 2025), which argued the thin-intention line. Writing it up for the shelf changed one thing: I now think the Evans refinement is not a footnote for future work but the main event, because training corpora are precisely the case where a name arrives through many chains at once. The 1191–1204 pagination in my original citation was wrong; the journal's is 1191–1200.",
+  "across": [
+    {
+      "to": "press:concept-of-law",
+      "label": "The Concept of Law",
+      "txt": "— the same move: what fixes reference, like what fixes law, is a social practice, not a text anyone holds."
+    },
+    {
+      "to": "press:heated-disk",
+      "label": "The Heated Disk",
+      "txt": "— Poincaré on which parts of geometry are convention; Kripke on which parts of naming are. Both draw the line further from fact than intuition wants."
+    },
+    {
+      "to": "lives:einstein",
+      "label": "Albert Einstein",
+      "txt": "— Kripke's own example: the man who did not invent the bomb, and is referred to by everyone who thinks he did."
+    },
+    {
+      "to": "manuals:ii",
+      "label": "Field Manual II · The map is not the territory",
+      "txt": "— a description is a map; a name is a pointer that survives the map being wrong."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Naming and Necessity",
+      "a": "Saul Kripke",
+      "u": "https://en.wikipedia.org/wiki/Naming_and_Necessity",
+      "why": "The lectures themselves. Short, spoken, and clearer than the secondary literature that grew around them."
+    },
+    {
+      "t": "Do Language Models' Words Refer?",
+      "a": "Matthew Mandelkern & Tal Linzen",
+      "u": "https://aclanthology.org/2024.cl-3.12/",
+      "why": "Ten pages, open access, and the argument this entry leans on. Read it before forming a view on the question."
+    },
+    {
+      "t": "The Causal Theory of Names",
+      "a": "Gareth Evans",
+      "u": "https://doi.org/10.1093/aristoteliansupp/47.1.187",
+      "why": "The refinement Kripke's picture needs once a name arrives through more than one chain — which, for a corpus, is always."
+    },
+    {
+      "t": "Kripke",
+      "a": "John P. Burgess",
+      "u": "https://www.wiley.com/en-us/Kripke-p-9780745652849",
+      "why": "The fairest short guide, by someone who taught alongside him and does not oversell."
+    }
+  ]
+}

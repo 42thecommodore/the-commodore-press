@@ -66,7 +66,12 @@ const DATA = safe([
   K("CORRECTIONS", CORRECTIONS),
 ].join("\n"));
 
+const words = n => n < 20 ? ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"][n]
+  : n % 10 === 0 ? ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"][n / 10] : words(n - n % 10) + "-" + words(n % 10);
 const out = read("templates/shell.html")
+  .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{N_LIVES}}/g, words(LIVES.length))
+  .replace(/{{N_PEOPLE}}/g, words(PEOPLE.length)).replace(/{{N_MANUALS}}/g, words(MANUALS.length))
+  .replace(/{{N_LESSONS}}/g, words((SLIPWAY.book || []).length))
   .replace("<!--CSS-->", () => read("theme/press.css"))
   .replace("<!--DATA-->", () => DATA)
   .replace("<!--ENGINE-->", () => safe(read("theme/press.js")));

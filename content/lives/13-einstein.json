@@ -34,6 +34,11 @@
       "to": "press:compounding-machines",
       "label": "Compounding Machines",
       "txt": "— the counter-case to that entry's thesis: the century's most important papers came from no lab at all."
+    },
+    {
+      "to": "press:baptism-and-chain",
+      "label": "The Baptism and the Chain",
+      "txt": "— he did not invent the bomb; Kripke used the people who think he did to show how names actually work."
     }
   ]
 }

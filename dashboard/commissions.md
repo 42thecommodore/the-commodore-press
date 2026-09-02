@@ -15,9 +15,8 @@ in it carries a named source.
 
 | Status | Wing | Working title | Why it earns a place | Source lead | Next action |
 |---|---|---|---|---|---|
-| fact-check | Lives | Henrietta Lacks — plate | Commons `File:Henrietta_Lacks.jpg` is tagged CC BY-SA 2.0 by Oregon State University (Flickr), but it is a 1940s family photograph OSU almost certainly does not own — the licence is likely invalid. Given the entry is *about* consent, the press mark may be the honest choice | commons.wikimedia.org/wiki/File:Henrietta_Lacks.jpg | Luca to decide: plateless on purpose, or find a genuinely cleared image |
-| ready | Lives | Maurice Hilleman — plate | Commons `File:Hilleman-Walter-Reed.jpeg`, PD-USGov (Walter Reed Army Medical Center, 1958; NLM order B014616). Clean | commons.wikimedia.org/wiki/File:Hilleman-Walter-Reed.jpeg | download (230 KB) → `npm run plate` |
-| idea | Press | — | Fields thin on the shelf: run `npm run stats` and look at what `field` values are underrepresented | — | pick one |
+| idea | Press | Fifty Questions (adjacent) | Luca's own 'My Parents, In Their Words' guide — StoryCorps-sourced; would sit on the adjacent shelf as a working document | Drive: My-Parents-In-Their-Words | decide whether it belongs on a public shelf |
+| idea | Lives | — | Fields thin on the shelf: run `npm run stats` and look at what `field` values are underrepresented | — | pick one |
 
 ## Retired
 
@@ -26,4 +25,9 @@ house chose to publish, and when, is worth more than a tidy table.
 
 | Date | Wing | Title | Note |
 |---|---|---|---|
+| 2026-09-01 | Press | The Baptism and the Chain | Built from Luca's UCLA honors paper on Kripke and LLM reference. Pagination of the Mandelkern & Linzen citation corrected to the journal's |
+| 2026-09-01 | Atlas | Boccara, Yahalom, Holman | Three people from the Drive — the Pickleball Doc interview prep, the True Classic interview questions, the People doc |
+| 2026-09-01 | Slipway | Andrew (The Water Map) + Venture Deals | One conversation and six lessons from Luca's own founder interview and book notes |
+| 2026-09-01 | Lives | Maurice Hilleman — plate | PD-USGov, Walter Reed 1958. Made with `npm run plate` |
+| 2026-09-01 | Lives | Henrietta Lacks — plateless, on purpose | The only Commons image carries a licence its uploader likely could not grant; for an entry about consent, the press mark is the honest choice. House decision, Luca, 2026-09-01 |
 | 2026-09-01 | All | Cross-links for the 16 island entries | 41 links across 24 entries; every title and life now connects to at least one other wing |
