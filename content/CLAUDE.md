@@ -41,6 +41,12 @@ Rockefeller; do not add a second.
 `txt` is a fragment continuing `label`, opening with an em dash. Add the reciprocal link on
 the other entry. Two good links beat five weak ones.
 
+## The prose itself
+
+`/press-voice` carries the house voice in long form: what each field's sentences actually
+run to, the six surfaces and how they differ, and the proofread gate. Load it before
+writing or tightening any of these fields, not after.
+
 ## Before you say you are done
 
 `npm run check` — it is fast, and it is the whole quality gate.

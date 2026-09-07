@@ -44,7 +44,8 @@ The Commodore/
     ├── hooks/                  # guard-generated (PreToolUse deny), check-content (PostToolUse)
     ├── agents/press-researcher # read-only verification subagent, isolated context
     └── skills/                 # press-status, press-new-title, press-new-life,
-                                # press-plate, press-factcheck, press-correct, press-publish
+                                # press-plate, press-factcheck, press-correct, press-publish,
+                                # press-voice (the house voice, long form + measurements)
 ```
 
 ## What is enforced, not merely asked
@@ -93,6 +94,10 @@ around that by running the deploy steps yourself when the user has not asked to 
 ## House voice
 
 Plain, specific, unhurried. Concrete nouns and real numbers. State the complication instead of hedging around it. No throat-clearing, no rhetorical questions, no "in an era of". The Press's best entries quietly fix a factoid the popular version gets wrong — look for that opportunity in every piece.
+
+**`/press-voice` is the long form of those four lines**, and it is where any prose work should start. It carries the keep and cut lists, the six writing surfaces (`copy` is nearly impersonal; `changed` is the most personal prose on the site; `keep` is a different craft again), the paragraph architectures the good entries actually use, and the proofread gate that runs before `npm run check`.
+
+Its sentence-length and punctuation targets were **measured off `content/`**, not asserted — `node .claude/skills/press-voice/scripts/measure-voice.mjs` reproduces every one of them. Re-run it if the shelves grow substantially; never update those numbers by estimating, for the same reason an unsourced figure does not ship.
 
 ## Design
 

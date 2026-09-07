@@ -60,4 +60,6 @@ Fix every error. Warnings are judgement calls — but "names nothing contested" 
 
 ## The house voice
 
+**Load `/press-voice` before writing the fields.** It holds the long form of everything below — the measured sentence lengths per field (`claim` runs eight words at the median; `copy` runs eighteen; `changed` is the only first-person field), the four-paragraph architecture the good entries use, and the proofread gate.
+
 Plain, specific, unhurried. Concrete nouns and real numbers. No throat-clearing, no "in today's fast-paced world", no rhetorical questions. State the complication rather than hedging around it. Lines credited "after" someone are compressed notes, not quotations — never put words in quotation marks unless they are verbatim and you have the source.

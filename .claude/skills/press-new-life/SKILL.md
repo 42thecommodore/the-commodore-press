@@ -33,6 +33,8 @@ Web search first, memory never. What you are looking for:
 
 Add two or three `across` links; a Life that connects to a title in Wing I or a principle in the Atlas is worth far more than one standing alone.
 
+**Load `/press-voice` before writing the prose.** The lives run longer than anything else on the shelf — a 26-word median sentence against 18 in the titles, and only one sentence in eleven at ten words or fewer. That is the clottiest prose in the house and it is the specific thing to fight in this wing.
+
 ## 4. The plate
 
 Portraits are duotone plates keyed to the life's `id`. Without one the entry shows the press mark — acceptable, but a plate is much better.
