@@ -24,7 +24,8 @@ console.log(`\n${b}THE COMMODORE PRESS${x} ${d}— house inventory${x}\n`);
 const row = (label, n, extra = "") => console.log(`  ${String(n).padStart(4)}  ${label.padEnd(22)} ${d}${extra}${x}`);
 row("titles, Wing I", books.length);
 row("adjacent", adjacent.length);
-row("lives, Wing II", lives.length, `${plates.length} with plates`);
+const plateless = lives.filter(({ data }) => data.plateless).length;
+row("lives, Wing II", lives.length, `${plates.length} with plates${plateless ? `, ${plateless} press-marked by decision` : ""}`);
 row("people, Wing III", people.length, `across ${principles.length} principles`);
 row("field manuals, IV", manuals.length, `${manuals.reduce((n, m) => n + (m.data.entries || []).length, 0)} entries`);
 row("trade lessons, V", (slipway.book || []).length);
@@ -35,7 +36,10 @@ console.log(`\n  ${d}roughly ${totalWords.toLocaleString()} words of prose acros
 /* what still needs a hand */
 const gaps = [];
 const plateIds = plates.map(f => path.basename(f, path.extname(f)));
-lives.forEach(({ data }) => { if (!plateIds.includes(data.id)) gaps.push(`${data.n} has no plate`); });
+/* A life marked `plateless` carries the press mark by decision, not by neglect — see the
+   field's description in schemas/life.schema.json. Listing it forever would train the
+   reader of this report to skim past the gaps that are real. */
+lives.forEach(({ data }) => { if (!plateIds.includes(data.id) && !data.plateless) gaps.push(`${data.n} has no plate`); });
 books.forEach(({ data }) => { if (!data.contested) gaps.push(`${data.title} names nothing contested`); });
 [...books, ...lives].forEach(({ data }) => { if (!(data.across || []).length) gaps.push(`${data.title || data.n} links to no other wing`); });
 if (gaps.length) { console.log(`\n${y}  ${gaps.length} thing(s) to pick up${x}`); gaps.slice(0, 12).forEach(t => console.log(`    ${y}·${x} ${t}`)); if (gaps.length > 12) console.log(`    ${d}… and ${gaps.length - 12} more${x}`); }

@@ -153,7 +153,11 @@ const platesDir = p("assets/plates");
 if (fs.existsSync(platesDir)) {
   const plateIds = fs.readdirSync(platesDir).filter(f => !f.startsWith(".")).map(f => path.basename(f, path.extname(f)));
   plateIds.forEach(id => { if (!lifeIds.has(id)) warn("assets/plates", `${id} has no matching life — it will never be shown`); });
-  const missing = [...lifeIds].filter(id => !plateIds.includes(id));
+  /* A life carrying `plateless` has been decided, not forgotten — it says why in the
+     field, and the entry argues it on the page. Warning about it every run would teach
+     the reader of this report to skim the warnings that matter. */
+  const byDecision = new Set(lives.filter(l => l.data.plateless).map(l => l.data.id));
+  const missing = [...lifeIds].filter(id => !plateIds.includes(id) && !byDecision.has(id));
   if (missing.length) warn("assets/plates", `${missing.length} live(s) with no portrait, showing the press mark: ${missing.join(", ")}`);
   for (const f of fs.readdirSync(platesDir).filter(f => !f.startsWith("."))) {
     const kb = fs.statSync(path.join(platesDir, f)).size / 1024;

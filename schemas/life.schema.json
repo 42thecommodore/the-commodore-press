@@ -15,6 +15,10 @@
       "description": "The one line to keep from this life, drawn from the entry's own argument. One sentence that makes sense read alone."
     },
     "n": { "type": "string", "x-means": "name", "description": "The person's name as shown: \"Mohandas K. Gandhi\"." },
+    "plateless": {
+      "type": "string", "maxLength": 300, "x-means": "no portrait, on purpose",
+      "description": "Set this only when the house has decided a life gets the press mark rather than a plate, and say why in one line. `npm run stats` then stops listing it as a gap — a warning that is permanently wrong is how you learn to ignore warnings. Never use it to silence a portrait that simply has not been made yet."
+    },
     "years": { "type": "string", "x-means": "lived", "description": "Lived, shown as 'Lived' in the reader: \"1869–1948\", \"c. 69–30 BC\"." },
     "place": { "type": "string", "x-means": "where", "description": "Where, printed beside the field: \"India\"." },
     "field": { "type": "string", "description": "The field, e.g. \"Politics & Ethics\"." },
