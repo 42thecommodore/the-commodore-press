@@ -16,6 +16,8 @@ npm start
 
 Opens a preview on **http://localhost:4321**. Edit anything in `content/` and the page rebuilds and reloads itself. No install step — there are no dependencies.
 
+**Changing something that is already there?** **[EDITING.md](EDITING.md)** is the plain-language guide: finding the right file, what every field means, the ten everyday edits, and what to do when the check says no. Open the folder in VS Code or Cursor and hovering any field explains it.
+
 ## The five commands you actually need
 
 | I want to… | Run |
@@ -75,6 +77,10 @@ And every edit under `content/` triggers the validator automatically, so a broke
 ## Running it as a house
 
 `dashboard/` holds the operating layer: **commissions.md** is the queue (six fixed statuses, read by `npm run stats`), **rhythm.md** is the weekly loop — commission, research, draft, check, publish — and **changelog.md** records changes to the *rules* so the standard does not quietly drift.
+
+## Why it is built this way
+
+See **[ENGINEERING.md](ENGINEERING.md)** — the three tiers of rule (enforced by a hook, gated by the validator, merely asked), why there are no dependencies, how the style guide is measured rather than asserted, and the portrait that does not ship.
 
 ## Publishing
 
