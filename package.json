@@ -11,6 +11,7 @@
     "stats": "node tools/stats.mjs",
     "voice": "node .claude/skills/press-voice/scripts/measure-voice.mjs",
     "publish:check": "npm run check && npm run build",
+    "ship": "node tools/ship.mjs",
     "new": "node tools/new.mjs",
     "plate": "node tools/plate.mjs",
     "correct": "node tools/correct.mjs",

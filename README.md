@@ -2,7 +2,9 @@
 
 A working library in five wings, published as one self-contained web page.
 
-**Twenty titles. Twenty-six lives. Thirty-one people in the Atlas. Four field manuals. A trade book of operating lessons.** Every claim carries its source and the place it is still argued.
+**Read it: https://42thecommodore.github.io/the-commodore-press/**
+
+**Twenty-one titles. Twenty-six lives. Thirty-four people in the Atlas. Four field manuals. A trade book of operating lessons.** Every claim carries its source and the place it is still argued.
 
 ---
 
@@ -22,7 +24,9 @@ Opens a preview on **http://localhost:4321**. Edit anything in `content/` and th
 | write a new title | `npm run new book "The Heated Disk"` |
 | add a life | `npm run new life "Marcus Aurelius"` |
 | make a portrait plate | `npm run plate -- photo.jpg marcus-aurelius` |
-| publish | `npm run check && npm run build` |
+| publish | `npm run ship -- "Press: add The Heated Disk"` |
+
+`ship` runs the house rules, rebuilds the page, commits and pushes. GitHub Actions checks it again and deploys — about two minutes. If the check fails, nothing is committed and the live site is left alone.
 
 ## How it fits together
 

@@ -95,8 +95,8 @@ back down.
 glass between the subject and their own action. Nobody managed to build the thing; they
 built it.
 
-**Intensifiers standing where a number belongs.** The corpus holds nine instances of
-*very / significant / substantial / remarkable*. Seven are load-bearing — "significant
+**Intensifiers standing where a number belongs.** The corpus holds seven instances of
+*very / significant / substantial / remarkable*, and all seven are load-bearing — "significant
 original effects" and "replicated significantly" are statistical terms, "substantially
 revised by historians" and "very different rates" are doing real comparative work, "the
 very stubbornness that had isolated him" is a demonstrative rather than an intensifier,
@@ -104,21 +104,25 @@ and "That's still remarkable, and still enough to plan a datacenter around" is t
 concessive turn that `registers.md` holds up as the model for `changed` — the adjective
 is immediately cashed out in the clause after it.
 
-Two are still soft, and both are soft for the same reason:
+Two soft ones have been closed, and how they closed is the lesson. Both sat in
+`contested`, which is the field that exists to name people, so an adjective standing in
+for a name was the worst available version of the tic:
 
-> "substantially shaped with a collaborator" — *mandela, `contested`*
-> "drew significant criticism from historians" — *mlk, `contested`*
+> "substantially shaped with a collaborator" — *mandela* · now Richard Stengel, credited
+> in the book's own acknowledgements with editing the early chapters and writing the later
+> ones
+> "drew significant criticism from historians" — *mlk* · now Simon Balto on the
+> unattributed margin note, and Barbara Ransby in the *New York Times* on whose voice the
+> reader is actually being asked to believe
 
-**Neither is a style problem. Both are unfinished research.** The fix for the first is
-the collaborator's name; the fix for the second is the historian's. `contested` is
-precisely the field where an unnamed objector is a failure, so an adjective standing in
-for a name is the worst version of this tic and the only version worth chasing. Do not
-paper over either by softening the sentence — find the name, or leave the flag standing.
+**Neither was a style problem. Both were unfinished research**, and neither could be fixed
+by editing the sentence — only by going and finding the name. Do not paper one over by
+softening the prose. Find the name, or leave the flag standing.
 
 A third instance, "grew substantially faster over the following century" in *movable-type*,
-was fixed by deletion: Dittmar's 35-percentage-point estimate was already in the next
-sentence, so the adjective was doing nothing the number was not doing better. That is the
-usual shape of the fix.
+closed the other way, by deletion: Dittmar's 35-percentage-point estimate was already in
+the next sentence, so the adjective was doing nothing the number was not doing better.
+Those are the only two endings — a name, or a cut.
 
 **Citation stacking.** Not a risk in `copy`, which takes no inline citations, but the
 same reflex shows up as `facts` entries whose `s` names a summary rather than the thing

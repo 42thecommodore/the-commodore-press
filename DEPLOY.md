@@ -2,13 +2,17 @@
 
 `dist/index.html` is the entire website — one file, no dependencies, no server code, no tracking. Everything below is about getting that file onto the internet and keeping it current.
 
+**This site is already published**, at **https://42thecommodore.github.io/the-commodore-press/**, from `github.com/42thecommodore/the-commodore-press`. If you only want to update it, skip to *Update it, forever*.
+
 ## Publish it once
 
 ### GitHub Pages (recommended — it checks your work)
 
 1. Make a repository and push this folder to it.
-2. Settings → Pages → Source: **GitHub Actions**.
+2. **Settings → Pages → Build and deployment → Source: GitHub Actions.** It saves on selection; there is no Save button, which is the step people miss.
 3. Done. `.github/workflows/deploy.yml` runs on every push to `main`: it validates the house rules, builds, and deploys.
+
+Step 2 is not optional and cannot be automated. Until Pages is switched on, every run fails at `configure-pages` with *"Get Pages site failed… verify that the repository has Pages enabled."* The action has an `enablement: true` input that looks like it solves this; it does not, because creating a Pages site needs repo-admin rights and the workflow token only ever holds `pages: write`. Enable it by hand once, then re-run the failed workflow.
 
 The gate matters. **If `npm run check` fails, the deploy stops and the live site is left alone** — a half-written entry or a broken cross-link can't reach readers.
 
@@ -22,16 +26,27 @@ Around $10/yr. Point it at your host, then add a `CNAME` file containing the bar
 
 ## Update it, forever
 
-The loop is always the same:
+Write, look at it, ship it:
 
 ```bash
-npm start          # preview while you write
-npm run check      # the house rules
-npm run build      # regenerate dist/index.html
-git push           # (GitHub Pages) — or re-drop dist/ on Netlify
+npm start
 ```
 
-Commit `content/` and `dist/` together so the deployable file always matches its sources.
+Preview on :4321; it rebuilds and reloads as you save. When the entry is finished, one command does the rest:
+
+```bash
+npm run ship -- "Press: add The Heated Disk"
+```
+
+That runs the house rules, rebuilds `dist/index.html`, commits `content/` and `dist/` together so the deployable file always matches its sources, and pushes. GitHub Actions then runs the same check again before deploying — about two minutes to live. **If the check fails at either end, nothing is committed and nothing is deployed.**
+
+It refuses to run without a message, and refuses a message under twelve characters. A commit nobody can read in six months is worth less than no commit.
+
+If you would rather do it by hand, the long form is unchanged:
+
+```bash
+npm run check && npm run build && git add -A && git commit -m "Press: ..." && git push
+```
 
 ## Where each thing lives
 

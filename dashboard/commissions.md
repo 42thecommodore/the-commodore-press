@@ -17,8 +17,6 @@ in it carries a named source.
 |---|---|---|---|---|---|
 | idea | Press | Fifty Questions (adjacent) | Luca's own 'My Parents, In Their Words' guide — StoryCorps-sourced; would sit on the adjacent shelf as a working document | Drive: My-Parents-In-Their-Words | decide whether it belongs on a public shelf |
 | idea | Lives | — | Fields thin on the shelf: run `npm run stats` and look at what `field` values are underrepresented | — | pick one |
-| fact-check | Lives | Mandela — name the collaborator | `contested` says Long Walk to Freedom was "substantially shaped with a collaborator". An unnamed hand in the one field that exists to name people is the worst version of the intensifier tic | Sampson's biography; the book's own front matter | name him, or cut the clause |
-| fact-check | Lives | MLK — name the historians | `contested` says Garrow's handling of the newly released FBI material "drew significant criticism from historians". Which historians, on what evidentiary point | the 2019 coverage of the Garrow essay and the replies to it | name two, with the objection |
 
 ## Retired
 
@@ -32,5 +30,7 @@ house chose to publish, and when, is worth more than a tidy table.
 | 2026-09-01 | Slipway | Andrew (The Water Map) + Venture Deals | One conversation and six lessons from Luca's own founder interview and book notes |
 | 2026-09-01 | Lives | Maurice Hilleman — plate | PD-USGov, Walter Reed 1958. Made with `npm run plate` |
 | 2026-09-01 | Lives | Henrietta Lacks — plateless, on purpose | The only Commons image carries a licence its uploader likely could not grant; for an entry about consent, the press mark is the honest choice. House decision, Luca, 2026-09-01 |
+| 2026-09-15 | Lives | Mandela — the collaborator named | `contested` said the book was "substantially shaped with a collaborator". It was Richard Stengel, credited in the acknowledgements with editing the early chapters and writing the later ones; Mandela began the manuscript on Robben Island in 1974, the kept copy was confiscated, a smuggled one survived. Not a correction — nothing published was wrong, the research was unfinished |
+| 2026-09-15 | Lives | MLK — the historians named | `contested` said Garrow "drew significant criticism from historians". Now Simon Balto on the unattributed margin note over a typed summary of a tape Garrow never heard, sealed until 2027, and Barbara Ransby in the New York Times on whose voice readers are asked to believe. Glenda Gilmore and Nathan Connolly also objected, but only via a secondary account of the Washington Post piece — left out until the original is opened |
 | 2026-09-15 | All | One file, until 1 MB | The page is 655 KB and the 25 plates are 51% of it, inlined as base64; the front door shows none of them and pays for all of them. Kept as one self-contained file — that is what makes the archive durable and the deploy trivial, and 655 KB is not yet a reader's problem. `npm run build` now prints the plate share every time and says so plainly at 1 MB, where the decision gets taken again: keep the text inline, move the plates out as real files with `loading="lazy"`. House decision, Luca, 2026-09-15 |
 | 2026-09-01 | All | Cross-links for the 16 island entries | 41 links across 24 entries; every title and life now connects to at least one other wing |

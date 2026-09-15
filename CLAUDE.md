@@ -69,10 +69,17 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run check` | the house rules — **exits 1 on any error** |
 | `npm run build` | content + theme → `dist/index.html` |
 | `npm run stats` | inventory and editorial backlog |
+| `npm run voice` | the house's own sentence and punctuation numbers, measured off `content/` |
 | `npm run new book\|life\|adjacent\|manual "Title"` | scaffold a house-shaped stub |
 | `npm run plate -- <image> <life-id>` | make a duotone plate |
 | `npm run correct -- "Title." "Body."` | append a correction |
+| `npm run ship -- "what changed"` | check, build, commit and push — the whole update, one command |
 | `npm run verify -- <old.html> <new.html>` | prove two builds carry identical content |
+
+The site is live at **https://42thecommodore.github.io/the-commodore-press/**, deployed from
+`main` by `.github/workflows/deploy.yml`. The workflow runs `npm run check` before it
+deploys, so a failing check leaves the live site untouched. `npm run ship` is the human's
+command and runs the same gate locally first; `/press-publish` stays human-invoked.
 
 ## Rules for agents working here
 
