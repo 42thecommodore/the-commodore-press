@@ -30,11 +30,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      # enablement: true turns Pages on via the API if it is off, so a fresh clone of
-      # this repo deploys without anyone visiting the settings screen first.
+      # Pages must be switched on by hand once, at Settings -> Pages -> Source: GitHub
+      # Actions. This step cannot do it: creating a Pages site needs repo-admin rights,
+      # and the workflow token is only ever granted pages: write. Tried it — the run
+      # fails with "Create Pages site failed: Resource not accessible by integration".
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

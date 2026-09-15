@@ -91,3 +91,18 @@ const kb = n => (n / 1024).toFixed(0) + " KB";
 console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}`);
 console.log(`  ${BOOKS.length} books · ${ADJACENT.length} adjacent · ${LIVES.length} lives · ${MANUALS.length} manuals`);
 console.log(`  ${PEOPLE.length} people · ${PRINCIPLES.length} principles · ${SOURCES.length} sources · ${Object.keys(PLATES).length} plates · ${CORRECTIONS.length} corrections`);
+
+/* The house decision is that this stays one file. The cost of that decision is that the
+   plates are inlined as base64 and every reader downloads all of them to see a front door
+   that shows none — so the decision needs a trigger, not a memory. At 1 MB, revisit it:
+   keep the text inline and move the plates out as real files with loading="lazy".
+   Recorded in dashboard/commissions.md, 2026-09-15. */
+const PAGE = Buffer.byteLength(out);
+const PLATE_BYTES = Object.values(PLATES).reduce((n, v) => n + Buffer.byteLength(v), 0);
+const REVISIT_AT = 1024 * 1024;
+console.log(`  plates are ${Math.round(PLATE_BYTES / PAGE * 100)}% of the page (${kb(PLATE_BYTES)} of ${kb(PAGE)})`);
+if (PAGE > REVISIT_AT) {
+  console.log(`\n  the page has passed 1 MB — the one-file decision is due for review.`);
+  console.log(`  Every reader now downloads ${kb(PLATE_BYTES)} of portraits to reach a front door that shows none.`);
+  console.log(`  See dashboard/commissions.md for what was decided and on what trigger.`);
+}
