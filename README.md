@@ -82,4 +82,4 @@ See **[DEPLOY.md](DEPLOY.md)**. Short version: push to GitHub and the included w
 
 ## In the reader
 
-`/` search · `S` shelf view · `R` random · `←/→` browse · `Esc` close · `◐` night reading
+`/` search · `S` spines · `R` random · `←/→` browse · `Esc` close · `◐` night reading

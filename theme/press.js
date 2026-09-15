@@ -2,7 +2,7 @@
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const EASE="cubic-bezier(.19,.9,.22,1)", EASE_IO="cubic-bezier(.62,.02,.2,1)";
 const WINGS=[["home","Colophon"],["press","The Press"],["lives","Lives"],["atlas","The Atlas"],["manuals","Manuals"],["slipway","Slipway"]];
-let wing="home", current=null, currentKind=null, activeConst=null, activeRegion=null, selectedPerson=null, activeManual=null;
+let wing="home", searchFocus=null, readerFocus=null, current=null, currentKind=null, activeConst=null, activeRegion=null, selectedPerson=null, activeManual=null;
 
 /* ---------- derive ---------- */
 PEOPLE.forEach((p,i)=>{p.id="p"+i;p.color=DCOLOR[p.domain];p.degree=0});
@@ -175,7 +175,8 @@ function renderPressControls(){
   const fs=[["all","All titles"],["Technology","Technology"],["History","History & philosophy"],["Economics","Economics & finance"]];
   document.getElementById("pressControls").innerHTML=
     fs.map(f=>`<button class="chip" data-f="${f[0]}" aria-pressed="${f[0]===pressFilter}" onclick="filterPress('${f[0]}')">${f[1]}</button>`).join("")
-    +`<span class="spacer"></span><span class="count" id="pressCount"></span>`;
+    +`<span class="spacer"></span>`+spineChip()
+    +`<span class="count" id="pressCount"></span>`;
   document.getElementById("pressSide").innerHTML=`${BOOKS.length} titles · ${ADJACENT.length} adjacent<br>each with sources and objections`;
 }
 function filterPress(f){pressFilter=f;renderPressControls();renderShelf(true)}
@@ -206,7 +207,8 @@ function renderLivesControls(){
   const fs=[["all","All lives"],["famous","The famous"],["obscure","The obscure but pivotal"]];
   document.getElementById("livesControls").innerHTML=
     fs.map(f=>`<button class="chip ${f[0]==="obscure"?"warn":""}" aria-pressed="${f[0]===livesFilter}" onclick="filterLives('${f[0]}')">${f[1]}</button>`).join("")
-    +`<span class="spacer"></span><span class="count" id="livesCount"></span>`;
+    +`<span class="spacer"></span>`+spineChip()
+    +`<span class="count" id="livesCount"></span>`;
   document.getElementById("livesSide").innerHTML=`${LIVES.length} lives · one book each<br>${LIVES.filter(b=>b.group==="famous").length} famous · ${LIVES.filter(b=>b.group==="obscure").length} you have never heard of`;
 }
 function filterLives(f){livesFilter=f;renderLivesControls();renderLivesShelf(true)}
@@ -384,6 +386,7 @@ function openReader(kind,id,opts){
   const uni=kind==="press"?ALL:LIVES, b=uni.find(x=>x.id===id);
   if(!b)return;
   const wasOpen=!!current;
+  if(!wasOpen)readerFocus=document.activeElement;
   current=id;currentKind=kind;
   const r=document.getElementById("reader");
   document.getElementById("sheet").innerHTML=readerHTML(kind,b);
@@ -408,7 +411,8 @@ function closeReader(push){
     const r=document.getElementById("reader");
     r.classList.remove("on");r.setAttribute("aria-hidden","true");
     document.body.style.overflow="";document.body.style.paddingRight="";
-    document.title=(wing==="home"?"Commodore Press":(WINGS.find(x=>x[0]===wing)[1]+" — Commodore Press"))};
+    document.title=(wing==="home"?"Commodore Press":(WINGS.find(x=>x[0]===wing)[1]+" — Commodore Press"));
+    const el=readerFocus;readerFocus=null;giveBack(el)};
   if(push!==false)history.pushState({w:wing},"","#"+wing);
   flyOut(kind,id,finish);
 }
@@ -422,9 +426,24 @@ function surprise(){
   const pick=pool[1][Math.floor(Math.random()*pool[1].length)];
   go(pool[0]); setTimeout(()=>openReader(pool[0],pick.id),320);
 }
-function toggleSpines(){
-  const on=document.body.classList.toggle("spines");
+function onShelf(){return wing==="press"||wing==="lives"}
+function applySpines(on){
+  document.body.classList.toggle("spines",on);
   if(on)document.querySelectorAll(".shelf .book").forEach(b=>["--ry","--rx","--ty","--sc"].forEach(p=>b.style.removeProperty(p)));
+  document.querySelectorAll(".chip.spineview").forEach(c=>c.setAttribute("aria-pressed",String(on)));
+}
+function toggleSpines(){
+  if(!onShelf())return;
+  applySpines(!document.body.classList.contains("spines"));
+}
+function spineChip(){
+  return `<button class="chip spineview" aria-pressed="${document.body.classList.contains("spines")}" onclick="toggleSpines()" title="Spines ( S )">Spines</button>`;
+}
+function shelfStep(d){
+  const slots=[...document.querySelectorAll((wing==="press"?"#shelf":"#livesShelf")+" .slot")];
+  if(!slots.length)return;
+  const i=slots.indexOf(document.activeElement);
+  slots[i<0?(d>0?0:slots.length-1):(i+d+slots.length)%slots.length].focus();
 }
 
 /* ---------- atlas ---------- */
@@ -616,6 +635,8 @@ addEventListener("keydown",e=>{
   if(e.key==="/"&&!document.getElementById("smodal").classList.contains("on")){e.preventDefault();return openSearch()}
   if(current&&e.key==="ArrowRight"){e.preventDefault();return step(1)}
   if(current&&e.key==="ArrowLeft"){e.preventDefault();return step(-1)}
+  if(!current&&onShelf()&&e.key==="ArrowRight"){e.preventDefault();return shelfStep(1)}
+  if(!current&&onShelf()&&e.key==="ArrowLeft"){e.preventDefault();return shelfStep(-1)}
   const k=e.key.toLowerCase();
   if(k==="r"){e.preventDefault();surprise()}
   if(k==="s"&&!current){e.preventDefault();toggleSpines()}
@@ -644,8 +665,10 @@ function buildIndex(){
   SLIPWAY.chandlery.forEach(e=>push("Slipway",e.b,"the chandlery",e.s,()=>go("slipway")));
 }
 let sHits=[];
+function giveBack(el){if(el&&el.isConnected&&typeof el.focus==="function")el.focus({preventScroll:true})}
 function openSearch(){
   if(!SIX)buildIndex();
+  searchFocus=document.activeElement;
   const m=document.getElementById("smodal");
   m.classList.add("on");m.setAttribute("aria-hidden","false");
   const inp=document.getElementById("sinput");
@@ -655,6 +678,7 @@ function openSearch(){
 function closeSearch(){
   const m=document.getElementById("smodal");
   m.classList.remove("on");m.setAttribute("aria-hidden","true");
+  const el=searchFocus;searchFocus=null;giveBack(el);
 }
 function runSearch(q){
   q=q.trim().toLowerCase();
