@@ -44,7 +44,30 @@ say(`\n${d}${staged}${x}`);
 
 /* Content and dist/ go together, so the deployable file always matches its sources. */
 step("Commit", "git", ["commit", "-q", "-m", message]);
-step("Push", "git", ["push", "origin", "HEAD"]);
+
+/* More than one person — or session — works in this repo, and a remote that has moved
+   on is the ordinary case, not an error. Rebase onto it rather than failing the push.
+   --autostash protects anything still uncommitted in the tree. */
+say(`\n${b}  Push${x}`);
+spawnSync("git", ["fetch", "--quiet", "origin"], { cwd: ROOT, stdio: "inherit" });
+const behind = git("rev-list --count HEAD..origin/main");
+if (behind !== "0") {
+  say(`${d}  origin/main moved ${behind} commit(s) ahead — rebasing onto it first${x}`);
+  const rb = spawnSync("git", ["rebase", "--autostash", "origin/main"], { cwd: ROOT, stdio: "inherit" });
+  if (rb.status !== 0) {
+    spawnSync("git", ["rebase", "--abort"], { cwd: ROOT, stdio: "ignore" });
+    die(`Your commit is made but conflicts with origin/main. Nothing was pushed.\n  Resolve by hand: git pull --rebase origin main`);
+  }
+  /* The rebase may have brought in content changes; the built file must match again. */
+  step("Rebuild after rebase", "npm", ["run", "build"]);
+  if (git("status --porcelain dist")) {
+    git("add dist");
+    spawnSync("git", ["commit", "-q", "--amend", "--no-edit"], { cwd: ROOT, stdio: "inherit" });
+  }
+}
+if (spawnSync("git", ["push", "origin", "HEAD:main"], { cwd: ROOT, stdio: "inherit" }).status !== 0) {
+  die(`Push failed. Your commit is safe locally — nothing was lost.\n  Usually: git pull --rebase origin main, then npm run ship again.`);
+}
 
 say(`\n${g}  Pushed.${x} ${d}GitHub Actions is checking and deploying now.${x}`);
 say(`${d}  Watch:  https://github.com/42thecommodore/the-commodore-press/actions${x}`);
