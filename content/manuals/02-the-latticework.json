@@ -19,7 +19,7 @@
       "h": "The map is not the territory",
       "p": [
         "Every model is a compression, and compression is lossy by definition. The failure mode is not using models; it is forgetting which parts your model threw away, and then being surprised when reality behaves according to the discarded parts.",
-        "Practical version: for any model I am relying on, I want to be able to name what it is ignoring."
+        "Practical version: for any model I am relying on, I want to name what it is ignoring."
       ]
     },
     {
