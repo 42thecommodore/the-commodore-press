@@ -97,7 +97,7 @@ Plain, specific, unhurried. Concrete nouns and real numbers. State the complicat
 
 **`/press-voice` is the long form of those four lines**, and it is where any prose work should start. It carries the keep and cut lists, the six writing surfaces (`copy` is nearly impersonal; `changed` is the most personal prose on the site; `keep` is a different craft again), the paragraph architectures the good entries actually use, and the proofread gate that runs before `npm run check`.
 
-Its sentence-length and punctuation targets were **measured off `content/`**, not asserted — `node .claude/skills/press-voice/scripts/measure-voice.mjs` reproduces every one of them. Re-run it if the shelves grow substantially; never update those numbers by estimating, for the same reason an unsourced figure does not ship.
+Its sentence-length and punctuation targets were **measured off `content/`**, not asserted — `npm run voice` reproduces every one of them. Re-run it if the shelves grow substantially; never update those numbers by estimating, for the same reason an unsourced figure does not ship.
 
 ## Design
 

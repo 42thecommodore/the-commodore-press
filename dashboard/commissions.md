@@ -17,6 +17,8 @@ in it carries a named source.
 |---|---|---|---|---|---|
 | idea | Press | Fifty Questions (adjacent) | Luca's own 'My Parents, In Their Words' guide — StoryCorps-sourced; would sit on the adjacent shelf as a working document | Drive: My-Parents-In-Their-Words | decide whether it belongs on a public shelf |
 | idea | Lives | — | Fields thin on the shelf: run `npm run stats` and look at what `field` values are underrepresented | — | pick one |
+| fact-check | Lives | Mandela — name the collaborator | `contested` says Long Walk to Freedom was "substantially shaped with a collaborator". An unnamed hand in the one field that exists to name people is the worst version of the intensifier tic | Sampson's biography; the book's own front matter | name him, or cut the clause |
+| fact-check | Lives | MLK — name the historians | `contested` says Garrow's handling of the newly released FBI material "drew significant criticism from historians". Which historians, on what evidentiary point | the 2019 coverage of the Garrow essay and the replies to it | name two, with the objection |
 
 ## Retired
 

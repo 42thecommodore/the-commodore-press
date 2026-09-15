@@ -100,8 +100,13 @@ fs.writeFileSync(file, JSON.stringify(body, null, 2) + "\n");
 const rel = path.relative(ROOT, file);
 console.log(`\n  new ${kind}: ${rel}`);
 console.log(`  livery: ${livery.cover} / ${motif}`);
+const steps = [
+  `/press-voice        — the house voice, before you write a line`,
+  `answer every TODO in ${rel}`,
+  ...(kind === "life" ? [`make the plate:  node tools/plate.mjs <image> ${id}`] : []),
+  `npm run check       — the house rules will tell you what is still missing`,
+  `npm run build`,
+];
 console.log(`\n  Next:`);
-console.log(`    1. answer every TODO in ${rel}`);
-if (kind === "life") console.log(`    2. make the plate:  node tools/plate.mjs <image> ${id}`);
-console.log(`    ${kind === "life" ? 3 : 2}. npm run check     — the house rules will tell you what is still missing`);
-console.log(`    ${kind === "life" ? 4 : 3}. npm run build\n`);
+steps.forEach((s, i) => console.log(`    ${i + 1}. ${s}`));
+console.log();

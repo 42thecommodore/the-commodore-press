@@ -84,7 +84,7 @@ back down.
 | Tic | in `content/` | in the author's freewrites | Fix |
 |---|---|---|---|
 | "as well" | **0** | 113 · 11.25 per 1k | Delete. Almost never load-bearing. |
-| "(be/was) able to" | **1** | 73 · 11.35 per 1k | Use the verb. "was able to teach" → "taught". |
+| "(be/was) able to" | **0** | 73 · 11.35 per 1k | Use the verb. "was able to teach" → "taught". |
 | "I think" | **0** | 39 · 3.92 per 1k | Delete unless it marks real uncertainty. Never in `copy`. |
 | "and also" | 0 | 32 | Pick one. |
 | "one of the things" | 0 | 22 | Name the thing. |
@@ -95,20 +95,30 @@ back down.
 glass between the subject and their own action. Nobody managed to build the thing; they
 built it.
 
-**Intensifiers standing where a number belongs.** The corpus holds twelve instances of
-*very / significant / substantial / remarkable*. Nine are load-bearing — "significant
+**Intensifiers standing where a number belongs.** The corpus holds nine instances of
+*very / significant / substantial / remarkable*. Seven are load-bearing — "significant
 original effects" and "replicated significantly" are statistical terms, "substantially
-revised by historians" and "very different rates" are doing real comparative work. Three
-are soft, and they are the whole pattern to watch:
+revised by historians" and "very different rates" are doing real comparative work, "the
+very stubbornness that had isolated him" is a demonstrative rather than an intensifier,
+and "That's still remarkable, and still enough to plan a datacenter around" is the
+concessive turn that `registers.md` holds up as the model for `changed` — the adjective
+is immediately cashed out in the clause after it.
 
-> "That's still remarkable" — *scaling-curve, `changed`*
-> "grew substantially faster over the following century" — *movable-type, `copy`*
+Two are still soft, and both are soft for the same reason:
+
+> "substantially shaped with a collaborator" — *mandela, `contested`*
 > "drew significant criticism from historians" — *mlk, `contested`*
 
-Each one is a place where a number or a name would be stronger than the adjective. How
-much faster, over what baseline. How much criticism, from whom. The third is the worst of
-the three, because `contested` is precisely the field where an unnamed objector is a
-failure.
+**Neither is a style problem. Both are unfinished research.** The fix for the first is
+the collaborator's name; the fix for the second is the historian's. `contested` is
+precisely the field where an unnamed objector is a failure, so an adjective standing in
+for a name is the worst version of this tic and the only version worth chasing. Do not
+paper over either by softening the sentence — find the name, or leave the flag standing.
+
+A third instance, "grew substantially faster over the following century" in *movable-type*,
+was fixed by deletion: Dittmar's 35-percentage-point estimate was already in the next
+sentence, so the adjective was doing nothing the number was not doing better. That is the
+usual shape of the fix.
 
 **Citation stacking.** Not a risk in `copy`, which takes no inline citations, but the
 same reflex shows up as `facts` entries whose `s` names a summary rather than the thing
@@ -159,9 +169,11 @@ carrying anything.
 
 ## Things to watch
 
-**The lives run long.** `lives` copy has a 26-word median sentence and only 9% of
-sentences at ten words or fewer — the clottiest prose in the house, against 18 and 26% in
-the titles. Biography invites subordinate clauses. Split them.
+**The lives used to run long, and will again.** `lives` copy sat at a 26-word median with
+9% of sentences at ten words or fewer — the clottiest prose in the house — until a
+splitting pass brought it to 19.5 and 21%, alongside the titles' 18 and 26%. Biography
+invites subordinate clauses stacked three deep, so this is the wing that drifts back
+first. Check it before anything else, and split them again.
 
 **Ending on the weakest clause.** The best phrase in a paragraph is often buried in the
 middle, with the paragraph trailing off into a qualifier. Move the good part to the end.

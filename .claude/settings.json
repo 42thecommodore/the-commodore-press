@@ -4,6 +4,7 @@
       "Bash(npm run check)",
       "Bash(npm run build)",
       "Bash(npm run stats)",
+      "Bash(npm run voice)",
       "Bash(npm run new:*)",
       "Bash(npm run plate:*)",
       "Bash(npm run correct:*)",

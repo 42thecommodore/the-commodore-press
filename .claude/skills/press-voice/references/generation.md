@@ -44,27 +44,27 @@ Per 1,000 words.
 
 | surface | em dash | colon | parenthesis | semicolon |
 |---|---|---|---|---|
-| titles `copy` | **15.9** | 7.4 | **0.6** | 2.6 |
-| lives `copy` | 14.0 | 7.1 | 0.9 | 2.5 |
+| titles `copy` | **13.9** | 7.4 | **1.5** | 2.6 |
+| lives `copy` | 9.9 | 6.7 | 1.8 | 2.1 |
 | `contested` | 19.5 | 4.4 | 4.4 | 9.7 |
 | `changed` | 11.6 | 9.8 | 0.9 | 3.6 |
 | `keep` | 19.9 | 5.7 | 0.0 | 11.4 |
-| manuals | 14.3 | **11.4** | 0.5 | 3.0 |
+| manuals | 14.4 | **11.4** | 0.5 | 3.0 |
 
 Two things fall out of this, and both are actionable.
 
 **The house leans on the em dash harder than any register in the author corpus — around
-sixteen per thousand words in entry prose, against 1.21 in his papers and 4.20 in his
-emails.** That is not automatically wrong; a dash carrying an apposition or a turn is
+fourteen per thousand words in the titles and ten in the lives, against 1.21 in his papers
+and 4.20 in his emails.** That is not automatically wrong; a dash carrying an apposition or a turn is
 doing structural work, and the corpus uses it that way more often than not. But it is the
 one punctuation mark with no natural ceiling, and `voice.md` bans it for drama. When a
 paragraph has three, two of them are decoration.
 
-**The parenthetical has almost vanished — 0.6 per 1k in entry prose against 12.26 in his
-papers.** The qualification that would have gone in brackets is currently going into an
+**The parenthetical is still scarce — 1.5 per 1k in the titles' entry prose and 1.8 in the
+lives, against 12.26 in his papers.** The qualification that would have gone in brackets is currently going into an
 em-dash aside instead. This is the cheapest available improvement to the house prose:
 where the instinct is to hedge the main clause or throw a third dash at it, use a
-parenthesis. `contested` already does this at 4.4 per 1k, which is why it is the most
+parenthesis. `contested` already does this at 4.4–4.9 per 1k, which is why it is the most
 carefully argued field on the site.
 
 **The colon is the pivot and it belongs in the manuals**, where it runs at 11.4 per 1k.
@@ -78,8 +78,8 @@ Measured off `content/`. Aim here; do not count obsessively.
 
 | surface | median | mean | ≤ 10 words | first person / 1k |
 |---|---|---|---|---|
-| titles `copy` | 18 | 20.8 | 26% | 0.5 |
-| lives `copy` | 26 | 26.0 | 9% | 0.7 |
+| titles `copy` | 18 | 20.7 | 26% | 0.5 |
+| lives `copy` | 19.5 | 20.1 | 21% | 0.7 |
 | `contested` | 19–20 | ~20 | 16–29% | 0.0 |
 | `changed` | 16 | 19.6 | 21% | **34.0** |
 | `lede` | 15 | 16.9 | 32% | 6.9 |
@@ -204,7 +204,7 @@ those survives a reader who checks the sources.
 Every house number in these files came from:
 
 ```bash
-node .claude/skills/press-voice/scripts/measure-voice.mjs
+npm run voice
 ```
 
 It reads `content/` and prints the per-field profile. Run it if the shelves grow

@@ -1,7 +1,7 @@
 ---
 name: press-voice
 description: Write and edit prose in the Commodore Press house voice — entry copy, ledes, claims, contested sections, changed notes, keep lines, manual entries, corrections and dashboard notes. Use whenever drafting, tightening, or reviewing any prose that will appear on the site or in the queue. Defaults to editing what is already written rather than replacing it.
-allowed-tools: Bash(npm run check) Bash(npm run stats) Bash(grep:*) Read Edit Write Glob Grep
+allowed-tools: Bash(npm run check) Bash(npm run stats) Bash(npm run voice) Bash(grep:*) Read Edit Write Glob Grep
 ---
 
 # The house voice
@@ -23,6 +23,11 @@ is the most personal prose on the site, and `keep` is a different craft again.
 Measured sentence lengths and first-person density per field, taken from the corpus in
 `content/`, plus the paragraph architectures the good entries actually use.
 
+**Read `references/passes.md` before editing prose that is already published**, especially
+a whole wing at once. It draws the line between rhythm work, which is free, and an edit
+that changes what a sentence asserts, which is a correction and goes through
+`npm run correct` first.
+
 ## Provenance
 
 This skill is adapted from a voice study of ~10,000 words of Luca's dictated freewrites
@@ -33,8 +38,9 @@ distance between his dictation and his edited prose in `generation.md`.
 
 Everything else was re-derived from this repository. The per-field targets in
 `generation.md` were measured off `content/` directly, in the spirit of the house rule
-that counts come from the corpus and not from memory. Re-run that measurement if the
-shelves grow substantially; do not update the numbers by estimating them.
+that counts come from the corpus and not from memory. `npm run voice` reproduces every
+one of them. Re-run it if the shelves grow substantially; do not update the numbers by
+estimating them.
 
 The original study lives outside this project and belongs to a different piece of work.
 Do not edit it from here, and do not import its Fulbright-specific material — this skill
@@ -106,7 +112,8 @@ separation of *observed / claimed / verified* in `content/CLAUDE.md`.
 Run the proofread gate in `references/voice.md`, then:
 
 ```bash
-npm run check
+npm run voice    # the house's own numbers — did this draft move them the wrong way?
+npm run check    # missing sources, broken cross-links, unanswered TODOs
 ```
 
 The validator catches missing sources, broken cross-links and unanswered `TODO`s. It does

@@ -18,8 +18,8 @@ Evidence: `content/books/01-compounding-machines.json`, `content/books/10-being-
 |---|---|---|
 | paragraphs per entry | 4 | 3 |
 | median words per paragraph | 75 | 56 |
-| median sentence | **18 words** | **26 words** |
-| sentences ≤ 10 words | 26% | 9% |
+| median sentence | **18 words** | **19.5 words** |
+| sentences ≤ 10 words | 26% | 21% |
 | first person per 1k | 0.5 | 0.7 |
 
 This is most of the site, and it is written as argument rather than as summary.
@@ -41,9 +41,11 @@ entry's own argument — the funding model was a monopoly rent and antitrust rem
 Xerox invented the personal computer and shipped almost none of it. `copy` says the
 awkward part out loud; `contested` then names who argues about it.
 
-**Watch: the lives run long.** A 26-word median and one sentence in eleven at ten words
-or fewer is the clottiest prose on the site. Biography invites subordinate clauses stacked
-three deep. Split them — the titles manage 18 and 26% on harder material.
+**Watch: the lives drift long.** They were the clottiest prose on the site — a 26-word
+median, one sentence in ten at ten words or fewer — and a splitting pass moved them to
+19.5 and 21%, next to the titles' 18 and 26% on harder material. Biography invites
+subordinate clauses stacked three deep, so the drift is structural and it will come back.
+Split them.
 
 ---
 
@@ -91,8 +93,8 @@ gets the interface." A year with nothing that turned does not earn a row.
 ## 3. `contested` — the objection at full strength
 
 Median sentence 19–20 words. Zero first-person markers. The highest density of qualifying
-punctuation on the site: parentheses at 3–4 per 1k against 0.6 in `copy`, semicolons at
-8–10 against 2.6.
+punctuation on the site: parentheses at 4–5 per 1k against 1.5–1.8 in `copy`, semicolons
+at 8–10 against 2.1–2.6.
 
 That punctuation profile is the field doing its job. This is where a claim gets
 conditions attached, and the conditions are what make the rest of the entry trustworthy.

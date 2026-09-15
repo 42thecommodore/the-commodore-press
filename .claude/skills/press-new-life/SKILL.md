@@ -33,7 +33,7 @@ Web search first, memory never. What you are looking for:
 
 Add two or three `across` links; a Life that connects to a title in Wing I or a principle in the Atlas is worth far more than one standing alone.
 
-**Load `/press-voice` before writing the prose.** The lives run longer than anything else on the shelf — a 26-word median sentence against 18 in the titles, and only one sentence in eleven at ten words or fewer. That is the clottiest prose in the house and it is the specific thing to fight in this wing.
+**Load `/press-voice` before writing the prose.** The lives are the wing that clots. They sat at a 26-word median against 18 in the titles, with one sentence in ten at ten words or fewer, until a splitting pass brought them to 19.5 and 21%. Biography invites subordinate clauses stacked three deep, so a new life will drift back there unless you fight it. A short sentence every fourth one is the thing to hold.
 
 ## 4. The plate
 

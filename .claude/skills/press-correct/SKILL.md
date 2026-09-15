@@ -9,6 +9,8 @@ allowed-tools: Bash(npm run correct:*) Bash(npm run check) Bash(npm run build) R
 
 The colophon promises: **corrections are appended, never silently patched.** That promise is the reason to trust anything else on the site, so it is not negotiable.
 
+**Load `/press-voice` before writing one.** `references/registers.md` carries the correction register: the title states what was wrong in a clause, the body says what it said, what is true, and where the error came from. No apology paragraph — the appending is the apology.
+
 ## 1. Fix the entry itself
 
 Edit the file in `content/` so the site now says the true thing. Do not delete the passage and move on — the correction has to describe what changed, so know exactly what the earlier draft claimed.
