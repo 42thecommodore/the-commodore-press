@@ -15,9 +15,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Commodore Press</title>
 <meta name="description" content="A working library in five wings: {{N_BOOKS}} ideas, {{N_LIVES}} lives, {{N_PEOPLE}} sources, {{N_MANUALS}} field manuals, and a trade book of {{N_LESSONS}} operating lessons. Every claim carries its source and the place it is still argued.">
-<meta property="og:title" content="Commodore Press">
+<link rel="canonical" href="{{SITE}}/">
+
+<!-- The card a reader sees when the link is pasted into Slack, iMessage, LinkedIn or X.
+     og:image must be absolute; a relative one renders as a link with no preview at all.
+     The PNG is built by `npm run card` and copied into dist/ by the build. -->
+<meta property="og:title" content="The Commodore Press">
 <meta property="og:type" content="website">
-<meta property="og:description" content="A working library in five wings. Every claim carries its source and the place it is still argued.">
+<meta property="og:site_name" content="The Commodore Press">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="{{SITE}}/">
+<meta property="og:description" content="A working library in five wings. Every claim carries its source — and the place it is still argued.">
+<meta property="og:image" content="{{SITE}}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Commodore Press — a working library in five wings. {{W_BOOKS_CAP}} titles, {{N_LIVES}} lives, {{N_PEOPLE}} people, {{N_MANUALS}} field manuals.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Commodore Press">
+<meta name="twitter:description" content="Every claim carries its source — and the place it is still argued.">
+<meta name="twitter:image" content="{{SITE}}/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "The Commodore Press",
+  "url": "{{SITE}}/",
+  "description": "A working library in five wings: {{N_BOOKS}} titles, {{N_LIVES}} lives, {{N_PEOPLE}} people in the Atlas, {{N_MANUALS}} field manuals, and a trade book of {{N_LESSONS}} operating lessons. Every claim carries its source and the place it is still argued.",
+  "inLanguage": "en",
+  "publisher": { "@type": "Organization", "name": "The Commodore Press", "url": "{{SITE}}/" },
+  "usageInfo": "{{SITE}}/#colophon",
+  "creditText": "Built with AI assistance; the colophon says so, and prints every correction."
+}
+</script>
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1' stroke='%231E1C18' stroke-width='1.6'/%3E%3Cpath d='M11 1.5V20.5M1.5 11H20.5' stroke='%231E1C18' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">

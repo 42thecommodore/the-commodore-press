@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://42thecommodore.github.io/the-commodore-press/sitemap.xml

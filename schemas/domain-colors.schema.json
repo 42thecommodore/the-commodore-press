@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Domain colours — content/atlas/domain-colors.json",
+  "description": "One colour per domain id, #RRGGBB. Every domain in domains.json needs one.",
+  "type": "object",
+  "additionalProperties": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+}

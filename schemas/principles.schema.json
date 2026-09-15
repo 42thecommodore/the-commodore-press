@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "The principles of the Atlas — content/atlas/principles.json",
+  "description": "The threads that connect people in the Atlas. A principle nobody belongs to does not render.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "name"],
+    "properties": {
+      "id": { "type": "string", "description": "Short id. People list it in their `p`, and `across` links use atlas:<id> — renaming breaks both." },
+      "name": { "type": "string", "description": "The principle as printed: \"Discipline is freedom\"." },
+      "gloss": { "type": "string", "description": "The lowercase gloss beneath the name." }
+    }
+  }
+}

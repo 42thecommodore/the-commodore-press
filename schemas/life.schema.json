@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A life — content/lives/",
+  "description": "One file per life. The NN- filename prefix fixes shelf order.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "n", "years", "field", "cover", "lede", "copy", "keep"],
+  "properties": {
+    "id": {
+      "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "x-means": "slug",
+      "description": "The permalink — and the portrait's filename: assets/plates/<id>.jpg. Renaming it breaks every `across` link pointing here and orphans the plate."
+    },
+    "keep": {
+      "type": "string", "maxLength": 220, "x-means": "takeaway",
+      "description": "The one line to keep from this life, drawn from the entry's own argument. One sentence that makes sense read alone."
+    },
+    "n": { "type": "string", "x-means": "name", "description": "The person's name as shown: \"Mohandas K. Gandhi\"." },
+    "years": { "type": "string", "x-means": "lived", "description": "Lived, shown as 'Lived' in the reader: \"1869–1948\", \"c. 69–30 BC\"." },
+    "place": { "type": "string", "x-means": "where", "description": "Where, printed beside the field: \"India\"." },
+    "field": { "type": "string", "description": "The field, e.g. \"Politics & Ethics\"." },
+    "group": {
+      "enum": ["famous", "obscure"],
+      "description": "Which shelf filter it sits under: famous, or obscure-but-pivotal."
+    },
+    "cover": { "$ref": "title.schema.json#/definitions/colour", "description": "Livery: the cover colour, #RRGGBB." },
+    "spineC": { "$ref": "title.schema.json#/definitions/colour", "description": "Livery: the spine colour — a shade darker than `cover`." },
+    "ink": { "$ref": "title.schema.json#/definitions/colour", "description": "Livery: the lettering colour on the cover." },
+    "accent": { "$ref": "title.schema.json#/definitions/colour", "description": "Livery: the accent colour." },
+    "motif": { "enum": ["rings", "lines", "grid", "dots", "conic"], "description": "The pattern pressed into the cover. Anything unrecognised prints as conic." },
+    "lede": { "type": "string", "x-means": "hook", "description": "The opening line." },
+    "copy": {
+      "type": "array", "minItems": 1, "items": { "type": "string" }, "x-means": "body",
+      "description": "The life, one string per paragraph: the situation, what they actually did, the cost or the part usually left out. Keep each paragraph on one line."
+    },
+    "bio": {
+      "type": "object", "additionalProperties": false, "required": ["t", "a"], "x-means": "book",
+      "description": "The one biography to read.",
+      "properties": {
+        "t": { "type": "string", "x-means": "title", "description": "Exact title. The site turns it into a WorldCat search, so a typo breaks the link." },
+        "a": { "type": "string", "x-means": "author", "description": "Exact author." },
+        "y": { "type": "string", "x-means": "year", "description": "Year published, as text: \"2013 / 2018\"." },
+        "why": { "type": "string", "description": "Why this book and not the famous one." }
+      }
+    },
+    "contested": { "type": "string", "x-means": "dispute", "description": "What is disputed about this life, and by whom — the strongest critique, named." },
+    "across": { "$ref": "title.schema.json#/definitions/across" }
+  }
+}

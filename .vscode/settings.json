@@ -1,0 +1,29 @@
+{
+  // Field help for content/: hover a field name to see what it means, press
+  // ctrl+space inside { } to list the fields you can add. The descriptions live in
+  // schemas/, and `npm run check` reads the same files, so they cannot drift apart.
+  "json.schemas": [
+    { "fileMatch": ["/content/books/*.json", "/content/adjacent/*.json"], "url": "./schemas/title.schema.json" },
+    { "fileMatch": ["/content/lives/*.json"], "url": "./schemas/life.schema.json" },
+    { "fileMatch": ["/content/manuals/*.json"], "url": "./schemas/manual.schema.json" },
+    { "fileMatch": ["/content/atlas/people.json"], "url": "./schemas/people.schema.json" },
+    { "fileMatch": ["/content/atlas/principles.json"], "url": "./schemas/principles.schema.json" },
+    { "fileMatch": ["/content/atlas/domains.json"], "url": "./schemas/domains.schema.json" },
+    { "fileMatch": ["/content/atlas/domain-colors.json"], "url": "./schemas/domain-colors.schema.json" },
+    { "fileMatch": ["/content/atlas/sources.json"], "url": "./schemas/sources.schema.json" },
+    { "fileMatch": ["/content/slipway/slipway.json"], "url": "./schemas/slipway.schema.json" },
+    { "fileMatch": ["/content/corrections.json"], "url": "./schemas/corrections.schema.json" }
+  ],
+
+  // Paragraphs are one long line each; wrap them so they can be read.
+  "[json]": { "editor.wordWrap": "on" },
+
+  // The two things never edited by hand open read-only.
+  "files.readonlyInclude": {
+    "dist/**": true,
+    "content/corrections.json": true
+  },
+
+  // Searching for a sentence should find the source, not the built copy of it.
+  "search.exclude": { "dist": true, "archive": true }
+}

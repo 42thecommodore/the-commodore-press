@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readJSON, unknownKeys } from "./json.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...a) => path.join(ROOT, ...a);
@@ -15,11 +16,11 @@ const load = d => {
   const full = p(d);
   if (!fs.existsSync(full)) return [];
   return fs.readdirSync(full).filter(f => f.endsWith(".json")).sort().map(f => {
-    try { return { file: `${d}/${f}`, data: JSON.parse(fs.readFileSync(path.join(full, f), "utf8")) }; }
-    catch (e) { err(`${d}/${f}`, `not valid JSON — ${e.message}`); return null; }
+    try { return { file: `${d}/${f}`, data: readJSON(path.join(full, f)) }; }
+    catch (e) { err(`${d}/${f}`, e.message); return null; }
   }).filter(Boolean);
 };
-const one = f => { try { return JSON.parse(fs.readFileSync(p(f), "utf8")); } catch (e) { err(f, e.message); return null; } };
+const one = f => { try { return readJSON(p(f)); } catch (e) { err(f, e.message); return null; } };
 
 const books = load("content/books"), adjacent = load("content/adjacent");
 const lives = load("content/lives"), manuals = load("content/manuals");
@@ -31,6 +32,26 @@ const sources = one("content/atlas/sources.json") || [];
 const slipway = one("content/slipway/slipway.json") || {};
 const corrections = one("content/corrections.json") || [];
 const httpOK = one("content/http-allowlist.json") || {};
+
+/* ---------- field names match schemas/ — the same files that give the editor its hover help ----------
+   A misspelt field is valid JSON, and the page silently drops it. Adding a real new field
+   means describing it in schemas/ in the same change, which is how the help stays true. */
+const schema = n => one(`schemas/${n}.schema.json`);
+const titleS = schema("title");
+if (titleS) titleS.$others = { "title.schema.json": titleS };
+const lifeS = schema("life");
+if (lifeS) lifeS.$others = { "title.schema.json": titleS };
+const fieldsOf = (s, data, file) => s && unknownKeys(s, data).forEach(({ at, near }) =>
+  err(file, `unknown field \`${at}\`${near ? ` — did you mean \`${near}\`?` : ""} The site ignores it, so it would not show.`));
+[...books, ...adjacent].forEach(({ file, data }) => fieldsOf(titleS, data, file));
+lives.forEach(({ file, data }) => fieldsOf(lifeS, data, file));
+manuals.forEach(({ file, data }) => fieldsOf(schema("manual"), data, file));
+fieldsOf(schema("people"), people, "content/atlas/people.json");
+fieldsOf(schema("principles"), principles, "content/atlas/principles.json");
+fieldsOf(schema("domains"), domains, "content/atlas/domains.json");
+fieldsOf(schema("sources"), sources, "content/atlas/sources.json");
+fieldsOf(schema("slipway"), slipway, "content/slipway/slipway.json");
+fieldsOf(schema("corrections"), corrections, "content/corrections.json");
 
 /* ---------- ids must be unique and stable: they are the site's permalinks ---------- */
 const seen = new Map();

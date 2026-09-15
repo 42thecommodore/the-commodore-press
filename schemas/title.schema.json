@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A title on the Press — content/books/ and content/adjacent/",
+  "description": "One file per title. The NN- filename prefix fixes shelf order.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "field", "cover", "claim", "lede", "copy", "keep"],
+  "properties": {
+    "id": {
+      "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "x-means": "slug",
+      "description": "The permalink: lowercase words joined by hyphens. Renaming it breaks every `across` link pointing here and any URL a reader saved. Change it only on purpose, and fix the referrers in the same edit."
+    },
+    "keep": {
+      "type": "string", "maxLength": 220, "x-means": "takeaway",
+      "description": "The one line a reader leaves with, drawn from this entry's own argument — not a general maxim. One sentence that makes sense read alone."
+    },
+    "title": { "type": "string", "x-means": "name", "description": "The title as printed on the cover and in the reader." },
+    "sub": { "type": "string", "x-means": "subtitle", "description": "The subtitle — what this is actually about. Printed under the title." },
+    "field": {
+      "type": "string", "examples": ["Technology", "History", "Economics", "Philosophy", "Adjacent"],
+      "description": "The shelf section. Titles in use: Technology, History, Economics, Philosophy. The adjacent shelf uses Adjacent."
+    },
+    "spineTitle": { "type": "string", "x-means": "spine", "description": "The title as printed on the spine. Usually the same as `title`; shorten it if the full title will not fit." },
+    "years": { "type": "string", "x-means": "period", "description": "The period covered, shown as 'Period' in the reader. Text, not a number: \"1829–1919\", \"Ongoing\"." },
+    "cover": { "$ref": "#/definitions/colour", "description": "Livery: the cover colour, #RRGGBB. `npm run new` picks an unused set of four." },
+    "spineC": { "$ref": "#/definitions/colour", "description": "Livery: the spine colour — a shade darker than `cover`." },
+    "ink": { "$ref": "#/definitions/colour", "description": "Livery: the lettering colour on the cover. Light, so it reads against `cover`." },
+    "accent": { "$ref": "#/definitions/colour", "description": "Livery: the accent colour — the motif and the small details." },
+    "motif": { "$ref": "#/definitions/motif" },
+    "claim": { "type": "string", "x-means": "argument", "description": "The argument in one sentence, printed large at the top of the reader. The house median is eight words." },
+    "lede": { "type": "string", "x-means": "hook", "description": "The opening hook, read straight after the claim." },
+    "copy": {
+      "type": "array", "minItems": 1, "items": { "type": "string" }, "x-means": "body",
+      "description": "The entry itself, one string per paragraph. Nearly impersonal, mechanism first. Keep each paragraph on one line — the editor wraps it for you."
+    },
+    "timeline": {
+      "type": "array", "description": "Dated moments, oldest first.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["y", "t"],
+        "properties": {
+          "y": { "type": "string", "x-means": "year", "description": "The year, as text: \"1902\", \"c. 1450\"." },
+          "t": { "type": "string", "x-means": "text", "description": "What happened, in one line." }
+        }
+      }
+    },
+    "figures": {
+      "type": "array", "description": "The people in the story.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["n", "d"],
+        "properties": {
+          "n": { "type": "string", "x-means": "name", "description": "The person's name." },
+          "d": { "type": "string", "x-means": "description", "description": "Who they are to this story, in one line." }
+        }
+      }
+    },
+    "facts": {
+      "type": "array", "description": "The numbers, each with its named source. A number with no source does not ship.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["b", "s"],
+        "properties": {
+          "b": { "type": "string", "x-means": "number", "description": "The figure as printed, big: \"~2,000 yrs\", \"1902\", \"40%\"." },
+          "s": { "type": "string", "minLength": 1, "x-means": "source", "description": "The named source for that figure — where you actually looked. House rule: required." }
+        }
+      }
+    },
+    "contested": { "type": "string", "x-means": "dispute", "description": "Where this is still argued, and by whom — the objection at full strength, named and attributed. Never \"some disagree\"." },
+    "changed": { "type": "string", "x-means": "mind", "description": "First person: what changed your mind, or what would. Printed as 'What I changed my mind about'. The most personal prose on the site." },
+    "across": { "$ref": "#/definitions/across" },
+    "reading": {
+      "type": "array", "description": "Where to go next. Every title on the main shelf needs at least one.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["t", "a", "u"],
+        "properties": {
+          "t": { "type": "string", "x-means": "title", "description": "Title of the work." },
+          "a": { "type": "string", "x-means": "author", "description": "Author, with the year if useful: \"Henri Poincaré, 1902\"." },
+          "u": { "type": "string", "pattern": "^https?://", "x-means": "url", "description": "A working link, https. http only with a reason recorded in content/http-allowlist.json." },
+          "why": { "type": "string", "description": "Why this one, in a sentence." }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "colour": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "motif": {
+      "enum": ["rings", "lines", "grid", "dots", "conic"],
+      "description": "The pattern pressed into the cover. Anything unrecognised prints as conic."
+    },
+    "across": {
+      "type": "array", "description": "Links to other entries. Two good links beat five weak ones. Add the link back on the other entry.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["to", "label"],
+        "properties": {
+          "to": {
+            "type": "string", "pattern": "^(press|lives|manuals|atlas):[a-z0-9-]+$", "x-means": "link",
+            "description": "Where it points: press:<id>, lives:<id>, manuals:<i|ii|iii|iv>, or atlas:<principle-id>. The check fails if it points nowhere."
+          },
+          "label": { "type": "string", "description": "The name of the thing linked to, as shown." },
+          "txt": { "type": "string", "x-means": "text", "description": "A fragment continuing the label, opening with an em dash: \"— the other entry on where convention ends\"." }
+        }
+      }
+    }
+  }
+}

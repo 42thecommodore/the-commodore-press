@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "The people of the Atlas — content/atlas/people.json",
+  "description": "Everyone in Wing III. Add a person by copying an existing { … } block.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name", "domain", "take"],
+    "properties": {
+      "name": { "type": "string", "description": "Their name as shown in the Atlas." },
+      "domain": {
+        "type": "string", "examples": ["found", "market", "mind", "craft", "recov", "inner"],
+        "description": "Which domain they sit in — an id from domains.json: found, market, mind, craft, recov or inner."
+      },
+      "role": { "type": "string", "description": "Who they are, in a line: \"Executive coach; Art of Accomplishment\"." },
+      "take": { "type": "string", "description": "Your take on what they teach — a sentence or two." },
+      "p": {
+        "type": "array", "items": { "type": "string" }, "x-means": "principles",
+        "description": "The principles they belong to — ids from principles.json. These draw their lines in the Atlas; with none, they float unconnected."
+      },
+      "kept": {
+        "type": "array", "items": { "type": "string" },
+        "description": "Lines you kept from them, printed as 'Lines I kept'. Use quotation marks only for words you have seen verbatim in the source."
+      }
+    }
+  }
+}

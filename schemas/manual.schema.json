@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A field manual — content/manuals/",
+  "description": "Wing IV. First person, positions rather than advice.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "num", "title", "entries"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[ivx]+$", "description": "Lowercase roman numeral. `across` links use manuals:<id>, so renaming breaks them." },
+    "num": { "type": "string", "pattern": "^[IVX]+$", "x-means": "number", "description": "The roman numeral as printed: \"IV\"." },
+    "title": { "type": "string", "description": "The volume title." },
+    "accent": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$", "description": "The volume's colour, #RRGGBB." },
+    "dek": { "type": "string", "x-means": "subtitle", "description": "The line under the title." },
+    "entries": {
+      "type": "array", "minItems": 1, "description": "The positions, in reading order.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["k", "h", "p"],
+        "properties": {
+          "k": { "type": "string", "x-means": "label", "description": "The small label beside the entry: \"The premise\", \"Agency\"." },
+          "h": { "type": "string", "x-means": "heading", "description": "The heading, written as a claim." },
+          "p": { "type": "array", "items": { "type": "string" }, "x-means": "paragraphs", "description": "Paragraphs, one string each." },
+          "src": { "type": "string", "x-means": "source", "description": "Credit, written \"after <name>\" — a compressed note of their idea, not a quotation. Leave it out when the position is your own." }
+        }
+      }
+    },
+    "heur": {
+      "type": "array", "x-means": "heuristics", "description": "The heuristics printed at the end of the volume.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["b", "s"],
+        "properties": {
+          "b": { "type": "string", "x-means": "heuristic", "description": "The heuristic, in one line." },
+          "s": { "type": "string", "x-means": "gloss", "description": "The gloss beneath it." }
+        }
+      }
+    }
+  }
+}

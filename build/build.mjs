@@ -3,10 +3,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readJSON } from "../tools/json.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...a) => path.join(ROOT, ...a);
 const read = f => fs.readFileSync(p(f), "utf8");
+
+/* A broken entry should read as a sentence about the entry, not a Node stack trace —
+   the preview prints this straight into the browser. */
+process.on("uncaughtException", e => { console.error(e.message); process.exit(1); });
 
 /* ---------- load content ---------- */
 // Numeric filename prefixes fix shelf order; entries sort by filename.
@@ -14,10 +19,10 @@ const dir = d => {
   const full = p(d);
   if (!fs.existsSync(full)) return [];
   return fs.readdirSync(full).filter(f => f.endsWith(".json")).sort()
-    .map(f => { try { return JSON.parse(fs.readFileSync(path.join(full, f), "utf8")); }
+    .map(f => { try { return readJSON(path.join(full, f)); }
                 catch (e) { throw new Error(`${d}/${f}: ${e.message}`); } });
 };
-const one = f => JSON.parse(read(f));
+const one = f => { try { return readJSON(p(f)); } catch (e) { throw new Error(`${f}: ${e.message}`); } };
 
 const BOOKS      = dir("content/books");
 const ADJACENT   = dir("content/adjacent");
@@ -69,7 +74,14 @@ const DATA = safe([
 const words = n => n < 20 ? ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"][n]
   : n % 10 === 0 ? ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"][n / 10] : words(n - n % 10) + "-" + words(n % 10);
 const cap = s => s[0].toUpperCase() + s.slice(1);
+
+/* Where the site actually lives. Social cards and canonical links need an absolute URL,
+   and a relative one silently produces a link with no preview. Override for a custom
+   domain: SITE_URL=https://commodorepress.org npm run build */
+const SITE = (process.env.SITE_URL || "https://42thecommodore.github.io/the-commodore-press").replace(/\/+$/, "");
+
 const fill = s => s
+  .replace(/{{SITE}}/g, SITE)
   .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{W_BOOKS_CAP}}/g, cap(words(BOOKS.length)))
   .replace(/{{W_LIVES_CAP}}/g, cap(words(LIVES.length))).replace(/{{W_PEOPLE_CAP}}/g, cap(words(PEOPLE.length)))
   .replace(/{{N_LIVES}}/g, words(LIVES.length)).replace(/{{N_PEOPLE}}/g, words(PEOPLE.length))
@@ -85,7 +97,20 @@ fs.writeFileSync(p("dist/index.html"), out);
 // A 404 that is just the site: any deep link lands on the front door.
 fs.writeFileSync(p("dist/404.html"), out);
 fs.writeFileSync(p("dist/.nojekyll"), "");
-fs.writeFileSync(p("dist/robots.txt"), "User-agent: *\nAllow: /\n");
+fs.writeFileSync(p("dist/robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
+
+/* The card people see when the link is pasted somewhere. Rendered by `npm run card`
+   and committed, so CI never needs a browser. The page itself stays self-contained;
+   this sits beside it the way robots.txt does. */
+const CARD = p("assets/og.png");
+if (fs.existsSync(CARD)) fs.copyFileSync(CARD, p("dist/og.png"));
+else console.log("  no assets/og.png — run `npm run card` (shared links will show no image)");
+
+/* Routing is hash-based, so there is exactly one indexable URL. Saying so plainly
+   beats letting a crawler guess. */
+fs.writeFileSync(p("dist/sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  `  <url><loc>${SITE}/</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>\n</urlset>\n`);
 
 const kb = n => (n / 1024).toFixed(0) + " KB";
 console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}`);

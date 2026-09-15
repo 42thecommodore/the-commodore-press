@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "The domains of the Atlas — content/atlas/domains.json",
+  "description": "The six regions of the Atlas circle. A new domain also needs a colour in domain-colors.json.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "label", "angle"],
+    "properties": {
+      "id": { "type": "string", "description": "Short id. People name it in their `domain`." },
+      "label": { "type": "string", "description": "The domain as printed: \"Markets & Capital\"." },
+      "angle": { "type": "number", "description": "Where it sits on the Atlas circle, in degrees. -90 is the top; the six are spaced 60 apart." }
+    }
+  }
+}

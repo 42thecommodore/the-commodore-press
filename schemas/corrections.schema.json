@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Corrections — content/corrections.json",
+  "description": "APPEND-ONLY. The colophon promises readers corrections are never silently patched. Add one with: npm run correct -- \"Title.\" \"Body.\" — never by hand.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["d", "t", "b"],
+    "properties": {
+      "d": { "type": "string", "x-means": "date", "description": "Month and year: \"Aug 2026\"." },
+      "t": { "type": "string", "x-means": "title", "description": "A short title, ending in a full stop." },
+      "b": { "type": "string", "x-means": "body", "description": "What was wrong, what is right, and how you know." }
+    }
+  }
+}

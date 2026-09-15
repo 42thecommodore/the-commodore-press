@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Atlas sources — content/atlas/sources.json",
+  "description": "Where the Atlas material was heard or read.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["t", "u"],
+    "properties": {
+      "t": { "type": "string", "x-means": "title", "description": "The source as named: \"Founders — David Senra\"." },
+      "u": { "type": "string", "pattern": "^https?://", "x-means": "url", "description": "A working link, https." }
+    }
+  }
+}
