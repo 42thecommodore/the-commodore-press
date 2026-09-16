@@ -42,8 +42,14 @@ const readAll = d => { const f = path.join(ROOT, d); return fs.existsSync(f) ? f
 const used = new Set();
 for (const d of ["content/books", "content/adjacent", "content/lives"])
   for (const f of readAll(d)) { const j = JSON.parse(fs.readFileSync(path.join(ROOT, d, f), "utf8")); used.add(j.cover); }
-const livery = LIVERIES.find(l => !used.has(l.cover)) || LIVERIES[used.size % LIVERIES.length];
-const motif = MOTIFS[used.size % MOTIFS.length];
+/* Every palette livery is now in use, so the fallback runs every time. It used to key off
+   `used.size` — the count of DISTINCT covers — which does not move when a new stub reuses
+   a palette colour, so two scaffolds in a row came out in the identical livery. Keying off
+   the entry count, which always increments, at least makes consecutive stubs differ. */
+const entries = ["content/books", "content/adjacent", "content/lives"].reduce((n, d) => n + readAll(d).length, 0);
+const fresh = LIVERIES.find(l => !used.has(l.cover));
+const livery = fresh || LIVERIES[entries % LIVERIES.length];
+const motif = MOTIFS[entries % MOTIFS.length];
 
 const TODO = t => `TODO — ${t}`;
 const dirFor = { book: "content/books", adjacent: "content/adjacent", life: "content/lives", manual: "content/manuals" }[kind];
@@ -100,6 +106,7 @@ fs.writeFileSync(file, JSON.stringify(body, null, 2) + "\n");
 const rel = path.relative(ROOT, file);
 console.log(`\n  new ${kind}: ${rel}`);
 console.log(`  livery: ${livery.cover} / ${motif}`);
+if (!fresh) console.log(`  ⚠ every house livery is already in use — this one repeats ${livery.cover}.\n    Pick a distinct cover/spineC/ink/accent by hand before shelving it.`);
 const steps = [
   `/press-voice        — the house voice, before you write a line`,
   `answer every TODO in ${rel}`,

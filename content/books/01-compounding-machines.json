@@ -90,6 +90,11 @@
       "to": "lives:einstein",
       "label": "Albert Einstein",
       "txt": "— the standing counter-example: four papers, no lab."
+    },
+    {
+      "to": "lives:steve-jobs",
+      "label": "Steve Jobs",
+      "txt": "— the commercialisation function, walking out of PARC with what Xerox could not ship."
     }
   ],
   "reading": [

@@ -1,0 +1,39 @@
+{
+  "id": "robert-moses",
+  "keep": "Build the thing that funds itself and you never have to ask anyone again. That is the danger, not the trick.",
+  "n": "Robert Moses",
+  "years": "1888–1981",
+  "place": "New York",
+  "field": "Cities & Power",
+  "group": "famous",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "grid",
+  "lede": "He never won an election and never ran a city. For forty years he decided what New York would look like.",
+  "copy": [
+    "Moses held no elected office worth the name. His power ran through public authorities, and the Triborough Bridge Authority was the machine. An authority funded by its own tolls needs no budget line, so it needs no legislature. Bond covenants pledged the state not to impair the bondholders' contracts, which left Moses answerable to bondholders rather than to voters — and a contract cannot be repealed by someone who never signed it. Surplus tolls had to be reinvested in new authority projects. The machine was therefore built to keep building.",
+    "What it produced is genuinely enormous, and the count everyone repeats is Caro's: roughly $27 billion of public works, thirteen bridges, hundreds of playgrounds, and the parkway and expressway network the region still runs on. It also cleared people. Caro puts the number displaced by highway construction alone at 250,000. For the Cross-Bronx Expressway, by his account, Moses took a line through 159 buildings holding 1,530 families rather than one through six buildings holding nineteen.",
+    "He was not voted out, because there was no election to lose. In March 1968 Nelson Rockefeller folded Triborough into the new Metropolitan Transportation Authority, which could at last spend the tolls on the subway — the one use Moses had always refused. He had standing to sue and chose not to, on a promise of a role that never arrived. He answered his critics in a typewritten statement two years later: \"I raise my stein to the builder who can remove ghettos without moving people as I hail the chef who can make omelets without breaking eggs.\""
+  ],
+  "bio": {
+    "t": "The Power Broker: Robert Moses and the Fall of New York",
+    "a": "Robert A. Caro",
+    "y": "1974",
+    "why": "The book that made his reputation and then unmade it — still the best account anywhere of how unelected power actually assembles itself. Read it alongside Hilary Ballon and Kenneth T. Jackson's 'Robert Moses and the Modern City' (2007), which argues Caro overstated the man and understated the century he worked in."
+  },
+  "contested": "The most repeated fact about him may not be one. Caro reports that Moses had the Southern State Parkway bridges built too low for buses, keeping poor and Black New Yorkers off the road to Jones Beach. The source is Sidney Shapiro, an aide who talked on condition that nothing appear until he was dead; he died in 1972, and no written order has ever surfaced. Langdon Winner made the story the standard case that objects carry politics. Bernward Joerges then found that buses reached the beach by other routes and that the bridges' designer put the low clearances down to cost. Thomas Campanella measured twenty of them and found them markedly lower than those on comparable parkways. Kenneth Jackson says flatly that Caro is wrong; Thomas Bender says the revisionists let unaccountable power off too lightly.",
+  "across": [
+    {
+      "to": "press:water-in-the-west",
+      "label": "Water in the West",
+      "txt": "— the same shape: a landmark polemic about infrastructure, and the historians who arrived afterwards with the qualifications."
+    },
+    {
+      "to": "manuals:iv",
+      "label": "Field Manual IV · The Operators",
+      "txt": "— the hardest case for stealing the engine and refusing the cruelty."
+    }
+  ]
+}
