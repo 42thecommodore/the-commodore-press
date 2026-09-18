@@ -179,6 +179,35 @@ const todos = (node, file, at = "") => {
 };
 [...books, ...adjacent, ...lives, ...manuals].forEach(({ file, data }) => todos(data, file));
 
+/* ---------- a livery must be readable, as the reader actually renders it ----------
+   Liveries are hand-picked once the palette in tools/new.mjs runs out, and nothing used to
+   check them: four entries shipped with prose under WCAG AA on their own covers. The check
+   is not ink-on-cover at full strength, because the reader never renders it that way — the
+   prose sits at the opacity `.rbody .copy` sets and the small uppercase labels at the one
+   `.rbody h4` sets. Both are read out of theme/press.css, so changing the reader's opacity
+   changes what this measures instead of leaving it checking a number nobody uses.
+   Books, plates and readers keep their liveries in night mode, so one check covers all three
+   modes. Prose is an error; the labels are a warning. */
+const css = fs.existsSync(p("theme/press.css")) ? fs.readFileSync(p("theme/press.css"), "utf8") : "";
+const opacityOf = (sel, fallback) => {
+  const m = css.match(new RegExp(sel.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\{[^}]*?opacity:\\s*([0-9.]+)"));
+  return m ? parseFloat(m[1]) : fallback;
+};
+const PROSE = opacityOf(".rbody .copy", 0.92), LABELS = opacityOf(".rbody h4", 0.8), AA = 4.5;
+const rgb = h => [0, 2, 4].map(i => parseInt(h.slice(1 + i, 3 + i), 16));
+const lum = h => rgb(h).map(v => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; })
+  .reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
+const blend = (fg, bg, a) => "#" + rgb(fg).map((v, i) => Math.round(v * a + rgb(bg)[i] * (1 - a)).toString(16).padStart(2, "0")).join("");
+const contrast = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+const HEX = /^#[0-9a-fA-F]{6}$/;
+[...books, ...adjacent, ...lives].forEach(({ file, data }) => {
+  const { ink, cover } = data;
+  if (!HEX.test(ink || "") || !HEX.test(cover || "")) return;   // a malformed colour is the schema's job
+  const prose = contrast(blend(ink, cover, PROSE), cover), labels = contrast(blend(ink, cover, LABELS), cover);
+  if (prose < AA) err(file, `livery prose is ${prose.toFixed(2)}:1 on its own cover (ink ${ink} at ${PROSE} on ${cover}); needs ${AA}:1 — darken \`cover\` and \`spineC\` together`);
+  else if (labels < AA) warn(file, `livery labels are ${labels.toFixed(2)}:1 (ink ${ink} at ${LABELS} on ${cover}); the reader's small uppercase apparatus needs ${AA}:1`);
+});
+
 /* ---------- report ---------- */
 const c = { r: "\x1b[31m", y: "\x1b[33m", g: "\x1b[32m", d: "\x1b[2m", x: "\x1b[0m" };
 if (warns.length) { console.log(`\n${c.y}${warns.length} warning(s)${c.x}`); warns.forEach(w => console.log(`  ${c.y}·${c.x} ${w}`)); }

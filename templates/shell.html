@@ -79,16 +79,19 @@
     <div class="wrap">
       <div class="front">
         <div>
-          <div class="lbl" data-reveal style="--d:820ms">A working library · Luca</div>
+          <!-- Reveal delays are capped near 360ms. They used to run to 1000ms against an .85s
+               fade, so the tally was not fully legible until ~1.85s after load and a reader
+               arriving from a shared link saw an empty sheet first. The headline still leads. -->
+          <div class="lbl" data-reveal style="--d:260ms">A working library · Luca</div>
           <h1>
             <span><i style="--d:120ms">Read the sources.</i></span>
             <span><i style="--d:230ms">Mark what is</i></span>
             <span class="em"><i style="--d:340ms">still argued.</i></span>
           </h1>
-          <p class="stand" data-reveal style="--d:900ms">Five wings of one method. Every claim here carries where it came from and where specialists disagree — because the disagreement is usually the part worth having.</p>
-          <div class="tally" data-reveal style="--d:1000ms" id="tally"></div>
+          <p class="stand" data-reveal style="--d:300ms">Five wings of one method. Every claim here carries where it came from and where specialists disagree — because the disagreement is usually the part worth having.</p>
+          <div class="tally" data-reveal style="--d:340ms" id="tally"></div>
         </div>
-        <div class="today" data-reveal style="--d:400ms" id="todayCard"></div>
+        <div class="today" data-reveal style="--d:360ms" id="todayCard"></div>
       </div>
 
       <div class="wings5" id="wings5"></div>
