@@ -85,7 +85,11 @@ const fill = s => s
   .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{W_BOOKS_CAP}}/g, cap(words(BOOKS.length)))
   .replace(/{{W_LIVES_CAP}}/g, cap(words(LIVES.length))).replace(/{{W_PEOPLE_CAP}}/g, cap(words(PEOPLE.length)))
   .replace(/{{N_LIVES}}/g, words(LIVES.length)).replace(/{{N_PEOPLE}}/g, words(PEOPLE.length))
-  .replace(/{{N_MANUALS}}/g, words(MANUALS.length)).replace(/{{N_LESSONS}}/g, words((SLIPWAY.book || []).length));
+  .replace(/{{N_MANUALS}}/g, words(MANUALS.length)).replace(/{{N_LESSONS}}/g, words((SLIPWAY.book || []).length))
+  /* The famous/forgotten split used to be typed into the Lives dek, and it had been wrong
+     since the shelf passed 26. Counted here instead, so it cannot drift again. */
+  .replace(/{{W_FAMOUS_CAP}}/g, cap(words(LIVES.filter(l => l.group !== "obscure").length)))
+  .replace(/{{N_FORGOT}}/g, words(LIVES.filter(l => l.group === "obscure").length));
 const out = fill(read("templates/shell.html"))
   .replace("<!--CSS-->", () => read("theme/press.css"))
   .replace("<!--DATA-->", () => DATA)

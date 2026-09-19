@@ -76,6 +76,11 @@
       "to": "press:the-box",
       "label": "The Box",
       "txt": "— the other case where standards, not invention, were the binding constraint."
+    },
+    {
+      "to": "lives:ibn-al-haytham",
+      "label": "Ibn al-Haytham",
+      "txt": "— the argument that light travels into the eye rather than out of it, which this whole account assumes."
     }
   ],
   "reading": [

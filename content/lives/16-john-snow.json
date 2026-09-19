@@ -29,6 +29,11 @@
       "to": "press:being-wrong",
       "label": "Being Wrong Productively",
       "txt": "— the founding case of the method, and a founding case of a story told better than its evidence."
+    },
+    {
+      "to": "lives:florence-nightingale",
+      "label": "Florence Nightingale",
+      "txt": "— the same decade, the same miasma consensus, and the other argument won on a table rather than a theory."
     }
   ]
 }

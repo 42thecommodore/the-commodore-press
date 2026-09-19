@@ -11,6 +11,61 @@
     --thick:34px;
     --ease:cubic-bezier(.19,.9,.22,1);
     --ease-io:cubic-bezier(.62,.02,.2,1);
+
+    /* ---- the scale ----
+       Sizes used to be argued one component at a time, which is why the site had
+       nine different small-label sizes. Everything below comes off two ladders:
+       space on a 4px grid, type on a ~1.22 ratio. Pick a rung, do not invent one. */
+    --s1:4px;   --s2:8px;   --s3:12px;  --s4:16px;  --s5:24px;  --s6:32px;
+    --s7:44px;  --s8:60px;  --s9:80px;  --s10:104px; --s11:136px; --s12:176px;
+
+    --t-cap:10.5px;   /* mono labels, tracked wide */
+    --t-fine:11.5px;  /* mono apparatus */
+    --t-sm:13.5px;
+    --t-base:15.5px;
+    --t-body:19px;
+    --t-lead:21px;
+    --t-h4:23px;
+    --t-h3:27px;
+    --t-h2:clamp(34px,5vw,50px);
+    --t-h1:clamp(44px,6.6vw,80px);
+
+    /* Optical tracking: the bigger the type, the tighter it wants to be set.
+       Small mono runs the other way and is tracked open. */
+    --tr-display:-.026em; --tr-head:-.019em; --tr-body:0; --tr-cap:.22em;
+
+    --r-sm:4px; --r-md:10px; --r-lg:16px; --r-xl:22px; --r-full:999px;
+
+    /* ---- motion ----
+       One family of curves. `spring` overshoots slightly and settles, which is
+       what makes a control feel answered rather than animated; `settle` is the
+       same shape with the overshoot taken out, for anything carrying text. */
+    --spring:cubic-bezier(.22,1.28,.36,1);
+    --settle:cubic-bezier(.16,1,.3,1);
+    --swift:cubic-bezier(.4,0,.2,1);
+    --d-fast:.18s; --d-mid:.32s; --d-slow:.56s;
+
+    /* ---- materials ----
+       Three thicknesses of translucency, as a layered hierarchy rather than a
+       blur value guessed per component. */
+    --mat-thin:saturate(150%) blur(8px);
+    --mat-reg:saturate(165%) blur(16px);
+    --mat-thick:saturate(180%) blur(28px);
+    --surf-1:rgba(242,237,225,.72);
+    --surf-2:rgba(242,237,225,.88);
+    --hair:rgba(30,28,24,.12);
+
+    /* ---- elevation ---- */
+    --e1:0 1px 2px rgba(30,28,24,.06),0 2px 8px rgba(30,28,24,.05);
+    --e2:0 2px 6px rgba(30,28,24,.07),0 10px 26px rgba(30,28,24,.09);
+    --e3:0 8px 18px rgba(30,28,24,.09),0 26px 58px rgba(30,28,24,.14);
+    --e4:0 18px 40px rgba(30,28,24,.14),0 44px 100px rgba(30,28,24,.20);
+
+    --focus:var(--oxblood);
+
+    /* Live pointer position, written by the engine. Falls back to the centre so
+       every gradient below still resolves with JS off. */
+    --mx:50%; --my:40%; --pdist:1;
   }
   body.dusk{
     --paper:#12151F; --paper-2:#1A1F2E; --paper-3:#171C29;
@@ -18,6 +73,13 @@
     --ink:#EAE3D1; --ink-soft:#98917E; --ink-mid:#CBC3AE;
     --oxblood:#CE7B6E; --navy:#8FAEDC; --brass:#D8A657;
     --iron:#7E9CC9; --coin:#D8A657; --hail:#7FB6A4; --keel:#D96C60;
+    --surf-1:rgba(18,21,31,.72); --surf-2:rgba(18,21,31,.9);
+    --hair:rgba(234,227,209,.13);
+    --e1:0 1px 2px rgba(0,0,0,.4),0 2px 8px rgba(0,0,0,.3);
+    --e2:0 2px 6px rgba(0,0,0,.45),0 10px 26px rgba(0,0,0,.4);
+    --e3:0 8px 18px rgba(0,0,0,.5),0 26px 58px rgba(0,0,0,.46);
+    --e4:0 18px 40px rgba(0,0,0,.55),0 44px 100px rgba(0,0,0,.5);
+    --focus:var(--brass);
   }
   body.dusk header.mast{background:rgba(15,18,28,.9)}
   body.dusk .today{background:var(--paper-2)}
@@ -39,38 +101,56 @@
   a{color:inherit}
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   ::selection{background:var(--ink);color:var(--paper)}
+  /* One focus treatment for the whole site. It was seven, and three of them were
+     the browser default landing on a dark control. */
+  :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:var(--r-sm)}
+  body.night :focus-visible{outline-color:var(--nbrass)}
   .mono{font-family:var(--mono)}
   .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--oxblood)}
   .lbl.q{color:var(--ink-soft)}
   .wrap{max-width:1220px;margin:0 auto;padding:0 40px}
   .narrow{max-width:860px}
 
-  [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .85s var(--ease),transform .85s var(--ease);transition-delay:var(--d,0ms)}
+  [data-reveal]{opacity:0;transform:translateY(22px) scale(.988);
+    transition:opacity .7s var(--swift),transform .9s var(--settle);transition-delay:var(--d,0ms)}
   [data-reveal].in{opacity:1;transform:none}
 
   /* ---------- masthead ---------- */
-  header.mast{position:sticky;top:0;z-index:60;background:rgba(242,237,225,.9);
-    backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);
+  header.mast{position:sticky;top:0;z-index:60;background:var(--surf-1);
+    backdrop-filter:var(--mat-reg);-webkit-backdrop-filter:var(--mat-reg);
     border-bottom:1px solid transparent;transition:border-color .4s,background .6s var(--ease)}
-  body.night header.mast{background:rgba(10,14,27,.9);border-bottom-color:var(--line)}
-  header.mast.stuck{border-bottom-color:var(--rule)}
+  body.night header.mast{background:rgba(10,14,27,.72);border-bottom-color:var(--line)}
+  header.mast.stuck{border-bottom-color:var(--hair);background:var(--surf-2)}
   body.night header.mast.stuck{border-bottom-color:var(--line)}
-  .mast-in{display:flex;align-items:center;gap:20px;height:64px}
+  .mast-in{display:flex;align-items:center;gap:var(--s5);height:64px}
   .mark{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
   .mark svg{display:block;transition:transform .9s var(--ease)}
   .mark:hover svg{transform:rotate(180deg)}
   .mark svg circle,.mark svg path{stroke:var(--ink);transition:stroke .6s}
   body.night .mark svg circle,body.night .mark svg path{stroke:var(--parchment)}
   .mark b{font-weight:600;font-size:20px;letter-spacing:.004em;white-space:nowrap}
-  .mast nav{margin-left:auto;display:flex;align-items:center;gap:2px;flex-wrap:wrap}
-  .navbtn{padding:7px 13px;border-radius:999px;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
-    color:var(--ink-soft);transition:background .22s,color .22s,transform .2s var(--ease);white-space:nowrap}
+  /* The wing switcher is a segmented control: one lit pill that slides between
+     wings rather than five backgrounds blinking on and off. #navInk is that pill,
+     positioned by the engine; with JS off the aria-current rule below still marks
+     the current wing, so nothing depends on it. */
+  .mast nav{margin-left:auto;display:flex;align-items:center;gap:2px;flex-wrap:wrap;position:relative}
+  #navInk{position:absolute;z-index:0;top:0;left:0;height:0;width:0;border-radius:var(--r-full);
+    background:var(--paper-2);opacity:0;pointer-events:none;
+    transition:transform .42s var(--spring),width .42s var(--spring),opacity .25s var(--swift)}
+  body.night #navInk{background:var(--panel-2)}
+  #navInk.on{opacity:1}
+  .navbtn{position:relative;z-index:1;padding:7px 13px;border-radius:var(--r-full);font-family:var(--mono);
+    font-size:var(--t-fine);letter-spacing:.05em;color:var(--ink-soft);
+    transition:color .22s var(--swift),transform .28s var(--spring);white-space:nowrap}
   body.night .navbtn{color:var(--parchment-dim)}
-  .navbtn:hover{background:var(--paper-2);color:var(--ink)}
-  body.night .navbtn:hover{background:var(--panel-2);color:var(--parchment)}
-  .navbtn:active{transform:scale(.95)}
-  .navbtn[aria-current="true"]{background:var(--paper-2);color:var(--ink)}
-  body.night .navbtn[aria-current="true"]{background:var(--panel-2);color:var(--nbrass)}
+  .navbtn:hover{color:var(--ink)}
+  body.night .navbtn:hover{color:var(--parchment)}
+  .navbtn:active{transform:scale(.94)}
+  .navbtn[aria-current="true"]{color:var(--ink)}
+  body.night .navbtn[aria-current="true"]{color:var(--nbrass)}
+  /* Fallback only: with the sliding pill live, the pill is the indicator. */
+  nav:not(:has(#navInk.on)) .navbtn[aria-current="true"]{background:var(--paper-2)}
+  body.night nav:not(:has(#navInk.on)) .navbtn[aria-current="true"]{background:var(--panel-2)}
   .navbtn.solid{background:var(--ink);color:var(--paper)}
   body.night .navbtn.solid{background:var(--nbrass);color:#241A06;font-weight:600}
   .navbtn.solid:hover{background:#000;color:#fff}
@@ -89,18 +169,32 @@
   .hr.thin{height:1px;background:var(--rule)}
 
   /* ---------- front door ---------- */
-  .front{padding:82px 0 30px;display:grid;grid-template-columns:1.4fr 1fr;gap:70px;align-items:start}
-  .front h1{font-size:clamp(44px,6.6vw,80px);line-height:.99;letter-spacing:-.026em;margin:16px 0 20px;font-weight:500}
+  .front{padding:var(--s11) 0 var(--s7);display:grid;grid-template-columns:1.4fr 1fr;gap:var(--s10);
+    align-items:start;position:relative}
+  /* A soft light sitting under the front door, centred on the pointer. It is one
+     gradient reading two custom properties the engine writes; there is no element
+     chasing the mouse and nothing animates on the main thread. */
+  .front::before{content:"";position:absolute;inset:-14% -8%;pointer-events:none;z-index:0;
+    background:radial-gradient(38% 42% at var(--mx) var(--my),
+      rgba(138,43,37,.075),rgba(138,43,37,0) 68%);
+    opacity:var(--pdist,0);transition:opacity .7s var(--swift)}
+  body.dusk .front::before{background:radial-gradient(38% 42% at var(--mx) var(--my),
+      rgba(216,166,87,.09),rgba(216,166,87,0) 68%)}
+  .front>*{position:relative;z-index:1}
+  .front h1{font-size:var(--t-h1);line-height:.99;letter-spacing:var(--tr-display);margin:var(--s4) 0 var(--s5);font-weight:500}
   .front h1 span{display:block;overflow:hidden}
-  .front h1 span i{display:block;font-style:normal;transform:translateY(105%);transition:transform 1.1s var(--ease);transition-delay:var(--d,0ms)}
+  .front h1 span i{display:block;font-style:normal;transform:translateY(105%);transition:transform 1.05s var(--settle);transition-delay:var(--d,0ms)}
   .front h1 span.em i{font-style:italic;color:var(--ink-soft)}
   body.ready .front h1 span i{transform:none}
   .front .stand{font-size:21px;line-height:1.5;color:var(--ink-mid);max-width:54ch}
-  .tally{display:flex;gap:26px;margin-top:26px;border-top:1px solid var(--rule);padding-top:18px;
+  .tally{display:flex;gap:var(--s6);margin-top:var(--s6);border-top:1px solid var(--rule);padding-top:var(--s4);
     font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-soft);flex-wrap:wrap}
   .tally b{font-family:var(--serif);font-size:17px;font-weight:500;color:var(--ink);margin-right:4px}
 
-  .today{background:var(--paper-2);border:1px solid var(--rule);padding:26px 28px;display:flex;flex-direction:column;gap:15px}
+  .today{background:var(--paper-2);border:1px solid var(--rule);border-radius:var(--r-lg);
+    padding:var(--s6) var(--s6) var(--s5);display:flex;flex-direction:column;gap:var(--s4);
+    box-shadow:var(--e1);transition:box-shadow var(--d-slow) var(--settle),transform var(--d-slow) var(--settle)}
+  .today:hover{box-shadow:var(--e2)}
   .today .big{display:flex;align-items:baseline;gap:10px}
   .today .big b{font-size:60px;line-height:.88;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
   .today .big span{font-size:19px;color:var(--ink-soft)}
@@ -110,13 +204,14 @@
   .today .meter{height:5px;background:var(--rule);position:relative;overflow:hidden}
   .today .meter i{position:absolute;left:0;top:0;bottom:0;background:var(--oxblood);width:0;transition:width 1.4s var(--ease)}
 
-  .wings5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;padding:34px 0 0}
-  .wcard{border-top:2px solid var(--oxblood);padding:16px 0 0;text-align:left;display:flex;flex-direction:column;gap:11px;
-    transition:transform .45s var(--ease)}
-  .wcard:hover{transform:translateY(-4px)}
+  .wings5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s5);padding:var(--s9) 0 0}
+  .wcard{border-top:2px solid var(--oxblood);padding:var(--s4) var(--s3) var(--s4) 0;text-align:left;
+    display:flex;flex-direction:column;gap:var(--s3);border-radius:0 0 var(--r-md) var(--r-md);
+    transition:transform .5s var(--spring)}
+  .wcard:hover{transform:translateY(-6px)}
   .wcard.night{border-top-color:var(--navy)}
   .wcard .n{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
-  .wcard h3{font-size:27px;margin:0;font-weight:500;line-height:1.04;position:relative;display:inline-block}
+  .wcard h3{font-size:var(--t-h3);margin:0;font-weight:500;line-height:1.04;letter-spacing:var(--tr-head);position:relative;display:inline-block}
   .wcard h3::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
   .wcard:hover h3::after{transform:none;transform-origin:left}
   .wcard p{margin:0;font-size:15.5px;line-height:1.45;color:var(--ink-soft)}
@@ -131,9 +226,12 @@
 
   /* ---------- shelf ---------- */
   .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:26px 0 0}
-  .chip{padding:7px 15px;border:1px solid var(--rule);border-radius:999px;font-family:var(--mono);font-size:11.5px;
-    letter-spacing:.05em;color:var(--ink-soft);transition:.22s var(--ease)}
-  .chip:hover{border-color:#B9AF9B;color:var(--ink);transform:translateY(-1px)}
+  .chip{padding:7px 15px;border:1px solid var(--rule);border-radius:var(--r-full);font-family:var(--mono);
+    font-size:var(--t-fine);letter-spacing:.05em;color:var(--ink-soft);
+    transition:color var(--d-fast) var(--swift),border-color var(--d-fast) var(--swift),
+      background var(--d-fast) var(--swift),transform var(--d-mid) var(--spring)}
+  .chip:hover{border-color:#B9AF9B;color:var(--ink);transform:translateY(-2px)}
+  .chip:active{transform:scale(.95)}
   .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
   .chip.warn[aria-pressed="true"]{background:var(--oxblood);border-color:var(--oxblood)}
   .controls .spacer{margin-left:auto}
@@ -143,8 +241,9 @@
   .shelf.tight{grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:52px 30px}
   .slot{perspective:1500px;display:flex;flex-direction:column;align-items:center;text-align:center}
   .book{position:relative;width:100%;aspect-ratio:5/7.3;transform-style:preserve-3d;
-    transform:rotateY(var(--ry,26deg)) rotateX(var(--rx,3deg)) translateY(var(--ty,0px)) scale(var(--sc,1));
-    transition:transform .7s var(--ease);will-change:transform}
+    transform:translateX(var(--lean,0px)) rotateY(var(--ry,26deg)) rotateX(var(--rx,3deg))
+      translateY(var(--ty,0px)) scale(var(--sc,1));
+    transition:transform .7s var(--settle);will-change:transform}
   .book.track{transition:transform .16s cubic-bezier(.2,.8,.2,1)}
   .slot:hover .book,.slot:focus-visible .book{--ry:10deg;--rx:1.5deg;--ty:-14px;--sc:1.04}
   body.spines .book{--ry:70deg;--rx:1deg;--ty:0px;--sc:1;transition-delay:calc(var(--i,0) * 22ms)}
@@ -186,9 +285,10 @@
   .sec-head h3{font-size:26px;margin:0;font-weight:500}
   .sec-head span{color:var(--ink-soft);font-size:16px;font-style:italic}
   .wide{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding-top:24px}
-  .card{position:relative;border-radius:4px;overflow:hidden;min-height:230px;padding:32px;display:flex;flex-direction:column;
-    justify-content:flex-end;text-align:left;transition:transform .55s var(--ease),box-shadow .55s var(--ease);box-shadow:0 2px 10px rgba(0,0,0,.1)}
-  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.22)}
+  .card{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:230px;padding:var(--s6);
+    display:flex;flex-direction:column;justify-content:flex-end;text-align:left;
+    transition:transform .6s var(--settle),box-shadow .6s var(--settle);box-shadow:var(--e1)}
+  .card:hover{box-shadow:var(--e3)}
   .card .motif{transition:transform 1.1s var(--ease)}
   .card:hover .motif{transform:scale(1.08)}
   .card h4{margin:9px 0 6px;font-size:25px;font-weight:500;position:relative;z-index:2}
@@ -214,8 +314,9 @@
   .rbar .back:hover .arw{transform:translateX(-4px)}
   .rbar .nav{margin-left:auto;display:flex;gap:8px}
   .rbar .nav button{width:34px;height:34px;border-radius:50%;border:1px solid currentColor;opacity:.75;display:grid;place-items:center;
-    font-size:14px;transition:opacity .25s,transform .25s var(--ease)}
-  .rbar .nav button:hover{opacity:1;transform:scale(1.1)}
+    font-size:14px;transition:opacity .25s var(--swift),transform .3s var(--spring)}
+  .rbar .nav button:hover{opacity:1;transform:scale(1.12)}
+  .rbar .nav button:active{transform:scale(.92)}
   .rgrid{display:grid;grid-template-columns:minmax(220px,290px) 1fr;gap:66px;padding-top:30px}
   .rail{position:sticky;top:88px}
   .rbook{perspective:1600px}
@@ -242,8 +343,9 @@
   .rbody h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin:0 0 18px;font-weight:500}
   .sec{padding:52px 0 0;scroll-margin-top:80px}
   .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;max-width:64ch}
-  .facts div{padding:16px 18px 18px;background:rgba(255,255,255,.07);border-radius:2px;transition:background .35s}
-  .facts div:hover{background:rgba(255,255,255,.13)}
+  .facts div{padding:var(--s4) var(--s4) var(--s4);background:rgba(255,255,255,.07);border-radius:var(--r-md);
+    transition:background .35s var(--swift),transform .4s var(--spring)}
+  .facts div:hover{background:rgba(255,255,255,.13);transform:translateY(-3px)}
   .facts b{display:block;font-size:30px;line-height:1.1;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
   .facts span{font-family:var(--mono);font-size:11px;letter-spacing:.04em;opacity:.72;display:block;margin-top:7px;line-height:1.5}
   .tl{list-style:none;margin:0;padding:0;max-width:62ch;position:relative}
@@ -261,7 +363,8 @@
   .quoteblock{max-width:60ch;border-left:2px solid currentColor;padding:4px 0 4px 20px;font-size:17px;opacity:.85;font-style:italic;line-height:1.55}
   .keepbox{max-width:56ch;border:1.5px solid currentColor;padding:22px 26px;font-size:21px;line-height:1.45;font-style:italic;border-radius:2px;position:relative}
   .keepbox::after{content:"";position:absolute;inset:4px;border:1px solid currentColor;opacity:.35;pointer-events:none;border-radius:1px}
-  .biobox{max-width:62ch;background:rgba(255,255,255,.08);border-left:3px solid currentColor;padding:22px 24px;display:flex;flex-direction:column;gap:5px}
+  .biobox{max-width:62ch;background:rgba(255,255,255,.08);border-left:3px solid currentColor;
+    border-radius:0 var(--r-md) var(--r-md) 0;padding:var(--s5) var(--s5);display:flex;flex-direction:column;gap:5px}
   .biobox .t{font-size:21px;font-style:italic;font-weight:500}
   .biobox .a{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;opacity:.7}
   .biobox .w{font-size:16.5px;line-height:1.55;opacity:.9;margin-top:6px}
@@ -322,11 +425,12 @@
     padding:7px 13px 7px 10px;font-size:13.5px;transition:.15s;color:var(--parchment)}
   .star-pill:hover{border-color:var(--nbrass);color:var(--nbrass-b)}
   .star-pill .s{width:7px;height:7px;border-radius:50%}
-  .scrim{position:fixed;inset:0;background:rgba(4,6,12,.6);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.24s;z-index:210}
+  .scrim{position:fixed;inset:0;background:rgba(4,6,12,.55);backdrop-filter:var(--mat-thin);
+    -webkit-backdrop-filter:var(--mat-thin);opacity:0;visibility:hidden;transition:.24s var(--swift);z-index:210}
   .scrim.on{opacity:1;visibility:visible}
   .drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,94vw);background:var(--panel);border-left:1px solid var(--line);
     z-index:220;transform:translateX(100%);visibility:hidden;
-    transition:transform .34s var(--ease-io),visibility .34s;display:flex;flex-direction:column;
+    transition:transform .46s var(--settle),visibility .46s;display:flex;flex-direction:column;
     box-shadow:-20px 0 60px rgba(0,0,0,.5);color:var(--parchment)}
   .drawer.on{transform:none;visibility:visible}
   .drawer .top{padding:26px 28px 18px;border-bottom:1px solid var(--line);border-top:3px solid var(--dcol,var(--nbrass));position:relative}
@@ -347,8 +451,9 @@
 
   /* ---------- manuals ---------- */
   .vols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:40px 0 0}
-  .vol{border-top:2px solid var(--accent,var(--oxblood));padding:16px 0 0;text-align:left;display:flex;flex-direction:column;gap:10px;transition:transform .45s var(--ease)}
-  .vol:hover{transform:translateY(-4px)}
+  .vol{border-top:2px solid var(--accent,var(--oxblood));padding:var(--s4) var(--s3) 0 0;text-align:left;
+    display:flex;flex-direction:column;gap:var(--s2);transition:transform .5s var(--spring)}
+  .vol:hover{transform:translateY(-6px)}
   .vol .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
   .vol h3{font-size:26px;margin:0;font-weight:500;line-height:1.05}
   .vol p{margin:0;font-size:15.5px;line-height:1.45;color:var(--ink-soft)}
@@ -407,17 +512,25 @@
   .keptlist li::before{content:"—";position:absolute;left:0;color:var(--nbrass)}
   .keptlist li:last-child{border-bottom:0}
 
-  .smodal{position:fixed;inset:0;z-index:500;background:rgba(20,18,14,.5);backdrop-filter:blur(3px);display:none;padding:9vh 20px 20px}
+  .smodal{position:fixed;inset:0;z-index:500;background:rgba(20,18,14,.4);
+    backdrop-filter:var(--mat-thin);-webkit-backdrop-filter:var(--mat-thin);display:none;padding:9vh 20px 20px}
   .smodal.on{display:flex;justify-content:center;align-items:flex-start}
-  body.night .smodal{background:rgba(4,6,12,.65)}
-  .sbox{width:min(640px,100%);background:var(--paper);color:var(--ink);border:1px solid var(--rule);box-shadow:0 30px 70px rgba(0,0,0,.35);padding:10px 10px 6px;border-radius:4px}
+  body.night .smodal{background:rgba(4,6,12,.55)}
+  .sbox{width:min(640px,100%);background:var(--paper);color:var(--ink);border:1px solid var(--rule);
+    box-shadow:var(--e4);padding:var(--s2) var(--s2) 6px;border-radius:var(--r-xl);
+    transform:scale(.96) translateY(-10px);opacity:0;
+    transition:transform .4s var(--spring),opacity .26s var(--swift)}
+  .smodal.on .sbox{transform:none;opacity:1}
   body.night .sbox{background:var(--panel);color:var(--parchment);border-color:var(--line)}
   #sinput{width:100%;font-family:var(--serif);font-size:22px;padding:12px 14px;border:0;outline:none;background:transparent;color:inherit}
   #sinput::placeholder{color:var(--ink-soft);font-style:italic}
   .shint{font-size:10px;letter-spacing:.08em;color:var(--ink-soft);padding:0 14px 8px;text-transform:uppercase}
   #sresults{max-height:52vh;overflow:auto;border-top:1px solid var(--rule)}
   body.night #sresults{border-top-color:var(--line)}
-  .sres{display:flex;gap:14px;align-items:baseline;width:100%;text-align:left;padding:12px 14px;border-bottom:1px solid var(--rule-soft);transition:background .15s}
+  .sres{display:flex;gap:14px;align-items:baseline;width:100%;text-align:left;padding:12px 14px;
+    border-bottom:1px solid var(--rule-soft);border-radius:var(--r-md);
+    transition:background .15s var(--swift),padding-left .25s var(--settle)}
+  .sres:hover,.sres.sel{padding-left:20px}
   body.night .sres{border-bottom-color:var(--line)}
   .sres:hover,.sres.sel{background:var(--paper-2)}
   body.night .sres:hover,body.night .sres.sel{background:var(--panel-2)}
@@ -432,6 +545,73 @@
   body.night .foot{color:var(--parchment-dim)}
   .foot .grow{margin-left:auto;text-align:right}
   kbd{font-family:var(--serif);font-weight:600;font-size:13.5px;padding:0 3px}
+
+  /* ================= pointer ==================
+     Everything here is opt-in twice over: the engine only switches it on for a
+     fine pointer, and the reduced-motion block at the foot of this file turns the
+     motion off again. Nothing below is required to read the site. */
+
+  /* The companion ring. It lags the pointer on a spring, thins to a hairline over
+     text, and swells into the shape of whatever it is over. A second dot rides the
+     true pointer position so the lag never reads as lag. */
+  #cursor,#cursorDot{position:fixed;top:0;left:0;z-index:9998;pointer-events:none;opacity:0;
+    border-radius:var(--r-full);transition:opacity .3s var(--swift)}
+  body.fine #cursor,body.fine #cursorDot{opacity:1}
+  #cursor{width:30px;height:30px;margin:-15px 0 0 -15px;border:1px solid var(--ink-soft);
+    transition:opacity .3s var(--swift),width .3s var(--spring),height .3s var(--spring),
+      margin .3s var(--spring),border-radius .3s var(--spring),background .3s var(--swift),
+      border-color .3s var(--swift)}
+  #cursorDot{width:4px;height:4px;margin:-2px 0 0 -2px;background:var(--ink)}
+  body.night #cursor{border-color:var(--parchment-dim)} body.night #cursorDot{background:var(--nbrass)}
+  body.cur-link #cursor{width:52px;height:52px;margin:-26px 0 0 -26px;background:rgba(138,43,37,.08);border-color:var(--oxblood)}
+  body.night.cur-link #cursor{background:rgba(216,166,87,.1);border-color:var(--nbrass)}
+  body.cur-link #cursorDot{opacity:0}
+  body.cur-text #cursor{width:2px;height:26px;margin:-13px 0 0 -1px;border-radius:1px;background:var(--ink-soft);border-color:transparent}
+  body.cur-text #cursorDot{opacity:0}
+  body.cur-drag #cursor{width:44px;height:44px;margin:-22px 0 0 -22px;border-color:var(--nbrass);border-style:dashed}
+  /* The ring replaces the arrow only where it is doing the same job. Text fields,
+     which need a real caret, and the Atlas canvas, which has its own grab cursor,
+     keep theirs. */
+  body.fine{cursor:none}
+  body.fine input,body.fine textarea,body.fine #sky{cursor:auto}
+  body.fine #sky{cursor:grab}
+
+  /* Magnetic controls: a button leans a few pixels toward the pointer as it comes
+     near, then snaps back. Written by the engine as two custom properties. */
+  .navbtn,.chip,.today .go,.rbar .nav button,.sky-tools button{
+    transform:translate(var(--magx,0px),var(--magy,0px))}
+  .navbtn:active{transform:translate(var(--magx,0px),var(--magy,0px)) scale(.94)}
+  .chip:hover{transform:translate(var(--magx,0px),var(--magy,0px)) translateY(-2px)}
+  .chip:active{transform:translate(var(--magx,0px),var(--magy,0px)) scale(.95)}
+  .today .go:active{transform:translate(var(--magx,0px),var(--magy,0px)) scale(.96)}
+  .rbar .nav button:hover{transform:translate(var(--magx,0px),var(--magy,0px)) scale(1.12)}
+  .rbar .nav button:active{transform:translate(var(--magx,0px),var(--magy,0px)) scale(.92)}
+
+  /* Panels tip toward the pointer. Three degrees, not thirty — the point is that
+     the surface acknowledges the cursor, not that it performs. */
+  .tilt{transform:perspective(900px) rotateX(var(--tiltx,0deg)) rotateY(var(--tilty,0deg)) translateY(var(--tz,0px));
+    transform-style:preserve-3d;transition:transform .5s var(--settle)}
+  .tilt.track{transition:transform .12s linear}
+  .card.tilt:hover,.wcard.tilt:hover,.vol.tilt:hover{transform:perspective(900px)
+    rotateX(var(--tiltx,0deg)) rotateY(var(--tilty,0deg)) translateY(var(--tz,-6px))}
+
+  /* A light that tracks the pointer across a panel, the same one gradient the
+     front door uses. */
+  .lit{position:relative}
+  .lit::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:4;opacity:0;
+    border-radius:inherit;transition:opacity .4s var(--swift);
+    background:radial-gradient(42% 60% at var(--lx,50%) var(--ly,50%),rgba(255,255,255,.16),rgba(255,255,255,0) 70%)}
+  .lit:hover::after{opacity:1}
+
+  /* Shelf ripple: the books either side of the one under the pointer lean away,
+     the way a row on a real shelf gives when you pull one out. --lean is set on
+     the neighbours by the engine and folded into .book's transform above. */
+  .slot .book{--lean:0px}
+
+  @media (hover:none),(pointer:coarse){
+    #cursor,#cursorDot{display:none}
+    body.fine{cursor:auto}
+  }
 
   @media (max-width:1000px){
     .front{grid-template-columns:1fr;gap:40px}
@@ -484,4 +664,15 @@
     [data-reveal]{opacity:1;transform:none}
     .front h1 span i{transform:none}
     .tl::before,.tl li::before{transform:none}
+    /* The pointer layer is motion for its own sake, so it goes entirely rather
+       than being run instantly. The site loses nothing it needs. */
+    #cursor,#cursorDot{display:none}
+    body.fine{cursor:auto}
+    .tilt,.card.tilt:hover,.wcard.tilt:hover,.vol.tilt:hover{transform:none}
+    .lit::after,.front::before{display:none}
+    .slot .book{--lean:0px !important}
+    .navbtn,.chip,.today .go,.rbar .nav button,.sky-tools button{transform:none}
+    #navInk{display:none}
+    nav .navbtn[aria-current="true"]{background:var(--paper-2)}
+    body.night nav .navbtn[aria-current="true"]{background:var(--panel-2)}
   }
