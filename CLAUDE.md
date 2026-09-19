@@ -36,7 +36,10 @@ The Commodore/
 ├── theme/press.js              # the engine — rendering, search, night mode, Atlas
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
 ├── build/build.mjs             # assembles everything into dist/index.html
-├── tools/                      # validate, new, plate, correct, stats, serve
+├── tools/                      # validate, new, plate, correct, stats, serve, json (friendly parse errors)
+├── schemas/                    # what every content field means — editor hover help AND the check's field list
+├── .vscode/settings.json       # wires schemas/ into VS Code/Cursor; dist/ and corrections.json open read-only
+├── EDITING.md                  # the owner's guide to everyday edits, in plain language
 ├── dashboard/                  # commissions.md (the queue), rhythm.md, changelog.md
 ├── dist/index.html             # THE DEPLOYABLE — generated, never hand-edited
 └── .claude/
@@ -85,6 +88,7 @@ command and runs the same gate locally first; `/press-publish` stays human-invok
 
 - **Edit `content/`, never `dist/`.** `dist/index.html` is generated and will be overwritten without warning.
 - **Never hand-edit `content/corrections.json`.** Use `npm run correct`. Appending is the promise.
+- **A new field is described in `schemas/` in the same change.** `npm run check` fails on any field name the schemas do not list — that keeps the editor's help true and catches misspellings the page would silently drop. If a command or field changes, update `EDITING.md` too; the owner maintains the site from it.
 - **A number with no source does not ship.** `facts` entries need both `b` (the number) and `s` (the named source). The validator enforces it.
 - **Research before writing.** Use web search; do not write figures from memory. Every entry the house has had to correct came from a remembered factoid.
 - **Never invent a quotation.** If it is in quotation marks, it is verbatim and you have seen the source. Otherwise write it as "after <name>".

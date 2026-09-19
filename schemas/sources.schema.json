@@ -9,7 +9,7 @@
     "required": ["t", "u"],
     "properties": {
       "t": { "type": "string", "x-means": "title", "description": "The source as named: \"Founders — David Senra\"." },
-      "u": { "type": "string", "pattern": "^https?://", "x-means": "url", "description": "A working link, https." }
+      "u": { "type": "string", "pattern": "^https?://", "x-means": ["url", "link", "href"], "description": "A working link, https." }
     }
   }
 }

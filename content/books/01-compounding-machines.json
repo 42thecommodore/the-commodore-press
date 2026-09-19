@@ -12,12 +12,12 @@
   "accent": "#E4C57E",
   "motif": "conic",
   "claim": "A few research organisations produced the century. The structure was the invention.",
-  "lede": "A handful of labs produced an absurd share of the twentieth century's inventions, and the thing they had in common was not talent density.",
+  "lede": "What Bell Labs, PARC and DARPA shared was not talent density. It was money that could wait, and one person allowed to spend it.",
   "copy": [
     "Bell Labs, running on a regulated monopoly's guaranteed revenue, produced the transistor in 1947, Shannon's information theory in 1948, the first practical silicon solar cell, the communications satellite, Unix and C, the charge-coupled device, and — by accident, while trying to eliminate noise from a horn antenna — the cosmic microwave background. Ten Nobel Prizes have gone to work done there. Xerox PARC, in roughly a decade, produced the Alto, Ethernet, the laser printer, Smalltalk, and most of the graphical interface you are looking at right now.",
     "The common ingredients are unglamorous. Patient capital that didn't need quarterly returns. Researchers and the people who manufactured their output in the same building, so a physicist could walk to a machine shop and have a thing by Thursday. Program managers with real taste and real authority — DARPA's model is one manager, a few years, a budget, and no committee. And an explicit tolerance for work whose payoff could not be argued for in advance, which is the expensive part, because it means paying for failure on purpose.",
     "The mechanism people underrate is proximity to manufacturing. Bell Labs was attached to Western Electric; what got invented got built, and what got built fed back corrections into what got invented. When that loop is broken — when the lab is a campus and the fab is an ocean away — the lab drifts toward papers, because papers are the only output it can still close the loop on.",
-    "The uncomfortable half of the story is what happened next. Bell Labs' funding model was a monopoly rent, and antitrust removed it. Xerox invented the personal computer and shipped almost none of it; Apple and Microsoft captured the value, which suggests the invention function and the commercialisation function are genuinely separate skills that rarely coexist. Whether these places were engines of progress or unusually well-documented lottery tickets is the argument that actually matters, because it determines whether any of it can be rebuilt."
+    "The uncomfortable half of the story is what happened next. Bell Labs' funding model was a monopoly rent, and antitrust removed it. Xerox invented the personal computer and shipped almost none of it. Apple and Microsoft captured the value, which suggests the invention function and the commercialisation function are genuinely separate skills that rarely coexist. Whether these places were engines of progress or unusually well-documented lottery tickets is the argument that actually matters, because it determines whether any of it can be rebuilt."
   ],
   "timeline": [
     {
@@ -73,7 +73,7 @@
       "s": "PARC's window from founding to the Alto's peak influence"
     }
   ],
-  "contested": "Survivorship bias is the standing objection: we remember the labs that hit. Enormous corporate research budgets also produced enormous amounts of nothing, and the counterfactual — how much of this would have arrived anyway, slightly later, somewhere else — is genuinely unknown. Transistors were being chased in several countries at once.",
+  "contested": "Survivorship bias is the standing objection: we remember the labs that hit. Enormous corporate research budgets also produced enormous amounts of nothing, and the counterfactual — how much of this would have arrived anyway, slightly later, somewhere else — is genuinely unknown. Transistors were being chased in several countries at once. At a Westinghouse subsidiary in Paris, Herbert Mataré and Heinrich Welker had a germanium amplifier working reproducibly by June 1948, and only a month later learned that Bell Labs had got there first.",
   "changed": "I used to think the lesson was 'hire brilliant people and leave them alone.' I now think that's the part everyone copies and it doesn't work by itself. The harder, duller ingredients — a captive revenue stream, a factory down the hall, and one accountable person with a decade of budget — are what almost nobody reproduces.",
   "across": [
     {
@@ -95,6 +95,11 @@
       "to": "lives:steve-jobs",
       "label": "Steve Jobs",
       "txt": "— the commercialisation function, walking out of PARC with what Xerox could not ship."
+    },
+    {
+      "to": "lives:emmy-noether",
+      "label": "Emmy Noether",
+      "txt": "— Göttingen mathematics as a compounding machine, and how fast one can be taken apart."
     }
   ],
   "reading": [

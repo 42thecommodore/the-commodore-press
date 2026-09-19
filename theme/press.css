@@ -676,3 +676,72 @@
     nav .navbtn[aria-current="true"]{background:var(--paper-2)}
     body.night nav .navbtn[aria-current="true"]{background:var(--panel-2)}
   }
+
+  /* ---------- front door: ways in ----------
+     Three blocks under the wing cards (renderDoors in press.js): the method shown on a real
+     entry, the newest lives, and every face on the shelf. Colours come from the tokens, so
+     dusk needs no rules of its own; the plates keep their printed paper frame in both modes,
+     the same as the reader. */
+  .doors{display:flex;flex-direction:column;gap:64px;padding:72px 0 0}
+  .door-h{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+  .door-h h2{font-size:clamp(28px,3.6vw,38px);font-weight:500;letter-spacing:-.015em;line-height:1.08;margin:0}
+
+  .spec{background:var(--paper-2);border:1px solid var(--rule);padding:34px 36px 30px}
+  .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+  .steps li{display:flex;flex-direction:column;gap:7px;border-top:1px solid var(--rule);padding-top:16px}
+  .steps .sn{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--oxblood)}
+  .steps b{font-size:21px;font-weight:500;line-height:1.15}
+  .steps .sw{font-size:15px;line-height:1.45;color:var(--ink-soft)}
+  .steps .sx{margin-top:8px;padding-left:12px;border-left:2px solid var(--oxblood);font-size:16px;line-height:1.5;
+    font-style:italic;color:var(--ink-mid)}
+  .steps .sx i{font-style:normal}
+  .door-go{margin-top:26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;padding:9px 16px;border-radius:999px;
+    background:var(--ink);color:var(--paper);transition:background .25s,transform .2s var(--ease)}
+  .door-go:hover{background:#000}
+  .door-go:active{transform:scale(.96)}
+  body.dusk .door-go:hover{background:var(--ink-mid)}
+
+  .newgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+  .newcard{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:0 0 4px;
+    transition:transform .45s var(--ease)}
+  .newcard:hover{transform:translateY(-4px)}
+  .newcard .np{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;margin-bottom:10px;
+    border:1px solid #B9AF9B;background:#F7F3E9;padding:6px;box-shadow:4px 4px 0 rgba(30,28,24,.10)}
+  .newcard .nm{font-size:22px;font-weight:500;line-height:1.1}
+  .newcard .ny{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .newcard .nl{font-size:16px;line-height:1.45;color:var(--ink-mid)}
+  .newcard .nt{margin-top:4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--oxblood)}
+  .newcard:hover .nm{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+
+  .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:14px 12px}
+  .wface{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+  .wface .fp-img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #B9AF9B;background:#F7F3E9;padding:3px;
+    filter:grayscale(.35);transition:filter .3s,transform .35s var(--ease),box-shadow .3s}
+  .wface:hover .fp-img,.wface:focus-visible .fp-img{filter:none;transform:translateY(-3px);box-shadow:3px 3px 0 rgba(30,28,24,.14)}
+  .wface .fn{font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;line-height:1.3;color:var(--ink-soft)}
+  .wface:hover .fn{color:var(--ink)}
+  .nomark{display:flex !important;align-items:center;justify-content:center;color:#8C8471}
+  .nomark svg{width:42%;height:auto}
+
+  @media (max-width:1000px){
+    .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .newgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:560px){
+    .doors{gap:48px;padding-top:52px}
+    .spec{padding:24px 20px}
+    .steps{grid-template-columns:1fr;gap:18px}
+    .newgrid{gap:28px 16px}
+    .newcard .nl{font-size:15px}
+    .wall{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 10px}
+    /* The nav used to scroll sideways with a fade, which hid Search, Surprise me and night
+       reading off the right edge of every phone. Two short rows keep all eight in reach. */
+    .mast nav{flex-wrap:wrap;justify-content:flex-start;overflow:visible;-webkit-mask-image:none;mask-image:none;
+      gap:2px 0;padding-bottom:8px}
+    .navbtn{padding:5px 9px}
+    /* the 560px block above zeroes .mast-in's side padding, so the mark sat on the glass edge */
+    .mast-in{padding-left:20px;padding-right:20px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .newcard:hover,.wface:hover .fp-img{transform:none}
+  }

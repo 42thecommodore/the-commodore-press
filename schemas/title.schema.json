@@ -58,8 +58,8 @@
       "items": {
         "type": "object", "additionalProperties": false, "required": ["b", "s"],
         "properties": {
-          "b": { "type": "string", "x-means": "number", "description": "The figure as printed, big: \"~2,000 yrs\", \"1902\", \"40%\"." },
-          "s": { "type": "string", "minLength": 1, "x-means": "source", "description": "The named source for that figure — where you actually looked. House rule: required." }
+          "b": { "type": "string", "x-means": ["number", "figure", "value", "fact"], "description": "The figure as printed, big: \"~2,000 yrs\", \"1902\", \"40%\"." },
+          "s": { "type": "string", "minLength": 1, "x-means": ["source", "src", "cite"], "description": "The named source for that figure — where you actually looked. House rule: required." }
         }
       }
     },
@@ -73,7 +73,7 @@
         "properties": {
           "t": { "type": "string", "x-means": "title", "description": "Title of the work." },
           "a": { "type": "string", "x-means": "author", "description": "Author, with the year if useful: \"Henri Poincaré, 1902\"." },
-          "u": { "type": "string", "pattern": "^https?://", "x-means": "url", "description": "A working link, https. http only with a reason recorded in content/http-allowlist.json." },
+          "u": { "type": "string", "pattern": "^https?://", "x-means": ["url", "link", "href"], "description": "A working link, https. http only with a reason recorded in content/http-allowlist.json." },
           "why": { "type": "string", "description": "Why this one, in a sentence." }
         }
       }
@@ -91,8 +91,8 @@
         "type": "object", "additionalProperties": false, "required": ["to", "label"],
         "properties": {
           "to": {
-            "type": "string", "pattern": "^(press|lives|manuals|atlas):[a-z0-9-]+$", "x-means": "link",
-            "description": "Where it points: press:<id>, lives:<id>, manuals:<i|ii|iii|iv>, or atlas:<principle-id>. The check fails if it points nowhere."
+            "type": "string", "pattern": "^(press|lives|manuals|atlas)(:[a-z0-9-]+)?$", "x-means": ["link", "target", "href"],
+            "description": "Where it points: press:<id>, lives:<id>, manuals:<i|ii|iii|iv>, atlas:<principle-id> — or a wing on its own, e.g. atlas. The check fails if it points nowhere."
           },
           "label": { "type": "string", "description": "The name of the thing linked to, as shown." },
           "txt": { "type": "string", "x-means": "text", "description": "A fragment continuing the label, opening with an em dash: \"— the other entry on where convention ends\"." }

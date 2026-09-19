@@ -34,6 +34,11 @@
       "to": "lives:napoleon",
       "label": "Napoleon Bonaparte",
       "txt": "— the other empire run on promotion by merit, and the other ledger of what it cost."
+    },
+    {
+      "to": "lives:ibn-khaldun",
+      "label": "Ibn Khaldun",
+      "txt": "— the theory of this life, written a century and a half later: a cohesive group from the steppe takes the cities, and the cities undo it."
     }
   ]
 }

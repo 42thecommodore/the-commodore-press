@@ -83,7 +83,8 @@ function walk(s, v, at, root, out) {
 /* "source" → `s`, "sorce" → `s`, "chnaged" → `changed`. */
 function nearest(k, props) {
   const low = k.toLowerCase();
-  for (const [name, p] of Object.entries(props)) if ((p["x-means"] || "").toLowerCase() === low) return name;
+  for (const [name, p] of Object.entries(props))
+    if ([].concat(p["x-means"] || []).some(m => m.toLowerCase() === low)) return name;
   let best = null, bestD = 3;
   for (const name of Object.keys(props)) {
     const d = distance(low, name.toLowerCase());

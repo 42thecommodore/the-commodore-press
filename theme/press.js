@@ -154,7 +154,7 @@ function renderFront(){
   document.getElementById("wings5").innerHTML=[
     {w:"press",n:"Wing I",t:"The Press",ac:"var(--oxblood)",p:"{{W_BOOKS_CAP}} ideas I keep circling back to. Each carries its timeline, its numbers and its objections.",
      v:spines(["#0F4C46","#6B1E2A","#8C6A0F","#232E78"])},
-    {w:"lives",n:"Wing II",t:"Lives",ac:"#5A3A21",p:"{{W_LIVES_CAP}} people and the one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_FORGOT}} you have never heard of.",
+    {w:"lives",n:"Wing II",t:"Lives",ac:"#5A3A21",p:"{{W_LIVES_CAP}} people and the one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_OBSCURE}} you have never heard of.",
      v:spines(["#4A3520","#2F4A3C","#5B2C3E","#26262B"])},
     {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"{{W_PEOPLE_CAP}} sources, set as stars. The lines between them are the principles more than one of them handed me.",night:1,
      v:`<div style="width:100%;height:74px;background:#0A0E1B;border-radius:2px"><svg width="100%" height="74" viewBox="0 0 210 74"><g stroke="#D8A657" stroke-width=".6" opacity=".5" fill="none"><path d="M28 50 82 26 140 44 182 20"/></g><g fill="#F6E9C8"><circle cx="28" cy="50" r="2.6"/><circle cx="82" cy="26" r="3.4"/><circle cx="140" cy="44" r="2.2"/><circle cx="182" cy="20" r="2.9"/></g></svg></div>`},
@@ -169,6 +169,55 @@ function renderFront(){
     `<div class="lbl q" style="margin-bottom:10px">Corrections — kept visible</div>`+
     CORRECTIONS.map(c=>`<div style="margin-bottom:12px"><b>${c.t}</b> ${c.b} <span style="font-family:var(--mono);font-size:11.5px;opacity:.6">${c.d}</span></div>`).join("");
   document.getElementById("stat").textContent=`${BOOKS.length} titles · ${LIVES.length} lives · ${PEOPLE.length} sources · ${SLIPWAY.book.length} lessons`;
+  renderDoors(withPlates,dayN);
+}
+
+/* ---------- front door: ways in ----------
+   A first-time reader meets a mission statement and five wing names. These three blocks give
+   them something to hold: the method shown on a real entry, what is new, and every face.
+   Nothing here is written for the page; it is all read from content/, so it cannot go stale. */
+const readMins=b=>Math.max(2,Math.round(words(b)/210));
+function openLife(id){go('lives');setTimeout(()=>openReader('lives',id),340)}
+const plateOrMark=(b,cls)=>PLATES[b.id]
+  ? `<img class="${cls}" src="${PLATES[b.id]}" alt="" loading="lazy">`
+  : `<span class="${cls} nomark" aria-hidden="true"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="none" stroke="currentColor" stroke-width=".9"/><path d="M11 1V21M1 11H21" stroke="currentColor" stroke-width=".9"/></svg></span>`;
+function renderDoors(withPlates,dayN){
+  const el=document.getElementById("doors"); if(!el)return;
+  // a different life from the "From the shelves" card, so the two never show the same face
+  const today=withPlates[dayN%withPlates.length];
+  const pool=withPlates.filter(b=>b.bio&&b.contested&&b.keep&&b.id!==today.id);
+  const spec=pool[(dayN+7)%pool.length];
+  const firstSentence=s=>(s.match(/^.*?[.!?](?=\s+[A-Z"'‘“]|$)/)||[s])[0];
+  const steps=[
+    ["The essay","What happened, with the names and numbers.",spec.lede],
+    ["The one book","The book worth your time, and why that one rather than the famous one.",`<i>${spec.bio.t}</i> — ${spec.bio.a}, ${spec.bio.y}`],
+    ["Where it is contested","The strongest case against, from someone who knows. Every entry has one.",firstSentence(spec.contested)],
+    ["The line to keep","One sentence to leave with.",spec.keep]
+  ];
+  const newest=LIVES.slice(-4).reverse();
+  el.innerHTML=
+   `<section class="door spec" data-reveal aria-labelledby="specH">
+      <div class="door-h"><div class="lbl">How every entry works</div>
+        <h2 id="specH">Four parts, shown here on ${spec.n}</h2></div>
+      <ol class="steps">${steps.map((s,i)=>`<li data-reveal style="--d:${i*80}ms">
+          <span class="sn">${i+1}</span><b>${s[0]}</b><span class="sw">${s[1]}</span>
+          <span class="sx">${s[2]}</span></li>`).join("")}</ol>
+      <button class="door-go" onclick="openLife('${spec.id}')">Read the whole of ${spec.n} · ${readMins(spec)} min →</button>
+    </section>
+    <section class="door" data-reveal aria-labelledby="newH">
+      <div class="door-h"><div class="lbl">New on the shelf</div><h2 id="newH">Just added</h2></div>
+      <div class="newgrid">${newest.map((b,i)=>`<button class="newcard" data-reveal style="--d:${i*70}ms" onclick="openLife('${b.id}')">
+          ${plateOrMark(b,"np")}
+          <span class="nm">${b.n}</span><span class="ny">${b.years} · ${b.field}</span>
+          <span class="nl">${b.lede}</span><span class="nt">${readMins(b)} min read</span></button>`).join("")}</div>
+    </section>
+    <section class="door" data-reveal aria-labelledby="wallH">
+      <div class="door-h"><div class="lbl">Everyone on the shelf</div>
+        <h2 id="wallH">${LIVES.length} people. Pick a face.</h2></div>
+      <div class="wall">${LIVES.map(b=>`<button class="wface" onclick="openLife('${b.id}')" aria-label="${b.n}, ${b.years}" title="${b.n} · ${b.years}">
+          ${plateOrMark(b,"fp-img")}<span class="fn">${b.n}</span></button>`).join("")}</div>
+    </section>`;
+  observeReveals(el);
 }
 
 /* ---------- press shelf ---------- */

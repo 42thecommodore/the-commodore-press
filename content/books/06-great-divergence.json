@@ -80,6 +80,11 @@
       "to": "press:movable-type",
       "label": "Movable Type",
       "txt": "— the one place in this debate where a natural experiment exists."
+    },
+    {
+      "to": "lives:ibn-khaldun",
+      "label": "Ibn Khaldun",
+      "txt": "— a fourteenth-century answer to why states rise and decay, and a warning about reading the present back into it."
     }
   ],
   "reading": [

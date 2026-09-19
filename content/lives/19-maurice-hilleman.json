@@ -34,6 +34,11 @@
       "to": "lives:norman-borlaug",
       "label": "Norman Borlaug",
       "txt": "— the other life on this shelf measured in lives saved, and the other name almost nobody knows."
+    },
+    {
+      "to": "lives:tu-youyou",
+      "label": "Tu Youyou",
+      "txt": "— the same shelf of the unnamed: a malaria drug, and a prize that settled the credit only on paper."
     }
   ]
 }
