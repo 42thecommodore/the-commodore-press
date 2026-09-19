@@ -84,7 +84,8 @@ function bindTilt(root){
 /* ---------- nav / router ---------- */
 function renderNav(){
   document.getElementById("nav").innerHTML =
-    WINGS.filter(w=>w[0]!=="home").map(w=>`<button class="navbtn" data-w="${w[0]}" onclick="go('${w[0]}')">${w[1]}</button>`).join("")
+    `<span id="navInk" aria-hidden="true"></span>`
+    + WINGS.filter(w=>w[0]!=="home").map(w=>`<button class="navbtn" data-w="${w[0]}" onclick="go('${w[0]}')">${w[1]}</button>`).join("")
     + `<button class="navbtn" onclick="openSearch()" aria-label="Search the library" title="Search ( / )">Search</button>`
     + `<button class="navbtn solid" onclick="surprise()">Surprise me</button>`
     + `<button class="navbtn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle night reading" title="Night reading">◐</button>`;
@@ -118,6 +119,7 @@ function go(w,push){
   scrollTo({top:0,behavior:reduce?"auto":"smooth"});
   if(w==="atlas")requestAnimationFrame(()=>{skyResize();skyBoot()});
   observeReveals(document);
+  requestAnimationFrame(()=>placeNavInk(null));
 }
 function goTo(ref){
   const [w,id]=ref.split(":");
@@ -150,15 +152,15 @@ function renderFront(){
 
   const spines=(cols)=>cols.map((c,i)=>`<div class="sp" style="width:30px;height:${58+((i*13)%18)}px;background:${c}"></div>`).join("");
   document.getElementById("wings5").innerHTML=[
-    {w:"press",n:"Wing I",t:"The Press",ac:"var(--oxblood)",p:"{{W_BOOKS_CAP}} ideas I keep circling back to, each with its timeline, its numbers and its objections.",
+    {w:"press",n:"Wing I",t:"The Press",ac:"var(--oxblood)",p:"{{W_BOOKS_CAP}} ideas I keep circling back to. Each carries its timeline, its numbers and its objections.",
      v:spines(["#0F4C46","#6B1E2A","#8C6A0F","#232E78"])},
     {w:"lives",n:"Wing II",t:"Lives",ac:"#5A3A21",p:"{{W_LIVES_CAP}} people and the one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_OBSCURE}} you have never heard of.",
      v:spines(["#4A3520","#2F4A3C","#5B2C3E","#26262B"])},
-    {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"{{W_PEOPLE_CAP}} sources as stars; the lines between them are the principles more than one of them handed me.",night:1,
+    {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"{{W_PEOPLE_CAP}} sources, set as stars. The lines between them are the principles more than one of them handed me.",night:1,
      v:`<div style="width:100%;height:74px;background:#0A0E1B;border-radius:2px"><svg width="100%" height="74" viewBox="0 0 210 74"><g stroke="#D8A657" stroke-width=".6" opacity=".5" fill="none"><path d="M28 50 82 26 140 44 182 20"/></g><g fill="#F6E9C8"><circle cx="28" cy="50" r="2.6"/><circle cx="82" cy="26" r="3.4"/><circle cx="140" cy="44" r="2.2"/><circle cx="182" cy="20" r="2.9"/></g></svg></div>`},
     {w:"manuals",n:"Wing IV",t:"Field Manuals",ac:"var(--navy)",p:"Four volumes of what I hold: compounding, clear thinking, the plan, and the bias to action.",
      v:`<div style="display:flex;flex-direction:column;gap:6px;width:100%;justify-content:flex-end;height:78px">${MANUALS.map(m=>`<div style="height:15px;background:var(--paper-2);border-left:3px solid ${m.accent}"></div>`).join("")}</div>`},
-    {w:"slipway",n:"Wing V · the trade book",t:"The Slipway",ac:"var(--hail)",p:"The operating lessons of people who build things — a commonplace book of the craft, every line marked with its source.",
+    {w:"slipway",n:"Wing V · the trade book",t:"The Slipway",ac:"var(--hail)",p:"The operating lessons of people who build things. A commonplace book of the craft, every line marked with its source.",
      v:`<svg width="100%" height="74" viewBox="0 0 210 74"><g stroke="#3E7A6B" stroke-width="1.4" fill="none"><path d="M30 40 Q 100 66 180 36"/><path d="M52 42 L52 26 M85 49 L85 20 M120 51 L120 22 M152 45 L152 26"/></g><g stroke="#B9AF9B" stroke-width="1"><path d="M12 60 L198 60"/><path d="M28 60 L44 48 M64 60 L80 48 M100 60 L116 48 M136 60 L152 48 M172 60 L188 48"/></g></svg>`}
   ].map((c,i)=>`<button class="wcard ${c.night?"night":""}" data-reveal style="--d:${i*70}ms;border-top-color:${c.ac}" onclick="go('${c.w}')">
       <span class="n">${c.n}</span><h3>${c.t}</h3><p>${c.p}</p><div class="viz">${c.v}</div></button>`).join("");
@@ -241,13 +243,13 @@ function renderShelf(anim){
     const dx=o.left-n.left,dy=o.top-n.top;if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
     s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
   document.getElementById("pressCount").textContent=list.length+(list.length===1?" title":" titles");
-  observeReveals(shelf);bindTilt(shelf);
+  observeReveals(shelf);bindTilt(shelf);bindShelfLean(shelf);
 }
 function renderWide(){
   const w=document.getElementById("wide");
   w.innerHTML=ADJACENT.map((a,i)=>`<button class="card" data-reveal style="--d:${i*90}ms;background:${a.cover};color:${a.ink}" onclick="openReader('press','${a.id}')">
       ${motifSVG(a.motif,a.accent)}<div class="lbl">${a.years}</div><h4>${a.title}</h4><p>${a.sub}</p></button>`).join("");
-  observeReveals(w);
+  observeReveals(w);bindPanels(w);
 }
 
 /* ---------- lives shelf ---------- */
@@ -273,7 +275,7 @@ function renderLivesShelf(anim){
     const dx=o.left-n.left,dy=o.top-n.top;if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
     s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
   document.getElementById("livesCount").textContent=list.length+(list.length===1?" life":" lives");
-  observeReveals(shelf);bindTilt(shelf);
+  observeReveals(shelf);bindTilt(shelf);bindShelfLean(shelf);
 }
 
 /* ---------- reader ---------- */
@@ -641,6 +643,7 @@ function renderManuals(){
   if(!activeManual)activeManual=MANUALS[0].id;
   renderManualBody();
   observeReveals(document.getElementById("vols"));
+  bindPanels(document.getElementById("vols"));
 }
 function openManual(id){activeManual=id;renderManualBody();
   const el=document.getElementById("manualBody");
@@ -748,6 +751,170 @@ document.getElementById("sinput").addEventListener("keydown",e=>{
 });
 document.getElementById("smodal").addEventListener("click",e=>{if(e.target.id==="smodal")closeSearch()});
 
+/* ---------- pointer ----------
+   One rAF loop for the whole page. Everything the pointer drives — the companion
+   ring, the magnets, the panel tilts, the light on the front door, the lean of the
+   books either side of the one you are pointing at — is written as a CSS custom
+   property and animated by the compositor. Nothing here runs on a coarse pointer
+   or when the reader has asked for reduced motion, and nothing the site needs to
+   work depends on any of it. */
+const FINE = !reduce && matchMedia("(pointer:fine)").matches;
+
+/* -- the companion ring -- */
+function initCursor(){
+  const ring=document.createElement("div"), dot=document.createElement("div");
+  ring.id="cursor"; dot.id="cursorDot";
+  ring.setAttribute("aria-hidden","true"); dot.setAttribute("aria-hidden","true");
+  document.body.append(ring,dot);
+  /* Target is the true pointer; the ring chases it with a critically-damped
+     spring, which is what separates "follows the mouse" from "is attached to it". */
+  let tx=innerWidth/2,ty=innerHeight/2,rx=tx,ry=ty,vx=0,vy=0,live=false,raf=0;
+  const K=.22,DAMP=.72;
+  function frame(){
+    const dx=tx-rx,dy=ty-ry;
+    vx=(vx+dx*K)*DAMP; vy=(vy+dy*K)*DAMP;
+    rx+=vx; ry+=vy;
+    ring.style.transform=`translate(${rx.toFixed(2)}px,${ry.toFixed(2)}px)`;
+    dot.style.transform=`translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px)`;
+    /* Stop the loop once it has caught up, rather than burning a frame a
+       sixtieth of a second forever. */
+    if(Math.abs(dx)+Math.abs(dy)+Math.abs(vx)+Math.abs(vy)<.15){raf=0;return}
+    raf=requestAnimationFrame(frame);
+  }
+  const kick=()=>{if(!raf)raf=requestAnimationFrame(frame)};
+  addEventListener("pointermove",e=>{
+    if(e.pointerType!=="mouse")return;
+    tx=e.clientX; ty=e.clientY;
+    if(!live){live=true;rx=tx;ry=ty;document.body.classList.add("fine")}
+    kick();
+    const t=e.target;
+    const cl=document.body.classList;
+    cl.toggle("cur-drag", !!t.closest("#sky"));
+    cl.toggle("cur-link", !t.closest("#sky") && !!t.closest("a,button,[role=button],summary,label"));
+    cl.toggle("cur-text", !t.closest("a,button,#sky") &&
+      !!t.closest(".copy,.lede,.rbody p,.colophon .body,.wing-dek,.entry .v p,.yardnote"));
+  },{passive:true});
+  addEventListener("pointerdown",()=>document.body.classList.add("cur-press"));
+  addEventListener("pointerup",()=>document.body.classList.remove("cur-press"));
+  /* Leaving the window should take the ring with it, or it sits frozen at the edge. */
+  document.addEventListener("pointerleave",()=>document.body.classList.remove("fine"));
+  document.addEventListener("pointerenter",()=>{if(live)document.body.classList.add("fine")});
+}
+
+/* -- magnets --
+   Bound per container, not per control, so a button starts leaning before the
+   pointer reaches it without every mousemove measuring the whole page. */
+function bindMagnets(box,sel,pull,reach){
+  if(!FINE||!box||box.dataset.mag)return; box.dataset.mag="1";
+  const P=pull||5, R=reach||64;
+  let raf=0,ev=null;
+  const clear=()=>box.querySelectorAll(sel).forEach(el=>{el.style.removeProperty("--magx");el.style.removeProperty("--magy")});
+  box.addEventListener("pointermove",e=>{
+    ev=e; if(raf)return;
+    raf=requestAnimationFrame(()=>{raf=0; if(!ev)return;
+      box.querySelectorAll(sel).forEach(el=>{
+        const r=el.getBoundingClientRect();
+        const dx=ev.clientX-(r.left+r.width/2), dy=ev.clientY-(r.top+r.height/2);
+        const d=Math.hypot(dx,dy), lim=Math.max(r.width,r.height)/2+R;
+        if(d>lim){el.style.removeProperty("--magx");el.style.removeProperty("--magy");return}
+        const f=(1-d/lim)*P;
+        el.style.setProperty("--magx",(dx/(d||1)*f).toFixed(2)+"px");
+        el.style.setProperty("--magy",(dy/(d||1)*f).toFixed(2)+"px");
+      });
+    });
+  },{passive:true});
+  box.addEventListener("pointerleave",clear);
+}
+
+/* -- panel tilt and the light that crosses it -- */
+function bindPanels(root){
+  if(!FINE)return;
+  (root||document).querySelectorAll(".card,.wcard,.vol,.today").forEach(el=>{
+    if(el.dataset.panel)return; el.dataset.panel="1";
+    el.classList.add("tilt","lit");
+    let raf=0,ev=null;
+    el.addEventListener("pointermove",e=>{
+      ev=e; if(raf)return;
+      raf=requestAnimationFrame(()=>{raf=0; if(!ev)return;
+        const r=el.getBoundingClientRect();
+        const px=(ev.clientX-r.left)/r.width, py=(ev.clientY-r.top)/r.height;
+        el.classList.add("track");
+        el.style.setProperty("--tilty",((px-.5)*5.5).toFixed(2)+"deg");
+        el.style.setProperty("--tiltx",((.5-py)*4.5).toFixed(2)+"deg");
+        el.style.setProperty("--lx",(px*100).toFixed(1)+"%");
+        el.style.setProperty("--ly",(py*100).toFixed(1)+"%");
+      });
+    },{passive:true});
+    el.addEventListener("pointerleave",()=>{
+      el.classList.remove("track");
+      ["--tiltx","--tilty"].forEach(k=>el.style.removeProperty(k));
+    });
+  });
+}
+
+/* -- the shelf gives --
+   Point at one book and its neighbours lean away from it, the way a row on a real
+   shelf does when you pull one out. Two either side, falling off with distance. */
+function bindShelfLean(shelf){
+  if(!FINE||!shelf||shelf.dataset.lean)return; shelf.dataset.lean="1";
+  const slots=()=>[...shelf.querySelectorAll(".slot")];
+  const clear=()=>slots().forEach(s=>{const b=s.querySelector(".book");if(b)b.style.removeProperty("--lean")});
+  shelf.addEventListener("pointerover",e=>{
+    const slot=e.target.closest(".slot"); if(!slot||!shelf.contains(slot))return;
+    const all=slots(), i=all.indexOf(slot);
+    all.forEach((s,j)=>{
+      const b=s.querySelector(".book"); if(!b)return;
+      const d=j-i;
+      /* Same row only — a grid wraps, and leaning into the row below reads as a bug. */
+      const sameRow=Math.abs(s.offsetTop-slot.offsetTop)<4;
+      if(d===0||!sameRow||Math.abs(d)>2){b.style.removeProperty("--lean");return}
+      b.style.setProperty("--lean",(Math.sign(d)*(Math.abs(d)===1?9:4)).toFixed(0)+"px");
+    });
+  });
+  shelf.addEventListener("pointerleave",clear);
+}
+
+/* -- the light under the front door -- */
+function bindFrontLight(){
+  if(!FINE)return;
+  const front=document.querySelector(".front"); if(!front)return;
+  const root=document.documentElement;
+  let raf=0,ev=null;
+  front.addEventListener("pointermove",e=>{
+    ev=e; if(raf)return;
+    raf=requestAnimationFrame(()=>{raf=0; if(!ev)return;
+      const r=front.getBoundingClientRect();
+      root.style.setProperty("--mx",(((ev.clientX-r.left)/r.width)*100).toFixed(1)+"%");
+      root.style.setProperty("--my",(((ev.clientY-r.top)/r.height)*100).toFixed(1)+"%");
+      root.style.setProperty("--pdist","1");
+    });
+  },{passive:true});
+  front.addEventListener("pointerleave",()=>root.style.setProperty("--pdist","0"));
+  root.style.setProperty("--pdist","0");
+}
+
+/* -- the wing switcher's sliding pill -- */
+function placeNavInk(el,soft){
+  const ink=document.getElementById("navInk"), nav=document.getElementById("nav");
+  if(!ink||!nav)return;
+  const target=el||nav.querySelector('.navbtn[aria-current="true"]');
+  if(!target){ink.classList.remove("on");return}
+  const nr=nav.getBoundingClientRect(), r=target.getBoundingClientRect();
+  if(!r.width){ink.classList.remove("on");return}
+  ink.style.width=r.width+"px"; ink.style.height=r.height+"px";
+  ink.style.transform=`translate(${(r.left-nr.left).toFixed(1)}px,${(r.top-nr.top).toFixed(1)}px)`;
+  ink.classList.add("on");
+  if(soft)ink.dataset.soft="1"; else delete ink.dataset.soft;
+}
+function bindNavInk(){
+  const nav=document.getElementById("nav"); if(!nav)return;
+  nav.addEventListener("pointerover",e=>{const b=e.target.closest(".navbtn");if(b)placeNavInk(b,true)});
+  nav.addEventListener("pointerleave",()=>placeNavInk(null));
+  nav.addEventListener("focusin",e=>{const b=e.target.closest(".navbtn");if(b)placeNavInk(b,true)});
+  nav.addEventListener("focusout",()=>placeNavInk(null));
+  addEventListener("resize",()=>placeNavInk(null));
+}
+
 /* ---------- boot ---------- */
 initTheme();renderNav();renderFront();
 renderPressControls();renderShelf(false);renderWide();
@@ -756,5 +923,20 @@ skyLayout();renderAtlas();
 renderManuals();
 renderSlipway();
 observeReveals(document);
+
+/* The pointer layer goes on last: everything above renders and reads without it. */
+if(FINE){
+  initCursor();
+  bindPanels(document);
+  bindFrontLight();
+  bindMagnets(document.getElementById("nav"),".navbtn",5,70);
+  bindMagnets(document.getElementById("pressControls"),".chip",4,48);
+  bindMagnets(document.getElementById("livesControls"),".chip",4,48);
+  bindMagnets(document.querySelector(".sky-tools"),"button",4,40);
+  bindMagnets(document.getElementById("todayCard"),".go",5,52);
+}
+bindNavInk();
+
 requestAnimationFrame(()=>document.body.classList.add("ready"));
 route(false);
+requestAnimationFrame(()=>placeNavInk(null));

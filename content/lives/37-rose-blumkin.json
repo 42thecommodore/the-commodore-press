@@ -1,0 +1,39 @@
+{
+  "id": "rose-blumkin",
+  "keep": "At ninety-five they managed her out. At ninety-six she was competing with them.",
+  "n": "Rose Blumkin",
+  "years": "1893–1998",
+  "place": "Russia and Nebraska",
+  "field": "Business & Retail",
+  "group": "obscure",
+  "cover": "#2E3B1C",
+  "spineC": "#1F2913",
+  "ink": "#F1EAD2",
+  "accent": "#D8B24A",
+  "motif": "grid",
+  "lede": "She never learned to read English. She could tell you the landed cost of every item on the floor.",
+  "copy": [
+    "She was born near Minsk, left the Russian Empire in the years of the pogroms and the First World War, and arrived in Omaha with no money, no schooling and no English. In 1937 she started a furniture shop in a basement with $500. The operating rule was one line long — sell cheap and tell the truth — and underneath it was a real mechanism: buy in volume, take a thin margin, refuse to discount selectively, and carry the lowest price in the market on everything rather than on the items in the advertisement. Suppliers were pressured to cut her off, so she bought from retailers in other cities at their retail price and undersold them at home. Omaha's dealers took her to court for it under the fair-trade laws, which set a floor under resale prices. She had bought carpet at $3 a yard and was selling it at $3.95 while the plaintiffs sold it at $7.95. The case was dismissed, and the judge came in the next day and bought $1,400 of carpet from her.",
+    "In 1983 Warren Buffett bought most of the Nebraska Furniture Mart. He did not order an audit, count the inventory, or check the property records, and the contract ran to something over a page. The reported terms differ — $55.35 million for 80 per cent in some accounts, $60 million for 90 in others — and Berkshire's own 1983 letter is the document that would settle it, which this entry has not opened. What is not in dispute is that a single store in Omaha was by then the largest furniture retailer in the country, and that its owner was eighty-nine.",
+    "Then the part nobody puts on the motivational poster. She retired in 1989, at ninety-five, because her grandsons had begun managing around her. Three months of that was enough. She opened Mrs. B's Clearance and Factory Outlet across the street from the shop she had built, competed with it directly, and made it the third-largest furniture retailer in Omaha inside a few years. Buffett bought that business too, in 1992, and this time he took a non-compete agreement — from a woman of ninety-nine. She went back to work at the Mart and stayed until months before her death at 104. The lesson usually drawn from her is about thrift and hard work. The lesson actually on the record is about what it costs to condescend to the person who built the thing."
+  ],
+  "bio": {
+    "t": "Buffett: The Making of an American Capitalist",
+    "a": "Roger Lowenstein",
+    "y": "1995",
+    "why": "There is no full biography of Blumkin, which is its own comment on whose lives get written. Lowenstein gives the Mart and the 1983 deal properly and from outside the family. Alice Schroeder's 'The Snowball' (2008) has more Blumkin detail and was written with Buffett's cooperation, which is exactly why it is the second read rather than the first."
+  },
+  "contested": "Whether the deal was a bargain or a rescue, and who got the better of whom. The admiring version says Buffett paid a full price for a great business on trust alone. The sceptical version notes that the valuation implied a low multiple of earnings for the dominant furniture retailer in its market, that no audit means no one tested the inventory or the receivables, and that Blumkin — who could not read the contract — had no banker across the table. Buffett has said repeatedly that he would rather wrestle a grizzly than compete with her, which is a compliment and also an admission about who understood the business. The counter-evidence is her own behaviour six years later: she left, built a competitor from nothing at ninety-six, and forced a second purchase. Somebody who had been taken advantage of in 1983 does not usually have that in reserve.",
+  "across": [
+    {
+      "to": "press:why-firms-exist",
+      "label": "Why Firms Exist",
+      "txt": "— the boundary of a firm, tested by an owner who walked out of hers and rebuilt it across the street."
+    },
+    {
+      "to": "lives:john-d-rockefeller",
+      "label": "John D. Rockefeller",
+      "txt": "— the same discipline from the other end of the scale: know your unit cost better than anyone, and price where they cannot follow."
+    }
+  ]
+}

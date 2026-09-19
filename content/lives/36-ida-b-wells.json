@@ -1,0 +1,39 @@
+{
+  "id": "ida-b-wells",
+  "keep": "She built her case out of what the other side had already printed about itself.",
+  "n": "Ida B. Wells",
+  "years": "1862–1931",
+  "place": "United States",
+  "field": "Journalism & Statistics",
+  "group": "famous",
+  "cover": "#5A1A2E",
+  "spineC": "#3F1120",
+  "ink": "#F2E2D0",
+  "accent": "#D9A08A",
+  "motif": "lines",
+  "lede": "The lynching of three grocers she knew turned a newspaper editor into a statistician.",
+  "copy": [
+    "In 1892 three Memphis grocers were taken from a jail and shot. One of them, Thomas Moss, was a friend; their shop had been taking business from a white competitor, and no one seriously pretended otherwise. Wells was editing a newspaper and drew the obvious conclusion in print, which cost her the press — a mob destroyed the office while she was out of the city, and she did not return to the South for thirty years. What she did next is the part the standard account skips. She went and counted.",
+    "The defence of lynching rested on a single claim: that it answered the rape of white women. Wells tested it the way an epidemiologist would. She went through the reports in white newspapers — the accusers' own accounts, printed by the accusers' own press, so that no one could dismiss the source — and tabulated cause of death against alleged offence. Across 728 lynchings she found that only about a third of the dead had even been charged with rape, and said plainly that a portion of that third were innocent of the charge too. 'Southern Horrors' appeared in 1892 and 'A Red Record' in 1895, the second of them subtitled as tabulated statistics and running to 241 catalogued killings for 1892, 1893 and 1894.",
+    "She is filed under activism, and the filing loses the method. The pamphlets are arguments from data, built by someone who understood that a number is only as good as whoever will accept its source, and who therefore refused to use any source her opponents could deny. That is the same move John Snow made with a map of a pump and Nightingale made with the army's own returns, in the same half-century and against the same instinct to explain a death rate by the character of the dead. Wells was doing it while the people she was counting were still being killed, and while it was still possible she would join them."
+  ],
+  "bio": {
+    "t": "Ida: A Sword Among Lions",
+    "a": "Paula J. Giddings",
+    "y": "2008",
+    "why": "The long scholarly life, built on the archive rather than on the 1970 posthumous autobiography. 'Crusade for Justice', the autobiography her daughter assembled, is the one usually assigned and it stops before the last stretch of her life because she did not finish it."
+  },
+  "contested": "Whether the numbers are hers or the newspapers'. Wells built her tables out of reports in the white southern press, which is the source's strength and its ceiling: those papers recorded what they chose to record, described motives in their own terms, and missed killings nobody reported at all. Historians using the Tuskegee and Chicago Tribune compilations run into the same wall, and modern re-counts — the Equal Justice Initiative's among them — find lynchings absent from every contemporary tally, which means the true totals were higher and Wells's denominator was the one her opponents had supplied. The honest reading is that her ratio was a floor rather than a measurement. She said as much about the one-third herself, which is more than her critics did.",
+  "across": [
+    {
+      "to": "lives:florence-nightingale",
+      "label": "Florence Nightingale",
+      "txt": "— the same instrument, a generation apart: a table assembled out of the institution's own records."
+    },
+    {
+      "to": "lives:mlk",
+      "label": "Martin Luther King Jr.",
+      "txt": "— the campaign he inherited had been given its evidence base forty years earlier, by someone rarely credited for it."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "ibn-al-haytham",
+  "keep": "He turned the rays around: the eye receives, it does not reach.",
+  "n": "Ibn al-Haytham",
+  "years": "c. 965–c. 1040",
+  "place": "Basra and Cairo",
+  "field": "Optics & Method",
+  "group": "obscure",
+  "cover": "#123A46",
+  "spineC": "#0B2730",
+  "ink": "#EFE4C9",
+  "accent": "#7FC4D4",
+  "motif": "conic",
+  "lede": "For a thousand years the eye was thought to reach out and touch the world. He turned the rays around.",
+  "copy": [
+    "Euclid and Ptolemy had the eye emitting rays that go out and meet the object. It is a reasonable theory and it is wrong, and it held for something like thirteen centuries. In the 'Kitab al-Manazir' — seven books, composed in Cairo somewhere between about 1011 and 1021 — Ibn al-Haytham argued the other way: light travels from the illuminated thing into the eye. He did not argue it from first principles. He built the case out of apparatus, including a darkened chamber with a hole in it, and he tested reflection and refraction rather than reasoning about them.",
+    "He was in Cairo because he had told the Fatimid caliph al-Hakim (who reigned from 996 to 1021) that he could regulate the Nile. He went south, looked at the river, and concluded he could not. What happened next is the part everyone repeats and the part worth slowing down on.",
+    "The famous version — that he feigned madness for years to escape a caliph's anger, and wrote the Optics in that confinement — comes from Ibn al-Qifti, who died in 1248, and from Ibn Abi Usaybi'a, who died in 1270 and largely repeats him. Both are writing more than two centuries after the fact. An earlier writer, al-Bayhaqi (d. 1169–70), tells it differently: a short, unsuccessful meeting outside a Cairo inn, the caliph dismissing the scheme as impractical, and Ibn al-Haytham leaving the country the same night. Neither account is contemporary. The madness story is the better story, and being the better story is most of why it survived."
+  ],
+  "bio": {
+    "t": "Pathfinders: The Golden Age of Arabic Science",
+    "a": "Jim Al-Khalili",
+    "y": "2010",
+    "why": "The accessible English treatment, and it is honest to say it argues a position — Al-Khalili is the main proponent of the 'first scientist' framing the entry above declines. Bradley Steffens's 'First Scientist' is the only dedicated biography and states the contested claim in its title. There is no neutral popular life of him in English; A. I. Sabra and Roshdi Rashed produced the scholarly editions, and they are editions rather than biography."
+  },
+  "contested": "Whether he invented the scientific method. Jim Al-Khalili and Bradley Steffens make the strong version of the case, and it rests on something real: controlled experiment used to decide between competing theories, six centuries before Bacon. Historians of science resist the superlative. The objection, put bluntly by Thony Christie, is that experiment is one component of a method that also needs institutions, publication, cumulative replication and a mathematised physics, and that crowning a single originator reverses a Eurocentric error instead of correcting it. Nobody disputes the optics — that he is the most important figure in the field between antiquity and Kepler is close to consensus. The argument is entirely about what the word 'method' is being made to carry.",
+  "across": [
+    {
+      "to": "press:silicon-and-light",
+      "label": "Silicon and Light",
+      "txt": "— the intromission argument is the first entry in the long account of what light is and how it is made to work."
+    }
+  ]
+}

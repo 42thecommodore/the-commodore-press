@@ -1,0 +1,34 @@
+{
+  "id": "ada-lovelace",
+  "keep": "Everyone else saw a calculator. She saw that number was optional.",
+  "n": "Ada Lovelace",
+  "years": "1815–1852",
+  "place": "England",
+  "field": "Mathematics & Computing",
+  "group": "famous",
+  "cover": "#2B2150",
+  "spineC": "#1D1638",
+  "ink": "#F0E8D6",
+  "accent": "#B9A8E0",
+  "motif": "grid",
+  "lede": "The fight over whether she wrote the first program has outlasted the machine it was written for.",
+  "copy": [
+    "In 1842 an Italian engineer, Luigi Menabrea, published a French account of Charles Babbage's unbuilt Analytical Engine. Lovelace translated it. Then she appended seven notes, lettered A to G, running to about three times the length of the paper she was translating, and the whole thing appeared in October 1843 in Taylor's Scientific Memoirs, volume three, pages 666 to 731. Note G lays out a step-by-step table for computing Bernoulli numbers on a machine that did not exist and never would. That table is what the phrase 'first computer program' points at.",
+    "The claim has been contested by name for forty years, which is longer than she was alive. Babbage's own later account says he worked the Bernoulli case out himself to save her the trouble, and that she returned it having found an error in his working. She had been tutored in mathematics by correspondence with Augustus De Morgan. She died at thirty-six, of uterine cancer, having published nothing else.",
+    "The part worth keeping is in Note A, and it is rarely the part quoted. Everyone else in the room, Babbage included, was describing a calculator. Lovelace wrote that a machine operating on symbols by rule need not be confined to number — that if the relations between pitched sounds could be written in its notation, the engine could compose music (after Lovelace; the notes are paraphrased here, not quoted). She was describing general-purpose computation a century before there was anything to run it on, and she got there through the one question nobody else was asking: not what can this machine calculate, but what is calculation a special case of."
+  ],
+  "bio": {
+    "t": "Ada Lovelace: The Making of a Computer Scientist",
+    "a": "Christopher Hollings, Ursula Martin and Adrian Rice",
+    "y": "2018",
+    "why": "Built on Bodleian material — her childhood notebooks and the De Morgan correspondence course — and it engages the case against her instead of restating the legend. James Essinger's 'Ada's Algorithm' (2014) is the famous one and takes the first-programmer claim as settled."
+  },
+  "contested": "Whether the Bernoulli algorithm is hers. Dorothy Stein's 'Ada: A Life and a Legacy' (1985) argues her mathematics was too thin for her to have originated it and that her reputation grew out of Babbage's own generous tribute; Bruce Collier and Allan Bromley, who reconstructed Babbage's machines in detail, largely agreed. John Fuegi and Jo Francis, in the IEEE Annals of the History of Computing (2003), read the surviving correspondence as giving Babbage a larger hand in the notes than the traditional account allows. Against them, Hollings, Martin and Rice worked through the Bodleian archive and found a mathematical grounding Stein had underrated. What nobody on either side disputes is Note A, which is the note that actually matters and the one least often cited. The letters that would settle the authorship question either were not kept or have not been found.",
+  "across": [
+    {
+      "to": "manuals:ii",
+      "label": "Field Manual II · The Latticework",
+      "txt": "— the move that made her useful was asking what her subject was a special case of."
+    }
+  ]
+}

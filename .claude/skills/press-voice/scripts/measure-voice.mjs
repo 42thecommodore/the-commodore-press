@@ -74,6 +74,37 @@ console.log('');
 profile('manuals.p',      manuals.flatMap(m => (m.entries || []).flatMap(e => e.p || [])));
 profile('manuals.h',      manuals.flatMap(m => (m.entries || []).map(e => e.h)));
 
+/* The static copy — the front-door standfirst, the five wing deks, the colophon and the
+   five wing cards. It is on the live site and it had never been measured, because this
+   script only ever opened content/. That blind spot is how the Lives dek went on saying
+   "twenty-one famous, five forgotten" for eight lives past the point it was true, and
+   how three filler adverbs sat on the front door. Held to the manuals' profile rather
+   than to copy's: it is written in the first person, and it measures that way. */
+const REPO = path.resolve(ROOT, '..');
+const strip = t => t
+  .replace(/<[^>]*>/g, '')
+  .replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/&ldquo;|&rdquo;/g, '"')
+  .replace(/\{\{[^}]+\}\}/g, 'Twenty')   // build-time counters stand in as one word
+  .replace(/\s+/g, ' ').trim();
+const slurp = f => fs.existsSync(path.join(REPO, f)) ? fs.readFileSync(path.join(REPO, f), 'utf8') : '';
+const shell = slurp('templates/shell.html');
+const pick = re => [...shell.matchAll(re)].map(m => strip(m[1])).filter(t => t.length > 30);
+
+const chrome = {
+  stand: pick(/<p class="stand"[^>]*>([\s\S]*?)<\/p>/g),
+  deks:  pick(/<p class="wing-dek"[^>]*>([\s\S]*?)<\/p>/g),
+  colophon: [...shell.matchAll(/<p>([\s\S]*?)<\/p>/g)].map(m => strip(m[1])).filter(t => t.length > 80),
+  cards: [...slurp('theme/press.js').matchAll(/p:[`"]([^`"]{60,})[`"]/g)].map(m => strip(m[1])),
+};
+if (chrome.deks.length) {
+  console.log('');
+  profile('chrome.stand',   chrome.stand);
+  profile('chrome.deks',    chrome.deks);
+  profile('chrome.colophon', chrome.colophon);
+  profile('chrome.cards',   chrome.cards);
+  profile('chrome.ALL',     Object.values(chrome).flat());
+}
+
 // Shape counts the profile line does not carry.
 const bp = books.flatMap(b => b.copy || []);
 const lp = lives.flatMap(l => l.copy || []);
@@ -103,5 +134,16 @@ const tics = {
 console.log('\ntics across all prose:');
 for (const [label, re] of Object.entries(tics)) {
   console.log(`  ${label.padEnd(22)} ${(all.match(re) || []).length}`);
+}
+
+/* Counted apart from content/, deliberately. The reference tables quote the corpus
+   figure, and folding the static copy in would make those numbers stop matching. */
+const chromeText = Object.values(chrome).flat().join(' ');
+if (chromeText) {
+  console.log('\ntics in the static copy:');
+  for (const [label, re] of Object.entries(tics)) {
+    const hits = chromeText.match(re) || [];
+    console.log(`  ${label.padEnd(22)} ${hits.length}${hits.length ? '   ' + [...new Set(hits)].join(', ') : ''}`);
+  }
 }
 console.log('');

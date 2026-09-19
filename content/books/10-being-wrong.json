@@ -80,6 +80,11 @@
       "to": "lives:john-snow",
       "label": "John Snow",
       "txt": "— the founding case of the method, and the founding case of a story told better than the evidence supports."
+    },
+    {
+      "to": "lives:barbara-mcclintock",
+      "label": "Barbara McClintock",
+      "txt": "— a correction of the record that itself needed correcting, and the second pass flattered no one."
     }
   ],
   "reading": [

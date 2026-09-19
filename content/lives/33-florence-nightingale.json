@@ -1,0 +1,39 @@
+{
+  "id": "florence-nightingale",
+  "keep": "The lamp made her famous. The death table made her useful.",
+  "n": "Florence Nightingale",
+  "years": "1820–1910",
+  "place": "England",
+  "field": "Statistics & Public Health",
+  "group": "famous",
+  "cover": "#1C3A34",
+  "spineC": "#132A25",
+  "ink": "#EFE4CD",
+  "accent": "#C9A24B",
+  "motif": "lines",
+  "lede": "The lamp is the wrong instrument. Her consequential work was done with a table of deaths.",
+  "copy": [
+    "She reached the barrack hospital at Scutari in November 1854. The army's dead were already being counted without her: the published series that everyone later argued over runs from April 1854, seven months before she arrived. What she built afterwards was an argument rather than a ward. Working with William Farr, the compiler of abstracts at the General Register Office, she set the army's peacetime mortality beside the civilian rate for men the same age, and found soldiers aged twenty to thirty-five dying at twice the rate of the men outside the gates. That comparison is the whole case. It appeared in 1858 as 'Mortality of the British Army', and the Royal Statistical Society elected her its first female Fellow the same year.",
+    "The reforms that followed were plumbing. A Sanitary Commission sent by the government reached Scutari in March 1855 and did the unglamorous work: flushing the sewers, clearing the cesspits under the wards, opening the building to air. Nightingale's later campaigning pushed the same logic through the peacetime army and then through India — drains, ventilation, barrack design, and a standing requirement that the deaths be counted and published. She ran most of it from a sickbed, by correspondence, for fifty years. She outlived nearly everyone she had argued with.",
+    "Two things in the popular version do not survive contact with the record, and Lynn McDonald, who edited the sixteen volumes of Nightingale's collected works, has spent two decades saying so. She never collected the Crimean death-rate data — she had no mandate for it and no staff, and the numbers predate her arrival. And she did not invent the polar area diagram now sold on tea towels in her name: André-Michel Guerry used the form in 1829 and Farr in 1852, and she and Farr improved it together. The correction is not a demotion. A woman who invents a chart is a curiosity; a woman who wins a twenty-year argument with the War Office using someone else's chart is something harder to dismiss."
+  ],
+  "bio": {
+    "t": "Florence Nightingale: The Woman and Her Legend",
+    "a": "Mark Bostridge",
+    "y": "2008",
+    "why": "Bostridge worked from family papers Cecil Woodham-Smith did not have in 1950, and his stated project is separating the legend from the record. Woodham-Smith's is the one most people have actually read, and it builds the lamp rather than testing it."
+  },
+  "contested": "How lethal her own hospital was, and whether she later obscured it. Hugh Small argues in 'Florence Nightingale: Avenging Angel' that Scutari was roughly twice as deadly as the heroic account allows, that the mortality there rose through her first winter, and that the drop came from the Sanitary Commission's drains rather than from nursing — a case she herself came close to accepting in private. McDonald answers that Small compares regimental and general hospitals as though they were the same thing, and puts Scutari's overall death-to-admission ratio at 11.9 per cent against Koulali's 25.9. The numbers most often quoted for the turn — a fall from 42.7 per cent to 2.2 — trace to a 1984 Scientific American piece by I. Bernard Cohen rather than to a War Office return, and the two sides do not agree on the denominator. Nothing settles this short of the original army medical returns, which is exactly where the argument has been stuck.",
+  "across": [
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— the other 1850s argument won with a table rather than a theory, and against the same miasma consensus."
+    },
+    {
+      "to": "lives:ida-b-wells",
+      "label": "Ida B. Wells",
+      "txt": "— the same method a generation later, and against a defence that also explained a death rate by the character of the dead."
+    }
+  ]
+}
