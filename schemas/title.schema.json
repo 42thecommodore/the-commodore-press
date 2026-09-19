@@ -53,16 +53,7 @@
         }
       }
     },
-    "facts": {
-      "type": "array", "description": "The numbers, each with its named source. A number with no source does not ship.",
-      "items": {
-        "type": "object", "additionalProperties": false, "required": ["b", "s"],
-        "properties": {
-          "b": { "type": "string", "x-means": ["number", "figure", "value", "fact"], "description": "The figure as printed, big: \"~2,000 yrs\", \"1902\", \"40%\"." },
-          "s": { "type": "string", "minLength": 1, "x-means": ["source", "src", "cite"], "description": "The named source for that figure — where you actually looked. House rule: required." }
-        }
-      }
-    },
+    "facts": { "$ref": "#/definitions/facts" },
     "contested": { "type": "string", "x-means": "dispute", "description": "Where this is still argued, and by whom — the objection at full strength, named and attributed. Never \"some disagree\"." },
     "changed": { "type": "string", "x-means": "mind", "description": "First person: what changed your mind, or what would. Printed as 'What I changed my mind about'. The most personal prose on the site." },
     "across": { "$ref": "#/definitions/across" },
@@ -84,6 +75,16 @@
     "motif": {
       "enum": ["rings", "lines", "grid", "dots", "conic"],
       "description": "The pattern pressed into the cover. Anything unrecognised prints as conic."
+    },
+    "facts": {
+      "type": "array", "description": "The numbers, each with its named source. A number with no source does not ship — the colophon promises the reader that every figure carries one, and the check enforces it in both wings.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["b", "s"],
+        "properties": {
+          "b": { "type": "string", "x-means": ["number", "figure", "value", "fact"], "description": "The figure as printed, big: \"~2,000 yrs\", \"1902\", \"40%\"." },
+          "s": { "type": "string", "minLength": 1, "x-means": ["source", "src", "cite"], "description": "The named source for that figure — where you actually looked. House rule: required." }
+        }
+      }
     },
     "across": {
       "type": "array", "description": "Links to other entries. Two good links beat five weak ones. Add the link back on the other entry.",

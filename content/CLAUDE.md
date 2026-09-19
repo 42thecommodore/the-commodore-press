@@ -13,7 +13,7 @@ URL a reader saved. Rename only deliberately, and fix the referrers in the same 
 
 | Field | The promise |
 |---|---|
-| `facts[].s` | The named source for the number in `facts[].b`. **A number with no source does not ship.** |
+| `facts[].s` | The named source for the number in `facts[].b`. **A number with no source does not ship.** Titles and lives alike. |
 | `contested` | Where this is still argued, and by whom, stated at its strongest. Not "some disagree". |
 | `reading[].u` | A real, working link. http is allowed only with a reason in `http-allowlist.json`. |
 | `keep` | The one line a reader takes away, drawn from *this* entry's argument. Not a proverb. |

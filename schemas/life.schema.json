@@ -36,6 +36,7 @@
       "type": "array", "minItems": 1, "items": { "type": "string" }, "x-means": "body",
       "description": "The life, one string per paragraph: the situation, what they actually did, the cost or the part usually left out. Keep each paragraph on one line."
     },
+    "facts": { "$ref": "title.schema.json#/definitions/facts" },
     "bio": {
       "type": "object", "additionalProperties": false, "required": ["t", "a"], "x-means": "book",
       "description": "The one biography to read.",

@@ -78,6 +78,18 @@ Every number carries its source. In the entry's `facts` list, add a block — mi
 
 A number with no `s` fails the check. That is deliberate: it is the first promise in the colophon.
 
+**`facts` works in a life as well as a title**, and it prints the same "By the numbers"
+panel in the reader. It was added to Wing II on 2026-09-19, because the lives carry the
+denser numbers of the two wings — 35.3 per thousand words against the titles' 23.4 — and
+had nowhere to source them. If a life states money, a percentage, a magnitude or a
+measured quantity and has no `facts` list, the check says so in yellow:
+
+```
+content/lives/24-andrew-carnegie.json: states "$480 million" with no `facts` block
+```
+
+Years, ages and centuries are not flagged; the entry's own `years` already carries those.
+
 ### 3. Add a further-reading link
 
 ```json

@@ -82,7 +82,9 @@ detail that is not a credential:
 > institution that let him."
 
 **`facts` is a number and the place you looked.** `b` is the figure, `s` is the named
-source. Nothing else belongs in either. See `content/CLAUDE.md`.
+source. It is a field in both entry wings — the lives got it on 2026-09-19, and they are
+the wing that needs it more: `lives.copy` runs 35.3 numbers per 1,000 words against the
+titles' 23.4. Nothing else belongs in either. See `content/CLAUDE.md`.
 
 **`timeline` is turning points, not chronology.** Six or so dated entries, each one a
 thing that changed the story. "Steve Jobs visits PARC. Xerox gets stock; the industry

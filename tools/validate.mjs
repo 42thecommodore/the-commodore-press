@@ -85,13 +85,47 @@ for (const { file, data } of [...books, ...adjacent, ...lives]) {
   if (/\n/.test(k)) err(file, "`keep` must be a single line");
 }
 
-/* ---------- house rule: figures carry named sources; disputes go in `contested` ---------- */
+/* ---------- house rule: figures carry named sources, in EVERY wing ----------
+   The colophon promises the reader that every figure carries a named source. Until
+   2026-09-19 this rule ran on `books` alone, because only Wing I had a `facts` field —
+   so the promise was enforced on the titles and merely hoped for on the lives, which
+   carry the denser numbers of the two (35.3 per 1,000 words against 23.4). */
+for (const { file, data } of [...books, ...adjacent, ...lives]) {
+  (data.facts || []).forEach((f, i) => {
+    if (!f.b) err(file, `facts[${i}] has a source with no number`);
+    if (!f.s) err(file, `facts[${i}] has a number with no source line`);
+  });
+}
+
+/* ---------- a life that states a hard figure needs somewhere to source it ----------
+   Years, ages and centuries are excluded: they are carried by `years` and by the entry's
+   own chronology, and flagging them would train the reader of this output to ignore it.
+   What is caught is the checkable kind — money, percentages, magnitudes, measured
+   quantities. WARNING FOR NOW, ERROR ONCE WING II IS BACKFILLED: see the row in
+   dashboard/commissions.md. Promote it there, not by softening the pattern. */
+const MAG = "billion|million|thousand|hundred";
+const SPELLED = "one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|"
+              + "fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|"
+              + "seventy|eighty|ninety";
+const HARD_FIGURE = new RegExp([
+  `[$£€]\\s?[\\d.,]+(?:\\s*(?:${MAG}))?`,                     // $480 million, $27 billion
+  `\\b[\\d.,]+\\s*(?:per cent|percent|%)`,                    // 78 per cent
+  `\\b(?:${SPELLED})(?:[- ](?:${SPELLED}))?\\s+(?:per cent|percent)`, // ninety per cent
+  `\\b(?:[\\d.,]+|an?)\\s*(?:${MAG})\\b`,                     // 4.55 billion · "a billion or more"
+  `\\b[\\d.,]+\\s*(?:acres|miles|tonnes|tons|doses|extracts)\\b`,
+  `\\b(?:${SPELLED})(?:[- ](?:${SPELLED}))?\\s+(?:${MAG}|acres|nautical|doses|extracts)\\b`,
+].join("|"), "i");
+
+for (const { file, data } of lives) {
+  if (data.facts && data.facts.length) continue;
+  const hit = (data.copy || []).map(para => para.match(HARD_FIGURE)).find(Boolean);
+  if (hit) warn(file, `states "${hit[0].trim()}" with no \`facts\` block — the figure carries no named source`);
+}
+
+/* ---------- Wing I also owes a reading list and a dispute ---------- */
 for (const { file, data } of books) {
   if (!data.reading || !data.reading.length) err(file, "no `reading` — every title must name where to go next");
   if (!data.contested) warn(file, "no `contested` — say where this is still argued, or say why it isn't");
-  (data.facts || []).forEach((f, i) => {
-    if (!f.s) err(file, `facts[${i}] has a number with no source line`);
-  });
   (data.figures || []).forEach((f, i) => { if (!f.n || !f.d) err(file, `figures[${i}] needs \`n\` and \`d\``); });
   (data.timeline || []).forEach((t, i) => { if (!t.y || !t.t) err(file, `timeline[${i}] needs \`y\` and \`t\``); });
 }
