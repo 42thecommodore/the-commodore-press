@@ -30,6 +30,7 @@ The Commodore/
 │   ├── lives/NN-slug.json      Wing II · lives     (id must match its plate)
 │   ├── atlas/                  Wing III · domains, domain-colors, principles, people, sources
 │   ├── corrections.json        append-only, printed in the colophon
+│   ├── plate-licences.json     plates that are not plain public domain, with the credit the colophon owes
 │   └── http-allowlist.json     links that are genuinely http-only, with reasons
 ├── assets/plates/<life-id>.jpg # duotone portraits, ~12 KB, 260×325
 ├── theme/press.css             # the whole design system
@@ -94,7 +95,8 @@ command and runs the same gate locally first; `/press-publish` stays human-invok
 - **Research before writing.** Use web search; do not write figures from memory. Every entry the house has had to correct came from a remembered factoid.
 - **A source you could not open is a lead, not a source.** `facts[].s` names where someone actually looked. If the network refuses, or a paywall does, say so and put the document in `dashboard/research-leads.md` — never write a source line for a document nobody read. An unsourced figure the check still flags is recoverable; a citation to an unopened paper is the one failure the colophon cannot absorb.
 - **Never invent a quotation.** If it is in quotation marks, it is verbatim and you have seen the source. Otherwise write it as "after <name>".
-- **Plates must be licensed.** Public domain by default; CC-BY requires the colophon credit line updated in the same change. Verify the licence box, don't infer it from the subject's dates.
+- **Plates must be licensed.** Public domain by default; anything else is recorded in `content/plate-licences.json` with the exact credit line, and `npm run check` fails if that line is not in the colophon — an attribution licence is breached by a missing credit, not merely untidied. Verify the licence box, don't infer it from the subject's dates.
+- **Counts in the colophon are generated, never typed.** `{{W_PLATELESS_CAP}}`, `{{N_CCPLATES}}` and the rest are filled by the build from `content/`. A typed count goes stale silently: the disclosure said "one CC BY credit" long after the body had grown to three.
 - **`keep` is written from the entry's own argument**, not a general maxim. One line. It is the hook a reader leaves with.
 - **`across` links must resolve.** `press:<id>`, `lives:<id>`, `atlas:<principle-id>`. Add the reciprocal link on the other entry; `atlas:` links are one-way, because the principles carry none back.
 - **Ids are permalinks.** Renaming an `id` breaks every `across` link pointing at it and any URL a reader saved. Rename only deliberately, and fix the referrers in the same change.

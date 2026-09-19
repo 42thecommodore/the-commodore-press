@@ -33,6 +33,7 @@ const PRINCIPLES = one("content/atlas/principles.json");
 const PEOPLE     = one("content/atlas/people.json");
 const SOURCES    = one("content/atlas/sources.json");
 const CORRECTIONS= one("content/corrections.json");
+const PLATELIC   = one("content/plate-licences.json");
 
 /* ---------- plates: image files -> base64 data-URIs, keyed by life id ---------- */
 const MIME = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".gif": "image/gif" };
@@ -84,7 +85,13 @@ const fill = s => s
   // the famous/obscure split is counted, not typed: a typed "twenty-one famous" went stale the day two lives shipped
   .replace(/{{W_FAMOUS_CAP}}/g, cap(words(LIVES.filter(l => l.group === "famous").length)))
   .replace(/{{N_OBSCURE}}/g, words(LIVES.filter(l => l.group === "obscure").length))
-  .replace(/{{N_PRINCIPLES}}/g, words(PRINCIPLES.length));
+  .replace(/{{N_PRINCIPLES}}/g, words(PRINCIPLES.length))
+  // The plate counts are counted, not typed, for the same reason the famous/obscure split
+  // is: the disclosure said "one CC BY credit" long after the colophon body had grown to
+  // three, and nobody noticed because a sentence does not fail a build.
+  .replace(/{{W_PLATELESS_CAP}}/g, cap(words(LIVES.filter(l => !PLATES[l.id]).length)))
+  .replace(/{{W_CCPLATES_CAP}}/g, cap(words(Object.keys(PLATELIC).filter(k => k[0] !== "_" && /^CC /.test(PLATELIC[k].licence)).length)))
+  .replace(/{{N_CCPLATES}}/g, words(Object.keys(PLATELIC).filter(k => k[0] !== "_" && /^CC /.test(PLATELIC[k].licence)).length));
 const out = fill(read("templates/shell.html"))
   .replace("<!--CSS-->", () => read("theme/press.css"))
   .replace("<!--DATA-->", () => DATA)

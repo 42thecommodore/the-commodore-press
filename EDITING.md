@@ -38,6 +38,7 @@ The explanations come from `schemas/`. `npm run check` reads the same files, so 
 | a person in the Atlas | `content/atlas/people.json` |
 | a principle or domain | `content/atlas/principles.json`, `domains.json` |
 | a portrait | `npm run plate` — see below |
+| a plate's licence and credit | `content/plate-licences.json` |
 | a published mistake | `npm run correct` — never by hand |
 
 ## The short field names, decoded

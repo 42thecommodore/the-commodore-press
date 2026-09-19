@@ -39,7 +39,9 @@ Rockefeller; do not add a second.
 
 `press:<id>` · `lives:<id>` · `atlas:<principle-id>`.
 `txt` is a fragment continuing `label`, opening with an em dash. Add the reciprocal link on
-the other entry. Two good links beat five weak ones.
+the other entry — `npm run check` now counts the ones that are still one-way. `atlas:`
+links are the exception and are one-way by design, because the principles carry no
+`across` of their own. Two good links beat five weak ones.
 
 ## The prose itself
 

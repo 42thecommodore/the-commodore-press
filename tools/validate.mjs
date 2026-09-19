@@ -31,6 +31,7 @@ const people = one("content/atlas/people.json") || [];
 const sources = one("content/atlas/sources.json") || [];
 const corrections = one("content/corrections.json") || [];
 const httpOK = one("content/http-allowlist.json") || {};
+const plateLic = one("content/plate-licences.json") || {};
 
 /* ---------- field names match schemas/ — the same files that give the editor its hover help ----------
    A misspelt field is valid JSON, and the page silently drops it. Adding a real new field
@@ -159,6 +160,29 @@ for (const { file, data } of [...books, ...adjacent, ...lives]) {
   });
 }
 
+/* ---------- a link the other entry does not return ----------
+   content/CLAUDE.md asks for the reciprocal link on the other entry, and nothing checked
+   it, so a link could be added from one side and quietly stay one-way. Reported as a
+   single line rather than one per pair: this file's own plate rule is that a report
+   nobody can read in one glance teaches the reader to skim the warnings that matter.
+   `atlas:` links are excluded — the principles carry no `across` of their own, so they
+   are one-way by design and not by omission. */
+{
+  const entryOf = e => (e.file.includes("/lives/") ? "lives:" : "press:") + e.data.id;
+  const entries = [...books, ...adjacent, ...lives];
+  const out = new Map(entries.map(e => [entryOf(e), new Set((e.data.across || []).map(a => a.to))]));
+  const oneWay = [];
+  for (const e of entries) {
+    for (const a of e.data.across || []) {
+      if (!a.to || a.to.startsWith("atlas")) continue;
+      const back = out.get(a.to);
+      if (back && !back.has(entryOf(e))) oneWay.push(`${entryOf(e)} → ${a.to}`);
+    }
+  }
+  if (oneWay.length)
+    warn("content/", `${oneWay.length} across link(s) the other entry does not return: ${oneWay.join(", ")}`);
+}
+
 /* ---------- atlas integrity ---------- */
 const domIds = new Set(domains.map(d => d.id));
 domains.forEach(d => { if (!dcolor[d.id]) err("content/atlas/domain-colors.json", `no colour for domain "${d.id}"`); });
@@ -189,6 +213,22 @@ if (fs.existsSync(platesDir)) {
   for (const f of fs.readdirSync(platesDir).filter(f => !f.startsWith("."))) {
     const kb = fs.statSync(path.join(platesDir, f)).size / 1024;
     if (kb > 60) warn(`assets/plates/${f}`, `${kb.toFixed(0)} KB — heavy for a plate; re-run the plate tool`);
+  }
+
+  /* ---------- a licensed plate owes its credit, and the credit must be on the page ----------
+     CLAUDE.md asks for the colophon credit line "in the same change", and until now nothing
+     could check it: the licences lived only in colophon prose, so the disclosure could say
+     "one CC BY credit" for months after the body had grown to three. An attribution licence
+     is breached by a missing credit, not merely untidied, so this is an error. */
+  const shell = fs.existsSync(p("templates/shell.html")) ? fs.readFileSync(p("templates/shell.html"), "utf8") : "";
+  for (const [id, lic] of Object.entries(plateLic)) {
+    if (id.startsWith("_")) continue;
+    const at = "content/plate-licences.json";
+    if (!lic.licence || !lic.credit) { err(at, `${id} needs both \`licence\` and \`credit\``); continue; }
+    if (!lifeIds.has(id)) { err(at, `${id} is not a life — a licence with nothing to license`); continue; }
+    if (!plateIds.includes(id)) { warn(at, `${id} has a recorded licence but no plate on disk`); continue; }
+    if (!shell.includes(lic.credit))
+      err(at, `${id} is ${lic.licence} and its credit line is not in the colophon — the licence requires it`);
   }
 }
 
