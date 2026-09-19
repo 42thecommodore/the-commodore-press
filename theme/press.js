@@ -152,15 +152,15 @@ function renderFront(){
 
   const spines=(cols)=>cols.map((c,i)=>`<div class="sp" style="width:30px;height:${58+((i*13)%18)}px;background:${c}"></div>`).join("");
   document.getElementById("wings5").innerHTML=[
-    {w:"press",n:"Wing I",t:"The Press",ac:"var(--oxblood)",p:"{{W_BOOKS_CAP}} ideas I keep circling back to, each with its timeline, its numbers and its objections.",
+    {w:"press",n:"Wing I",t:"The Press",ac:"var(--oxblood)",p:"{{W_BOOKS_CAP}} ideas I keep circling back to. Each carries its timeline, its numbers and its objections.",
      v:spines(["#0F4C46","#6B1E2A","#8C6A0F","#232E78"])},
-    {w:"lives",n:"Wing II",t:"Lives",ac:"#5A3A21",p:`{{W_LIVES_CAP}} people and the one book on each worth your time. ${LIVES.filter(b=>b.group!=="obscure").length} famous, ${LIVES.filter(b=>b.group==="obscure").length} you have never heard of.`,
+    {w:"lives",n:"Wing II",t:"Lives",ac:"#5A3A21",p:"{{W_LIVES_CAP}} people and the one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_FORGOT}} you have never heard of.",
      v:spines(["#4A3520","#2F4A3C","#5B2C3E","#26262B"])},
-    {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"{{W_PEOPLE_CAP}} sources as stars; the lines between them are the principles more than one of them handed me.",night:1,
+    {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"{{W_PEOPLE_CAP}} sources, set as stars. The lines between them are the principles more than one of them handed me.",night:1,
      v:`<div style="width:100%;height:74px;background:#0A0E1B;border-radius:2px"><svg width="100%" height="74" viewBox="0 0 210 74"><g stroke="#D8A657" stroke-width=".6" opacity=".5" fill="none"><path d="M28 50 82 26 140 44 182 20"/></g><g fill="#F6E9C8"><circle cx="28" cy="50" r="2.6"/><circle cx="82" cy="26" r="3.4"/><circle cx="140" cy="44" r="2.2"/><circle cx="182" cy="20" r="2.9"/></g></svg></div>`},
     {w:"manuals",n:"Wing IV",t:"Field Manuals",ac:"var(--navy)",p:"Four volumes of what I hold: compounding, clear thinking, the plan, and the bias to action.",
      v:`<div style="display:flex;flex-direction:column;gap:6px;width:100%;justify-content:flex-end;height:78px">${MANUALS.map(m=>`<div style="height:15px;background:var(--paper-2);border-left:3px solid ${m.accent}"></div>`).join("")}</div>`},
-    {w:"slipway",n:"Wing V · the trade book",t:"The Slipway",ac:"var(--hail)",p:"The operating lessons of people who build things — a commonplace book of the craft, every line marked with its source.",
+    {w:"slipway",n:"Wing V · the trade book",t:"The Slipway",ac:"var(--hail)",p:"The operating lessons of people who build things. A commonplace book of the craft, every line marked with its source.",
      v:`<svg width="100%" height="74" viewBox="0 0 210 74"><g stroke="#3E7A6B" stroke-width="1.4" fill="none"><path d="M30 40 Q 100 66 180 36"/><path d="M52 42 L52 26 M85 49 L85 20 M120 51 L120 22 M152 45 L152 26"/></g><g stroke="#B9AF9B" stroke-width="1"><path d="M12 60 L198 60"/><path d="M28 60 L44 48 M64 60 L80 48 M100 60 L116 48 M136 60 L152 48 M172 60 L188 48"/></g></svg>`}
   ].map((c,i)=>`<button class="wcard ${c.night?"night":""}" data-reveal style="--d:${i*70}ms;border-top-color:${c.ac}" onclick="go('${c.w}')">
       <span class="n">${c.n}</span><h3>${c.t}</h3><p>${c.p}</p><div class="viz">${c.v}</div></button>`).join("");
