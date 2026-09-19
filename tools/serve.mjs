@@ -40,6 +40,10 @@ const RELOADER = `<script>(function(){let s=null;setInterval(async()=>{try{const
 
 http.createServer((req, res) => {
   if (req.url === "/__stamp") { res.writeHead(200, { "content-type": "text/plain", "cache-control": "no-store" }); return res.end(String(stamp)); }
+  if (failure && (req.url === "/" || req.url.startsWith("/index.html"))) {
+    res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" });
+    return res.end(failurePage().replace("</body>", RELOADER + "</body>"));
+  }
   const file = path.join(ROOT, "dist", req.url === "/" ? "index.html" : req.url.replace(/^\//, "").split("?")[0]);
   if (!file.startsWith(path.join(ROOT, "dist")) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
     res.writeHead(404, { "content-type": "text/plain" }); return res.end("not on the shelf");
