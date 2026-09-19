@@ -1,0 +1,39 @@
+{
+  "id": "dolores-huerta",
+  "keep": "The line everyone quotes was hers. It is credited to the man beside her.",
+  "n": "Dolores Huerta",
+  "years": "b. 1930",
+  "place": "United States",
+  "field": "Labour & Organising",
+  "group": "obscure",
+  "cover": "#6B2418",
+  "spineC": "#4C170E",
+  "ink": "#F5E4CE",
+  "accent": "#E8B04A",
+  "motif": "rings",
+  "lede": "She co-founded the union, negotiated its contracts, and wrote the slogan credited to someone else.",
+  "copy": [
+    "She was a schoolteacher first and left because the children were coming to class hungry and she decided that was a bargaining problem rather than a teaching one. With Cesar Chavez she co-founded the organisation that became the United Farm Workers. The division of labour was not the one the posters imply: Chavez was the public body of the movement, and Huerta was the one across the table from the growers. She ran the negotiations, drafted the contracts and worked the legislatures — the unglamorous middle of a strike, where a boycott either turns into a signed agreement or turns into nothing.",
+    "In 1972, during a fast in Phoenix, local Latino leaders told Chavez and Huerta the Arizona campaign was hopeless because the grower lobby was too strong. Huerta answered: sí, sí se puede. She made it the campaign's rallying cry. The phrase has since been borrowed by a presidential campaign in translation and is routinely credited to Chavez; Obama corrected the record out loud in 2012, when he gave her the Presidential Medal of Freedom, which is a strange sentence to have to write about a slogan its author was standing beside people to shout.",
+    "On 14 September 1988 she was handing out leaflets about pesticides outside a San Francisco hotel where Vice-President Bush was speaking. Police struck her with batons. She was fifty-eight, and it cost her a ruptured spleen, several broken ribs and life-threatening internal bleeding; the city settled for $825,000 and the department's crowd-control rules were rewritten. She went back to organising. She is in her nineties and has not stopped, which is the ordinary shape of the work and the reason it is so easy to give the credit to whoever was holding the microphone."
+  ],
+  "bio": {
+    "t": "A Dolores Huerta Reader",
+    "a": "edited by Mario T. García",
+    "y": "2008",
+    "why": "Her own speeches, interviews and writing, which is the way round it has to be for someone whose problem is that other people have narrated her. Biographies of Chavez cover the same decades and are far easier to find; that asymmetry is the subject of this entry, so do not start there."
+  },
+  "contested": "How the credit should actually be divided, and whether the correction has gone far enough or too far. The revisionist case is that Chavez became the movement's single legible face because a movement needs one, and that Huerta — a woman, and a mother of eleven doing the negotiating — was written out by the same reflex that writes out most organisers. The objection from labour historians is that this can flatten a real disagreement into a grievance: Huerta and Chavez fought over strategy, over the union's turn against undocumented workers, and over how much the organisation should revolve around one man, and treating her only as an overlooked deputy erases the positions she actually held against him. The documents exist — UFW records, her own papers — and the argument is about emphasis rather than fact, which is the kind that does not resolve.",
+  "across": [
+    {
+      "to": "lives:mlk",
+      "label": "Martin Luther King Jr.",
+      "txt": "— the same decade and the same problem: a movement gets one remembered face, and the organisers behind it are the ones who made it work."
+    },
+    {
+      "to": "manuals:iv",
+      "label": "Field Manual IV · The Operators",
+      "txt": "— the operator's case in full: the person at the table, not the person at the lectern."
+    }
+  ]
+}

@@ -29,6 +29,11 @@
       "to": "lives:john-snow",
       "label": "John Snow",
       "txt": "— the other 1850s argument won with a table rather than a theory, and against the same miasma consensus."
+    },
+    {
+      "to": "lives:ida-b-wells",
+      "label": "Ida B. Wells",
+      "txt": "— the same method a generation later, and against a defence that also explained a death rate by the character of the dead."
     }
   ]
 }

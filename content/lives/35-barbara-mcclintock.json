@@ -1,0 +1,39 @@
+{
+  "id": "barbara-mcclintock",
+  "keep": "She was never ignored for thirty years. That is the part everyone loves.",
+  "n": "Barbara McClintock",
+  "years": "1902–1992",
+  "place": "United States",
+  "field": "Genetics",
+  "group": "famous",
+  "cover": "#3A2E10",
+  "spineC": "#281F0A",
+  "ink": "#F4EBCF",
+  "accent": "#E0B84E",
+  "motif": "dots",
+  "lede": "She found that genes move. The more interesting argument is about what happened next.",
+  "copy": [
+    "Working on maize at Cold Spring Harbor through the 1940s, she traced the broken and re-coloured kernels back to something the chromosome theory did not allow: elements that change position in the genome, and that switch other genes on and off from wherever they land. She got there from the pattern in the kernels — the colour of a maize ear is a record of what happened in each cell's ancestry, and she could read one. Transposition is now standard biology, and the regulatory half of what she described turned out to matter more than the movement.",
+    "She had been a distinguished figure in genetics for a decade before any of this. She was elected to the National Academy of Sciences in 1944, the third woman ever, and the following year became the first woman to preside over the Genetics Society of America. In 1983 she took the Nobel Prize in Physiology or Medicine, unshared — the only woman who has ever taken that prize alone.",
+    "The famous version says she presented her work in 1951, was met with silence and hostility, withdrew from publishing, and waited thirty years for biology to catch up. Nathaniel Comfort went through her notebooks, her correspondence and the record of who cited what, and found a different shape: the 1951 talk drew real interest, she was never marginal in her field, transposition was neither ignored nor disbelieved, and other people were arriving at comparable findings around the same time without reading her at all. What was slow to be accepted was the larger claim she cared most about — control, the idea that these elements were part of a system regulating development. The misunderstanding was specific and technical, and it is a duller story than martyrdom. It is also the one with evidence behind it."
+  ],
+  "bio": {
+    "t": "The Tangled Field: Barbara McClintock's Search for the Patterns of Genetic Control",
+    "a": "Nathaniel C. Comfort",
+    "y": "2001",
+    "why": "The book that went to the notebooks and took the myth apart. Evelyn Fox Keller's 'A Feeling for the Organism' is the famous one, is better written, and is largely where the neglected-genius story comes from — read it second, knowing that."
+  },
+  "contested": "Whether Comfort overcorrected. Keller's account gave a generation the image of a woman whose way of knowing — patient, particular, attending to the individual organism rather than to the statistical population — was dismissed by a field that wanted molecules and numbers, and defenders of that reading argue Comfort answers the strong version of the myth while quietly conceding the weak one. Nobody now defends 'ignored for thirty years'; the live question is whether the resistance she met was ordinary scientific friction or whether being the only woman in the room shaped which of her claims got a hearing. Both sides are working from the same notebooks. What would settle it is a record of the conversations that were never written down, which is precisely the evidence that does not survive.",
+  "across": [
+    {
+      "to": "press:being-wrong",
+      "label": "Being Wrong",
+      "txt": "— a case where the correction of the record needed correcting in turn, and the second pass was less flattering to everyone."
+    },
+    {
+      "to": "lives:marie-curie",
+      "label": "Marie Curie",
+      "txt": "— the other woman the prizes were eventually forced to acknowledge, and a useful control on how much of the pattern is bias and how much is hindsight."
+    }
+  ]
+}
