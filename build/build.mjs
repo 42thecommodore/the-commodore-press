@@ -35,6 +35,13 @@ const SOURCES    = one("content/atlas/sources.json");
 const CORRECTIONS= one("content/corrections.json");
 const PLATELIC   = one("content/plate-licences.json");
 
+/* The wings, named once. A typed "five wings" outlived the wings themselves in four
+   places — the meta description, the front-door standfirst, package.json and the social
+   card — because nothing counted them. */
+const WINGS = ["The Press", "Lives", "The Atlas"];
+const licenced = (re) => Object.keys(PLATELIC)
+  .filter(k => k[0] !== "_" && (!re || re.test(PLATELIC[k].licence)));
+
 /* ---------- plates: image files -> base64 data-URIs, keyed by life id ---------- */
 const MIME = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".gif": "image/gif" };
 const PLATES = {};
@@ -90,12 +97,44 @@ const fill = s => s
   // is: the disclosure said "one CC BY credit" long after the colophon body had grown to
   // three, and nobody noticed because a sentence does not fail a build.
   .replace(/{{W_PLATELESS_CAP}}/g, cap(words(LIVES.filter(l => !PLATES[l.id]).length)))
-  .replace(/{{W_CCPLATES_CAP}}/g, cap(words(Object.keys(PLATELIC).filter(k => k[0] !== "_" && /^CC /.test(PLATELIC[k].licence)).length)))
-  .replace(/{{N_CCPLATES}}/g, words(Object.keys(PLATELIC).filter(k => k[0] !== "_" && /^CC /.test(PLATELIC[k].licence)).length));
+  // Two different counts, and conflating them is how the disclosure got it wrong twice.
+  // W_CCPLATES_CAP is the CC-licensed plates the body credits one by one. N_LICENSED is
+  // every plate that is not plain public domain, which is those plus the Library of
+  // Congress photograph — "no known copyright restrictions" is a narrower claim than
+  // public domain and does not belong on either side of that sentence by accident.
+  .replace(/{{W_CCPLATES_CAP}}/g, cap(words(licenced(/^CC /).length)))
+  .replace(/{{N_LICENSED}}/g, `${words(licenced().length)} plates`)
+  .replace(/{{W_WINGS_CAP}}/g, cap(words(WINGS.length)));
 const out = fill(read("templates/shell.html"))
   .replace("<!--CSS-->", () => read("theme/press.css"))
   .replace("<!--DATA-->", () => DATA)
   .replace("<!--ENGINE-->", () => safe(fill(read("theme/press.js"))));
+
+/* A token nobody filled prints as `{{N_THING}}` on the live page, and a build that
+   succeeds is the only signal anyone checks. Two of these were added and wired in the
+   same change; the third would not have been. */
+const unfilled = [...new Set(out.match(/{{[A-Z_]+}}/g) || [])];
+if (unfilled.length) {
+  console.error(`\n  Unfilled template token(s): ${unfilled.join(", ")}`);
+  console.error("  Add the .replace() in fill(), or delete the token from the template.\n");
+  process.exit(1);
+}
+
+/* The Slipway section was removed with a script that ate two characters of `</main>`,
+   and `/main>` sat visible above the footer in four shipped builds. Cheap to check. */
+for (const tag of ["main", "body", "html", "footer", "section"]) {
+  const open = (out.match(new RegExp(`<${tag}[\\s>]`, "g")) || []).length;
+  const close = (out.match(new RegExp(`</${tag}>`, "g")) || []).length;
+  if (open !== close) {
+    console.error(`\n  <${tag}> opened ${open} time(s) and closed ${close} in the built page.\n`);
+    process.exit(1);
+  }
+}
+const stray = out.match(/(?<![<\w])\/(?:main|section|footer|body|html)>/g);
+if (stray) {
+  console.error(`\n  A closing tag lost its bracket and will print as text: ${[...new Set(stray)].join(", ")}\n`);
+  process.exit(1);
+}
 
 fs.mkdirSync(p("dist"), { recursive: true });
 fs.writeFileSync(p("dist/index.html"), out);

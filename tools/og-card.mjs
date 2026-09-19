@@ -8,7 +8,17 @@
  *
  * Uses headless Chrome because the card has real typography in it, and the house
  * typefaces are the point. Chrome is a local tool only — the PNG is committed, so CI
- * never needs it. Re-run this when the shelves grow or the livery changes. */
+ * never needs it. Re-run this when the shelves grow or the livery changes.
+ *
+ * LOOK AT THE CARD IT WRITES. `--screenshot` is a one-shot mode with no completion
+ * signal, and it fails by omission rather than by erroring: on one Chromium build it
+ * wrote a card that was correct in every respect except that the counts line simply was
+ * not painted — laid out at y=544 in a 630px page, present in the DOM, and absent from
+ * the PNG. The spines beside it painted, because a background is not text. A card that
+ * is quietly missing a line still looks like a card.
+ *
+ * OG_KEEP=1 keeps the generated HTML so it can be opened in a real browser when the
+ * output looks wrong. */
 
 import fs from "node:fs";
 import os from "node:os";
@@ -18,9 +28,20 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...a) => path.join(ROOT, ...a);
-const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-if (!fs.existsSync(CHROME)) {
-  console.error("\n  Needs Google Chrome to render the card. The committed assets/og.png still works;\n  nothing breaks until the counts change.\n");
+/* Any Chromium will do. The path was macOS-only, which was fine while the card was only
+   ever regenerated on one laptop — and not fine the day the counts changed somewhere else
+   and the card kept advertising wings the site no longer had. CHROME=/path overrides. */
+const CHROME = [
+  process.env.CHROME,
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "/Applications/Chromium.app/Contents/MacOS/Chromium",
+  "/opt/pw-browsers/chromium",
+  "/usr/bin/google-chrome",
+  "/usr/bin/chromium-browser",
+  "/usr/bin/chromium",
+].find(c => c && fs.existsSync(c));
+if (!CHROME) {
+  console.error("\n  Needs Chrome or Chromium to render the card, and found neither. Set CHROME=/path\n  to one. The committed assets/og.png still works; nothing breaks until the counts change.\n");
   process.exit(1);
 }
 
@@ -29,12 +50,38 @@ const count = d => fs.existsSync(p("content", d)) ? fs.readdirSync(p("content", 
 const people = JSON.parse(fs.readFileSync(p("content/atlas/people.json"), "utf8")).length;
 const N = { titles: count("books"), lives: count("lives"), people };
 
-/* The five wing spines, in shelf order, taken from the front door's own liveries. */
-const SPINES = ["#7B3F2E", "#2F4A3C", "#1B2A4A", "#6B5636", "#4A2F45"];
+/* One spine per wing, in shelf order, taken from the front door's own liveries.
+   The card said "five wings" for the length of a whole PR after the wings came down,
+   because this string was typed and the counts beside it were not. Both are derived now. */
+const WINGS = ["The Press", "Lives", "The Atlas"];
+const SPINES = ["#7B3F2E", "#2F4A3C", "#1B2A4A"];
+const word = n => ["zero","one","two","three","four","five","six","seven"][n] || String(n);
+
+/* The house typefaces are the point of this card, and a browser that cannot reach Google
+   Fonts does not say so — it quietly renders the wordmark in Georgia and the card still
+   looks plausible. So the fonts are fetched here, where a failure is visible, and inlined
+   as data URIs; the render then needs no network at all. If the fetch fails we say so and
+   keep the committed card rather than shipping one in the wrong face. */
+const FONTS_CSS = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap";
+let fontFace = "";
+try {
+  // the UA decides whether Google serves woff2; without one it serves a truetype fallback
+  const css = await (await fetch(FONTS_CSS, { headers: { "User-Agent": "Mozilla/5.0 Chrome/120" } })).text();
+  const urls = [...new Set([...css.matchAll(/url\((https:[^)]+)\)/g)].map(m => m[1]))];
+  const bytes = Object.fromEntries(await Promise.all(urls.map(async u =>
+    [u, Buffer.from(await (await fetch(u)).arrayBuffer()).toString("base64")])));
+  fontFace = css.replace(/url\((https:[^)]+)\)/g, (_, u) => `url(data:font/woff2;base64,${bytes[u]})`);
+  const kb = (Object.values(bytes).reduce((n, b) => n + b.length, 0) / 1365).toFixed(0);
+  console.log(`\n  fonts: ${urls.length} file(s) inlined, ~${kb} KB`);
+} catch (e) {
+  console.error(`\n  Could not fetch the house typefaces (${e.message}).`);
+  console.error("  Refusing to render the card in a substitute face — the committed assets/og.png stands.\n");
+  process.exit(1);
+}
 
 const html = `<!doctype html><html><head><meta charset="utf-8">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+${fontFace}</style>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{width:1200px;height:630px}
@@ -61,13 +108,13 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
     <path d="M4 4 18 18M18 4 4 18" stroke-width=".6" opacity=".45"/>
   </svg>
   <div>
-    <div class="mono">A working library in five wings</div>
+    <div class="mono">A working library in ${word(WINGS.length)} wings</div>
     <h1>The Commodore<br>Press</h1>
     <div class="promise">Every claim carries its source &mdash; <em>and the place it is still argued.</em></div>
   </div>
   <div class="foot">
     <div class="counts">${N.titles} titles &middot; ${N.lives} lives &middot; ${N.people} people</div>
-    <div class="spines">${SPINES.map((c, i) => `<i style="background:${c};height:${[86, 112, 70, 98, 124][i]}px"></i>`).join("")}</div>
+    <div class="spines">${SPINES.map((c, i) => `<i style="background:${c};height:${[86, 112, 70][i]}px"></i>`).join("")}</div>
   </div>
 </body></html>`;
 
@@ -78,16 +125,21 @@ fs.mkdirSync(p("assets"), { recursive: true });
 const out = p("assets/og.png");
 
 execFileSync(CHROME, [
-  "--headless=new", "--disable-gpu", "--hide-scrollbars",
+  "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-sandbox",
   "--window-size=1200,630",
-  "--virtual-time-budget=6000",          // let the webfonts actually arrive
+  /* --virtual-time-budget was here to let the webfonts arrive over the network. The fonts
+     are inlined now, so it has nothing to wait for — and it was cutting the render short:
+     the counts line was laid out at y=544 in a 630px page and still missing from the PNG,
+     in every card generated while the flag was set. */
   `--screenshot=${out}`,
   `file://${src}`,
 ], { stdio: ["ignore", "ignore", "pipe"] });
 
-fs.rmSync(tmp, { recursive: true, force: true });
+if (process.env.OG_KEEP) console.log(`  OG_KEEP — source html kept at ${src}`);
+else fs.rmSync(tmp, { recursive: true, force: true });
 if (!fs.existsSync(out)) { console.error("  Chrome wrote nothing."); process.exit(1); }
 const kb = (fs.statSync(out).size / 1024).toFixed(0);
 console.log(`\n  assets/og.png — 1200x630, ${kb} KB`);
 console.log(`  ${N.titles} titles · ${N.lives} lives · ${N.people} people`);
+console.log("  Open it before committing — this writer fails by leaving things out, not by erroring.");
 console.log(`  npm run build copies it to dist/og.png\n`);

@@ -2,7 +2,7 @@
   "name": "commodore-press",
   "version": "1.0.0",
   "private": true,
-  "description": "A working library in five wings. Sources live in content/; the site is built into dist/index.html.",
+  "description": "A working library in three wings. Sources live in content/; the site is built into dist/index.html.",
   "type": "module",
   "scripts": {
     "start": "node tools/serve.mjs",
