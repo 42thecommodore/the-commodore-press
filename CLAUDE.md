@@ -106,7 +106,9 @@ command and runs the same gate locally first; `/press-publish` stays human-invok
 
 Plain, specific, unhurried. Concrete nouns and real numbers. State the complication instead of hedging around it. No throat-clearing, no rhetorical questions, no "in an era of". The Press's best entries quietly fix a factoid the popular version gets wrong — look for that opportunity in every piece.
 
-**`/press-voice` is the long form of those four lines**, and it is where any prose work should start. It carries the keep and cut lists, the six writing surfaces (`copy` is nearly impersonal; `changed` is the most personal prose on the site; `keep` is a different craft again), the paragraph architectures the good entries actually use, and the proofread gate that runs before `npm run check`.
+**`/press-voice` is the long form of those four lines**, and it is where any prose work should start. It carries the keep and cut lists, the seven writing surfaces (`copy` is nearly impersonal; `changed` is the most personal prose on the site; `keep` is a different craft again; the Atlas's `take` has the `claim`'s shape), the paragraph architectures the good entries actually use, and the proofread gate that runs before `npm run check`.
+
+It runs two passes and **the second one is the one that matters.** The cut list stops a draft being anyone's; the additive pass is what makes it this house's. An entry carries at least four of the ten house moves. And when a draft goes flat, do not reach for the cut list first — flat prose has drifted toward the author's own application reflex, not toward a machine, and `npm run voice` measures that drift directly.
 
 Its sentence-length and punctuation targets were **measured off `content/`**, not asserted — `npm run voice` reproduces every one of them. Re-run it if the shelves grow substantially; never update those numbers by estimating, for the same reason an unsourced figure does not ship.
 

@@ -24,6 +24,8 @@ const wing = d => fs.readdirSync(path.join(ROOT, d))
 const books = wing('books');
 const lives = wing('lives');
 const manuals = wing('manuals');
+const people = read(path.join(ROOT, 'atlas/people.json'));
+const principles = read(path.join(ROOT, 'atlas/principles.json'));
 
 const words = t => t.trim().split(/\s+/).filter(Boolean).length;
 const sentences = t => t.replace(/\s+/g, ' ')
@@ -58,7 +60,7 @@ function profile(name, texts) {
   );
 }
 
-console.log(`\ncorpus: ${books.length} titles · ${lives.length} lives · ${manuals.length} manuals\n`);
+console.log(`\ncorpus: ${books.length} titles · ${lives.length} lives · ${manuals.length} manuals · ${people.length} atlas people\n`);
 
 profile('titles.copy',    books.flatMap(b => b.copy || []));
 profile('titles.claim',   books.map(b => b.claim));
@@ -73,6 +75,11 @@ profile('lives.keep',     lives.map(l => l.keep));
 console.log('');
 profile('manuals.p',      manuals.flatMap(m => (m.entries || []).flatMap(e => e.p || [])));
 profile('manuals.h',      manuals.flatMap(m => (m.entries || []).map(e => e.h)));
+console.log('');
+profile('atlas.take',     people.map(p => p.take));
+profile('atlas.kept',     people.flatMap(p => p.kept || []));
+profile('atlas.role',     people.map(p => p.role));
+profile('atlas.gloss',    principles.map(p => p.gloss));
 
 // Shape counts the profile line does not carry.
 const bp = books.flatMap(b => b.copy || []);
@@ -103,5 +110,53 @@ const tics = {
 console.log('\ntics across all prose:');
 for (const [label, re] of Object.entries(tics)) {
   console.log(`  ${label.padEnd(22)} ${(all.match(re) || []).length}`);
+}
+
+// ---- The calibration test ----------------------------------------------------
+// Register 0 is the author's application reflex, not a machine style: generic
+// scholarship prose he writes himself when he thinks a committee is reading. The
+// rate below is the fastest drift detector the study produced. Reference points,
+// from the study and not from this corpus: his submitted scholarship essay ran
+// 23.0 generic phrases per 1,000 words and one course description ran 53.4, against
+// 0.8–2.9 in everything he edits. A surface above ~3 has drifted. See
+// references/voice.md, "Register 0".
+const GENERIC = [
+  /all walks of life/, /vibrant tapestry/, /rich tapestry/, /relentless pursuit/,
+  /fostering/, /diverse communit/, /unwavering/, /a (pivotal|crucial|vital|key) role/,
+  /valuable insights?/, /countless/, /a gateway to/, /deepened my appreciation/,
+  /broaden (my|our) perspective/, /instrumental/, /in an era of/, /in today's world/,
+  /more than just an?/, /interdisciplinary/, /broader societal/, /social inclusion/,
+  /compelling examination/, /meticulous research/, /profound question/,
+  /it is important to note/, /plays? an? important role/, /testament to/,
+  /serves? as a reminder/, /delve/, /nuanced understanding/, /underscore/,
+  /at the end of the day/, /navigate the complex/,
+  // the antithesis spine, which is his application reflex too
+  /\bnot (just|only|merely|simply)\b[^.;]{0,90}\bbut\b/,
+];
+const surfaces = {
+  'titles.copy':     books.flatMap(b => b.copy || []),
+  'titles.apparatus':books.flatMap(b => [b.claim, b.lede, ...(b.figures || []).map(f => f.d)]),
+  'titles.contested':books.map(b => b.contested),
+  'titles.changed':  books.map(b => b.changed),
+  'titles.keep':     books.map(b => b.keep),
+  'lives.copy':      lives.flatMap(l => l.copy || []),
+  'lives.contested': lives.map(l => l.contested),
+  'lives.keep':      lives.map(l => l.keep),
+  'lives.bio.why':   lives.map(l => l.bio && l.bio.why),
+  'manuals.p':       manuals.flatMap(m => (m.entries || []).flatMap(e => e.p || [])),
+  'atlas.take':      people.map(p => p.take),
+  'atlas.kept':      people.flatMap(p => p.kept || []),
+};
+console.log('\ncalibration — generic phrases per 1k (committee 23.0–53.4 · edited 0.8–2.9):');
+for (const [label, texts] of Object.entries(surfaces)) {
+  const joined = texts.filter(t => typeof t === 'string' && t.trim()).join(' ');
+  if (!joined) continue;
+  const w = words(joined);
+  const hits = GENERIC.flatMap(re => joined.match(new RegExp(re.source, 'gi')) || []);
+  const rate = per1k(hits.length, w);
+  console.log(
+    `  ${label.padEnd(18)} ${String(rate).padStart(5)}` +
+    `${hits.length ? '   ' + [...new Set(hits.map(h => h.toLowerCase()))].join(' · ') : ''}`
+  );
 }
 console.log('');

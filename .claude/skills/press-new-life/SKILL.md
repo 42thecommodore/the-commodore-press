@@ -33,7 +33,9 @@ Web search first, memory never. What you are looking for:
 
 Add two or three `across` links; a Life that connects to a title in Wing I or a principle in the Atlas is worth far more than one standing alone.
 
-**Load `/press-voice` before writing the prose.** The lives are the wing that clots. They sat at a 26-word median against 18 in the titles, with one sentence in ten at ten words or fewer, until a splitting pass brought them to 19.5 and 21%. Biography invites subordinate clauses stacked three deep, so a new life will drift back there unless you fight it. A short sentence every fourth one is the thing to hold.
+**Load `/press-voice` before writing the prose.** The lives are the wing that clots. They sat at a 26-word median against 18 in the titles, with one sentence in ten at ten words or fewer, until a splitting pass brought them to 19.5 and 21%; at the 2026-09-19 re-measure they had held at **17 and 22%**, below the titles. Biography invites subordinate clauses stacked three deep, so a new life will drift back there unless you fight it. A short sentence every fourth one is the thing to hold.
+
+**The lede's default move in this wing is the disqualification.** Ten of the thirty-two ledes open on what the subject lacked, failed at or was refused, and then convert it — Leonardo denied a Latin education *and therefore* trusting observation; Shackleton failing at every goal he set *and* bringing every man home. The conversion is the move. See **The additive pass** in `press-voice`.
 
 ## 4. The plate
 

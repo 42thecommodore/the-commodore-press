@@ -1,6 +1,6 @@
-# Six surfaces
+# Seven surfaces
 
-The Press is not written in one voice at one length. It has six writing surfaces, and
+The Press is not written in one voice at one length. It has seven writing surfaces, and
 they differ measurably — from `copy`, which is almost impersonal at 0.5 first-person
 markers per thousand words, to `changed` at 34. Pick the surface deliberately before
 writing a line.
@@ -196,6 +196,58 @@ ten years if nobody were watching."
 **Name the cost.** The manuals are credible where they say what a position costs —
 "Effort inside a badly chosen game is the most expensive thing there is, because it looks
 exactly like progress." A manual entry with no cost in it is a slogan.
+
+---
+
+## 7. The Atlas — Wing III
+
+Evidence: `content/atlas/people.json`, `content/atlas/principles.json`.
+
+| field | n | median sentence | ≤ 10 words | first person / 1k |
+|---|---|---|---|---|
+| `take` | 34 | **9 words** | 74% | 0.0 |
+| `kept` | 104 | 10 words | 61% | 13.7 |
+| `gloss` | 12 | 8.5 words | 92% | 0.0 |
+| `role` | 34 | 4 words | 97% | 0.0 |
+
+**`take` is a `claim` wearing a different hat.** Nine words at the median against the
+`claim`'s eight, and 74% at ten words or fewer in both — the two fields landed on the
+same shape independently, which is the strongest evidence in the corpus that the shape is
+the house's and not the wing's. Write a `take` the way `press-new-title` says to write a
+`claim`: two short sentences, the second one turning.
+
+> "Attention is the discipline of the tracker. The information is there — you have to
+> teach yourself to see it."
+
+Setup, then the turn after the dash. The Atlas runs **24.8 em dashes per 1,000 words,
+the highest rate on the site**, and this is why: at nine words a sentence there is no
+room for a subordinate clause, so the qualification hangs off a dash instead.
+
+**`take` is your reading of them, not their summary of themselves.** The field is what
+they teach as the house understands it. A `take` that could be lifted from a jacket blurb
+has failed the same test a `keep` fails.
+
+**`kept` is the field with the sharpest promise attached to it.** It runs at 13.7
+first-person markers per 1,000 words, second only to `changed` and the manuals, because
+the lines are kept in the speaker's own voice. The schema states the rule and it is the
+colophon's: *quotation marks only for words you have seen verbatim in the source.* No
+line in the Atlas currently uses them, and none should acquire them without the recording
+or the page open in front of you.
+
+**What the Atlas has and the Slipway has, differently.** The Slipway marks a compressed
+line `after Jason Nazar`. The Atlas prints its kept lines under a name with an em-dash
+bullet and no marker at all. Both are honest — neither claims a quotation — but a reader
+moving between the two wings meets the same thing labelled two ways. If a `kept` line is
+compressed rather than heard, write it `after <name>` and match the Slipway.
+
+**`gloss` is one clause, lower case, no full stop.** "the resistance is the signal, not
+the obstacle." It explains the principle's name; it does not restate it. Twelve of these
+exist and they are the most compressed writing on the site after `claim`.
+
+**`role` is the semicolon field.** "Lion tracker; author, The Lion Tracker's Guide to
+Life." Four words at the median, and the semicolon separates who they are from what they
+made. It carries 132 semicolons per 1,000 words for that reason alone — do not read that
+number as a style to imitate anywhere else.
 
 ---
 

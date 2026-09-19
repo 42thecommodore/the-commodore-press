@@ -44,27 +44,32 @@ Per 1,000 words.
 
 | surface | em dash | colon | parenthesis | semicolon |
 |---|---|---|---|---|
-| titles `copy` | **13.9** | 7.4 | **1.5** | 2.6 |
-| lives `copy` | 9.9 | 6.7 | 1.8 | 2.1 |
-| `contested` | 19.5 | 4.4 | 4.4 | 9.7 |
+| titles `copy` | 13.8 | 7.4 | **1.5** | 2.5 |
+| lives `copy` | 7.7 | 6.3 | 1.9 | 2.5 |
+| titles `contested` | 18.2 | 4.1 | 5.8 | 9.9 |
+| lives `contested` | 8.9 | 4.7 | 3.8 | 8.1 |
 | `changed` | 11.6 | 9.8 | 0.9 | 3.6 |
 | `keep` | 19.9 | 5.7 | 0.0 | 11.4 |
-| manuals | 14.4 | **11.4** | 0.5 | 3.0 |
+| manuals `p` | 14.4 | **11.4** | 0.5 | 3.0 |
+| atlas `take` | **24.8** | 1.7 | 0.0 | 3.3 |
+| atlas `kept` | 20.6 | 6.9 | 0.0 | 10.3 |
 
 Two things fall out of this, and both are actionable.
 
 **The house leans on the em dash harder than any register in the author corpus — around
-fourteen per thousand words in the titles and ten in the lives, against 1.21 in his papers
-and 4.20 in his emails.** That is not automatically wrong; a dash carrying an apposition or a turn is
+fourteen per thousand words in the titles and eight in the lives, against 1.21 in his papers
+and 4.20 in his emails. The Atlas runs 24.8, the highest on the site**, and that one is
+structural rather than careless: `take` averages nine-word sentences, so a qualification
+has nowhere to go but a dash. That is not automatically wrong; a dash carrying an apposition or a turn is
 doing structural work, and the corpus uses it that way more often than not. But it is the
 one punctuation mark with no natural ceiling, and `voice.md` bans it for drama. When a
 paragraph has three, two of them are decoration.
 
-**The parenthetical is still scarce — 1.5 per 1k in the titles' entry prose and 1.8 in the
-lives, against 12.26 in his papers.** The qualification that would have gone in brackets is currently going into an
+**The parenthetical is still scarce — 1.5 per 1k in the titles' entry prose and 1.9 in the
+lives, and zero across the whole Atlas, against 12.26 in his papers.** The qualification that would have gone in brackets is currently going into an
 em-dash aside instead. This is the cheapest available improvement to the house prose:
 where the instinct is to hedge the main clause or throw a third dash at it, use a
-parenthesis. `contested` already does this at 4.4–4.9 per 1k, which is why it is the most
+parenthesis. `contested` already does this at 3.8–5.8 per 1k, which is why it is the most
 carefully argued field on the site.
 
 **The colon is the pivot and it belongs in the manuals**, where it runs at 11.4 per 1k.
@@ -78,25 +83,41 @@ Measured off `content/`. Aim here; do not count obsessively.
 
 | surface | median | mean | ≤ 10 words | first person / 1k |
 |---|---|---|---|---|
-| titles `copy` | 18 | 20.7 | 26% | 0.5 |
-| lives `copy` | 19.5 | 20.1 | 21% | 0.7 |
-| `contested` | 19–20 | ~20 | 16–29% | 0.0 |
+| titles `copy` | 18 | 20.5 | 26% | 0.5 |
+| lives `copy` | 17 | 19.1 | 22% | 1.1 |
+| `contested` | 19 | 20.5–21.0 | 19–27% | 0.0 |
 | `changed` | 16 | 19.6 | 21% | **34.0** |
-| `lede` | 15 | 16.9 | 32% | 6.9 |
+| `lede` | 13 | 16.5 | 31% | 6.9 |
 | `claim` | **8** | 8.8 | 74% | 0.0 |
-| `keep` | 9 | 11.0 | ~50% | 0.0 |
+| `keep` | 9–12 | 11.0–11.5 | 44–53% | 0.0 |
 | manuals `p` | 16 | 16.7 | 31% | 12.4 |
 | manual headings | 7 | 7.4 | 79% | 0.0 |
+| atlas `take` | **9** | 8.8 | 74% | 0.0 |
+| atlas `kept` | 10 | 10.3 | 61% | 13.7 |
+| atlas `gloss` | 8.5 | 8.0 | 92% | 0.0 |
+
+Re-measured 2026-09-19, when the lives had grown from 26 entries to 32 and the Atlas was
+brought into `npm run voice` for the first time. **The lives came in at a 17-word median,
+below the titles' 18** — the splitting pass logged in `passes.md` has held, and the wing
+that used to be the clottiest prose in the house is now the shortest-sentenced of the two
+entry wings.
 
 **One sentence in four in a title's `copy` is ten words or shorter.** The long sentences
 work because short declaratives carry the load between them. A paragraph with no short
 sentence in it is not house prose, however correct it is.
 
-**The first-person dial has three settings and they are seventy-fold apart.** `copy` is
-effectively impersonal. Manuals sit in the middle at 12.4 — positions held by someone.
+**The first-person dial has three settings and they are thirty-fold apart.** `copy` is
+effectively impersonal at 0.5 to 1.1. Manuals sit in the middle at 12.4 and the Atlas's
+`kept` at 13.7 — positions held by someone, and lines kept in someone's own voice.
 `changed` is at 34, near the density of his own correspondence. Writing `changed` at
 `copy` density produces a paragraph that is technically fine and does not do the field's
 job.
+
+**The lives have no dial at all.** Wing II carries no `changed` field, so the people wing
+— the one a reader is most likely to arrive at — runs at 1.1 first-person markers per
+thousand words with no surface anywhere on it where the house says what it got wrong about
+a person. That is a structural gap, not a style one, and it is logged in
+`dashboard/commissions.md`.
 
 ---
 

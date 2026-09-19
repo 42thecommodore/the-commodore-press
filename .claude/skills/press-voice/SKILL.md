@@ -13,9 +13,10 @@ This skill is the long form of those four lines: what to keep, what to cut, how 
 sentences actually run in each field, and the gate a draft passes before it ships.
 
 **Read `references/voice.md` before writing or editing a line.** The keep list, the cut
-list with counts, the signature move, and the proofread gate.
+list with counts, the signature move, **the additive pass**, the calibration test, and the
+proofread gate.
 
-**Read `references/registers.md`** to work out which field you are in. The Press has six
+**Read `references/registers.md`** to work out which field you are in. The Press has seven
 writing surfaces and they are genuinely different — `copy` is nearly impersonal, `changed`
 is the most personal prose on the site, and `keep` is a different craft again.
 
@@ -28,13 +29,31 @@ a whole wing at once. It draws the line between rhythm work, which is free, and 
 that changes what a sentence asserts, which is a correction and goes through
 `npm run correct` first.
 
+## Two passes, in this order
+
+**The subtractive pass** is the keep and cut lists in `voice.md`. It stops a draft being
+anyone's. The house corpus is already almost clean of what it catches, so it is fast.
+
+**The additive pass** is the one that matters, and it was missing from the first version
+of this skill. A draft can pass every rule in the subtractive pass and still read as
+generically competent, which is the one failure the colophon has no way to absorb. The
+ten house moves are in `voice.md` under **The additive pass**; an entry carries at least
+four of them, including one of the first three.
+
+Between the two, run **the calibration test** — one question, faster than any checklist,
+in `voice.md`. `npm run voice` prints it as a rate per surface.
+
 ## Provenance
 
-This skill is adapted from a voice study of ~10,000 words of Luca's dictated freewrites
-against his edited work — five sent emails, four philosophy papers, a syllabus, a public
-post and two applied-analysis papers. Two things carried over from it unchanged, because
-they are measurements rather than opinions: the tic frequencies in `voice.md` and the
-distance between his dictation and his edited prose in `generation.md`.
+This skill is adapted from a voice study of Luca's dictated freewrites against his edited
+work. The study grew from ~10,000 words to roughly 30,000 in September 2026, adding ten
+academic papers, nine email threads, two course proposals, coaching journals from age
+seventeen, and — the important ones — two application essays he wrote himself, which are
+in the corpus as the failure state and not as a model.
+
+Three things carried over from it unchanged, because they are measurements rather than
+opinions: the tic frequencies in `voice.md`, the distance between his dictation and his
+edited prose in `generation.md`, and the Register 0 rates behind the calibration test.
 
 Everything else was re-derived from this repository. The per-field targets in
 `generation.md` were measured off `content/` directly, in the spirit of the house rule
@@ -46,7 +65,7 @@ The original study lives outside this project and belongs to a different piece o
 Do not edit it from here, and do not import its Fulbright-specific material — this skill
 carries only what applies to the Press.
 
-## The six surfaces
+## The seven surfaces
 
 Pick one deliberately. `references/registers.md` has the moves and the evidence for each.
 
@@ -68,6 +87,12 @@ everything else: it has to survive being read alone.
 
 **Field manuals** — Wing IV. First person, stated as positions rather than advice, and
 warmer than the entries. Shorter sentences than anything else on the site.
+
+**The Atlas** — Wing III. `take` has the `claim`'s shape almost exactly — nine words at
+the median against eight, 74% at ten words or fewer in both — and the highest em-dash rate
+on the site at 24.8 per 1,000 words, because at nine words the qualification has nowhere
+else to go. `kept` carries the sharpest promise on the site: quotation marks mean you have
+seen the words.
 
 When the surface is ambiguous, ask. Do not guess.
 

@@ -1,15 +1,23 @@
 # Voice fingerprint
 
 Two corpora sit behind this file. The **house corpus** is everything under `content/` —
-21 titles, 26 lives, 4 manuals, roughly 17,000 words of published prose. The **author
-corpus** is the voice study this skill was adapted from: ~9,900 words of dictated
-freewrites against five sent emails, four philosophy papers, a syllabus, a public post,
-and two applied-analysis papers.
+21 titles, 32 lives, 4 manuals, 34 Atlas people, roughly 30,700 words of published prose.
+The **author corpus** is the voice study this skill was adapted from, which grew from
+~9,900 words to roughly 30,000 in September 2026: dictated freewrites, nine sent email
+threads, ten academic papers across two institutions, a syllabus he wrote and taught, two
+course proposals, a public post, coaching journals from age seventeen, and two
+application essays.
 
-Counts below are literal. House counts were measured off `content/`; author counts come
-from the study and are carried over because they are measurements, not opinions.
+**The September expansion changed two things here** and nothing else. It added the
+fifteen distinctiveness moves — the additive pass below, which is the half of the work
+the first version of this file did not have — and it added **Register 0**, which corrects
+the diagnosis of what a flat draft has drifted toward. Both are documented below.
 
-**Read `registers.md` alongside this file** — the house has six writing surfaces and the
+Counts below are literal. House counts were measured off `content/` by
+`npm run voice`; author counts come from the study and are carried over because they are
+measurements, not opinions.
+
+**Read `registers.md` alongside this file** — the house has seven writing surfaces and the
 rules below land differently in each. **Read `generation.md`** when you are producing new
 prose rather than editing existing prose.
 
@@ -213,6 +221,137 @@ got wrong is read differently from one that does not.
 
 **One instance per entry, placed at the close.** Two turns it into a mannerism. Never
 edit one out for sounding unpolished — that is the polish.
+
+---
+
+## The additive pass — what makes a page the house's
+
+The keep and cut lists above are subtractive. They stop a draft being anyone's; they
+cannot make it this house's. A draft can pass every rule on this page and still read as
+competent and belong to nobody, which is the failure the colophon cannot absorb — a
+library whose entries could have come from anywhere is a library with no reason to be
+trusted over anywhere.
+
+The author study behind this skill isolated fifteen recurring moves across six registers
+and two years of his writing. Ten of them survive the translation into a house voice
+written under a house name; the other five are first-person correspondence moves with
+nowhere to land here. **Any entry carries at least four of the ten, including at least
+one of the first three.**
+
+### The three that are rare, and carry the entry
+
+**1. Lead with the disqualification, then convert it.** Open on what the subject lacked,
+failed at, or was refused, and let the achievement land against it. **This is already the
+Lives' dominant opening — ten of the thirty-two ledes do it outright**, and several more
+do it in the first paragraph of `copy`, against four of twenty-one in the titles.
+
+> "He failed at every goal he ever set — the Pole, the crossing — and brought every man
+> home." *(shackleton)*
+> "Denied a formal Latin education, he turned his outsider's status into a method."
+> *(leonardo)*
+> "He held no great office, wrote no system of philosophy, and died believing he had
+> failed." *(confucius)*
+> "He never won an election and never ran a city." *(robert-moses)*
+
+The conversion is the whole move. A disqualification with nothing built on it is a
+downbeat opening; the point is that the lack turns out to be the mechanism. Leonardo's
+exclusion from Latin *is* why he trusted observation. Do not write one without the other.
+
+**2. The list that is the argument.** Already in the keep list above, and it is the move
+most often lost to a summarising phrase. Seven things named beats "an extraordinary run".
+
+**3. The quiet correction.** Already in the keep list. The house rule in `CLAUDE.md` asks
+for it in every piece, and it is what separates an entry from a summary.
+
+### The seven that are reliable
+
+**4. A number where an adjective wants to go.** The lives run **35.3 numbers per 1,000
+words against the titles' 23.4** — the people wing is the most quantified prose on the
+site, which is the opposite of what biography usually does. Protect that.
+
+**5. Close on a bare number.** Five of the fifty-three entries end their last paragraph
+on one, and they are among the strongest closes in the corpus. It is a deliberate refusal
+to editorialise: the figure is the comment.
+
+> "The average American's blood lead fell 78 per cent between 1976–80 and 1988–91."
+> *(clair-patterson)*
+
+Five in fifty-three is room to grow. It is not room to make it a mannerism.
+
+**6. Build the example yourself, and say that you did.** Where the corpus has no worked
+case, construct one and flag it as constructed. Never let a built example pass as a found
+one.
+
+**7. Admit the work is unfinished.** "The counterfactual is genuinely unknown." Unknown is
+a finding and the house already writes it as one — see `contested` in `registers.md`.
+
+**8. Downgrade the house's own position first.** This is `changed`, and it is the move the
+whole site is organised around. See **The signature move** below.
+
+**9. The odd small detail.** Already in the keep list. One clause each, and they are what
+a reader still has a week later.
+
+**10. Personal stake, flat, once, then dropped.** One clause, never a paragraph. In the
+titles it lives in `lede` — the one apparatus field carrying first person at all, at 6.9
+per 1,000 words. The failure is letting it become a paragraph about the author.
+
+### The five that do not translate
+
+Locating himself physically before speaking; handing the reader an exit ("no worries if
+you are swamped"); the three-word closer; his aphorisms verbatim; and being self-aware
+about cliché. These are correspondence moves and they belong in a letter signed with a
+name. **They are still live for anything sent outward from the house** — see *Off-site
+surfaces* in `registers.md`.
+
+---
+
+## The calibration test — committee, or person
+
+Faster than any word list, and the single most useful thing the study produced.
+
+The author's own course proposal holds both of his registers 131 words apart: the course
+description at **53.4 institutional phrases per thousand words**, and the section headed
+"Why I want to do this course" at **zero**. Same writer, same afternoon, same subject. The
+only variable is who he thought was reading.
+
+**Read any paragraph and ask which half it belongs to.**
+
+The committee half reaches for *more than just a game, case study, intersects with,
+broader societal forces, interdisciplinary*. The person half says *"I have seen people
+bring their babies to the court."*
+
+`npm run voice` now prints this as a rate per surface. **Every surface of this house
+currently measures 0.0**, against 23.0 in the scholarship essay he actually submitted to a
+foundation. That is the number to defend, and the one to check first when a wing feels
+flat.
+
+---
+
+## Register 0 — the drift is not toward a machine
+
+**This is the most important correction the study makes to how drift gets diagnosed
+here.** When a draft goes generic, the instinct is to say it sounds AI-written and reach
+for the cut list. That diagnosis is wrong, and it sends the fix in the wrong direction.
+
+Both of the author's application essays — written by hand, years before any of this — are
+full of exactly what the **Banned** list above exists to keep out: *all walks of life, the
+vibrant tapestry, the relentless pursuit of knowledge, fostering open-mindedness, a
+pivotal role, valuable insights, countless opportunities.* Twenty-three generic phrases
+per thousand words in one of them, against 0.8 to 2.9 in everything he edits.
+
+Note *all walks of life*. The keep list above says never compress a list of occupations
+into that phrase. **He wrote the phrase himself, in the essay where he was trying
+hardest.**
+
+So: a flat entry has not drifted toward a machine style. It has drifted toward the
+application reflex, which is the same thing wearing his name, and it appears exactly where
+the writing is trying hardest to be taken seriously. On this site that means the entries
+about the biggest subjects and the ones aimed at a reader imagined as a sceptic.
+
+**The fix is not a thesaurus. It is a reader.** Write the paragraph to one person who
+already knows the subject and will notice if you round a number. That is what the whole
+apparatus — `facts`, `contested`, the corrections page — is built to make impossible to
+fake.
 
 ---
 
