@@ -1,0 +1,39 @@
+{
+  "id": "emmy-noether",
+  "keep": "She was famous for the part nobody quotes and uncredited for the part everybody does.",
+  "n": "Emmy Noether",
+  "years": "1882–1935",
+  "place": "Germany / United States",
+  "field": "Mathematics",
+  "group": "obscure",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "Physics runs on a theorem with her name on it. For thirty years almost nobody used the name.",
+  "copy": [
+    "Erlangen let women sit in on lectures but not enrol, so Emmy Noether audited from 1900 and matriculated in 1904, when the rule changed. She took her doctorate in 1907 under Paul Gordan, on algebraic invariants. In 1915 David Hilbert and Felix Klein brought her to Göttingen for a specific reason: Hilbert was working on Einstein's new theory of gravity and needed an expert on invariants. The faculty would not let her qualify to lecture. For four years she taught courses announced under Hilbert's name. It was not the first time. At Erlangen she had stood in for her ageing father, also not under her own name.",
+    "The problem she was handed was that energy did not seem to be conserved in general relativity. Her answer, which Klein presented to the Göttingen Scientific Society on 26 July 1918, went much further. Wherever the laws of a system stay the same under a smooth change, some quantity is conserved. Sameness over time gives conservation of energy; sameness across space gives momentum; sameness under rotation gives angular momentum. Conservation stopped being a fact found in the laboratory and became a consequence of symmetry. Then she moved on. Her 1921 paper on the theory of ideals, and the lectures she and Emil Artin gave, became the backbone of van der Waerden's 'Moderne Algebra' (1930–31).",
+    "The popular version says she went unrecognised. It has the record backwards. She was granted the right to lecture in 1919, and her first salary, a small one, came in 1923, when she was forty-one. By then she was famous for the algebra: she addressed the International Congress of Mathematicians at Bologna in 1928 and at Zürich in 1932, and shared the Ackermann-Teubner prize with Artin that year. The theorem now carrying her name was the part almost nobody credited to her. What she never got was a chair. In April 1933 the new civil-service law removed Jewish teachers from German universities, and she was forbidden to teach. She went to Bryn Mawr that autumn and died there on 14 April 1935, four days after an operation to remove a tumour. She was fifty-three."
+  ],
+  "bio": {
+    "t": "Emmy Noether – Mathematician Extraordinaire",
+    "a": "David E. Rowe",
+    "y": "2021",
+    "why": "Written by a historian of mathematics working from the Göttingen record, and it treats the relativity work and the algebra as two careers rather than one struggle. Auguste Dick's short 1970 biography is the older standard and carries interviews with people who knew her; this is the one that weighs the mathematics."
+  },
+  "contested": "The line everyone quotes has no 1915 source. Hilbert's retort to the faculty (that a university is not a bathing establishment) comes from Constance Reid's biography of Hilbert, published in 1970; it does not appear in Hermann Weyl's memorial address of April 1935. The best-documented tribute has its own argument attached. Einstein's letter to the New York Times, published on 4 May 1935, called her \"the most significant creative mathematical genius thus far produced since the higher education of women began.\" Thony Christie, who writes on the history of science, argues that quoting it at all is demeaning: the qualifier turns a great mathematician into a great woman mathematician. His readers answered that Einstein was naming the barrier, not lowering the bar. Underneath is the question of which Noether gets told. Yvette Kosmann-Schwarzbach finds her role in the 1918 theorem rarely acknowledged before 1950, while mathematicians treated that work as a sideline to the algebra. A life told around the discrimination can leave the mathematics out; one told around the theorem gets her reputation in her own lifetime backwards.",
+  "across": [
+    {
+      "to": "lives:einstein",
+      "label": "Albert Einstein",
+      "txt": "— his theory had an energy problem; she was brought to Göttingen to solve it, and he wrote her obituary letter."
+    },
+    {
+      "to": "press:compounding-machines",
+      "label": "Compounding Machines",
+      "txt": "— Göttingen was one of those places. In April 1933 a single law took the people out of it."
+    }
+  ]
+}

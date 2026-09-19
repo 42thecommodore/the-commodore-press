@@ -39,6 +39,11 @@
       "to": "press:baptism-and-chain",
       "label": "The Baptism and the Chain",
       "txt": "— he did not invent the bomb; Kripke used the people who think he did to show how names actually work."
+    },
+    {
+      "to": "lives:emmy-noether",
+      "label": "Emmy Noether",
+      "txt": "— general relativity seemed to break energy conservation. Her 1918 theorem showed why it did not, and why conservation laws exist at all."
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "id": "tu-youyou",
+  "keep": "The recipe said do not boil it. Everything after that line was chemistry.",
+  "n": "Tu Youyou",
+  "years": "b. 1930",
+  "place": "China",
+  "field": "Pharmacology",
+  "group": "obscure",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "Project 523 was a secret military programme with more than five hundred scientists in it. In 2015 the Nobel committee gave its prize to one of them.",
+  "copy": [
+    "The project took its name from the date of its founding meeting in Beijing: 23 May 1967. It was secret, and its short-term goal was antimalarial drugs that could be used on the battlefield. Vietnamese soldiers fighting the United States were being disabled by malaria that chloroquine no longer cured. More than five hundred scientists in about sixty laboratories were drawn in. Tu Youyou joined in January 1969, to lead a group screening traditional Chinese remedies. She had trained in pharmacy at Beijing Medical College, graduating in 1955. She had no doctorate. Her group collected more than two thousand recipes and tested 380 extracts on infected mice.",
+    "The lead that held came from Ge Hong's handbook of emergency prescriptions, written around 340. In Louis Miller and Xinzhuan Su's translation it says to \"take one bunch of Qinghao, soak in two sheng (~0.4 liters) of water, wring it out to obtain the juice and ingest it in its entirety.\" Soaked, not boiled. Tu reasoned that heat was destroying whatever worked, and switched to ether at low temperature. In October 1971 the ether extract, sample 191, cleared the parasite in mice. In July 1972 she and two colleagues took the first doses themselves, in hospital, before anyone gave it to a patient. Pure crystals followed that year, from her group and from others using her method.",
+    "The popular version credits traditional medicine with the drug. Ge Hong supplied one procedural clue: do not heat it. The switch to ether, the isolation, the structure and the 1973 derivative dihydroartemisinin were twentieth-century pharmaceutical chemistry. Tu titled her Nobel lecture \"Artemisinin — A Gift from Traditional Chinese Medicine to the World\" all the same. She shared the 2015 prize with William Campbell and Satoshi Ōmura, and Chinese coverage fixed on her \"three nos\": no doctorate, no study abroad, no seat in a national academy. Nor is the drug a finished story. In January 2025 the World Health Organization confirmed partial resistance to artemisinin in the Greater Mekong and in Eritrea, Rwanda, Uganda and Tanzania."
+  ],
+  "bio": {
+    "t": "Tu Youyou and the Discovery of Artemisinin: 2015 Nobel Laureate in Physiology or Medicine",
+    "a": "Yi Rao, Daqing Zhang and Runhong Li",
+    "y": "2016",
+    "why": "The only book-length account in English, by the Peking University scholars who went through the project's records and interviewed its members. It is short, nationalistic in places and has almost no references (Anthony Dayan's review says so plainly), so read it with Miller and Su's four-page 'Artemisinin: Discovery from the Chinese Herbal Garden' in Cell (2011). It prints her Nobel lecture in full."
+  },
+  "contested": "Who found it is the argument, and it was argued in public in China. The Lasker award in 2011 and the Nobel in 2015 both went to one person from a programme of more than five hundred. Zhang Jianfang, a former deputy director of the project, called the result a collective achievement that no individual could have produced under its conditions. Zhang Daqing and Li Runhong, historians at Peking University, pressed a subtler point: Tu was a director assigned a task by the state, not a principal investigator running her own programme, so the Western way of allocating credit does not fit how the work was organised. The case for Tu rests largely on Louis Miller and Xinzhuan Su, who began investigating in 2007 and wrote in Cell that their findings \"left no doubt that the major credit must go to Youyou Tu.\" Their method was mostly interviews. It is fair to say that is thin for the weight two prize committees put on it. It is also fair to say the critics have not named a better candidate; on Miller and Su's account the crystals made by Luo Zeyuan in Yunnan and the clinical work of Li Guoqiao both built on her method.",
+  "across": [
+    {
+      "to": "lives:norman-borlaug",
+      "label": "Norman Borlaug",
+      "txt": "— the other life on this shelf credited with lives by the million. Hers is the one the house would not put a number on: no clean figure exists for artemisinin alone."
+    },
+    {
+      "to": "lives:maurice-hilleman",
+      "label": "Maurice Hilleman",
+      "txt": "— the vaccine-maker almost nobody can name, beside the drug-maker almost nobody can name."
+    }
+  ]
+}

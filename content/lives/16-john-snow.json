@@ -29,6 +29,11 @@
       "to": "press:being-wrong",
       "label": "Being Wrong Productively",
       "txt": "— the founding case of the method, and a founding case of a story told better than its evidence."
+    },
+    {
+      "to": "lives:clair-patterson",
+      "label": "Clair Patterson",
+      "txt": "— the same move a century later: a clean measurement, and a public-health case against the experts of the day."
     }
   ]
 }
