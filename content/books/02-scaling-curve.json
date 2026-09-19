@@ -73,9 +73,9 @@
   "changed": "I used to read the curves as a law of nature. They're an empirical regularity of one architecture on one data distribution, measured over a specific range. That's still remarkable, and still enough to plan a datacenter around — it just isn't the same kind of statement as thermodynamics, and the difference matters when someone extrapolates.",
   "across": [
     {
-      "to": "manuals:ii",
-      "label": "Field Manual II · Power laws & bottlenecks",
-      "txt": "— the same distribution, met in the wild."
+      "to": "press:silicon-and-light",
+      "label": "Silicon & Light",
+      "txt": "— the other curve mistaken for a law, and the industry that organised its capital around meeting it."
     }
   ],
   "reading": [

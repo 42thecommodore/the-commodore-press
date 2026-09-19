@@ -10,15 +10,14 @@ const load = d => fs.existsSync(p(d)) ? fs.readdirSync(p(d)).filter(f => f.endsW
 const one = f => fs.existsSync(p(f)) ? JSON.parse(fs.readFileSync(p(f), "utf8")) : null;
 
 const books = load("content/books"), adjacent = load("content/adjacent");
-const lives = load("content/lives"), manuals = load("content/manuals");
+const lives = load("content/lives");
 const people = one("content/atlas/people.json") || [], principles = one("content/atlas/principles.json") || [];
 const sources = one("content/atlas/sources.json") || [], corrections = one("content/corrections.json") || [];
-const slipway = one("content/slipway/slipway.json") || {};
 const plates = fs.existsSync(p("assets/plates")) ? fs.readdirSync(p("assets/plates")).filter(f => !f.startsWith(".")) : [];
 
 const b = "\x1b[1m", d = "\x1b[2m", y = "\x1b[33m", g = "\x1b[32m", x = "\x1b[0m";
 const words = s => JSON.stringify(s).split(/\s+/).length;
-const totalWords = [...books, ...adjacent, ...lives, ...manuals].reduce((n, e) => n + words(e.data), 0);
+const totalWords = [...books, ...adjacent, ...lives].reduce((n, e) => n + words(e.data), 0);
 
 console.log(`\n${b}THE COMMODORE PRESS${x} ${d}— house inventory${x}\n`);
 const row = (label, n, extra = "") => console.log(`  ${String(n).padStart(4)}  ${label.padEnd(22)} ${d}${extra}${x}`);
@@ -27,8 +26,6 @@ row("adjacent", adjacent.length);
 const plateless = lives.filter(({ data }) => data.plateless).length;
 row("lives, Wing II", lives.length, `${plates.length} with plates${plateless ? `, ${plateless} press-marked by decision` : ""}`);
 row("people, Wing III", people.length, `across ${principles.length} principles`);
-row("field manuals, IV", manuals.length, `${manuals.reduce((n, m) => n + (m.data.entries || []).length, 0)} entries`);
-row("trade lessons, V", (slipway.book || []).length);
 row("named sources", sources.length);
 row("corrections", corrections.length, "append-only");
 console.log(`\n  ${d}roughly ${totalWords.toLocaleString()} words of prose across the wings${x}`);

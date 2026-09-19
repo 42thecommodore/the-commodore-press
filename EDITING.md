@@ -35,10 +35,8 @@ The explanations come from `schemas/`. `npm run check` reads the same files, so 
 | a title | `content/books/NN-name.json` |
 | the adjacent shelf | `content/adjacent/` |
 | a life | `content/lives/NN-name.json` |
-| a field manual | `content/manuals/NN-name.json` |
 | a person in the Atlas | `content/atlas/people.json` |
 | a principle or domain | `content/atlas/principles.json`, `domains.json` |
-| the trade book | `content/slipway/slipway.json` |
 | a portrait | `npm run plate` — see below |
 | a published mistake | `npm run correct` — never by hand |
 
@@ -54,9 +52,8 @@ The files use one-letter names to stay compact. Hover any of them in the editor;
 | `reading` | `t` · `a` · `u` · `why` | **title** · **author** · **url** · why this one |
 | `bio` (lives) | `t` · `a` · `y` · `why` | **title** · **author** · **year** · why this one |
 | `across` | `to` · `label` · `txt` | where it points · its name · the dash-led note |
-| manuals `entries` | `k` · `h` · `p` · `src` | **key** label · **heading** · **paragraphs** · "after" credit |
 | a life | `n` | the person's **name** |
-| slipway `book` | `k` · `t` · `a` | topic · the lesson · "after" credit |
+| atlas `people` | `take` · `kept` · `p` | your reading of them · lines kept from them · principle ids |
 
 If you type the long word by mistake — `"source"` instead of `"s"` — the check catches it and tells you the right one.
 
@@ -97,7 +94,7 @@ In `across`, point at the other entry by its `id` (the first line of its file):
 { "to": "press:being-wrong", "label": "Being Wrong Productively", "txt": "— why naive falsification fails." }
 ```
 
-`press:` for titles, `lives:` for lives, `manuals:i` to `manuals:iv`, `atlas:` plus a principle id. Then add the link back on the other entry. The check fails if a link points at something that does not exist.
+`press:` for titles, `lives:` for lives, `atlas:` plus a principle id. Then add the link back on the other entry — except for `atlas:` links, which the principles do not carry back. The check fails if a link points at something that does not exist.
 
 ### 5. Change shelf order
 
@@ -107,23 +104,15 @@ The number at the front of the filename is the order. Rename `05-the-box.json` t
 
 In `content/atlas/people.json`, copy an existing `{ … }` block, paste it after the last one with a comma between, and rewrite it. `domain` must be one of the domain ids; `p` lists principle ids. Hover either for the list.
 
-### 7. Add a lesson to the trade book
+`take` is your reading of what they teach, in a sentence or two. `kept` is the lines you kept from them. **Quotation marks mean you have seen the words**; where a line is your compressed note of their idea rather than what they said, write it `after <name>` — the colophon tells readers so, and it is the promise that is easiest to break by accident.
 
-In `content/slipway/slipway.json`, add to `book`:
-
-```json
-{ "k": "Money", "t": "The lesson, in a sentence or two.", "a": "after Jason Nazar" }
-```
-
-"After" means your compressed note of their idea, not their exact words — the colophon tells readers so.
-
-### 8. Add a new title, life or manual
+### 7. Add a new title or life
 
 ```bash
 npm run new book "The Title"
 ```
 
-Or `life "Their Name"`, `adjacent "…"`, `manual "…"`. It writes a file with an unused cover and every field marked `TODO`. The check refuses to pass until each one is answered. For a life, make the portrait from a public-domain image:
+Or `life "Their Name"` or `adjacent "…"`. It writes a file with an unused cover and every field marked `TODO`. The check refuses to pass until each one is answered. For a life, make the portrait from a public-domain image:
 
 ```bash
 npm run plate -- ~/Downloads/portrait.jpg their-name

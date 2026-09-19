@@ -91,8 +91,8 @@
         "type": "object", "additionalProperties": false, "required": ["to", "label"],
         "properties": {
           "to": {
-            "type": "string", "pattern": "^(press|lives|manuals|atlas)(:[a-z0-9-]+)?$", "x-means": ["link", "target", "href"],
-            "description": "Where it points: press:<id>, lives:<id>, manuals:<i|ii|iii|iv>, atlas:<principle-id> — or a wing on its own, e.g. atlas. The check fails if it points nowhere."
+            "type": "string", "pattern": "^(press|lives|atlas)(:[a-z0-9-]+)?$", "x-means": ["link", "target", "href"],
+            "description": "Where it points: press:<id>, lives:<id>, atlas:<principle-id> — or a wing on its own, e.g. atlas. The check fails if it points nowhere."
           },
           "label": { "type": "string", "description": "The name of the thing linked to, as shown." },
           "txt": { "type": "string", "x-means": "text", "description": "A fragment continuing the label, opening with an em dash: \"— the other entry on where convention ends\"." }

@@ -1,6 +1,6 @@
 ---
 name: press-voice
-description: Write and edit prose in the Commodore Press house voice — entry copy, ledes, claims, contested sections, changed notes, keep lines, manual entries, corrections and dashboard notes. Use whenever drafting, tightening, or reviewing any prose that will appear on the site or in the queue. Defaults to editing what is already written rather than replacing it.
+description: Write and edit prose in the Commodore Press house voice — entry copy, ledes, claims, contested sections, changed notes, keep lines, Atlas takes, corrections and dashboard notes. Use whenever drafting, tightening, or reviewing any prose that will appear on the site or in the queue. Defaults to editing what is already written rather than replacing it.
 allowed-tools: Bash(npm run check) Bash(npm run stats) Bash(npm run voice) Bash(grep:*) Read Edit Write Glob Grep
 ---
 
@@ -16,7 +16,7 @@ sentences actually run in each field, and the gate a draft passes before it ship
 list with counts, the signature move, **the additive pass**, the calibration test, and the
 proofread gate.
 
-**Read `references/registers.md`** to work out which field you are in. The Press has seven
+**Read `references/registers.md`** to work out which field you are in. The Press has six
 writing surfaces and they are genuinely different — `copy` is nearly impersonal, `changed`
 is the most personal prose on the site, and `keep` is a different craft again.
 
@@ -65,7 +65,7 @@ The original study lives outside this project and belongs to a different piece o
 Do not edit it from here, and do not import its Fulbright-specific material — this skill
 carries only what applies to the Press.
 
-## The seven surfaces
+## The six surfaces
 
 Pick one deliberately. `references/registers.md` has the moves and the evidence for each.
 
@@ -84,9 +84,6 @@ the house argues against itself, and the reason the rest is trustworthy.
 
 **Keep** — one line, drawn from this entry's own argument. A different craft from
 everything else: it has to survive being read alone.
-
-**Field manuals** — Wing IV. First person, stated as positions rather than advice, and
-warmer than the entries. Shorter sentences than anything else on the site.
 
 **The Atlas** — Wing III. `take` has the `claim`'s shape almost exactly — nine words at
 the median against eight, 74% at ten words or fewer in both — and the highest em-dash rate

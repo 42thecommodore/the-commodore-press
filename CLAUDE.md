@@ -2,7 +2,9 @@
 
 ## What this is
 
-A working library published as a single self-contained web page, in five wings: the Press (titles), Lives, the Atlas, the Field Manuals, and the Slipway. It is a publishing house, not a blog — the thing being sold is that **every claim carries its source and the place it is still argued.**
+A working library published as a single self-contained web page, in three wings: the Press (titles), Lives, and the Atlas. It is a publishing house, not a blog — the thing being sold is that **every claim carries its source and the place it is still argued.**
+
+All three wings are about people. The Press is the ideas people spent their lives inside, Lives is the people themselves, the Atlas is the people the house listens to now. A fourth and fifth wing — the Field Manuals and the Slipway — were removed in September 2026 because they stated positions with nobody standing behind them, which is the one thing this house has no way to source.
 
 Read that sentence again before changing anything. It is the product.
 
@@ -27,8 +29,6 @@ The Commodore/
 │   ├── adjacent/NN-slug.json   Wing I · adjacent shelf
 │   ├── lives/NN-slug.json      Wing II · lives     (id must match its plate)
 │   ├── atlas/                  Wing III · domains, domain-colors, principles, people, sources
-│   ├── manuals/NN-slug.json    Wing IV · field manuals
-│   ├── slipway/slipway.json    Wing V · the trade book
 │   ├── corrections.json        append-only, printed in the colophon
 │   └── http-allowlist.json     links that are genuinely http-only, with reasons
 ├── assets/plates/<life-id>.jpg # duotone portraits, ~12 KB, 260×325
@@ -73,7 +73,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run build` | content + theme → `dist/index.html` |
 | `npm run stats` | inventory and editorial backlog |
 | `npm run voice` | the house's own sentence and punctuation numbers, measured off `content/` |
-| `npm run new book\|life\|adjacent\|manual "Title"` | scaffold a house-shaped stub |
+| `npm run new book\|life\|adjacent "Title"` | scaffold a house-shaped stub |
 | `npm run plate -- <image> <life-id>` | make a duotone plate |
 | `npm run correct -- "Title." "Body."` | append a correction |
 | `npm run ship -- "what changed"` | check, build, commit and push — the whole update, one command |
@@ -94,7 +94,7 @@ command and runs the same gate locally first; `/press-publish` stays human-invok
 - **Never invent a quotation.** If it is in quotation marks, it is verbatim and you have seen the source. Otherwise write it as "after <name>".
 - **Plates must be licensed.** Public domain by default; CC-BY requires the colophon credit line updated in the same change. Verify the licence box, don't infer it from the subject's dates.
 - **`keep` is written from the entry's own argument**, not a general maxim. One line. It is the hook a reader leaves with.
-- **`across` links must resolve.** `press:<id>`, `lives:<id>`, `manuals:<i-iv>`, `atlas:<principle-id>`. Add the reciprocal link on the other entry.
+- **`across` links must resolve.** `press:<id>`, `lives:<id>`, `atlas:<principle-id>`. Add the reciprocal link on the other entry; `atlas:` links are one-way, because the principles carry none back.
 - **Ids are permalinks.** Renaming an `id` breaks every `across` link pointing at it and any URL a reader saved. Rename only deliberately, and fix the referrers in the same change.
 - **Filename prefixes fix shelf order.** `01-`, `02-`… Renumber deliberately; the build sorts by filename.
 - **Run `npm run check` before saying anything is done.** It is fast and it is the whole quality gate.
@@ -106,7 +106,7 @@ command and runs the same gate locally first; `/press-publish` stays human-invok
 
 Plain, specific, unhurried. Concrete nouns and real numbers. State the complication instead of hedging around it. No throat-clearing, no rhetorical questions, no "in an era of". The Press's best entries quietly fix a factoid the popular version gets wrong — look for that opportunity in every piece.
 
-**`/press-voice` is the long form of those four lines**, and it is where any prose work should start. It carries the keep and cut lists, the seven writing surfaces (`copy` is nearly impersonal; `changed` is the most personal prose on the site; `keep` is a different craft again; the Atlas's `take` has the `claim`'s shape), the paragraph architectures the good entries actually use, and the proofread gate that runs before `npm run check`.
+**`/press-voice` is the long form of those four lines**, and it is where any prose work should start. It carries the keep and cut lists, the six writing surfaces (`copy` is nearly impersonal; `changed` is the most personal prose on the site; `keep` is a different craft again; the Atlas's `take` has the `claim`'s shape), the paragraph architectures the good entries actually use, and the proofread gate that runs before `npm run check`.
 
 It runs two passes and **the second one is the one that matters.** The cut list stops a draft being anyone's; the additive pass is what makes it this house's. An entry carries at least four of the ten house moves. And when a draft goes flat, do not reach for the cut list first — flat prose has drifted toward the author's own application reflex, not toward a machine, and `npm run voice` measures that drift directly.
 

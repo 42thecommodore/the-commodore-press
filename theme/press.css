@@ -110,7 +110,7 @@
   .today .meter{height:5px;background:var(--rule);position:relative;overflow:hidden}
   .today .meter i{position:absolute;left:0;top:0;bottom:0;background:var(--oxblood);width:0;transition:width 1.4s var(--ease)}
 
-  .wings5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;padding:34px 0 0}
+  .wings3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:34px 0 0}
   .wcard{border-top:2px solid var(--oxblood);padding:16px 0 0;text-align:left;display:flex;flex-direction:column;gap:11px;
     transition:transform .45s var(--ease)}
   .wcard:hover{transform:translateY(-4px)}
@@ -345,48 +345,6 @@
   .clink span{color:var(--parchment-dim);font-size:12.5px;font-style:italic}
   .caveat{border-left:2px solid var(--nbrass);padding:5px 0 5px 15px;font-size:13.5px;line-height:1.55;font-style:italic;color:var(--parchment-dim)}
 
-  /* ---------- manuals ---------- */
-  .vols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:40px 0 0}
-  .vol{border-top:2px solid var(--accent,var(--oxblood));padding:16px 0 0;text-align:left;display:flex;flex-direction:column;gap:10px;transition:transform .45s var(--ease)}
-  .vol:hover{transform:translateY(-4px)}
-  .vol .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
-  .vol h3{font-size:26px;margin:0;font-weight:500;line-height:1.05}
-  .vol p{margin:0;font-size:15.5px;line-height:1.45;color:var(--ink-soft)}
-  .vol .cnt{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:auto;padding-top:10px}
-  .manual{padding:44px 0 0}
-  .manual h3{font-size:clamp(28px,4vw,40px);margin:0 0 8px;font-weight:500;letter-spacing:-.018em}
-  .manual .dek{font-size:19px;font-style:italic;color:var(--ink-soft);margin:0 0 30px;max-width:62ch}
-  .entry{border-top:1px solid var(--rule);padding:26px 0;display:grid;grid-template-columns:170px 1fr;gap:36px;align-items:start}
-  .entry .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oxblood);padding-top:5px}
-  .entry .v h4{font-size:23px;margin:0 0 8px;font-weight:500;line-height:1.2}
-  .entry .v p{margin:0 0 12px;font-size:18px;line-height:1.62;color:var(--ink-mid);max-width:64ch}
-  .entry .v p:last-child{margin-bottom:0}
-  .entry .v .src{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);letter-spacing:.03em}
-  .heur{list-style:none;padding:0;margin:0;counter-reset:h}
-  .heur li{counter-increment:h;position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--rule);font-size:17.5px;line-height:1.5}
-  .heur li::before{content:counter(h,decimal-leading-zero);position:absolute;left:0;top:16px;font-family:var(--mono);font-size:12px;color:var(--oxblood);letter-spacing:.06em}
-  .heur li b{display:block;font-weight:500;margin-bottom:2px}
-  .heur li span{color:var(--ink-soft);font-size:16.5px}
-
-  /* ---------- slipway ---------- */
-  .tbook{list-style:none;margin:0;padding:26px 0 0}
-  .tbook li{display:grid;grid-template-columns:150px 1fr auto;gap:20px;align-items:baseline;padding:14px 0;border-top:1px solid var(--rule)}
-  .tbook li:last-child{border-bottom:1px solid var(--rule)}
-  .tbook .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--hail)}
-  .tbook .t{font-size:17.5px;line-height:1.52;color:var(--ink-mid);max-width:64ch}
-  .tbook .a{font-family:var(--mono);font-size:10px;color:var(--ink-soft);white-space:nowrap;letter-spacing:.04em}
-  .chandlery{background:var(--paper-2);border:1px solid var(--rule);padding:20px 26px;display:flex;flex-direction:column;margin-top:24px}
-  .chandlery .row{display:flex;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--rule)}
-  .chandlery .row:last-child{border-bottom:0}
-  .chandlery .row b{font-weight:500;font-size:16.5px;flex:none}
-  .chandlery .row span{font-size:14.5px;color:var(--ink-soft);line-height:1.5}
-  .yardnote{max-width:70ch;font-size:16px;line-height:1.65;color:var(--ink-soft);font-style:italic;margin:22px 0 0}
-  .convs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;padding-top:26px}
-  .conv{border-top:2px solid var(--hail);padding-top:14px;display:flex;flex-direction:column;gap:8px}
-  .conv b{font-size:20px;font-weight:500;line-height:1.15}
-  .conv span{font-size:15px;line-height:1.5;color:var(--ink-soft)}
-  .conv .who{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-soft);margin-top:auto;padding-top:6px}
-
   /* ---------- plates ---------- */
   .plate{border:1px solid #B9AF9B;background:#F7F3E9;padding:7px;box-shadow:4px 4px 0 rgba(30,28,24,.10)}
   .plate img{display:block;width:100%;height:auto}
@@ -435,8 +393,7 @@
 
   @media (max-width:1000px){
     .front{grid-template-columns:1fr;gap:40px}
-    .wings5{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 18px}
-    .vols{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .wings3{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 18px}
   }
   @media (max-width:860px){
     .wrap{padding:0 20px}
@@ -447,7 +404,6 @@
     .rgrid{grid-template-columns:1fr;gap:40px}
     .rail{position:relative;top:0;max-width:240px}
     .toc{display:none}
-    .entry{grid-template-columns:1fr;gap:10px}
     .sky-stage{height:56vh}
     :root{--thick:24px}
   }
@@ -464,16 +420,13 @@
     .navbtn{padding:6px 10px;font-size:11px;letter-spacing:.02em}
     .navbtn.hide-sm{display:none}
     .front{padding:56px 0 20px}
-    .wings5{grid-template-columns:1fr}
-    .vols{grid-template-columns:1fr}
+    .wings3{grid-template-columns:1fr}
     .facts,.figs{grid-template-columns:1fr}
     .reading .row{flex-direction:column;gap:3px}
     .reading .a{white-space:normal}
     .rbody .copy p:first-child::first-letter{font-size:48px}
     .endnav{flex-direction:column;gap:24px}
     .endnav button,.endnav button:last-child{max-width:100%;text-align:left}
-    .tbook li{grid-template-columns:1fr;gap:5px}
-    .tbook .a{white-space:normal}
     .fp{flex-direction:column}
     .fp .plate{width:132px}
     figure.plate{width:158px;margin:4px 0 16px 22px}

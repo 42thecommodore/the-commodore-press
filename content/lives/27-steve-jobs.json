@@ -29,11 +29,6 @@
       "to": "press:compounding-machines",
       "label": "Compounding Machines",
       "txt": "— Xerox invented the personal computer and shipped almost none of it. This is the man who shipped it."
-    },
-    {
-      "to": "manuals:iv",
-      "label": "Field Manual IV · The Operators",
-      "txt": "— the builder running the operator's software, aimed at building rather than conquering."
     }
   ]
 }

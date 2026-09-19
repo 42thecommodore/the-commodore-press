@@ -1,5 +1,10 @@
 /* One-time migration: split the legacy single-file site into editable sources.
-   Reads the original commodore-press.html; writes content/, theme/, templates/, assets/. */
+   Reads the original commodore-press.html; writes content/, theme/, templates/, assets/.
+
+   Already run, and kept only to document how content/ was derived. It still extracts
+   MANUALS and SLIPWAY because the original page had them — Wings IV and V were removed
+   on 2026-09-19, so running this again would write two directories the build no longer
+   reads. Read it; do not run it. */
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";

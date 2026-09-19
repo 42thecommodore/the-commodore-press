@@ -50,7 +50,6 @@ Per 1,000 words.
 | lives `contested` | 8.9 | 4.7 | 3.8 | 8.1 |
 | `changed` | 11.6 | 9.8 | 0.9 | 3.6 |
 | `keep` | 19.9 | 5.7 | 0.0 | 11.4 |
-| manuals `p` | 14.4 | **11.4** | 0.5 | 3.0 |
 | atlas `take` | **24.8** | 1.7 | 0.0 | 3.3 |
 | atlas `kept` | 20.6 | 6.9 | 0.0 | 10.3 |
 
@@ -72,8 +71,9 @@ where the instinct is to hedge the main clause or throw a third dash at it, use 
 parenthesis. `contested` already does this at 3.8–5.8 per 1k, which is why it is the most
 carefully argued field on the site.
 
-**The colon is the pivot and it belongs in the manuals**, where it runs at 11.4 per 1k.
-Setup left, payoff right.
+**The colon is the pivot, and `changed` is where it lives now**, at 9.8 per 1k. Setup
+left, payoff right. Wing IV ran it at 11.4 and Wing IV is gone; if the rate across the
+house drifts down, that is the reason and not a fault.
 
 ---
 
@@ -90,8 +90,6 @@ Measured off `content/`. Aim here; do not count obsessively.
 | `lede` | 13 | 16.5 | 31% | 6.9 |
 | `claim` | **8** | 8.8 | 74% | 0.0 |
 | `keep` | 9–12 | 11.0–11.5 | 44–53% | 0.0 |
-| manuals `p` | 16 | 16.7 | 31% | 12.4 |
-| manual headings | 7 | 7.4 | 79% | 0.0 |
 | atlas `take` | **9** | 8.8 | 74% | 0.0 |
 | atlas `kept` | 10 | 10.3 | 61% | 13.7 |
 | atlas `gloss` | 8.5 | 8.0 | 92% | 0.0 |
@@ -107,9 +105,9 @@ work because short declaratives carry the load between them. A paragraph with no
 sentence in it is not house prose, however correct it is.
 
 **The first-person dial has three settings and they are thirty-fold apart.** `copy` is
-effectively impersonal at 0.5 to 1.1. Manuals sit in the middle at 12.4 and the Atlas's
-`kept` at 13.7 — positions held by someone, and lines kept in someone's own voice.
-`changed` is at 34, near the density of his own correspondence. Writing `changed` at
+effectively impersonal at 0.5 to 1.1. The Atlas's `kept` sits in the middle at 13.7 —
+lines kept in someone else's own voice. `changed` is at 34, near the density of his own
+correspondence. Writing `changed` at
 `copy` density produces a paragraph that is technically fine and does not do the field's
 job.
 
@@ -141,10 +139,10 @@ Build from these rather than from a generic topic-sentence template.
 **The `changed` note** — three sentences, no more:
 > what I used to think → what I now think → why the difference matters to the argument
 
-**The manual entry** — heading as compressed claim, then:
-> the position stated flat → the mechanism → the cost of holding it → a verdict clause
+**The Atlas `take`** — two sentences, the second turning after a dash:
+> what they teach, stated flat → the turn that makes it worth keeping
 
-**The applied recommendation**, if a manual or a slipway entry ever proposes something:
+**The applied recommendation**, if an entry ever proposes something:
 > credit the thing generously, with its own numbers → name the gap in one flat sentence →
 > **propose one named instrument, not a theme** → run a worked example → verdict
 
@@ -163,7 +161,7 @@ programme", "a town of 8,000". Never "significant", "substantial", "a great deal
 **Name the thing rather than the category.** Bardeen, Brattain and Shockley — not "the
 researchers". Bell Labs, PARC, DARPA — not "several institutions".
 
-**Colon as pivot.** Setup left, payoff right. Highest yield in manual prose.
+**Colon as pivot.** Setup left, payoff right. Highest yield in `changed`.
 
 **Parenthesis as qualifier.** Where the instinct is to hedge the main clause, bracket the
 qualification instead and leave the claim intact. The house is under-using this; see the

@@ -1,7 +1,7 @@
 /* Commodore Press scaffolder — writes a correctly-shaped, house-rule-complete stub.
    Usage: node tools/new.mjs book "The Heated Disk" [--field Science]
           node tools/new.mjs life "Marcus Aurelius" [--field Philosophy]
-          node tools/new.mjs adjacent|manual "Title"
+          node tools/new.mjs adjacent "Title"
    Every stub is deliberately full of TODOs: `npm run check` will refuse to pass
    until each one is answered, which is the point. */
 import fs from "node:fs";
@@ -14,7 +14,7 @@ const kind = argv[0];
 const title = argv.find((a, i) => i > 0 && !a.startsWith("--") && !argv[i - 1]?.startsWith("--"));
 const flag = (n, d) => { const i = argv.indexOf("--" + n); return i < 0 ? d : argv[i + 1]; };
 
-const KINDS = ["book", "adjacent", "life", "manual"];
+const KINDS = ["book", "adjacent", "life"];
 if (!KINDS.includes(kind) || !title) {
   console.error(`usage: node tools/new.mjs <${KINDS.join("|")}> "Title" [--field Science]`);
   process.exit(1);
@@ -52,7 +52,7 @@ const livery = fresh || LIVERIES[entries % LIVERIES.length];
 const motif = MOTIFS[entries % MOTIFS.length];
 
 const TODO = t => `TODO — ${t}`;
-const dirFor = { book: "content/books", adjacent: "content/adjacent", life: "content/lives", manual: "content/manuals" }[kind];
+const dirFor = { book: "content/books", adjacent: "content/adjacent", life: "content/lives" }[kind];
 const existing = readAll(dirFor);
 const next = String(existing.length + 1).padStart(2, "0");
 const id = slug(title);

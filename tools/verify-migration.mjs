@@ -1,5 +1,5 @@
 import fs from "node:fs"; import vm from "node:vm"; import assert from "node:assert";
-const NAMES=["PLATES","BOOKS","ADJACENT","LIVES","DOMAINS","DCOLOR","PRINCIPLES","PEOPLE","SOURCES","MANUALS","SLIPWAY","CORRECTIONS"];
+const NAMES=["PLATES","BOOKS","ADJACENT","LIVES","DOMAINS","DCOLOR","PRINCIPLES","PEOPLE","SOURCES","CORRECTIONS"];
 function grab(file){
   const L=fs.readFileSync(file,"utf8").split("\n");
   const a=L.findIndex(l=>l.includes("<script>"));

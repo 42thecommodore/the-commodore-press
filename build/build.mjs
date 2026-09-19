@@ -27,13 +27,11 @@ const one = f => { try { return readJSON(p(f)); } catch (e) { throw new Error(`$
 const BOOKS      = dir("content/books");
 const ADJACENT   = dir("content/adjacent");
 const LIVES      = dir("content/lives");
-const MANUALS    = dir("content/manuals");
 const DOMAINS    = one("content/atlas/domains.json");
 const DCOLOR     = one("content/atlas/domain-colors.json");
 const PRINCIPLES = one("content/atlas/principles.json");
 const PEOPLE     = one("content/atlas/people.json");
 const SOURCES    = one("content/atlas/sources.json");
-const SLIPWAY    = one("content/slipway/slipway.json");
 const CORRECTIONS= one("content/corrections.json");
 
 /* ---------- plates: image files -> base64 data-URIs, keyed by life id ---------- */
@@ -66,8 +64,6 @@ const DATA = safe([
   K("PRINCIPLES", PRINCIPLES),
   K("PEOPLE", PEOPLE),
   K("SOURCES", SOURCES),
-  K("MANUALS", MANUALS),
-  K("SLIPWAY", SLIPWAY),
   K("CORRECTIONS", CORRECTIONS),
 ].join("\n"));
 
@@ -88,7 +84,7 @@ const fill = s => s
   // the famous/obscure split is counted, not typed: a typed "twenty-one famous" went stale the day two lives shipped
   .replace(/{{W_FAMOUS_CAP}}/g, cap(words(LIVES.filter(l => l.group === "famous").length)))
   .replace(/{{N_OBSCURE}}/g, words(LIVES.filter(l => l.group === "obscure").length))
-  .replace(/{{N_MANUALS}}/g, words(MANUALS.length)).replace(/{{N_LESSONS}}/g, words((SLIPWAY.book || []).length));
+  .replace(/{{N_PRINCIPLES}}/g, words(PRINCIPLES.length));
 const out = fill(read("templates/shell.html"))
   .replace("<!--CSS-->", () => read("theme/press.css"))
   .replace("<!--DATA-->", () => DATA)
@@ -117,7 +113,7 @@ fs.writeFileSync(p("dist/sitemap.xml"),
 
 const kb = n => (n / 1024).toFixed(0) + " KB";
 console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}`);
-console.log(`  ${BOOKS.length} books · ${ADJACENT.length} adjacent · ${LIVES.length} lives · ${MANUALS.length} manuals`);
+console.log(`  ${BOOKS.length} books · ${ADJACENT.length} adjacent · ${LIVES.length} lives`);
 console.log(`  ${PEOPLE.length} people · ${PRINCIPLES.length} principles · ${SOURCES.length} sources · ${Object.keys(PLATES).length} plates · ${CORRECTIONS.length} corrections`);
 
 /* The house decision is that this stays one file. The cost of that decision is that the

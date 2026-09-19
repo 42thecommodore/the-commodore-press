@@ -23,7 +23,6 @@ const wing = d => fs.readdirSync(path.join(ROOT, d))
 
 const books = wing('books');
 const lives = wing('lives');
-const manuals = wing('manuals');
 const people = read(path.join(ROOT, 'atlas/people.json'));
 const principles = read(path.join(ROOT, 'atlas/principles.json'));
 
@@ -60,7 +59,7 @@ function profile(name, texts) {
   );
 }
 
-console.log(`\ncorpus: ${books.length} titles · ${lives.length} lives · ${manuals.length} manuals · ${people.length} atlas people\n`);
+console.log(`\ncorpus: ${books.length} titles · ${lives.length} lives · ${people.length} atlas people\n`);
 
 profile('titles.copy',    books.flatMap(b => b.copy || []));
 profile('titles.claim',   books.map(b => b.claim));
@@ -72,9 +71,6 @@ console.log('');
 profile('lives.copy',     lives.flatMap(l => l.copy || []));
 profile('lives.contested', lives.map(l => l.contested));
 profile('lives.keep',     lives.map(l => l.keep));
-console.log('');
-profile('manuals.p',      manuals.flatMap(m => (m.entries || []).flatMap(e => e.p || [])));
-profile('manuals.h',      manuals.flatMap(m => (m.entries || []).map(e => e.h)));
 console.log('');
 profile('atlas.take',     people.map(p => p.take));
 profile('atlas.kept',     people.flatMap(p => p.kept || []));
@@ -97,7 +93,6 @@ const all = [
   ...bp, ...lp,
   ...books.flatMap(b => [b.claim, b.lede, b.contested, b.changed, b.keep]),
   ...lives.flatMap(l => [l.contested, l.keep]),
-  ...manuals.flatMap(m => (m.entries || []).flatMap(e => e.p || [])),
 ].filter(Boolean).join(' ');
 const tics = {
   '"as well"': /\bas well\b/gi,
@@ -143,7 +138,6 @@ const surfaces = {
   'lives.contested': lives.map(l => l.contested),
   'lives.keep':      lives.map(l => l.keep),
   'lives.bio.why':   lives.map(l => l.bio && l.bio.why),
-  'manuals.p':       manuals.flatMap(m => (m.entries || []).flatMap(e => e.p || [])),
   'atlas.take':      people.map(p => p.take),
   'atlas.kept':      people.flatMap(p => p.kept || []),
 };

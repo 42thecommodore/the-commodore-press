@@ -98,11 +98,6 @@
       "to": "lives:einstein",
       "label": "Albert Einstein",
       "txt": "— Kripke's own example: the man who did not invent the bomb, and is referred to by everyone who thinks he did."
-    },
-    {
-      "to": "manuals:ii",
-      "label": "Field Manual II · The map is not the territory",
-      "txt": "— a description is a map; a name is a pointer that survives the map being wrong."
     }
   ],
   "reading": [

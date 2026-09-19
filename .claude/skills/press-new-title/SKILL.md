@@ -45,7 +45,7 @@ Find, in this order:
 
 ## 4. Cross-link it
 
-`across` is what makes the library a library instead of a pile. Each entry is `{to, label, txt}` where `to` is `press:<book-id>`, `lives:<life-id>`, `manuals:<i|ii|iii|iv>` or `atlas:<principle-id>`.
+`across` is what makes the library a library instead of a pile. Each entry is `{to, label, txt}` where `to` is `press:<book-id>`, `lives:<life-id>` or `atlas:<principle-id>`.
 
 Read a few existing entries' `across` blocks first — the `txt` is a fragment continuing the label, starting with an em dash. Two good links beat five weak ones. Add the reciprocal link on the other entry too.
 

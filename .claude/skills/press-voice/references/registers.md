@@ -1,6 +1,6 @@
-# Seven surfaces
+# Six surfaces
 
-The Press is not written in one voice at one length. It has seven writing surfaces, and
+The Press is not written in one voice at one length. It has six writing surfaces, and
 they differ measurably — from `copy`, which is almost impersonal at 0.5 first-person
 markers per thousand words, to `changed` at 34. Pick the surface deliberately before
 writing a line.
@@ -171,35 +171,7 @@ publish." These earn the mood because the entry has just shown the cost of not d
 
 ---
 
-## 6. Field manuals — Wing IV
-
-Evidence: `content/manuals/01-the-compound.json`.
-
-Median sentence 16 words, 31% at ten or fewer, 12.4 first-person markers per 1k, and the
-highest colon rate on the site at 11.4 per 1k. Headings run 7 words at the median, 79% of
-them ten or fewer.
-
-**Positions, not advice.** The dek says it: "Written as positions, not advice." The
-difference is that a position can be wrong and says who holds it. Keep the first person —
-it is what stops the manual becoming a listicle.
-
-**The heading is the claim, compressed to a line.**
-
-> "Almost every durable advantage is a small edge held for an unreasonable length of time"
-> "The biggest decision is not how hard you play. It is which game"
-
-**The colon is the pivot.** Setup on the left, payoff on the right. This is the surface
-where it does the most work: "Choose the game on three tests: does it compound, do you
-have or can you build an unfair edge in it, and would you still want to be playing it in
-ten years if nobody were watching."
-
-**Name the cost.** The manuals are credible where they say what a position costs —
-"Effort inside a badly chosen game is the most expensive thing there is, because it looks
-exactly like progress." A manual entry with no cost in it is a slogan.
-
----
-
-## 7. The Atlas — Wing III
+## 6. The Atlas — Wing III
 
 Evidence: `content/atlas/people.json`, `content/atlas/principles.json`.
 
@@ -228,17 +200,18 @@ they teach as the house understands it. A `take` that could be lifted from a jac
 has failed the same test a `keep` fails.
 
 **`kept` is the field with the sharpest promise attached to it.** It runs at 13.7
-first-person markers per 1,000 words, second only to `changed` and the manuals, because
+first-person markers per 1,000 words, second only to `changed`, because
 the lines are kept in the speaker's own voice. The schema states the rule and it is the
 colophon's: *quotation marks only for words you have seen verbatim in the source.* No
 line in the Atlas currently uses them, and none should acquire them without the recording
 or the page open in front of you.
 
-**What the Atlas has and the Slipway has, differently.** The Slipway marks a compressed
-line `after Jason Nazar`. The Atlas prints its kept lines under a name with an em-dash
-bullet and no marker at all. Both are honest — neither claims a quotation — but a reader
-moving between the two wings meets the same thing labelled two ways. If a `kept` line is
-compressed rather than heard, write it `after <name>` and match the Slipway.
+**The marker convention, now that the Atlas is the only wing that keeps lines.** Wing V
+marked a compressed line `after Jason Nazar` before it was removed; the Atlas prints its
+kept lines under a name with an em-dash bullet and no marker at all. Neither claims a
+quotation, so neither broke the promise — but the Atlas is now carrying the convention
+alone, and `after <name>` is the form the colophon describes. Where a `kept` line is your
+compressed note rather than something you heard, write it that way.
 
 **`gloss` is one clause, lower case, no full stop.** "the resistance is the signal, not
 the obstacle." It explains the principle's name; it does not restate it. Twelve of these
@@ -263,6 +236,7 @@ flags anything outside the set. Notes there are for the next person to open the 
 is blocked and on what. One line. No status invented on the fly.
 
 **Anything sent outward** — an email, an ask, a note to a source — takes the author's
-correspondence register: promise brevity and keep it, lead with the work already done
+correspondence register, and it is where the five moves that do not fit an entry belong
+(see **The additive pass** in `voice.md`): promise brevity and keep it, lead with the work already done
 rather than the request, ask one real question, and close on something given back. It is
 his strongest register and it is documented in the study this skill was adapted from.

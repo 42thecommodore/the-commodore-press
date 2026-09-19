@@ -102,11 +102,6 @@
       "to": "press:compounding-machines",
       "label": "Compounding Machines",
       "txt": "— the same building, the same decade; the bargain was struck inside the structure that entry describes."
-    },
-    {
-      "to": "manuals:i",
-      "label": "Field Manual I · Stop trying to be the best at one thing",
-      "txt": "— composability over polish is positioning, at operating-system scale."
     }
   ]
 }

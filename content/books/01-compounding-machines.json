@@ -77,11 +77,6 @@
   "changed": "I used to think the lesson was 'hire brilliant people and leave them alone.' I now think that's the part everyone copies and it doesn't work by itself. The harder, duller ingredients — a captive revenue stream, a factory down the hall, and one accountable person with a decade of budget — are what almost nobody reproduces.",
   "across": [
     {
-      "to": "manuals:i",
-      "label": "Field Manual I · Survive first, then bet big",
-      "txt": "— patient capital is the institutional version of the same rule."
-    },
-    {
       "to": "press:unix-bargain",
       "label": "The Unix Bargain",
       "txt": "— what one of those labs shipped when the ambitious version was cancelled."

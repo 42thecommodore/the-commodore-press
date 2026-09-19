@@ -5,13 +5,11 @@
   "json.schemas": [
     { "fileMatch": ["/content/books/*.json", "/content/adjacent/*.json"], "url": "./schemas/title.schema.json" },
     { "fileMatch": ["/content/lives/*.json"], "url": "./schemas/life.schema.json" },
-    { "fileMatch": ["/content/manuals/*.json"], "url": "./schemas/manual.schema.json" },
     { "fileMatch": ["/content/atlas/people.json"], "url": "./schemas/people.schema.json" },
     { "fileMatch": ["/content/atlas/principles.json"], "url": "./schemas/principles.schema.json" },
     { "fileMatch": ["/content/atlas/domains.json"], "url": "./schemas/domains.schema.json" },
     { "fileMatch": ["/content/atlas/domain-colors.json"], "url": "./schemas/domain-colors.schema.json" },
     { "fileMatch": ["/content/atlas/sources.json"], "url": "./schemas/sources.schema.json" },
-    { "fileMatch": ["/content/slipway/slipway.json"], "url": "./schemas/slipway.schema.json" },
     { "fileMatch": ["/content/corrections.json"], "url": "./schemas/corrections.schema.json" }
   ],
 

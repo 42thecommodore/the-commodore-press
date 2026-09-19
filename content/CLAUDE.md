@@ -37,7 +37,7 @@ Rockefeller; do not add a second.
 
 ## across
 
-`press:<id>` · `lives:<id>` · `manuals:<i|ii|iii|iv>` · `atlas:<principle-id>`.
+`press:<id>` · `lives:<id>` · `atlas:<principle-id>`.
 `txt` is a fragment continuing `label`, opening with an em dash. Add the reciprocal link on
 the other entry. Two good links beat five weak ones.
 

@@ -57,8 +57,6 @@ npm run check && npm run build && git add -A && git commit -m "Press: ..." && gi
 | a life | `content/lives/NN-slug.json` |
 | a portrait | `assets/plates/<life-id>.jpg` — via `npm run plate` |
 | the Atlas | `content/atlas/{domains,domain-colors,principles,people,sources}.json` |
-| a field manual | `content/manuals/NN-slug.json` |
-| the trade book | `content/slipway/slipway.json` |
 | corrections | **`npm run correct`** — never by hand |
 | a genuinely http-only link | `content/http-allowlist.json`, with a reason and a date |
 | how it looks | `theme/press.css` |
@@ -73,7 +71,6 @@ Shelf order comes from the `NN-` filename prefix. Counts on the front door, the 
 npm run new book "The Heated Disk" -- --field Science
 npm run new life "Marcus Aurelius" -- --field Philosophy
 npm run new adjacent "The Listening List"
-npm run new manual "On Judgement"
 ```
 
 Each writes a stub with an unused livery and every field marked `TODO`. `npm run check` refuses to build until each one is answered — that is the quality gate, not an annoyance.

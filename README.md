@@ -1,10 +1,10 @@
 # The Commodore Press
 
-A working library in five wings, published as one self-contained web page.
+A working library in three wings, published as one self-contained web page.
 
 **Read it: https://42thecommodore.github.io/the-commodore-press/**
 
-**Twenty-one titles. Twenty-six lives. Thirty-four people in the Atlas. Four field manuals. A trade book of operating lessons.** Every claim carries its source and the place it is still argued.
+**Twenty-one titles. Thirty-two lives. Thirty-four people in the Atlas, across twelve principles.** Every claim carries its source and the place it is still argued.
 
 ---
 
@@ -32,7 +32,7 @@ Opens a preview on **http://localhost:4321**. Edit anything in `content/` and th
 
 ## How it fits together
 
-Everything you write lives in **`content/`** — one file per title, per life, per manual. The build folds those, the design in `theme/`, and the portraits in `assets/plates/` into a single **`dist/index.html`**. That one file is the whole website: drop it on any host and you are live.
+Everything you write lives in **`content/`** — one file per title and per life. The build folds those, the design in `theme/`, and the portraits in `assets/plates/` into a single **`dist/index.html`**. That one file is the whole website: drop it on any host and you are live.
 
 ```
 content/  +  theme/  +  assets/   →   dist/index.html

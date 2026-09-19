@@ -26,9 +26,9 @@
   "contested": "The lives-supported figure is a modelling choice, not a measurement: estimates range from about three billion to nearly five depending on which counterfactual world you compare against. Vaclav Smil's work is the standard source. The order of magnitude is not in doubt; the precise number is an argument.",
   "across": [
     {
-      "to": "manuals:iv",
-      "label": "Field Manual IV · The dark side & the guardrails",
-      "txt": "— the engine and the compass are separable, and Haber is the case that proves it."
+      "to": "lives:norman-borlaug",
+      "label": "Norman Borlaug",
+      "txt": "— the nitrogen was Haber's; the yields were Borlaug's. Neither half feeds anyone alone."
     }
   ]
 }

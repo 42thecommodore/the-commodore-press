@@ -103,11 +103,6 @@
   ],
   "across": [
     {
-      "to": "manuals:ii",
-      "label": "Field Manual II · And then what?",
-      "txt": "— 'who can reverse the entry' is the second-order question every payments argument skips."
-    },
-    {
       "to": "press:concept-of-law",
       "label": "The Concept of Law",
       "txt": "— a ledger's finality is a secondary rule: it holds because a practice recognises it, not because the metal says so."

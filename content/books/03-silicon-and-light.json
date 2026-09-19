@@ -76,6 +76,11 @@
       "to": "press:the-box",
       "label": "The Box",
       "txt": "— the other case where standards, not invention, were the binding constraint."
+    },
+    {
+      "to": "press:scaling-curve",
+      "label": "The Scaling Curve",
+      "txt": "— a roadmap read as physics, one generation later and in a different material."
     }
   ],
   "reading": [

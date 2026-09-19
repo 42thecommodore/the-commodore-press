@@ -4,8 +4,7 @@
   DEPLOY: put this file on any static host (GitHub Pages, Netlify, Cloudflare Pages) as index.html.
   EDIT: all content is plain data in the script block at the bottom of this file:
     BOOKS / ADJACENT ... Wing I, The Press          LIVES ....... Wing II (portraits keyed by id in PLATES)
-    DOMAINS / PRINCIPLES / PEOPLE ... Wing III      MANUALS ..... Wing IV
-    SLIPWAY ......... Wing V, the trade book        CORRECTIONS . printed in the colophon
+    DOMAINS / PRINCIPLES / PEOPLE ... Wing III      CORRECTIONS . printed in the colophon
   HOUSE RULES: every figure carries a named source; disputes go in `contested`;
   corrections are appended, never silently patched; `keep` is the one-line takeaway.
 -->
@@ -14,7 +13,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Commodore Press</title>
-<meta name="description" content="A working library in five wings: {{N_BOOKS}} ideas, {{N_LIVES}} lives, {{N_PEOPLE}} sources, {{N_MANUALS}} field manuals, and a trade book of {{N_LESSONS}} operating lessons. Every claim carries its source and the place it is still argued.">
+<meta name="description" content="A working library in three wings: {{N_BOOKS}} ideas, {{N_LIVES}} lives, and {{N_PEOPLE}} people across {{N_PRINCIPLES}} principles. Every claim carries its source and the place it is still argued.">
 <link rel="canonical" href="{{SITE}}/">
 
 <!-- The card a reader sees when the link is pasted into Slack, iMessage, LinkedIn or X.
@@ -29,7 +28,7 @@
 <meta property="og:image" content="{{SITE}}/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Commodore Press — a working library in five wings. {{W_BOOKS_CAP}} titles, {{N_LIVES}} lives, {{N_PEOPLE}} people, {{N_MANUALS}} field manuals.">
+<meta property="og:image:alt" content="The Commodore Press — a working library in three wings. {{W_BOOKS_CAP}} titles, {{N_LIVES}} lives, {{N_PEOPLE}} people.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Commodore Press">
 <meta name="twitter:description" content="Every claim carries its source — and the place it is still argued.">
@@ -41,7 +40,7 @@
   "@type": "WebSite",
   "name": "The Commodore Press",
   "url": "{{SITE}}/",
-  "description": "A working library in five wings: {{N_BOOKS}} titles, {{N_LIVES}} lives, {{N_PEOPLE}} people in the Atlas, {{N_MANUALS}} field manuals, and a trade book of {{N_LESSONS}} operating lessons. Every claim carries its source and the place it is still argued.",
+  "description": "A working library in three wings: {{N_BOOKS}} titles, {{N_LIVES}} lives, and {{N_PEOPLE}} people in the Atlas across {{N_PRINCIPLES}} principles. Every claim carries its source and the place it is still argued.",
   "inLanguage": "en",
   "publisher": { "@type": "Organization", "name": "The Commodore Press", "url": "{{SITE}}/" },
   "usageInfo": "{{SITE}}/#colophon",
@@ -94,7 +93,7 @@
         <div class="today" data-reveal style="--d:360ms" id="todayCard"></div>
       </div>
 
-      <div class="wings5" id="wings5"></div>
+      <div class="wings3" id="wings3"></div>
 
       <!-- Ways in: how an entry works (shown on a real one), what is new, and every face on
            the shelf. All three are drawn from content/ by renderDoors() in press.js. -->
@@ -104,7 +103,7 @@
         <div class="lbl" style="padding-top:6px">Colophon</div>
         <div class="body">
           <p>This is a library, not a credential. It holds what I have read, what I think it means, and — deliberately, in every wing — the places where the people who know most still disagree. A claim without its dispute is half a claim.</p>
-          <p>The five wings are one method applied to five kinds of material. <b>The Press</b> is ideas; <b>Lives</b> is people worth a whole book; <b>The Atlas</b> is the sources I actually listen to and the principles more than one of them arrived at independently; <b>The Field Manuals</b> are what I hold, written as positions rather than advice; <b>The Slipway</b> is the trade book — the operating lessons of people who build things, kept the way sailors kept a chandlery: everything you need before setting out, each item marked with where it came from.</p>
+          <p>The three wings are one method applied to people, three ways round. <b>The Press</b> is the ideas people spent their lives inside; <b>Lives</b> is the people themselves, one book each; <b>The Atlas</b> is the people I listen to now, and the principles more than one of them arrived at independently. The library used to run to five wings — a set of field manuals and a trade book of operating lessons. Both were positions stated without anyone standing behind them, and they came down in September 2026 so that everything here is attached to a person you can go and check.</p>
           <p>Set in EB Garamond and IBM Plex Mono. Assembled by hand and with AI assistance; figures are checked against a named source, and where I have corrected myself the correction stays visible rather than being quietly patched. The reading wings are set on paper. The Atlas is the only room kept dark, because a star chart is the one thing that genuinely needs a night sky.</p>
           <p>The portraits in Lives are public-domain engravings, paintings and photographs, reduced to the house duotone and set as plates. A life without a safely public image carries the press mark instead of a borrowed picture, which seems the more honest trade. Three lives are in that position today. Henrietta Lacks is there by decision; her entry says why at length, and her estate has itself disputed the use of family photographs. Ibn Khaldun and Clair Patterson are there because no image of either has yet been cleared: no portrait of Ibn Khaldun from his own lifetime is known, and Patterson's photographs sit in an archive that grants permission only on request. Three plates are licensed rather than public domain, and are credited here because the licence requires it: the Mandela photograph is by South Africa The Good News (sagoodnews.co.za) under CC BY 2.0; the Steve Jobs photograph was taken at WWDC in 2010 by Matthew Yohe under CC BY-SA 3.0; and the Tu Youyou photograph was taken in Stockholm on 6 December 2015 by Bengt Nyman under CC BY-SA 4.0. All three have been cropped and reduced to the house duotone, which the licences ask us to say. One more is neither: the 1939 photograph of Robert Moses is by C. M. Stieglitz for the New York World-Telegram &amp; Sun, held by the Library of Congress, which states that it knows of no copyright restrictions on it — a narrower claim than public domain, and worth saying in those words. Everything else came through Wikimedia Commons.</p>
           <div class="corr" id="corrections"></div>
@@ -176,44 +175,7 @@
     </div>
   </section>
 
-  <!-- ================= MANUALS ================= -->
-  <section class="wing" data-wing="manuals">
-    <div class="wrap">
-      <div class="wing-head">
-        <div>
-          <div class="lbl">Wing IV · the doctrine</div>
-          <h2>The Field Manuals</h2>
-        </div>
-        <div class="side" id="manualsSide"></div>
-      </div>
-      <p class="wing-dek">Four volumes of what I actually hold — written as positions I can be argued out of, not advice for anyone else. Where a position comes from someone, they are named; where I think it is over-claimed, that is marked too.</p>
-      <div class="hr"></div>
-      <div class="vols" id="vols"></div>
-      <div id="manualBody"></div>
-    </div>
-  </section>
-
-  <!-- ================= SLIPWAY ================= -->
-  <section class="wing" data-wing="slipway">
-    <div class="wrap">
-      <div class="wing-head">
-        <div>
-          <div class="lbl" style="color:var(--hail)">Wing V · the trade book</div>
-          <h2>The Slipway</h2>
-        </div>
-        <div class="side" id="slipSide"></div>
-      </div>
-      <p class="wing-dek">Where ships get built — as a set of ideas, not a shipyard tour. This wing is a commonplace book of the craft: operating lessons collected from people who have actually crossed the water, kept because each one changed what I did next. The other four wings are the chart room; this one is the toolbox.</p>
-      <div class="hr"></div>
-      <div class="sec-head"><h3>What more than one of them said</h3><span>The convergences — same lesson, independent lives.</span></div>
-      <div class="convs" id="convs"></div>
-      <div class="sec-head"><h3>The trade book</h3><span>Operating lessons, each with its source.</span></div>
-      <div id="tradebook"></div>
-      <div class="sec-head"><h3>The chandlery</h3><span>Notes on venture capital, taken from the other side of the table.</span></div>
-      <div id="chandlery"></div>
-    </div>
-  </section>
-</main>
+/main>
 
 <footer>
   <div class="wrap foot">
@@ -228,8 +190,6 @@
       <div><a href="#atlas" onclick="go('atlas');return false;">The Atlas</a></div>
     </div>
     <div>
-      <div><a href="#manuals" onclick="go('manuals');return false;">Field Manuals</a></div>
-      <div><a href="#slipway" onclick="go('slipway');return false;">The Slipway</a></div>
       <div><a href="#home" onclick="go('home');return false;">Colophon</a></div>
     </div>
     <div class="grow">

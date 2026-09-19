@@ -1,7 +1,7 @@
 # Voice fingerprint
 
 Two corpora sit behind this file. The **house corpus** is everything under `content/` —
-21 titles, 32 lives, 4 manuals, 34 Atlas people, roughly 30,700 words of published prose.
+21 titles, 32 lives, 34 Atlas people, roughly 27,900 words of published prose.
 The **author corpus** is the voice study this skill was adapted from, which grew from
 ~9,900 words to roughly 30,000 in September 2026: dictated freewrites, nine sent email
 threads, ten academic papers across two institutions, a syllabus he wrote and taught, two
@@ -17,7 +17,7 @@ Counts below are literal. House counts were measured off `content/` by
 `npm run voice`; author counts come from the study and are carried over because they are
 measurements, not opinions.
 
-**Read `registers.md` alongside this file** — the house has seven writing surfaces and the
+**Read `registers.md` alongside this file** — the house has six writing surfaces and the
 rules below land differently in each. **Read `generation.md`** when you are producing new
 prose rather than editing existing prose.
 
@@ -103,14 +103,20 @@ back down.
 glass between the subject and their own action. Nobody managed to build the thing; they
 built it.
 
-**Intensifiers standing where a number belongs.** The corpus holds seven instances of
-*very / significant / substantial / remarkable*, and all seven are load-bearing — "significant
-original effects" and "replicated significantly" are statistical terms, "substantially
-revised by historians" and "very different rates" are doing real comparative work, "the
-very stubbornness that had isolated him" is a demonstrative rather than an intensifier,
-and "That's still remarkable, and still enough to plan a datacenter around" is the
-concessive turn that `registers.md` holds up as the model for `changed` — the adjective
-is immediately cashed out in the clause after it.
+**Intensifiers standing where a number belongs.** The corpus holds eight instances of
+*very / significant / substantial / remarkable*, and all eight are load-bearing —
+"significant original effects" and "replicated significantly" are statistical terms,
+"substantially revised by historians", "very different rates" and "subsidies buy very
+little" are doing real comparative work, "the very stubbornness that had isolated him" is
+a demonstrative rather than an intensifier, "the most significant creative mathematical
+genius" is inside a quotation from Einstein and so is not the house's to edit at all, and
+"That's still remarkable, and still enough to plan a datacenter around" is the concessive
+turn that `registers.md` holds up as the model for `changed` — the adjective is
+immediately cashed out in the clause after it.
+
+The count was seven until Emmy Noether shipped on 2026-09-18 and Einstein's sentence came
+with her. `npm run voice` prints it; when it moves, find the new one and adjudicate it
+rather than adjusting the sentence.
 
 Two soft ones have been closed, and how they closed is the lesson. Both sat in
 `contested`, which is the field that exists to name people, so an adjective standing in

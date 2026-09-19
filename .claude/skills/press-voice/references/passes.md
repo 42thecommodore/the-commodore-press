@@ -70,9 +70,9 @@ own, and then go back to the rhythm work — mixed together, neither is reviewab
 - Touch a `keep` line for rhythm. A `keep` is written from its own entry's argument and it
   has to survive being read alone — that is a rewrite, not a pass.
 - Regularise the wings toward each other. The lives are shorter-paragraphed than the
-  titles and the manuals are shorter than both, and those are house facts, not drift. The
-  Atlas is shorter again — a nine-word median in `take`, and 24.8 em dashes per 1,000
-  words — and that is the field's shape, not a wing that needs splitting.
+  titles, and the Atlas is shorter again — a nine-word median in `take`, and 24.8 em
+  dashes per 1,000 words. Those are house facts, not drift, and not wings that need
+  splitting.
 - Touch a `kept` line in the Atlas. They are lines kept from someone else, in their own
   voice. Rhythm work on one is rewriting what a person said, which is the single edit this
   house cannot make.

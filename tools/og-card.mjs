@@ -27,7 +27,7 @@ if (!fs.existsSync(CHROME)) {
 /* Counts come from the corpus, never from memory — same rule as the prose. */
 const count = d => fs.existsSync(p("content", d)) ? fs.readdirSync(p("content", d)).filter(f => f.endsWith(".json")).length : 0;
 const people = JSON.parse(fs.readFileSync(p("content/atlas/people.json"), "utf8")).length;
-const N = { titles: count("books"), lives: count("lives"), manuals: count("manuals"), people };
+const N = { titles: count("books"), lives: count("lives"), people };
 
 /* The five wing spines, in shelf order, taken from the front door's own liveries. */
 const SPINES = ["#7B3F2E", "#2F4A3C", "#1B2A4A", "#6B5636", "#4A2F45"];
@@ -66,7 +66,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
     <div class="promise">Every claim carries its source &mdash; <em>and the place it is still argued.</em></div>
   </div>
   <div class="foot">
-    <div class="counts">${N.titles} titles &middot; ${N.lives} lives &middot; ${N.people} people &middot; ${N.manuals} field manuals</div>
+    <div class="counts">${N.titles} titles &middot; ${N.lives} lives &middot; ${N.people} people</div>
     <div class="spines">${SPINES.map((c, i) => `<i style="background:${c};height:${[86, 112, 70, 98, 124][i]}px"></i>`).join("")}</div>
   </div>
 </body></html>`;
@@ -89,5 +89,5 @@ fs.rmSync(tmp, { recursive: true, force: true });
 if (!fs.existsSync(out)) { console.error("  Chrome wrote nothing."); process.exit(1); }
 const kb = (fs.statSync(out).size / 1024).toFixed(0);
 console.log(`\n  assets/og.png — 1200x630, ${kb} KB`);
-console.log(`  ${N.titles} titles · ${N.lives} lives · ${N.people} people · ${N.manuals} field manuals`);
+console.log(`  ${N.titles} titles · ${N.lives} lives · ${N.people} people`);
 console.log(`  npm run build copies it to dist/og.png\n`);
