@@ -40,7 +40,8 @@ The Commodore/
 ├── schemas/                    # what every content field means — editor hover help AND the check's field list
 ├── .vscode/settings.json       # wires schemas/ into VS Code/Cursor; dist/ and corrections.json open read-only
 ├── EDITING.md                  # the owner's guide to everyday edits, in plain language
-├── dashboard/                  # commissions.md (the queue), rhythm.md, changelog.md
+├── dashboard/                  # commissions.md (the queue), rhythm.md, changelog.md,
+│                               # research-leads.md (documents still to open — NOT sources)
 ├── dist/index.html             # THE DEPLOYABLE — generated, never hand-edited
 └── .claude/
     ├── settings.json           # permissions + the two hooks below
@@ -91,6 +92,7 @@ command and runs the same gate locally first; `/press-publish` stays human-invok
 - **A new field is described in `schemas/` in the same change.** `npm run check` fails on any field name the schemas do not list — that keeps the editor's help true and catches misspellings the page would silently drop. If a command or field changes, update `EDITING.md` too; the owner maintains the site from it.
 - **A number with no source does not ship.** `facts` entries need both `b` (the number) and `s` (the named source). The validator enforces it.
 - **Research before writing.** Use web search; do not write figures from memory. Every entry the house has had to correct came from a remembered factoid.
+- **A source you could not open is a lead, not a source.** `facts[].s` names where someone actually looked. If the network refuses, or a paywall does, say so and put the document in `dashboard/research-leads.md` — never write a source line for a document nobody read. An unsourced figure the check still flags is recoverable; a citation to an unopened paper is the one failure the colophon cannot absorb.
 - **Never invent a quotation.** If it is in quotation marks, it is verbatim and you have seen the source. Otherwise write it as "after <name>".
 - **Plates must be licensed.** Public domain by default; CC-BY requires the colophon credit line updated in the same change. Verify the licence box, don't infer it from the subject's dates.
 - **`keep` is written from the entry's own argument**, not a general maxim. One line. It is the hook a reader leaves with.
