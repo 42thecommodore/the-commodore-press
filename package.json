@@ -16,7 +16,10 @@
     "plate": "node tools/plate.mjs",
     "card": "node tools/og-card.mjs",
     "correct": "node tools/correct.mjs",
-    "verify": "node tools/verify-migration.mjs"
+    "verify": "node tools/verify-migration.mjs",
+    "links": "node tools/links.mjs"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }

@@ -99,6 +99,21 @@ Years, ages and centuries are not flagged; the entry's own `years` already carri
 
 Use `https://`. If a site genuinely only works over http, record why in `content/http-allowlist.json`.
 
+`npm run check` proves the link is *well-formed*. Only `npm run links` proves it still
+*opens*:
+
+```bash
+npm run links
+```
+
+It visits every link the site prints and fails on any that is dead. Links that a
+publisher blocks to robots are listed separately as unconfirmed — those are worth
+opening by hand once, but they are not errors. It caches its results, so a second run
+is quick; `npm run links -- --all` re-checks everything from scratch.
+
+Run it every month or two. Link rot is silent: the page looks perfect and the reading
+list points at nothing. Eight of them had accumulated by September 2026.
+
 ### 4. Link two entries together
 
 In `across`, point at the other entry by its `id` (the first line of its file):

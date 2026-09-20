@@ -33,5 +33,10 @@
     "d": "Sept 2026",
     "t": "Unix and C.",
     "b": "The Unix Bargain dated the rewrite of Unix in C to 1972 and called C a language invented so the system could move. Ritchie's own account puts the kernel rewrite in the summer of 1973 and says portability carried little weight at the time; it became the point with the 1977 port to the Interdata 8/32. The entry also said Thompson wrote the first version in three weeks. By his own account it took the month his wife and son were away."
+  },
+  {
+    "d": "Sept 2026",
+    "t": "A source that did not exist.",
+    "b": "The Banking Model of Education listed a Stanford Encyclopedia of Philosophy entry on Paulo Freire in its reading list. The Stanford Encyclopedia has no entry on Freire; he appears only inside other articles. The reading list now points to the Internet Encyclopedia of Philosophy's entry, which does exist. The link had been dead since publication."
   }
 ]

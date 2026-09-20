@@ -72,6 +72,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 |---|---|
 | `npm start` | preview on :4321, rebuilds and reloads on save |
 | `npm run check` | the house rules — **exits 1 on any error** |
+| `npm run links` | visits every link the site prints; **exits 1 on any dead one**. Off the fast gate because it needs the network — run it monthly, and after any reading-list edit |
 | `npm run build` | content + theme → `dist/index.html` |
 | `npm run stats` | inventory and editorial backlog |
 | `npm run voice` | the house's own sentence and punctuation numbers, measured off `content/` |
