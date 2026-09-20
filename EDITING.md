@@ -197,6 +197,26 @@ Nearly every broken file is one of these.
 
 **The rest read as sentences:** `facts[0] has a number with no source line`, `across[1] points at "press:heated-disk", which does not exist`, `copy[2] is still a TODO`. Warnings in yellow never block publishing; errors in red do.
 
+## The last read before it ships
+
+`npm run check` proves the shape of a file. It cannot read. Before anything goes live,
+run the prose check too:
+
+```bash
+npm run proofread
+```
+
+It catches only what a machine can be certain of — a note to yourself left in the text,
+a word typed twice, a space before a comma. It deliberately does **not** guess at
+misspelt names: it tried, and it wanted to rename a real person and to edit a word
+inside a direct quotation, so that job went back to a reader.
+
+For the reading itself, ask Claude for `/press-proofread`. It checks the six things that
+have actually gone wrong on this site — a quotation that was never said, the popular
+version repeated by accident, a number from memory, a count dressed up as a figure, a
+source that does not exist, and a date that is nearly right. All six are in the
+corrections list, which is where it learned them.
+
 ## Publish
 
 ```bash

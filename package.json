@@ -17,7 +17,8 @@
     "card": "node tools/og-card.mjs",
     "correct": "node tools/correct.mjs",
     "verify": "node tools/verify-migration.mjs",
-    "links": "node tools/links.mjs"
+    "links": "node tools/links.mjs",
+    "proofread": "node tools/proofread.mjs"
   },
   "engines": {
     "node": ">=18"

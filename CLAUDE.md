@@ -50,7 +50,8 @@ The Commodore/
     ├── agents/press-researcher # read-only verification subagent, isolated context
     └── skills/                 # press-status, press-new-title, press-new-life,
                                 # press-plate, press-factcheck, press-correct, press-publish,
-                                # press-voice (the house voice, long form + measurements)
+                                # press-voice (the house voice, long form + measurements),
+                                # press-proofread (the release gate, run before anything ships)
 ```
 
 ## What is enforced, not merely asked
@@ -73,6 +74,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm start` | preview on :4321, rebuilds and reloads on save |
 | `npm run check` | the house rules — **exits 1 on any error** |
 | `npm run links` | visits every link the site prints; **exits 1 on any dead one**. Off the fast gate because it needs the network — run it monthly, and after any reading-list edit |
+| `npm run proofread` | reads the prose for what a grep can be sure of: placeholder text that would print, a repeated word, a space before a comma. Judgment stays with `/press-proofread` |
 | `npm run build` | content + theme → `dist/index.html` |
 | `npm run stats` | inventory and editorial backlog |
 | `npm run voice` | the house's own sentence and punctuation numbers, measured off `content/` |
