@@ -403,6 +403,21 @@
   /* ---------- plates ---------- */
   .plate{border:1px solid #B9AF9B;background:#F7F3E9;padding:7px;box-shadow:4px 4px 0 rgba(30,28,24,.10)}
   .plate img{display:block;width:100%;height:auto}
+
+  /* A plate arrives the way one comes up in a tray: flat and pale first, then the
+     duotone finds its blacks. It ends at filter:none, so night mode's printed livery
+     is untouched — only the way it gets there is new.
+
+     Only plates whose resting state is filter:none. Not the cover plates inside `.book`
+     (that box is `preserve-3d`, and a filter on a descendant risks flattening the spine
+     and page edges), and not `.wface .fp-img`, which rests at grayscale(.35) on purpose
+     and clears on hover — developing it would end by deleting that. */
+  figure.plate[data-reveal] img,
+  [data-reveal] .np{
+    filter:contrast(.5) brightness(1.2) saturate(.55) blur(1.4px);
+    transition:filter 1.15s var(--ease-io);transition-delay:calc(var(--d,0ms) + 90ms)}
+  figure.plate[data-reveal].in img,
+  [data-reveal].in .np{filter:none}
   figure.plate{float:right;width:212px;margin:6px 0 22px 38px}
   figure.plate figcaption{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.65;padding:8px 3px 2px;text-align:center}
   figure.plate.mark{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:4/5;opacity:.85;color:#5C5647}
@@ -492,6 +507,9 @@
     [data-reveal]{opacity:1;transform:none}
     .front h1 span i{transform:none}
     .tl::before,.tl li::before{transform:none}
+    /* the plate is already developed; never leave one pale because motion is off */
+    figure.plate[data-reveal] img,
+    [data-reveal] .np{filter:none !important}
   }
 
   /* ---------- front door: ways in ----------
