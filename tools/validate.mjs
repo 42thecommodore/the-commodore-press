@@ -117,10 +117,31 @@ const HARD_FIGURE = new RegExp([
   `\\b(?:${SPELLED})(?:[- ](?:${SPELLED}))?\\s+(?:${MAG}|acres|nautical|doses|extracts)\\b`,
 ].join("|"), "i");
 
+/* An entry with no `facts` block is named for EVERY hard figure it states, not just the
+   first. That was the old behaviour and it undercounted badly: Steve Jobs reported one
+   figure and states six, Tu Youyou reported one and states three. The backfill needs the
+   real list, not a sample.
+
+   An entry that HAS a `facts` block is still skipped entirely, and that is a deliberate
+   limit rather than an oversight. Per-figure matching against the block was written and
+   tested here on 2026-09-20, and it was wrong on every entry that had done the work:
+   Patterson's prose says "4.55 billion" where his block says `4.55 bn yrs`, and "a
+   hundred times" where the block says `100×`; Nightingale's "36 per cent" is the block's
+   `4,522 / 12,518` restated as a rate. A figure can be sourced and reworded, rounded,
+   abbreviated or derived, and nothing short of reading can tell that from an unsourced
+   one. Flagging those would train a reader to skip this output, which costs more than the
+   case it catches. Promote this to per-figure only with a matcher that survives those
+   four cases. */
 for (const { file, data } of lives) {
   if (data.facts && data.facts.length) continue;
-  const hit = (data.copy || []).map(para => para.match(HARD_FIGURE)).find(Boolean);
-  if (hit) warn(file, `states "${hit[0].trim()}" with no \`facts\` block — the figure carries no named source`);
+  const said = new Map();                        // lower-cased wording -> as written
+  for (const para of data.copy || [])
+    for (const m of para.matchAll(new RegExp(HARD_FIGURE.source, "gi")))
+      said.set(m[0].trim().toLowerCase(), m[0].trim());
+  if (!said.size) continue;
+  const list = [...said.values()].map(x => `"${x}"`).join(", ");
+  warn(file, `states ${list} with no \`facts\` block — ` +
+    `${said.size > 1 ? `${said.size} figures carry` : "the figure carries"} no named source`);
 }
 
 /* ---------- Wing I also owes a reading list and a dispute ---------- */

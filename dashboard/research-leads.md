@@ -20,6 +20,31 @@ the wording, and write `facts` blocks from what you read. Delete each row as it 
 
 ---
 
+## What has closed since
+
+**2026-09-20 — the network opened, and three figures landed.** Outbound fetching works
+from here, so the rows below were closed the only way they are allowed to be: by opening
+the document and reading the number in it.
+
+- `theodore-roosevelt`, 230 million acres → the National Park Service's own conservation
+  page, which also breaks out 150 million of it as national forest.
+- `ernest-shackleton`, 97 nautical miles → Royal Museums Greenwich, giving the Farthest
+  South as 88°23'S on 9 January 1909. A minute of latitude is a nautical mile, so the
+  entry's "nautical" is the exact term and the museum's "97 miles" is the same number.
+- `ernest-shackleton`, 800 miles → Shackleton's own *South* (1919), where he puts South
+  Georgia at over 800 miles away.
+
+Two more rows were struck as already closed: `clair-patterson`'s 4.55 billion years and
+78 per cent were both carried in that entry's `facts` block the whole time. This page had
+not been updated when they landed.
+
+**Still shut:** Nature, Cell, JAMA, ScienceDirect, Justia and HarperCollins all refuse
+robots from here, and the rest of the table lives in books. Those rows stay leads. The
+sweep that produced this page failed because the network refused *everything*; the lesson
+holds for the part of it that still does.
+
+---
+
 ## The leads
 
 | Life | The figure, as the entry states it | The document to open |
@@ -29,20 +54,14 @@ the wording, and write `facts` blocks from what you read. Delete each row as it 
 | `maurice-hilleman` | forty million doses, 1957 | Offit, *Vaccinated* (2007) |
 | `john-d-rockefeller` | ~90% of American refining, early 1880s | Chernow, *Titan* (1998) |
 | `andrew-carnegie` | $480 million to Morgan's syndicate | *American Heritage*, "The Deal of the Century" (Jul/Aug 1998) |
-| `ernest-shackleton` | 97 nautical miles from the Pole, 1909 | Shackleton's own 1909 dispatch; the Nimrod record at 88°23'S |
-| `ernest-shackleton` | five months on the floes, three boats, 28 survived | RGS Endurance timeline; Alexander, *The Endurance* (1998) |
-| `theodore-roosevelt` | 230 million acres protected | Brinkley, *The Wilderness Warrior* (2009); Theodore Roosevelt Association |
 | `steve-jobs` | 100,000 pre-IPO shares for $1M | Isaacson, *Steve Jobs* (2011) |
 | `steve-jobs` | $5M + $5M for Lucasfilm's graphics group; ~$7.4bn from Disney, 2006 | Price, *The Pixar Touch* (2008); Disney's own May 2006 filing |
 | `steve-jobs` | 94.1% probability of paternity | *Time*, "Striking It Rich" (3 January 1983) — see the conflict below |
 | `tu-youyou` | >2,000 recipes, 380 extracts | Miller & Su, *Cell* 146:855 (2011) — already opened once for this entry |
-| `clair-patterson` | 4.55 billion years, ±70 million | Patterson, *Geochim. Cosmochim. Acta* 10:230 (1956) |
-| `clair-patterson` | blood lead fell 78% | Pirkle et al., *JAMA* 272:284 (1994) — already opened once for this entry |
 | `norman-borlaug` | a billion lives or more | **see below — this one is not a sourcing job** |
 
-Two of these the house has opened before, for the entries themselves: Miller & Su for Tu
-Youyou and Pirkle et al. for Patterson, both named in the Retired table. Those two are the
-shortest path to closing a row.
+Tu Youyou's entry has had Miller & Su opened for it once already, which makes that the
+shortest row left to close.
 
 ---
 
