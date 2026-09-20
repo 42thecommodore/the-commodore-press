@@ -80,6 +80,16 @@
       "to": "press:republic-of-letters",
       "label": "The Republic of Letters",
       "txt": "— the institutions Johns says did the real work."
+    },
+    {
+      "to": "press:great-divergence",
+      "label": "The Great Divergence",
+      "txt": "— the larger argument this sits inside, and the one corner of it with something like a natural experiment."
+    },
+    {
+      "to": "press:concept-of-law",
+      "label": "The Concept of Law",
+      "txt": "— fixity as an institutional achievement again: what settles a text is a practice, not the text."
     }
   ],
   "reading": [

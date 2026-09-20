@@ -44,6 +44,11 @@
       "to": "lives:florence-nightingale",
       "label": "Florence Nightingale",
       "txt": "— the same year, 1854, and the same weapon: a count that made the authorities look at the water and the drains."
+    },
+    {
+      "to": "press:finding-longitude",
+      "label": "Finding Longitude",
+      "txt": "— another famous story the archives decline to support, where the duller version is the better one."
     }
   ]
 }

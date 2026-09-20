@@ -81,6 +81,11 @@
       "to": "press:comparative-advantage",
       "label": "Comparative Advantage",
       "txt": "— the theory the box made real, including the part about who pays for it."
+    },
+    {
+      "to": "press:silicon-and-light",
+      "label": "Silicon & Light",
+      "txt": "— the same binding constraint one industry over, where the thing everyone agreed to was a published roadmap rather than a box size."
     }
   ],
   "reading": [

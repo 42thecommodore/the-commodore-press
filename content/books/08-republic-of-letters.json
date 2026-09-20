@@ -81,6 +81,16 @@
       "to": "lives:rosalind-franklin",
       "label": "Rosalind Franklin",
       "txt": "— the norms of shared knowledge, and the 1953 case where unpublished data travelled without them."
+    },
+    {
+      "to": "press:movable-type",
+      "label": "Movable Type",
+      "txt": "— the machine underneath the correspondence, and the argument about how much of the change was the machine."
+    },
+    {
+      "to": "lives:benjamin-franklin",
+      "label": "Benjamin Franklin",
+      "txt": "— the network's American end, worked by a printer who knew exactly what he was building."
     }
   ],
   "reading": [

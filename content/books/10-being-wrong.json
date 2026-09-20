@@ -85,6 +85,21 @@
       "to": "lives:vasily-arkhipov",
       "label": "Vasily Arkhipov",
       "txt": "— a story the world believes, and the document that would settle it, which has not appeared."
+    },
+    {
+      "to": "press:heated-disk",
+      "label": "The Heated Disk",
+      "txt": "— why the rule is harder than it sounds: what meets the evidence is a bundle, never one claim on its own."
+    },
+    {
+      "to": "press:plastic-tide",
+      "label": "The Plastic Tide",
+      "txt": "— the rule under field conditions, where the honest answer is still that nobody knows yet."
+    },
+    {
+      "to": "lives:charles-darwin",
+      "label": "Charles Darwin",
+      "txt": "— twenty years spent hunting whatever would sink it, which is what the rule looks like with someone behind it."
     }
   ],
   "reading": [
