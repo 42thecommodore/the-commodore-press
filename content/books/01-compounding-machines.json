@@ -95,6 +95,11 @@
       "to": "lives:emmy-noether",
       "label": "Emmy Noether",
       "txt": "— Göttingen mathematics as a compounding machine, and how fast one can be taken apart."
+    },
+    {
+      "to": "lives:marie-curie",
+      "label": "Marie Curie",
+      "txt": "— the counter-case. No institution would have her, there was no structure to be inside, and the century came out of a shed anyway."
     }
   ],
   "reading": [

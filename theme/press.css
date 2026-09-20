@@ -481,6 +481,44 @@
   .door-go:active{transform:scale(.96)}
   body.dusk .door-go:hover{background:var(--ink-mid)}
 
+  /* ---------- one thread, three wings ----------
+     The front door said what each wing holds and never said how they meet, so the Atlas
+     read as a dead end — which it also was in the data: no title reached it. This panel
+     is built from real `across` chains (wingThreads in press.js), so it can only ever
+     show a connection the content actually carries. */
+  .thread{background:var(--paper-2);border:1px solid var(--rule);padding:34px 36px 32px}
+  .thr-sub{max-width:74ch;margin:0 0 26px;font-size:17px;line-height:1.55;color:var(--ink-mid)}
+  .thr-sub b{font-weight:500;color:var(--ink);font-style:normal}
+  .thr-row{list-style:none;margin:0;padding:0;display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+  .thr-row li{position:relative;display:flex}
+  /* the join between wings, drawn in the gutter rather than inside a card */
+  .thr-row li+li::before{content:"→";position:absolute;left:-22px;top:32px;
+    font-family:var(--mono);font-size:14px;color:var(--ink-soft);opacity:.65}
+  .thr-row button{flex:1;display:flex;flex-direction:column;gap:6px;text-align:left;
+    border-top:2px solid var(--ac,var(--rule));padding:15px 0 0;
+    transition:transform .35s var(--ease)}
+  .thr-row button:hover{transform:translateY(-3px)}
+  .thr-w{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac,var(--ink-soft))}
+  .thr-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-soft)}
+  .thr-t{font-size:22px;font-weight:500;line-height:1.14}
+  .thr-q{margin-top:6px;padding-left:12px;border-left:1px solid var(--rule);
+    font-size:15.5px;line-height:1.5;font-style:italic;color:var(--ink-mid)}
+  .thr-go{margin-top:auto;padding-top:12px;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.06em;color:var(--ac,var(--ink-soft));opacity:0;transform:translateY(3px);
+    transition:opacity .3s,transform .3s var(--ease)}
+  .thr-row button:hover .thr-go,.thr-row button:focus-visible .thr-go{opacity:1;transform:none}
+  @media (max-width:760px){
+    .thread{padding:26px 20px 24px}
+    .thr-row{grid-template-columns:1fr;gap:26px}
+    .thr-row li+li::before{content:"↓";left:0;top:-20px}
+    .thr-go{opacity:1;transform:none}          /* no hover on a phone */
+  }
+  @media (prefers-reduced-motion:reduce){
+    .thr-row button:hover{transform:none}
+    .thr-go{opacity:1;transform:none}
+  }
+
   .newgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
   .newcard{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:0 0 4px;
     transition:transform .45s var(--ease)}

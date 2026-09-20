@@ -34,6 +34,11 @@
       "to": "atlas:disc",
       "label": "The Atlas · Discipline is freedom",
       "txt": "— ritual as the rule you keep to yourself; the earliest recorded version."
+    },
+    {
+      "to": "press:concept-of-law",
+      "label": "The Concept of Law",
+      "txt": "— the twentieth-century version of the argument, which ends up agreeing: the master rule of a legal system is a social fact, not a command."
     }
   ]
 }

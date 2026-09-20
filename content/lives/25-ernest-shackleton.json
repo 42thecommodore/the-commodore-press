@@ -39,6 +39,11 @@
       "to": "atlas:backup",
       "label": "The Atlas · Get back up",
       "txt": "— a man falls seven times. Shackleton failed at every goal he set and the crew came home."
+    },
+    {
+      "to": "press:finding-longitude",
+      "label": "Finding Longitude",
+      "txt": "— where the instrument Worsley was carrying came from, and the sixty years and one man's life it cost to make it possible."
     }
   ]
 }

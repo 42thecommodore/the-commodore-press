@@ -95,6 +95,11 @@
       "to": "press:baptism-and-chain",
       "label": "The Baptism and the Chain",
       "txt": "— the rule of recognition has a cousin in the philosophy of language: a chain of use, not a definition, fixes what a name picks out."
+    },
+    {
+      "to": "lives:confucius",
+      "label": "Confucius",
+      "txt": "— the same observation from the other tradition: what actually holds a society is example and reciprocity, long before it is force."
     }
   ],
   "reading": [

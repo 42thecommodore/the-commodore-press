@@ -174,6 +174,25 @@ function openLife(id){go('lives');setTimeout(()=>openReader('lives',id),340)}
 const plateOrMark=(b,cls)=>PLATES[b.id]
   ? `<img class="${cls}" src="${PLATES[b.id]}" alt="" loading="lazy">`
   : `<span class="${cls} nomark" aria-hidden="true"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="none" stroke="currentColor" stroke-width=".9"/><path d="M11 1V21M1 11H21" stroke="currentColor" stroke-width=".9"/></svg></span>`;
+/* Every Press → Lives → Atlas path the content actually contains. Built from `across`
+   rather than written down, so the panel below cannot outlive the links it describes:
+   pull a link and the thread it was showing stops being offered. */
+function wingThreads(){
+  const out=[];
+  for(const b of BOOKS) for(const a of (b.across||[])){
+    if(!a.to.startsWith("lives:"))continue;
+    const life=LIVES.find(l=>l.id===a.to.slice(6)); if(!life)continue;
+    for(const c of (life.across||[])){
+      if(!c.to.startsWith("atlas:"))continue;
+      const pr=P_BY_ID[c.to.slice(6)]; if(!pr)continue;
+      out.push({b,life,pr});
+    }
+  }
+  return out;
+}
+/* the Atlas has no reader of its own — open the wing and light the constellation */
+function openPrinciple(id){go("atlas");setTimeout(()=>lightConst(id),340)}
+
 function renderDoors(withPlates,dayN){
   const el=document.getElementById("doors"); if(!el)return;
   // a different life from the "From the shelves" card, so the two never show the same face
@@ -188,7 +207,31 @@ function renderDoors(withPlates,dayN){
     ["The line to keep","One sentence to leave with.",spec.keep]
   ];
   const newest=LIVES.slice(-4).reverse();
+  const threads=wingThreads();
+  const th=threads.length?threads[dayN%threads.length]:null;
+  const cells=th?[
+    ["Wing I","The Press","an idea",     th.b.title,  th.b.claim,  `openReader('press','${th.b.id}')`,  "var(--oxblood)"],
+    ["Wing II","Lives",   "a person",    th.life.n,   th.life.keep,`openLife('${th.life.id}')`,         "var(--ink)"],
+    ["Wing III","The Atlas","a principle",th.pr.name, th.pr.gloss, `openPrinciple('${th.pr.id}')`,      "var(--navy)"],
+  ]:[];
+
   el.innerHTML=
+   (th?`<section class="door thread" data-reveal aria-labelledby="thrH">
+      <div class="door-h"><div class="lbl">What the three wings are</div>
+        <h2 id="thrH">One thread, three wings</h2></div>
+      <p class="thr-sub">The Press keeps an <b>idea</b>, with its timeline, its numbers and its objections.
+        Lives keeps a <b>person</b>, and the one book on them worth your time. The Atlas keeps a
+        <b>principle</b> someone is working by now. The same thread usually runs through all three —
+        here is one of them, end to end.</p>
+      <ol class="thr-row">${cells.map((c,i)=>`<li data-reveal style="--d:${i*110}ms">
+          <button onclick="${c[5]}" style="--ac:${c[6]}">
+            <span class="thr-w">${c[0]} · ${c[1]}</span>
+            <span class="thr-k">${c[2]}</span>
+            <b class="thr-t">${c[3]}</b>
+            <span class="thr-q">${c[4]}</span>
+            <span class="thr-go">Open →</span>
+          </button></li>`).join("")}</ol>
+    </section>`:"")+
    `<section class="door spec" data-reveal aria-labelledby="specH">
       <div class="door-h"><div class="lbl">How every entry works</div>
         <h2 id="specH">Four parts, shown here on ${spec.n}</h2></div>
