@@ -12,7 +12,7 @@
   "accent": "#9FD3EC",
   "motif": "lines",
   "claim": "Capability became forecastable from spend. That turned research into capital allocation.",
-  "lede": "The most consequential empirical finding of the last decade is that loss falls predictably with compute, data, and parameters — and nobody fully knows why.",
+  "lede": "Loss falls predictably with compute, data and parameters, across many orders of magnitude. Nobody fully knows why.",
   "copy": [
     "In 2020, Kaplan and co-authors showed that language model loss follows smooth power laws in model size, dataset size, and training compute, across many orders of magnitude. Not approximately: cleanly, over a range where you would expect any empirical relationship to fall apart. Two years later, DeepMind's Chinchilla paper corrected the recipe. For a fixed compute budget the field had been building models far too large and feeding them far too little — roughly twenty tokens per parameter, not two. A 70-billion-parameter model trained properly beat a 280-billion-parameter one trained on the same compute.",
     "The strategic content is larger than the technical content. A predictable curve turns research into capital allocation. If you can forecast capability from spend, you can raise against it, build datacenters against it, and sign multi-year power contracts against it. That is what happened, and it is why the constraint on frontier models migrated from ideas to electricity and land.",

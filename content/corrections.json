@@ -18,5 +18,20 @@
     "d": "Aug 2026",
     "t": "Railway mania mileage.",
     "b": "An early draft said roughly 6,000 miles of British railway were authorised at the peak. The 1846 figure is about 9,500 miles across 263 Acts."
+  },
+  {
+    "d": "Sept 2026",
+    "t": "The EUV consortium.",
+    "b": "Silicon & Light said an international consortium began work on extreme ultraviolet lithography in 1997. The 1997 consortium, EUV LLC, was American: Intel, AMD and Motorola with three US national laboratories. ASML was admitted in 1999, and that is when the programme became international."
+  },
+  {
+    "d": "Sept 2026",
+    "t": "Three explanations.",
+    "b": "The Great Divergence printed '3' as a figure — the explanations still standing. It was my own count, not a sourced number, and the entry itself discusses more than three. It is replaced by Robert Allen's estimate of the return on a spinning jenny: 38% in England against 2.5% in France."
+  },
+  {
+    "d": "Sept 2026",
+    "t": "Unix and C.",
+    "b": "The Unix Bargain dated the rewrite of Unix in C to 1972 and called C a language invented so the system could move. Ritchie's own account puts the kernel rewrite in the summer of 1973 and says portability carried little weight at the time; it became the point with the 1977 port to the Interdata 8/32. The entry also said Thompson wrote the first version in three weeks. By his own account it took the month his wife and son were away."
   }
 ]

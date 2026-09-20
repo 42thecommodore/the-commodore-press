@@ -14,8 +14,8 @@
   "claim": "Composability bought with discoverability. Fifty years on, still the best trade in software.",
   "lede": "Two people built it on a spare minicomputer after their employer cancelled the ambitious version. That constraint is the entire design.",
   "copy": [
-    "Multics was the grand plan: a computing utility, everything for everyone, designed by committee across three organisations. Bell Labs pulled out. Ken Thompson and Dennis Ritchie then built something small on a discarded PDP-7, and in 1972 rewrote it in C — a language invented largely so the operating system could move. Portability is the load-bearing decision. An operating system you could carry to new hardware was one that could outlive its hardware, which is why code written in the seventies still runs and the machine it was written for is in a museum.",
-    "The bargain is explicit: programs do one thing, they speak plain text, and you compose them with pipes. You trade discoverability and safety for composability and leverage. It is a genuinely terrible interface for a novice and an extraordinary one for someone who has paid the learning cost — and that cost is real, not a personality defect, which is why every generation sincerely tries to replace it and mostly ends up shipping a nicer shell on top.",
+    "Multics was the grand plan: a computing utility, everything for everyone, designed by committee across three organisations. Bell Labs pulled out. Ken Thompson and Dennis Ritchie then built something small on a discarded PDP-7, and in 1973 rewrote it in C. Portability was not the reason. \"At the time we did not put much weight on portability,\" Ritchie wrote later; \"interest in this arose later.\" It turned out to be the load-bearing decision anyway. An operating system you could carry to new hardware was one that could outlive its hardware, which is why code written in the seventies still runs and the machine it was written for is in a museum.",
+    "The bargain is explicit: programs do one thing, they speak plain text, and you compose them with pipes. You trade discoverability and safety for composability and leverage. It is a terrible interface for a novice and an extraordinary one for someone who has paid the learning cost. That cost is real, not a personality defect, which is why every generation sincerely tries to replace it and mostly ends up shipping a nicer shell on top.",
     "Plain text as the universal interface is the underrated half. It is lossy, unstructured, and constantly re-parsed, and it is also the reason a tool written in 1975 can be piped into a tool written last week by someone who has never heard of it. Every attempt to replace it with a richer typed protocol has bought correctness and paid in composability, which is the same trade running the other way.",
     "The cultural legacy is stranger than the technical one. Richard Gabriel's 'worse is better' — the argument that the simpler, uglier, shippable design beats the correct and complete one — started as an observation about Unix and Lisp and became a general theory of how technology spreads. Gabriel then spent years arguing against himself in print, which is the most Unix thing about it."
   ],
@@ -25,8 +25,8 @@
       "t": "Thompson writes the first Unix on a cast-off PDP-7 while his family is away for a month."
     },
     {
-      "y": "1972",
-      "t": "Ritchie's C matures; Unix is rewritten in it, making the system portable and therefore immortal."
+      "y": "1973",
+      "t": "Thompson and Ritchie rewrite the kernel in C. Nobody is thinking about portability yet; the 1977 port to the Interdata 8/32 makes it the point."
     },
     {
       "y": "1978",
@@ -44,7 +44,7 @@
   "figures": [
     {
       "n": "Ken Thompson",
-      "d": "Wrote the first version in three weeks. Also wrote the paper on trusting trust that should still frighten you."
+      "d": "Wrote the first version in the month his wife and son were away, a week each for the kernel, shell, editor and assembler. Also wrote the paper on trusting trust that should still frighten you."
     },
     {
       "n": "Dennis Ritchie",
@@ -61,15 +61,15 @@
       "s": "First Unix, on a cast-off PDP-7 at Bell Labs"
     },
     {
-      "b": "1972",
-      "s": "Rewritten in C — the portability decision that made it permanent"
+      "b": "1973",
+      "s": "Unix kernel rewritten in C: Dennis Ritchie, 'The Development of the C Language' (1993)"
     },
     {
       "b": "1978",
       "s": "McIlroy states the Unix philosophy: do one thing well"
     }
   ],
-  "contested": "'Worse is better' is quoted as a rule; Gabriel himself argued both sides for years and never settled it. And the claim that Unix's design is why it won competes with a duller explanation — AT&T was forbidden by a consent decree from selling software, so it licensed Unix to universities almost for free, and a generation learned it because it was there.",
+  "contested": "'Worse is better' is quoted as a rule; Gabriel himself argued both sides for years and never settled it. And the claim that Unix's design is why it won competes with a duller explanation, which Peter Salus documents: the 1956 consent decree kept AT&T out of the software business, so it licensed Unix to universities almost for free and with no support, and a generation learned it, and learned to fix it for each other, because it was there.",
   "changed": "I used to think the philosophy caused the success. The licensing accident probably did more. That doesn't make the philosophy wrong — it makes it the thing that let a free system stay useful for fifty years rather than the thing that spread it in the first place.",
   "reading": [
     {
@@ -87,7 +87,7 @@
     {
       "t": "The Evolution of the Unix Time-sharing System",
       "a": "Dennis Ritchie",
-      "u": "https://www.bell-labs.com/usr/dmr/www/hist.html",
+      "u": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html",
       "why": "Primary source, from one of the two people who were there."
     },
     {

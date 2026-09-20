@@ -12,11 +12,11 @@
   "accent": "#C6CBD4",
   "motif": "grid",
   "claim": "Moore's Law was never a law. It was a schedule everyone agreed to believe.",
-  "lede": "To print a modern chip you vaporise tin droplets with a laser, twice, to make light no lens can focus — so you use mirrors polished to the smoothness of a small country.",
+  "lede": "To print a modern chip you hit tin droplets with a laser twice to make light no lens can focus. So you use mirrors that, scaled up to the size of Germany, would have no bump taller than a millimetre.",
   "copy": [
     "Extreme ultraviolet lithography works at 13.5 nanometres, a wavelength absorbed by air, glass, and essentially everything else. So the entire optical path runs in vacuum through multilayer Bragg mirrors that reflect by interference rather than refraction. The light source is a stream of molten tin droplets hit mid-flight by a pre-pulse to flatten them and then a main pulse from a carbon dioxide laser to turn them into plasma — fifty thousand times a second, every second, for years. One company on earth sells the machine. It took roughly two decades and a consortium of competitors to make it work at all.",
     "Downstream, the concentration is just as extreme. Leading-edge logic is manufactured almost entirely in Taiwan and South Korea, by companies dependent on Japanese chemicals, Dutch machines, German optics, and American design software. Morris Chang's 1987 insight in founding TSMC — separate the fab from the designer, and the designers will come — created the entire fabless industry and, incidentally, one of the most geopolitically loaded chokepoints in the world economy.",
-    "Moore's Law is the part most often misunderstood. It was never a physical law; it was an industry roadmap. Moore observed a doubling trend in 1965 and the industry then organised its capital around meeting it, publishing coordinated technology roadmaps so equipment makers, materials suppliers and fabs all invested on the same schedule. It held for decades in large part because everyone believed it would and acted accordingly. A self-fulfilling prophecy backed by tens of billions in capex is a genuinely underrated kind of technology.",
+    "Moore's Law is the part most often misunderstood. It was never a physical law; it was an industry roadmap. Moore observed a doubling trend in 1965, and the industry organised its capital around meeting it. It published coordinated technology roadmaps so equipment makers, materials suppliers and fabs all invested on the same schedule. It held for decades in large part because everyone believed it would and acted accordingly. A self-fulfilling prophecy backed by tens of billions in capex is a genuinely underrated kind of technology.",
     "What makes this the right thing to be obsessed with is that it's the clearest counterexample to the idea that markets route around chokepoints. Here they didn't. The learning curves are steep enough, the capital lumps large enough, and the tacit process knowledge deep enough that a single supplier per layer turned out to be the stable configuration."
   ],
   "timeline": [
@@ -34,7 +34,11 @@
     },
     {
       "y": "1997",
-      "t": "An international consortium begins serious work on extreme ultraviolet lithography."
+      "t": "Intel, AMD and Motorola form EUV LLC with three US national laboratories to develop extreme ultraviolet lithography."
+    },
+    {
+      "y": "1999",
+      "t": "ASML is admitted to EUV LLC, and the American programme becomes an international one."
     },
     {
       "y": "2019",
@@ -69,8 +73,8 @@
       "s": "TSMC founded, inventing the pure-play foundry model"
     }
   ],
-  "contested": "How much of leading-edge concentration is a genuine physical and learning-curve moat, versus decades of accumulated policy and subsidy choices, is actively argued — and it is the crux of every chip-sovereignty programme now underway. If it's mostly a moat, subsidies buy very little. If it's mostly policy, they might buy a lot.",
-  "changed": "I assumed the hard part was the physics. Reading about EUV's development, the hard part looks more like sustained organisational will: a twenty-year programme, through several plausible cancellation points, funded by companies that were also each other's customers. The physics was merely impossible; the governance was harder.",
+  "contested": "How much of leading-edge concentration is a genuine physical and learning-curve moat, versus decades of accumulated policy and subsidy choices, is actively argued — and it is the crux of every chip-sovereignty programme now underway. A 2020 study by BCG for the Semiconductor Industry Association, then lobbying for subsidies, put the ten-year cost of a US fab about 30 per cent above Taiwan's and attributed 40 to 70 per cent of that gap to government incentives. Morris Chang, in 2023, put US costs at perhaps double Taiwan's and blamed work culture and repair speed, not subsidy. Chris Miller blurs the line from the other side: Taiwan's moat of suppliers and skilled labour is what decades of Taiwanese industrial policy built. If it's mostly a moat, subsidies buy very little. If it's mostly policy, they might buy a lot.",
+  "changed": "I assumed the hard part was the physics. Reading about EUV's development, I came to see the hard part as sustained organisational will: a twenty-year programme, through several plausible cancellation points, funded by companies that were also each other's customers. The physics was merely impossible; the governance was harder.",
   "across": [
     {
       "to": "press:the-box",
@@ -87,7 +91,7 @@
     {
       "t": "Chip War: The Fight for the World's Most Critical Technology",
       "a": "Chris Miller",
-      "u": "https://www.christophermiller.net/semiconductors",
+      "u": "https://en.wikipedia.org/wiki/Chip_War",
       "why": "The geopolitical spine of the story, and strong on how the chokepoints formed."
     },
     {
@@ -105,7 +109,7 @@
     {
       "t": "The Origins of Efficiency",
       "a": "Brian Potter",
-      "u": "https://press.stripe.com/the-origins-of-efficiency",
+      "u": "https://press.stripe.com/origins-of-efficiency",
       "why": "For the general question of why some manufacturing learning curves run and others stall."
     }
   ]
