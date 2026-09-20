@@ -24,5 +24,23 @@
     "by": "C. M. Stieglitz, New York World-Telegram & Sun",
     "credit": "the 1939 photograph of Robert Moses is by C. M. Stieglitz for the New York World-Telegram &amp; Sun, held by the Library of Congress, which states that it knows of no copyright restrictions on it",
     "checked": "2026-09-19"
+  },
+  "rosalind-franklin": {
+    "licence": "CC BY-SA 4.0",
+    "by": "MRC Laboratory of Molecular Biology, from the personal collection of Jenifer Glynn",
+    "credit": "the 1955 photograph of Rosalind Franklin at her microscope is credited to the MRC Laboratory of Molecular Biology, from the personal collection of her sister Jenifer Glynn, under CC BY-SA 4.0",
+    "checked": "2026-09-19"
+  },
+  "wu-chien-shiung": {
+    "licence": "sia-no-known-restrictions",
+    "by": "Smithsonian Institution Archives",
+    "credit": "the 1963 photograph of Wu Chien-Shiung at Columbia comes from the Smithsonian Institution Archives, published with no known copyright restrictions",
+    "checked": "2026-09-19"
+  },
+  "frances-kelsey": {
+    "licence": "nlm-believed-public-domain",
+    "by": "National Library of Medicine",
+    "credit": "the photograph of Frances Kelsey receiving her award from President Kennedy comes from the National Library of Medicine, which believes the item to be in the public domain",
+    "checked": "2026-09-19"
   }
 }

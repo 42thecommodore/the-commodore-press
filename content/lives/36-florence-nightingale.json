@@ -1,0 +1,57 @@
+{
+  "id": "florence-nightingale",
+  "keep": "The death rate at Scutari fell after the sewers were cleaned. Her real work began when she counted why.",
+  "n": "Florence Nightingale",
+  "years": "1820–1910",
+  "place": "United Kingdom",
+  "field": "Statistics & Reform",
+  "group": "famous",
+  "cover": "#6E2E3A",
+  "spineC": "#4E1F29",
+  "ink": "#F8ECEE",
+  "accent": "#E6A9B4",
+  "motif": "conic",
+  "lede": "The lamp is the least of it. Her lasting work was done at a desk, with a statistician, proving how many soldiers the army's own hospitals had killed.",
+  "copy": [
+    "Florence Nightingale was born in Florence in 1820 and educated at home by her father; she was allowed mathematics tutors only after long battles with her family. In early November 1854 she reached Scutari, across the Bosphorus from Constantinople, with 38 nurses. The Barrack Hospital there was then the largest in the world. It had not been built as a hospital, and it lacked running water, working toilets and a laundry. Soldiers were shipped to it across the Black Sea from the Crimea, and a great many of them died there.",
+    "The figures are worse than the legend allows. Between October 1854 and April 1855, Hugh Small calculates from her own later tables, 4,522 of the 12,518 men sent to Scutari died, 36 per cent; of the 53,913 treated in the Crimea, 5,341 died, about ten per cent. In February 1855 the death rate at Scutari reached 427 per 1,000 a month, against 27 at Balaclava. Most of the dead had been sent with illness, not wounds. The rate fell after a Sanitary Commission under John Sutherland arrived in March 1855 and cleared the sewers and the water. When Nightingale named the causes in a confidential report in 1858, she listed \"Over-crowding of the Patients… Extremely defective drainage… Want of ventilation.\"",
+    "The popular version credits nursing with the fall in deaths. The drains did most of it, and her lasting work came afterwards. Back in London, with the statistician William Farr, she turned the army's records into an argument, including the 1858 rose diagram that set the deaths from preventable disease, in blue, against the far smaller red wedges for wounds. She did not invent the form; André-Michel Guerry had used it in 1829 and Farr in 1852. She was among the first to use a chart to change a government's mind. That year she became the first woman elected a fellow of the Royal Statistical Society. She collapsed in 1857 and spent much of her remaining fifty years in bed, running reform by letter. The 1863 edition of her Notes on Hospitals opens: \"It may seem a strange principle to enunciate as the very first requirement in a hospital that it should do the sick no harm.\""
+  ],
+  "facts": [
+    {
+      "b": "4,522 / 12,518",
+      "s": "Deaths among men sent to Scutari, Oct 1854–Apr 1855: Hugh Small, 'Nightingale's overlooked Scutari statistics', Significance 17:6 (2020)"
+    },
+    {
+      "b": "427 vs 27",
+      "s": "Deaths per 1,000 per month, Scutari vs Balaclava, February 1855: Small, Significance (2020)"
+    },
+    {
+      "b": "1858",
+      "s": "First woman elected a fellow of the Royal Statistical Society: Science Museum, 'Florence Nightingale: the pioneer statistician'"
+    },
+    {
+      "b": "1829",
+      "s": "Guerry's 'courbes circulaires', the polar-area form before Nightingale: Michael Friendly, 'The Golden Age of Statistical Graphics'"
+    }
+  ],
+  "bio": {
+    "t": "Florence Nightingale: The Making of an Icon",
+    "a": "Mark Bostridge",
+    "y": "2008",
+    "why": "The standard modern life, built on archives earlier biographers did not use, and as interested in how the legend was manufactured as in the woman. For the statistical argument read Hugh Small's 'Florence Nightingale: Avenging Angel' (1998), and Lynn McDonald for the reply."
+  },
+  "contested": "What she understood, and when, is the argument. Hugh Small's 'Avenging Angel' (1998) contends that Scutari had the worst death rate of any hospital in the theatre, that she did not grasp the role of sanitation until thousands had died, and that repressed guilt over those deaths, which he puts as high as 14,000, drove her 1857 collapse into decades of invalidism. Lynn McDonald, editor of her Collected Works, answers that every army general hospital was deadly, and that \"the highest death rate was at Kulali,\" a hospital not under Nightingale's supervision, as John Sutherland himself reported; Small, she writes, \"did not use the full mortality statistics available.\" Both agree on the larger point: the soldiers died of the buildings, and she spent the rest of her life proving it.",
+  "across": [
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— 1854 was both their year. Snow mapped cholera to a water pump in London while she arrived at Scutari; both made numbers argue with the experts of the day."
+    },
+    {
+      "to": "lives:clair-patterson",
+      "label": "Clair Patterson",
+      "txt": "— a century later, the same move: count carefully, then make the count impossible for the authorities to ignore."
+    }
+  ]
+}

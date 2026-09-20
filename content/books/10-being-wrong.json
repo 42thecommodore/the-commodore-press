@@ -80,6 +80,11 @@
       "to": "lives:john-snow",
       "label": "John Snow",
       "txt": "— the founding case of the method, and the founding case of a story told better than the evidence supports."
+    },
+    {
+      "to": "lives:vasily-arkhipov",
+      "label": "Vasily Arkhipov",
+      "txt": "— a story the world believes, and the document that would settle it, which has not appeared."
     }
   ],
   "reading": [

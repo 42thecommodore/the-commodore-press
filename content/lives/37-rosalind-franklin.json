@@ -1,0 +1,39 @@
+{
+  "id": "rosalind-franklin",
+  "keep": "She was not failing to see the answer. She was being read over her shoulder.",
+  "n": "Rosalind Franklin",
+  "years": "1920–1958",
+  "place": "United Kingdom",
+  "field": "Chemistry & Crystallography",
+  "group": "famous",
+  "cover": "#1E4540",
+  "spineC": "#14302C",
+  "ink": "#EEF3EF",
+  "accent": "#9CCFC0",
+  "motif": "dots",
+  "lede": "The famous version has a photograph stolen from her. The harder version is that she was closing in on the answer herself, and that nobody had to steal anything.",
+  "copy": [
+    "Rosalind Franklin took a Cambridge doctorate in 1945 on the structure of coal, work that let the industry predict how a given coal would burn and what could pass through it. From 1947 she spent three years in Paris under Jacques Mering, learning to read X-ray diffraction from carbons that refuse to form neat crystals. She arrived at King's College London in early 1951, where John Randall put her on DNA. Maurice Wilkins, who had pushed to bring her in and expected to share the crystallography, was not told that the DNA work and the graduate student Raymond Gosling had been handed to her. The friction everyone remembers was built into the appointment.",
+    "Franklin established that DNA took two forms, a dry crystalline A and a wet B, and learned to move between them by controlling humidity. On 2 May 1952 Gosling, working under her, exposed the image now called Photograph 51. She set it aside: the A form was the harder problem and the one she was solving. In January 1953 Wilkins showed that photograph to James Watson without her permission, and a King's report to the Medical Research Council carrying her measurements reached Francis Crick through Max Perutz. Neither man told her. Their paper in Nature on 25 April 1953 said only that they had \"been stimulated by a knowledge of the general nature of the unpublished experimental results and ideas of Dr. M. H. F. Wilkins, Dr. R. E. Franklin and their co-workers at King's College, London.\" Her own paper, with Gosling, ran in the same issue.",
+    "The popular version stops there, with a theft and a wronged woman. Franklin moved to Birkbeck in 1953, having been told to leave DNA behind, and did the work she is least known for: the structure of tobacco mosaic virus, with Aaron Klug, and the beginnings of poliovirus. She died of ovarian cancer on 16 April 1958, aged 37. The DNA prize went to Watson, Crick and Wilkins in 1962. The Nobel committee does not consider the dead, a rule the statutes made explicit in 1974, so the argument about what she was owed has been conducted entirely without her."
+  ],
+  "bio": {
+    "t": "Rosalind Franklin: The Dark Lady of DNA",
+    "a": "Brenda Maddox",
+    "y": "2002",
+    "why": "Built on her letters and her family's papers, and the first account to treat her as a working scientist with a career either side of DNA rather than as a figure in someone else's story. Anne Sayre's 'Rosalind Franklin and DNA' (1975) came first and was written as a rebuttal to Watson; it is fiercer and less complete."
+  },
+  "contested": "Which wrong was done is the argument, and it has been rewritten twice. James Watson's 'The Double Helix' (1968) gave the world \"Rosy\", a difficult woman who could not read her own data. Anne Sayre answered it in 1975 with the wronged heroine, and that version stuck. In April 2023 Matthew Cobb and Nathaniel Comfort argued in Nature that both are wrong: she \"did not fail to grasp the structure of DNA,\" and \"deserves to be remembered not as the victim of the double helix, but as an equal contributor to the solution of the structure.\" Their evidence includes a draft article by the journalist Joan Bruce, written with Franklin for Time in 1953 and never published, describing \"two teams\" — Wilkins and Franklin on the experiment, Watson and Crick on the theory — and a January 1953 letter to Crick from Pauline Cowan, a colleague of Franklin's, noting that \"Perutz already knows more about it than they are likely to get across.\" If Franklin assumed her results were already circulating, her silence afterwards makes sense. What the reappraisal does not settle is the ethics: her photograph and her measurements reached Cambridge without her knowledge, and the acknowledgement she got was one sentence.",
+  "across": [
+    {
+      "to": "lives:wu-chien-shiung",
+      "label": "Wu Chien-Shiung",
+      "txt": "— the other credit dispute on this shelf, and the other one where the archive turned out to complicate the story rather than confirm it."
+    },
+    {
+      "to": "press:republic-of-letters",
+      "label": "The Republic of Letters",
+      "txt": "— that entry is about the norms that made shared knowledge work. This is what happens when unpublished results move without them."
+    }
+  ]
+}

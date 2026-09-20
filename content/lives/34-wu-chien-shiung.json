@@ -1,0 +1,44 @@
+{
+  "id": "wu-chien-shiung",
+  "keep": "The committee did not pass her over in 1957. Nobody had put her name forward to pass over.",
+  "n": "Wu Chien-Shiung",
+  "years": "1912–1997",
+  "place": "China / United States",
+  "field": "Physics",
+  "group": "obscure",
+  "cover": "#2B3A67",
+  "spineC": "#1D2847",
+  "ink": "#EEF0F8",
+  "accent": "#A9B8E8",
+  "motif": "lines",
+  "lede": "She showed that nature can tell left from right. The story says the Nobel committee then passed her over. The archive, opened in November 2025, says something else.",
+  "copy": [
+    "Wu Chien-Shiung was born in 1912 in Liuhe, near Shanghai, where her father ran a school for girls. She came to Berkeley in 1936, took her doctorate in 1940 under Ernest Lawrence and Emilio Segrè, and was the first woman on Princeton's physics faculty before joining the Manhattan Project at Columbia in 1944. Her reputation was for precision. In 1956 Tsung-Dao Lee and Chen Ning Yang pointed out that nobody had ever tested whether the weak force, the one behind beta decay, treats a process and its mirror image alike. Physicists had assumed it did. Wu thought the assumption should be checked, and she knew how.",
+    "She took the experiment to the low-temperature laboratory of the National Bureau of Standards in Washington. There Ernest Ambler, Raymond Hayward, Dale Hoppes and Ralph Hudson could cool cobalt-60 to within a fraction of a degree of absolute zero and line up the spins of its nuclei. If mirror symmetry held, electrons would come off equally in both directions. They did not: more left against the spin than along it. The team saw the first signs of the asymmetry on 27 December 1956. The mirror image of the experiment was not a possible experiment. Their paper appeared in Physical Review on 15 February 1957, beside a result from Richard Garwin, Leon Lederman and Marcel Weinrich at Columbia, who had raced to confirm it with muons after hearing of Wu's early data.",
+    "The popular version has the Nobel committee passing her over when Lee and Yang won the 1957 prize. The committee never had the chance. The 1957 file stayed sealed while any laureate of that year lived; after Yang died in October 2025, Mats Larsson and Ramon Wyss opened it and found 58 nominations for that year's physics prize, none of them for Wu. Between 1958 and 1974 she was nominated 23 times, by 18 physicists. Lee put her forward three times. Yang, as far as the archive has opened, never did. One committee member, Bengt Nagel, wrote that her experiments had been done as \"commissioned or direct suggestions of theoreticians.\" She became the first woman to lead the American Physical Society in 1975 and won the first Wolf Prize in Physics in 1978. She died in 1997."
+  ],
+  "bio": {
+    "t": "Madame Wu Chien-Shiung: The First Lady of Physics Research",
+    "a": "Chiang Tsai-Chien",
+    "y": "2014",
+    "why": "The only full biography in English, translated from the Chinese, and the source behind most of the personal detail in later accounts. Read it with Larsson and Wyss's 'Twenty-three nominations, yet no Nobel prize' in Physics World (2026), the first account written from the opened archive."
+  },
+  "contested": "Whether it was an injustice is the argument, and the physicists closest to it disagreed. Magdolna Hargittai, who interviewed the survivors for Physics World in 2012, concluded that calling it an injustice \"is an oversimplification of a complex story.\" Valentine Telegdi, whose own group was chasing the same effect, asked of any experiment done with known techniques: \"where is the merit?\" Val Fitch pushed from the other side. Retellings that make Wu the lone experimenter erase the four men at the Bureau of Standards, and \"it would not have happened without them.\" None of the four won a prize either. The archive settles one question and opens another. Nobody nominated her in 1957, so there was no decision to overturn. But a committee that read the experiment as a service to theory was making a judgment about experimental physics, and that judgment fell on her in ten separate years of nominations.",
+  "across": [
+    {
+      "to": "lives:emmy-noether",
+      "label": "Emmy Noether",
+      "txt": "— Noether tied every symmetry to a conservation law. Wu showed that one symmetry physicists took for granted is not there."
+    },
+    {
+      "to": "lives:marie-curie",
+      "label": "Marie Curie",
+      "txt": "— a Nobel story that turns on who was nominated. Curie's 1903 nominators left her name off until Pierre objected; in 1957 nobody wrote Wu's name down at all."
+    },
+    {
+      "to": "lives:rosalind-franklin",
+      "label": "Rosalind Franklin",
+      "txt": "— the other credit dispute, and the other case where opening the record made the popular story harder rather than simpler."
+    }
+  ]
+}

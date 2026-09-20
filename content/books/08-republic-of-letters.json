@@ -76,6 +76,11 @@
       "to": "lives:isaac-newton",
       "label": "Isaac Newton",
       "txt": "— the network's most productive and least cooperative member."
+    },
+    {
+      "to": "lives:rosalind-franklin",
+      "label": "Rosalind Franklin",
+      "txt": "— the norms of shared knowledge, and the 1953 case where unpublished data travelled without them."
     }
   ],
   "reading": [

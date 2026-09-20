@@ -1,0 +1,39 @@
+{
+  "id": "frances-kelsey",
+  "keep": "The law she used against thalidomide was written after the disaster she had worked on as a student.",
+  "n": "Frances Kelsey",
+  "years": "1914–2015",
+  "place": "Canada / United States",
+  "field": "Medicine & Regulation",
+  "group": "obscure",
+  "cover": "#4A2E4F",
+  "spineC": "#33203A",
+  "ink": "#F4EEF4",
+  "accent": "#D8B4DC",
+  "motif": "grid",
+  "lede": "She did not see the birth defects coming. She saw that the company had not shown its drug was safe, and she kept saying so.",
+  "copy": [
+    "Frances Oldham was born on Vancouver Island in 1914. In 1936 E. M. K. Geiling at the University of Chicago offered her a research assistantship in a letter that began \"Dear Mr. Oldham.\" Her professor at McGill told her to accept, sign her name and \"put Miss in brackets afterwards.\" In September 1937 she was in Geiling's laboratory when Elixir Sulfanilamide began killing people. The manufacturer had dissolved the drug in diethylene glycol, antifreeze, without testing it in animals; her rats showed it was the solvent that destroyed the kidneys. In her own account, the deaths \"precipitated passage of the 1938 Food and Drug law, which was still in effect in 1960\" when she joined the Food and Drug Administration.",
+    "She started on 1 August 1960, and early in September she was handed an application from William S. Merrell for Kevadon, a sleeping pill sold in Europe as thalidomide. Her supervisors thought it would be easy. The 1938 law gave the agency sixty days to object, after which a drug was approved by default, but an application could be declared incomplete. Kelsey, the chemist Lee Geismar and the pharmacologist Jiro Oyama kept finding it incomplete. Early in 1961 she read Leslie Florence's letter in the British Medical Journal of 31 December 1960, reporting nerve damage in long-term users. If the drug could do that to an adult, she reasoned, nine months of it might harm a fetus. She was not predicting missing limbs. On 30 November 1961 Merrell told the FDA the German maker was withdrawing the drug, and on 8 March 1962 it withdrew its own application.",
+    "The popular version says she kept thalidomide out of America. She kept it off the market. Merrell had already shipped it to more than 1,000 doctors as an investigational drug, and the FDA had to track down every one. By Kelsey's own count the agency learned of some seventeen American children born with thalidomide damage, and in about half of those the drug had been obtained overseas. The link to birth defects was made by Widukind Lenz in Germany and William McBride in Australia, not by her. What she did was refuse to accept a safety case that had not been made. The Washington Post's Morton Mintz put her on the front page on 15 July 1962, President Kennedy gave her the award for distinguished federal civilian service that August, and in October the Kefauver–Harris amendments required proof that a drug works and the consent of patients who are given one on trial."
+  ],
+  "bio": {
+    "t": "Reputation and Power: Organizational Image and Pharmaceutical Regulation at the FDA",
+    "a": "Daniel Carpenter",
+    "y": "2010",
+    "why": "The scholarly history of the modern FDA, and the one that treats the Kelsey story as something the agency and Congress made as much as something she did. Her own 'Autobiographical Reflections', published by the FDA's history office, is short, dry and better than any profile of her."
+  },
+  "contested": "How much of the fame was hers is one argument; what the law cost is the other. Daniel Carpenter reads her public triumph, in Adam Kroetsch's summary of his book, as \"not a newspaper scoop … but instead a carefully timed leak designed to influence the passage of impending legislation\": Estes Kefauver's subcommittee needed a heroine to revive a stalled drug bill. Kelsey's own memoir supports him. She says Kefauver's group sent her name forward for the award after the year's list had been announced, making her \"very much a last minute addition.\" She also declines to confirm the most quoted line about her ordeal, that her superiors told her to get out of the kitchen if she could not stand the heat: \"I cannot say I remember that.\" The economist Sam Peltzman argued in 1973 that the efficacy requirement the scandal made possible cost more in effective drugs delayed than it saved in ineffective ones kept out, the \"drug lag\" case still made against the 1962 law. Nobody seriously disputes the narrower claim, that one reviewer's insistence on evidence kept a drug off American shelves.",
+  "across": [
+    {
+      "to": "lives:henrietta-lacks",
+      "label": "Henrietta Lacks",
+      "txt": "— the 1962 law that came out of thalidomide required the consent of patients given experimental drugs. Lacks's cells were taken in 1951 without her knowledge."
+    },
+    {
+      "to": "lives:tu-youyou",
+      "label": "Tu Youyou",
+      "txt": "— the other side of a drug's life: Tu found one inside a secret programme, and Kelsey kept one off the market by asking for the evidence."
+    }
+  ]
+}

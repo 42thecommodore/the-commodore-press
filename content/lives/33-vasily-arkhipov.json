@@ -1,0 +1,39 @@
+{
+  "id": "vasily-arkhipov",
+  "keep": "The best record has no vote in it. It has a man who could see what his captain could not.",
+  "n": "Vasily Arkhipov",
+  "years": "1926–1998",
+  "place": "Soviet Union",
+  "field": "War & Restraint",
+  "group": "obscure",
+  "cover": "#1C2F3E",
+  "spineC": "#122130",
+  "ink": "#EAF0F4",
+  "accent": "#8FB3C9",
+  "motif": "rings",
+  "lede": "He is famous for a vote the best record does not describe. What it describes instead is a man on a conning tower who saw what his captain could not.",
+  "copy": [
+    "Vasily Arkhipov had already survived one disaster at sea. In July 1961 he was second-in-command of K-19, a nuclear-powered missile submarine, when its reactor cooling failed and the crew was exposed to radiation. By October 1962 he was chief of staff of the 69th Submarine Brigade: four diesel Foxtrot boats sent toward Cuba, each carrying a torpedo with a nuclear warhead. He rode in B-59, commanded by Valentin Savitsky. On 24 October the United States announced that it would signal submarines to surface by dropping practice depth charges. Nothing in the record shows the notice reached the boats.",
+    "On 27 October American destroyers and aircraft pinned B-59 down for hours. Inside, the heat was unbearable, the air was thick with carbon dioxide and the batteries were nearly flat. The account that made Arkhipov famous was reported by the Boston Globe in October 2002, from Vadim Orlov, the boat's intelligence officer: with depth charges going off, Savitsky ordered the nuclear torpedo readied, and a cooler-headed officer persuaded him to wait for Moscow. The National Security Archive's 2022 reconstruction, edited by Svetlana Savranskaya, puts the moment on the surface. Aircraft were passing twenty to thirty metres over the conning tower. Savitsky called an urgent dive and the preparation of torpedo number one, but the ladder was blocked by the signalling officer. Arkhipov, still on the tower, saw that the Americans were signalling rather than attacking, and \"called the commander back and calmed him down.\"",
+    "The popular version adds a rule that a launch needed three officers to agree, and makes Arkhipov the one who voted no. Neither the 2002 report nor the 2022 reconstruction describes a vote. The Globe story quoted Thomas Blanton of the National Security Archive: \"a guy called Vasili Arkhipov saved the world.\" The same story called Arkhipov the captain, which he was not. His only known public statement about B-59 came at a Moscow conference on 14 October 1997, and he treated Alexander Mozgovoy's publication of the story as part of a plot to \"denigrate and defame prominent Soviet military and naval leaders.\" He died in 1998, before most of the world had heard his name."
+  ],
+  "bio": {
+    "t": "One Minute to Midnight: Kennedy, Khrushchev, and Castro on the Brink of Nuclear War",
+    "a": "Michael Dobbs",
+    "y": "2008",
+    "why": "The best hour-by-hour account of the day B-59 was forced up, with the submarines set inside the whole crisis rather than lifted out of it. Read it beside the National Security Archive's 2022 briefing book, 'The Underwater Cuban Missile Crisis at 60', which prints the documents and says plainly which parts are memory."
+  },
+  "contested": "How much weight the story can bear is the argument. Sergey Radchenko, a historian of the Cold War, told Meduza in 2024 that \"the evidence is not particularly good for it. It's all oral history,\" brought out by Savranskaya; when Russia's defence ministry declassified its Cuban Missile Crisis files in 2022 he looked for confirmation and found \"nothing, which in itself doesn't prove anything.\" On the other side, Ryurik Ketov, captain of B-4, told Savranskaya in 2012 that Savitsky did believe they were under attack and that war with the United States had already begun. The accounts also disagree with each other: underwater under depth charges in the 2002 telling, on the surface under aircraft in the 2022 one. Nobody disputes the setup. Four submarines carried nuclear torpedoes, and there is no evidence they knew the American signal. Whether one man's judgment was the last thing standing between that and a nuclear exchange is exactly the part that rests on memory.",
+  "across": [
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— the other life on this shelf whose famous scene was told better than its evidence, and is worth reading anyway."
+    },
+    {
+      "to": "press:being-wrong",
+      "label": "Being Wrong Productively",
+      "txt": "— state what would change your mind about B-59. A Soviet document would; in 2022 the files opened and said nothing either way."
+    }
+  ]
+}

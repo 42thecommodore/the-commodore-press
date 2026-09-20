@@ -17,6 +17,28 @@
     "The contamination was the finding. If ordinary laboratory air carried that much lead, so did everything else. In 'Contaminated and Natural Lead Environments of Man' (1965) he estimated that many Americans carried more than a hundred times the natural level in their blood, within about a factor of two of the level at which poisoning shows. Snow cores from Greenland put most of the rise inside the last hundred years. In 1980 he and Dorothy Settle found 0.3 nanograms of lead per gram in fresh albacore and 1,400 in canned, where government laboratories had reported a difference of two to one. The lead came from the solder sealing the cans. By 1993 soldered food cans were gone from the United States.",
     "The popular version is one scientist against the Ethyl Corporation, and it leaves out most of what moved. The case for leaded petrol had been made for forty years by Robert Kehoe, Ethyl's medical director from 1925 and head of the Kettering Laboratory in Cincinnati. He was a competent toxicologist, and his rule was that lead was safe until harm was shown. Patterson testified to Edmund Muskie's Senate subcommittee a week after Kehoe, in June 1966, and said it was difficult to understand \"why the Public Health Service cooperated with the lead industry\" on its report. By his own later account, his Public Health Service contract was then not renewed, nor his contract with the American Petroleum Institute. In 1971 he was left off the National Research Council panel on airborne lead. The average American's blood lead fell 78 per cent between 1976–80 and 1988–91. Algeria, the last country selling leaded petrol, ran out in July 2021."
   ],
+  "facts": [
+    {
+      "b": "4.55 bn yrs",
+      "s": "Patterson, 'Age of meteorites and the earth', Geochimica et Cosmochimica Acta 10 (1956)"
+    },
+    {
+      "b": "100×",
+      "s": "Natural vs modern blood lead: Patterson (1965), as summarised in George Tilton's NAS Biographical Memoir (1998)"
+    },
+    {
+      "b": "0.3 vs 1,400",
+      "s": "Nanograms of lead per gram, fresh vs canned albacore: Settle and Patterson, Science 207 (1980), via Tilton (1998)"
+    },
+    {
+      "b": "78%",
+      "s": "Fall in mean US blood lead, 1976–80 to 1988–91: Pirkle et al., JAMA 272 (1994)"
+    },
+    {
+      "b": "Jul 2021",
+      "s": "Algeria's last stocks run out: UNEP, 'Era of leaded petrol over' (30 August 2021)"
+    }
+  ],
   "bio": {
     "t": "Toxic Truth: A Scientist, a Doctor, and the Battle over Lead",
     "a": "Lydia Denworth",
@@ -34,6 +56,11 @@
       "to": "lives:john-snow",
       "label": "John Snow",
       "txt": "— a measurement turned into a public-health case against the expert consensus of its day."
+    },
+    {
+      "to": "lives:florence-nightingale",
+      "label": "Florence Nightingale",
+      "txt": "— the first to turn a death count into a chart a government could not ignore."
     }
   ]
 }
