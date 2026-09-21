@@ -211,6 +211,13 @@ Nearly every broken file is one of these.
 
 **The rest read as sentences:** `facts[0] has a number with no source line`, `across[1] points at "press:heated-disk", which does not exist`, `copy[2] is still a TODO`. Warnings in yellow never block publishing; errors in red do.
 
+## What the house will and will not print
+
+`PUBLISHING.md` is the short version of the editorial standard: what earns a place on each
+shelf, the five kinds of thing this house does not publish and why, what finished means,
+and — the part worth knowing — how to change one of those rules when it stops making
+sense. It is written to be argued with rather than obeyed.
+
 ## The last read before it ships
 
 `npm run check` proves the shape of a file. It cannot read. Before anything goes live,
