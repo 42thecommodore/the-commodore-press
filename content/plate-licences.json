@@ -1,6 +1,5 @@
 {
   "_note": "Plates that are not plain public domain. Public domain is the default and is not listed here; this file records the ones that carry an obligation, so the colophon credit can be checked instead of remembered. `credit` must appear in templates/shell.html verbatim — `npm run check` fails if it does not, because the licence requires it and a missing credit is a breach, not an untidiness. Values for `licence`: a CC identifier, or `loc-no-known-restrictions` for the narrower claim the Library of Congress actually makes. Re-check when a plate is replaced.",
-
   "mandela": {
     "licence": "CC BY 2.0",
     "by": "South Africa The Good News",
@@ -42,5 +41,11 @@
     "by": "National Library of Medicine",
     "credit": "the photograph of Frances Kelsey receiving her award from President Kennedy comes from the National Library of Medicine, which believes the item to be in the public domain",
     "checked": "2026-09-19"
+  },
+  "frances-perkins": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Harris & Ewing",
+    "credit": "the April 1936 photograph of Frances Perkins is by Harris &amp; Ewing, held by the Library of Congress, which states that it knows of no copyright restrictions on it",
+    "checked": "2026-09-20"
   }
 }

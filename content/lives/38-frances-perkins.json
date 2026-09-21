@@ -1,0 +1,57 @@
+{
+  "id": "frances-perkins",
+  "keep": "The person who designs the thing is rarely the person it gets named after.",
+  "n": "Frances Perkins",
+  "years": "1880–1965",
+  "place": "United States",
+  "field": "Labour & Government",
+  "group": "obscure",
+  "cover": "#38404F",
+  "spineC": "#262C38",
+  "ink": "#EFF1F6",
+  "accent": "#C3B27E",
+  "motif": "lines",
+  "lede": "She stood in the street and watched a hundred and forty-six people die in a factory fire. Twenty-three years later she chaired the committee that wrote Social Security.",
+  "copy": [
+    "Frances Perkins was born in Boston in 1880 and was already working on factory conditions when, in 1911, she watched the Triangle Shirtwaist Factory fire kill 146 workers, most of them young immigrant women. She did not become a reformer that afternoon — she was one already — but she spent the next two decades in New York turning the thing she had seen into administrative machinery, and ended that stretch as the state's Industrial Commissioner. When Roosevelt went to Washington he took her with him. She was the first woman appointed to a presidential cabinet, and she stayed at Labor for the whole of his presidency.",
+    "On 29 June 1934 Roosevelt signed an executive order creating a cabinet-level Committee on Economic Security to write the legislation. Its chair was Perkins. The committee reported on 15 January 1935, and on 14 August the President signed the Social Security Act. That is the sequence, and it is the part the popular version leaves out: the programme is remembered as Roosevelt's, which is fair in the sense that presidents own what they sign, and misleading in the sense that somebody has to sit in the room and decide what the thing will actually be. Perkins did the sitting. The Roosevelt Library's own account calls Social Security her most significant contribution.",
+    "The unglamorous half is the reason it worked. She gave more than a hundred speeches in 1933 alone, which is not the work of a drafter but of someone selling a strange idea to a country that had never had one. A cabinet department is a machine for turning an argument into a form somebody fills in, and Perkins was unusually good at the form. That is also why she is not famous: the people who are remembered are the ones who made the case, and the ones who built the apparatus disappear into it. The apparatus is still there."
+  ],
+  "facts": [
+    {
+      "b": "146",
+      "s": "Workers killed in the 1911 Triangle Shirtwaist Factory fire, which Perkins witnessed: National Park Service, 'Frances Perkins Homestead'"
+    },
+    {
+      "b": "29 Jun 1934",
+      "s": "Roosevelt's executive order creating the cabinet-level Committee on Economic Security, chaired by Perkins: Franklin D. Roosevelt Presidential Library, 'Frances Perkins'"
+    },
+    {
+      "b": "14 Aug 1935",
+      "s": "The Social Security Act signed, the committee having reported on 15 January: Franklin D. Roosevelt Presidential Library, 'Frances Perkins'"
+    },
+    {
+      "b": "100+ speeches",
+      "s": "Given in 1933 alone: Franklin D. Roosevelt Presidential Library, 'Frances Perkins'"
+    }
+  ],
+  "bio": {
+    "t": "The Woman Behind the New Deal",
+    "a": "Kirstin Downey",
+    "y": "2009",
+    "why": "The full-length life, and the one the Park Service's own bibliography sends you to. It takes the administration seriously rather than treating it as the boring part between the fire and the Act."
+  },
+  "contested": "How much of Social Security is hers is genuinely argued, and the argument is hard to settle because committee work leaves thin fingerprints by design — the Roosevelt Library calls it her most significant contribution, which is a judgement, not a measurement. The sharper dispute now is about what the 1935 Act left out rather than who wrote it: whole categories of work were excluded from the original coverage, and historians disagree about whether that was the price of getting it through Congress or something closer to a choice. This entry does not settle that, because the house has not yet opened the documents on either side — the row is in dashboard/research-leads.md.",
+  "across": [
+    {
+      "to": "lives:florence-nightingale",
+      "label": "Florence Nightingale",
+      "txt": "— the same method eighty years earlier: make the count undeniable, then make the state hold the form."
+    },
+    {
+      "to": "lives:robert-moses",
+      "label": "Robert Moses",
+      "txt": "— the other American who understood that permanent power lives in the machinery, and used the discovery for the opposite thing."
+    }
+  ]
+}

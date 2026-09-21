@@ -65,6 +65,22 @@ shortest row left to close.
 
 ---
 
+## A new lead, opened 2026-09-20
+
+**What the 1935 Social Security Act left out.** `frances-perkins` says in `contested` that
+whole categories of work were excluded from the original coverage and that historians
+disagree about why — whether it was the price of passage through a Congress whose
+committees Southern Democrats chaired, or something closer to a choice. That sentence
+names no scholar on purpose. The two standard positions are well known, but neither
+document was opened for this entry: ssa.gov returns 403 to robots from here, and the
+NPS and Roosevelt Library pages that were opened do not touch the exclusions at all.
+
+Open one from each side, then either name them in `contested` or say plainly that the
+house has not read them. Until then the entry claims a disagreement exists and does not
+claim to have adjudicated it, which is the honest shape.
+
+---
+
 ## Two that are decisions, not lookups
 
 **Borlaug's billion.** The sweep traced the figure to Gregg Easterbrook, "Forgotten

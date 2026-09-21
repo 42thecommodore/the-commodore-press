@@ -103,6 +103,11 @@ const fill = s => s
   // Congress photograph — "no known copyright restrictions" is a narrower claim than
   // public domain and does not belong on either side of that sentence by accident.
   .replace(/{{W_CCPLATES_CAP}}/g, cap(words(licenced(/^CC /).length)))
+  // The third group: held under a narrower claim than public domain and narrower than a
+  // CC licence — the "no known restrictions" holdings. This was typed as "Three" until a
+  // fourth arrived on 2026-09-20, which is the same failure the two comments above
+  // describe, one sentence further along.
+  .replace(/{{W_NARROW_CAP}}/g, cap(words(licenced(/^(?!CC )/).length)))
   .replace(/{{N_LICENSED}}/g, `${words(licenced().length)} plates`)
   .replace(/{{W_WINGS_CAP}}/g, cap(words(WINGS.length)));
 const out = fill(read("templates/shell.html"))

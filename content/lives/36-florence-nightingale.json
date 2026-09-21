@@ -52,6 +52,11 @@
       "to": "lives:clair-patterson",
       "label": "Clair Patterson",
       "txt": "— a century later, the same move: count carefully, then make the count impossible for the authorities to ignore."
+    },
+    {
+      "to": "lives:frances-perkins",
+      "label": "Frances Perkins",
+      "txt": "— the same method in another century: a count nobody could argue with, then the slow work of making the state carry it."
     }
   ]
 }
