@@ -1,0 +1,53 @@
+{
+  "id": "emily-warren-roebling",
+  "keep": "A record can prove somebody was indispensable and still not say what they decided.",
+  "n": "Emily Warren Roebling",
+  "years": "1843–1903",
+  "place": "United States",
+  "field": "Engineering",
+  "group": "obscure",
+  "cover": "#5A4636",
+  "spineC": "#3E3025",
+  "ink": "#F6EFE5",
+  "accent": "#D9B98C",
+  "motif": "lines",
+  "lede": "Her father-in-law died before the bridge began. Her husband was too ill to visit the site. For eleven years the person who went instead was her.",
+  "copy": [
+    "John A. Roebling designed the bridge over the East River and died of tetanus before it was properly under way. His son Washington took over as chief engineer and then fell ill himself, with the decompression sickness men caught working under pressure in the caissons sunk for the piers. He was confined to a sickroom within sight of the work and expected not to live to finish it. Emily Warren Roebling, his wife, began taking down what he said still needed doing, and then went further than a secretary would: she studied strength of materials, stress analysis, cable construction and the calculation of catenary curves, because the questions coming back from the site were technical and somebody had to understand them well enough to carry the answer.",
+    "For more than a decade she went to the site, relayed instructions, answered the questions the engineers put to her, kept the records, handled the correspondence and stood in for her husband in front of the men and the trustees who could have removed him. The American Society of Civil Engineers, whose own account this is drawn from, puts the consequence plainly: she became good enough at it that many people suspected she was the intelligence behind the bridge. When it opened on 24 May 1883 she rode across with President Chester Arthur. She was fifty-six when she took a law certificate from New York University, sixteen years later.",
+    "The popular version used to be that her husband built the bridge from a window. The newer version is that she secretly built it herself. Both are tidier than the record. What the record establishes is that she was the sole working channel between a chief engineer who could not appear and a project that could not stop, for eleven years, and that she acquired real engineering knowledge doing it. What it does not establish is the division of judgement inside that channel — which decisions were his relayed, which were hers made. That is not a gap somebody has failed to fill. It is what happens when two people work as one instrument and only one of them is allowed the title."
+  ],
+  "facts": [
+    {
+      "b": "24 May 1883",
+      "s": "The opening, when it was the longest spanning bridge in the world: Historic American Engineering Record for the Brooklyn Bridge, Library of Congress"
+    },
+    {
+      "b": "1,595.5 ft",
+      "s": "The main span: New York City Department of Transportation, 'Brooklyn Bridge'"
+    },
+    {
+      "b": "age 56",
+      "s": "When she took a law certificate from New York University, in 1899: American Society of Civil Engineers, 'Emily Warren Roebling'"
+    }
+  ],
+  "bio": {
+    "t": "Silent Builder: Emily Warren Roebling and the Brooklyn Bridge",
+    "a": "Marilyn Weigold",
+    "y": "1984",
+    "why": "The book about her rather than about the bridge, and the one the engineers' own society sends you to. McCullough's The Great Bridge is the better-known account and she is a supporting character in it, which is part of the point."
+  },
+  "contested": "How much of the engineering was hers is the argument, and it is unusually hard to settle because the position she occupied was designed to leave no separate signature — everything went out under the chief engineer's name, which was the arrangement's whole purpose. The ASCE's own wording is that many suspected she was the intelligence behind the bridge, and a suspicion recorded by contemporaries is evidence of something, but it is not a finding. This house has not opened the two standard accounts, Weigold's and McCullough's; the society's bibliography is where the argument is carried, and the row is in dashboard/research-leads.md.",
+  "across": [
+    {
+      "to": "lives:frances-perkins",
+      "label": "Frances Perkins",
+      "txt": "— the other woman here whose work sat inside the machinery, where credit does not naturally collect."
+    },
+    {
+      "to": "lives:robert-moses",
+      "label": "Robert Moses",
+      "txt": "— the same city, the opposite relationship to a name: he made sure everything built carried his."
+    }
+  ]
+}

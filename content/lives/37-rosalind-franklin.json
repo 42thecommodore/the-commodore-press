@@ -34,6 +34,11 @@
       "to": "press:republic-of-letters",
       "label": "The Republic of Letters",
       "txt": "— that entry is about the norms that made shared knowledge work. This is what happens when unpublished results move without them."
+    },
+    {
+      "to": "lives:alice-ball",
+      "label": "Alice Ball",
+      "txt": "— work that outran the name on it, and the colleague who put the name back."
     }
   ]
 }

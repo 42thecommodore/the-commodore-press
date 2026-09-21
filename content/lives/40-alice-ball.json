@@ -1,0 +1,57 @@
+{
+  "id": "alice-ball",
+  "keep": "Work does not keep your name by itself. Somebody has to put it back.",
+  "n": "Alice Ball",
+  "years": "1892–1916",
+  "place": "United States",
+  "field": "Chemistry & Medicine",
+  "group": "obscure",
+  "cover": "#3D5240",
+  "spineC": "#29382C",
+  "ink": "#EEF5EE",
+  "accent": "#B9D8B0",
+  "motif": "dots",
+  "lede": "She solved it at twenty-three and died at twenty-four, before publishing. The man who published it instead called it after himself.",
+  "copy": [
+    "Chaulmoogra oil had been used against leprosy for a very long time and was close to useless in practice. Swallowed it made people sick; injected as it came it was thick, it hurt, and it sat under the skin instead of going anywhere. The people at Kalaupapa, on Molokaʻi, were not there to be treated. They were there because Hawaiʻi separated them from everyone else. Alice Ball was a young chemist at the College of Hawaiʻi — its first African-American graduate, and the first woman to take a master's in chemistry there, in 1915 — and Harry Hollmann, a doctor at Kalihi Hospital, asked her to look at the oil.",
+    "She worked out how to isolate the active ingredients and hold them in a form that could be injected and actually absorbed. That is the whole distance between a folk remedy and a treatment, and she covered it at twenty-three. The difference it made was not comfort: patients began testing negative for the bacillus, and some were released from isolation on medical grounds for the first time. She died on 31 December 1916, aged twenty-four, without publishing any of it.",
+    "Arthur Dean, the president of the college, took the work up, published her findings without crediting the research she had done, produced the treatment in quantity, and let it be known as the Dean Method. It stayed his for six years. In 1922 Hollmann — the man who had sent her to the problem in the first place — published a paper of his own that set the record straight and called the process the Ball Method, which is the name it still has. Her own university gave her its Medal of Distinction in 2007, ninety-one years after she died. That is the shape of the story worth keeping: the chemistry was done inside her short working life, the credit took the better part of a century, and neither of those happened on its own."
+  ],
+  "facts": [
+    {
+      "b": "1915",
+      "s": "Her master's in chemistry — the first woman to take one at the College of Hawaiʻi, and its first African-American graduate: University of Hawaiʻi, 'UH celebrates Alice Augusta Ball Day in Hawaiʻi, February 28'"
+    },
+    {
+      "b": "31 Dec 1916",
+      "s": "Her death, aged 24, before she had published the method: University of Hawaiʻi, as above"
+    },
+    {
+      "b": "1922",
+      "s": "Hollmann's paper restoring her name to the process, six years after her death and after Arthur Dean had published it as his own: University of Hawaiʻi, as above"
+    },
+    {
+      "b": "2007",
+      "s": "The University of Hawaiʻi Board of Regents' posthumous Medal of Distinction"
+    }
+  ],
+  "bio": {
+    "t": "A Reexamination of Dr. Masanao Goto's Leprosy Treatment in Hawai'i",
+    "a": "K. Yuji and W. Yuji, Hawai'i Journal of Health & Social Welfare",
+    "y": "2026",
+    "why": "Not a life of Ball — there is no standard one, which is its own comment — but the careful scholarly treatment that puts her beside the practitioner she is usually contrasted with, and is precise about what her method achieved and what it did not."
+  },
+  "contested": "What the method actually did is worth stating precisely, because the retellings have drifted. It was not a cure, and the house is not calling it one: what the literature supports is patients testing negative for the bacillus and the first releases from isolation on medical grounds, which is a different and more checkable claim. The credit question is settled — Dean published it as his, Hollmann named it for her in 1922 — but the reason is not, and the accounts that make Dean a simple thief sit awkwardly beside the fact that the man who corrected him was also a colleague of his. This house has read the University of Hawaiʻi's account and one paper; it has not read Dean's or Hollmann's originals.",
+  "across": [
+    {
+      "to": "lives:tu-youyou",
+      "label": "Tu Youyou",
+      "txt": "— the same problem a half-century on: an old plant remedy that only works once somebody finds the right way to get the compound out of it."
+    },
+    {
+      "to": "lives:rosalind-franklin",
+      "label": "Rosalind Franklin",
+      "txt": "— the other entry here about work that travelled faster than the name attached to it."
+    }
+  ]
+}
