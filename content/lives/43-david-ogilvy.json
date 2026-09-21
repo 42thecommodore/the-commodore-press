@@ -1,0 +1,53 @@
+{
+  "id": "david-ogilvy",
+  "keep": "He is quoted as a man of instinct by people who have not looked at what he kept.",
+  "n": "David Ogilvy",
+  "years": "1911–1999",
+  "place": "Britain & United States",
+  "field": "Advertising & Research",
+  "group": "famous",
+  "cover": "#1F3A2E",
+  "spineC": "#14261E",
+  "ink": "#EDF4EF",
+  "accent": "#C8B98A",
+  "motif": "grid",
+  "lede": "Before he wrote a single advertisement he spent three years running surveys in Princeton. The papers he left behind are mostly market research.",
+  "copy": [
+    "The route in was sideways and slow. A scholarship in modern history at Christ Church, Oxford. A year as a chef at the Hotel Majestic in Paris. Then Scotland in 1935, selling cookers door to door — and, characteristically, writing a pamphlet for the manufacturer on how the selling should be done. An account executive's job at Mather & Crowther in London followed in 1936, and from 1937 the agency sent him to the United States to study how Americans advertised. He was thirty-seven before he co-founded an agency of his own.",
+    "The years in between are the ones the popular account skips. From 1939 to 1942 he was associate director of the Audience Research Institute in Princeton — three years of asking people questions and counting the answers, which is a different trade from writing copy and was, at that point, most of his professional training. The war took him to the British embassy in Washington, in charge of economic information for the British government in the Western Hemisphere. Hewitt, Ogilvy, Benson & Mather was founded in 1948 as a subsidiary of two British agencies; he was its president from 1953, its chairman from 1961, and chairman of Ogilvy & Mather after the 1964 merger.",
+    "What settles the argument is what he kept. He gave his papers to the Library of Congress in 1965 — 30,450 items, twenty-nine linear feet — and the Library's description of them is not a portrait of a man working on instinct: correspondence, advertising proposals, and market research reports. Its account of the agency's account files notes his emphasis on research, and names General Foods, Sears and Helena Rubinstein as the ones where that emphasis is clearest. The popular version of Ogilvy is a figure of swagger who happened to be good at it. The archive is a survey researcher who went into advertising and never stopped measuring."
+  ],
+  "facts": [
+    {
+      "b": "1939–42",
+      "s": "Associate director, Audience Research Institute, Princeton — before any of the advertising: Library of Congress, 'David Ogilvy Papers' (MSS35105), biographical note"
+    },
+    {
+      "b": "30,450 items",
+      "s": "The papers he gave the Library in 1965, 87 containers and 29 linear feet, chiefly correspondence, advertising proposals and market research reports: Library of Congress, as above"
+    },
+    {
+      "b": "1948",
+      "s": "The founding of Hewitt, Ogilvy, Benson & Mather, a subsidiary of the British agencies Mather & Crowther and S. H. Benson: Library of Congress, as above"
+    }
+  ],
+  "bio": {
+    "t": "Confessions of an Advertising Man",
+    "a": "David Ogilvy",
+    "y": "1963",
+    "why": "The Library of Congress calls it both an autobiography and an advertising textbook, which is the warning as well as the recommendation — the principal source on Ogilvy is Ogilvy, and he was selling something while writing it."
+  },
+  "contested": "Whether the research actually drove the work, or was a discipline he preached and sold, is the open question — and it is hard to settle from the outside, because an agency's output looks like judgement whatever produced it. The Library's description of the account files records an emphasis on research, which is evidence about what he kept rather than proof of what he did. The deeper problem is that almost everything popularly known about him comes from a book he wrote to be read by prospective clients. This house has read the finding aid to his papers, not the papers, and not the book.",
+  "across": [
+    {
+      "to": "press:forty-two",
+      "label": "Forty-Two",
+      "txt": "— the discipline in a trade that rewards confidence: keep the question attached, so the number in front of you is answering the one you asked."
+    },
+    {
+      "to": "lives:lucille-ball",
+      "label": "Lucille Ball",
+      "txt": "— the other entry here about someone remembered for the glamorous surface of a business whose durable decisions were commercial."
+    }
+  ]
+}

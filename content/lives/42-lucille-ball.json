@@ -48,6 +48,11 @@
       "to": "press:compounding-machines",
       "label": "Compounding Machines",
       "txt": "— a small organisation that produced far past its size, because it owned a library that kept earning after the work stopped."
+    },
+    {
+      "to": "lives:david-ogilvy",
+      "label": "David Ogilvy",
+      "txt": "— the same misreading from the other end of the business: remembered for the surface, and the archive says otherwise."
     }
   ]
 }
