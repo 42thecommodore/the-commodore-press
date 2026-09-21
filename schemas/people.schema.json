@@ -20,8 +20,21 @@
         "description": "The principles they belong to — ids from principles.json. These draw their lines in the Atlas; with none, they float unconnected."
       },
       "kept": {
-        "type": "array", "items": { "type": "string" },
-        "description": "Lines you kept from them, printed as 'Lines I kept'. Use quotation marks only for words you have seen verbatim in the source."
+        "type": "array",
+        "items": {
+          "oneOf": [
+            { "type": "string", "description": "A bare line. Legacy shape: it carries no source, so the check warns. Prefer { k, s }." },
+            {
+              "type": "object", "additionalProperties": false, "required": ["k", "s"],
+              "properties": {
+                "k": { "type": "string", "description": "The line, as they said it. Verbatim, and short — a sentence or two, never a passage." },
+                "s": { "type": "string", "minLength": 1, "x-means": ["source", "where", "episode"],
+                       "description": "Where you heard it, precisely enough that a reader can go and check: \"Founders #312, 14:20\" or an episode URL." }
+              }
+            }
+          ]
+        },
+        "description": "Lines you kept from them, printed as 'Lines I kept'. These read as quotations to a reader, so each one owes a source the same way a figure does — use { \"k\": \"the line\", \"s\": \"the episode and timestamp\" }. A compressed note rather than their words is not a kept line: put it in `take`, or write it as \"after <name>\"."
       }
     }
   }

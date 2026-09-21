@@ -654,7 +654,9 @@ function openDrawer(p){
   const others=id=>P_BY_ID[id].members.filter(m=>m!==p);
   document.getElementById("dBody").innerHTML=
     `<div><div class="lbl q" style="color:var(--parchment-dim);margin-bottom:8px">What stuck</div><p class="pull">${p.take}</p></div>
-     ${p.kept&&p.kept.length?`<div><div class="lbl q" style="color:var(--parchment-dim);margin-bottom:8px">Lines I kept</div><ul class="keptlist">${p.kept.map(k=>`<li>${k}</li>`).join("")}</ul></div>`:""}
+     ${p.kept&&p.kept.length?`<div><div class="lbl q" style="color:var(--parchment-dim);margin-bottom:8px">Lines I kept</div><ul class="keptlist">${p.kept.map(k=>typeof k==="string"
+         ? `<li>${k}</li>`
+         : `<li>${k.k}<span class="ks">${/^https?:/.test(k.s)?`<a href="${k.s}" target="_blank" rel="noopener">${k.s.replace(/^https?:\/\/(www\.)?/,"").slice(0,44)} ↗</a>`:k.s}</span></li>`).join("")}</ul></div>`:""}
      <div><div class="lbl q" style="color:var(--parchment-dim);margin-bottom:8px">Constellations they sit on</div>
        <div style="display:flex;flex-direction:column;gap:7px">${p.p.map(id=>`<button class="clink" onclick="lightConst('${id}');closeDrawer()"><span class="g">✦</span><span><b>${P_BY_ID[id].name}</b><span>${others(id).length?"with "+others(id).slice(0,3).map(o=>o.name).join(", ")+(others(id).length>3?"…":""):"a private north star — only here, for now"}</span></span></button>`).join("")}</div></div>
      <div class="caveat">Charted as a source, not a verdict. These are people I listened to; the constellation — the line more than one of them arrived at independently — is the claim, not the star.</div>`;

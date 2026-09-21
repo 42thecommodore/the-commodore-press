@@ -214,6 +214,28 @@ people.forEach((x, i) => {
   (x.p || []).forEach(pid => { if (!prIds.has(pid)) err(at, `unknown principle "${pid}"`); });
   if (!(x.p || []).length) warn(at, "belongs to no principle — will float unconnected in the Atlas");
 });
+
+/* ---------- Wing III owes its sources too ----------
+   The site tells every reader that every claim carries its source. Wings I and II are
+   held to that by the rules above. Wing III was not: "Lines I kept" prints words under a
+   named, mostly living person, which reads as quotation whatever the punctuation, and
+   the data had nowhere to say where the line was said. A reader could not check one and
+   there was no record that anyone had.
+
+   `kept` now takes { k, s }. A bare string is the old shape and warns.
+   WARNING FOR NOW, ERROR ONCE WING III IS BACKFILLED — same path Wing II took; there is
+   a row for it in dashboard/commissions.md. Promote it there, not by dropping the rule. */
+let bareKept = 0, bareWho = new Set();
+people.forEach(x => {
+  (x.kept || []).forEach(k => {
+    if (typeof k === "string") { bareKept++; bareWho.add(x.name); return; }
+    if (!k || !k.k || !k.s)
+      err(`content/atlas/people.json (${x.name})`, "a `kept` entry needs both `k` (the line) and `s` (where it was said)");
+  });
+});
+if (bareKept) warn("content/atlas/people.json",
+  `${bareKept} kept line(s) across ${bareWho.size} people carry no source — they print as quotations a reader cannot check. ` +
+  `Give each one \`{ "k": …, "s": "episode and timestamp" }\`, or move it into \`take\` as your own compression`);
 principles.forEach(pr => {
   const n = people.filter(x => (x.p || []).includes(pr.id)).length;
   if (n === 0) warn("content/atlas/principles.json", `principle "${pr.id}" has no people and will not render`);
