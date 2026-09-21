@@ -1,0 +1,53 @@
+{
+  "id": "lucille-ball",
+  "keep": "A performance is an evening. A negative is an asset. The difference is a decision somebody makes before the first take.",
+  "n": "Lucille Ball",
+  "years": "1911–1989",
+  "place": "United States",
+  "field": "Television & Business",
+  "group": "famous",
+  "cover": "#5C2F52",
+  "spineC": "#3F2039",
+  "ink": "#F7EDF6",
+  "accent": "#DCA8C8",
+  "motif": "conic",
+  "lede": "Everyone remembers the comedian. The decision that outlasted her was a technical one: shoot it on film, in front of an audience, and keep what you shoot.",
+  "copy": [
+    "I Love Lucy began as a transfer. CBS had a successful radio comedy with Lucille Ball in it, My Favorite Husband, and was considering moving it to the new medium; her husband Desi Arnaz became her costar, the radio writers adapted the characters, and Vivian Vance and William Frawley were cast as the neighbours. It went out for the first time on a Monday evening in October 1951. That is the ordinary version of how a show gets made, and none of it is the interesting part.",
+    "The interesting part is how it was made. The 180 half-hour episodes were performed in front of a live studio audience and captured on film — not on kinescope, which is what most television of the period used and which looked considerably worse. Film cost more. Film also meant that what happened in the room on Monday still existed on Tuesday, in a form good enough to show again. In 1955 I Love Lucy became the first television series broadcast as reruns, and the Library of Congress is direct about why that was possible: because it was on film. The show has since been dubbed into twenty-two languages and seen in eighty countries.",
+    "That decision is the whole entry. Television before it was something that happened and then stopped happening; a performance with an audience and no afterlife. Shooting on film turned an evening into a thing you could own, sell twice, and keep selling. The company that owned the film, Desilu, went on to make The Andy Griffith Show, The Dick Van Dyke Show, Mission: Impossible and Star Trek — which is to say that the comedy everyone remembers paid for the science fiction nobody associates with her. She is filed under comedian. She belongs at least as much under the people who worked out what the thing they were making actually was."
+  ],
+  "facts": [
+    {
+      "b": "180",
+      "s": "Half-hour episodes, made before a live studio audience and captured on film: Library of Congress, 'I Love Lucy: An American Legend'"
+    },
+    {
+      "b": "1955",
+      "s": "When it became the first television series to be broadcast as reruns — possible, the Library says, because it was produced on film and not the grainier kinescope: Library of Congress, as above"
+    },
+    {
+      "b": "22 / 80",
+      "s": "Languages it has been dubbed into, and countries it has been seen in: Library of Congress, as above"
+    }
+  ],
+  "bio": {
+    "t": "I Love Lucy: An American Legend",
+    "a": "Library of Congress exhibition, drawn from the Ball and Arnaz family scrapbooks",
+    "y": "2011",
+    "why": "Not a biography — the documents. Scrapbooks, scripts, music and photographs from the Library's own holdings, which is the right place to start before the shelf of books written about her."
+  },
+  "contested": "Who actually insisted on film is argued, and this house cannot settle it from what it has read. The Library of Congress records that the show was shot on film and that this is why the reruns were possible; it does not apportion the decision, and the credit is variously given to Arnaz, to Ball, to the producer Jess Oppenheimer and to the cinematographer. The entry therefore claims the decision mattered, which is documented, and not that any one person made it, which is not. Her later running of Desilu, frequently described as a first for a woman at that scale, is also not sourced here — the row is in dashboard/research-leads.md.",
+  "across": [
+    {
+      "to": "press:why-firms-exist",
+      "label": "Why Firms Exist",
+      "txt": "— Coase's question with a camera in it: they made the thing themselves rather than letting the network own it, and the boundary of the firm is where the negatives sat."
+    },
+    {
+      "to": "press:compounding-machines",
+      "label": "Compounding Machines",
+      "txt": "— a small organisation that produced far past its size, because it owned a library that kept earning after the work stopped."
+    }
+  ]
+}

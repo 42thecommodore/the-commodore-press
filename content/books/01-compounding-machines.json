@@ -100,6 +100,11 @@
       "to": "lives:marie-curie",
       "label": "Marie Curie",
       "txt": "— the counter-case. No institution would have her, there was no structure to be inside, and the century came out of a shed anyway."
+    },
+    {
+      "to": "lives:lucille-ball",
+      "label": "Lucille Ball",
+      "txt": "— the same effect from a studio rather than a laboratory: a library that kept paying, and financed work nobody expected from it."
     }
   ],
   "reading": [

@@ -96,6 +96,20 @@ thing and it is the entry's own subject, so getting it wrong would be unusually 
 
 ---
 
+## A third lead, opened 2026-09-20
+
+**Lucille Ball running Desilu.** `lucille-ball` says the studio's later ownership is not
+sourced here, and it is not. The Library of Congress exhibition covers the show, the film
+decision and Desilu's output, and stops there. The buyout of Arnaz and her running the
+company — usually dated to 1962 and usually described as a first for a woman at that
+scale — was not found in any document opened on 2026-09-20. A promising LOC newspaper hit
+from November 1962 was opened and turned out to be a false match on separate search terms.
+
+Open a trade paper from late 1962, or the company's own filings, and either write it into
+the entry with the source or leave the sentence as it stands.
+
+---
+
 ## Two that are decisions, not lookups
 
 **Borlaug's billion.** The sweep traced the figure to Gregg Easterbrook, "Forgotten
