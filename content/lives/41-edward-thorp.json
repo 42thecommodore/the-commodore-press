@@ -1,0 +1,49 @@
+{
+  "id": "edward-thorp",
+  "keep": "Knowing you are right tells you to bet. It does not tell you how much, and that is the half that ruins people.",
+  "n": "Edward O. Thorp",
+  "years": "b. 1932",
+  "place": "United States",
+  "field": "Mathematics & Markets",
+  "group": "obscure",
+  "cover": "#4C3A44",
+  "spineC": "#34262E",
+  "ink": "#F4EEF2",
+  "accent": "#C9A98E",
+  "motif": "dots",
+  "lede": "He is remembered for proving you could beat blackjack. The discovery that travelled was not the edge. It was how much to bet once you had one.",
+  "copy": [
+    "A mathematics professor at MIT and then California, Thorp worked out that blackjack is not memoryless: cards already dealt change what is left in the shoe, so a player who keeps track holds, at moments, a real advantage over the house. Beat the Dealer set it out and was, by his own description, the first book to prove mathematically that the house edge could be overcome by counting. Casinos changed their rules and their manners in response. He also built, with Claude Shannon, a small computer to be worn and hidden — the first wearable computer, made to beat roulette rather than to count steps.",
+    "The part that mattered came alongside it. Knowing you have an edge tells you to bet; it says nothing about size, and size is what kills. Thorp used a rule set out by the Bell Labs physicist J. L. Kelly Jr., which in its plainest form says to stake a fraction of your money equal to your edge divided by the odds. Bet less and you leave growth on the table; bet more and a run of ordinary bad luck takes you out of the game while you are still right. He first called this Fortune's Formula in a 1961 talk to the American Mathematical Society — and the reason the same man could move from a casino to a trading desk is that the rule does not care which it is.",
+    "So he moved. Beat the Market, written with Sheen Kassouf, laid out a hedged way to trade warrants against their underlying stock, and his own FAQ names the people Scott Patterson credits it with influencing: Fischer Black, Ken Griffin, Bill Gross, Blair Hull, Frank Meyer, Paul Singer. The popular version of Thorp is a gambling story with a Wall Street epilogue. The accurate version is that he found one idea — you can size a bet correctly only if you can state your edge honestly — and that a casino was simply the cheapest place to test it, because there the odds are published and nobody has to be persuaded what they are."
+  ],
+  "facts": [
+    {
+      "b": "edge / odds",
+      "s": "The simplest form of the Kelly Criterion for a two-outcome bet where you hold an edge, as Thorp's own FAQ gives it, citing Poundstone's 'Fortune's Formula' (2005): edwardothorp.com"
+    },
+    {
+      "b": "1961",
+      "s": "His talk to the American Mathematical Society on the card-counting methods, where he first used the title 'Fortune's Formula': edwardothorp.com, FAQ"
+    }
+  ],
+  "bio": {
+    "t": "A Man for All Markets",
+    "a": "Edward O. Thorp",
+    "y": "2017",
+    "why": "His own account, and the one to read before the books written about him — it is unusually plain about the years when the method was not working yet."
+  },
+  "contested": "Whether Kelly is the right rule to bet by is genuinely argued in the literature rather than settled, and the argument is not about the arithmetic — it is about whether maximising the long-run growth rate is what an investor with a finite life and real obligations should want. Full Kelly is violent: the drawdowns it accepts on the way to that growth are larger than most people can hold, which is why practitioners commonly bet a fraction of it. Thorp's own FAQ points to 'The Kelly Capital Growth Investment Criterion' (2010) as where the academic development sits. This house has not opened it, and does not adjudicate the question here.",
+  "across": [
+    {
+      "to": "press:defense-of-bubbles",
+      "label": "In Defense of Bubbles",
+      "txt": "— the same market seen from above: what it takes to be right about a price, and what being right early costs."
+    },
+    {
+      "to": "press:being-wrong",
+      "label": "Being Wrong Productively",
+      "txt": "— the rule made expensive. Kelly only works if the edge you state in advance is the edge you actually have."
+    }
+  ]
+}

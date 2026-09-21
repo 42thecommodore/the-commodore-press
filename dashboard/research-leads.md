@@ -81,6 +81,21 @@ claim to have adjudicated it, which is the honest shape.
 
 ---
 
+## A second lead, opened 2026-09-20
+
+**Did Adams ever say why 42?** `forty-two` states in `contested` that he is very widely
+quoted as calling the choice arbitrary, and that the house has not opened a primary
+source for it. That is accurate: douglasadams.com's own DNA section, its pedants page and
+the BBC programme page were all opened on 2026-09-20 and none of them carries the
+statement. The version everyone repeats is usually traced to a Usenet post to
+alt.fan.douglas-adams in 1993, which nobody here has seen in an archive.
+
+Find the post in a citable archive, or an interview where he says it on the record. Then
+either name the source in `contested` or leave the sentence as it stands. It is a small
+thing and it is the entry's own subject, so getting it wrong would be unusually bad.
+
+---
+
 ## Two that are decisions, not lookups
 
 **Borlaug's billion.** The sweep traced the figure to Gregg Easterbrook, "Forgotten

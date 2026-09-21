@@ -100,6 +100,16 @@
       "to": "lives:charles-darwin",
       "label": "Charles Darwin",
       "txt": "— twenty years spent hunting whatever would sink it, which is what the rule looks like with someone behind it."
+    },
+    {
+      "to": "lives:edward-thorp",
+      "label": "Edward O. Thorp",
+      "txt": "— the rule with money on it: state the edge in advance, because the bet size is computed from the number you claimed."
+    },
+    {
+      "to": "press:forty-two",
+      "label": "Forty-Two",
+      "txt": "— the same rule approached from the failure side: the answer survives, the question does not, and nobody notices until it is acted on."
     }
   ],
   "reading": [

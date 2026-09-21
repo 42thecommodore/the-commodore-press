@@ -1,0 +1,75 @@
+{
+  "id": "forty-two",
+  "keep": "A number you cannot trace back to the question it answers is decoration, however precise it looks.",
+  "title": "Forty-Two",
+  "sub": "What an answer is worth without its question",
+  "field": "Epistemics & Measurement",
+  "spineTitle": "Forty-Two",
+  "years": "1979 –",
+  "cover": "#2E3B2F",
+  "spineC": "#1E2820",
+  "ink": "#EEF3EC",
+  "accent": "#C6D6B8",
+  "motif": "rings",
+  "claim": "The joke is not that the answer is meaningless. It is that nobody wrote down the question.",
+  "lede": "A machine is built to compute the answer to everything. It runs for a very long time and returns a small, ordinary number — and the number is useless, because nobody can say precisely what was asked.",
+  "copy": [
+    "Douglas Adams's premise is usually remembered as a shrug about meaning: the universe is absurd, here is a number, laugh. That is the weaker half. The structure of the joke is exact and it is about method. A question is posed loosely. Enormous machinery is pointed at it. The machinery is not wrong — it does what it was asked — and it returns a figure that cannot be acted on, because the figure's meaning lived entirely in a specification nobody preserved. What follows in the story is the better part still: everyone starts working backwards from the answer, trying to find a question that would justify it. Readers have been doing the same thing to that number for decades, which is the joke continuing to operate on the people enjoying it.",
+    "This is not only a literary device. It is the most common way that serious measurement goes wrong. A proxy is chosen because the thing you actually care about is hard to observe. The proxy is reasonable at first. Then it becomes the target, effort concentrates on the proxy rather than the thing, and the number keeps improving while the thing it stood for does not — or gets worse. Charles Goodhart's remark about monetary aggregates is the compressed version. Manheim and Garrabrant's 'Categorizing Variants of Goodhart's Law' takes it seriously enough to separate the mechanisms, because 'the metric stopped working' hides several different failures that need different fixes, and the paper's own count is that there are at least four.",
+    "The practical rule that falls out is unglamorous: keep the question attached to the number. Not the method, not the confidence interval — the question, in the words it was asked in, close enough to the figure that a reader can see whether the one answers the other. Most published numbers do not travel with theirs. They arrive as a quantity and a decimal place, and the specification that made them meaningful is left behind in a working paper nobody opens. That is what this house is organised against, and it is why every figure on this site has a line under it naming where somebody looked. A figure without its question is forty-two: precise, confident, and inert."
+  ],
+  "figures": [
+    {
+      "n": "Douglas Adams",
+      "d": "Built the joke so that the machinery works perfectly and the result is still worthless. The failure is in the specification, not the computer."
+    },
+    {
+      "n": "Charles Goodhart",
+      "d": "Economist, on monetary policy: a measure that becomes a target stops being a good measure. Stated about central banking, true almost everywhere since."
+    },
+    {
+      "n": "David Manheim and Scott Garrabrant",
+      "d": "Separated the ways overoptimising a metric goes wrong, on the argument that lumping them together stops you fixing any of them."
+    }
+  ],
+  "facts": [
+    {
+      "b": "4",
+      "s": "The mechanisms behind Goodhart's Law that Garrabrant distinguishes — 'at least four', in the paper's own words: Manheim & Garrabrant, 'Categorizing Variants of Goodhart's Law', arXiv:1803.04585"
+    }
+  ],
+  "contested": "Whether the number itself was chosen for a reason is the argument readers care about most, and this entry does not settle it. Adams is very widely quoted as saying the choice was arbitrary — an ordinary, unremarkable number picked because the joke required one — but the house has not opened a primary source for that statement, and the places that ought to carry it, including his own site, do not. So it is left as report rather than fact, which is the honest position and also the entry's point working on the entry: a claim everyone repeats, whose origin nobody present has checked. The row is in dashboard/research-leads.md.",
+  "changed": "I used to read this as the punchline of a comic novel and file it with absurdism. Working on a library where every figure has to carry a source line changed what the joke looked like. The number is not the failure. The missing specification is, and I have written plenty of numbers over the years whose question I could not have reconstructed a month later.",
+  "across": [
+    {
+      "to": "press:being-wrong",
+      "label": "Being Wrong Productively",
+      "txt": "— the discipline this entry is arguing for, stated positively: say in advance what would change your mind, and the question stays attached."
+    },
+    {
+      "to": "press:scaling-curve",
+      "label": "The Scaling Curve",
+      "txt": "— a measure that became a target on a scale nobody had tried before, with tens of billions of capital allocated against it."
+    }
+  ],
+  "reading": [
+    {
+      "t": "Categorizing Variants of Goodhart's Law",
+      "a": "David Manheim and Scott Garrabrant",
+      "u": "https://arxiv.org/abs/1803.04585",
+      "why": "Short, free, and the piece that stops this being a slogan — it separates the mechanisms so you can tell which one you are suffering from."
+    },
+    {
+      "t": "Goodhart's law",
+      "a": "reference article",
+      "u": "https://en.wikipedia.org/wiki/Goodhart%27s_law",
+      "why": "For the original remark and how far it has been generalised since, which is further than Goodhart said."
+    },
+    {
+      "t": "The Hitchhiker's Guide to the Galaxy",
+      "a": "Douglas Adams",
+      "u": "https://archive.org/details/hitchhikersguide0012adam",
+      "why": "The source of the joke, and worth reading for the part usually left out: what happens after the answer arrives."
+    }
+  ]
+}
