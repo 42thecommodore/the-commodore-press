@@ -132,7 +132,21 @@ The number at the front of the filename is the order. Rename `05-the-box.json` t
 
 In `content/atlas/people.json`, copy an existing `{ … }` block, paste it after the last one with a comma between, and rewrite it. `domain` must be one of the domain ids; `p` lists principle ids. Hover either for the list.
 
-`take` is your reading of what they teach, in a sentence or two. `kept` is the lines you kept from them. **Quotation marks mean you have seen the words**; where a line is your compressed note of their idea rather than what they said, write it `after <name>` — the colophon tells readers so, and it is the promise that is easiest to break by accident.
+`take` is your reading of what they teach, in a sentence or two — your words, not theirs.
+
+`kept` is the lines you kept from them, and each one owes a source the same way a number does. A kept line prints under their name, so a reader takes it as a quotation whatever the punctuation:
+
+```json
+"kept": [
+  { "k": "The line, exactly as they said it.", "s": "Founders #312, 14:20" }
+]
+```
+
+`s` has to be precise enough to go and check — an episode and a timestamp, or an episode URL. The name of the show is not a source; the episode is. Where a line is your compressed note of their idea rather than what they said, it is not a kept line at all: put it in `take`, or write it `after <name>`.
+
+A plain string still works and still renders — that is the old shape, and 104 of them are still in the file. `npm run check` counts them in yellow. They are yours to fix as you re-hear them; nobody else can say which episode they came from, and a guessed timestamp is worse than the gap.
+
+Ask Claude for `/press-note` when you have just watched something — it writes the whole block with the source attached while you still remember it.
 
 ### 7. Add a new title or life
 
@@ -223,7 +237,9 @@ corrections list, which is where it learned them.
 npm run ship -- "Press: fix the date in The Heated Disk"
 ```
 
-It runs the check, rebuilds, saves a snapshot to git and pushes. The live site updates in about two minutes. If the check fails, nothing is sent and the live site is left alone. Write the message as a sentence you will understand in six months.
+It runs the whole gate in order — the house rules, the prose check, every link, then the rebuild — and only then commits and pushes. The live site updates in about two minutes. If anything fails, nothing is sent and the live site is left alone. Write the message as a sentence you will understand in six months.
+
+**It will refuse to run unless you are on `main`.** `ship` publishes whatever branch you are standing on, so running it from a half-finished branch would put that branch in front of readers. If that is genuinely what you want, add `--allow-branch`. Offline, add `--skip-links` — though the link check caches for a fortnight, so it is usually instant.
 
 ## Undo
 

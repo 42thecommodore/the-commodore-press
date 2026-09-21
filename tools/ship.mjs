@@ -19,7 +19,9 @@ const say = s => console.log(s);
 const die = s => { console.error(`\n${y}  ${s}${x}\n`); process.exit(1); };
 const git = a => execSync(`git ${a}`, { cwd: ROOT, encoding: "utf8" }).trim();
 
-const message = process.argv.slice(2).join(" ").trim();
+const argv = process.argv.slice(2);
+const FLAGS = new Set(argv.filter(a => a.startsWith("--")));
+const message = argv.filter(a => !a.startsWith("--")).join(" ").trim();
 if (!message) die(`Say what changed:  npm run ship -- "Press: add The Heated Disk"`);
 
 /* A commit nobody can read later is worth less than no commit. */
@@ -28,13 +30,37 @@ if (message.length < 12) die(`"${message}" will not mean anything in six months.
 try { git("rev-parse --is-inside-work-tree"); } catch { die("Not a git repository."); }
 if (!git("remote").includes("origin")) die("No origin remote. See DEPLOY.md.");
 
+/* ---------- the branch guard ----------
+   The push below is `HEAD:main`: it sends whatever branch you are standing on to the
+   live site. That is fine on main and a trap everywhere else — the moment it is most
+   likely to bite is sitting on a review branch, wanting to ship one small fix, which
+   would put the whole unreviewed branch in front of readers. Refuse instead. */
+const branch = git("rev-parse --abbrev-ref HEAD");
+if (branch !== "main" && !FLAGS.has("--allow-branch"))
+  die(`You are on "${branch}", and ship pushes to main — that would publish this whole branch.\n` +
+      `  Finish the review first:   git checkout main && git merge ${branch}\n` +
+      `  Or, if you truly mean it:  npm run ship -- --allow-branch "${message}"`);
+if (branch !== "main") say(`\n${y}  Shipping "${branch}" straight to main because you asked for it.${x}`);
+
 const step = (label, cmd, args) => {
   say(`\n${b}  ${label}${x}`);
   const r = spawnSync(cmd, args, { cwd: ROOT, stdio: "inherit" });
   if (r.status !== 0) die(`${label} failed — nothing was committed or pushed.`);
 };
 
+/* ---------- the whole gate, not a third of it ----------
+   `check` proves the shape of the content. It cannot tell whether a link still opens or
+   whether a note to self is about to print. Both of those have reached the live site
+   before. All three run here, cheapest first, so the slow one is never the reason a
+   broken entry ships.
+
+   `links` needs the network and caches for a fortnight, so a second run costs almost
+   nothing; it exits non-zero only on a genuinely dead link, and offline every host reads
+   as unconfirmed rather than dead, so being on a train does not block a ship. */
 step("The house rules", "npm", ["run", "check"]);
+step("The prose", "npm", ["run", "proofread"]);
+if (FLAGS.has("--skip-links")) say(`\n${y}  Skipping the link check because you asked.${x}`);
+else step("Every link still opens", "npm", ["run", "links", "--", "--quiet"]);
 step("Build", "npm", ["run", "build"]);
 
 git("add -A");

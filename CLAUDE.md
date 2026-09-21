@@ -81,7 +81,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run new book\|life\|adjacent "Title"` | scaffold a house-shaped stub |
 | `npm run plate -- <image> <life-id>` | make a duotone plate |
 | `npm run correct -- "Title." "Body."` | append a correction |
-| `npm run ship -- "what changed"` | check, build, commit and push — the whole update, one command |
+| `npm run ship -- "what changed"` | the whole release, one command: refuses to run off `main`, then check → proofread → links → build → commit → push. `--allow-branch` to ship a branch deliberately, `--skip-links` when offline |
 | `npm run verify -- <old.html> <new.html>` | prove two builds carry identical content |
 
 The site is live at **https://42thecommodore.github.io/the-commodore-press/**, deployed from
