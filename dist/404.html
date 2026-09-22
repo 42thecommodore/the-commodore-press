@@ -766,24 +766,46 @@
   @media (max-width:560px){.rs-in{padding:18px 18px 16px}.rs-q{font-size:19px}.rs-next .rs-nt{font-size:22px}
     .rs-resume{padding-left:14px;font-size:11px}.rs-resume span{margin-right:2px}}
 
-  /* ---------- the way out — Esc with nothing open, drawn by forward() in theme/reading.js ---------- */
-  .rs-fwd{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#1E1C18;color:#F2EDE1;cursor:pointer;
-    clip-path:inset(100% 0 0 0);transition:clip-path .55s var(--ease,cubic-bezier(.19,.9,.22,1))}
-  .rs-fwd.on{clip-path:inset(0 0 0 0)}
-  .rs-fwd-in{width:min(560px,calc(100vw - 32px));cursor:default}
-  .rs-fwd-lbl{font:11px/1.4 var(--mono,monospace);letter-spacing:.18em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:all .5s .25s}
-  .rs-fwd-to{font:500 clamp(40px,11vw,92px)/1 var(--serif,serif);letter-spacing:-.02em;margin:14px 0 22px;opacity:0;transform:translateY(22px);transition:all .7s .32s var(--ease,ease)}
-  .rs-fwd-to span{font-style:italic;color:#E0A458}
-  .rs-fwd-bar{height:1px;background:rgba(242,237,225,.2);overflow:hidden}
-  .rs-fwd-bar i{display:block;height:100%;background:#F2EDE1;transform:scaleX(0);transform-origin:left;transition:transform 1.3s .5s linear}
-  .rs-fwd-foot{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font:11px/1.4 var(--mono,monospace);letter-spacing:.1em;opacity:0;transition:opacity .4s .6s}
-  .rs-fwd-foot span{opacity:.55}
+  /* ---------- the way out — Esc with nothing open, drawn by forward() in theme/reading.js ----------
+     The Atlas's night sea and brass, the press mark under sail, a hoist of triangle pennants. */
+  .rs-fwd{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;cursor:pointer;color:#ECE3D0;
+    background:radial-gradient(120% 80% at 50% 110%,#16305A 0%,#0E1426 45%,#0A0E1B 100%);
+    clip-path:circle(0% at 50% 100%);transition:clip-path .7s cubic-bezier(.62,.02,.2,1)}
+  .rs-fwd.on{clip-path:circle(150% at 50% 100%)}
+  .rs-fwd.away .rs-fwd-in{transform:translateX(-6vw);opacity:0;transition:all .45s cubic-bezier(.62,.02,.2,1)}
+  .rs-fwd-in{width:min(620px,calc(100vw - 32px));cursor:default}
+  .rs-fwd-lbl{font:11px/1.4 var(--mono,monospace);letter-spacing:.2em;text-transform:uppercase;color:#D8A657;opacity:0;transition:opacity .5s .35s}
+  .rs-fwd-to{font:500 clamp(40px,11vw,96px)/1.05 var(--serif,serif);letter-spacing:-.02em;margin:14px 0 26px;white-space:nowrap}
+  .rs-fwd-to span{display:inline-block;opacity:0;transform:translateY(.7em) rotate(8deg)}
+  .rs-fwd-to .tld{font-style:italic;color:#F3CF8A}
+  .rs-fwd.on .rs-fwd-to span{animation:rs-buoy .7s calc(.4s + var(--i) * 45ms) cubic-bezier(.34,1.56,.64,1) forwards,
+    rs-bob 2.4s calc(1.1s + var(--i) * 90ms) ease-in-out infinite}
+  @keyframes rs-buoy{to{opacity:1;transform:none}}
+  @keyframes rs-bob{0%,100%{transform:none}50%{transform:translateY(-.06em) rotate(-1.5deg)}}
+  /* the hoist: a rope with twelve pennants run up in turn */
+  .rs-fwd-flags{display:flex;gap:clamp(4px,1.4vw,10px);height:22px;border-top:1px solid rgba(236,227,208,.35);padding-top:0}
+  .rs-fwd-flags i{flex:1;height:100%;clip-path:polygon(0 0,100% 0,50% 100%);background:#D8A657;transform-origin:top;transform:scaleY(0)}
+  .rs-fwd-flags i:nth-child(3n+2){background:#ECE3D0}
+  .rs-fwd-flags i:nth-child(3n){background:#CE7B6E}
+  .rs-fwd.on .rs-fwd-flags i{animation:rs-hoist .4s calc(.5s + var(--i) * 125ms) cubic-bezier(.34,1.56,.64,1) forwards}
+  @keyframes rs-hoist{to{transform:scaleY(1)}}
+  /* the sea, and the mark sailing across it */
+  .rs-fwd-sea{position:relative;height:58px;margin-top:18px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12' viewBox='0 0 40 12'%3E%3Cpath d='M0 6c5-5 10-5 20 0s15 5 20 0' fill='none' stroke='%23ECE3D0' stroke-opacity='.45' stroke-width='1.2'/%3E%3C/svg%3E") 0 100%/40px 12px repeat-x;
+    animation:rs-swell 1.6s linear infinite}
+  @keyframes rs-swell{to{background-position:-40px 100%}}
+  .rs-fwd-ship{position:absolute;left:0;bottom:4px;width:46px;height:46px;background:#ECE3D0;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='0.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='0.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+  .rs-fwd.on .rs-fwd-ship{animation:rs-sail 2s .3s cubic-bezier(.45,.05,.35,1) forwards,rs-rock 1s ease-in-out infinite alternate}
+  @keyframes rs-sail{to{left:calc(100% - 46px)}}
+  @keyframes rs-rock{from{rotate:-7deg;translate:0 2px}to{rotate:6deg;translate:0 -3px}}
+  .rs-fwd-foot{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font:11px/1.4 var(--mono,monospace);letter-spacing:.1em;opacity:0;transition:opacity .4s .6s}
+  .rs-fwd.on .rs-fwd-foot,.rs-fwd.on .rs-fwd-lbl{opacity:1}
+  .rs-fwd-foot span{opacity:.6}
+  .rs-fwd-n{font-style:normal;color:#F3CF8A;display:inline-block;min-width:1ch}
   .rs-fwd-stay{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-  .rs-fwd.on .rs-fwd-lbl,.rs-fwd.on .rs-fwd-to{opacity:1;transform:none}
-  .rs-fwd.on .rs-fwd-lbl{opacity:.6}
-  .rs-fwd.on .rs-fwd-foot{opacity:1}
-  .rs-fwd.on .rs-fwd-bar i{transform:scaleX(1)}
-  @media (prefers-reduced-motion:reduce){.rs-fwd,.rs-fwd *{transition:none!important}}
+  @media (prefers-reduced-motion:reduce){.rs-fwd,.rs-fwd *{transition:none!important;animation:none!important}
+    .rs-fwd-to span,.rs-fwd-flags i{opacity:1;transform:none}.rs-fwd-ship{left:calc(100% - 46px)}}
 
 </style>
 </head>
@@ -1261,27 +1283,43 @@ const LOG = [];
     escape();
   }
 
-  /* forward(): Esc with nothing left to close is the way out, to relentless.com. A curtain
-     comes down, the address is set, a rule draws across, and the page goes. Esc again goes
-     at once; "stay" or a click on the curtain calls it off. The footer's "Esc close" and any
-     [data-forward] link run the same thing. */
-  var FWD = "https://relentless.com/", fwd = null, fwdT = 0;
+  /* forward(): Esc with nothing left to close is the way out, to relentless.com. A voyage:
+     the night sea of the Atlas comes up over the page, the press mark sails across it, a
+     line of signal pennants is run up one by one while the count goes 3 · 2 · 1, and the
+     address rises letter by letter like buoys. Esc again casts off at once; "stay aboard"
+     or a click on the sea calls it off. The footer's "Esc close" and any [data-forward]
+     link run the same thing. */
+  var FWD = "https://relentless.com/", fwd = null, fwdT = [];
   function forward() {
-    if (fwd) { clearTimeout(fwdT); location.href = FWD; return; }
-    var still = matchMedia("(prefers-reduced-motion:reduce)").matches;
+    if (fwd) { fwdT.forEach(clearTimeout); location.href = FWD; return; }
+    var still = matchMedia("(prefers-reduced-motion:reduce)").matches, i, flags = "", word = "";
+    for (i = 0; i < 12; i++) flags += '<i style="--i:' + i + '"></i>';
+    "relentless.com".split("").forEach(function (ch, n) {
+      word += '<span' + (n >= 10 ? ' class="tld"' : "") + ' style="--i:' + n + '">' + ch + "</span>";
+    });
     fwd = doc.createElement("div");
     fwd.className = "rs-fwd"; fwd.setAttribute("role", "status");
+    fwd.setAttribute("aria-label", "Forwarding you to relentless.com");
     fwd.innerHTML = '<div class="rs-fwd-in"><div class="rs-fwd-lbl">Esc · forwarding you to</div>'
-      + '<div class="rs-fwd-to">relentless<span>.com</span></div><div class="rs-fwd-bar"><i></i></div>'
-      + '<div class="rs-fwd-foot"><button type="button" class="rs-fwd-stay">stay here</button><span>Esc again to go now</span></div></div>';
+      + '<div class="rs-fwd-to" aria-hidden="true">' + word + '</div>'
+      + '<div class="rs-fwd-flags" aria-hidden="true">' + flags + '</div>'
+      + '<div class="rs-fwd-sea" aria-hidden="true"><b class="rs-fwd-ship"></b></div>'
+      + '<div class="rs-fwd-foot"><button type="button" class="rs-fwd-stay">stay aboard</button>'
+      + '<span>casting off in <em class="rs-fwd-n">3</em> · Esc to go now</span></div></div>';
     doc.body.appendChild(fwd);
     fwd.addEventListener("click", function (e) { if (e.target === fwd || e.target.closest(".rs-fwd-stay")) stay(); });
     fwd.offsetWidth; fwd.classList.add("on");
-    fwdT = setTimeout(function () { location.href = FWD; }, still ? 700 : 1900);
+    var n = fwd.querySelector(".rs-fwd-n"), beat = still ? 250 : 800;
+    fwdT = [
+      setTimeout(function () { n.textContent = "2"; }, beat),
+      setTimeout(function () { n.textContent = "1"; }, beat * 2),
+      setTimeout(function () { if (fwd) fwd.classList.add("away"); }, beat * 3),
+      setTimeout(function () { location.href = FWD; }, beat * 3 + (still ? 0 : 450))
+    ];
   }
   function stay() {
     if (!fwd) return;
-    clearTimeout(fwdT);
+    fwdT.forEach(clearTimeout);
     var el = fwd; fwd = null; el.classList.remove("on");
     setTimeout(function () { el.remove(); }, 400);
   }

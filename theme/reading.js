@@ -273,27 +273,43 @@
     escape();
   }
 
-  /* forward(): Esc with nothing left to close is the way out, to relentless.com. A curtain
-     comes down, the address is set, a rule draws across, and the page goes. Esc again goes
-     at once; "stay" or a click on the curtain calls it off. The footer's "Esc close" and any
-     [data-forward] link run the same thing. */
-  var FWD = "https://relentless.com/", fwd = null, fwdT = 0;
+  /* forward(): Esc with nothing left to close is the way out, to relentless.com. A voyage:
+     the night sea of the Atlas comes up over the page, the press mark sails across it, a
+     line of signal pennants is run up one by one while the count goes 3 · 2 · 1, and the
+     address rises letter by letter like buoys. Esc again casts off at once; "stay aboard"
+     or a click on the sea calls it off. The footer's "Esc close" and any [data-forward]
+     link run the same thing. */
+  var FWD = "https://relentless.com/", fwd = null, fwdT = [];
   function forward() {
-    if (fwd) { clearTimeout(fwdT); location.href = FWD; return; }
-    var still = matchMedia("(prefers-reduced-motion:reduce)").matches;
+    if (fwd) { fwdT.forEach(clearTimeout); location.href = FWD; return; }
+    var still = matchMedia("(prefers-reduced-motion:reduce)").matches, i, flags = "", word = "";
+    for (i = 0; i < 12; i++) flags += '<i style="--i:' + i + '"></i>';
+    "relentless.com".split("").forEach(function (ch, n) {
+      word += '<span' + (n >= 10 ? ' class="tld"' : "") + ' style="--i:' + n + '">' + ch + "</span>";
+    });
     fwd = doc.createElement("div");
     fwd.className = "rs-fwd"; fwd.setAttribute("role", "status");
+    fwd.setAttribute("aria-label", "Forwarding you to relentless.com");
     fwd.innerHTML = '<div class="rs-fwd-in"><div class="rs-fwd-lbl">Esc · forwarding you to</div>'
-      + '<div class="rs-fwd-to">relentless<span>.com</span></div><div class="rs-fwd-bar"><i></i></div>'
-      + '<div class="rs-fwd-foot"><button type="button" class="rs-fwd-stay">stay here</button><span>Esc again to go now</span></div></div>';
+      + '<div class="rs-fwd-to" aria-hidden="true">' + word + '</div>'
+      + '<div class="rs-fwd-flags" aria-hidden="true">' + flags + '</div>'
+      + '<div class="rs-fwd-sea" aria-hidden="true"><b class="rs-fwd-ship"></b></div>'
+      + '<div class="rs-fwd-foot"><button type="button" class="rs-fwd-stay">stay aboard</button>'
+      + '<span>casting off in <em class="rs-fwd-n">3</em> · Esc to go now</span></div></div>';
     doc.body.appendChild(fwd);
     fwd.addEventListener("click", function (e) { if (e.target === fwd || e.target.closest(".rs-fwd-stay")) stay(); });
     fwd.offsetWidth; fwd.classList.add("on");
-    fwdT = setTimeout(function () { location.href = FWD; }, still ? 700 : 1900);
+    var n = fwd.querySelector(".rs-fwd-n"), beat = still ? 250 : 800;
+    fwdT = [
+      setTimeout(function () { n.textContent = "2"; }, beat),
+      setTimeout(function () { n.textContent = "1"; }, beat * 2),
+      setTimeout(function () { if (fwd) fwd.classList.add("away"); }, beat * 3),
+      setTimeout(function () { location.href = FWD; }, beat * 3 + (still ? 0 : 450))
+    ];
   }
   function stay() {
     if (!fwd) return;
-    clearTimeout(fwdT);
+    fwdT.forEach(clearTimeout);
     var el = fwd; fwd = null; el.classList.remove("on");
     setTimeout(function () { el.remove(); }, 400);
   }
