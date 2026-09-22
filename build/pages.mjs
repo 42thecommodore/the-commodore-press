@@ -116,7 +116,7 @@ const ENTRY_CSS = `
 @media (min-width:1100px){
   .layout{display:grid;grid-template-columns:200px minmax(0,680px);gap:56px;justify-content:center;padding:0 20px}
   .layout .body{margin:0;padding-left:0;padding-right:0}
-  .rail{display:flex;flex-direction:column;gap:9px;position:sticky;top:24px;align-self:start;margin-top:44px;font:12px/1.4 var(--mono);letter-spacing:.04em}
+  .rail{display:flex;flex-direction:column;gap:9px;position:sticky;top:76px;align-self:start;margin-top:44px;font:12px/1.4 var(--mono);letter-spacing:.04em}
   .rail a{text-decoration:none;color:var(--ink-soft)}.rail a:hover{color:var(--ink)}
 }
 .lbl{display:block;font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
@@ -134,14 +134,18 @@ const ENTRY_CSS = `
 .callout h2{border-top:0}
 .callout.corr{background:color-mix(in srgb,var(--oxblood) 8%,var(--paper));border-left-color:var(--oxblood)}
 .note p{font-style:italic;font-size:21px}
-.share{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:44px}
-.share .lbl{margin:0 6px 0 0}
-.share button,.share a{font:12px/1 var(--mono);letter-spacing:.06em;padding:9px 12px;border:1px solid var(--rule);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer}
-.share button:hover,.share a:hover{border-color:var(--ink)}
-.share.mini{margin-top:0}.share.mini .lbl{display:none}
+html{scroll-padding-top:64px}
+body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
+.top.entry{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 90%,transparent);
+  backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px)}
+.top.entry .tr{display:flex;align-items:center;gap:16px;flex:none}
+.top.entry .crumbs a:first-child{overflow:hidden;text-overflow:ellipsis;min-width:0}
+.top.entry .rs-go{padding:7px 12px}
+.rs-bar{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--cover);transform:scaleX(0);transform-origin:left;transition:transform .12s linear}
+.keepq .rs-lineshare{margin-top:0}
 .corrd{border-top:1px solid color-mix(in srgb,var(--oxblood) 30%,transparent);padding:12px 0}
 .corrd summary{cursor:pointer;font-size:18px;line-height:1.4}.corrd p{font-size:17px;line-height:1.6;margin:10px 0 0}
-@media (max-width:560px){.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:11px;letter-spacing:.1em}.keepq p{font-size:23px}.s h2{font-size:24px}}
+@media (max-width:560px){.top.entry .wl{display:none}.top.entry .tr{gap:12px}.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:11px;letter-spacing:.1em}.keepq p{font-size:23px}.s h2{font-size:24px}}
 @media (prefers-color-scheme:dark){.keepq{background:color-mix(in srgb,var(--cover) 30%,var(--paper))}}
 `;
 
@@ -164,13 +168,40 @@ function body(kind, b, known, plateFile, CORR = [], share = "") {
   return { html: S.join("\n"), toc };
 }
 
-/* Share links: the phone's own share sheet where there is one, plain links everywhere.
+/* Share, reading progress and passage quoting come from theme/reading.js — the same file
+   the library's reader runs, so an entry behaves the same wherever it is opened. The links
+   under .rs-nojs are for a reader with scripts off; with them on, the sheet carries them.
    No third-party script and no tracking — the colophon promises none. */
 const enc = encodeURIComponent;
-function shareBar(url, title, text, cls = "") {
-  return `<div class="share ${cls}"><span class="lbl">Share</span><button type="button" data-share="${attr(url)}" data-title="${attr(title)}" data-text="${attr(text)}" hidden>Share…</button><button type="button" data-copy="${attr(url)}">Copy link</button><a href="mailto:?subject=${enc(strip(title))}&amp;body=${enc(strip(text) + "\n\n" + url)}">Email</a><a href="https://twitter.com/intent/tweet?text=${enc(strip(text))}&amp;url=${enc(url)}" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}" rel="noopener" target="_blank">LinkedIn</a></div>`;
+const THEME = ["reading.css", "reading.js"].map(f => new URL(`../theme/${f}`, import.meta.url));
+const [READING_CSS, READING_JS] = THEME.map(u => fs.readFileSync(u, "utf8"));
+const SHARE_ICON = `<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
+const END_LINE = "The link opens its own page: the whole entry, with its sources, its disputes and any corrections.";
+/* Reading time, counted over the same fields as words() in theme/press.js, so the reader
+   and the page always print the same minutes. */
+function wordsOf(b) {
+  return strip([...(b.copy || []), b.lede, b.contested, b.changed, ...(b.timeline || []).map(t => t.t),
+    ...(b.figures || []).map(f => f.d), ...(b.reading || []).map(r => r.why), b.bio && b.bio.why].filter(Boolean).join(" ")).split(/\s+/).length;
 }
-const SHARE_JS = `<script>document.querySelectorAll("[data-share]").forEach(function(b){if(navigator.share){b.hidden=false;b.onclick=function(){navigator.share({title:b.dataset.title,text:b.dataset.text,url:b.dataset.share}).catch(function(){})}}});document.querySelectorAll("[data-copy]").forEach(function(b){b.onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(b.dataset.copy):Promise.reject()).then(function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy link"},1600)}).catch(function(){prompt("Copy this link:",b.dataset.copy)})}})</script>`;
+const minsOf = b => Math.max(2, Math.round(wordsOf(b) / 210));
+/* Read next: the first entry this one reads across to, else the next on the shelf — the
+   same choice as readNextHTML() in theme/press.js. */
+function readNext(b, next, kind, byRef, known) {
+  let n = null;
+  for (const a of b.across || []) { const t = byRef[a.to]; if (t) { n = { kind: a.to.split(":")[0], b: t, why: a.txt, href: hrefFor(a.to, known) }; break; } }
+  if (!n) n = { kind, b: next, why: "", href: `../${next.id}/` };
+  const name = n.kind === "press" ? n.b.title : n.b.n;
+  return `<a class="rs-next" href="${n.href}"><span class="rs-nk">${n.why ? "Read next" : "Next on the shelf"}</span><span class="rs-nt">${name}</span>${n.why ? `<span class="rs-nd">${n.why.replace(/^\s*[—–-]\s*/, "")}</span>` : ""}<span class="rs-nm"><span>${n.kind === "press" ? "The Press" : "Lives"} · ${minsOf(n.b)} min</span><b>Read →</b></span></a>`;
+}
+function endBlock(url, name, title, text, nextCard) {
+  return `<section class="rs-end" id="rend" aria-label="Share this entry">
+<div class="rs-fin">End of entry</div>
+<h3>${name}</h3>
+<p>${END_LINE}</p>
+<div class="rs-row"><button class="rs-b rs-main rs-js-only" type="button" data-rs="share">Share this entry</button><button class="rs-b rs-js-only" type="button" data-rs="copy">Copy link</button><a class="rs-b rs-nojs" href="mailto:?subject=${enc(strip(title))}&amp;body=${enc(strip(text) + "\n\n" + url)}">Email</a><a class="rs-b rs-nojs" href="https://twitter.com/intent/tweet?text=${enc(clip(text, 200))}&amp;url=${enc(url)}" rel="noopener" target="_blank">X</a><a class="rs-b rs-nojs" href="https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}" rel="noopener" target="_blank">LinkedIn</a></div>
+${nextCard}
+</section>`;
+}
 
 function page(kind, b, ctx) {
   const { SITE, known, plateFile, wing, hasAbout, prev, next, NEWS, hasLog } = ctx;
@@ -183,8 +214,7 @@ function page(kind, b, ctx) {
   const lead = isPress ? (b.claim || b.lede) : b.lede;
   const desc = clip(strip(lead).length < 110 ? `${strip(lead)} ${strip(b.copy[0])}` : lead, 158);
   const image = plateFile ? `${SITE}/plates/${plateFile}` : ctx.hasCard ? `${SITE}/cards/${b.id}.png` : `${SITE}/og.png`;
-  const words = strip([b.lede, ...(b.copy || []), b.contested, b.changed].filter(Boolean).join(" ")).split(/\s+/).length;
-  const mins = Math.max(2, Math.round(words / 210));
+  const words = wordsOf(b), mins = minsOf(b);
   const wingName = isPress ? "The Press" : "Lives", wingUrl = `${SITE}/contents/`;
   const ld = [{
     "@context": "https://schema.org", "@type": "Article",
@@ -202,7 +232,9 @@ function page(kind, b, ctx) {
   }];
   const shareText = strip(isPress ? (b.claim || b.lede) : b.lede);
   const { html: main, toc } = body(kind, b, known, plateFile, ctx.CORR,
-    b.keep ? shareBar(url, `${strip(name)} — The Commodore Press`, `“${strip(b.keep)}” — ${strip(name)}`, "mini") : "");
+    `<button class="rs-lineshare rs-js-only" type="button" data-rs="line">Share this line ↗</button>`);
+  const conf = { url, title: strip(name), sub: strip(isPress ? b.sub : `${b.field} · ${b.years}`), text: shareText,
+    keep: strip(b.keep), mins, key: (isPress ? "t/" : "l/") + b.id, theme: { bg: b.cover, ink: b.ink, accent: b.accent } };
   const nFacts = (b.facts || []).length, nCorr = (b.corrected || []).length;
   const glance = [
     `${mins} min read`,
@@ -234,10 +266,11 @@ ${!plateFile ? `<meta property="og:image:width" content="1200">
 <meta name="twitter:image" content="${image}">
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
 ${FONTS}
-<style>${CSS}${ENTRY_CSS}</style>
+<style>${CSS}${ENTRY_CSS}${READING_CSS}</style>
+<script>document.documentElement.classList.add("rs-js")</script>
 </head>
 <body style="--cover:${b.cover};--cink:${b.ink};--accent:${b.accent}">
-<nav class="top" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">${wingName}</a><i>/</i><span>${name}</span></span><a href="../../#${isPress ? "press" : "lives"}">${wing} →</a></nav>
+<nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">${wingName}</a><i>/</i><span>${name}</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">${mins} min read</span><button class="rs-go rs-js-only" type="button" data-rs="share">${SHARE_ICON}Share</button><a class="wl" href="../../#${isPress ? "press" : "lives"}">${wing} →</a></span><span class="rs-bar" id="rbar"></span></nav>
 <header class="band"><div class="in">
   ${plateFile ? `<figure class="plate"><img src="../../plates/${plateFile}" alt="Portrait of ${attr(b.n)}" width="260" height="325"></figure>` : ""}
   <div class="kick">${isPress ? `The Press · ${b.field}` : `Lives · ${b.years}`}</div>
@@ -250,13 +283,14 @@ ${FONTS}
 <aside class="rail" aria-label="On this page"><span class="lbl">On this page</span>${toc.map(([id, h]) => `<a href="#${id}">${h}</a>`).join("")}</aside>
 <main class="body">
 ${main}
-${shareBar(url, `${strip(name)} — The Commodore Press`, shareText)}
+${endBlock(url, name, `${strip(name)} — The Commodore Press`, shareText, readNext(b, next, kind, ctx.byRef, known))}
 <a class="cta" href="../../#${slug}">Open in the library →</a>
 <nav class="pn">${[[prev, "←"], [next, "→"]].map(([e, arrow]) => `<a href="../${e.id}/"><span>${arrow === "←" ? "← Previous" : "Next →"}</span>${isPress ? e.title : e.n}</a>`).join("")}</nav>
 ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../../", "Follow the Press", hasLog) : ""}
 </main>
 </div>
-${SHARE_JS}
+<script>${READING_JS.replace(/<\/script/gi, "<\\/script")}
+Reading.page(${JSON.stringify(conf).replace(/</g, "\\u003c")})</script>
 <footer>The Commodore Press · edited by ${hasAbout ? `<a href="../../about/">${EDITOR}</a>` : EDITOR} · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a></footer>
 </body>
 </html>
@@ -289,6 +323,9 @@ export function writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout, 
     for (const f of fs.readdirSync(cardsSrc).filter(f => f.endsWith(".png"))) { fs.copyFileSync(path.join(cardsSrc, f), path.join(cardsOut, f)); cards.add(f.slice(0, -4)); }
   }
 
+  const byRef = {};
+  BOOKS.concat(ADJACENT).forEach(b => { byRef["press:" + b.id] = b; });
+  LIVES.forEach(l => { byRef["lives:" + l.id] = l; });
   const urls = [];
   for (const [kind, list, dir, wing] of [["press", BOOKS.concat(ADJACENT), "t", "All titles"], ["lives", LIVES, "l", "All lives"]]) {
     fs.rmSync(path.join(dist, dir), { recursive: true, force: true });
@@ -297,7 +334,7 @@ export function writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout, 
       const plateFile = kind === "lives" && !b.plateless ? plates[b.id] : null;
       const d = path.join(dist, dir, b.id);
       fs.mkdirSync(d, { recursive: true });
-      fs.writeFileSync(path.join(d, "index.html"), page(kind, b, { SITE, known, plateFile, wing, hasAbout, prev, next, NEWS, hasLog, hasCard: kind === "press" && cards.has(b.id), CORR, modified: DATES[b.id] }));
+      fs.writeFileSync(path.join(d, "index.html"), page(kind, b, { SITE, known, plateFile, wing, hasAbout, prev, next, NEWS, hasLog, hasCard: kind === "press" && cards.has(b.id), CORR, byRef, modified: DATES[b.id] }));
       urls.push({ loc: `${SITE}/${dir}/${b.id}/`, lastmod: DATES[b.id] });
     });
   }

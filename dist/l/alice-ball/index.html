@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Alice Ball">
 <meta name="twitter:description" content="She solved it at twenty-three and died at twenty-four, before publishing. The man who published it instead called it after himself.">
 <meta name="twitter:image" content="https://42thecommodore.github.io/the-commodore-press/og.png">
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Alice Ball","description":"She solved it at twenty-three and died at twenty-four, before publishing. The man who published it instead called it after himself.","url":"https://42thecommodore.github.io/the-commodore-press/l/alice-ball/","mainEntityOfPage":"https://42thecommodore.github.io/the-commodore-press/l/alice-ball/","image":"https://42thecommodore.github.io/the-commodore-press/og.png","inLanguage":"en","wordCount":471,"dateModified":"2026-09-21","about":{"@type":"Person","name":"Alice Ball","description":"Chemistry & Medicine, 1892–1916"},"author":{"@type":"Person","name":"Luca Falvo","jobTitle":"Editor"},"publisher":{"@type":"Organization","name":"The Commodore Press","url":"https://42thecommodore.github.io/the-commodore-press/"},"isPartOf":{"@type":"WebSite","name":"The Commodore Press","url":"https://42thecommodore.github.io/the-commodore-press/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Commodore Press","item":"https://42thecommodore.github.io/the-commodore-press/"},{"@type":"ListItem","position":2,"name":"Lives","item":"https://42thecommodore.github.io/the-commodore-press/contents/"},{"@type":"ListItem","position":3,"name":"Alice Ball","item":"https://42thecommodore.github.io/the-commodore-press/l/alice-ball/"}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Alice Ball","description":"She solved it at twenty-three and died at twenty-four, before publishing. The man who published it instead called it after himself.","url":"https://42thecommodore.github.io/the-commodore-press/l/alice-ball/","mainEntityOfPage":"https://42thecommodore.github.io/the-commodore-press/l/alice-ball/","image":"https://42thecommodore.github.io/the-commodore-press/og.png","inLanguage":"en","wordCount":517,"dateModified":"2026-09-21","about":{"@type":"Person","name":"Alice Ball","description":"Chemistry & Medicine, 1892–1916"},"author":{"@type":"Person","name":"Luca Falvo","jobTitle":"Editor"},"publisher":{"@type":"Organization","name":"The Commodore Press","url":"https://42thecommodore.github.io/the-commodore-press/"},"isPartOf":{"@type":"WebSite","name":"The Commodore Press","url":"https://42thecommodore.github.io/the-commodore-press/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Commodore Press","item":"https://42thecommodore.github.io/the-commodore-press/"},{"@type":"ListItem","position":2,"name":"Lives","item":"https://42thecommodore.github.io/the-commodore-press/contents/"},{"@type":"ListItem","position":3,"name":"Alice Ball","item":"https://42thecommodore.github.io/the-commodore-press/l/alice-ball/"}]}]</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1' stroke='%231E1C18' stroke-width='1.6'/%3E%3Cpath d='M11 1.5V20.5M1.5 11H20.5' stroke='%231E1C18' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,7 +76,7 @@ footer{border-top:1px solid var(--rule);padding:20px;font:12px/1.6 var(--mono);c
 @media (min-width:1100px){
   .layout{display:grid;grid-template-columns:200px minmax(0,680px);gap:56px;justify-content:center;padding:0 20px}
   .layout .body{margin:0;padding-left:0;padding-right:0}
-  .rail{display:flex;flex-direction:column;gap:9px;position:sticky;top:24px;align-self:start;margin-top:44px;font:12px/1.4 var(--mono);letter-spacing:.04em}
+  .rail{display:flex;flex-direction:column;gap:9px;position:sticky;top:76px;align-self:start;margin-top:44px;font:12px/1.4 var(--mono);letter-spacing:.04em}
   .rail a{text-decoration:none;color:var(--ink-soft)}.rail a:hover{color:var(--ink)}
 }
 .lbl{display:block;font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
@@ -94,19 +94,120 @@ footer{border-top:1px solid var(--rule);padding:20px;font:12px/1.6 var(--mono);c
 .callout h2{border-top:0}
 .callout.corr{background:color-mix(in srgb,var(--oxblood) 8%,var(--paper));border-left-color:var(--oxblood)}
 .note p{font-style:italic;font-size:21px}
-.share{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:44px}
-.share .lbl{margin:0 6px 0 0}
-.share button,.share a{font:12px/1 var(--mono);letter-spacing:.06em;padding:9px 12px;border:1px solid var(--rule);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer}
-.share button:hover,.share a:hover{border-color:var(--ink)}
-.share.mini{margin-top:0}.share.mini .lbl{display:none}
+html{scroll-padding-top:64px}
+body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
+.top.entry{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 90%,transparent);
+  backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px)}
+.top.entry .tr{display:flex;align-items:center;gap:16px;flex:none}
+.top.entry .crumbs a:first-child{overflow:hidden;text-overflow:ellipsis;min-width:0}
+.top.entry .rs-go{padding:7px 12px}
+.rs-bar{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--cover);transform:scaleX(0);transform-origin:left;transition:transform .12s linear}
+.keepq .rs-lineshare{margin-top:0}
 .corrd{border-top:1px solid color-mix(in srgb,var(--oxblood) 30%,transparent);padding:12px 0}
 .corrd summary{cursor:pointer;font-size:18px;line-height:1.4}.corrd p{font-size:17px;line-height:1.6;margin:10px 0 0}
-@media (max-width:560px){.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:11px;letter-spacing:.1em}.keepq p{font-size:23px}.s h2{font-size:24px}}
+@media (max-width:560px){.top.entry .wl{display:none}.top.entry .tr{gap:12px}.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:11px;letter-spacing:.1em}.keepq p{font-size:23px}.s h2{font-size:24px}}
 @media (prefers-color-scheme:dark){.keepq{background:color-mix(in srgb,var(--cover) 30%,var(--paper))}}
+
+  /* ---------- reading tools — shared by the library reader and every entry page ----------
+     theme/reading.js draws these. Every colour comes from the entry's own livery
+     (--rs-bg, --rs-ink, --rs-accent), so the share sheet is printed in the book's colours in
+     both places and in every mode, the same way the reader is. */
+  .rs-sheet{border:0;padding:0;margin:auto;width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;
+    background:var(--rs-bg,#F2EDE1);color:var(--rs-ink,#1E1C18);border-radius:14px;
+    box-shadow:0 30px 80px rgba(0,0,0,.38),0 0 0 1px rgba(0,0,0,.06);font-family:var(--serif)}
+  .rs-sheet::backdrop{background:rgba(10,10,12,.42);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .rs-sheet[open]{animation:rs-in .34s var(--ease,cubic-bezier(.19,.9,.22,1))}
+  @keyframes rs-in{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+  .rs-in{padding:22px 24px 20px;position:relative}
+  .rs-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+  .rs-lbl{font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  .rs-x{width:30px;height:30px;border-radius:50%;border:1px solid currentColor;background:none;color:inherit;opacity:.7;
+    font:15px/1 var(--mono);cursor:pointer;display:grid;place-items:center}
+  .rs-x:hover{opacity:1}
+  .rs-card{border:1px solid color-mix(in srgb,currentColor 30%,transparent);border-radius:8px;padding:18px 18px 16px}
+  .rs-q{font-size:21px;line-height:1.4;font-style:italic;margin:0 0 12px}
+  .rs-t{font-size:22px;line-height:1.2;font-weight:500;margin:0 0 4px}
+  .rs-s{font-size:16px;line-height:1.4;font-style:italic;opacity:.85;margin:0}
+  .rs-by{font:11px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:12px;padding-top:10px;
+    border-top:1px solid color-mix(in srgb,currentColor 22%,transparent)}
+  .rs-link{display:flex;gap:8px;margin-top:14px}
+  .rs-link input{flex:1;min-width:0;font:12.5px/1 var(--mono);color:inherit;background:color-mix(in srgb,currentColor 7%,transparent);
+    border:1px solid color-mix(in srgb,currentColor 25%,transparent);border-radius:6px;padding:10px 10px;text-overflow:ellipsis}
+  .rs-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .rs-acts .rs-b{flex:1 1 auto}
+  .rs-b{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:10px 12px;border-radius:6px;cursor:pointer;
+    font:12px/1 var(--mono);letter-spacing:.06em;text-decoration:none;color:inherit;background:none;white-space:nowrap;
+    border:1px solid color-mix(in srgb,currentColor 35%,transparent);transition:border-color .2s,background .2s}
+  .rs-b:hover{border-color:currentColor;background:color-mix(in srgb,currentColor 7%,transparent)}
+  .rs-b.rs-main{background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);border-color:var(--rs-ink,#1E1C18)}
+  .rs-b.rs-main:hover{opacity:.9}
+  .rs-b:focus-visible,.rs-x:focus-visible,.rs-pill button:focus-visible{outline:2px solid var(--rs-accent,currentColor);outline-offset:2px}
+  .rs-note{font:11px/1.5 var(--mono);opacity:.75;margin:12px 0 0}
+
+  /* the pill that appears over a selected passage */
+  .rs-pill{position:fixed;z-index:2147483000;display:flex;gap:2px;padding:4px;border-radius:999px;
+    background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);box-shadow:0 8px 24px rgba(0,0,0,.28);
+    transform:translate(-50%,0);animation:rs-pop .18s ease-out}
+  @keyframes rs-pop{from{opacity:0;transform:translate(-50%,4px)}to{opacity:1;transform:translate(-50%,0)}}
+  .rs-pill button{font:11.5px/1 var(--mono);letter-spacing:.06em;color:inherit;background:none;border:0;padding:9px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .rs-pill button:hover{background:color-mix(in srgb,currentColor 16%,transparent)}
+
+  /* the line that tracks how far through the entry the reader is */
+  .rs-left{font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;opacity:.85;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .rs-go{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;border:1px solid currentColor;
+    font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:inherit;background:none;cursor:pointer;transition:background .2s,color .2s}
+  .rs-go svg{width:12px;height:12px}
+  .rs-go:hover{background:var(--rs-ink,currentColor);color:var(--rs-bg,inherit)}
+
+  /* the end of an entry: where a reader who finished decides what to do with it */
+  .rs-end{margin-top:72px;padding:34px 0 0;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent);text-align:center}
+  .rs-end .rs-fin{font:11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+  /* the press mark, drawn rather than set: the house fonts have no ornament glyph, and a
+     fallback font printed it at half size */
+  .rs-end .rs-fin::before{content:"";display:block;width:24px;height:24px;margin:0 auto 12px;background:currentColor;opacity:.75;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M11 1V21M1 11H21' stroke-width='1'/%3E%3Cpath d='M4 4 18 18M18 4 4 18' stroke-width='.7'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M11 1V21M1 11H21' stroke-width='1'/%3E%3Cpath d='M4 4 18 18M18 4 4 18' stroke-width='.7'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+  .rs-end h3{font-weight:500;font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:10px auto 8px;max-width:22ch}
+  .rs-end p{font-size:17px;line-height:1.5;opacity:.9;margin:0 auto 20px;max-width:44ch}
+  .rs-end .rs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+  .rs-end .rs-b{min-width:112px}
+  .rs-end .rs-b.rs-main{min-width:170px}
+  /* read next: the entry this one argues with, from its own `across` links */
+  .rs-next{display:block;max-width:520px;margin:34px auto 0;padding:20px 22px;text-align:left;text-decoration:none;color:inherit;
+    border:1px solid color-mix(in srgb,currentColor 35%,transparent);border-radius:10px;cursor:pointer;
+    transition:border-color .25s,transform .3s var(--ease,ease),background .25s}
+  .rs-next:hover{border-color:currentColor;background:color-mix(in srgb,currentColor 5%,transparent);transform:translateY(-2px)}
+  .rs-next .rs-nk{display:block;font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+  .rs-next .rs-nt{display:block;font-size:25px;line-height:1.15;font-weight:500}
+  .rs-next .rs-nd{display:block;font-size:17px;line-height:1.45;font-style:italic;opacity:.9;margin-top:6px}
+  .rs-next .rs-nm{display:flex;justify-content:space-between;gap:12px;font:11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:14px}
+  .rs-next:hover .rs-nm b{transform:translateX(4px)}
+  .rs-next .rs-nm b{font-weight:400;display:inline-block;transition:transform .3s var(--ease,ease)}
+
+  /* the offer to pick up where you left off */
+  .rs-resume{position:fixed;left:50%;bottom:22px;z-index:2147482000;transform:translateX(-50%);display:flex;align-items:center;gap:4px;
+    max-width:calc(100vw - 24px);padding:6px 6px 6px 18px;border-radius:999px;background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);
+    box-shadow:0 12px 32px rgba(0,0,0,.3);font:11.5px/1.3 var(--mono);letter-spacing:.05em;animation:rs-up .4s var(--ease,ease)}
+  @keyframes rs-up{from{opacity:0;transform:translate(-50%,16px)}to{opacity:1;transform:translate(-50%,0)}}
+  .rs-resume span{margin-right:8px}
+  .rs-resume button{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:9px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .rs-resume button[data-a=go]{background:var(--rs-bg,#F2EDE1);color:var(--rs-ink,#1E1C18)}
+  .rs-resume button:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+
+  .rs-lineshare{display:inline-block;margin-top:14px;font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:inherit;background:none;border:0;
+    border-bottom:1px solid currentColor;padding:0 0 3px;cursor:pointer;opacity:.85}
+  .rs-lineshare:hover{opacity:1}
+  .rs-js-only{display:none !important}
+  .rs-js .rs-js-only{display:inline-flex !important}
+  .rs-js .rs-nojs{display:none !important}
+  @media (prefers-reduced-motion:reduce){.rs-sheet[open],.rs-pill,.rs-resume{animation:none}.rs-next,.rs-next .rs-nm b{transition:none}}
+  @media (max-width:560px){.rs-in{padding:18px 18px 16px}.rs-q{font-size:19px}.rs-next .rs-nt{font-size:22px}
+    .rs-resume{padding-left:14px;font-size:11px}.rs-resume span{margin-right:2px}}
 </style>
+<script>document.documentElement.classList.add("rs-js")</script>
 </head>
 <body style="--cover:#3D5240;--cink:#EEF5EE;--accent:#B9D8B0">
-<nav class="top" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">Lives</a><i>/</i><span>Alice Ball</span></span><a href="../../#lives">All lives →</a></nav>
+<nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">Lives</a><i>/</i><span>Alice Ball</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">2 min read</span><button class="rs-go rs-js-only" type="button" data-rs="share"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>Share</button><a class="wl" href="../../#lives">All lives →</a></span><span class="rs-bar" id="rbar"></span></nav>
 <header class="band"><div class="in">
   
   <div class="kick">Lives · 1892–1916</div>
@@ -119,19 +220,302 @@ footer{border-top:1px solid var(--rule);padding:20px;font:12px/1.6 var(--mono);c
 <aside class="rail" aria-label="On this page"><span class="lbl">On this page</span><a href="#s-numbers">By the numbers</a><a href="#s-contested">Where it is contested</a><a href="#s-bio">Where to start</a><a href="#s-across">Reads across to</a></aside>
 <main class="body">
 <p class="lede">She solved it at twenty-three and died at twenty-four, before publishing. The man who published it instead called it after himself.</p>
-<aside class="keepq" aria-label="If you keep one line"><span class="lbl">If you keep one line</span><p>Work does not keep your name by itself. Somebody has to put it back.</p><div class="share mini"><span class="lbl">Share</span><button type="button" data-share="https://42thecommodore.github.io/the-commodore-press/l/alice-ball/" data-title="Alice Ball — The Commodore Press" data-text="“Work does not keep your name by itself. Somebody has to put it back.” — Alice Ball" hidden>Share…</button><button type="button" data-copy="https://42thecommodore.github.io/the-commodore-press/l/alice-ball/">Copy link</button><a href="mailto:?subject=Alice%20Ball%20%E2%80%94%20The%20Commodore%20Press&amp;body=%E2%80%9CWork%20does%20not%20keep%20your%20name%20by%20itself.%20Somebody%20has%20to%20put%20it%20back.%E2%80%9D%20%E2%80%94%20Alice%20Ball%0A%0Ahttps%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F">Email</a><a href="https://twitter.com/intent/tweet?text=%E2%80%9CWork%20does%20not%20keep%20your%20name%20by%20itself.%20Somebody%20has%20to%20put%20it%20back.%E2%80%9D%20%E2%80%94%20Alice%20Ball&amp;url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F" rel="noopener" target="_blank">LinkedIn</a></div></aside>
+<aside class="keepq" aria-label="If you keep one line"><span class="lbl">If you keep one line</span><p>Work does not keep your name by itself. Somebody has to put it back.</p><button class="rs-lineshare rs-js-only" type="button" data-rs="line">Share this line ↗</button></aside>
 <div class="essay"><p>Chaulmoogra oil had been used against leprosy for a very long time and was close to useless in practice. Swallowed it made people sick; injected as it came it was thick, it hurt, and it sat under the skin instead of going anywhere. The people at Kalaupapa, on Molokaʻi, were not there to be treated. They were there because Hawaiʻi separated them from everyone else. Alice Ball was a young chemist at the College of Hawaiʻi — its first African-American graduate, and the first woman to take a master's in chemistry there, in 1915 — and Harry Hollmann, a doctor at Kalihi Hospital, asked her to look at the oil.</p><p>She worked out how to isolate the active ingredients and hold them in a form that could be injected and actually absorbed. That is the whole distance between a folk remedy and a treatment, and she covered it at twenty-three. The difference it made was not comfort: patients began testing negative for the bacillus, and some were released from isolation on medical grounds for the first time. She died on 31 December 1916, aged twenty-four, without publishing any of it.</p><p>Arthur Dean, the president of the college, took the work up, published her findings without crediting the research she had done, produced the treatment in quantity, and let it be known as the Dean Method. It stayed his for six years. In 1922 Hollmann — the man who had sent her to the problem in the first place — published a paper of his own that set the record straight and called the process the Ball Method, which is the name it still has. Her own university gave her its Medal of Distinction in 2007, ninety-one years after she died. That is the shape of the story worth keeping: the chemistry was done inside her short working life, the credit took the better part of a century, and neither of those happened on its own.</p></div>
 <section class="s " id="s-numbers"><h2><span class="n">01</span>By the numbers</h2><div class="facts"><div class="fact"><b>1915</b><span>Her master's in chemistry — the first woman to take one at the College of Hawaiʻi, and its first African-American graduate: University of Hawaiʻi, 'UH celebrates Alice Augusta Ball Day in Hawaiʻi, February 28'</span></div><div class="fact"><b>31 Dec 1916</b><span>Her death, aged 24, before she had published the method: University of Hawaiʻi, as above</span></div><div class="fact"><b>1922</b><span>Hollmann's paper restoring her name to the process, six years after her death and after Arthur Dean had published it as his own: University of Hawaiʻi, as above</span></div><div class="fact"><b>2007</b><span>The University of Hawaiʻi Board of Regents' posthumous Medal of Distinction: University of Hawaiʻi Board of Regents, 'Medals of Distinction'</span></div></div></section>
 <section class="s callout" id="s-contested"><h2><span class="n">02</span>Where it is contested</h2><p>What the method actually did is worth stating precisely, because the retellings have drifted. It was not a cure, and the house is not calling it one: what the literature supports is patients testing negative for the bacillus and the first releases from isolation on medical grounds, which is a different and more checkable claim. The credit question is settled — Dean published it as his, Hollmann named it for her in 1922 — but the reason is not, and the accounts that make Dean a simple thief sit awkwardly beside the fact that the man who corrected him was also a colleague of his. This house has read the University of Hawaiʻi's account and one paper; it has not read Dean's or Hollmann's originals.</p></section>
 <section class="s " id="s-bio"><h2><span class="n">03</span>Where to start</h2><div class="row"><b><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13441499/" rel="noopener">A Reexamination of Dr. Masanao Goto's Leprosy Treatment in Hawai'i</a></b><span>K. Yuji and W. Yuji, Hawai'i Journal of Health & Social Welfare · 2026</span></div><p class="why">Not a life of Ball — there is no standard one, which is its own comment — but the careful scholarly treatment that puts her beside the practitioner she is usually contrasted with, and is precise about what her method achieved and what it did not.</p></section>
 <section class="s " id="s-across"><h2><span class="n">04</span>Reads across to</h2><p><a href="../../l/tu-youyou/">Tu Youyou</a> — the same problem a half-century on: an old plant remedy that only works once somebody finds the right way to get the compound out of it.</p><p><a href="../../l/rosalind-franklin/">Rosalind Franklin</a> — the other entry here about work that travelled faster than the name attached to it.</p></section>
-<div class="share "><span class="lbl">Share</span><button type="button" data-share="https://42thecommodore.github.io/the-commodore-press/l/alice-ball/" data-title="Alice Ball — The Commodore Press" data-text="She solved it at twenty-three and died at twenty-four, before publishing. The man who published it instead called it after himself." hidden>Share…</button><button type="button" data-copy="https://42thecommodore.github.io/the-commodore-press/l/alice-ball/">Copy link</button><a href="mailto:?subject=Alice%20Ball%20%E2%80%94%20The%20Commodore%20Press&amp;body=She%20solved%20it%20at%20twenty-three%20and%20died%20at%20twenty-four%2C%20before%20publishing.%20The%20man%20who%20published%20it%20instead%20called%20it%20after%20himself.%0A%0Ahttps%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F">Email</a><a href="https://twitter.com/intent/tweet?text=She%20solved%20it%20at%20twenty-three%20and%20died%20at%20twenty-four%2C%20before%20publishing.%20The%20man%20who%20published%20it%20instead%20called%20it%20after%20himself.&amp;url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F" rel="noopener" target="_blank">LinkedIn</a></div>
+<section class="rs-end" id="rend" aria-label="Share this entry">
+<div class="rs-fin">End of entry</div>
+<h3>Alice Ball</h3>
+<p>The link opens its own page: the whole entry, with its sources, its disputes and any corrections.</p>
+<div class="rs-row"><button class="rs-b rs-main rs-js-only" type="button" data-rs="share">Share this entry</button><button class="rs-b rs-js-only" type="button" data-rs="copy">Copy link</button><a class="rs-b rs-nojs" href="mailto:?subject=Alice%20Ball%20%E2%80%94%20The%20Commodore%20Press&amp;body=She%20solved%20it%20at%20twenty-three%20and%20died%20at%20twenty-four%2C%20before%20publishing.%20The%20man%20who%20published%20it%20instead%20called%20it%20after%20himself.%0A%0Ahttps%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F">Email</a><a class="rs-b rs-nojs" href="https://twitter.com/intent/tweet?text=She%20solved%20it%20at%20twenty-three%20and%20died%20at%20twenty-four%2C%20before%20publishing.%20The%20man%20who%20published%20it%20instead%20called%20it%20after%20himself.&amp;url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F" rel="noopener" target="_blank">X</a><a class="rs-b rs-nojs" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Fl%2Falice-ball%2F" rel="noopener" target="_blank">LinkedIn</a></div>
+<a class="rs-next" href="../../l/tu-youyou/"><span class="rs-nk">Read next</span><span class="rs-nt">Tu Youyou</span><span class="rs-nd">the same problem a half-century on: an old plant remedy that only works once somebody finds the right way to get the compound out of it.</span><span class="rs-nm"><span>Lives · 3 min</span><b>Read →</b></span></a>
+</section>
 <a class="cta" href="../../#l/alice-ball">Open in the library →</a>
 <nav class="pn"><a href="../emily-warren-roebling/"><span>← Previous</span>Emily Warren Roebling</a><a href="../edward-thorp/"><span>Next →</span>Edward O. Thorp</a></nav>
 
 </main>
 </div>
-<script>document.querySelectorAll("[data-share]").forEach(function(b){if(navigator.share){b.hidden=false;b.onclick=function(){navigator.share({title:b.dataset.title,text:b.dataset.text,url:b.dataset.share}).catch(function(){})}}});document.querySelectorAll("[data-copy]").forEach(function(b){b.onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(b.dataset.copy):Promise.reject()).then(function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy link"},1600)}).catch(function(){prompt("Copy this link:",b.dataset.copy)})}})</script>
+<script>/* Reading tools — shared by the library reader (theme/press.js) and every entry page
+   (build/pages.mjs). One file, so the two places a reader meets an entry behave the same.
+
+   Four things:
+   - share(): a share sheet printed in the entry's livery. Phones get their own share sheet.
+   - progress(): the line and the "4 min left" that say how far through the entry you are,
+     and the offer to pick up where you left off.
+   - quotes(): select a passage and share it, attributed to the Press and linked to the
+     entry's own page at that passage.
+   - memory: which entries this browser has finished, and where it stopped in the others.
+     Kept in localStorage under "cp-read", never sent anywhere. The colophon says so; if
+     this ever stores anything else, that sentence changes in the same edit.
+
+   A shared passage is the Press's own words, verbatim, and every quote is credited
+   "The Commodore Press, on <entry>" — never set under the entry's name alone, where a line
+   the Press wrote about Darwin would read as Darwin's. The colophon promises no invented
+   quotations; a misattributed one is the same failure. One function, credit(), writes it.
+
+   No third-party script and no tracking. The share links are plain URLs; nothing is sent
+   anywhere until the reader chooses to. */
+(function () {
+  "use strict";
+  var doc = document, enc = encodeURIComponent, PRESS = "The Commodore Press";
+  doc.documentElement.classList.add("rs-js");
+  var coarse = function () { return matchMedia("(pointer:coarse)").matches; };
+  var clean = function (s) { return String(s || "").replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim(); };
+  var credit = function (title) { return PRESS + ", on " + clean(title); };
+  var esc = function (s) { return clean(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;"); };
+
+  var KEY = "cp-read", mem = null;
+  function load() {
+    if (mem) return mem;
+    try { mem = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { mem = {}; }
+    return mem;
+  }
+  function keep() { try { localStorage.setItem(KEY, JSON.stringify(mem)); } catch (e) {} }
+  // another tab (an entry page, say) finished something: read it fresh next time
+  addEventListener("storage", function (e) { if (e.key === KEY || e.key === null) mem = null; });
+  var memory = {
+    get: function (k) { return load()[k] || null; },
+    done: function (k) { var r = load()[k]; return !!(r && r.d); },
+    // position is kept to the nearest per cent; "done" latches, so rereading the top of a
+    // finished entry does not un-finish it
+    note: function (k, p) {
+      var m = load(), r = m[k] || { p: 0, d: 0 }, q = Math.round(p * 100) / 100;
+      if (Math.abs(r.p - q) < 0.02 && !(q >= 0.995 && !r.d)) return;
+      r.p = q; if (q >= 0.995) r.d = 1; r.t = Date.now(); m[k] = r; keep();
+    }
+  };
+
+  /* Copy with the clipboard API where the page is allowed it, the old way where not. */
+  function copy(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (ok, no) {
+      var host = doc.querySelector("dialog[open]") || doc.body, t = doc.createElement("textarea");
+      t.value = text; t.setAttribute("readonly", ""); t.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+      host.appendChild(t); t.select();
+      try { doc.execCommand("copy") ? ok() : no(); } catch (e) { no(); }
+      t.remove();
+    });
+  }
+  function copied(btn, text) {
+    var was = btn.getAttribute("data-label") || btn.textContent;
+    btn.setAttribute("data-label", was);
+    copy(text).then(function () {
+      btn.textContent = "Copied ✓";
+      setTimeout(function () { btn.textContent = was; }, 1600);
+    }).catch(function () { prompt("Copy this:", text); });
+  }
+
+  /* A link that opens the entry's own page scrolled to the passage, in the browsers that
+     support text fragments; the rest simply open the page. */
+  function fragment(q) {
+    var e = function (s) { return enc(s).replace(/-/g, "%2D"); }, w = q.replace(/[“”"]/g, "").split(" ");
+    if (w.length <= 8) return "#:~:text=" + e(w.join(" "));
+    return "#:~:text=" + e(w.slice(0, 4).join(" ")) + "," + e(w.slice(-4).join(" "));
+  }
+  // X counts a link as 23 characters; a long passage is shortened there, and only there,
+  // with the ellipsis that marks the cut. Copy and email carry it whole.
+  function clip(t, n) { t = clean(t); return t.length <= n ? t : t.slice(0, t.lastIndexOf(" ", n - 1)) + "…"; }
+  function tweetable(q, title) {
+    var tail = "” — " + credit(title), room = 250 - tail.length;
+    if (q.length > room) q = q.slice(0, q.lastIndexOf(" ", room - 1)) + " …";
+    return "“" + q + tail;
+  }
+
+  var sheet = null, back = null;
+  function close() { if (sheet && sheet.open) sheet.close(); }
+  // Escape closes the sheet everywhere, not only in browsers whose <dialog> does it for free
+  doc.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && sheet && sheet.open) { e.preventDefault(); e.stopPropagation(); close(); }
+  }, true);
+
+  /* o: { url, title, sub, text, quote, kind: "entry"|"line"|"passage", theme: {bg, ink, accent}, from } */
+  function share(o) {
+    var title = clean(o.title), q = clean(o.quote), url = o.url + (q && o.kind === "passage" ? fragment(q) : "");
+    var full = title + " — " + PRESS;
+    var quoteText = q ? "“" + q + "”\n— " + credit(title) : "";
+    var said = q ? quoteText : clean(o.text);
+    if (navigator.share && coarse()) {
+      navigator.share({ title: full, text: q ? quoteText : said, url: url }).catch(function () {});
+      return;
+    }
+    if (sheet) sheet.remove();
+    back = o.from || doc.activeElement;
+    var t = o.theme || {}, d = doc.createElement("dialog");
+    d.className = "rs-sheet";
+    d.setAttribute("aria-label", q ? "Share this " + (o.kind === "line" ? "line" : "passage") : "Share this entry");
+    if (t.bg) d.style.setProperty("--rs-bg", t.bg);
+    if (t.ink) d.style.setProperty("--rs-ink", t.ink);
+    if (t.accent) d.style.setProperty("--rs-accent", t.accent);
+    var mail = "mailto:?subject=" + enc(full) + "&body=" + enc((q ? quoteText : said) + "\n\n" + url);
+    var x = "https://twitter.com/intent/tweet?text=" + enc(q ? tweetable(q, title) : clip(said, 200)) + "&url=" + enc(url);
+    var li = "https://www.linkedin.com/sharing/share-offsite/?url=" + enc(o.url);
+    d.innerHTML = '<div class="rs-in">' +
+      '<div class="rs-head"><span class="rs-lbl">' + (q ? (o.kind === "line" ? "Share this line" : "Share this passage") : "Share this entry") + '</span>' +
+      '<button class="rs-x" type="button" aria-label="Close">✕</button></div>' +
+      '<div class="rs-card">' + (q
+        ? '<p class="rs-q">“' + esc(q) + '”</p><div class="rs-by">— ' + esc(credit(title)) + '</div></div>'
+        : '<p class="rs-t">' + esc(title) + '</p>' + (o.sub ? '<p class="rs-s">' + esc(o.sub) + '</p>' : "") +
+          '<div class="rs-by">' + PRESS + '</div></div>') +
+      '<div class="rs-link"><input type="text" readonly aria-label="Link to this entry" value="' + esc(url) + '">' +
+      '<button class="rs-b rs-main" type="button" data-a="link">Copy link</button></div>' +
+      '<div class="rs-acts">' + (q ? '<button class="rs-b" type="button" data-a="quote">Copy quote</button>' : "") +
+      '<a class="rs-b" href="' + esc(mail) + '">Email</a>' +
+      '<a class="rs-b" href="' + esc(x) + '" target="_blank" rel="noopener">X</a>' +
+      '<a class="rs-b" href="' + esc(li) + '" target="_blank" rel="noopener">LinkedIn</a>' +
+      (navigator.share ? '<button class="rs-b" type="button" data-a="more">More…</button>' : "") + '</div>' +
+      (o.kind === "passage" ? '<p class="rs-note">The link opens the entry’s own page at this passage, in browsers that support it.</p>' : "") +
+      '</div>';
+    d.addEventListener("click", function (e) {
+      if (e.target === d) return close();                       // the backdrop
+      var b = e.target.closest("button"); if (!b) return;
+      if (b.classList.contains("rs-x")) return close();
+      var a = b.getAttribute("data-a");
+      if (a === "link") copied(b, url);
+      if (a === "quote") copied(b, quoteText + "\n" + url);
+      if (a === "more") navigator.share({ title: full, text: q ? quoteText : said, url: url }).catch(function () {});
+    });
+    d.querySelector("input").addEventListener("focus", function () { this.select(); });
+    d.addEventListener("close", function () {
+      d.remove(); if (sheet === d) sheet = null;
+      if (back && back.focus && doc.contains(back)) back.focus({ preventScroll: true });
+    });
+    doc.body.appendChild(d); sheet = d;
+    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+    d.querySelector("[data-a=link]").focus();
+  }
+
+  /* o: { scroller: element | window, start, end, mins, label, bar, key }
+     Nothing counts until the entry's first line reaches mid-screen, and it is finished when
+     the end-of-entry block comes into view. The minutes are the entry's own reading time. */
+  function progress(o) {
+    var win = o.scroller === window, raf = 0;
+    function y(el) { return el.getBoundingClientRect().top + (win ? scrollY : o.scroller.scrollTop - o.scroller.getBoundingClientRect().top); }
+    function span() {
+      var vh = win ? innerHeight : o.scroller.clientHeight, a = Math.max(0, y(o.start) - vh * 0.5);
+      return [a, Math.max(a + 1, y(o.end) - vh * 0.85)];
+    }
+    var saved = o.key ? memory.get(o.key) : null, offer = null;
+    function update() {
+      raf = 0;
+      if (!o.start || !o.end || !doc.contains(o.end)) return;
+      var st = win ? scrollY : o.scroller.scrollTop, ab = span(), a = ab[0], b = ab[1];
+      var p = Math.min(1, Math.max(0, (st - a) / (b - a)));
+      if (o.key && p > 0.01) memory.note(o.key, p);
+      if (offer && Math.abs(st - offer.at) > 240) dismiss();
+      if (o.bar) o.bar.style.transform = "scaleX(" + p.toFixed(4) + ")";
+      if (o.label) {
+        var left = Math.ceil(o.mins * (1 - p));
+        o.label.textContent = p >= 0.995 ? "Finished ✓" : p <= 0.01 ? o.mins + " min read" : p >= 0.85 ? "Almost done" : Math.max(1, left) + " min left";
+        o.label.classList.toggle("done", p >= 0.995);
+      }
+    }
+    function on() { if (!raf) raf = requestAnimationFrame(update); }
+    function dismiss() { if (offer) { offer.el.remove(); offer = null; } }
+    // Came back to an entry left part-read: offer to go back, once, and get out of the way.
+    if (saved && !saved.d && saved.p >= 0.08 && saved.p <= 0.95 && o.start && o.end) {
+      var el = doc.createElement("div"), left = Math.max(1, Math.ceil(o.mins * (1 - saved.p)));
+      el.className = "rs-resume"; el.setAttribute("role", "status");
+      if (o.theme && o.theme.bg) el.style.setProperty("--rs-bg", o.theme.bg);
+      if (o.theme && o.theme.ink) el.style.setProperty("--rs-ink", o.theme.ink);
+      el.innerHTML = '<span>You stopped here before · ' + left + ' min left</span><button type="button" data-a="go">Continue ↓</button><button type="button" data-a="x" aria-label="Dismiss">✕</button>';
+      el.addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        if (b.getAttribute("data-a") === "go") {
+          var ab = span(), top = ab[0] + saved.p * (ab[1] - ab[0]);
+          o.scroller.scrollTo({ top: top, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+        }
+        dismiss();
+      });
+      doc.body.appendChild(el);
+      offer = { el: el, at: win ? scrollY : o.scroller.scrollTop };
+      setTimeout(dismiss, 12000);
+    }
+    o.scroller.addEventListener("scroll", on, { passive: true });
+    addEventListener("resize", on);
+    update();
+    return { update: on, destroy: function () { dismiss(); o.scroller.removeEventListener("scroll", on); removeEventListener("resize", on); } };
+  }
+
+  /* o: { root, within: selector of quotable prose, scroller, meta: () => share options }
+     Selections are widened to whole words, so a quote never starts or ends mid-word. */
+  function quotes(o) {
+    var pill = null, timer = 0, down = false, sel = null;
+    function hide() { if (pill) { pill.remove(); pill = null; } }
+    function inside(n) { var el = n && (n.nodeType === 1 ? n : n.parentElement); return el && o.root.contains(el) && el.closest(o.within); }
+    function widen(r) {
+      r = r.cloneRange();
+      var s = r.startContainer, e = r.endContainer, wd = /[\wÀ-ɏ’'-]/;
+      if (s.nodeType === 3) { var i = r.startOffset; while (i > 0 && wd.test(s.data[i - 1])) i--; r.setStart(s, i); }
+      if (e.nodeType === 3) { var j = r.endOffset; while (j < e.data.length && wd.test(e.data[j])) j++; r.setEnd(e, j); }
+      return r;
+    }
+    function check() {
+      var s = getSelection();
+      if (!s.rangeCount || s.isCollapsed) return hide();
+      var r = s.getRangeAt(0);
+      if (!inside(r.startContainer) || !inside(r.endContainer)) return hide();
+      var m = o.meta && o.meta(); if (!m) return hide();
+      var q = clean(widen(r).toString()).replace(/^[\s,;:—–-]+|[\s,;:—–-]+$/g, "");
+      if (q.length < 12 || q.length > 600) return hide();
+      sel = q; hide();
+      var rect = r.getBoundingClientRect(), x = Math.min(innerWidth - 110, Math.max(110, rect.left + rect.width / 2));
+      var t = m.theme || {};
+      pill = doc.createElement("div"); pill.className = "rs-pill"; pill.setAttribute("role", "toolbar"); pill.setAttribute("aria-label", "Selected passage");
+      if (t.bg) pill.style.setProperty("--rs-bg", t.bg);
+      if (t.ink) pill.style.setProperty("--rs-ink", t.ink);
+      pill.innerHTML = '<button type="button" data-a="share">Share quote</button><button type="button" data-a="copy">Copy</button>';
+      doc.body.appendChild(pill);
+      // phones draw their own menu above a selection, so the pill goes beneath it there
+      var above = rect.top - pill.offsetHeight - 10;
+      pill.style.left = x + "px";
+      pill.style.top = (coarse() || above < 70 ? Math.min(innerHeight - pill.offsetHeight - 10, rect.bottom + 12) : above) + "px";
+      pill.addEventListener("mousedown", function (e) { e.preventDefault(); });   // keep the selection
+      pill.addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        var mm = o.meta(); if (!mm) return hide();
+        if (b.getAttribute("data-a") === "copy") {
+          copied(b, "“" + sel + "”\n— " + credit(mm.title) + "\n" + mm.url + fragment(sel));
+        } else {
+          hide();
+          share({ url: mm.url, title: mm.title, sub: mm.sub, text: mm.text, theme: mm.theme, quote: sel, kind: "passage" });
+        }
+      });
+    }
+    function later() { clearTimeout(timer); if (!down) timer = setTimeout(check, coarse() ? 450 : 120); }
+    doc.addEventListener("selectionchange", function () {
+      var s = getSelection(); if (!s.rangeCount || s.isCollapsed) { hide(); return; }
+      later();
+    });
+    doc.addEventListener("pointerdown", function (e) { if (!pill || !pill.contains(e.target)) down = true; });
+    doc.addEventListener("pointerup", function () { if (down) { down = false; later(); } });
+    doc.addEventListener("keydown", function (e) { if (e.key === "Escape") hide(); });
+    (o.scroller || window).addEventListener("scroll", hide, { passive: true });
+    if (o.scroller && o.scroller !== window) addEventListener("scroll", hide, { passive: true });
+  }
+
+  /* An entry page wires everything from one call. `c` is written by build/pages.mjs. */
+  function page(c) {
+    var m = { url: c.url, title: c.title, sub: c.sub, text: c.text, theme: c.theme };
+    doc.querySelectorAll("[data-rs]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var a = b.getAttribute("data-rs");
+        if (a === "copy") return copied(b, c.url);
+        share({ url: c.url, title: c.title, sub: c.sub, text: c.text, theme: c.theme, from: b,
+          quote: a === "line" ? c.keep : "", kind: a === "line" ? "line" : "entry" });
+      });
+    });
+    progress({ scroller: window, start: doc.querySelector("main"), end: doc.getElementById("rend"), mins: c.mins,
+      label: doc.getElementById("rleft"), bar: doc.getElementById("rbar"), key: c.key, theme: c.theme });
+    quotes({ root: doc.querySelector("main"), within: ".lede,.essay,.keepq p,.callout p,.note p", scroller: window, meta: function () { return m; } });
+  }
+
+  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory };
+})();
+
+Reading.page({"url":"https://42thecommodore.github.io/the-commodore-press/l/alice-ball/","title":"Alice Ball","sub":"Chemistry & Medicine · 1892–1916","text":"She solved it at twenty-three and died at twenty-four, before publishing. The man who published it instead called it after himself.","keep":"Work does not keep your name by itself. Somebody has to put it back.","mins":2,"key":"l/alice-ball","theme":{"bg":"#3D5240","ink":"#EEF5EE","accent":"#B9D8B0"}})</script>
 <footer>The Commodore Press · edited by Luca Falvo · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a></footer>
 </body>
 </html>

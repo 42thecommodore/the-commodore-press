@@ -285,7 +285,7 @@ function renderShelf(anim){
     const dx=o.left-n.left,dy=o.top-n.top;if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
     s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
   document.getElementById("pressCount").textContent=list.length+(list.length===1?" title":" titles");
-  observeReveals(shelf);bindTilt(shelf);
+  observeReveals(shelf);bindTilt(shelf);markRead();
 }
 function renderWide(){
   const w=document.getElementById("wide");
@@ -317,7 +317,7 @@ function renderLivesShelf(anim){
     const dx=o.left-n.left,dy=o.top-n.top;if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
     s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
   document.getElementById("livesCount").textContent=list.length+(list.length===1?" life":" lives");
-  observeReveals(shelf);bindTilt(shelf);
+  observeReveals(shelf);bindTilt(shelf);markRead();
 }
 
 /* ---------- reader ---------- */
@@ -326,6 +326,25 @@ function words(b){
     (b.timeline||[]).map(t=>t.t),(b.figures||[]).map(f=>f.d),(b.reading||[]).map(r=>r.why||""),
     b.bio?[b.bio.why]:[]);
   return p.join(" ").trim().split(/\s+/).length;
+}
+/* Read next: the first entry this one reads across to — a link that exists because the two
+   argue (PUBLISHING.md) — and the next on the shelf only when there is none. Same choice as
+   readNext() in build/pages.mjs. */
+function readNextHTML(kind,b,next){
+  let n=null;
+  for(const a of b.across||[]){const [w,id]=a.to.split(":"),u=w==="press"?ALL:w==="lives"?LIVES:null,t=u&&u.find(x=>x.id===id);
+    if(t){n={kind:w,b:t,why:a.txt};break}}
+  if(!n)n={kind,b:next,why:""};
+  const k=n.kind==="press"?"t":"l",name=n.kind==="press"?n.b.title:n.b.n,m=Math.max(2,Math.round(words(n.b)/210));
+  return `<a class="rs-next" href="#${k}/${n.b.id}" onclick="openReader('${n.kind}','${n.b.id}');return false">
+    <span class="rs-nk">${n.why?"Read next":"Next on the shelf"}</span><span class="rs-nt">${name}</span>
+    ${n.why?`<span class="rs-nd">${n.why.replace(/^\s*[—–-]\s*/,"")}</span>`:""}
+    <span class="rs-nm"><span>${n.kind==="press"?"The Press":"Lives"} · ${m} min</span><b>Read →</b></span></a>`;
+}
+/* Entries this browser has finished get a mark on the shelf (Reading.memory, theme/reading.js). */
+function markRead(){
+  document.querySelectorAll("#shelf .slot").forEach(s=>s.classList.toggle("read",Reading.memory.done("t/"+s.dataset.id)));
+  document.querySelectorAll("#livesShelf .slot").forEach(s=>s.classList.toggle("read",Reading.memory.done("l/"+s.dataset.id)));
 }
 function acrossHTML(b){
   if(!b.across||!b.across.length)return "";
@@ -350,7 +369,7 @@ function readerHTML(kind,b){
   if(b.corrected&&b.corrected.length){S.push(`<section class="sec" id="s-corrected" data-reveal><h4>Corrected</h4><div class="corrbox">${b.corrected.map(n=>{const c=CORRECTIONS[n-1];return c?`<div><b>№ ${n} · ${c.d} · ${c.t}</b><span>${c.b}</span></div>`:""}).join("")}</div></section>`);toc.push(["s-corrected","Corrected"])}
   if(b.contested){S.push(`<section class="sec" id="s-contested" data-reveal><h4>Where it is contested</h4><div class="quoteblock">${b.contested}</div></section>`);toc.push(["s-contested","Contested"])}
   if(b.changed){S.push(`<section class="sec" id="s-changed" data-reveal><h4>What I changed my mind about</h4><div class="quoteblock">${b.changed}</div></section>`);toc.push(["s-changed","Second thoughts"])}
-  if(b.keep){S.push(`<section class="sec" id="s-keep" data-reveal><h4>If you keep one line</h4><div class="keepbox">${b.keep}</div></section>`);toc.push(["s-keep","Take this"])}
+  if(b.keep){S.push(`<section class="sec" id="s-keep" data-reveal><h4>If you keep one line</h4><div class="keepbox">${b.keep}</div><button class="rs-lineshare" type="button" onclick="shareLine('${isPress?"t":"l"}','${b.id}',this)">Share this line ↗</button></section>`);toc.push(["s-keep","Take this"])}
   if(b.across){S.push(acrossHTML(b));toc.push(["s-across","Across"])}
   if(b.reading){S.push(`<section class="sec" id="s-reading" data-reveal><h4>Go to the source</h4><ul class="reading">${b.reading.map(r=>`<li><a href="${r.u}" target="_blank" rel="noopener"><div class="row"><span class="t">${r.t}</span><span class="a">${r.a} ↗</span></div>${r.why?`<div class="why">${r.why}</div>`:""}</a></li>`).join("")}</ul></section>`);toc.push(["s-reading","Sources"])}
 
@@ -360,6 +379,7 @@ function readerHTML(kind,b){
   return `<div class="wrap">
     <div class="rbar">
       <button class="back" onclick="closeReader()"><span class="arw">←</span> ${isPress?"All titles":"All lives"}</button>
+      <div class="rtools"><span class="rs-left" id="rleft" data-mins="${mins}">${mins} min read</span><button class="rs-go" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">${SHARE_ICON}Share</button></div>
       <div class="nav"><button onclick="step(-1)" aria-label="Previous">‹</button><button onclick="step(1)" aria-label="Next">›</button></div>
     </div>
     <div class="rgrid">
@@ -370,7 +390,6 @@ function readerHTML(kind,b){
           <div><b>${isPress?"Period":"Lived"}</b><span>${b.years}</span></div>
           <div><b>Shelf</b><span>№ ${String(idx+1).padStart(2,"0")} of ${uni.length}</span></div>
           <div><b>Reading</b><span>${mins} min</span></div>
-          <div><b>Share</b><span><button class="rshare" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">Share this entry ↗</button></span></div>
         </div>
         <nav class="toc">${toc.map(t=>`<a href="#" data-sec="${t[0]}" onclick="gotoSec('${t[0]}');return false;">${t[1]}</a>`).join("")}</nav>
       </div></div>
@@ -381,6 +400,13 @@ function readerHTML(kind,b){
         ${plate}
         <p class="lede" data-reveal style="--d:180ms">${b.lede}</p>
         ${S.join("")}
+        <section class="rs-end" id="rend" aria-label="Share this entry">
+          <div class="rs-fin">End of entry</div>
+          <h3>${title}</h3>
+          <p>${END_LINE}</p>
+          <div class="rs-row"><button class="rs-b rs-main" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">Share this entry</button><button class="rs-b" type="button" onclick="copyEntry('${isPress?"t":"l"}','${b.id}',this)">Copy link</button><a class="rs-b" href="${isPress?"t":"l"}/${b.id}/">Open as its own page ↗</a></div>
+          ${readNextHTML(kind,b,next)}
+        </section>
         <div class="endnav" data-reveal>
           <button onclick="openReader('${kind}','${prev.id}')"><small>← Previous</small><em>${isPress?prev.title:prev.n}</em></button>
           <button onclick="openReader('${kind}','${next.id}')"><small>Next →</small><em>${isPress?next.title:next.n}</em></button>
@@ -400,7 +426,7 @@ function countUp(el){
     if(hasC)s=Number(s).toLocaleString("en-US");
     el.textContent=pre+s+post; if(p<1)requestAnimationFrame(tick)})(performance.now());
 }
-let readerIO,tlIO,tickIO;
+let readerIO,tlIO,tickIO,readProg;
 function wireReader(){
   const reader=document.getElementById("reader"),links=[...document.querySelectorAll(".toc a")];
   if(readerIO)readerIO.disconnect();
@@ -420,10 +446,14 @@ function wireReader(){
   if(links[0])links[0].classList.add("on");
   bindTilt(document.getElementById("sheet"));
   reader.onscroll=onReaderScroll; railScroll();
+  if(readProg)readProg.destroy();
+  const left=document.getElementById("rleft");
+  const k=currentKind==="press"?"t":"l",meta=entryMeta(k,current);
+  readProg=Reading.progress({scroller:reader,start:document.querySelector("#sheet .rbody h1"),end:document.getElementById("rend"),
+    mins:+left.dataset.mins,label:left,bar:document.getElementById("rprog"),key:k+"/"+current,theme:meta&&meta.theme});
 }
 function onReaderScroll(){
-  const r=document.getElementById("reader"),max=r.scrollHeight-r.clientHeight;
-  document.getElementById("rprog").style.width=(max>0?r.scrollTop/max*100:0)+"%";
+  const r=document.getElementById("reader");
   const bar=r.querySelector(".rbar"); if(bar)bar.classList.toggle("float",r.scrollTop>24);
   railScroll();
 }
@@ -487,7 +517,8 @@ function openReader(kind,id,opts){
   document.getElementById("sheet").innerHTML=readerHTML(kind,b);
   r.style.background=b.cover;r.style.color=b.ink;
   r.classList.add("on");r.setAttribute("aria-hidden","false");r.scrollTop=0;
-  document.getElementById("rprog").style.width="0%";
+  document.getElementById("rprog").style.transform="scaleX(0)";
+  r.style.setProperty("--rs-bg",b.cover);r.style.setProperty("--rs-ink",b.ink);
   if(!wasOpen){const sbw=innerWidth-document.documentElement.clientWidth;
     if(sbw>0)document.body.style.paddingRight=sbw+"px";document.body.style.overflow="hidden"}
   wireReader();
@@ -500,13 +531,21 @@ function openReader(kind,id,opts){
   }
 }
 /* Shares the entry's own page, never the #hash: a hash previews as the front door, the page
-   previews as the entry, with its own card. Native share sheet where there is one. */
-function shareEntry(k,id,btn){
-  const b=(k==="t"?ALL:LIVES).find(x=>x.id===id), title=(k==="t"?b.title:b.n).replace(/&amp;/g,"&");
-  const url="{{SITE}}/"+k+"/"+id+"/";
-  if(navigator.share){navigator.share({title:title+" — The Commodore Press",url}).catch(()=>{});return}
-  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{btn.textContent="Link copied";setTimeout(()=>btn.textContent="Share this entry ↗",1600)}).catch(()=>prompt("Copy this link:",url));
+   previews as the entry, with its own card. The sheet itself is theme/reading.js, shared
+   with the entry pages so the two behave the same. */
+const SHARE_ICON=`<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
+const END_LINE="The link opens its own page: the whole entry, with its sources, its disputes and any corrections.";
+function entryMeta(k,id){
+  const b=(k==="t"?ALL:LIVES).find(x=>x.id===id);if(!b)return null;
+  return {url:"{{SITE}}/"+k+"/"+id+"/",title:k==="t"?b.title:b.n,sub:k==="t"?b.sub:b.field+" · "+b.years,
+    text:k==="t"?(b.claim||b.lede):b.lede,keep:b.keep,theme:{bg:b.cover,ink:b.ink,accent:b.accent}};
 }
+function shareEntry(k,id,btn){const m=entryMeta(k,id);if(m)Reading.share(Object.assign({kind:"entry",from:btn},m))}
+function shareLine(k,id,btn){const m=entryMeta(k,id);if(m)Reading.share(Object.assign({},m,{kind:"line",quote:m.keep,from:btn}))}
+function copyEntry(k,id,btn){const m=entryMeta(k,id);if(m)Reading.copied(btn,m.url)}
+Reading.quotes({root:document.getElementById("reader"),scroller:document.getElementById("reader"),
+  within:".rbody .lede,.rbody .copy,.rbody .quoteblock,.rbody .keepbox",
+  meta:()=>current?entryMeta(currentKind==="press"?"t":"l",current):null});
 function closeReader(push){
   if(!current)return;
   const kind=currentKind,id=current;
@@ -515,6 +554,8 @@ function closeReader(push){
     r.classList.remove("on");r.setAttribute("aria-hidden","true");
     document.body.style.overflow="";document.body.style.paddingRight="";
     document.title=(wing==="home"?"The Commodore Press":(WINGS.find(x=>x[0]===wing)[1]+" — The Commodore Press"));
+    if(readProg){readProg.destroy();readProg=null}
+    markRead();
     const el=readerFocus;readerFocus=null;giveBack(el)};
   if(push!==false)history.pushState({w:wing},"","#"+wing);
   flyOut(kind,id,finish);
@@ -705,6 +746,7 @@ addEventListener("scroll",()=>{if(pageRaf)return;pageRaf=requestAnimationFrame((
 addEventListener("keydown",e=>{
   if(e.metaKey||e.ctrlKey||e.altKey)return;
   if(/^(input|textarea|select)$/i.test(e.target.tagName))return;
+  if(document.querySelector("dialog[open]"))return;
   if(e.key==="Escape"){const sm=document.getElementById("smodal");if(sm.classList.contains("on"))return closeSearch();if(current)return closeReader();return closeDrawer()}
   if(e.key==="/"&&!document.getElementById("smodal").classList.contains("on")){e.preventDefault();return openSearch()}
   if(current&&e.key==="ArrowRight"){e.preventDefault();return step(1)}

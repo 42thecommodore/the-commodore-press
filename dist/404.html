@@ -239,6 +239,7 @@
   .meta h3::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
   .slot:hover .meta h3::after{transform:none;transform-origin:left}
   .meta p{margin:4px 0 0;font-size:12px;color:var(--ink-soft);font-family:var(--mono);letter-spacing:.04em}
+  .slot.read .meta p::after{content:" · Read ✓"}
 
   /* ---------- adjacent cards ---------- */
   .sec-head{display:flex;align-items:baseline;gap:16px;padding:52px 0 4px}
@@ -261,7 +262,7 @@
   .reader{position:fixed;inset:0;z-index:200;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .45s var(--ease-io)}
   .reader.on{opacity:1;pointer-events:auto}
   .reader .sheet{min-height:100%;padding:0 0 100px;position:relative}
-  .rprog{position:fixed;top:0;left:0;height:2px;width:0;background:currentColor;opacity:.45;z-index:12;transition:width .1s linear}
+  .rprog{position:fixed;top:0;left:0;right:0;height:3px;background:currentColor;opacity:.7;z-index:12;transform:scaleX(0);transform-origin:left;transition:transform .12s linear}
   .rbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:14px;padding:18px 0}
   .rbar::before{content:"";position:absolute;inset:-1px -40px 0;z-index:-1;opacity:0;transition:opacity .35s;
     backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
@@ -271,7 +272,8 @@
   .rbar .back:hover{opacity:1}
   .rbar .back .arw{display:inline-block;transition:transform .3s var(--ease)}
   .rbar .back:hover .arw{transform:translateX(-4px)}
-  .rbar .nav{margin-left:auto;display:flex;gap:8px}
+  .rbar .rtools{margin-left:auto;display:flex;align-items:center;gap:16px}
+  .rbar .nav{display:flex;gap:8px}
   .rbar .nav button{width:34px;height:34px;border-radius:50%;border:1px solid currentColor;opacity:.75;display:grid;place-items:center;
     font-size:14px;transition:opacity .25s,transform .25s var(--ease)}
   .rbar .nav button:hover{opacity:1;transform:scale(1.1)}
@@ -434,7 +436,7 @@
   .today .go{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:8px 15px;border-radius:999px;background:var(--ink);color:var(--paper);transition:background .25s,transform .2s var(--ease)}
   .today .go:hover{background:#000}
   .today .go:active{transform:scale(.96)}
-  .rshare{font:inherit;color:inherit;background:none;border:0;border-bottom:1px solid currentColor;padding:0;cursor:pointer;opacity:.9}
+
   .corrbox{display:flex;flex-direction:column;gap:14px;border-left:2px solid currentColor;padding-left:16px;opacity:.95}
   .corrbox b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:4px}
   .corrbox span{display:block;font-size:16px;line-height:1.55}
@@ -513,6 +515,8 @@
     .reading .a{white-space:normal}
     .rbody .copy p:first-child::first-letter{font-size:48px}
     .endnav{flex-direction:column;gap:24px}
+    .rbar .nav{display:none}
+    .rbar .rtools{gap:12px}
     .endnav button,.endnav button:last-child{max-width:100%;text-align:left}
     .fp{flex-direction:column}
     .fp .plate{width:132px}
@@ -658,6 +662,102 @@
     .newcard:hover,.wface:hover .fp-img{transform:none}
   }
 
+  /* ---------- reading tools — shared by the library reader and every entry page ----------
+     theme/reading.js draws these. Every colour comes from the entry's own livery
+     (--rs-bg, --rs-ink, --rs-accent), so the share sheet is printed in the book's colours in
+     both places and in every mode, the same way the reader is. */
+  .rs-sheet{border:0;padding:0;margin:auto;width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;
+    background:var(--rs-bg,#F2EDE1);color:var(--rs-ink,#1E1C18);border-radius:14px;
+    box-shadow:0 30px 80px rgba(0,0,0,.38),0 0 0 1px rgba(0,0,0,.06);font-family:var(--serif)}
+  .rs-sheet::backdrop{background:rgba(10,10,12,.42);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .rs-sheet[open]{animation:rs-in .34s var(--ease,cubic-bezier(.19,.9,.22,1))}
+  @keyframes rs-in{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+  .rs-in{padding:22px 24px 20px;position:relative}
+  .rs-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+  .rs-lbl{font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  .rs-x{width:30px;height:30px;border-radius:50%;border:1px solid currentColor;background:none;color:inherit;opacity:.7;
+    font:15px/1 var(--mono);cursor:pointer;display:grid;place-items:center}
+  .rs-x:hover{opacity:1}
+  .rs-card{border:1px solid color-mix(in srgb,currentColor 30%,transparent);border-radius:8px;padding:18px 18px 16px}
+  .rs-q{font-size:21px;line-height:1.4;font-style:italic;margin:0 0 12px}
+  .rs-t{font-size:22px;line-height:1.2;font-weight:500;margin:0 0 4px}
+  .rs-s{font-size:16px;line-height:1.4;font-style:italic;opacity:.85;margin:0}
+  .rs-by{font:11px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:12px;padding-top:10px;
+    border-top:1px solid color-mix(in srgb,currentColor 22%,transparent)}
+  .rs-link{display:flex;gap:8px;margin-top:14px}
+  .rs-link input{flex:1;min-width:0;font:12.5px/1 var(--mono);color:inherit;background:color-mix(in srgb,currentColor 7%,transparent);
+    border:1px solid color-mix(in srgb,currentColor 25%,transparent);border-radius:6px;padding:10px 10px;text-overflow:ellipsis}
+  .rs-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .rs-acts .rs-b{flex:1 1 auto}
+  .rs-b{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:10px 12px;border-radius:6px;cursor:pointer;
+    font:12px/1 var(--mono);letter-spacing:.06em;text-decoration:none;color:inherit;background:none;white-space:nowrap;
+    border:1px solid color-mix(in srgb,currentColor 35%,transparent);transition:border-color .2s,background .2s}
+  .rs-b:hover{border-color:currentColor;background:color-mix(in srgb,currentColor 7%,transparent)}
+  .rs-b.rs-main{background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);border-color:var(--rs-ink,#1E1C18)}
+  .rs-b.rs-main:hover{opacity:.9}
+  .rs-b:focus-visible,.rs-x:focus-visible,.rs-pill button:focus-visible{outline:2px solid var(--rs-accent,currentColor);outline-offset:2px}
+  .rs-note{font:11px/1.5 var(--mono);opacity:.75;margin:12px 0 0}
+
+  /* the pill that appears over a selected passage */
+  .rs-pill{position:fixed;z-index:2147483000;display:flex;gap:2px;padding:4px;border-radius:999px;
+    background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);box-shadow:0 8px 24px rgba(0,0,0,.28);
+    transform:translate(-50%,0);animation:rs-pop .18s ease-out}
+  @keyframes rs-pop{from{opacity:0;transform:translate(-50%,4px)}to{opacity:1;transform:translate(-50%,0)}}
+  .rs-pill button{font:11.5px/1 var(--mono);letter-spacing:.06em;color:inherit;background:none;border:0;padding:9px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .rs-pill button:hover{background:color-mix(in srgb,currentColor 16%,transparent)}
+
+  /* the line that tracks how far through the entry the reader is */
+  .rs-left{font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;opacity:.85;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .rs-go{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;border:1px solid currentColor;
+    font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:inherit;background:none;cursor:pointer;transition:background .2s,color .2s}
+  .rs-go svg{width:12px;height:12px}
+  .rs-go:hover{background:var(--rs-ink,currentColor);color:var(--rs-bg,inherit)}
+
+  /* the end of an entry: where a reader who finished decides what to do with it */
+  .rs-end{margin-top:72px;padding:34px 0 0;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent);text-align:center}
+  .rs-end .rs-fin{font:11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+  /* the press mark, drawn rather than set: the house fonts have no ornament glyph, and a
+     fallback font printed it at half size */
+  .rs-end .rs-fin::before{content:"";display:block;width:24px;height:24px;margin:0 auto 12px;background:currentColor;opacity:.75;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M11 1V21M1 11H21' stroke-width='1'/%3E%3Cpath d='M4 4 18 18M18 4 4 18' stroke-width='.7'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M11 1V21M1 11H21' stroke-width='1'/%3E%3Cpath d='M4 4 18 18M18 4 4 18' stroke-width='.7'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+  .rs-end h3{font-weight:500;font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:10px auto 8px;max-width:22ch}
+  .rs-end p{font-size:17px;line-height:1.5;opacity:.9;margin:0 auto 20px;max-width:44ch}
+  .rs-end .rs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+  .rs-end .rs-b{min-width:112px}
+  .rs-end .rs-b.rs-main{min-width:170px}
+  /* read next: the entry this one argues with, from its own `across` links */
+  .rs-next{display:block;max-width:520px;margin:34px auto 0;padding:20px 22px;text-align:left;text-decoration:none;color:inherit;
+    border:1px solid color-mix(in srgb,currentColor 35%,transparent);border-radius:10px;cursor:pointer;
+    transition:border-color .25s,transform .3s var(--ease,ease),background .25s}
+  .rs-next:hover{border-color:currentColor;background:color-mix(in srgb,currentColor 5%,transparent);transform:translateY(-2px)}
+  .rs-next .rs-nk{display:block;font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+  .rs-next .rs-nt{display:block;font-size:25px;line-height:1.15;font-weight:500}
+  .rs-next .rs-nd{display:block;font-size:17px;line-height:1.45;font-style:italic;opacity:.9;margin-top:6px}
+  .rs-next .rs-nm{display:flex;justify-content:space-between;gap:12px;font:11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:14px}
+  .rs-next:hover .rs-nm b{transform:translateX(4px)}
+  .rs-next .rs-nm b{font-weight:400;display:inline-block;transition:transform .3s var(--ease,ease)}
+
+  /* the offer to pick up where you left off */
+  .rs-resume{position:fixed;left:50%;bottom:22px;z-index:2147482000;transform:translateX(-50%);display:flex;align-items:center;gap:4px;
+    max-width:calc(100vw - 24px);padding:6px 6px 6px 18px;border-radius:999px;background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);
+    box-shadow:0 12px 32px rgba(0,0,0,.3);font:11.5px/1.3 var(--mono);letter-spacing:.05em;animation:rs-up .4s var(--ease,ease)}
+  @keyframes rs-up{from{opacity:0;transform:translate(-50%,16px)}to{opacity:1;transform:translate(-50%,0)}}
+  .rs-resume span{margin-right:8px}
+  .rs-resume button{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:9px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .rs-resume button[data-a=go]{background:var(--rs-bg,#F2EDE1);color:var(--rs-ink,#1E1C18)}
+  .rs-resume button:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+
+  .rs-lineshare{display:inline-block;margin-top:14px;font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:inherit;background:none;border:0;
+    border-bottom:1px solid currentColor;padding:0 0 3px;cursor:pointer;opacity:.85}
+  .rs-lineshare:hover{opacity:1}
+  .rs-js-only{display:none !important}
+  .rs-js .rs-js-only{display:inline-flex !important}
+  .rs-js .rs-nojs{display:none !important}
+  @media (prefers-reduced-motion:reduce){.rs-sheet[open],.rs-pill,.rs-resume{animation:none}.rs-next,.rs-next .rs-nm b{transition:none}}
+  @media (max-width:560px){.rs-in{padding:18px 18px 16px}.rs-q{font-size:19px}.rs-next .rs-nt{font-size:22px}
+    .rs-resume{padding-left:14px;font-size:11px}.rs-resume span{margin-right:2px}}
+
 </style>
 </head>
 <body>
@@ -796,7 +896,7 @@
           <p>The portraits in Lives are public-domain engravings, paintings and photographs, reduced to the house duotone and set as plates. A life without a safely public image carries the press mark instead of a borrowed picture, which seems the more honest trade. Nine lives are in that position today. Henrietta Lacks is there by decision; her entry says why at length, and her estate has itself disputed the use of family photographs. Ibn Khaldun, Clair Patterson, Vasily Arkhipov, Emily Warren Roebling, Alice Ball and Edward Thorp are there because no image of any of them has yet been cleared: no portrait of Ibn Khaldun from his own lifetime is known, Patterson's photographs sit in an archive that grants permission only on request, the one openly licensed photograph of Arkhipov was tagged by an uploader who does not appear to have held the rights to grant it, the Library of Congress portrait of Roebling is a 1953 print of a photograph taken between 1860 and 1880 and the Library records that it found no information on creator or reproduction rights at all, no photograph of Ball has been found under any licence we can stand behind, and Thorp is alive and photographed by working photographers, whose pictures are theirs. The Roebling case is the closest of these: the original is old enough to be out of copyright several times over, and a faithful reproduction of it would add nothing new. It is held back anyway, because &ldquo;the Library found nothing&rdquo; is not the same statement as &ldquo;there are no known restrictions&rdquo;, and this house has already turned down two images on thinner doubts than that. Four plates are licensed rather than public domain, and are credited here because the licence requires it: the Mandela photograph is by South Africa The Good News (sagoodnews.co.za) under CC BY 2.0; the Steve Jobs photograph was taken at WWDC in 2010 by Matthew Yohe under CC BY-SA 3.0; the Tu Youyou photograph was taken in Stockholm on 6 December 2015 by Bengt Nyman under CC BY-SA 4.0; and the 1955 photograph of Rosalind Franklin at her microscope is credited to the MRC Laboratory of Molecular Biology, from the personal collection of her sister Jenifer Glynn, under CC BY-SA 4.0. Each has been cropped and reduced to the house duotone, which the licences ask us to say. Four more are neither plain public domain nor licensed but held under a narrower claim, and the claim is worth repeating in the holder's own words: the 1939 photograph of Robert Moses is by C. M. Stieglitz for the New York World-Telegram &amp; Sun, held by the Library of Congress, which states that it knows of no copyright restrictions on it; the 1963 photograph of Wu Chien-Shiung at Columbia comes from the Smithsonian Institution Archives, published with no known copyright restrictions; the photograph of Frances Kelsey receiving her award from President Kennedy comes from the National Library of Medicine, which believes the item to be in the public domain; and the April 1936 photograph of Frances Perkins is by Harris &amp; Ewing, held by the Library of Congress, which states that it knows of no copyright restrictions on it. Everything else came through Wikimedia Commons.</p>
           <div class="corr" id="corrections"></div>
           <div class="lbl q" style="margin:30px 0 10px">Disclosure</div>
-          <p style="font-size:16.5px">This site was assembled by Luca Falvo with substantial help from an AI assistant (Anthropic's Claude) — drafting, checking figures against the named sources, and the build itself. The picks, positions and errors are mine; when an error is found it joins the corrections above instead of disappearing. Lines marked &ldquo;after&rdquo; a name are compressed notes of someone's idea, not their words, and nobody named on this site has endorsed it or its readings of them. Portraits are public-domain images, except the eight plates credited above. The page sets no cookies and runs no analytics; the night-reading switch is remembered only in your own browser.</p>
+          <p style="font-size:16.5px">This site was assembled by Luca Falvo with substantial help from an AI assistant (Anthropic's Claude) — drafting, checking figures against the named sources, and the build itself. The picks, positions and errors are mine; when an error is found it joins the corrections above instead of disappearing. Lines marked &ldquo;after&rdquo; a name are compressed notes of someone's idea, not their words, and nobody named on this site has endorsed it or its readings of them. Portraits are public-domain images, except the eight plates credited above. The page sets no cookies and runs no analytics. Two things are remembered, only in your own browser and never sent anywhere: the night-reading switch, and how far you got in each entry, so it can mark what you have finished and offer to take you back.</p>
         </div>
       </div>
     </div>
@@ -863,6 +963,283 @@ const PEOPLE = [{"name":"Boyd Varty","domain":"inner","role":"Lion tracker; auth
 const SOURCES = [{"t":"Founders — David Senra","u":"https://www.founderspodcast.com/"},{"t":"Lex Fridman Podcast","u":"https://lexfridman.com/podcast/"},{"t":"Modern Wisdom — Chris Williamson","u":"https://chriswillx.com/podcast/"},{"t":"Masters of Scale","u":"https://mastersofscale.com/"},{"t":"This Week in Startups","u":"https://www.thisweekinstartups.com/"},{"t":"How to Start a Business — Jason Nazar","u":"https://www.linkedin.com/in/jasonnazar"},{"t":"rareliquid","u":"https://www.youtube.com/@rareliquid"},{"t":"The Pickleball Doc — Dr. Cynthia Boccara","u":"https://thepickleballdoc.net/"}];
 const CORRECTIONS = [{"d":"Aug 2026","t":"Rockefeller and Kipling.","b":"An earlier draft of Field Manual IV quoted John D. Rockefeller as saying that the ability to keep your head when all others are losing theirs was a competitive edge. That phrasing is Rudyard Kipling's, from “If—” (1895). I could find no reliable attribution of it to Rockefeller. The point about his temperament stands; the quotation is gone."},{"d":"Aug 2026","t":"The Broad Street pump.","b":"I had repeated the standard story that John Snow removed the pump handle and stopped the 1854 outbreak. Whitehead's own figures show fatal attacks had already fallen from 142 on 1 September to 14 by the 8th, the day the handle came off, and Snow never claimed otherwise. The entry now says what the evidence says."},{"d":"Aug 2026","t":"Harrison's prize.","b":"I had written that Harrison was finally paid the longitude prize in 1773. He received £8,750 from Parliament that year and £23,065 in total across all sources — but the statutory £20,000 was never awarded, to him or to anyone."},{"d":"Aug 2026","t":"Railway mania mileage.","b":"An early draft said roughly 6,000 miles of British railway were authorised at the peak. The 1846 figure is about 9,500 miles across 263 Acts."},{"d":"Sept 2026","t":"The EUV consortium.","b":"Silicon & Light said an international consortium began work on extreme ultraviolet lithography in 1997. The 1997 consortium, EUV LLC, was American: Intel, AMD and Motorola with three US national laboratories. ASML was admitted in 1999, and that is when the programme became international."},{"d":"Sept 2026","t":"Three explanations.","b":"The Great Divergence printed '3' as a figure — the explanations still standing. It was my own count, not a sourced number, and the entry itself discusses more than three. It is replaced by Robert Allen's estimate of the return on a spinning jenny: 38% in England against 2.5% in France."},{"d":"Sept 2026","t":"Unix and C.","b":"The Unix Bargain dated the rewrite of Unix in C to 1972 and called C a language invented so the system could move. Ritchie's own account puts the kernel rewrite in the summer of 1973 and says portability carried little weight at the time; it became the point with the 1977 port to the Interdata 8/32. The entry also said Thompson wrote the first version in three weeks. By his own account it took the month his wife and son were away."},{"d":"Sept 2026","t":"A source that did not exist.","b":"The Banking Model of Education listed a Stanford Encyclopedia of Philosophy entry on Paulo Freire in its reading list. The Stanford Encyclopedia has no entry on Freire; he appears only inside other articles. The reading list now points to the Internet Encyclopedia of Philosophy's entry, which does exist. The link had been dead since publication."},{"d":"Sept 2026","t":"Six lives said more than their sources.","b":"A sourcing pass opened the documents behind the figures in eight lives, and six said more than those documents do. Fritz Haber said roughly half the nitrogen in your body came through his process and that three to four billion people are alive because of it. The first line was found in no document opened. The study most often cited gives 48 per cent of the world's population in 2008, and the entry now says that. John D. Rockefeller put Standard Oil's ninety per cent of American refining in the early 1880s; the source opened puts it at 1879. Andrew Carnegie called the 1901 sale the largest transaction in industrial history; neither source opened says so, and the sentence now says what they do. Robert Moses gave thirteen bridges and hundreds of playgrounds as Caro's count; only the $27 billion was found. Steve Jobs said he paid Lucasfilm for its graphics group; by Alvy Ray Smith's account the new company paid for the technology out of Jobs's ten million. Tu Youyou's sixty laboratories are sixty institutions in the WHO's count. Each figure now carries the document it was read in."},{"d":"Sept 2026","t":"Angicos and the printing press.","b":"The Banking Model of Education said Freire's workers at Angicos learned to read in forty-five days, and printed 45 days as a figure. The Paulo Freire Institute's own chronology has the lessons running from late January to early April 1963; the programme was named for its forty hours of instruction, after which 300 of the 380 who began were certified literate. The entry now says forty hours. Movable Type said Jeremiah Dittmar's estimate put the growth advantage of early-printing cities at 35 percentage points or more. The paper says over 30, and 35 appears nowhere in it. Both figures had been printed under the promise that they were sourced; neither line named where it came from, and both now do."},{"d":"Sept 2026","t":"Borlaug's billion and the Jobs paternity test.","b":"Norman Borlaug's entry said estimates of the lives the Green Revolution saved run to a billion or more. The figure is repeated everywhere, and the house found no published calculation behind it; the entry on Tu Youyou already refused the same kind of number. It is gone from Borlaug's entry, and his contested section now says the scale is argued rather than measured. Steve Jobs' entry put the probability of paternity at 94.1 per cent, the figure usually cited to Time in 1983, which the house has not opened. Lisa Brennan-Jobs gives 94.4 per cent in her memoir, and the entry now prints hers, with the source named."},{"d":"Sept 2026","t":"Bell Labs' Nobels, and a decade nobody measured.","b":"Compounding Machines said ten Nobel Prizes had gone to work done at Bell Labs. The documents opened disagree with each other: one list supports ten prize-years from 1937 to 2023, and the article it sits under says eleven. The entry now says at least ten. The same entry printed '~10 yrs' as a figure for PARC's window of influence. It was the house's own arithmetic on two dates, not a number anyone published, and it has been replaced by the date PARC opened."},{"d":"Sept 2026","t":"Who coined microplastics.","b":"The Plastic Tide said Richard Thompson coined the word 'microplastics' in 2004, in its opening line, its timeline and its figures. The term appears in marine-pollution work from the 1990s; Thompson's 2004 paper in Science is what put it into circulation. The entry now says that."},{"d":"Sept 2026","t":"Three figures in the Press.","b":"Movable Type said presses were operating in about 205 European cities by 1500, out of more than a thousand. Neither number is in the paper the entry relies on; Fernand Braudel's count, the one found, is 236 towns, and the entry now gives his. Cost Disease said New York subway construction runs about $1.5 billion a kilometre. The Transit Costs Project's own New York study puts Phase 1 of the Second Avenue Subway at about $1.7 billion a kilometre, and the entry now says so. In Defense of Bubbles said 85 to 95 per cent of the fibre laid in the 1990s sat dark after the bust. Every account found attributes the range to unnamed analysts, and no study behind it could be opened, so the number is gone."},{"d":"Sept 2026","t":"Six superlatives.","b":"An audit of claims printed as 'first', 'only' or 'most' found six that said more than a source would. Genghis Khan's entry said he forged the largest contiguous land empire in history; it reached that size under his heirs, after his death in 1227. Rockefeller's called his the largest fortune in American history, with no measure attached; by inflation-adjusted wealth it is not, and by share of the economy it has arguably been overtaken. It now says one of the largest. Edward Thorp's said Beat the Dealer was, by his own description, the first book to prove the house edge could be beaten; his own account of the book does not say so. Why Firms Exist said Coase's paper was largely ignored for thirty years; the paper was cited long before it was put to use, and the entry now quotes only what Coase is on record as saying, that it was little more than an undergraduate essay. Maurice Hilleman's and Fritz Haber's entries stated as the house's own finding what are other people's judgments; both are now worded as such."},{"d":"Sept 2026","t":"Five quotations the house had not seen.","b":"An audit of quotations checked each one against the document it comes from. Five could not be found in any document the house could open, so they are no longer printed in quotation marks: Confucius on not imposing on others (the translator was never named), Ibn Khaldun on dynasties lasting three generations (not found in the Rosenthal translation the entry relies on), Robert Moses's 'stein' statement (two wordings circulate, and the 1981 obituary that carries it could not be opened), Clair Patterson's 1966 testimony about the Public Health Service, and Thomas Blanton's line about Arkhipov. Each is now given as a paraphrase, which is what the colophon says an unquoted line is. None of them has been shown to be wrong. Separately, Tu Youyou's entry called Rao, Zhang and Li's book the only book-length account in English; Tu's own 2017 book covers the same discovery, as chemistry rather than history."}];
 const LOG = [];
+/* Reading tools — shared by the library reader (theme/press.js) and every entry page
+   (build/pages.mjs). One file, so the two places a reader meets an entry behave the same.
+
+   Four things:
+   - share(): a share sheet printed in the entry's livery. Phones get their own share sheet.
+   - progress(): the line and the "4 min left" that say how far through the entry you are,
+     and the offer to pick up where you left off.
+   - quotes(): select a passage and share it, attributed to the Press and linked to the
+     entry's own page at that passage.
+   - memory: which entries this browser has finished, and where it stopped in the others.
+     Kept in localStorage under "cp-read", never sent anywhere. The colophon says so; if
+     this ever stores anything else, that sentence changes in the same edit.
+
+   A shared passage is the Press's own words, verbatim, and every quote is credited
+   "The Commodore Press, on <entry>" — never set under the entry's name alone, where a line
+   the Press wrote about Darwin would read as Darwin's. The colophon promises no invented
+   quotations; a misattributed one is the same failure. One function, credit(), writes it.
+
+   No third-party script and no tracking. The share links are plain URLs; nothing is sent
+   anywhere until the reader chooses to. */
+(function () {
+  "use strict";
+  var doc = document, enc = encodeURIComponent, PRESS = "The Commodore Press";
+  doc.documentElement.classList.add("rs-js");
+  var coarse = function () { return matchMedia("(pointer:coarse)").matches; };
+  var clean = function (s) { return String(s || "").replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim(); };
+  var credit = function (title) { return PRESS + ", on " + clean(title); };
+  var esc = function (s) { return clean(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;"); };
+
+  var KEY = "cp-read", mem = null;
+  function load() {
+    if (mem) return mem;
+    try { mem = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { mem = {}; }
+    return mem;
+  }
+  function keep() { try { localStorage.setItem(KEY, JSON.stringify(mem)); } catch (e) {} }
+  // another tab (an entry page, say) finished something: read it fresh next time
+  addEventListener("storage", function (e) { if (e.key === KEY || e.key === null) mem = null; });
+  var memory = {
+    get: function (k) { return load()[k] || null; },
+    done: function (k) { var r = load()[k]; return !!(r && r.d); },
+    // position is kept to the nearest per cent; "done" latches, so rereading the top of a
+    // finished entry does not un-finish it
+    note: function (k, p) {
+      var m = load(), r = m[k] || { p: 0, d: 0 }, q = Math.round(p * 100) / 100;
+      if (Math.abs(r.p - q) < 0.02 && !(q >= 0.995 && !r.d)) return;
+      r.p = q; if (q >= 0.995) r.d = 1; r.t = Date.now(); m[k] = r; keep();
+    }
+  };
+
+  /* Copy with the clipboard API where the page is allowed it, the old way where not. */
+  function copy(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (ok, no) {
+      var host = doc.querySelector("dialog[open]") || doc.body, t = doc.createElement("textarea");
+      t.value = text; t.setAttribute("readonly", ""); t.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+      host.appendChild(t); t.select();
+      try { doc.execCommand("copy") ? ok() : no(); } catch (e) { no(); }
+      t.remove();
+    });
+  }
+  function copied(btn, text) {
+    var was = btn.getAttribute("data-label") || btn.textContent;
+    btn.setAttribute("data-label", was);
+    copy(text).then(function () {
+      btn.textContent = "Copied ✓";
+      setTimeout(function () { btn.textContent = was; }, 1600);
+    }).catch(function () { prompt("Copy this:", text); });
+  }
+
+  /* A link that opens the entry's own page scrolled to the passage, in the browsers that
+     support text fragments; the rest simply open the page. */
+  function fragment(q) {
+    var e = function (s) { return enc(s).replace(/-/g, "%2D"); }, w = q.replace(/[“”"]/g, "").split(" ");
+    if (w.length <= 8) return "#:~:text=" + e(w.join(" "));
+    return "#:~:text=" + e(w.slice(0, 4).join(" ")) + "," + e(w.slice(-4).join(" "));
+  }
+  // X counts a link as 23 characters; a long passage is shortened there, and only there,
+  // with the ellipsis that marks the cut. Copy and email carry it whole.
+  function clip(t, n) { t = clean(t); return t.length <= n ? t : t.slice(0, t.lastIndexOf(" ", n - 1)) + "…"; }
+  function tweetable(q, title) {
+    var tail = "” — " + credit(title), room = 250 - tail.length;
+    if (q.length > room) q = q.slice(0, q.lastIndexOf(" ", room - 1)) + " …";
+    return "“" + q + tail;
+  }
+
+  var sheet = null, back = null;
+  function close() { if (sheet && sheet.open) sheet.close(); }
+  // Escape closes the sheet everywhere, not only in browsers whose <dialog> does it for free
+  doc.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && sheet && sheet.open) { e.preventDefault(); e.stopPropagation(); close(); }
+  }, true);
+
+  /* o: { url, title, sub, text, quote, kind: "entry"|"line"|"passage", theme: {bg, ink, accent}, from } */
+  function share(o) {
+    var title = clean(o.title), q = clean(o.quote), url = o.url + (q && o.kind === "passage" ? fragment(q) : "");
+    var full = title + " — " + PRESS;
+    var quoteText = q ? "“" + q + "”\n— " + credit(title) : "";
+    var said = q ? quoteText : clean(o.text);
+    if (navigator.share && coarse()) {
+      navigator.share({ title: full, text: q ? quoteText : said, url: url }).catch(function () {});
+      return;
+    }
+    if (sheet) sheet.remove();
+    back = o.from || doc.activeElement;
+    var t = o.theme || {}, d = doc.createElement("dialog");
+    d.className = "rs-sheet";
+    d.setAttribute("aria-label", q ? "Share this " + (o.kind === "line" ? "line" : "passage") : "Share this entry");
+    if (t.bg) d.style.setProperty("--rs-bg", t.bg);
+    if (t.ink) d.style.setProperty("--rs-ink", t.ink);
+    if (t.accent) d.style.setProperty("--rs-accent", t.accent);
+    var mail = "mailto:?subject=" + enc(full) + "&body=" + enc((q ? quoteText : said) + "\n\n" + url);
+    var x = "https://twitter.com/intent/tweet?text=" + enc(q ? tweetable(q, title) : clip(said, 200)) + "&url=" + enc(url);
+    var li = "https://www.linkedin.com/sharing/share-offsite/?url=" + enc(o.url);
+    d.innerHTML = '<div class="rs-in">' +
+      '<div class="rs-head"><span class="rs-lbl">' + (q ? (o.kind === "line" ? "Share this line" : "Share this passage") : "Share this entry") + '</span>' +
+      '<button class="rs-x" type="button" aria-label="Close">✕</button></div>' +
+      '<div class="rs-card">' + (q
+        ? '<p class="rs-q">“' + esc(q) + '”</p><div class="rs-by">— ' + esc(credit(title)) + '</div></div>'
+        : '<p class="rs-t">' + esc(title) + '</p>' + (o.sub ? '<p class="rs-s">' + esc(o.sub) + '</p>' : "") +
+          '<div class="rs-by">' + PRESS + '</div></div>') +
+      '<div class="rs-link"><input type="text" readonly aria-label="Link to this entry" value="' + esc(url) + '">' +
+      '<button class="rs-b rs-main" type="button" data-a="link">Copy link</button></div>' +
+      '<div class="rs-acts">' + (q ? '<button class="rs-b" type="button" data-a="quote">Copy quote</button>' : "") +
+      '<a class="rs-b" href="' + esc(mail) + '">Email</a>' +
+      '<a class="rs-b" href="' + esc(x) + '" target="_blank" rel="noopener">X</a>' +
+      '<a class="rs-b" href="' + esc(li) + '" target="_blank" rel="noopener">LinkedIn</a>' +
+      (navigator.share ? '<button class="rs-b" type="button" data-a="more">More…</button>' : "") + '</div>' +
+      (o.kind === "passage" ? '<p class="rs-note">The link opens the entry’s own page at this passage, in browsers that support it.</p>' : "") +
+      '</div>';
+    d.addEventListener("click", function (e) {
+      if (e.target === d) return close();                       // the backdrop
+      var b = e.target.closest("button"); if (!b) return;
+      if (b.classList.contains("rs-x")) return close();
+      var a = b.getAttribute("data-a");
+      if (a === "link") copied(b, url);
+      if (a === "quote") copied(b, quoteText + "\n" + url);
+      if (a === "more") navigator.share({ title: full, text: q ? quoteText : said, url: url }).catch(function () {});
+    });
+    d.querySelector("input").addEventListener("focus", function () { this.select(); });
+    d.addEventListener("close", function () {
+      d.remove(); if (sheet === d) sheet = null;
+      if (back && back.focus && doc.contains(back)) back.focus({ preventScroll: true });
+    });
+    doc.body.appendChild(d); sheet = d;
+    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+    d.querySelector("[data-a=link]").focus();
+  }
+
+  /* o: { scroller: element | window, start, end, mins, label, bar, key }
+     Nothing counts until the entry's first line reaches mid-screen, and it is finished when
+     the end-of-entry block comes into view. The minutes are the entry's own reading time. */
+  function progress(o) {
+    var win = o.scroller === window, raf = 0;
+    function y(el) { return el.getBoundingClientRect().top + (win ? scrollY : o.scroller.scrollTop - o.scroller.getBoundingClientRect().top); }
+    function span() {
+      var vh = win ? innerHeight : o.scroller.clientHeight, a = Math.max(0, y(o.start) - vh * 0.5);
+      return [a, Math.max(a + 1, y(o.end) - vh * 0.85)];
+    }
+    var saved = o.key ? memory.get(o.key) : null, offer = null;
+    function update() {
+      raf = 0;
+      if (!o.start || !o.end || !doc.contains(o.end)) return;
+      var st = win ? scrollY : o.scroller.scrollTop, ab = span(), a = ab[0], b = ab[1];
+      var p = Math.min(1, Math.max(0, (st - a) / (b - a)));
+      if (o.key && p > 0.01) memory.note(o.key, p);
+      if (offer && Math.abs(st - offer.at) > 240) dismiss();
+      if (o.bar) o.bar.style.transform = "scaleX(" + p.toFixed(4) + ")";
+      if (o.label) {
+        var left = Math.ceil(o.mins * (1 - p));
+        o.label.textContent = p >= 0.995 ? "Finished ✓" : p <= 0.01 ? o.mins + " min read" : p >= 0.85 ? "Almost done" : Math.max(1, left) + " min left";
+        o.label.classList.toggle("done", p >= 0.995);
+      }
+    }
+    function on() { if (!raf) raf = requestAnimationFrame(update); }
+    function dismiss() { if (offer) { offer.el.remove(); offer = null; } }
+    // Came back to an entry left part-read: offer to go back, once, and get out of the way.
+    if (saved && !saved.d && saved.p >= 0.08 && saved.p <= 0.95 && o.start && o.end) {
+      var el = doc.createElement("div"), left = Math.max(1, Math.ceil(o.mins * (1 - saved.p)));
+      el.className = "rs-resume"; el.setAttribute("role", "status");
+      if (o.theme && o.theme.bg) el.style.setProperty("--rs-bg", o.theme.bg);
+      if (o.theme && o.theme.ink) el.style.setProperty("--rs-ink", o.theme.ink);
+      el.innerHTML = '<span>You stopped here before · ' + left + ' min left</span><button type="button" data-a="go">Continue ↓</button><button type="button" data-a="x" aria-label="Dismiss">✕</button>';
+      el.addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        if (b.getAttribute("data-a") === "go") {
+          var ab = span(), top = ab[0] + saved.p * (ab[1] - ab[0]);
+          o.scroller.scrollTo({ top: top, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+        }
+        dismiss();
+      });
+      doc.body.appendChild(el);
+      offer = { el: el, at: win ? scrollY : o.scroller.scrollTop };
+      setTimeout(dismiss, 12000);
+    }
+    o.scroller.addEventListener("scroll", on, { passive: true });
+    addEventListener("resize", on);
+    update();
+    return { update: on, destroy: function () { dismiss(); o.scroller.removeEventListener("scroll", on); removeEventListener("resize", on); } };
+  }
+
+  /* o: { root, within: selector of quotable prose, scroller, meta: () => share options }
+     Selections are widened to whole words, so a quote never starts or ends mid-word. */
+  function quotes(o) {
+    var pill = null, timer = 0, down = false, sel = null;
+    function hide() { if (pill) { pill.remove(); pill = null; } }
+    function inside(n) { var el = n && (n.nodeType === 1 ? n : n.parentElement); return el && o.root.contains(el) && el.closest(o.within); }
+    function widen(r) {
+      r = r.cloneRange();
+      var s = r.startContainer, e = r.endContainer, wd = /[\wÀ-ɏ’'-]/;
+      if (s.nodeType === 3) { var i = r.startOffset; while (i > 0 && wd.test(s.data[i - 1])) i--; r.setStart(s, i); }
+      if (e.nodeType === 3) { var j = r.endOffset; while (j < e.data.length && wd.test(e.data[j])) j++; r.setEnd(e, j); }
+      return r;
+    }
+    function check() {
+      var s = getSelection();
+      if (!s.rangeCount || s.isCollapsed) return hide();
+      var r = s.getRangeAt(0);
+      if (!inside(r.startContainer) || !inside(r.endContainer)) return hide();
+      var m = o.meta && o.meta(); if (!m) return hide();
+      var q = clean(widen(r).toString()).replace(/^[\s,;:—–-]+|[\s,;:—–-]+$/g, "");
+      if (q.length < 12 || q.length > 600) return hide();
+      sel = q; hide();
+      var rect = r.getBoundingClientRect(), x = Math.min(innerWidth - 110, Math.max(110, rect.left + rect.width / 2));
+      var t = m.theme || {};
+      pill = doc.createElement("div"); pill.className = "rs-pill"; pill.setAttribute("role", "toolbar"); pill.setAttribute("aria-label", "Selected passage");
+      if (t.bg) pill.style.setProperty("--rs-bg", t.bg);
+      if (t.ink) pill.style.setProperty("--rs-ink", t.ink);
+      pill.innerHTML = '<button type="button" data-a="share">Share quote</button><button type="button" data-a="copy">Copy</button>';
+      doc.body.appendChild(pill);
+      // phones draw their own menu above a selection, so the pill goes beneath it there
+      var above = rect.top - pill.offsetHeight - 10;
+      pill.style.left = x + "px";
+      pill.style.top = (coarse() || above < 70 ? Math.min(innerHeight - pill.offsetHeight - 10, rect.bottom + 12) : above) + "px";
+      pill.addEventListener("mousedown", function (e) { e.preventDefault(); });   // keep the selection
+      pill.addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        var mm = o.meta(); if (!mm) return hide();
+        if (b.getAttribute("data-a") === "copy") {
+          copied(b, "“" + sel + "”\n— " + credit(mm.title) + "\n" + mm.url + fragment(sel));
+        } else {
+          hide();
+          share({ url: mm.url, title: mm.title, sub: mm.sub, text: mm.text, theme: mm.theme, quote: sel, kind: "passage" });
+        }
+      });
+    }
+    function later() { clearTimeout(timer); if (!down) timer = setTimeout(check, coarse() ? 450 : 120); }
+    doc.addEventListener("selectionchange", function () {
+      var s = getSelection(); if (!s.rangeCount || s.isCollapsed) { hide(); return; }
+      later();
+    });
+    doc.addEventListener("pointerdown", function (e) { if (!pill || !pill.contains(e.target)) down = true; });
+    doc.addEventListener("pointerup", function () { if (down) { down = false; later(); } });
+    doc.addEventListener("keydown", function (e) { if (e.key === "Escape") hide(); });
+    (o.scroller || window).addEventListener("scroll", hide, { passive: true });
+    if (o.scroller && o.scroller !== window) addEventListener("scroll", hide, { passive: true });
+  }
+
+  /* An entry page wires everything from one call. `c` is written by build/pages.mjs. */
+  function page(c) {
+    var m = { url: c.url, title: c.title, sub: c.sub, text: c.text, theme: c.theme };
+    doc.querySelectorAll("[data-rs]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var a = b.getAttribute("data-rs");
+        if (a === "copy") return copied(b, c.url);
+        share({ url: c.url, title: c.title, sub: c.sub, text: c.text, theme: c.theme, from: b,
+          quote: a === "line" ? c.keep : "", kind: a === "line" ? "line" : "entry" });
+      });
+    });
+    progress({ scroller: window, start: doc.querySelector("main"), end: doc.getElementById("rend"), mins: c.mins,
+      label: doc.getElementById("rleft"), bar: doc.getElementById("rbar"), key: c.key, theme: c.theme });
+    quotes({ root: doc.querySelector("main"), within: ".lede,.essay,.keepq p,.callout p,.note p", scroller: window, meta: function () { return m; } });
+  }
+
+  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory };
+})();
+
 /* ===================== ENGINE ===================== */
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const EASE="cubic-bezier(.19,.9,.22,1)", EASE_IO="cubic-bezier(.62,.02,.2,1)";
@@ -1150,7 +1527,7 @@ function renderShelf(anim){
     const dx=o.left-n.left,dy=o.top-n.top;if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
     s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
   document.getElementById("pressCount").textContent=list.length+(list.length===1?" title":" titles");
-  observeReveals(shelf);bindTilt(shelf);
+  observeReveals(shelf);bindTilt(shelf);markRead();
 }
 function renderWide(){
   const w=document.getElementById("wide");
@@ -1182,7 +1559,7 @@ function renderLivesShelf(anim){
     const dx=o.left-n.left,dy=o.top-n.top;if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
     s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
   document.getElementById("livesCount").textContent=list.length+(list.length===1?" life":" lives");
-  observeReveals(shelf);bindTilt(shelf);
+  observeReveals(shelf);bindTilt(shelf);markRead();
 }
 
 /* ---------- reader ---------- */
@@ -1191,6 +1568,25 @@ function words(b){
     (b.timeline||[]).map(t=>t.t),(b.figures||[]).map(f=>f.d),(b.reading||[]).map(r=>r.why||""),
     b.bio?[b.bio.why]:[]);
   return p.join(" ").trim().split(/\s+/).length;
+}
+/* Read next: the first entry this one reads across to — a link that exists because the two
+   argue (PUBLISHING.md) — and the next on the shelf only when there is none. Same choice as
+   readNext() in build/pages.mjs. */
+function readNextHTML(kind,b,next){
+  let n=null;
+  for(const a of b.across||[]){const [w,id]=a.to.split(":"),u=w==="press"?ALL:w==="lives"?LIVES:null,t=u&&u.find(x=>x.id===id);
+    if(t){n={kind:w,b:t,why:a.txt};break}}
+  if(!n)n={kind,b:next,why:""};
+  const k=n.kind==="press"?"t":"l",name=n.kind==="press"?n.b.title:n.b.n,m=Math.max(2,Math.round(words(n.b)/210));
+  return `<a class="rs-next" href="#${k}/${n.b.id}" onclick="openReader('${n.kind}','${n.b.id}');return false">
+    <span class="rs-nk">${n.why?"Read next":"Next on the shelf"}</span><span class="rs-nt">${name}</span>
+    ${n.why?`<span class="rs-nd">${n.why.replace(/^\s*[—–-]\s*/,"")}</span>`:""}
+    <span class="rs-nm"><span>${n.kind==="press"?"The Press":"Lives"} · ${m} min</span><b>Read →</b></span></a>`;
+}
+/* Entries this browser has finished get a mark on the shelf (Reading.memory, theme/reading.js). */
+function markRead(){
+  document.querySelectorAll("#shelf .slot").forEach(s=>s.classList.toggle("read",Reading.memory.done("t/"+s.dataset.id)));
+  document.querySelectorAll("#livesShelf .slot").forEach(s=>s.classList.toggle("read",Reading.memory.done("l/"+s.dataset.id)));
 }
 function acrossHTML(b){
   if(!b.across||!b.across.length)return "";
@@ -1215,7 +1611,7 @@ function readerHTML(kind,b){
   if(b.corrected&&b.corrected.length){S.push(`<section class="sec" id="s-corrected" data-reveal><h4>Corrected</h4><div class="corrbox">${b.corrected.map(n=>{const c=CORRECTIONS[n-1];return c?`<div><b>№ ${n} · ${c.d} · ${c.t}</b><span>${c.b}</span></div>`:""}).join("")}</div></section>`);toc.push(["s-corrected","Corrected"])}
   if(b.contested){S.push(`<section class="sec" id="s-contested" data-reveal><h4>Where it is contested</h4><div class="quoteblock">${b.contested}</div></section>`);toc.push(["s-contested","Contested"])}
   if(b.changed){S.push(`<section class="sec" id="s-changed" data-reveal><h4>What I changed my mind about</h4><div class="quoteblock">${b.changed}</div></section>`);toc.push(["s-changed","Second thoughts"])}
-  if(b.keep){S.push(`<section class="sec" id="s-keep" data-reveal><h4>If you keep one line</h4><div class="keepbox">${b.keep}</div></section>`);toc.push(["s-keep","Take this"])}
+  if(b.keep){S.push(`<section class="sec" id="s-keep" data-reveal><h4>If you keep one line</h4><div class="keepbox">${b.keep}</div><button class="rs-lineshare" type="button" onclick="shareLine('${isPress?"t":"l"}','${b.id}',this)">Share this line ↗</button></section>`);toc.push(["s-keep","Take this"])}
   if(b.across){S.push(acrossHTML(b));toc.push(["s-across","Across"])}
   if(b.reading){S.push(`<section class="sec" id="s-reading" data-reveal><h4>Go to the source</h4><ul class="reading">${b.reading.map(r=>`<li><a href="${r.u}" target="_blank" rel="noopener"><div class="row"><span class="t">${r.t}</span><span class="a">${r.a} ↗</span></div>${r.why?`<div class="why">${r.why}</div>`:""}</a></li>`).join("")}</ul></section>`);toc.push(["s-reading","Sources"])}
 
@@ -1225,6 +1621,7 @@ function readerHTML(kind,b){
   return `<div class="wrap">
     <div class="rbar">
       <button class="back" onclick="closeReader()"><span class="arw">←</span> ${isPress?"All titles":"All lives"}</button>
+      <div class="rtools"><span class="rs-left" id="rleft" data-mins="${mins}">${mins} min read</span><button class="rs-go" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">${SHARE_ICON}Share</button></div>
       <div class="nav"><button onclick="step(-1)" aria-label="Previous">‹</button><button onclick="step(1)" aria-label="Next">›</button></div>
     </div>
     <div class="rgrid">
@@ -1235,7 +1632,6 @@ function readerHTML(kind,b){
           <div><b>${isPress?"Period":"Lived"}</b><span>${b.years}</span></div>
           <div><b>Shelf</b><span>№ ${String(idx+1).padStart(2,"0")} of ${uni.length}</span></div>
           <div><b>Reading</b><span>${mins} min</span></div>
-          <div><b>Share</b><span><button class="rshare" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">Share this entry ↗</button></span></div>
         </div>
         <nav class="toc">${toc.map(t=>`<a href="#" data-sec="${t[0]}" onclick="gotoSec('${t[0]}');return false;">${t[1]}</a>`).join("")}</nav>
       </div></div>
@@ -1246,6 +1642,13 @@ function readerHTML(kind,b){
         ${plate}
         <p class="lede" data-reveal style="--d:180ms">${b.lede}</p>
         ${S.join("")}
+        <section class="rs-end" id="rend" aria-label="Share this entry">
+          <div class="rs-fin">End of entry</div>
+          <h3>${title}</h3>
+          <p>${END_LINE}</p>
+          <div class="rs-row"><button class="rs-b rs-main" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">Share this entry</button><button class="rs-b" type="button" onclick="copyEntry('${isPress?"t":"l"}','${b.id}',this)">Copy link</button><a class="rs-b" href="${isPress?"t":"l"}/${b.id}/">Open as its own page ↗</a></div>
+          ${readNextHTML(kind,b,next)}
+        </section>
         <div class="endnav" data-reveal>
           <button onclick="openReader('${kind}','${prev.id}')"><small>← Previous</small><em>${isPress?prev.title:prev.n}</em></button>
           <button onclick="openReader('${kind}','${next.id}')"><small>Next →</small><em>${isPress?next.title:next.n}</em></button>
@@ -1265,7 +1668,7 @@ function countUp(el){
     if(hasC)s=Number(s).toLocaleString("en-US");
     el.textContent=pre+s+post; if(p<1)requestAnimationFrame(tick)})(performance.now());
 }
-let readerIO,tlIO,tickIO;
+let readerIO,tlIO,tickIO,readProg;
 function wireReader(){
   const reader=document.getElementById("reader"),links=[...document.querySelectorAll(".toc a")];
   if(readerIO)readerIO.disconnect();
@@ -1285,10 +1688,14 @@ function wireReader(){
   if(links[0])links[0].classList.add("on");
   bindTilt(document.getElementById("sheet"));
   reader.onscroll=onReaderScroll; railScroll();
+  if(readProg)readProg.destroy();
+  const left=document.getElementById("rleft");
+  const k=currentKind==="press"?"t":"l",meta=entryMeta(k,current);
+  readProg=Reading.progress({scroller:reader,start:document.querySelector("#sheet .rbody h1"),end:document.getElementById("rend"),
+    mins:+left.dataset.mins,label:left,bar:document.getElementById("rprog"),key:k+"/"+current,theme:meta&&meta.theme});
 }
 function onReaderScroll(){
-  const r=document.getElementById("reader"),max=r.scrollHeight-r.clientHeight;
-  document.getElementById("rprog").style.width=(max>0?r.scrollTop/max*100:0)+"%";
+  const r=document.getElementById("reader");
   const bar=r.querySelector(".rbar"); if(bar)bar.classList.toggle("float",r.scrollTop>24);
   railScroll();
 }
@@ -1352,7 +1759,8 @@ function openReader(kind,id,opts){
   document.getElementById("sheet").innerHTML=readerHTML(kind,b);
   r.style.background=b.cover;r.style.color=b.ink;
   r.classList.add("on");r.setAttribute("aria-hidden","false");r.scrollTop=0;
-  document.getElementById("rprog").style.width="0%";
+  document.getElementById("rprog").style.transform="scaleX(0)";
+  r.style.setProperty("--rs-bg",b.cover);r.style.setProperty("--rs-ink",b.ink);
   if(!wasOpen){const sbw=innerWidth-document.documentElement.clientWidth;
     if(sbw>0)document.body.style.paddingRight=sbw+"px";document.body.style.overflow="hidden"}
   wireReader();
@@ -1365,13 +1773,21 @@ function openReader(kind,id,opts){
   }
 }
 /* Shares the entry's own page, never the #hash: a hash previews as the front door, the page
-   previews as the entry, with its own card. Native share sheet where there is one. */
-function shareEntry(k,id,btn){
-  const b=(k==="t"?ALL:LIVES).find(x=>x.id===id), title=(k==="t"?b.title:b.n).replace(/&amp;/g,"&");
-  const url="https://42thecommodore.github.io/the-commodore-press/"+k+"/"+id+"/";
-  if(navigator.share){navigator.share({title:title+" — The Commodore Press",url}).catch(()=>{});return}
-  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{btn.textContent="Link copied";setTimeout(()=>btn.textContent="Share this entry ↗",1600)}).catch(()=>prompt("Copy this link:",url));
+   previews as the entry, with its own card. The sheet itself is theme/reading.js, shared
+   with the entry pages so the two behave the same. */
+const SHARE_ICON=`<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
+const END_LINE="The link opens its own page: the whole entry, with its sources, its disputes and any corrections.";
+function entryMeta(k,id){
+  const b=(k==="t"?ALL:LIVES).find(x=>x.id===id);if(!b)return null;
+  return {url:"https://42thecommodore.github.io/the-commodore-press/"+k+"/"+id+"/",title:k==="t"?b.title:b.n,sub:k==="t"?b.sub:b.field+" · "+b.years,
+    text:k==="t"?(b.claim||b.lede):b.lede,keep:b.keep,theme:{bg:b.cover,ink:b.ink,accent:b.accent}};
 }
+function shareEntry(k,id,btn){const m=entryMeta(k,id);if(m)Reading.share(Object.assign({kind:"entry",from:btn},m))}
+function shareLine(k,id,btn){const m=entryMeta(k,id);if(m)Reading.share(Object.assign({},m,{kind:"line",quote:m.keep,from:btn}))}
+function copyEntry(k,id,btn){const m=entryMeta(k,id);if(m)Reading.copied(btn,m.url)}
+Reading.quotes({root:document.getElementById("reader"),scroller:document.getElementById("reader"),
+  within:".rbody .lede,.rbody .copy,.rbody .quoteblock,.rbody .keepbox",
+  meta:()=>current?entryMeta(currentKind==="press"?"t":"l",current):null});
 function closeReader(push){
   if(!current)return;
   const kind=currentKind,id=current;
@@ -1380,6 +1796,8 @@ function closeReader(push){
     r.classList.remove("on");r.setAttribute("aria-hidden","true");
     document.body.style.overflow="";document.body.style.paddingRight="";
     document.title=(wing==="home"?"The Commodore Press":(WINGS.find(x=>x[0]===wing)[1]+" — The Commodore Press"));
+    if(readProg){readProg.destroy();readProg=null}
+    markRead();
     const el=readerFocus;readerFocus=null;giveBack(el)};
   if(push!==false)history.pushState({w:wing},"","#"+wing);
   flyOut(kind,id,finish);
@@ -1570,6 +1988,7 @@ addEventListener("scroll",()=>{if(pageRaf)return;pageRaf=requestAnimationFrame((
 addEventListener("keydown",e=>{
   if(e.metaKey||e.ctrlKey||e.altKey)return;
   if(/^(input|textarea|select)$/i.test(e.target.tagName))return;
+  if(document.querySelector("dialog[open]"))return;
   if(e.key==="Escape"){const sm=document.getElementById("smodal");if(sm.classList.contains("on"))return closeSearch();if(current)return closeReader();return closeDrawer()}
   if(e.key==="/"&&!document.getElementById("smodal").classList.contains("on")){e.preventDefault();return openSearch()}
   if(current&&e.key==="ArrowRight"){e.preventDefault();return step(1)}

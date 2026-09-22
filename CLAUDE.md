@@ -41,6 +41,10 @@ The Commodore/
 ├── assets/plates/<life-id>.jpg # duotone portraits, ~12 KB, 260×325
 ├── theme/press.css             # the whole design system
 ├── theme/press.js              # the engine — rendering, search, night mode, Atlas
+├── theme/reading.js/.css       # reading tools shared by the reader AND the entry pages:
+│                               # share sheet, progress + minutes left, select-a-passage quoting,
+│                               # read-next card, reading memory (localStorage "cp-read" — the
+│                               # colophon names it; storing anything more changes that sentence)
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
 ├── build/build.mjs             # assembles everything into dist/index.html
 ├── build/pages.mjs             # one crawlable page per entry: dist/t/<id>/, dist/l/<id>/ — plus about/, log/, feed.xml

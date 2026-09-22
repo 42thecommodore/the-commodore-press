@@ -133,9 +133,10 @@ const out = fill(read("templates/shell.html"))
   // the colophon promises no cookies and no analytics; once a sign-up exists it also says who holds the addresses
   .replace("<!--NEWSCOLOPHON-->", NEWS && NEWS.action ? ` If you subscribe to the newsletter, your address is held by ${NEWS.provider}, used only to send it; every issue carries its own unsubscribe link.` : "")
   .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the three wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
-  .replace("<!--CSS-->", () => read("theme/press.css"))
+  .replace("<!--CSS-->", () => read("theme/press.css") + read("theme/reading.css"))
   .replace("<!--DATA-->", () => DATA)
-  .replace("<!--ENGINE-->", () => safe(fill(read("theme/press.js"))));
+  // reading.js first: the engine's reader calls it, and the entry pages run the same file
+  .replace("<!--ENGINE-->", () => safe(read("theme/reading.js")) + "\n" + safe(fill(read("theme/press.js"))));
 
 /* A token nobody filled prints as `{{N_THING}}` on the live page, and a build that
    succeeds is the only signal anyone checks. Two of these were added and wired in the
