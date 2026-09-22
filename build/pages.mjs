@@ -176,6 +176,10 @@ function body(kind, b, known, plateFile, CORR = [], share = "") {
 const enc = encodeURIComponent;
 const THEME = ["reading.css", "reading.js"].map(f => new URL(`../theme/${f}`, import.meta.url));
 const [READING_CSS, READING_JS] = THEME.map(u => fillMark(fs.readFileSync(u, "utf8")));
+/* The way out (theme/forward.js): Esc with nothing open sails to relentless.com. Every page
+   written here carries it — its style in the head, its script last in the body. */
+const [FWD_CSS, FWD_JS] = ["forward.css", "forward.js"].map(f => fillMark(fs.readFileSync(new URL(`../theme/${f}`, import.meta.url), "utf8")));
+const FORWARD = `<script>${FWD_JS.replace(/<\/script/gi, "<\\/script")}\nForward.escape()</script>`;
 const SHARE_ICON = `<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
 const END_LINE = "The link opens its own page: the whole entry, with its sources, its disputes and any corrections.";
 /* Reading time, counted over the same fields as words() in theme/press.js, so the reader
@@ -270,7 +274,7 @@ ${!small ? `<meta property="og:image:width" content="1200">
 <meta name="twitter:image" content="${image}">
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
 ${FONTS}
-<style>${CSS}${ENTRY_CSS}${READING_CSS}</style>
+<style>${CSS}${ENTRY_CSS}${READING_CSS}${FWD_CSS}</style>
 <script>document.documentElement.classList.add("rs-js")</script>
 </head>
 <body style="--cover:${b.cover};--cink:${b.ink};--accent:${b.accent}">
@@ -296,6 +300,7 @@ ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../../", "Follow the Press",
 <script>${READING_JS.replace(/<\/script/gi, "<\\/script")}
 Reading.page(${JSON.stringify(conf).replace(/</g, "\\u003c")})</script>
 <footer>The Commodore Press · edited by ${hasAbout ? `<a href="../../about/">${EDITOR}</a>` : EDITOR} · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a></footer>
+${FORWARD}
 </body>
 </html>
 `;
@@ -412,7 +417,7 @@ export function writeAbout({ ROOT, SITE, fill, NEWS, hasLog }) {
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
 ${FONTS}
-<style>${CSS}.body ul{padding-left:1.1em}.body li{margin:0 0 8px}</style>
+<style>${CSS}.body ul{padding-left:1.1em}.body li{margin:0 0 8px}${FWD_CSS}</style>
 </head>
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
 <nav class="top"><a href="../">The Commodore Press</a><a href="../#home">The library →</a></nav>
@@ -426,6 +431,7 @@ ${html}
 ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../", "Follow the Press", hasLog) : ""}
 </main>
 <footer>The Commodore Press · edited by ${EDITOR} · <a href="../#colophon">colophon &amp; corrections</a></footer>
+${FORWARD}
 </body>
 </html>
 `);
@@ -503,7 +509,7 @@ export function writeLog({ ROOT, SITE, pieces, BOOKS, ADJACENT, LIVES, PRINCIPLE
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
 ${FEED_LINK(root)}
 ${FONTS}
-<style>${CSS}${LOG_CSS}</style>
+<style>${CSS}${LOG_CSS}${FWD_CSS}</style>
 </head>
 <body style="--cover:${LOG_LIVERY.cover};--cink:${LOG_LIVERY.ink};--accent:${LOG_LIVERY.accent}">
 <nav class="top"><a href="${root}">The Commodore Press</a><a href="../">The Log →</a></nav>
@@ -519,6 +525,7 @@ ${across.length ? `<h2>Reads across to</h2>${across.map(a => `<p><a href="${a.hr
 ${subscribe(root)}
 </main>
 <footer>The Log is the editor's signed column. Figures carry their sources here too, and corrections are appended in the <a href="${root}#colophon">colophon</a>.</footer>
+${FORWARD}
 </body>
 </html>
 `);
@@ -539,7 +546,7 @@ ${subscribe(root)}
 <meta property="og:image" content="${SITE}/og.png">
 ${FEED_LINK("../")}
 ${FONTS}
-<style>${CSS}${LOG_CSS}</style>
+<style>${CSS}${LOG_CSS}${FWD_CSS}</style>
 </head>
 <body style="--cover:${LOG_LIVERY.cover};--cink:${LOG_LIVERY.ink};--accent:${LOG_LIVERY.accent}">
 <nav class="top"><a href="../">The Commodore Press</a><a href="../#home">The library →</a></nav>
@@ -553,6 +560,7 @@ ${FONTS}
 ${subscribe("../")}
 </main>
 <footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a></footer>
+${FORWARD}
 </body>
 </html>
 `);
@@ -610,7 +618,7 @@ export function writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG }) {
 <meta property="og:url" content="${SITE}/contents/">
 <meta property="og:image" content="${SITE}/og.png">
 ${FONTS}
-<style>${CSS}${LOG_CSS}.body .list .t{font-size:24px}</style>
+<style>${CSS}${LOG_CSS}.body .list .t{font-size:24px}${FWD_CSS}</style>
 </head>
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
 <nav class="top"><a href="../">The Commodore Press</a><a href="../#home">The library →</a></nav>
@@ -622,6 +630,7 @@ ${FONTS}
 ${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
 </main>
 <footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a></footer>
+${FORWARD}
 </body>
 </html>
 `;

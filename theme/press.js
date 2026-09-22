@@ -754,7 +754,7 @@ addEventListener("keydown",e=>{
   if(document.querySelector("dialog[open]"))return;
   if(e.key==="Escape"){const sm=document.getElementById("smodal");if(sm.classList.contains("on"))return closeSearch();if(current)return closeReader();if(document.getElementById("drawer").classList.contains("on"))return closeDrawer();
     // nothing left to close: Esc is the way out
-    const s=getSelection();if(s&&!s.isCollapsed)return;e.preventDefault();return Reading.forward()}
+    const s=getSelection();e.preventDefault();if(s&&!s.isCollapsed)return s.removeAllRanges();return Forward.go()}
   if(e.key==="/"&&!document.getElementById("smodal").classList.contains("on")){e.preventDefault();return openSearch()}
   if(current&&e.key==="ArrowRight"){e.preventDefault();return step(1)}
   if(current&&e.key==="ArrowLeft"){e.preventDefault();return step(-1)}

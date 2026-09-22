@@ -203,7 +203,6 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
   @media (prefers-reduced-motion:reduce){.rs-sheet[open],.rs-pill,.rs-resume{animation:none}.rs-next,.rs-next .rs-nm b{transition:none}}
   @media (max-width:560px){.rs-in{padding:18px 18px 16px}.rs-q{font-size:19px}.rs-next .rs-nt{font-size:22px}
     .rs-resume{padding-left:14px;font-size:11px}.rs-resume span{margin-right:2px}}
-
   /* ---------- the way out — Esc with nothing open, drawn by forward() in theme/reading.js ----------
      The Atlas's night sea and brass, the press mark under sail, a hoist of triangle pennants. */
   .rs-fwd{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;cursor:pointer;color:#ECE3D0;
@@ -551,9 +550,21 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
     progress({ scroller: window, start: doc.querySelector("main"), end: doc.getElementById("rend"), mins: c.mins,
       label: doc.getElementById("rleft"), bar: doc.getElementById("rbar"), key: c.key, theme: c.theme });
     quotes({ root: doc.querySelector("main"), within: ".lede,.essay,.keepq p,.callout p,.note p", scroller: window, meta: function () { return m; } });
-    escape();
   }
 
+  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory };
+})();
+
+Reading.page({"url":"https://42thecommodore.github.io/the-commodore-press/l/norman-borlaug/","title":"Norman Borlaug","sub":"Agriculture · 1914–2009","text":"Frequently called the man who saved more human lives than anyone who has ever lived — and most people have never heard of him.","keep":"Applied science, done patiently in a field, can change the fate of nations.","mins":2,"key":"l/norman-borlaug","theme":{"bg":"#3B6637","ink":"#EEF6EC","accent":"#C3DEB4"}})</script>
+<footer>The Commodore Press · edited by Luca Falvo · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a></footer>
+<script>/* The way out — Esc with nothing left to close goes to relentless.com, by way of a voyage.
+   Its own file so that every page can carry it: the library (build/build.mjs puts it ahead
+   of the engine) and every page build/pages.mjs writes — entries, About, Contents, the Log.
+   The library's own Escape closes search, a reader or a drawer first and then calls
+   Forward.go(); every other page calls Forward.escape() once, which listens for itself. */
+(function () {
+  "use strict";
+  var doc = document;
   /* forward(): Esc with nothing left to close is the way out, to relentless.com. A voyage:
      the night sea of the Atlas comes up over the page, the press mark sails across it, a
      line of signal pennants is run up one by one while the count goes 3 · 2 · 1, and the
@@ -607,15 +618,14 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
     doc.addEventListener("keydown", function (e) {
       if (e.key !== "Escape" || e.metaKey || e.ctrlKey || e.altKey || e.defaultPrevented) return;
       if (/^(input|textarea|select)$/i.test(e.target.tagName) || doc.querySelector("dialog[open]")) return;
-      var s = getSelection(); if (s && !s.isCollapsed) return;   // Esc first drops a selected passage
+      var s = getSelection(); if (s && !s.isCollapsed) { e.preventDefault(); s.removeAllRanges(); return; }   // Esc first drops a selected passage
       e.preventDefault(); forward();
     });
   }
 
-  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory, forward: forward };
+  window.Forward = { go: forward, stay: stay, escape: escape };
 })();
 
-Reading.page({"url":"https://42thecommodore.github.io/the-commodore-press/l/norman-borlaug/","title":"Norman Borlaug","sub":"Agriculture · 1914–2009","text":"Frequently called the man who saved more human lives than anyone who has ever lived — and most people have never heard of him.","keep":"Applied science, done patiently in a field, can change the fate of nations.","mins":2,"key":"l/norman-borlaug","theme":{"bg":"#3B6637","ink":"#EEF6EC","accent":"#C3DEB4"}})</script>
-<footer>The Commodore Press · edited by Luca Falvo · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a></footer>
+Forward.escape()</script>
 </body>
 </html>
