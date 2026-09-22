@@ -1,7 +1,7 @@
 /* ===================== ENGINE ===================== */
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const EASE="cubic-bezier(.19,.9,.22,1)", EASE_IO="cubic-bezier(.62,.02,.2,1)";
-const WINGS=[["home","Colophon"],["press","The Press"],["lives","Lives"],["atlas","The Atlas"]];
+const WINGS=[["home","Home"],["press","The Press"],["lives","Lives"],["atlas","The Atlas"],["colophon","Colophon"]];
 let wing="home", searchFocus=null, readerFocus=null, current=null, currentKind=null, activeConst=null, activeRegion=null, selectedPerson=null;
 
 /* ---------- derive ---------- */
@@ -84,7 +84,7 @@ function bindTilt(root){
 /* ---------- nav / router ---------- */
 function renderNav(){
   document.getElementById("nav").innerHTML =
-    WINGS.filter(w=>w[0]!=="home").map(w=>`<button class="navbtn" data-w="${w[0]}" onclick="go('${w[0]}')">${w[1]}</button>`).join("")
+    WINGS.filter(w=>w[0]!=="home"&&w[0]!=="colophon").map(w=>`<button class="navbtn" data-w="${w[0]}" onclick="go('${w[0]}')">${w[1]}</button>`).join("")
     + (LOG.length?`<a class="navbtn solid" href="log/">The Log</a>`:"")
     + `<button class="navbtn" onclick="openSearch()" aria-label="Search the library" title="Search ( / )">Search</button>`
     // "Surprise me" was the one solid button on the site, so a novelty outranked the wings. It
@@ -167,6 +167,7 @@ function renderFront(){
   document.getElementById("corrections").innerHTML=
     `<div class="lbl q" style="margin-bottom:10px">Corrections — kept visible</div>`+
     CORRECTIONS.map(c=>`<div style="margin-bottom:12px"><b>${c.t}</b> ${c.b} <span style="font-family:var(--mono);font-size:11.5px;opacity:.6">${c.d}</span></div>`).join("");
+  const nc=document.getElementById("nCorr"); if(nc)nc.textContent=CORRECTIONS.length;
   document.getElementById("stat").textContent=`${BOOKS.length} titles · ${LIVES.length} lives · ${PEOPLE.length} people · ${PRINCIPLES.length} principles`;
   renderDoors(withPlates,dayN);
 }
@@ -249,7 +250,7 @@ function renderDoors(withPlates,dayN){
     <section class="door" data-reveal aria-labelledby="newH">
       <div class="door-h"><div class="lbl">New on the shelf</div><h2 id="newH">Just added</h2></div>
       <div class="newgrid">${newest.map((b,i)=>`<button class="newcard" data-reveal style="--d:${i*70}ms" onclick="openLife('${b.id}')">
-          ${plateOrMark(b,"np")}
+          ${PLATES[b.id]?plateOrMark(b,"np"):`<span class="np nomark typeplate" aria-hidden="true"><i>${b.n.split(/\s+/).filter(w=>/^[A-Z]/.test(w)).map(w=>w[0]).slice(0,3).join("")}</i><small>no portrait cleared</small></span>`}
           <span class="nm">${b.n}</span><span class="ny">${b.years} · ${b.field}</span>
           <span class="nl">${b.lede}</span><span class="nt">${readMins(b)} min read</span></button>`).join("")}</div>
     </section>
@@ -721,6 +722,8 @@ function route(push){
   if(h.startsWith("t/")){const id=h.slice(2);if(ALL.some(x=>x.id===id)){go("press",false);openReader("press",id,{push:false});return}}
   if(h.startsWith("l/")){const id=h.slice(2);if(LIVES.some(x=>x.id===id)){go("lives",false);openReader("lives",id,{push:false});return}}
   if(WINGS.some(w=>w[0]===h)){go(h,false);return}
+  // corrections live on the colophon page; old and outside links use #corrections directly
+  if(h==="corrections"){go("colophon",false);setTimeout(()=>document.getElementById("corrections").scrollIntoView(),60);return}
   go("home",false);
 }
 addEventListener("popstate",()=>{if(current)closeReader(false);route(false)});

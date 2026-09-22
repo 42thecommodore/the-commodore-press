@@ -555,6 +555,38 @@
   .wface:hover .fn{color:var(--ink)}
   .nomark{display:flex !important;align-items:center;justify-content:center;color:#8C8471}
   .nomark svg{width:42%;height:auto}
+  /* a life with no cleared image still gets a plate-shaped card: its initials set in type,
+     and the reason in one line, so "Just added" never shows four blank crosshairs */
+  .newcard .typeplate{flex-direction:column;gap:10px}
+  .typeplate i{font-family:var(--serif);font-size:clamp(38px,4.4vw,58px);font-weight:500;letter-spacing:.02em;color:#6E6653;line-height:1}
+  .typeplate small{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8C8471}
+
+  /* hero: the first thing a reader can do, not only what the house is */
+  .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .cta{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:11px 18px;border-radius:999px;
+    border:1px solid var(--ink);color:var(--ink);transition:background .25s,color .25s,transform .2s var(--ease)}
+  .cta:hover{background:var(--ink);color:var(--paper)}
+  .cta.solid{background:var(--ink);color:var(--paper)}
+  .cta.solid:hover{background:#000}
+  body.dusk .cta.solid:hover{background:var(--ink-mid)}
+  .cta.ghost{border-color:transparent;color:var(--ink-soft)}
+  .cta.ghost:hover{background:transparent;color:var(--ink);border-color:var(--rule)}
+  .cta kbd{font-family:var(--mono);font-size:10.5px;border:1px solid var(--rule);border-radius:3px;padding:0 5px;margin-left:4px}
+  .cta:active{transform:scale(.97)}
+
+  /* the house rules, at the foot of the front door; the full colophon has its own page */
+  .promises{margin:64px 0 10px;padding:34px 0 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:190px 1fr;gap:14px 40px;align-items:start}
+  .promises ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 36px;font-size:18px;line-height:1.45;color:var(--ink-mid)}
+  .promises li{border-left:2px solid var(--oxblood);padding-left:14px}
+  .promises b{font-weight:500;color:var(--ink)}
+  .promises .door-go{grid-column:2;justify-self:start;margin-top:12px;text-decoration:none}
+  [data-wing=colophon] .colophon{border-top:0;margin-top:14px;padding-top:30px}
+  [data-wing=colophon] .wing-head .side a{color:inherit;text-underline-offset:4px}
+  @media (max-width:860px){
+    .promises{grid-template-columns:1fr}
+    .promises ul{grid-template-columns:1fr}
+    .promises .door-go{grid-column:1}
+  }
 
   @media (max-width:1000px){
     .steps{grid-template-columns:repeat(2,minmax(0,1fr))}

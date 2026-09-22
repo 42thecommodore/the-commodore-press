@@ -611,6 +611,38 @@
   .wface:hover .fn{color:var(--ink)}
   .nomark{display:flex !important;align-items:center;justify-content:center;color:#8C8471}
   .nomark svg{width:42%;height:auto}
+  /* a life with no cleared image still gets a plate-shaped card: its initials set in type,
+     and the reason in one line, so "Just added" never shows four blank crosshairs */
+  .newcard .typeplate{flex-direction:column;gap:10px}
+  .typeplate i{font-family:var(--serif);font-size:clamp(38px,4.4vw,58px);font-weight:500;letter-spacing:.02em;color:#6E6653;line-height:1}
+  .typeplate small{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8C8471}
+
+  /* hero: the first thing a reader can do, not only what the house is */
+  .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .cta{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:11px 18px;border-radius:999px;
+    border:1px solid var(--ink);color:var(--ink);transition:background .25s,color .25s,transform .2s var(--ease)}
+  .cta:hover{background:var(--ink);color:var(--paper)}
+  .cta.solid{background:var(--ink);color:var(--paper)}
+  .cta.solid:hover{background:#000}
+  body.dusk .cta.solid:hover{background:var(--ink-mid)}
+  .cta.ghost{border-color:transparent;color:var(--ink-soft)}
+  .cta.ghost:hover{background:transparent;color:var(--ink);border-color:var(--rule)}
+  .cta kbd{font-family:var(--mono);font-size:10.5px;border:1px solid var(--rule);border-radius:3px;padding:0 5px;margin-left:4px}
+  .cta:active{transform:scale(.97)}
+
+  /* the house rules, at the foot of the front door; the full colophon has its own page */
+  .promises{margin:64px 0 10px;padding:34px 0 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:190px 1fr;gap:14px 40px;align-items:start}
+  .promises ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 36px;font-size:18px;line-height:1.45;color:var(--ink-mid)}
+  .promises li{border-left:2px solid var(--oxblood);padding-left:14px}
+  .promises b{font-weight:500;color:var(--ink)}
+  .promises .door-go{grid-column:2;justify-self:start;margin-top:12px;text-decoration:none}
+  [data-wing=colophon] .colophon{border-top:0;margin-top:14px;padding-top:30px}
+  [data-wing=colophon] .wing-head .side a{color:inherit;text-underline-offset:4px}
+  @media (max-width:860px){
+    .promises{grid-template-columns:1fr}
+    .promises ul{grid-template-columns:1fr}
+    .promises .door-go{grid-column:1}
+  }
 
   @media (max-width:1000px){
     .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -670,6 +702,11 @@
             <span class="em"><i style="--d:340ms">still argued.</i></span>
           </h1>
           <p class="stand" data-reveal style="--d:300ms">Three wings of one method. Every claim here carries where it came from and where specialists disagree — because the disagreement is usually the part worth having.</p>
+          <div class="ctas" data-reveal style="--d:320ms">
+            <button class="cta solid" onclick="go('press')">Browse the titles</button>
+            <button class="cta" onclick="go('lives')">Meet the lives</button>
+            <button class="cta ghost" onclick="openSearch()">Search <kbd>/</kbd></button>
+          </div>
           <div class="tally" data-reveal style="--d:340ms" id="tally"></div>
           <!-- Start the headline the moment it is parsed. The engine sits at the foot of a
                400 KB page and the headline waited for all of it; on a phone that is the
@@ -685,17 +722,18 @@
            the shelf. All three are drawn from content/ by renderDoors() in press.js. -->
       <div class="doors" id="doors"></div>
 
-      <div class="colophon" id="colophon">
-        <div class="lbl" style="padding-top:6px">Colophon</div>
-        <div class="body">
-          <p>This is a library, not a credential. It holds what I have read, what I think it means, and — deliberately, in every wing — the places where the people who know most still disagree. A claim without its dispute is half a claim.</p>
-          <p>The three wings are one method applied to people, three ways round. <b>The Press</b> is the ideas people spent their lives inside; <b>Lives</b> is the people themselves, one book each; <b>The Atlas</b> is the people I listen to now, and the principles more than one of them arrived at independently. The library used to run to five wings — a set of field manuals and a trade book of operating lessons. Both were positions stated without anyone standing behind them, and they came down in September 2026 so that everything here is attached to a person you can go and check.</p>
-          <p>Set in EB Garamond and IBM Plex Mono. Assembled by hand and with AI assistance; figures are checked against a named source, and where I have corrected myself the correction stays visible rather than being quietly patched. The reading wings are set on paper. The Atlas is the only room kept dark, because a star chart is the one thing that genuinely needs a night sky.</p>
-          <p>The portraits in Lives are public-domain engravings, paintings and photographs, reduced to the house duotone and set as plates. A life without a safely public image carries the press mark instead of a borrowed picture, which seems the more honest trade. Nine lives are in that position today. Henrietta Lacks is there by decision; her entry says why at length, and her estate has itself disputed the use of family photographs. Ibn Khaldun, Clair Patterson, Vasily Arkhipov, Emily Warren Roebling, Alice Ball and Edward Thorp are there because no image of any of them has yet been cleared: no portrait of Ibn Khaldun from his own lifetime is known, Patterson's photographs sit in an archive that grants permission only on request, the one openly licensed photograph of Arkhipov was tagged by an uploader who does not appear to have held the rights to grant it, the Library of Congress portrait of Roebling is a 1953 print of a photograph taken between 1860 and 1880 and the Library records that it found no information on creator or reproduction rights at all, no photograph of Ball has been found under any licence we can stand behind, and Thorp is alive and photographed by working photographers, whose pictures are theirs. The Roebling case is the closest of these: the original is old enough to be out of copyright several times over, and a faithful reproduction of it would add nothing new. It is held back anyway, because &ldquo;the Library found nothing&rdquo; is not the same statement as &ldquo;there are no known restrictions&rdquo;, and this house has already turned down two images on thinner doubts than that. Four plates are licensed rather than public domain, and are credited here because the licence requires it: the Mandela photograph is by South Africa The Good News (sagoodnews.co.za) under CC BY 2.0; the Steve Jobs photograph was taken at WWDC in 2010 by Matthew Yohe under CC BY-SA 3.0; the Tu Youyou photograph was taken in Stockholm on 6 December 2015 by Bengt Nyman under CC BY-SA 4.0; and the 1955 photograph of Rosalind Franklin at her microscope is credited to the MRC Laboratory of Molecular Biology, from the personal collection of her sister Jenifer Glynn, under CC BY-SA 4.0. Each has been cropped and reduced to the house duotone, which the licences ask us to say. Four more are neither plain public domain nor licensed but held under a narrower claim, and the claim is worth repeating in the holder's own words: the 1939 photograph of Robert Moses is by C. M. Stieglitz for the New York World-Telegram &amp; Sun, held by the Library of Congress, which states that it knows of no copyright restrictions on it; the 1963 photograph of Wu Chien-Shiung at Columbia comes from the Smithsonian Institution Archives, published with no known copyright restrictions; the photograph of Frances Kelsey receiving her award from President Kennedy comes from the National Library of Medicine, which believes the item to be in the public domain; and the April 1936 photograph of Frances Perkins is by Harris &amp; Ewing, held by the Library of Congress, which states that it knows of no copyright restrictions on it. Everything else came through Wikimedia Commons.</p>
-          <div class="corr" id="corrections"></div>
-          <div class="lbl q" style="margin:30px 0 10px">Disclosure</div>
-          <p style="font-size:16.5px">This site was assembled by Luca Falvo with substantial help from an AI assistant (Anthropic's Claude) — drafting, checking figures against the named sources, and the build itself. The picks, positions and errors are mine; when an error is found it joins the corrections above instead of disappearing. Lines marked &ldquo;after&rdquo; a name are compressed notes of someone's idea, not their words, and nobody named on this site has endorsed it or its readings of them. Portraits are public-domain images, except the eight plates credited above. The page sets no cookies and runs no analytics; the night-reading switch is remembered only in your own browser.</p>
-        </div>
+      <!-- The house promises, in one line each. The full colophon — method, plate credits,
+           every correction, the disclosure — has its own page at #colophon; the front door
+           keeps the promises in view and one click away from their proof. -->
+      <div class="promises" data-reveal>
+        <div class="lbl">The house rules</div>
+        <ul>
+          <li><b>Every figure</b> carries a named source.</li>
+          <li><b>Every dispute</b> is printed, not hidden.</li>
+          <li><b>Every correction</b> is appended, never patched — <span id="nCorr"></span> so far.</li>
+          <li><b>Built with AI assistance</b>, and it says so.</li>
+        </ul>
+        <a class="door-go" href="#colophon" onclick="go('colophon');return false;">Colophon, corrections &amp; disclosure →</a>
       </div>
     </div>
   </section>
@@ -761,6 +799,31 @@
     </div>
   </section>
 
+  <!-- ================= COLOPHON ================= -->
+  <section class="wing" data-wing="colophon">
+    <div class="wrap">
+      <div class="wing-head">
+        <div>
+          <div class="lbl">How this house works</div>
+          <h2>Colophon</h2>
+        </div>
+        <div class="side"><a href="#corrections" onclick="document.getElementById('corrections').scrollIntoView({behavior:'smooth'});return false;">Jump to the corrections ↓</a></div>
+      </div>
+      <div class="colophon">
+        <div class="lbl" style="padding-top:6px">The method</div>
+        <div class="body">
+          <p>This is a library, not a credential. It holds what I have read, what I think it means, and — deliberately, in every wing — the places where the people who know most still disagree. A claim without its dispute is half a claim.</p>
+          <p>The three wings are one method applied to people, three ways round. <b>The Press</b> is the ideas people spent their lives inside; <b>Lives</b> is the people themselves, one book each; <b>The Atlas</b> is the people I listen to now, and the principles more than one of them arrived at independently. The library used to run to five wings — a set of field manuals and a trade book of operating lessons. Both were positions stated without anyone standing behind them, and they came down in September 2026 so that everything here is attached to a person you can go and check.</p>
+          <p>Set in EB Garamond and IBM Plex Mono. Assembled by hand and with AI assistance; figures are checked against a named source, and where I have corrected myself the correction stays visible rather than being quietly patched. The reading wings are set on paper. The Atlas is the only room kept dark, because a star chart is the one thing that genuinely needs a night sky.</p>
+          <p>The portraits in Lives are public-domain engravings, paintings and photographs, reduced to the house duotone and set as plates. A life without a safely public image carries the press mark instead of a borrowed picture, which seems the more honest trade. Nine lives are in that position today. Henrietta Lacks is there by decision; her entry says why at length, and her estate has itself disputed the use of family photographs. Ibn Khaldun, Clair Patterson, Vasily Arkhipov, Emily Warren Roebling, Alice Ball and Edward Thorp are there because no image of any of them has yet been cleared: no portrait of Ibn Khaldun from his own lifetime is known, Patterson's photographs sit in an archive that grants permission only on request, the one openly licensed photograph of Arkhipov was tagged by an uploader who does not appear to have held the rights to grant it, the Library of Congress portrait of Roebling is a 1953 print of a photograph taken between 1860 and 1880 and the Library records that it found no information on creator or reproduction rights at all, no photograph of Ball has been found under any licence we can stand behind, and Thorp is alive and photographed by working photographers, whose pictures are theirs. The Roebling case is the closest of these: the original is old enough to be out of copyright several times over, and a faithful reproduction of it would add nothing new. It is held back anyway, because &ldquo;the Library found nothing&rdquo; is not the same statement as &ldquo;there are no known restrictions&rdquo;, and this house has already turned down two images on thinner doubts than that. Four plates are licensed rather than public domain, and are credited here because the licence requires it: the Mandela photograph is by South Africa The Good News (sagoodnews.co.za) under CC BY 2.0; the Steve Jobs photograph was taken at WWDC in 2010 by Matthew Yohe under CC BY-SA 3.0; the Tu Youyou photograph was taken in Stockholm on 6 December 2015 by Bengt Nyman under CC BY-SA 4.0; and the 1955 photograph of Rosalind Franklin at her microscope is credited to the MRC Laboratory of Molecular Biology, from the personal collection of her sister Jenifer Glynn, under CC BY-SA 4.0. Each has been cropped and reduced to the house duotone, which the licences ask us to say. Four more are neither plain public domain nor licensed but held under a narrower claim, and the claim is worth repeating in the holder's own words: the 1939 photograph of Robert Moses is by C. M. Stieglitz for the New York World-Telegram &amp; Sun, held by the Library of Congress, which states that it knows of no copyright restrictions on it; the 1963 photograph of Wu Chien-Shiung at Columbia comes from the Smithsonian Institution Archives, published with no known copyright restrictions; the photograph of Frances Kelsey receiving her award from President Kennedy comes from the National Library of Medicine, which believes the item to be in the public domain; and the April 1936 photograph of Frances Perkins is by Harris &amp; Ewing, held by the Library of Congress, which states that it knows of no copyright restrictions on it. Everything else came through Wikimedia Commons.</p>
+          <div class="corr" id="corrections"></div>
+          <div class="lbl q" style="margin:30px 0 10px">Disclosure</div>
+          <p style="font-size:16.5px">This site was assembled by Luca Falvo with substantial help from an AI assistant (Anthropic's Claude) — drafting, checking figures against the named sources, and the build itself. The picks, positions and errors are mine; when an error is found it joins the corrections above instead of disappearing. Lines marked &ldquo;after&rdquo; a name are compressed notes of someone's idea, not their words, and nobody named on this site has endorsed it or its readings of them. Portraits are public-domain images, except the eight plates credited above. The page sets no cookies and runs no analytics; the night-reading switch is remembered only in your own browser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -777,7 +840,8 @@
       
     </div>
     <div>
-      <div><a href="#home" onclick="go('home');return false;">Colophon</a></div>
+      <div><a href="#colophon" onclick="go('colophon');return false;">Colophon</a></div>
+      <div><a href="#corrections" onclick="go('colophon');setTimeout(()=>document.getElementById('corrections').scrollIntoView(),340);return false;">Corrections</a></div>
       <div><a href="contents/">Contents</a></div>
     </div>
     <div class="grow">
@@ -824,7 +888,7 @@ const LOG = [];
 /* ===================== ENGINE ===================== */
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const EASE="cubic-bezier(.19,.9,.22,1)", EASE_IO="cubic-bezier(.62,.02,.2,1)";
-const WINGS=[["home","Colophon"],["press","The Press"],["lives","Lives"],["atlas","The Atlas"]];
+const WINGS=[["home","Home"],["press","The Press"],["lives","Lives"],["atlas","The Atlas"],["colophon","Colophon"]];
 let wing="home", searchFocus=null, readerFocus=null, current=null, currentKind=null, activeConst=null, activeRegion=null, selectedPerson=null;
 
 /* ---------- derive ---------- */
@@ -907,7 +971,7 @@ function bindTilt(root){
 /* ---------- nav / router ---------- */
 function renderNav(){
   document.getElementById("nav").innerHTML =
-    WINGS.filter(w=>w[0]!=="home").map(w=>`<button class="navbtn" data-w="${w[0]}" onclick="go('${w[0]}')">${w[1]}</button>`).join("")
+    WINGS.filter(w=>w[0]!=="home"&&w[0]!=="colophon").map(w=>`<button class="navbtn" data-w="${w[0]}" onclick="go('${w[0]}')">${w[1]}</button>`).join("")
     + (LOG.length?`<a class="navbtn solid" href="log/">The Log</a>`:"")
     + `<button class="navbtn" onclick="openSearch()" aria-label="Search the library" title="Search ( / )">Search</button>`
     // "Surprise me" was the one solid button on the site, so a novelty outranked the wings. It
@@ -990,6 +1054,7 @@ function renderFront(){
   document.getElementById("corrections").innerHTML=
     `<div class="lbl q" style="margin-bottom:10px">Corrections — kept visible</div>`+
     CORRECTIONS.map(c=>`<div style="margin-bottom:12px"><b>${c.t}</b> ${c.b} <span style="font-family:var(--mono);font-size:11.5px;opacity:.6">${c.d}</span></div>`).join("");
+  const nc=document.getElementById("nCorr"); if(nc)nc.textContent=CORRECTIONS.length;
   document.getElementById("stat").textContent=`${BOOKS.length} titles · ${LIVES.length} lives · ${PEOPLE.length} people · ${PRINCIPLES.length} principles`;
   renderDoors(withPlates,dayN);
 }
@@ -1072,7 +1137,7 @@ function renderDoors(withPlates,dayN){
     <section class="door" data-reveal aria-labelledby="newH">
       <div class="door-h"><div class="lbl">New on the shelf</div><h2 id="newH">Just added</h2></div>
       <div class="newgrid">${newest.map((b,i)=>`<button class="newcard" data-reveal style="--d:${i*70}ms" onclick="openLife('${b.id}')">
-          ${plateOrMark(b,"np")}
+          ${PLATES[b.id]?plateOrMark(b,"np"):`<span class="np nomark typeplate" aria-hidden="true"><i>${b.n.split(/\s+/).filter(w=>/^[A-Z]/.test(w)).map(w=>w[0]).slice(0,3).join("")}</i><small>no portrait cleared</small></span>`}
           <span class="nm">${b.n}</span><span class="ny">${b.years} · ${b.field}</span>
           <span class="nl">${b.lede}</span><span class="nt">${readMins(b)} min read</span></button>`).join("")}</div>
     </section>
@@ -1544,6 +1609,8 @@ function route(push){
   if(h.startsWith("t/")){const id=h.slice(2);if(ALL.some(x=>x.id===id)){go("press",false);openReader("press",id,{push:false});return}}
   if(h.startsWith("l/")){const id=h.slice(2);if(LIVES.some(x=>x.id===id)){go("lives",false);openReader("lives",id,{push:false});return}}
   if(WINGS.some(w=>w[0]===h)){go(h,false);return}
+  // corrections live on the colophon page; old and outside links use #corrections directly
+  if(h==="corrections"){go("colophon",false);setTimeout(()=>document.getElementById("corrections").scrollIntoView(),60);return}
   go("home",false);
 }
 addEventListener("popstate",()=>{if(current)closeReader(false);route(false)});
