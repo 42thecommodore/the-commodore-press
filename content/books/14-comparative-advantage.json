@@ -62,15 +62,15 @@
   "facts": [
     {
       "b": "1817",
-      "s": "On the Principles of Political Economy and Taxation"
+      "s": "On the Principles of Political Economy and Taxation, John Murray: David Ricardo (Econlib edition)"
     },
     {
       "b": "985,000",
-      "s": "US manufacturing jobs attributed to the China shock, 1999–2011 (≈2.4M all sectors)"
+      "s": "US manufacturing jobs lost to the China shock, 1999–2011 (≈2.4M across all sectors): David Autor, David Dorn & Gordon Hanson, 'The China Shock', Annual Review of Economics 8, 2016"
     },
     {
       "b": "10 yrs+",
-      "s": "How long affected local labour markets stayed depressed"
+      "s": "How long affected local labour markets stayed depressed: Autor, Dorn & Hanson, 'The China Shock', Annual Review of Economics 8, 2016"
     }
   ],
   "contested": "The theorem is not in dispute; its policy sufficiency is. Ricardo assumed immobile capital, adjustment is neither costless nor fast, and 'trade is good on net' and 'this trade policy is good' are separate claims that get deliberately conflated in both directions.",
@@ -96,10 +96,10 @@
       "why": "On why smart people refuse to believe a correct argument. Applies well beyond trade."
     },
     {
-      "t": "The China Syndrome",
-      "a": "Autor, Dorn & Hanson",
+      "t": "The China Shock: Learning from Labor-Market Adjustment to Large Changes in Trade",
+      "a": "Autor, Dorn & Hanson, Annual Review of Economics, 2016",
       "u": "https://www.ddorn.net/papers/Autor-Dorn-Hanson-ChinaShock.pdf",
-      "why": "The measurement that reopened a settled question."
+      "why": "The authors' own survey of the measurement that reopened a settled question — and the source of the figures above."
     },
     {
       "t": "Stubborn Attachments",

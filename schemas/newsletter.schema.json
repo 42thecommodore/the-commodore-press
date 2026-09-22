@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "The newsletter sign-up — content/newsletter.json",
+  "description": "Where the sign-up form sends an address. While `action` is empty, no form prints anywhere and readers are pointed at the RSS feed instead.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "provider": { "type": "string", "description": "The service that holds subscribers' addresses, by name: \"Buttondown\". The colophon tells readers who holds their email; it is required once `action` is set." },
+    "action": { "type": "string", "description": "The address the form posts to, from your service's embed instructions. Buttondown: https://buttondown.com/<your-username>/embed-subscribe. Leave empty to show no form.", "x-means": ["url", "endpoint", "form"] },
+    "field": { "type": "string", "description": "The name the service expects for the email box. \"email\" for Buttondown and most others." },
+    "pitch": { "type": "string", "description": "One line above the box. Promise only what you will do: no cadence you are not keeping." }
+  }
+}

@@ -62,15 +62,15 @@
   "facts": [
     {
       "b": "1934",
-      "s": "Popper's Logik der Forschung — falsifiability as demarcation"
+      "s": "Popper's Logik der Forschung — falsifiability as demarcation (the title page reads 1935): Wikipedia, 'The Logic of Scientific Discovery'"
     },
     {
       "b": "1974",
-      "s": "Feynman's 'Cargo Cult Science' commencement address"
+      "s": "Feynman's 'Cargo Cult Science' commencement address: Richard Feynman, 'Cargo Cult Science', Caltech, 1974 (Caltech Archives)"
     },
     {
       "b": "36%",
-      "s": "Of 97 psychology findings replicated significantly in the 2015 Reproducibility Project"
+      "s": "Of 97 significant psychology findings, the share that replicated significantly: Open Science Collaboration, 'Estimating the Reproducibility of Psychological Science', Science 349(6251), 2015"
     }
   ],
   "contested": "Popper's falsificationism is not the consensus philosophy of science it's usually invoked as. Kuhn, Lakatos and Feyerabend all argued that scientists rightly protect promising theories from refutation for long stretches, and that a field abandoning every theory at the first anomaly would abandon all of them. Treat it as a personal heuristic, not a criterion.",
@@ -122,13 +122,13 @@
     {
       "t": "The Logic of Scientific Discovery",
       "a": "Karl Popper",
-      "u": "https://en.wikipedia.org/wiki/The_Logic_of_Scientific_Discovery",
+      "u": "https://search.worldcat.org/search?q=The%20Logic%20of%20Scientific%20Discovery%20Karl%20Popper",
       "why": "The source. Denser than the summaries suggest, and more qualified."
     },
     {
       "t": "The Structure of Scientific Revolutions",
       "a": "Thomas Kuhn",
-      "u": "https://en.wikipedia.org/wiki/The_Structure_of_Scientific_Revolutions",
+      "u": "https://search.worldcat.org/search?q=The%20Structure%20of%20Scientific%20Revolutions%20Thomas%20Kuhn",
       "why": "The corrective. Read it as a description, not a licence."
     },
     {

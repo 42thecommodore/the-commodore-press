@@ -85,8 +85,11 @@ function bindTilt(root){
 function renderNav(){
   document.getElementById("nav").innerHTML =
     WINGS.filter(w=>w[0]!=="home").map(w=>`<button class="navbtn" data-w="${w[0]}" onclick="go('${w[0]}')">${w[1]}</button>`).join("")
+    + (LOG.length?`<a class="navbtn solid" href="log/">The Log</a>`:"")
     + `<button class="navbtn" onclick="openSearch()" aria-label="Search the library" title="Search ( / )">Search</button>`
-    + `<button class="navbtn solid" onclick="surprise()">Surprise me</button>`
+    // "Surprise me" was the one solid button on the site, so a novelty outranked the wings. It
+    // stays, as a quiet one; the solid slot goes to the Log once there is something in it.
+    + `<button class="navbtn" onclick="surprise()" title="Open a random entry ( R )">Surprise me</button>`
     + `<button class="navbtn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle night reading" title="Night reading">◐</button>`;
 }
 function applyTheme(dark){
@@ -114,7 +117,7 @@ function go(w,push){
   document.querySelectorAll("#nav .navbtn[data-w]").forEach(b=>b.setAttribute("aria-current",String(b.dataset.w===w)));
   document.body.classList.toggle("night",w==="atlas");
   if(push!==false&&location.hash!=="#"+w)history.pushState({w},"","#"+w);
-  document.title = (w==="home"?"Commodore Press":(WINGS.find(x=>x[0]===w)[1]+" — Commodore Press"));
+  document.title = (w==="home"?"The Commodore Press":(WINGS.find(x=>x[0]===w)[1]+" — The Commodore Press"));
   scrollTo({top:0,behavior:reduce?"auto":"smooth"});
   if(w==="atlas")requestAnimationFrame(()=>{skyResize();skyBoot()});
   observeReveals(document);
@@ -130,9 +133,12 @@ function goTo(ref){
 function renderFront(){
   document.getElementById("tally").innerHTML =
     `<span><b>${BOOKS.length}</b>titles</span><span><b>${LIVES.length}</b>lives</span>`+
-    `<span><b>${PEOPLE.length}</b>sources</span><span><b>${PRINCIPLES.length}</b>principles</span>`;
+    `<span><b>${PEOPLE.length}</b>people</span><span><b>${PRINCIPLES.length}</b>principles</span>`;
 
-  const withPlates=LIVES.filter(b=>PLATES[b.id]);
+  // The daily pick comes from the lives nobody has heard of when there are any with plates:
+  // they are the reason to visit, and the famous ones are a click away on the shelf.
+  const plated=LIVES.filter(b=>PLATES[b.id]), obscure=plated.filter(b=>b.group==="obscure");
+  const withPlates=obscure.length?obscure:plated;
   const dayN=Math.floor(midnight(new Date()).getTime()/86400000);
   const pick=withPlates[dayN%withPlates.length];
   document.getElementById("todayCard").innerHTML=
@@ -153,7 +159,7 @@ function renderFront(){
      v:spines(["#0F4C46","#6B1E2A","#8C6A0F","#232E78"])},
     {w:"lives",n:"Wing II",t:"Lives",ac:"#5A3A21",p:"{{W_LIVES_CAP}} people and the one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_OBSCURE}} you have never heard of.",
      v:spines(["#4A3520","#2F4A3C","#5B2C3E","#26262B"])},
-    {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"{{W_PEOPLE_CAP}} sources as stars; the lines between them are the principles more than one of them handed me.",night:1,
+    {w:"atlas",n:"Wing III · at night",t:"The Atlas",ac:"var(--navy)",p:"{{W_PEOPLE_CAP}} people as stars; the lines between them are the principles more than one of them handed me.",night:1,
      v:`<div style="width:100%;height:74px;background:#0A0E1B;border-radius:2px"><svg width="100%" height="74" viewBox="0 0 210 74"><g stroke="#D8A657" stroke-width=".6" opacity=".5" fill="none"><path d="M28 50 82 26 140 44 182 20"/></g><g fill="#F6E9C8"><circle cx="28" cy="50" r="2.6"/><circle cx="82" cy="26" r="3.4"/><circle cx="140" cy="44" r="2.2"/><circle cx="182" cy="20" r="2.9"/></g></svg></div>`},
   ].map((c,i)=>`<button class="wcard ${c.night?"night":""}" data-reveal style="--d:${i*70}ms;border-top-color:${c.ac}" onclick="go('${c.w}')">
       <span class="n">${c.n}</span><h3>${c.t}</h3><p>${c.p}</p><div class="viz">${c.v}</div></button>`).join("");
@@ -161,7 +167,7 @@ function renderFront(){
   document.getElementById("corrections").innerHTML=
     `<div class="lbl q" style="margin-bottom:10px">Corrections — kept visible</div>`+
     CORRECTIONS.map(c=>`<div style="margin-bottom:12px"><b>${c.t}</b> ${c.b} <span style="font-family:var(--mono);font-size:11.5px;opacity:.6">${c.d}</span></div>`).join("");
-  document.getElementById("stat").textContent=`${BOOKS.length} titles · ${LIVES.length} lives · ${PEOPLE.length} sources · ${PRINCIPLES.length} principles`;
+  document.getElementById("stat").textContent=`${BOOKS.length} titles · ${LIVES.length} lives · ${PEOPLE.length} people · ${PRINCIPLES.length} principles`;
   renderDoors(withPlates,dayN);
 }
 
@@ -340,7 +346,8 @@ function readerHTML(kind,b){
   if(b.timeline){S.push(`<section class="sec" id="s-timeline" data-reveal><h4>How it happened</h4><ol class="tl">${b.timeline.map((t,i)=>`<li style="--d:${i*90}ms"><span class="y">${t.y}</span><span class="t">${t.t}</span></li>`).join("")}</ol></section>`);toc.push(["s-timeline","Timeline"])}
   if(b.figures){S.push(`<section class="sec" id="s-figures" data-reveal><h4>Who did the work</h4><div class="figs">${b.figures.map(f=>`<div><b>${f.n}</b><span>${f.d}</span></div>`).join("")}</div></section>`);toc.push(["s-figures","Figures"])}
   if(b.facts){S.push(`<section class="sec" id="s-numbers" data-reveal><h4>By the numbers</h4><div class="facts">${b.facts.map(f=>`<div><b class="tick" data-raw="${f.b}">${f.b}</b><span>${f.s}</span></div>`).join("")}</div></section>`);toc.push(["s-numbers","Numbers"])}
-  if(b.bio){S.push(`<section class="sec" id="s-bio" data-reveal><h4>The definitive biography</h4><div class="biobox"><div class="t">${b.bio.t}</div><div class="a">${b.bio.a.toUpperCase()} · ${b.bio.y}</div><div class="w">${b.bio.why}</div><a class="bookfind" href="https://search.worldcat.org/search?q=${encodeURIComponent(b.bio.t.replace(/<[^>]*>/g,"")+" "+b.bio.a)}" target="_blank" rel="noopener">Find the book — WorldCat ↗</a></div></section>`);toc.push(["s-bio","The book"])}
+  if(b.bio){S.push(`<section class="sec" id="s-bio" data-reveal><h4>${b.bio.u?"Where to start":"The definitive biography"}</h4><div class="biobox"><div class="t">${b.bio.t}</div><div class="a">${b.bio.a.toUpperCase()} · ${b.bio.y}</div><div class="w">${b.bio.why}</div>${b.bio.u?`<a class="bookfind" href="${b.bio.u}" target="_blank" rel="noopener">Read it ↗</a>`:`<a class="bookfind" href="https://search.worldcat.org/search?q=${encodeURIComponent(b.bio.t.replace(/<[^>]*>/g,"")+" "+b.bio.a)}" target="_blank" rel="noopener">Find the book — WorldCat ↗</a>`}</div></section>`);toc.push(["s-bio","The book"])}
+  if(b.corrected&&b.corrected.length){S.push(`<section class="sec" id="s-corrected" data-reveal><h4>Corrected</h4><div class="corrbox">${b.corrected.map(n=>{const c=CORRECTIONS[n-1];return c?`<div><b>№ ${n} · ${c.d} · ${c.t}</b><span>${c.b}</span></div>`:""}).join("")}</div></section>`);toc.push(["s-corrected","Corrected"])}
   if(b.contested){S.push(`<section class="sec" id="s-contested" data-reveal><h4>Where it is contested</h4><div class="quoteblock">${b.contested}</div></section>`);toc.push(["s-contested","Contested"])}
   if(b.changed){S.push(`<section class="sec" id="s-changed" data-reveal><h4>What I changed my mind about</h4><div class="quoteblock">${b.changed}</div></section>`);toc.push(["s-changed","Second thoughts"])}
   if(b.keep){S.push(`<section class="sec" id="s-keep" data-reveal><h4>If you keep one line</h4><div class="keepbox">${b.keep}</div></section>`);toc.push(["s-keep","Take this"])}
@@ -363,6 +370,7 @@ function readerHTML(kind,b){
           <div><b>${isPress?"Period":"Lived"}</b><span>${b.years}</span></div>
           <div><b>Shelf</b><span>№ ${String(idx+1).padStart(2,"0")} of ${uni.length}</span></div>
           <div><b>Reading</b><span>${mins} min</span></div>
+          <div><b>Share</b><span><button class="rshare" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">Share this entry ↗</button></span></div>
         </div>
         <nav class="toc">${toc.map(t=>`<a href="#" data-sec="${t[0]}" onclick="gotoSec('${t[0]}');return false;">${t[1]}</a>`).join("")}</nav>
       </div></div>
@@ -485,11 +493,19 @@ function openReader(kind,id,opts){
   wireReader();
   const hash="#"+(kind==="press"?"t":"l")+"/"+id;
   if(opts.push!==false&&location.hash!==hash)history.pushState({kind:kind,id:id},"",hash);
-  document.title=(kind==="press"?b.title.replace(/&amp;/g,"&"):b.n)+" — Commodore Press";
+  document.title=(kind==="press"?b.title.replace(/&amp;/g,"&"):b.n)+" — The Commodore Press";
   if(!wasOpen&&!reduce){
     const src=opts.src||document.querySelector((kind==="press"?"#shelf":"#livesShelf")+` .slot[data-id="${id}"]`);
     if(src&&src.classList.contains("slot"))requestAnimationFrame(()=>flyIn(src,kind));
   }
+}
+/* Shares the entry's own page, never the #hash: a hash previews as the front door, the page
+   previews as the entry, with its own card. Native share sheet where there is one. */
+function shareEntry(k,id,btn){
+  const b=(k==="t"?ALL:LIVES).find(x=>x.id===id), title=(k==="t"?b.title:b.n).replace(/&amp;/g,"&");
+  const url="{{SITE}}/"+k+"/"+id+"/";
+  if(navigator.share){navigator.share({title:title+" — The Commodore Press",url}).catch(()=>{});return}
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{btn.textContent="Link copied";setTimeout(()=>btn.textContent="Share this entry ↗",1600)}).catch(()=>prompt("Copy this link:",url));
 }
 function closeReader(push){
   if(!current)return;
@@ -498,7 +514,7 @@ function closeReader(push){
     const r=document.getElementById("reader");
     r.classList.remove("on");r.setAttribute("aria-hidden","true");
     document.body.style.overflow="";document.body.style.paddingRight="";
-    document.title=(wing==="home"?"Commodore Press":(WINGS.find(x=>x[0]===wing)[1]+" — Commodore Press"));
+    document.title=(wing==="home"?"The Commodore Press":(WINGS.find(x=>x[0]===wing)[1]+" — The Commodore Press"));
     const el=readerFocus;readerFocus=null;giveBack(el)};
   if(push!==false)history.pushState({w:wing},"","#"+wing);
   flyOut(kind,id,finish);
@@ -629,20 +645,32 @@ function renderLegend(){
 }
 function renderAtlas(){
   renderLegend();
-  document.getElementById("atlasSide").innerHTML=`${PEOPLE.length} sources · ${ACTIVE_PR.length} constellations<br>charted from ${SOURCES.length} shows and counting`;
+  document.getElementById("atlasSide").innerHTML=`${PEOPLE.length} people · ${ACTIVE_PR.length} constellations<br>charted from ${SOURCES.length} shows and counting`;
   document.getElementById("constList").innerHTML=
     `<div class="sec-head" style="padding-top:40px"><h3 style="color:var(--parchment)">The constellations</h3><span style="color:var(--parchment-dim)">Click one to light it in the sky; click a star to open its drawer.</span></div>`+
     ACTIVE_PR.slice().sort((a,b)=>b.members.length-a.members.length).map((pr,i)=>
     `<div class="const${activeConst===pr.id?" on":""}" data-c="${pr.id}"><div class="const-head" onclick="lightConst('${pr.id}')">
       <span class="glyph">${constGlyph(pr,64,38)}</span>
       <span class="g">✦ ${String(i+1).padStart(2,"0")}</span><h4>${pr.name}</h4>
-      <span class="gl">— ${pr.gloss}</span><span class="n">${pr.members.length} sources</span></div>
+      <span class="gl">— ${pr.gloss}</span><span class="n">${pr.members.length} people</span></div>
       <div class="const-stars">${pr.members.map(m=>`<button class="star-pill" onclick="openDrawerById('${m.id}')"><span class="s" style="background:${m.color}"></span>${m.name}</button>`).join("")}</div></div>`).join("")
     +`<div class="sec-head" style="padding-top:46px"><h3 style="color:var(--parchment)">The listening</h3><span style="color:var(--parchment-dim)">Where these sources were heard — plus roughly a thousand hours more.</span></div>
       <div class="const-stars" style="margin-top:14px;padding-bottom:10px">${SOURCES.map(s=>`<a class="star-pill" href="${s.u}" target="_blank" rel="noopener"><span class="s" style="background:var(--nbrass)"></span>${s.t} ↗</a>`).join("")}</div>`;
 }
 function lightConst(id){activeConst=(activeConst===id?null:id);activeRegion=null;renderLegend();document.querySelectorAll(".const").forEach(c=>c.classList.toggle("on",c.dataset.c===activeConst));scrollTo({top:0,behavior:reduce?"auto":"smooth"})}
 function openDrawerById(id){openDrawer(PEOPLE.find(p=>p.id===id))}
+/* Kept lines come in two kinds and must not look alike. A line with a source (`{k, s}`)
+   is a quotation: the words are theirs and the reader can go and check them. A bare string
+   is a note taken while listening, and the episode was never recorded, so it prints as
+   "after" the person, which the colophon defines as compressed notes, not their words.
+   Printing the second kind as the first was the Atlas breaking the site's own promise. */
+function keptHTML(p){
+  const src=k=>/^https?:/.test(k.s)?`<a href="${k.s}" target="_blank" rel="noopener">${k.s.replace(/^https?:\/\/(www\.)?/,"").slice(0,44)} ↗</a>`:k.s;
+  const quoted=(p.kept||[]).filter(k=>typeof k!=="string"), notes=(p.kept||[]).filter(k=>typeof k==="string");
+  const lbl=t=>`<div class="lbl q" style="color:var(--parchment-dim);margin-bottom:8px">${t}</div>`;
+  return (quoted.length?`<div>${lbl("Lines I kept")}<ul class="keptlist">${quoted.map(k=>`<li>${k.k}<span class="ks">${src(k)}</span></li>`).join("")}</ul></div>`:"")+
+    (notes.length?`<div>${lbl("Notes I kept · after "+p.name)}<ul class="keptlist notes">${notes.map(k=>`<li>${k}</li>`).join("")}</ul><p class="notecap">Noted while listening. No episode was recorded for these, so they are offered as notes, not quotations.</p></div>`:"");
+}
 function openDrawer(p){
   if(!p)return;
   selectedPerson=p;
@@ -654,9 +682,7 @@ function openDrawer(p){
   const others=id=>P_BY_ID[id].members.filter(m=>m!==p);
   document.getElementById("dBody").innerHTML=
     `<div><div class="lbl q" style="color:var(--parchment-dim);margin-bottom:8px">What stuck</div><p class="pull">${p.take}</p></div>
-     ${p.kept&&p.kept.length?`<div><div class="lbl q" style="color:var(--parchment-dim);margin-bottom:8px">Lines I kept</div><ul class="keptlist">${p.kept.map(k=>typeof k==="string"
-         ? `<li>${k}</li>`
-         : `<li>${k.k}<span class="ks">${/^https?:/.test(k.s)?`<a href="${k.s}" target="_blank" rel="noopener">${k.s.replace(/^https?:\/\/(www\.)?/,"").slice(0,44)} ↗</a>`:k.s}</span></li>`).join("")}</ul></div>`:""}
+     ${keptHTML(p)}
      <div><div class="lbl q" style="color:var(--parchment-dim);margin-bottom:8px">Constellations they sit on</div>
        <div style="display:flex;flex-direction:column;gap:7px">${p.p.map(id=>`<button class="clink" onclick="lightConst('${id}');closeDrawer()"><span class="g">✦</span><span><b>${P_BY_ID[id].name}</b><span>${others(id).length?"with "+others(id).slice(0,3).map(o=>o.name).join(", ")+(others(id).length>3?"…":""):"a private north star — only here, for now"}</span></span></button>`).join("")}</div></div>
      <div class="caveat">Charted as a source, not a verdict. These are people I listened to; the constellation — the line more than one of them arrived at independently — is the claim, not the star.</div>`;
@@ -706,7 +732,8 @@ function buildIndex(){
   const push=(w,t,s,hay,act)=>SIX.push({w,t,s,hay:(t+" "+s+" "+hay).toLowerCase(),act});
   ALL.forEach(b=>push("The Press",b.title.replace(/&amp;/g,"&"),b.sub,[b.claim||"",b.lede||"",(b.copy||[]).join(" "),b.keep||""].join(" "),()=>{go("press");setTimeout(()=>openReader("press",b.id),320)}));
   LIVES.forEach(b=>push("Lives",b.n,b.field+" · "+b.years,[b.lede,(b.copy||[]).join(" "),b.bio?b.bio.t+" "+b.bio.a:"",b.keep||""].join(" "),()=>{go("lives");setTimeout(()=>openReader("lives",b.id),320)}));
-  PEOPLE.forEach(p=>push("The Atlas",p.name,p.role,[p.take,(p.kept||[]).join(" ")].join(" "),()=>{go("atlas");setTimeout(()=>openDrawer(p),340)}));
+  PEOPLE.forEach(p=>push("The Atlas",p.name,p.role,[p.take,(p.kept||[]).map(k=>typeof k==="string"?k:k.k).join(" ")].join(" "),()=>{go("atlas");setTimeout(()=>openDrawer(p),340)}));
+  LOG.forEach(x=>push("The Log",x.title,x.date+" · "+x.dek,"",()=>{location.href="log/"+x.slug+"/"}));
   PRINCIPLES.forEach(pr=>push("The Atlas",pr.name,"constellation — "+pr.gloss,pr.members.map(m=>m.name).join(" "),()=>{go("atlas");setTimeout(()=>lightConst(pr.id),340)}));
 }
 let sHits=[];

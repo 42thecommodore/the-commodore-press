@@ -66,15 +66,19 @@
   "facts": [
     {
       "b": "1913",
-      "s": "LA Aqueduct opens — 233 miles, gravity-fed the whole way"
+      "s": "Los Angeles Aqueduct opens — 233 miles, gravity-fed the whole way: Wikipedia, 'Los Angeles Aqueduct'"
     },
     {
       "b": "80% / 40%",
-      "s": "Agriculture's share of California water — by developed use, or counting environmental flows"
+      "s": "Agriculture's share of California water — by developed use, or counting environmental flows: Jeffrey Mount & Ellen Hanak, 'Water Use in California', PPIC Water Policy Center, July 2016"
     },
     {
       "b": "1922",
-      "s": "Colorado Compact allocates the river on wet-year arithmetic"
+      "s": "Colorado Compact allocates the river on wet-year arithmetic: Wikipedia, 'Colorado River Compact'"
+    },
+    {
+      "b": "1,926 ft",
+      "s": "Lift over the Tehachapi Mountains at the A.D. Edmonston Pumping Plant: California Department of Water Resources, 'SWP Facilities'"
     }
   ],
   "contested": "Reisner wrote a polemic, and historians have dinged specifics — Owens Valley was more willing seller and less pure theft than the movie version, and dams did real things polemics undercount. The deeper contest is in the ledgers: nearly every headline water statistic changes sides depending on the denominator someone chose before you arrived.",
@@ -100,7 +104,7 @@
     {
       "t": "Cadillac Desert: The American West and Its Disappearing Water",
       "a": "Marc Reisner",
-      "u": "https://en.wikipedia.org/wiki/Cadillac_Desert",
+      "u": "https://search.worldcat.org/search?q=Cadillac%20Desert%3A%20The%20American%20West%20and%20Its%20Disappearing%20Water%20Marc%20Reisner",
       "why": "The epic. Read it, then read the correctives — in that order, for the pleasure of both."
     },
     {

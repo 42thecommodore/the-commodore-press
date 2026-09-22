@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # full history, so the sitemap and each page can say when an entry last changed
+          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: 22
@@ -27,8 +30,13 @@ jobs:
       - name: Check the house rules
         run: npm run check
 
+      # SITE_URL is a repository variable, empty until a custom domain is bought. Empty
+      # means the github.io address; set it and the build writes CNAME and every
+      # absolute link (canonical, share cards, sitemap, feed) follows.
       - name: Build
         run: npm run build
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
 
       # Pages must be switched on by hand once, at Settings -> Pages -> Source: GitHub
       # Actions. This step cannot do it: creating a Pages site needs repo-admin rights,

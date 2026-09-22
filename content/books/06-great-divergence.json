@@ -62,7 +62,7 @@
   "facts": [
     {
       "b": "~1750",
-      "s": "Pomeranz's dating of comparable Anglo–Chinese development"
+      "s": "Pomeranz's dating of comparable European and East Asian development: Princeton University Press, 'The Great Divergence' (publisher's description)"
     },
     {
       "b": "38% / 2.5%",
@@ -70,8 +70,11 @@
     },
     {
       "b": "2000",
-      "s": "Pomeranz's book names the debate — unresolved a quarter century later"
+      "s": "Pomeranz's book names the debate, unresolved a quarter-century later: Kenneth Pomeranz, 'The Great Divergence', Princeton University Press, 2000"
     }
+  ],
+  "corrected": [
+    6
   ],
   "contested": "Nearly all of it. Pomeranz's late-divergence dating has been challenged by wage, height and consumption data suggesting a gap opened earlier. Allen's price series are disputed at the seams. Clark's mechanism is the least accepted of the major accounts. Anyone who tells you it's solved is selling something.",
   "changed": "I used to want a single cause and treated the debate as a horse race. I now think the honest position is that these are complements with a plausible feedback loop, and that the useful question isn't 'which one' but 'which one is the binding constraint in the case in front of me'.",

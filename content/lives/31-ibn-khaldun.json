@@ -14,7 +14,7 @@
   "lede": "He spent twenty years inside North African politics, then withdrew to a fortress and wrote down why dynasties fall.",
   "copy": [
     "Ibn Khaldun was born in Tunis in 1332, into a family that had left Seville a century before. When he was about seventeen the Black Death killed both his parents. He went into government at twenty. For the next two decades he served, plotted against and fled a run of courts: Fez, where he spent nearly two years in prison; Granada, which sent him as envoy to Pedro the Cruel of Castile; Bougie, where he ran the government; then Tlemcen. In 1375 he withdrew to the fortress of Qal'at Ibn Salama, in what is now Algeria. There he wrote the introduction to a history of the world. The introduction is the part anyone still reads.",
-    "The Muqaddimah asks why dynasties rise and fall, and answers with 'asabiyya. Franz Rosenthal translated it as \"group feeling\"; it is closer to the solidarity of people who will fight for one another. Hard, cohesive groups from the desert take the cities, and the cities soften them. A generation, he reckoned, lasts forty years, and \"as a rule no dynasty lasts beyond the life (span) of three generations.\" The founders keep their cohesion. Their children keep a memory of it. The grandchildren forget to defend themselves. He called this a new science of human civilisation, and by his own note he drafted it in five months, finishing in November 1377.",
+    "The Muqaddimah asks why dynasties rise and fall, and answers with 'asabiyya. Franz Rosenthal translated it as \"group feeling\"; it is closer to the solidarity of people who will fight for one another. Hard, cohesive groups from the desert take the cities, and the cities soften them. A generation, he reckoned, lasts forty years, and as a rule no dynasty outlasts three of them. The founders keep their cohesion. Their children keep a memory of it. The grandchildren forget to defend themselves. He called this a new science of human civilisation, and by his own note he drafted it in five months, finishing in November 1377.",
     "The popular version has Europe rediscovering him. Ottoman scholars were there first. Kâtip Çelebi used his ages of the state to diagnose the empire's finances in 1653, and Pirizade translated five of the six chapters into Ottoman Turkish in the first half of the eighteenth century. The full Arabic text was not printed in Europe until Quatremère's Paris edition of 1858. His own last years were spent in Cairo, where he was made chief Maliki judge and dismissed, again and again. His wife and daughters drowned in 1384, when their ship went down on the way to join him. In the winter of 1400–01, with Damascus under siege, he was let down the city wall on ropes to meet Timur, and at the conqueror's request wrote him a description of North Africa. He died in Cairo in 1406."
   ],
   "bio": {
@@ -35,5 +35,8 @@
       "label": "The Great Divergence",
       "txt": "— another attempt to explain why some societies pull ahead, and another one every side tries to claim."
     }
+  ],
+  "corrected": [
+    16
   ]
 }

@@ -58,15 +58,15 @@
   "facts": [
     {
       "b": "2020",
-      "s": "Kaplan et al., 'Scaling Laws for Neural Language Models'"
+      "s": "The paper that turned scaling into a forecast: Kaplan, McCandlish et al., 'Scaling Laws for Neural Language Models', arXiv:2001.08361, 2020"
     },
     {
       "b": "20:1",
-      "s": "Chinchilla's compute-optimal tokens-per-parameter ratio"
+      "s": "Chinchilla's compute-optimal tokens per parameter (70B parameters, 1.4T tokens): Hoffmann et al., 'Training Compute-Optimal Large Language Models', arXiv:2203.15556, 2022"
     },
     {
       "b": "70B",
-      "s": "Chinchilla's size — beating a 280B model trained on the same compute"
+      "s": "Chinchilla's size, beating the 280B Gopher on the same compute: Hoffmann et al., 'Training Compute-Optimal Large Language Models', arXiv:2203.15556, 2022"
     }
   ],
   "contested": "Whether 'emergent abilities' are real discontinuities or artifacts of discontinuous metrics is an open fight (Schaeffer et al., 2023). Data is a harder constraint than the original laws assumed. Repeating it is close to free for about four epochs, after which extra compute buys less and less (Muennighoff et al., 2023); Villalobos et al. (2024) project training sets reaching the size of the entire stock of public human text between 2026 and 2032. And a power law fitted over six orders of magnitude tells you nothing whatsoever about the seventh.",

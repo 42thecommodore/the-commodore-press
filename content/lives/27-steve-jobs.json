@@ -14,8 +14,30 @@
   "lede": "He invented almost none of it. What he had was the ability to see, faster than anyone in the room, which thing was the one that mattered.",
   "copy": [
     "In December 1979 he walked into Xerox PARC, and Apple had paid for the visit — Xerox was allowed to buy a hundred thousand pre-IPO shares for a million dollars. What he saw was the Alto: a graphical interface, already running. \"I remember within ten minutes of seeing the graphical user interface stuff, just knowing that every computer would work this way some day,\" he told Daniel Morrow in 1995. The theft story misses the harder half. Bill Atkinson and Larry Tesler still had to invent the menu bar, overlapping windows, and a mouse cheap enough to put in a box.",
-    "He was not fired in 1985. In April the board backed John Sculley and stripped him of the Macintosh division while leaving him the chairman's title; he attempted a boardroom coup in May, lost, and resigned in September. He incorporated NeXT the same week. He also paid Lucasfilm five million dollars for its graphics group and put five million more in — that became Pixar, and Disney bought it for about $7.4 billion in 2006. Apple bought NeXT in 1997, and by September he was running the company again.",
-    "The refusal that shipped the products was not reserved for products. He denied paternity of his daughter Lisa in a 1980 filing that described him as sterile. A blood test put the probability of paternity at 94.1 per cent, and he answered that this meant 28 per cent of American men could be her father — which is not what the number says. Diagnosed in October 2003 with a rare and unusually treatable pancreatic tumour, he tried diet and acupuncture for nine months before agreeing to surgery. Isaacson reports him saying he had not wanted his body opened, and hearing regret in the way he said it."
+    "He was not fired in 1985. In April the board backed John Sculley and stripped him of the Macintosh division while leaving him the chairman's title; he attempted a boardroom coup in May, lost, and resigned in September. He incorporated NeXT the same week. He also put ten million dollars into Lucasfilm's graphics group as it spun out in February 1986, five to Lucasfilm for the technology and five to run the company. That became Pixar, and Disney bought it for about $7.4 billion in 2006. Apple bought NeXT in 1997, and by September he was running the company again.",
+    "The refusal that shipped the products was not reserved for products. He denied paternity of his daughter Lisa in a 1980 filing that described him as sterile. A blood test put the probability of paternity at 94.4 per cent, by his daughter's own account, and he answered that this meant 28 per cent of American men could be her father — which is not what the number says. Diagnosed in October 2003 with a rare and unusually treatable pancreatic tumour, he tried diet and acupuncture for nine months before agreeing to surgery. Isaacson reports him saying he had not wanted his body opened, and hearing regret in the way he said it."
+  ],
+  "facts": [
+    {
+      "b": "Dec 1979",
+      "s": "The Xerox PARC visit: Computer History Museum, 'The Xerox PARC Visit'"
+    },
+    {
+      "b": "100,000 shares",
+      "s": "Pre-IPO Apple shares Xerox was allowed to buy, for $1 million: Malcolm Gladwell, 'Creation Myth', The New Yorker, 16 May 2011 (read in a full-text reprint; newyorker.com refuses robots)"
+    },
+    {
+      "b": "$5M + $5M",
+      "s": "Jobs's money at Pixar's founding, 3 February 1986: half to Lucasfilm for the technology, half to run the company: Alvy Ray Smith, 'Myth 1: Steve Jobs bought Pixar from Lucasfilm', alvyray.com"
+    },
+    {
+      "b": "$7.4 billion",
+      "s": "Transaction value of Disney's purchase of Pixar, on fully diluted shares ($6.3 billion net of Pixar's cash): The Walt Disney Company, 'Disney To Acquire Pixar', 24 January 2006"
+    },
+    {
+      "b": "94.4%",
+      "s": "Probability of paternity in the test, as his daughter gives it: Lisa Brennan-Jobs, 'Small Fry', 2018 (read in the Vanity Fair excerpt as quoted by kottke.org). Time's January 1983 report, not opened here, is cited elsewhere as 94.1"
+    }
   ],
   "bio": {
     "t": "Becoming Steve Jobs: The Evolution of a Reckless Upstart into a Visionary Leader",
@@ -23,6 +45,10 @@
     "y": "2015",
     "why": "Schlender covered him for twenty-five years and knew him, and the book is built on that access rather than on late interviews. Walter Isaacson's 'Steve Jobs' (2011) is the famous one and the more complete record; this is the one the people who worked with him point to."
   },
+  "corrected": [
+    9,
+    11
+  ],
   "contested": "Which book you read decides which man you get. Isaacson had Jobs's cooperation and wrote the version everyone now quotes; Tim Cook has said publicly that it made him out to be a greedy egomaniac and did him a disservice, and Jony Ive and Eddy Cue have said much the same. The obvious answer to that objection is that all three worked for him. Malcolm Gladwell's 'Creation Myth' makes the sharper point about PARC: the failure worth studying is Xerox's inability to ship what its own researchers had built, not Apple's visit.",
   "across": [
     {

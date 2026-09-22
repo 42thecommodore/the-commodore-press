@@ -14,6 +14,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJSON } from "./json.mjs";
+import { publishedLog, logLinks } from "../build/log.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...a) => path.join(ROOT, ...a);
@@ -50,6 +51,11 @@ const walk = (node, file, at = "") => {
   });
 };
 docs.forEach(({ file, data }) => walk(data, file));
+
+/* the Markdown pages print links too: published Log pieces, and the About page */
+const note = (u, where) => { if (!found.has(u)) found.set(u, []); found.get(u).push(where); };
+for (const x of publishedLog(ROOT)) logLinks(x.body).forEach(u => note(u, x.file));
+if (fs.existsSync(p("content/about.md"))) logLinks(fs.readFileSync(p("content/about.md"), "utf8")).forEach(u => note(u, "content/about.md"));
 
 const urls = [...found.keys()].sort();
 if (!urls.length) { console.log("no links to check"); process.exit(0); }

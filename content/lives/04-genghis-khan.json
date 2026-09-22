@@ -11,7 +11,7 @@
   "ink": "#F1F3E2",
   "accent": "#D6E39C",
   "motif": "dots",
-  "lede": "An outcast boy on the steppe who survived captivity and near-starvation, and forged the largest contiguous land empire in history.",
+  "lede": "An outcast boy on the steppe who survived captivity and near-starvation, and founded the empire that his heirs made the largest contiguous land empire in history.",
   "copy": [
     "Born Temüjin, he united the warring nomadic tribes and built an empire stretching, at its height, from Korea to Hungary. The conquests were staggeringly violent; whole cities were erased. Yet to reduce him to a destroyer is to miss why historians keep returning to him.",
     "He ran a meritocracy in an age of bloodlines, promoting commanders on ability rather than birth. He established a written Mongol script, guaranteed religious freedom across his domains, abolished torture as policy in places, protected diplomats and merchants, and stitched together a Eurasian trade and communication network — the Pax Mongolica — along which goods, technologies and ideas (paper, printing, gunpowder, the compass) flowed west and reshaped the world.",
@@ -35,5 +35,8 @@
       "label": "Ibn Khaldun",
       "txt": "— the theory of this life, written a century and a half later: a cohesive group from the steppe takes the cities, and the cities undo it."
     }
+  ],
+  "corrected": [
+    15
   ]
 }

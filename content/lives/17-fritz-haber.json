@@ -14,8 +14,14 @@
   "lede": "The man who fed billions and gassed thousands.",
   "copy": [
     "Haber may be the most morally divided figure in the history of science, and one of the most consequential people almost no one can name. Around 1909 he solved a problem that had defeated chemistry for a century: how to pull nitrogen from the air and fix it into ammonia, the basis of synthetic fertiliser. Scaled up industrially with Carl Bosch, the Haber–Bosch process broke the natural limit on how much food the earth could grow.",
-    "The arithmetic is staggering. Roughly half the nitrogen in your body today passed through that process; an estimated three to four billion people are alive who could not be fed without it. No single chemical advance has supported more human life.",
+    "The arithmetic is staggering. By Jan Willem Erisman and colleagues' estimate, nitrogen fertiliser was feeding 48 per cent of the world's population in 2008: roughly one person in two. Few chemical advances, if any, have supported more human life.",
     "Yet the same patriot also fathered modern chemical warfare, personally directing the first large-scale poison-gas attack at Ypres in 1915; his institute's later work led to Zyklon B. A Jewish convert to Christianity, he was driven from Germany by the Nazis he had served and died in exile, broken. Haber is the ultimate parable of science's double edge."
+  ],
+  "facts": [
+    {
+      "b": "48%",
+      "s": "Share of the world's population fed by Haber–Bosch nitrogen in 2008: Erisman, Sutton, Galloway, Klimont & Winiwarter, 'How a century of ammonia synthesis changed the world', Nature Geoscience 1:636, 2008 (read in the open copy at iai.int; nature.com refuses robots)"
+    }
   ],
   "bio": {
     "t": "Master Mind: The Rise and Fall of Fritz Haber",
@@ -23,6 +29,10 @@
     "y": "2005",
     "why": "Tells the full Faustian story with clarity and moral seriousness, never letting either the achievement or the horror cancel the other. The definitive accessible biography of a man history has tried hard to forget."
   },
+  "corrected": [
+    9,
+    15
+  ],
   "contested": "The lives-supported figure is a modelling choice, not a measurement: estimates range from about three billion to nearly five depending on which counterfactual world you compare against. Vaclav Smil's work is the standard source. The order of magnitude is not in doubt; the precise number is an argument.",
   "across": [
     {

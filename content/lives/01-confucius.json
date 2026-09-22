@@ -14,7 +14,7 @@
   "lede": "He held no great office, wrote no system of philosophy, and died believing he had failed.",
   "copy": [
     "Born into the minor nobility of the small state of Lu during an age of political collapse, the wandering teacher the West calls Confucius spent much of his life as an itinerant adviser. The rulers he hoped to reform largely ignored him. What he left instead was a way of being in the world, recorded by disciples in the terse sayings of the Analects.",
-    "His teaching placed the cultivation of character (ren, humaneness) at the centre of the good life. A society is held together not by force but by ritual, reciprocity and the example of those who govern. “Do not impose on others what you yourself do not desire” is the Golden Rule in its earliest recorded negative form.",
+    "His teaching placed the cultivation of character (ren, humaneness) at the centre of the good life. A society is held together not by force but by ritual, reciprocity and the example of those who govern. Not to impose on others what you would not want for yourself: the Golden Rule in its earliest recorded negative form.",
     "For two and a half millennia Confucian thought structured Chinese government, education and family life. It remains the deep grammar of East Asian culture from Korea to Vietnam. To understand the values of roughly a fifth of humanity, you begin with a disappointed teacher who never knew the scale of his eventual influence."
   ],
   "bio": {
@@ -40,5 +40,8 @@
       "label": "The Concept of Law",
       "txt": "— the twentieth-century version of the argument, which ends up agreeing: the master rule of a legal system is a social fact, not a command."
     }
+  ],
+  "corrected": [
+    16
   ]
 }

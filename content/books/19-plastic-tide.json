@@ -12,7 +12,7 @@
   "accent": "#9FD8DC",
   "motif": "grid",
   "claim": "We measured the tide before we understood the water. What microplastics do to us is genuinely unknown — which is not the same as safe.",
-  "lede": "In 2004 a marine biologist in Plymouth asked where all the ocean's plastic had gone, and coined a word for the answer: it hadn't gone anywhere. It had gotten smaller.",
+  "lede": "In 2004 a marine biologist in Plymouth asked where all the ocean's plastic had gone, and gave the answer the name that stuck: it hadn't gone anywhere. It had gotten smaller.",
   "copy": [
     "Richard Thompson's one-page Science paper, 'Lost at Sea: Where Is All the Plastic?', reported microscopic fragments and fibres throughout British waters and sediments — and in archived plankton samples reaching back to the 1960s. He needed a word for particles smaller than the eye tracks and settled on 'microplastics'. Twenty years later the word is in treaties, and the particles are in deep-sea trenches, Arctic ice, table salt, and (by recent detections) human blood and placentas.",
     "The scale question has real numbers. Global production went from about two million tonnes in 1950 to more than four hundred million a year now; Jenna Jambeck's 2015 estimate put roughly eight million tonnes entering the ocean annually from coastal countries, with wide error bars that nobody disputes matter less than the order of magnitude. Fragmentation does the rest: sunlight and mechanics grind macro into micro into nano, so the count rises even where the mass doesn't.",
@@ -30,7 +30,7 @@
     },
     {
       "y": "2004",
-      "t": "Thompson coins 'microplastics' in Science."
+      "t": "Thompson's paper in Science puts 'microplastics' into circulation."
     },
     {
       "y": "2015",
@@ -62,7 +62,7 @@
   "facts": [
     {
       "b": "2004",
-      "s": "'Microplastics' coined — Thompson et al., Science"
+      "s": "The paper that put 'microplastics' into circulation; the word appears in marine-pollution work from the 1990s: Thompson et al., 'Lost at Sea: Where Is All the Plastic?', Science 304(5672), 2004 (bibliographic record, Europe PMC); Wikipedia, 'Richard Thompson (marine biologist)'"
     },
     {
       "b": "~8 Mt",
@@ -71,6 +71,10 @@
     {
       "b": "4.5×",
       "s": "Hazard ratio for cardiovascular events with plaque microplastics (NEJM 2024, observational)"
+    },
+    {
+      "b": "2 → 460 Mt",
+      "s": "Global plastic production, 1950 and 2019: Geyer, Jambeck & Law, 'Production, use, and fate of all plastics ever made', Science Advances, 2017 (2 Mt in 1950); OECD, 'Global Plastics Outlook', 2022 (460 Mt in 2019)"
     }
   ],
   "contested": "Nearly every number. Lab contamination plagues detection; methods (spectroscopy versus visual counting) disagree; the credit-card factoid is advocacy arithmetic that peer review dismantled; and the NEJM result, the field's strongest clinical finding, drew immediate methodological letters. The honest position is double: the exposure is universal and rising, and the dose–response curve is still a blank axis.",
@@ -112,5 +116,8 @@
       "u": "https://www.sciencedirect.com/science/article/pii/S2666911022000247",
       "why": "The autopsy of the field's most famous number. Instructive far beyond plastics."
     }
+  ],
+  "corrected": [
+    13
   ]
 }

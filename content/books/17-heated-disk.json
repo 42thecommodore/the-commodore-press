@@ -62,15 +62,15 @@
   "facts": [
     {
       "b": "~2,000 yrs",
-      "s": "Of failed attempts to prove the parallel postulate before the alternatives were published"
+      "s": "Of failed attempts to prove the parallel postulate, ending with Lobachevsky and Bolyai: Stanford Encyclopedia of Philosophy, 'Nineteenth Century Geometry'; Wikipedia, 'Parallel postulate'"
     },
     {
       "b": "1902",
-      "s": "'Science and Hypothesis' — the disk, and the conventionalist thesis"
+      "s": "'Science and Hypothesis' first published — the disk, and the conventionalist thesis: Wikipedia, 'Science and Hypothesis'"
     },
     {
       "b": "1919",
-      "s": "Eclipse measurements match the curved-spacetime package"
+      "s": "Eclipse measurements match the curved-spacetime package, 29 May 1919: Wikipedia, 'Solar eclipse of May 29, 1919'"
     }
   ],
   "contested": "Whether general relativity refutes Poincaré or enacts him is a live philosophy-of-physics fight a century on. Reichenbach's rule — define away universal forces, then geometry is empirical — is itself a convention, say the conventionalists. The literature has not settled; it has professionalised.",
@@ -96,8 +96,8 @@
     },
     {
       "t": "On the Hypotheses Which Lie at the Bases of Geometry",
-      "a": "Bernhard Riemann, 1854",
-      "u": "https://en.wikipedia.org/wiki/Bernhard_Riemann",
+      "a": "Bernhard Riemann, 1854, in W. K. Clifford's translation",
+      "u": "https://www.maths.tcd.ie/pub/HistMath/People/Riemann/Geom/",
       "why": "The lecture that made curved space thinkable — readable even where the mathematics is not."
     },
     {
@@ -109,7 +109,7 @@
     {
       "t": "The Philosophy of Space and Time",
       "a": "Hans Reichenbach",
-      "u": "https://en.wikipedia.org/wiki/Hans_Reichenbach",
+      "u": "https://search.worldcat.org/search?q=The%20Philosophy%20of%20Space%20and%20Time%20Hans%20Reichenbach",
       "why": "The strongest case that Einstein closed the question. Decide for yourself whether it begs it."
     }
   ]

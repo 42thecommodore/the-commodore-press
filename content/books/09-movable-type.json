@@ -14,8 +14,8 @@
   "claim": "Cities that got a press grew faster. Everything about why is still argued.",
   "lede": "Gutenberg's press is the standard example of technology changing history, which is exactly why the historians who study it spend most of their time disagreeing about what it changed.",
   "copy": [
-    "The mechanics arrived around 1450 in Mainz: movable metal type, an oil-based ink that would stick to it, and a screw press adapted from wine-making. Within fifty years presses were operating in roughly 205 European cities out of more than a thousand. That uneven adoption is what makes the period tractable, because it gives you something rare in history — a natural experiment.",
-    "Jeremiah Dittmar used it. Cities that adopted the press between 1450 and 1500 grew faster over the following century than comparable cities that didn't, with no growth advantage beforehand. His difference-in-differences estimate puts the gap at 35 percentage points or more of population growth from 1500 to 1600, against a mean of about 30. Instrumenting adoption with distance from Mainz — presses spread outward from where the technology was — pushes the estimate higher still.",
+    "The mechanics arrived around 1450 in Mainz: movable metal type, an oil-based ink that would stick to it, and a screw press adapted from wine-making. By 1500, by Fernand Braudel's count, presses were operating in some 236 European towns. That uneven adoption is what makes the period tractable, because it gives you something rare in history — a natural experiment.",
+    "Jeremiah Dittmar used it. Cities that adopted the press between 1450 and 1500 grew faster over the following century than comparable cities that didn't, with no growth advantage beforehand. His difference-in-differences estimate puts the gap at more than 30 percentage points of population growth from 1500 to 1600, in a century when the average city grew by roughly 30 per cent. Instrumenting adoption with distance from Mainz — presses spread outward from where the technology was — pushes the estimate higher still.",
     "Elizabeth Eisenstein's argument is the classic one: print produced 'fixity'. Once a text could be reproduced identically thousands of times, errors stopped accumulating with each copy, results could be compared across distance, and standardised diagrams and tables became possible — which is a precondition for cumulative science rather than a consequence of it.",
     "Adrian Johns wrote the strongest rebuttal. Early print was chaotic: piracy, unauthorised editions, garbled reprints and outright forgery were endemic, and readers had no reason to trust a printed book more than a manuscript. Fixity, he argues, was not a property of the press but an achievement — built slowly through guilds, licensing, reputational policing and law. If he's right, the causal arrow runs through institutions, and the machine was necessary but nowhere near sufficient."
   ],
@@ -30,7 +30,7 @@
     },
     {
       "y": "1500",
-      "t": "Presses are operating in roughly 205 European cities; well over a thousand had none."
+      "t": "Presses are operating in some 236 European towns, by Braudel's count."
     },
     {
       "y": "1517",
@@ -61,17 +61,21 @@
   ],
   "facts": [
     {
-      "b": "205",
-      "s": "European cities with a printing press by 1500, out of more than 1,000"
+      "b": "236",
+      "s": "European towns with a printing press by 1500, the end of the incunabula period: Fernand Braudel's count, as cited in Wikipedia, 'Global spread of the printing press'"
     },
     {
-      "b": "35 pp",
-      "s": "Extra population growth, 1500–1600, for early-adopting cities (Dittmar's diff-in-diff floor)"
+      "b": ">30 pp",
+      "s": "Extra population growth, 1500–1600, for cities that adopted the press early, against average city growth of 0.27 log points: Jeremiah Dittmar, 'Information Technology and Economic Change: The Impact of the Printing Press', Quarterly Journal of Economics 126(3), 2011 (read in the January 2011 working paper)"
     },
     {
       "b": "1998",
-      "s": "Johns publishes the rebuttal that split the field"
+      "s": "Johns publishes the rebuttal that split the field: Adrian Johns, 'The Nature of the Book', University of Chicago Press, 1998 (Internet Archive catalogue record)"
     }
+  ],
+  "corrected": [
+    10,
+    14
   ],
   "contested": "Dittmar's instrument — distance from Mainz — is doing a lot of work, and distance from Mainz correlates with plenty of other things, including trade routes and proximity to the commercial core of Europe. The correlation between presses and growth is robust; the causal identification is the part specialists argue over.",
   "changed": "I used to treat 'the printing press caused the scientific revolution' as settled background. Johns' argument reframed it: the machine made cheap copies, and the trustworthiness of those copies had to be built afterwards by boring institutional work. That's the same pattern as the internet, which is why it stopped feeling like history.",
@@ -102,7 +106,7 @@
     {
       "t": "The Printing Press as an Agent of Change",
       "a": "Elizabeth Eisenstein",
-      "u": "https://en.wikipedia.org/wiki/Elizabeth_Eisenstein",
+      "u": "https://search.worldcat.org/search?q=The%20Printing%20Press%20as%20an%20Agent%20of%20Change%20Elizabeth%20Eisenstein",
       "why": "The thesis everyone is either building on or attacking."
     },
     {

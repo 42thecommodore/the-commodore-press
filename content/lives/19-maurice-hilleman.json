@@ -13,9 +13,15 @@
   "motif": "dots",
   "lede": "If lives saved were the measure of fame, he would be a household name.",
   "copy": [
-    "A blunt, hard-driving Montana farm boy, Hilleman nearly didn't go to college. He became the most productive vaccine scientist who ever lived. He developed more than forty vaccines — measles, mumps, rubella, hepatitis A and B, chickenpox, meningitis and pneumonia among them.",
+    "A blunt, hard-driving Montana farm boy, Hilleman nearly didn't go to college. He is often called the most productive vaccine scientist who ever lived. He developed more than forty vaccines — measles, mumps, rubella, hepatitis A and B, chickenpox, meningitis and pneumonia among them.",
     "Eight of the fourteen vaccines routinely recommended for children today came from his lab. When his own daughter woke with mumps in 1963, he swabbed her throat, cultured the virus and turned it into the vaccine still used. The strain is named “Jeryl Lynn” after her. During the 1957 flu pandemic he recognized the threat early and pushed industry to produce forty million doses, blunting the outbreak in the United States.",
     "He worked in deliberate obscurity, indifferent to credit. That is precisely why so few people know the name of the man who may have prevented more deaths than anyone in history."
+  ],
+  "facts": [
+    {
+      "b": "40 million",
+      "s": "Doses of vaccine given in the three months after his 1957 warning: J. Cavanaugh Simpson, 'The Man Who Beat the 1957 Flu Pandemic', Scientific American, 19 April 2020; Montana State University, 'The Man Who Saved Millions'"
+    }
   ],
   "bio": {
     "t": "Vaccinated: One Man's Quest to Defeat the World's Deadliest Diseases",
@@ -40,5 +46,8 @@
       "label": "Tu Youyou",
       "txt": "— the same shelf of the unnamed: a malaria drug, and a prize that settled the credit only on paper."
     }
+  ],
+  "corrected": [
+    15
   ]
 }

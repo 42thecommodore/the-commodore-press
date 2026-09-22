@@ -8,6 +8,7 @@
     "start": "node tools/serve.mjs",
     "build": "node build/build.mjs",
     "check": "node tools/validate.mjs",
+    "ready": "node tools/ready.mjs",
     "stats": "node tools/stats.mjs",
     "voice": "node .claude/skills/press-voice/scripts/measure-voice.mjs",
     "publish:check": "npm run check && npm run build",

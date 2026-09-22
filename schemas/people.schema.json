@@ -23,7 +23,7 @@
         "type": "array",
         "items": {
           "oneOf": [
-            { "type": "string", "description": "A bare line. Legacy shape: it carries no source, so the check warns. Prefer { k, s }." },
+            { "type": "string", "description": "A note: your line from listening, with no episode recorded. Prints as \"Notes I kept · after <name>\" and is labelled as not a quotation." },
             {
               "type": "object", "additionalProperties": false, "required": ["k", "s"],
               "properties": {
@@ -34,7 +34,7 @@
             }
           ]
         },
-        "description": "Lines you kept from them, printed as 'Lines I kept'. These read as quotations to a reader, so each one owes a source the same way a figure does — use { \"k\": \"the line\", \"s\": \"the episode and timestamp\" }. A compressed note rather than their words is not a kept line: put it in `take`, or write it as \"after <name>\"."
+        "description": "Lines you kept from them. Two shapes. { \"k\": \"the line\", \"s\": \"the episode and timestamp\" } prints as a quotation under 'Lines I kept' — verbatim, and only when you can say where it was said. A plain string prints as a note, 'after <name>', labelled as not a quotation. Upgrade a note by re-hearing it and adding its source; never guess one."
       }
     }
   }

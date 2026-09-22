@@ -13,7 +13,7 @@
   "motif": "dots",
   "lede": "He is remembered for proving you could beat blackjack. The discovery that travelled was not the edge. It was how much to bet once you had one.",
   "copy": [
-    "A mathematics professor at MIT and then California, Thorp worked out that blackjack is not memoryless: cards already dealt change what is left in the shoe, so a player who keeps track holds, at moments, a real advantage over the house. Beat the Dealer set it out and was, by his own description, the first book to prove mathematically that the house edge could be overcome by counting. Casinos changed their rules and their manners in response. He also built, with Claude Shannon, a small computer to be worn and hidden — the first wearable computer, made to beat roulette rather than to count steps.",
+    "A mathematics professor at MIT and then California, Thorp worked out that blackjack is not memoryless: cards already dealt change what is left in the shoe, so a player who keeps track holds, at moments, a real advantage over the house. Beat the Dealer set it out and is widely credited as the first book to prove mathematically that the house edge could be overcome by counting. Casinos changed their rules and their manners in response. He also built, with Claude Shannon, a small computer to be worn and hidden — the first wearable computer, made to beat roulette rather than to count steps.",
     "The part that mattered came alongside it. Knowing you have an edge tells you to bet; it says nothing about size, and size is what kills. Thorp used a rule set out by the Bell Labs physicist J. L. Kelly Jr., which in its plainest form says to stake a fraction of your money equal to your edge divided by the odds. Bet less and you leave growth on the table; bet more and a run of ordinary bad luck takes you out of the game while you are still right. He first called this Fortune's Formula in a 1961 talk to the American Mathematical Society — and the reason the same man could move from a casino to a trading desk is that the rule does not care which it is.",
     "So he moved. Beat the Market, written with Sheen Kassouf, laid out a hedged way to trade warrants against their underlying stock, and his own FAQ names the people Scott Patterson credits it with influencing: Fischer Black, Ken Griffin, Bill Gross, Blair Hull, Frank Meyer, Paul Singer. The popular version of Thorp is a gambling story with a Wall Street epilogue. The accurate version is that he found one idea — you can size a bet correctly only if you can state your edge honestly — and that a casino was simply the cheapest place to test it, because there the odds are published and nobody has to be persuaded what they are."
   ],
@@ -45,5 +45,8 @@
       "label": "Being Wrong Productively",
       "txt": "— the rule made expensive. Kelly only works if the edge you state in advance is the edge you actually have."
     }
+  ],
+  "corrected": [
+    15
   ]
 }

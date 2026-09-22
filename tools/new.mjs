@@ -2,6 +2,7 @@
    Usage: node tools/new.mjs book "The Heated Disk" [--field Science]
           node tools/new.mjs life "Marcus Aurelius" [--field Philosophy]
           node tools/new.mjs adjacent "Title"
+          node tools/new.mjs log "The question goes with the number"
    Every stub is deliberately full of TODOs: `npm run check` will refuse to pass
    until each one is answered, which is the point. */
 import fs from "node:fs";
@@ -14,7 +15,7 @@ const kind = argv[0];
 const title = argv.find((a, i) => i > 0 && !a.startsWith("--") && !argv[i - 1]?.startsWith("--"));
 const flag = (n, d) => { const i = argv.indexOf("--" + n); return i < 0 ? d : argv[i + 1]; };
 
-const KINDS = ["book", "adjacent", "life"];
+const KINDS = ["book", "adjacent", "life", "log"];
 if (!KINDS.includes(kind) || !title) {
   console.error(`usage: node tools/new.mjs <${KINDS.join("|")}> "Title" [--field Science]`);
   process.exit(1);
@@ -22,6 +23,38 @@ if (!KINDS.includes(kind) || !title) {
 
 const slug = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
   .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+/* A Log piece is Markdown, not JSON, and needs no livery: it is the editor's column, not
+   a book on a shelf. It starts as a draft, which stays off the site until status changes. */
+if (kind === "log") {
+  const date = new Date().toISOString().slice(0, 10);
+  const dir = path.join(ROOT, "content/log");
+  fs.mkdirSync(dir, { recursive: true });
+  const file = path.join(dir, `${date}-${slug(title)}.md`);
+  if (fs.existsSync(file)) { console.error("already exists: " + file); process.exit(1); }
+  fs.writeFileSync(file, `---
+title: ${title}
+date: ${date}
+dek: TODO — one line saying what this piece argues
+across: TODO — what it argues with, e.g. press:forty-two, lives:john-snow, atlas:track
+status: draft
+---
+TODO — write the piece. Plain paragraphs, a blank line between them.
+
+Link to the library like this: [Forty-Two](press:forty-two), [John Snow](lives:john-snow).
+A quotation goes on its own line starting with > and only if you have the words in front of you.
+
+## Sources
+
+- TODO — where each figure came from, one line each. Delete this section if the piece states none.
+`);
+  const rel = path.relative(ROOT, file);
+  console.log(`\n  new Log piece: ${rel}  (draft — not on the site yet)\n\n  Next:`);
+  [`/press-voice        — the house voice, then write`, `answer every TODO in ${rel}`,
+   `change  status: draft  to  status: published`, `npm run check`].forEach((x, i) => console.log(`    ${i + 1}. ${x}`));
+  console.log();
+  process.exit(0);
+}
 
 /* house liveries — a title's binding, not decoration: pick one that isn't in use */
 const LIVERIES = [
@@ -72,7 +105,7 @@ if (kind === "book" || kind === "adjacent") {
     copy: [TODO("paragraph 1 — the mechanism"), TODO("paragraph 2 — the evidence"), TODO("paragraph 3 — the complication")],
     timeline: [{ y: TODO("year"), t: TODO("what happened") }],
     figures: [{ n: TODO("name"), d: TODO("what they did, in one line") }],
-    facts: [{ b: TODO("the number"), s: TODO("the named source for it — house rule, no bare figures") }],
+    facts: [{ b: TODO("the number"), s: TODO("what it counts: the document you read it in — house rule, no bare figures") }],
     contested: TODO("where this is still argued, and by whom. Say so plainly."),
     changed: TODO("what changed your mind, or what would."),
     across: [],

@@ -15,7 +15,7 @@
   "lede": "A Beethoven quartet takes exactly as many musician-hours as it did in 1826. Their wages went up anyway. That's the whole mechanism — except when it isn't.",
   "copy": [
     "Baumol and Bowen's 1966 study of the performing arts identified the effect. In sectors where productivity can't rise, wages still track the productive sectors, because workers can leave. So the relative price of live music, teaching, nursing and haircuts rises indefinitely, even with nothing going wrong anywhere. This is a feature of growth, not a pathology: societies get richer, and the labour-intensive things get relatively dearer. There is no fix and you shouldn't want one.",
-    "The problem is that Baumol gets invoked to explain cost growth it cannot account for. New York subway construction runs around $1.5 billion per kilometre against a global weighted average nearer $250 million, and the Transit Costs Project attributes that gap to procurement practice, consultant-heavy staffing, station overbuilding and litigation risk — not to musicians' wages. Baumol predicts that labour-intensive services get relatively more expensive over time within a country. It does not predict a five-fold gap between rich countries in the same decade.",
+    "The problem is that Baumol gets invoked to explain cost growth it cannot account for. Phase 1 of New York's Second Avenue Subway cost about $1.7 billion a kilometre, against a global weighted average near $250 million, and the Transit Costs Project attributes that gap to procurement practice, consultant-heavy staffing, station overbuilding and litigation risk — not to musicians' wages. Baumol predicts that labour-intensive services get relatively more expensive over time within a country. It does not predict a five-fold gap between rich countries in the same decade.",
     "The same test applies elsewhere. American health administration's share of spending is estimated anywhere from 15% to 31% depending on what you count — and the spread itself is informative, because a cost that can't be measured consistently is usually a cost that isn't a single thing. University non-teaching headcount has grown faster than faculty in most rich countries but at very different rates, which again is a cross-sectional difference Baumol can't produce.",
     "The reason this matters is that the two diagnoses imply opposite policies. If it's Baumol, rising relative cost is the price of being rich and you should pay it and stop complaining. If it's institutional, the cost is a choice, other countries have made different ones, and you can go copy them. Almost every real case is a mixture, and the mixture is the whole argument."
   ],
@@ -58,15 +58,15 @@
   "facts": [
     {
       "b": "1966",
-      "s": "Baumol & Bowen publish the performing-arts study"
+      "s": "Baumol & Bowen publish the performing-arts study: William J. Baumol & William G. Bowen, 'Performing Arts: The Economic Dilemma', Twentieth Century Fund, 1966 (Internet Archive catalogue record)"
     },
     {
-      "b": "$1.5B/km",
-      "s": "New York subway construction, against a ~$250M/km global weighted average"
+      "b": "$1.7B/km",
+      "s": "New York's Second Avenue Subway, Phase 1, against a global weighted average of $252M/km: Transit Costs Project (NYU Marron Institute), 'The New York Case' and 'New data'"
     },
     {
       "b": "15–31%",
-      "s": "Estimated share of US health spending going to administration — the spread is the story"
+      "s": "Share of US health spending on administration — the spread is what gets counted, billing alone or all overhead: Econofact, 'How Large a Burden Are Administrative Costs in Health Care?', 2018 (15%); PNHP's summary of Woolhandler, Campbell & Himmelstein, NEJM, 2003 (31%)"
     }
   ],
   "contested": "How much of infrastructure cost growth is genuine Baumol versus institutional dysfunction is unresolved and politically loaded. Cross-country comparisons are real but sensitive to tunnelling depth, land acquisition, station finish, labour law and how you handle contingency — and the Transit Costs Project itself is careful that its sample isn't fully representative.",
@@ -103,5 +103,8 @@
       "label": "Water in the West",
       "txt": "— the same denominator lesson: know what the percentage is a percentage of."
     }
+  ],
+  "corrected": [
+    14
   ]
 }

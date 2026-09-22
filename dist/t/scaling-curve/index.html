@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Scaling Curve — The Commodore Press</title>
+<meta name="description" content="Capability became forecastable from spend. That turned research into capital allocation. In 2020, Kaplan and co-authors showed that language model loss…">
+<link rel="canonical" href="https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Commodore Press">
+<meta property="og:title" content="The Scaling Curve">
+<meta property="og:description" content="Capability became forecastable from spend. That turned research into capital allocation. In 2020, Kaplan and co-authors showed that language model loss…">
+<meta property="og:url" content="https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/">
+<meta property="og:image" content="https://42thecommodore.github.io/the-commodore-press/cards/scaling-curve.png">
+<meta property="og:image:alt" content="The Scaling Curve — The Commodore Press">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="The Scaling Curve">
+<meta name="twitter:description" content="Capability became forecastable from spend. That turned research into capital allocation. In 2020, Kaplan and co-authors showed that language model loss…">
+<meta name="twitter:image" content="https://42thecommodore.github.io/the-commodore-press/cards/scaling-curve.png">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"The Scaling Curve","description":"Capability became forecastable from spend. That turned research into capital allocation. In 2020, Kaplan and co-authors showed that language model loss…","url":"https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/","mainEntityOfPage":"https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/","image":"https://42thecommodore.github.io/the-commodore-press/cards/scaling-curve.png","inLanguage":"en","wordCount":445,"dateModified":"2026-09-20","about":"Technology","author":{"@type":"Person","name":"Luca","jobTitle":"Editor"},"publisher":{"@type":"Organization","name":"The Commodore Press","url":"https://42thecommodore.github.io/the-commodore-press/"},"isPartOf":{"@type":"WebSite","name":"The Commodore Press","url":"https://42thecommodore.github.io/the-commodore-press/"},"citation":[{"@type":"CreativeWork","name":"Scaling Laws for Neural Language Models","url":"https://arxiv.org/abs/2001.08361"},{"@type":"CreativeWork","name":"Training Compute-Optimal Large Language Models","url":"https://arxiv.org/abs/2203.15556"},{"@type":"CreativeWork","name":"The Bitter Lesson","url":"http://www.incompleteideas.net/IncIdeas/BitterLesson.html"},{"@type":"CreativeWork","name":"Are Emergent Abilities of LLMs a Mirage?","url":"https://arxiv.org/abs/2304.15004"}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Commodore Press","item":"https://42thecommodore.github.io/the-commodore-press/"},{"@type":"ListItem","position":2,"name":"The Press","item":"https://42thecommodore.github.io/the-commodore-press/contents/"},{"@type":"ListItem","position":3,"name":"The Scaling Curve","item":"https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1' stroke='%231E1C18' stroke-width='1.6'/%3E%3Cpath d='M11 1.5V20.5M1.5 11H20.5' stroke='%231E1C18' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F2EDE1;--rule:#D3C9B2;--ink:#1E1C18;--ink-soft:#5C5647;--oxblood:#8A2B25;
+  --serif:"EB Garamond","Iowan Old Style",Palatino,Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--paper:#12151F;--rule:#2B3247;--ink:#EAE3D1;--ink-soft:#98917E;--oxblood:#CE7B6E}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:20px/1.62 var(--serif);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.top{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 20px;font:12px/1 var(--mono);
+  letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--rule)}
+.top a{text-decoration:none}
+.band{background:var(--cover);color:var(--cink);padding:56px 20px 48px}
+.band .in,.body{max-width:680px;margin:0 auto}
+.kick{font:12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-weight:500;font-size:clamp(38px,7vw,58px);line-height:1.05;margin:14px 0 10px;letter-spacing:-.01em}
+.sub{font-style:italic;font-size:22px;opacity:.9;margin:0}
+.claim{font-size:23px;line-height:1.4;margin:26px 0 0;padding-left:16px;border-left:2px solid var(--accent)}
+.plate{float:right;width:150px;margin:0 0 12px 24px}
+.plate img{width:100%;display:block;border-radius:2px}
+.body{padding:36px 20px 64px}
+.lede{font-size:23px;line-height:1.45}
+h2{font:12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+  margin:44px 0 14px;padding-top:14px;border-top:1px solid var(--rule)}
+.row{margin:0 0 14px}.row b{display:block;font-weight:600}
+.row span,.why{color:var(--ink-soft);font-size:18px}
+.fact b{font:600 26px/1.2 var(--mono);color:var(--oxblood)}
+.keep{font-size:25px;line-height:1.35;font-style:italic}
+ol.tl{padding-left:0;list-style:none}ol.tl li{margin:0 0 10px}ol.tl .y{font:14px var(--mono);color:var(--oxblood);margin-right:10px}
+.cta{display:inline-block;margin-top:48px;padding:12px 18px;border:1px solid var(--ink);font:13px/1 var(--mono);
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.cta:hover{background:var(--ink);color:var(--paper)}
+.sub-box{display:block;margin-top:48px;padding:20px;border:1px solid var(--rule);font-size:18px}
+.sub-box b{font:12px var(--mono);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:6px}
+.sub-box p{margin:0 0 12px}.sub-box small{display:block;margin-top:10px;font:12px/1.5 var(--mono);color:var(--ink-soft)}
+.sub-row{display:flex;gap:8px;flex-wrap:wrap}.sub-row input{flex:1 1 200px;min-width:0;padding:10px 12px;font:16px var(--serif);
+  background:transparent;color:var(--ink);border:1px solid var(--ink-soft);border-radius:0}
+.sub-row button{padding:10px 16px;font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:0;cursor:pointer}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;padding-top:18px;border-top:1px solid var(--rule)}
+.pn a{text-decoration:none;font-size:19px;line-height:1.3}.pn a:last-child{text-align:right}
+.pn span{display:block;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px}
+footer{border-top:1px solid var(--rule);padding:20px;font:12px/1.6 var(--mono);color:var(--ink-soft);text-align:center}
+@media (max-width:560px){body{font-size:18px}.plate{float:none;width:130px;margin:0 0 20px}}
+
+.crumbs{display:flex;gap:8px;align-items:center;min-width:0;overflow:hidden;white-space:nowrap}
+.crumbs i{font-style:normal;opacity:.4}.crumbs span{opacity:.6;overflow:hidden;text-overflow:ellipsis}
+.glance{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--cink) 25%,transparent);
+  font:12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.glance a{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--cink) 40%,transparent)}.glance .warn{color:var(--accent);border-color:var(--accent)}
+.layout{display:block}
+.rail{display:none}
+@media (min-width:1100px){
+  .layout{display:grid;grid-template-columns:200px minmax(0,680px);gap:56px;justify-content:center;padding:0 20px}
+  .layout .body{margin:0;padding-left:0;padding-right:0}
+  .rail{display:flex;flex-direction:column;gap:9px;position:sticky;top:24px;align-self:start;margin-top:44px;font:12px/1.4 var(--mono);letter-spacing:.04em}
+  .rail a{text-decoration:none;color:var(--ink-soft)}.rail a:hover{color:var(--ink)}
+}
+.lbl{display:block;font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+.keepq{margin:30px 0 36px;padding:24px 26px;background:color-mix(in srgb,var(--cover) 9%,var(--paper));border-left:4px solid var(--cover)}
+.keepq p{font-size:27px;line-height:1.3;font-style:italic;margin:0 0 14px}
+.essay p:first-child::first-letter{float:left;font-size:3.4em;line-height:.85;padding:6px 8px 0 0;font-weight:500}
+.s{margin-top:52px}
+.s h2{display:flex;align-items:baseline;gap:12px;font:500 28px/1.2 var(--serif);letter-spacing:-.005em;text-transform:none;color:var(--ink);
+  border-top:1px solid var(--rule);padding-top:18px;margin:0 0 18px}
+.s h2 .n{font:12px var(--mono);letter-spacing:.12em;color:var(--oxblood)}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.fact{border:1px solid var(--rule);padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px}
+.fact b{font:600 26px/1.15 var(--mono);color:var(--oxblood)}.fact span{font-size:15px;line-height:1.45;color:var(--ink-soft)}
+.callout{padding:6px 24px 22px;background:color-mix(in srgb,var(--accent) 14%,var(--paper));border-left:4px solid var(--accent)}
+.callout h2{border-top:0}
+.callout.corr{background:color-mix(in srgb,var(--oxblood) 8%,var(--paper));border-left-color:var(--oxblood)}
+.note p{font-style:italic;font-size:21px}
+.share{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:44px}
+.share .lbl{margin:0 6px 0 0}
+.share button,.share a{font:12px/1 var(--mono);letter-spacing:.06em;padding:9px 12px;border:1px solid var(--rule);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer}
+.share button:hover,.share a:hover{border-color:var(--ink)}
+.share.mini{margin-top:0}.share.mini .lbl{display:none}
+.corrd{border-top:1px solid color-mix(in srgb,var(--oxblood) 30%,transparent);padding:12px 0}
+.corrd summary{cursor:pointer;font-size:18px;line-height:1.4}.corrd p{font-size:17px;line-height:1.6;margin:10px 0 0}
+@media (max-width:560px){.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:11px;letter-spacing:.1em}.keepq p{font-size:23px}.s h2{font-size:24px}}
+@media (prefers-color-scheme:dark){.keepq{background:color-mix(in srgb,var(--cover) 30%,var(--paper))}}
+</style>
+</head>
+<body style="--cover:#232E78;--cink:#EFF1FA;--accent:#9FD3EC">
+<nav class="top" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">The Press</a><i>/</i><span>The Scaling Curve</span></span><a href="../../#press">All titles →</a></nav>
+<header class="band"><div class="in">
+  
+  <div class="kick">The Press · Technology</div>
+  <h1>The Scaling Curve</h1>
+  <p class="sub">A straight line on a log–log plot</p>
+  <p class="claim">Capability became forecastable from spend. That turned research into capital allocation.</p>
+  <div class="glance"><span>2 min read</span><span><a href="#s-numbers">3 figures, each sourced</a></span><span><a href="#s-contested">Where it is contested</a></span><span>Updated 20 September 2026</span></div>
+</div></header>
+<div class="layout">
+<aside class="rail" aria-label="On this page"><span class="lbl">On this page</span><a href="#s-numbers">By the numbers</a><a href="#s-timeline">How it happened</a><a href="#s-figures">Who did the work</a><a href="#s-contested">Where it is contested</a><a href="#s-changed">What I changed my mind about</a><a href="#s-reading">Go to the source</a><a href="#s-across">Reads across to</a></aside>
+<main class="body">
+<p class="lede">Loss falls predictably with compute, data and parameters, across many orders of magnitude. Nobody fully knows why.</p>
+<aside class="keepq" aria-label="If you keep one line"><span class="lbl">If you keep one line</span><p>A smooth curve in a proxy is still a bet dressed as a result. Plan around it; don't worship it.</p><div class="share mini"><span class="lbl">Share</span><button type="button" data-share="https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/" data-title="The Scaling Curve — The Commodore Press" data-text="“A smooth curve in a proxy is still a bet dressed as a result. Plan around it; don't worship it.” — The Scaling Curve" hidden>Share…</button><button type="button" data-copy="https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/">Copy link</button><a href="mailto:?subject=The%20Scaling%20Curve%20%E2%80%94%20The%20Commodore%20Press&amp;body=%E2%80%9CA%20smooth%20curve%20in%20a%20proxy%20is%20still%20a%20bet%20dressed%20as%20a%20result.%20Plan%20around%20it%3B%20don't%20worship%20it.%E2%80%9D%20%E2%80%94%20The%20Scaling%20Curve%0A%0Ahttps%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Ft%2Fscaling-curve%2F">Email</a><a href="https://twitter.com/intent/tweet?text=%E2%80%9CA%20smooth%20curve%20in%20a%20proxy%20is%20still%20a%20bet%20dressed%20as%20a%20result.%20Plan%20around%20it%3B%20don't%20worship%20it.%E2%80%9D%20%E2%80%94%20The%20Scaling%20Curve&amp;url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Ft%2Fscaling-curve%2F" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Ft%2Fscaling-curve%2F" rel="noopener" target="_blank">LinkedIn</a></div></aside>
+<div class="essay"><p>In 2020, Kaplan and co-authors showed that language model loss follows smooth power laws in model size, dataset size, and training compute, across many orders of magnitude. Not approximately: cleanly, over a range where you would expect any empirical relationship to fall apart. Two years later, DeepMind's Chinchilla paper corrected the recipe. For a fixed compute budget the field had been building models far too large and feeding them far too little — roughly twenty tokens per parameter, not two. A 70-billion-parameter model trained properly beat a 280-billion-parameter one trained on the same compute.</p><p>The strategic content is larger than the technical content. A predictable curve turns research into capital allocation. If you can forecast capability from spend, you can raise against it, build datacenters against it, and sign multi-year power contracts against it. That is what happened, and it is why the constraint on frontier models migrated from ideas to electricity and land.</p><p>Rich Sutton's 'bitter lesson' is the philosophical companion: methods that ride general computation beat methods that encode human insight, and they beat them repeatedly, and the field keeps being annoyed about it. Every generation of researchers builds in the structure they believe is essential — grammar, features, search heuristics — and every generation watches a bigger, dumber, more general method take the crown a few years later.</p><p>What scaling laws don't tell you is where the curve bends, which capabilities appear at which point, or whether the measured quantity keeps tracking the thing anyone actually cares about. Next-token loss is a proxy. A smooth curve in the proxy can sit underneath lumpy behaviour downstream, and every extrapolation past the measured range is a bet dressed as a result.</p></div>
+<section class="s " id="s-numbers"><h2><span class="n">01</span>By the numbers</h2><div class="facts"><div class="fact"><b>2020</b><span>The paper that turned scaling into a forecast: Kaplan, McCandlish et al., 'Scaling Laws for Neural Language Models', arXiv:2001.08361, 2020</span></div><div class="fact"><b>20:1</b><span>Chinchilla's compute-optimal tokens per parameter (70B parameters, 1.4T tokens): Hoffmann et al., 'Training Compute-Optimal Large Language Models', arXiv:2203.15556, 2022</span></div><div class="fact"><b>70B</b><span>Chinchilla's size, beating the 280B Gopher on the same compute: Hoffmann et al., 'Training Compute-Optimal Large Language Models', arXiv:2203.15556, 2022</span></div></div></section>
+<section class="s " id="s-timeline"><h2><span class="n">02</span>How it happened</h2><ol class="tl"><li><span class="y">2017</span>'Attention Is All You Need' introduces the transformer — the architecture that makes the scaling question answerable.</li><li><span class="y">2020</span>Kaplan et al. publish 'Scaling Laws for Neural Language Models'. Loss is a power law in compute, data and parameters.</li><li><span class="y">2022</span>Hoffmann et al. (Chinchilla) show the field has been undertraining: ~20 tokens per parameter is compute-optimal.</li><li><span class="y">2023</span>Schaeffer et al. argue 'emergent abilities' may be an artifact of discontinuous metrics rather than real phase changes.</li><li><span class="y">2024–</span>The binding constraint shifts from research ideas to power, land, and fab capacity.</li></ol></section>
+<section class="s " id="s-figures"><h2><span class="n">03</span>Who did the work</h2><div class="row"><b>Jared Kaplan</b><span>Lead author of the 2020 scaling laws paper; a physicist by training, which shows in the method.</span></div><div class="row"><b>Jordan Hoffmann</b><span>Lead author of Chinchilla, the result that quietly rewrote every training budget in the field.</span></div><div class="row"><b>Rich Sutton</b><span>Wrote two pages in 2019 that the field has been arguing with ever since.</span></div></section>
+<section class="s callout" id="s-contested"><h2><span class="n">04</span>Where it is contested</h2><p>Whether 'emergent abilities' are real discontinuities or artifacts of discontinuous metrics is an open fight (Schaeffer et al., 2023). Data is a harder constraint than the original laws assumed. Repeating it is close to free for about four epochs, after which extra compute buys less and less (Muennighoff et al., 2023); Villalobos et al. (2024) project training sets reaching the size of the entire stock of public human text between 2026 and 2032. And a power law fitted over six orders of magnitude tells you nothing whatsoever about the seventh.</p></section>
+<section class="s note" id="s-changed"><h2><span class="n">05</span>What I changed my mind about</h2><p>I used to read the curves as a law of nature. They're an empirical regularity of one architecture on one data distribution, measured over a specific range. That's still remarkable, and still enough to plan a datacenter around — it just isn't the same kind of statement as thermodynamics, and the difference matters when someone extrapolates.</p></section>
+<section class="s " id="s-reading"><h2><span class="n">06</span>Go to the source</h2><div class="row"><b><a href="https://arxiv.org/abs/2001.08361" rel="noopener">Scaling Laws for Neural Language Models</a></b><span>Kaplan et al., 2020</span><div class="why">The original. The plots are the argument; you can skim the prose.</div></div><div class="row"><b><a href="https://arxiv.org/abs/2203.15556" rel="noopener">Training Compute-Optimal Large Language Models</a></b><span>Hoffmann et al., 2022</span><div class="why">The correction, and a good lesson in how a whole field can be systematically wrong in the same direction.</div></div><div class="row"><b><a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html" rel="noopener">The Bitter Lesson</a></b><span>Rich Sutton, 2019</span><div class="why">Two pages. Read it before you build in your clever prior.</div></div><div class="row"><b><a href="https://arxiv.org/abs/2304.15004" rel="noopener">Are Emergent Abilities of LLMs a Mirage?</a></b><span>Schaeffer et al., 2023</span><div class="why">The strongest published pushback on the most-repeated claim in the area.</div></div></section>
+<section class="s " id="s-across"><h2><span class="n">07</span>Reads across to</h2><p><a href="../../t/silicon-and-light/">Silicon & Light</a> — the other curve mistaken for a law, and the industry that organised its capital around meeting it.</p><p><a href="../../t/forty-two/">Forty-Two</a> — what happens to any measure precise enough to be worth optimising against, once the optimising starts.</p></section>
+<div class="share "><span class="lbl">Share</span><button type="button" data-share="https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/" data-title="The Scaling Curve — The Commodore Press" data-text="Capability became forecastable from spend. That turned research into capital allocation." hidden>Share…</button><button type="button" data-copy="https://42thecommodore.github.io/the-commodore-press/t/scaling-curve/">Copy link</button><a href="mailto:?subject=The%20Scaling%20Curve%20%E2%80%94%20The%20Commodore%20Press&amp;body=Capability%20became%20forecastable%20from%20spend.%20That%20turned%20research%20into%20capital%20allocation.%0A%0Ahttps%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Ft%2Fscaling-curve%2F">Email</a><a href="https://twitter.com/intent/tweet?text=Capability%20became%20forecastable%20from%20spend.%20That%20turned%20research%20into%20capital%20allocation.&amp;url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Ft%2Fscaling-curve%2F" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2F42thecommodore.github.io%2Fthe-commodore-press%2Ft%2Fscaling-curve%2F" rel="noopener" target="_blank">LinkedIn</a></div>
+<a class="cta" href="../../#t/scaling-curve">Open in the library →</a>
+<nav class="pn"><a href="../compounding-machines/"><span>← Previous</span>Compounding Machines</a><a href="../silicon-and-light/"><span>Next →</span>Silicon &amp; Light</a></nav>
+
+</main>
+</div>
+<script>document.querySelectorAll("[data-share]").forEach(function(b){if(navigator.share){b.hidden=false;b.onclick=function(){navigator.share({title:b.dataset.title,text:b.dataset.text,url:b.dataset.share}).catch(function(){})}}});document.querySelectorAll("[data-copy]").forEach(function(b){b.onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(b.dataset.copy):Promise.reject()).then(function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy link"},1600)}).catch(function(){prompt("Copy this link:",b.dataset.copy)})}})</script>
+<footer>The Commodore Press · edited by Luca · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a></footer>
+</body>
+</html>

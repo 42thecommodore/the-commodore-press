@@ -62,16 +62,19 @@
   "facts": [
     {
       "b": "5 sec",
-      "s": "H4's error after an 81-day crossing — about one nautical mile of longitude"
+      "s": "H4's error after an 81-day crossing — about one nautical mile of longitude: Wikipedia, 'John Harrison'"
     },
     {
       "b": "£23,065",
-      "s": "Total Harrison received across Board grants, an interim award and Parliament"
+      "s": "Total Harrison received across Board grants, an interim award and Parliament: Wikipedia, 'John Harrison'"
     },
     {
       "b": "£0",
-      "s": "Of the statutory £20,000 prize — it was never awarded, to anyone"
+      "s": "Of the statutory £20,000 prize — never awarded, to anyone: Wikipedia, 'John Harrison'"
     }
+  ],
+  "corrected": [
+    3
   ],
   "contested": "Dava Sobel's bestselling 'lone genius versus the establishment' framing has been substantially revised by historians working from the Board of Longitude archives. Harrison was funded by the Board for decades and finished wealthy; the astronomers' objections were partly technical — a handmade one-off is not yet a method — rather than purely political.",
   "changed": "I read Sobel first, like everyone, and carried the villain version around for years. The archives changed my mind about Maskelyne specifically, and more usefully about the general shape: when an institution frustrates an inventor, the boring possibility is that the institution is enforcing a criterion the inventor hasn't met yet.",
@@ -91,7 +94,7 @@
     {
       "t": "Longitude",
       "a": "Dava Sobel",
-      "u": "https://en.wikipedia.org/wiki/Longitude_(book)",
+      "u": "https://search.worldcat.org/search?q=Longitude%20Dava%20Sobel",
       "why": "Read it for the story, then read the next two to correct it."
     },
     {

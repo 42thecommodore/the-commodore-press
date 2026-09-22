@@ -54,6 +54,7 @@
       }
     },
     "facts": { "$ref": "#/definitions/facts" },
+    "corrected": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "x-means": ["corrections", "correction"], "description": "The numbers of the colophon corrections that apply to this entry, e.g. [2]. The reader prints them on the entry, so someone reading it learns it was corrected and what changed. Add the number in the same change that runs `npm run correct`." },
     "contested": { "type": "string", "x-means": "dispute", "description": "Where this is still argued, and by whom — the objection at full strength, named and attributed. Never \"some disagree\"." },
     "changed": { "type": "string", "x-means": "mind", "description": "First person: what changed your mind, or what would. Printed as 'What I changed my mind about'. The most personal prose on the site." },
     "across": { "$ref": "#/definitions/across" },

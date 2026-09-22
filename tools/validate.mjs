@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJSON, unknownKeys } from "./json.mjs";
+import { loadLog, logRefs, hasSources } from "../build/log.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...a) => path.join(ROOT, ...a);
@@ -98,12 +99,29 @@ for (const { file, data } of [...books, ...adjacent, ...lives]) {
   });
 }
 
+/* ---------- a source line has to name a source ----------
+   The check above proves `s` is not empty. It never proved `s` names anything: on
+   2026-09-21, 50-odd of the 112 lines in Wing I described their number ("Length of
+   Freire's exile after the 1964 coup") and named no document at all, and two of those
+   numbers turned out to be wrong (correction 10). The house shape is
+   "what it counts: where it was read" — the colon is the seam, and the part after it is
+   the document. WARNING FOR NOW, ERROR ONCE WING I IS BACKFILLED; row in
+   dashboard/commissions.md. A line that is itself a citation (Patterson's paper, Kaplan
+   et al.) passes by being rewritten into the shape, which takes a minute. */
+{
+  const bare = new Map();
+  for (const { file, data } of [...books, ...adjacent, ...lives])
+    for (const f of data.facts || []) if (f.s && !/:\s*\S/.test(f.s)) bare.set(file, [...(bare.get(file) || []), f.b]);
+  if (bare.size) warn("facts", `${[...bare.values()].flat().length} source line(s) in ${bare.size} entries name no document — ` +
+    `write each as "what it counts: where it was read". ${[...bare.keys()].map(f => f.replace(/^content\/\w+\/(\d+-)?/, "").replace(".json", "")).join(", ")}`);
+}
+
 /* ---------- a life that states a hard figure needs somewhere to source it ----------
    Years, ages and centuries are excluded: they are carried by `years` and by the entry's
    own chronology, and flagging them would train the reader of this output to ignore it.
    What is caught is the checkable kind — money, percentages, magnitudes, measured
-   quantities. WARNING FOR NOW, ERROR ONCE WING II IS BACKFILLED: see the row in
-   dashboard/commissions.md. Promote it there, not by softening the pattern. */
+   quantities. Promoted from warning to ERROR on 2026-09-21, when the last of Wing II's
+   backlog was sourced or cut (corrections 9 and 11). */
 const MAG = "billion|million|thousand|hundred";
 const SPELLED = "one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|"
               + "fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|"
@@ -140,9 +158,68 @@ for (const { file, data } of lives) {
       said.set(m[0].trim().toLowerCase(), m[0].trim());
   if (!said.size) continue;
   const list = [...said.values()].map(x => `"${x}"`).join(", ");
-  warn(file, `states ${list} with no \`facts\` block — ` +
+  err(file, `states ${list} with no \`facts\` block — ` +
     `${said.size > 1 ? `${said.size} figures carry` : "the figure carries"} no named source`);
 }
+
+/* ---------- the Log: signed opinion, held to the same rules on evidence ----------
+   Two wings came down in September 2026 for stating positions nobody stood behind. The
+   Log is the answer, not a return: every piece is signed and dated. What a signature does
+   not buy is a pass on evidence, so a published piece that states a hard figure needs a
+   `## Sources` section, its references must resolve, and nothing marked TODO prints.
+   Quotation marks cannot be checked by a machine; /press-proofread reads for those. */
+const logS = schema("log");
+const LOG_FIELDS = logS ? Object.keys(logS.properties) : [];
+const known = { press: new Set([...books, ...adjacent].map(x => x.data.id)), lives: new Set(lives.map(x => x.data.id)),
+  atlas: new Set(principles.map(x => x.id)) };
+const slugs = new Map();
+const today = new Date().toISOString().slice(0, 10);
+for (const x of loadLog(ROOT)) {
+  const f = x.file, m = x.meta;
+  x.problems.forEach(pr => err(f, pr));
+  if (!x.fileDate) err(f, "name the file `YYYY-MM-DD-slug.md` — the date orders the Log and the slug is the permalink");
+  Object.keys(m).filter(k => !LOG_FIELDS.includes(k)).forEach(k => err(f, `unknown front-matter name \`${k}\` — the Log knows ${LOG_FIELDS.join(", ")}`));
+  ["title", "date", "dek", "status"].forEach(k => { if (!m[k]) err(f, `missing \`${k}\` in the front matter`); });
+  if (m.status && !["draft", "published"].includes(m.status)) err(f, `\`status\` is "${m.status}" — it must be draft or published`);
+  if (m.date && !/^\d{4}-\d{2}-\d{2}$/.test(m.date)) err(f, `\`date\` "${m.date}" must be YYYY-MM-DD`);
+  else if (m.date && x.fileDate && m.date !== x.fileDate) err(f, `\`date\` ${m.date} does not match the filename's ${x.fileDate} — rename the file or fix the date`);
+  if (slugs.has(x.slug)) err(f, `slug "${x.slug}" is already used by ${slugs.get(x.slug)} — it is the permalink, it must be unique`);
+  slugs.set(x.slug, f);
+  // a draft still carrying the scaffold's TODOs is unfinished, not wrong; it is held to this once published
+  if (!x.published && /\bTODO\b/.test(m.across || "")) continue;
+  for (const r of logRefs(x)) {
+    const [w, id] = r.split(":");
+    if (!known[w]) err(f, `"${r}" — a reference starts press:, lives: or atlas:`);
+    else if (!known[w].has(id)) err(f, `"${r}" points at nothing — no ${w === "atlas" ? "principle" : "entry"} has the id "${id}"`);
+  }
+  if (!x.published) continue;
+  if (/\bTODO\b/.test(x.body + JSON.stringify(m))) err(f, "published, and still says TODO — it would print");
+  if (!x.body.trim()) err(f, "published with nothing below the front matter");
+  const figs = [...new Set([...x.body.split(/^##\s+Sources/im)[0].matchAll(new RegExp(HARD_FIGURE.source, "gi"))].map(q => q[0].trim()))];
+  if (figs.length && !hasSources(x.body))
+    err(f, `states ${figs.map(q => `"${q}"`).join(", ")} with no \`## Sources\` section — a number with no source does not ship, signed or not`);
+  if (!x.across.length) warn(f, "no `across` — the Log argues with the library; name what this piece reads against");
+  if (m.date > today) warn(f, `dated ${m.date}, in the future — it will publish with that date`);
+}
+
+/* ---------- an entry's corrections point at real ones ----------
+   Corrections are matched to entries by hand, in the entry's `corrected` list, because
+   matching by name was tried on 2026-09-21 and was wrong both ways: it tied a Field Manual
+   correction to Rockefeller's life and missed Harrison's prize entirely. */
+for (const { file, data } of [...books, ...adjacent, ...lives])
+  (data.corrected || []).forEach(n => {
+    if (!Number.isInteger(n) || n < 1 || n > corrections.length) err(file, `\`corrected\` lists ${n}, but the colophon has corrections 1–${corrections.length}`);
+  });
+
+/* ---------- "Go to the source" has to go to it ----------
+   On 2026-09-21, 16 books in reading lists linked to Wikipedia's article about the book —
+   four to the author's page — under a heading that promises the source. A Wikipedia link is
+   allowed, but only when the line says so, so a reader knows it is a summary. */
+for (const { file, data } of [...books, ...adjacent])
+  (data.reading || []).forEach((r, i) => {
+    if (/wikipedia\.org/.test(r.u || "") && !/wikipedia|reference/i.test(r.a || ""))
+      err(file, `reading[${i}] "${r.t}" links to Wikipedia but is labelled as the work itself — link the work (or a library lookup), or say "Wikipedia" in \`a\``);
+  });
 
 /* ---------- Wing I also owes a reading list and a dispute ---------- */
 for (const { file, data } of books) {
@@ -216,26 +293,23 @@ people.forEach((x, i) => {
 });
 
 /* ---------- Wing III owes its sources too ----------
-   The site tells every reader that every claim carries its source. Wings I and II are
-   held to that by the rules above. Wing III was not: "Lines I kept" prints words under a
-   named, mostly living person, which reads as quotation whatever the punctuation, and
-   the data had nowhere to say where the line was said. A reader could not check one and
-   there was no record that anyone had.
+   "Lines I kept" prints words under a named, mostly living person. Until 2026-09-20 every
+   one of them was a bare string with no record of where it was said, printed as if quoted.
 
-   `kept` now takes { k, s }. A bare string is the old shape and warns.
-   WARNING FOR NOW, ERROR ONCE WING III IS BACKFILLED — same path Wing II took; there is
-   a row for it in dashboard/commissions.md. Promote it there, not by dropping the rule. */
-let bareKept = 0, bareWho = new Set();
+   Two shapes now, and they print differently (keptHTML in theme/press.js):
+     { k, s }  a quotation: verbatim, with the episode and timestamp. Checked here.
+     "string"  a note, printed "after <name>" and labelled as not a quotation.
+   A bare string is therefore honest as it stands and is not warned about. What is an
+   error is the half-sourced object: a quotation missing its source, or a source with no
+   line. The way to upgrade a note is to re-hear it and give it an `s` — never a guessed
+   timestamp, which would print a quotation nobody checked. */
 people.forEach(x => {
   (x.kept || []).forEach(k => {
-    if (typeof k === "string") { bareKept++; bareWho.add(x.name); return; }
+    if (typeof k === "string") return;
     if (!k || !k.k || !k.s)
-      err(`content/atlas/people.json (${x.name})`, "a `kept` entry needs both `k` (the line) and `s` (where it was said)");
+      err(`content/atlas/people.json (${x.name})`, "a quoted `kept` entry needs both `k` (the line) and `s` (where it was said) — or make it a plain string, which prints as a note");
   });
 });
-if (bareKept) warn("content/atlas/people.json",
-  `${bareKept} kept line(s) across ${bareWho.size} people carry no source — they print as quotations a reader cannot check. ` +
-  `Give each one \`{ "k": …, "s": "episode and timestamp" }\`, or move it into \`take\` as your own compression`);
 principles.forEach(pr => {
   const n = people.filter(x => (x.p || []).includes(pr.id)).length;
   if (n === 0) warn("content/atlas/principles.json", `principle "${pr.id}" has no people and will not render`);
@@ -315,9 +389,50 @@ const HEX = /^#[0-9a-fA-F]{6}$/;
   else if (labels < AA) warn(file, `livery labels are ${labels.toFixed(2)}:1 (ink ${ink} at ${LABELS} on ${cover}); the reader's small uppercase apparatus needs ${AA}:1`);
 });
 
+/* ---------- the newsletter: a form that posts somewhere real, and a named holder ----------
+   The colophon tells readers who holds their address. A form with no named provider would
+   make that sentence print with a blank in it. */
+{
+  const n = one("content/newsletter.json");
+  if (n) {
+    fieldsOf(schema("newsletter"), n, "content/newsletter.json");
+    if (n.action) {
+      if (!/^https:\/\/[^\s]+$/.test(n.action)) err("content/newsletter.json", "`action` must be an https:// address from your newsletter service");
+      if (!n.provider) err("content/newsletter.json", "`action` is set but `provider` is empty — the colophon has to say who holds subscribers' addresses");
+      if (/\/username\/|<|>/.test(n.action)) err("content/newsletter.json", "`action` still has the example's placeholder in it — put your own username in");
+    }
+  }
+}
+
+/* ---------- the share card must say what the shelves say ----------
+   assets/og.png prints the counts, and it is only re-rendered by hand (`npm run card`),
+   because it needs Chrome. tools/og-card.mjs records what it printed in og.counts.json. */
+{
+  const said = fs.existsSync(p("assets/og.counts.json")) ? readJSON(p("assets/og.counts.json")) : null;
+  const now = { titles: books.length, lives: lives.length, people: people.length };
+  if (!said) warn("assets/og.png", "no record of what the share card says — run `npm run card` once");
+  else if (["titles", "lives", "people"].some(k => said[k] !== now[k]))
+    warn("assets/og.png", `the share card says ${said.titles} titles · ${said.lives} lives · ${said.people} people; the shelves hold ${now.titles} · ${now.lives} · ${now.people}. Run \`npm run card\` and look at it`);
+}
+
+/* ---------- each title's share card must still say what the title says ----------
+   `npm run card` records the name, claim and cover each card printed. A renamed title or a
+   rewritten claim would otherwise keep previewing its old self on every shared link. */
+{
+  const f = p("assets/cards/index.json");
+  const said = fs.existsSync(f) ? readJSON(f) : {};
+  const stale = [], missing = [];
+  for (const { data: t } of [...books, ...adjacent]) {
+    const now = [t.title, t.claim || t.sub || "", t.cover].join(" | ");
+    if (!said[t.id]) missing.push(t.id); else if (said[t.id] !== now) stale.push(t.id);
+  }
+  if (missing.length || stale.length)
+    warn("assets/cards", `${[...missing.map(i => i + " (no card)"), ...stale.map(i => i + " (card is out of date)")].join(", ")} — run \`npm run card\``);
+}
+
 /* ---------- report ---------- */
 const c = { r: "\x1b[31m", y: "\x1b[33m", g: "\x1b[32m", d: "\x1b[2m", x: "\x1b[0m" };
 if (warns.length) { console.log(`\n${c.y}${warns.length} warning(s)${c.x}`); warns.forEach(w => console.log(`  ${c.y}·${c.x} ${w}`)); }
 if (errors.length) { console.log(`\n${c.r}${errors.length} error(s)${c.x}`); errors.forEach(e => console.log(`  ${c.r}✗${c.x} ${e}`)); }
-if (!errors.length) console.log(`\n${c.g}✓ house rules hold${c.x} ${c.d}— ${books.length} titles, ${lives.length} lives, ${people.length} people, ${corrections.length} corrections${c.x}`);
+if (!errors.length) console.log(`\n${c.g}✓ house rules hold${c.x} ${c.d}— ${books.length} titles, ${lives.length} lives, ${people.length} people, ${corrections.length} corrections, ${loadLog(ROOT).filter(x => x.published).length} Log piece(s)${c.x}`);
 process.exit(errors.length ? 1 : 0);

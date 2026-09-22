@@ -4,6 +4,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJSON } from "../tools/json.mjs";
+import { writeEntryPages, writeAbout, writeLog, writeContents, EDITOR } from "./pages.mjs";
+import { publishedLog } from "./log.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...a) => path.join(ROOT, ...a);
@@ -34,6 +36,8 @@ const PEOPLE     = one("content/atlas/people.json");
 const SOURCES    = one("content/atlas/sources.json");
 const CORRECTIONS= one("content/corrections.json");
 const PLATELIC   = one("content/plate-licences.json");
+const NEWS       = one("content/newsletter.json");
+const LOG        = publishedLog(ROOT);   // the editor's column, published pieces only, newest first
 
 /* The wings, named once. A typed "five wings" outlived the wings themselves in four
    places — the meta description, the front-door standfirst, package.json and the social
@@ -42,7 +46,13 @@ const WINGS = ["The Press", "Lives", "The Atlas"];
 const licenced = (re) => Object.keys(PLATELIC)
   .filter(k => k[0] !== "_" && (!re || re.test(PLATELIC[k].licence)));
 
-/* ---------- plates: image files -> base64 data-URIs, keyed by life id ---------- */
+/* ---------- plates: keyed by life id, served as files from dist/plates/ ----------
+   They were inlined as base64 while the site was one self-contained file. It stopped being
+   one file when the entry pages arrived (dist/ now holds a page per entry and the plates as
+   real files for their share cards), so the inlining bought nothing and cost every reader
+   533 KB — 57% of the front door, downloaded before the headline could appear, because
+   the headline is revealed by the script at the foot of the page. Decided 2026-09-21; the
+   2026-09-15 row in dashboard/commissions.md records the earlier decision and its trigger. */
 const MIME = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".gif": "image/gif" };
 const PLATES = {};
 const platesDir = p("assets/plates");
@@ -50,7 +60,7 @@ if (fs.existsSync(platesDir)) {
   for (const f of fs.readdirSync(platesDir).sort()) {
     const ext = path.extname(f).toLowerCase();
     const id = path.basename(f, ext);
-    if (MIME[ext]) PLATES[id] = `data:${MIME[ext]};base64,${fs.readFileSync(path.join(platesDir, f)).toString("base64")}`;
+    if (MIME[ext]) PLATES[id] = `plates/${f}`;
     else if (ext === ".txt") PLATES[id] = fs.readFileSync(path.join(platesDir, f), "utf8").trim();
   }
 }
@@ -73,6 +83,7 @@ const DATA = safe([
   K("PEOPLE", PEOPLE),
   K("SOURCES", SOURCES),
   K("CORRECTIONS", CORRECTIONS),
+  K("LOG", LOG.map(x => ({ slug: x.slug, title: x.meta.title, date: x.meta.date, dek: x.meta.dek }))),
 ].join("\n"));
 
 const words = n => n < 20 ? ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"][n]
@@ -109,8 +120,18 @@ const fill = s => s
   // describe, one sentence further along.
   .replace(/{{W_NARROW_CAP}}/g, cap(words(licenced(/^(?!CC )/).length)))
   .replace(/{{N_LICENSED}}/g, `${words(licenced().length)} plates`)
-  .replace(/{{W_WINGS_CAP}}/g, cap(words(WINGS.length)));
+  .replace(/{{W_WINGS_CAP}}/g, cap(words(WINGS.length))).replace(/{{W_WINGS}}/g, words(WINGS.length));
+fs.mkdirSync(p("dist"), { recursive: true });
+const ABOUT_URL = writeAbout({ ROOT, SITE, fill, NEWS, hasLog: LOG.length > 0 });
 const out = fill(read("templates/shell.html"))
+  // the footer names the editor, and links the name once the About page exists
+  .replace("<!--EDITOR-->", ABOUT_URL ? `<a href="about/">${EDITOR}, editor</a>` : EDITOR)
+  // the Log appears in the library only once it has a published piece
+  .replace("<!--LOGLINK-->", LOG.length ? `<div><a href="log/">The Log</a></div>` : "")
+  .replace("<!--FEED-->", LOG.length ? `<link rel="alternate" type="application/rss+xml" title="The Commodore Press — the Log" href="{{SITE}}/feed.xml">`.replace("{{SITE}}", SITE) : "")
+  // the colophon promises no cookies and no analytics; once a sign-up exists it also says who holds the addresses
+  .replace("<!--NEWSCOLOPHON-->", NEWS && NEWS.action ? ` If you subscribe to the newsletter, your address is held by ${NEWS.provider}, used only to send it; every issue carries its own unsubscribe link.` : "")
+  .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the three wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
   .replace("<!--CSS-->", () => read("theme/press.css"))
   .replace("<!--DATA-->", () => DATA)
   .replace("<!--ENGINE-->", () => safe(fill(read("theme/press.js"))));
@@ -145,8 +166,15 @@ fs.mkdirSync(p("dist"), { recursive: true });
 fs.writeFileSync(p("dist/index.html"), out);
 
 // A 404 that is just the site: any deep link lands on the front door.
-fs.writeFileSync(p("dist/404.html"), out);
+// It is served at whatever deep path was missed, so relative links (plates/, log/) need a base.
+fs.writeFileSync(p("dist/404.html"), out.replace("<head>", `<head>\n<base href="${SITE}/">`));
 fs.writeFileSync(p("dist/.nojekyll"), "");
+/* A custom domain. GitHub Pages reads dist/CNAME; set the repository variable SITE_URL
+   (Settings → Secrets and variables → Actions → Variables) and the deploy passes it here.
+   Every canonical link, share card, sitemap entry and feed item moves with it. */
+const HOST = new URL(SITE).host;
+if (!HOST.endsWith(".github.io")) fs.writeFileSync(p("dist/CNAME"), HOST + "\n");
+else fs.rmSync(p("dist/CNAME"), { force: true });
 fs.writeFileSync(p("dist/robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 
 /* The card people see when the link is pasted somewhere. Rendered by `npm run card`
@@ -156,28 +184,33 @@ const CARD = p("assets/og.png");
 if (fs.existsSync(CARD)) fs.copyFileSync(CARD, p("dist/og.png"));
 else console.log("  no assets/og.png — run `npm run card` (shared links will show no image)");
 
-/* Routing is hash-based, so there is exactly one indexable URL. Saying so plainly
-   beats letting a crawler guess. */
+/* The library routes by hash, which a crawler reads as one page, so every title and life
+   also gets a real page of its own (build/pages.mjs). The sitemap lists all of them. */
+const ENTRY_URLS = writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout: !!ABOUT_URL, NEWS, hasLog: LOG.length > 0, CORR: CORRECTIONS });
+const LOG_URLS = writeLog({ ROOT, SITE, pieces: LOG, BOOKS, ADJACENT, LIVES, PRINCIPLES, hasAbout: !!ABOUT_URL, NEWS }).urls;
+const CONTENTS_URL = writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG });
+// lastmod only where it is known: entry pages carry their file's git date, the rest none
+const U = x => typeof x === "string" ? { loc: x } : x;
 fs.writeFileSync(p("dist/sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  `  <url><loc>${SITE}/</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>\n</urlset>\n`);
+  [`${SITE}/`, CONTENTS_URL, ...(ABOUT_URL ? [ABOUT_URL] : []), ...LOG_URLS, ...ENTRY_URLS].map(U)
+    .map(u => `  <url><loc>${u.loc}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ""}</url>\n`).join("") + `</urlset>\n`);
+
+/* Anything in assets/root/ is copied to the top of the site as it is — the place for a
+   search-console verification file (google123abc.html) or a BingSiteAuth.xml. */
+const ROOTFILES = p("assets/root");
+if (fs.existsSync(ROOTFILES)) for (const f of fs.readdirSync(ROOTFILES).filter(f => !f.startsWith("."))) fs.copyFileSync(path.join(ROOTFILES, f), p("dist", f));
 
 const kb = n => (n / 1024).toFixed(0) + " KB";
 console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}`);
 console.log(`  ${BOOKS.length} books · ${ADJACENT.length} adjacent · ${LIVES.length} lives`);
+console.log(`  ${ENTRY_URLS.length} entry pages in dist/t/ and dist/l/, a contents page, llms.txt`);
+console.log(LOG.length ? `  the Log: ${LOG.length} published piece(s), feed.xml` : `  the Log: nothing published yet — held back`);
+console.log(ABOUT_URL ? `  about page at dist/about/` : `  about page held back — content/about.md still says TODO`);
 console.log(`  ${PEOPLE.length} people · ${PRINCIPLES.length} principles · ${SOURCES.length} sources · ${Object.keys(PLATES).length} plates · ${CORRECTIONS.length} corrections`);
 
-/* The house decision is that this stays one file. The cost of that decision is that the
-   plates are inlined as base64 and every reader downloads all of them to see a front door
-   that shows none — so the decision needs a trigger, not a memory. At 1 MB, revisit it:
-   keep the text inline and move the plates out as real files with loading="lazy".
-   Recorded in dashboard/commissions.md, 2026-09-15. */
-const PAGE = Buffer.byteLength(out);
-const PLATE_BYTES = Object.values(PLATES).reduce((n, v) => n + Buffer.byteLength(v), 0);
-const REVISIT_AT = 1024 * 1024;
-console.log(`  plates are ${Math.round(PLATE_BYTES / PAGE * 100)}% of the page (${kb(PLATE_BYTES)} of ${kb(PAGE)})`);
-if (PAGE > REVISIT_AT) {
-  console.log(`\n  the page has passed 1 MB — the one-file decision is due for review.`);
-  console.log(`  Every reader now downloads ${kb(PLATE_BYTES)} of portraits to reach a front door that shows none.`);
-  console.log(`  See dashboard/commissions.md for what was decided and on what trigger.`);
-}
+/* The page budget. The plates left the page on 2026-09-21; what remains is text, the
+   engine and the stylesheet. A front door that grows past this is carrying something it
+   should not, and every reader pays for it before the headline appears. */
+const PAGE = Buffer.byteLength(out), BUDGET = 500 * 1024;
+if (PAGE > BUDGET) console.log(`\n  the front door is ${kb(PAGE)}, over its ${kb(BUDGET)} budget — find what is inlined that should be a file.`);

@@ -44,13 +44,15 @@ http.createServer((req, res) => {
     res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" });
     return res.end(failurePage().replace("</body>", RELOADER + "</body>"));
   }
-  const file = path.join(ROOT, "dist", req.url === "/" ? "index.html" : req.url.replace(/^\//, "").split("?")[0]);
+  let file = path.join(ROOT, "dist", decodeURIComponent(req.url.split("?")[0].replace(/^\//, "")));
+  // entry pages live at dist/t/<id>/index.html, the way a static host serves them
+  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
   if (!file.startsWith(path.join(ROOT, "dist")) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
     res.writeHead(404, { "content-type": "text/plain" }); return res.end("not on the shelf");
   }
   let body = fs.readFileSync(file);
   if (file.endsWith(".html")) body = Buffer.from(body.toString("utf8").replace("</body>", RELOADER + "</body>"));
-  const type = { ".html": "text/html; charset=utf-8", ".txt": "text/plain", ".jpg": "image/jpeg", ".png": "image/png" }[path.extname(file)] || "application/octet-stream";
+  const type = { ".html": "text/html; charset=utf-8", ".txt": "text/plain", ".jpg": "image/jpeg", ".png": "image/png", ".xml": "application/xml" }[path.extname(file)] || "application/octet-stream";
   res.writeHead(200, { "content-type": type, "cache-control": "no-store" });
   res.end(body);
 }).listen(PORT, () => {

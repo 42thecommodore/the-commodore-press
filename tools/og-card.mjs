@@ -119,10 +119,10 @@ ${fontFace}</style>
 </body></html>`;
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "og-"));
-const src = path.join(tmp, "card.html");
-fs.writeFileSync(src, html);
-fs.mkdirSync(p("assets"), { recursive: true });
-const out = p("assets/og.png");
+const render = (page, out) => {
+const src = path.join(tmp, path.basename(out, ".png") + ".html");
+fs.writeFileSync(src, page);
+fs.mkdirSync(path.dirname(out), { recursive: true });
 
 execFileSync(CHROME, [
   "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-sandbox",
@@ -134,12 +134,45 @@ execFileSync(CHROME, [
   `--screenshot=${out}`,
   `file://${src}`,
 ], { stdio: ["ignore", "ignore", "pipe"] });
+if (!fs.existsSync(out)) { console.error(`  Chrome wrote nothing for ${out}.`); process.exit(1); }
+};
+const out = p("assets/og.png");
+render(html, out);
+
+/* One card per title, in its own livery, so a shared title previews as itself rather than
+   as the front door. The text the card prints is recorded in assets/cards/index.json;
+   `npm run check` warns when a title's name, claim or cover has changed since. */
+const TITLES = [...fs.readdirSync(p("content/books")).sort().map(f => JSON.parse(fs.readFileSync(p("content/books", f), "utf8"))),
+                ...fs.readdirSync(p("content/adjacent")).sort().map(f => JSON.parse(fs.readFileSync(p("content/adjacent", f), "utf8")))];
+const stamp = {};
+for (const t of TITLES) {
+  const card = `<!doctype html><html><head><meta charset="utf-8"><style>${fontFace}</style><style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px}
+  body{background:${t.cover};color:${t.ink};font-family:'EB Garamond',Georgia,serif;display:flex;flex-direction:column;
+       justify-content:space-between;padding:64px 72px;overflow:hidden;position:relative}
+  body:after{content:"";position:absolute;right:0;top:0;bottom:0;width:34px;background:${t.spineC}}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:${t.accent}}
+  h1{font-size:${t.title.length > 26 ? 78 : 96}px;line-height:1;font-weight:500;letter-spacing:-.015em;margin-top:24px;max-width:15em}
+  .claim{font-size:31px;line-height:1.36;max-width:22em;margin-top:26px;opacity:.9;font-style:italic}
+  .foot{font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.08em;opacity:.75}
+</style></head><body><div><div class="mono">The Commodore Press · ${t.field}</div><h1>${t.title}</h1>
+<div class="claim">${t.claim || t.sub || ""}</div></div>
+<div class="foot">Every claim carries its source — and the place it is still argued.</div></body></html>`;
+  render(card, p("assets/cards", `${t.id}.png`));
+  stamp[t.id] = [t.title, t.claim || t.sub || "", t.cover].join(" | ");
+}
+fs.writeFileSync(p("assets/cards/index.json"), JSON.stringify(stamp, null, 2) + "\n");
+console.log(`  assets/cards/ — ${TITLES.length} title cards`);
 
 if (process.env.OG_KEEP) console.log(`  OG_KEEP — source html kept at ${src}`);
 else fs.rmSync(tmp, { recursive: true, force: true });
-if (!fs.existsSync(out)) { console.error("  Chrome wrote nothing."); process.exit(1); }
 const kb = (fs.statSync(out).size / 1024).toFixed(0);
 console.log(`\n  assets/og.png — 1200x630, ${kb} KB`);
 console.log(`  ${N.titles} titles · ${N.lives} lives · ${N.people} people`);
+/* What the card says, recorded beside it, so `npm run check` can tell when the shelves
+   have moved and the card has not. It said 21 titles and 32 lives for a week after the
+   shelves reached 22 and 43, on every link anyone shared. */
+fs.writeFileSync(p("assets/og.counts.json"), JSON.stringify(N) + "\n");
 console.log("  Open it before committing — this writer fails by leaving things out, not by erroring.");
 console.log(`  npm run build copies it to dist/og.png\n`);

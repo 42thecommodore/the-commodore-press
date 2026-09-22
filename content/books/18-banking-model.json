@@ -12,7 +12,7 @@
   "accent": "#EFB98A",
   "motif": "dots",
   "claim": "Education is never neutral: it either domesticates or liberates. Freire's claim, and the fight it started.",
-  "lede": "In 1963, in the Brazilian town of Angicos, some three hundred farm workers learned to read in forty-five days — starting from words they already carried: brick, work, land.",
+  "lede": "In 1963, in the Brazilian town of Angicos, some three hundred farm workers learned to read in forty hours of lessons, given between January and April — starting from words they already carried: brick, work, land.",
   "copy": [
     "Paulo Freire's literacy method looked simple and wasn't. Instead of primers about Eva seeing the grape, his 'culture circles' began from generative words drawn from the workers' own lives — tijolo, brick, for construction labourers — broken into syllables and rebuilt into new words, while the circle discussed what bricks, work and land meant in their world. Reading arrived welded to the realisation that the world was made, and could be remade. The army noticed. After the 1964 coup Freire was jailed, then exiled for fifteen years.",
     "'Pedagogy of the Oppressed', written in exile and published in English in 1970, names the enemy: banking education, in which the teacher deposits information into student-accounts who receive, file and store it. The alternative is problem-posing education — teacher and student investigating the world together — and the goal is conscientização: reading the word and the world at once. It became one of the most cited books in all of social science, and the founding text of critical pedagogy.",
@@ -22,7 +22,7 @@
   "timeline": [
     {
       "y": "1963",
-      "t": "Angicos: some 300 workers reach basic literacy in 45 days of culture circles."
+      "t": "Angicos: some 300 workers reach basic literacy in forty hours of culture circles, January to April."
     },
     {
       "y": "1964",
@@ -61,17 +61,25 @@
   ],
   "facts": [
     {
-      "b": "45 days",
-      "s": "From illiterate to reading at Angicos, 1963 — the demonstration that started everything"
+      "b": "40 hours",
+      "s": "Of lessons at Angicos, January–April 1963, after which 300 of the 380 who began were certified literate: Instituto Paulo Freire, 'Angicos 50 Anos — Cronologia'"
     },
     {
       "b": "1970",
-      "s": "'Pedagogy of the Oppressed' appears in English"
+      "s": "'Pedagogy of the Oppressed' appears in English, translated by Myra Bergman Ramos: Wikipedia, 'Pedagogy of the Oppressed'"
     },
     {
       "b": "15 yrs",
-      "s": "Length of Freire's exile after the 1964 coup"
+      "s": "Freire's exile, from the 1964 coup to his first visit home in 1979 (counted to his 1980 return, sixteen): Internet Encyclopedia of Philosophy, 'Paulo Freire'; Pedagogy and Theatre of the Oppressed, 'A Brief Biography of Paulo Freire'"
+    },
+    {
+      "b": "3rd",
+      "s": "Most-cited book in the social sciences on Google Scholar, with 72,359 citations, behind Kuhn and Rogers: Elliott Green, 'What are the most-cited publications in the social sciences (according to Google Scholar)?', LSE Impact Blog, 2016"
     }
+  ],
+  "corrected": [
+    8,
+    10
   ],
   "contested": "Almost everything: whether the method scales beyond charismatic practitioners, whether the empirical literacy evidence favours it (structured instruction has the stronger trial record for decoding), whether 'critical pedagogy' as practised keeps any of Freire's discipline, and — from his own allies — the early text's gender politics. The diagnosis wears better than the prescription.",
   "changed": "I came to Freire as an admirer and left as a friendly witness. 'Education is never neutral' survives every objection I have found; the specific method survives fewer. I now hold the two separately — which, since holding contradictions consciously is what he called critical consciousness, feels like the Freirean move.",
@@ -86,7 +94,7 @@
     {
       "t": "Pedagogy of the Oppressed",
       "a": "Paulo Freire, 1970",
-      "u": "https://en.wikipedia.org/wiki/Pedagogy_of_the_Oppressed",
+      "u": "https://search.worldcat.org/search?q=Pedagogy%20of%20the%20Oppressed%20Paulo%20Freire",
       "why": "Chapter 2 — the banking model — is the argument; read it before the commentary industry."
     },
     {

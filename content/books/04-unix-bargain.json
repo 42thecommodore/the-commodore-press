@@ -58,7 +58,7 @@
   "facts": [
     {
       "b": "1969",
-      "s": "First Unix, on a cast-off PDP-7 at Bell Labs"
+      "s": "First Unix, in PDP-7 assembly at Bell Labs: Wikipedia, 'Unix'"
     },
     {
       "b": "1973",
@@ -69,13 +69,16 @@
       "s": "McIlroy states the Unix philosophy: do one thing well"
     }
   ],
+  "corrected": [
+    7
+  ],
   "contested": "'Worse is better' is quoted as a rule; Gabriel himself argued both sides for years and never settled it. And the claim that Unix's design is why it won competes with a duller explanation, which Peter Salus documents: the 1956 consent decree kept AT&T out of the software business, so it licensed Unix to universities almost for free and with no support, and a generation learned it, and learned to fix it for each other, because it was there.",
   "changed": "I used to think the philosophy caused the success. The licensing accident probably did more. That doesn't make the philosophy wrong — it makes it the thing that let a free system stay useful for fifty years rather than the thing that spread it in the first place.",
   "reading": [
     {
       "t": "The Unix Programming Environment",
       "a": "Kernighan & Pike",
-      "u": "https://en.wikipedia.org/wiki/The_Unix_Programming_Environment",
+      "u": "https://search.worldcat.org/search?q=The%20Unix%20Programming%20Environment%20Kernighan%20%26%20Pike",
       "why": "Dated in specifics, undated in taste. The clearest statement of the aesthetic."
     },
     {
@@ -89,6 +92,12 @@
       "a": "Dennis Ritchie",
       "u": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html",
       "why": "Primary source, from one of the two people who were there."
+    },
+    {
+      "t": "The Development of the C Language",
+      "a": "Dennis Ritchie, 1993",
+      "u": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.html",
+      "why": "Where Ritchie says portability carried little weight at the time — the line quoted above, and the source for the 1973 rewrite."
     },
     {
       "t": "Working in Public",

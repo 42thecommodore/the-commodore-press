@@ -13,9 +13,15 @@
   "motif": "grid",
   "lede": "A bobbin boy at thirteen, the world's richest man at sixty-five, and author of the sentence that indicts every fortune including his own: the man who dies rich dies disgraced.",
   "copy": [
-    "The Dunfermline weaver's son arrived in Pittsburgh at twelve, worked a cotton mill at thirteen, taught himself telegraphy, and rode the Pennsylvania Railroad's management ladder into capital. Steel made the fortune: he bet early and totally on the Bessemer process, built the Edgar Thomson works, and ran on one commandment — watch the costs, and the profits will take care of themselves. In 1901 he sold Carnegie Steel to J.P. Morgan's syndicate for $480 million, then the largest transaction in industrial history.",
+    "The Dunfermline weaver's son arrived in Pittsburgh at twelve, worked a cotton mill at thirteen, taught himself telegraphy, and rode the Pennsylvania Railroad's management ladder into capital. Steel made the fortune: he bet early and totally on the Bessemer process, built the Edgar Thomson works, and ran on one commandment — watch the costs, and the profits will take care of themselves. In 1901 he sold Carnegie Steel to J.P. Morgan's syndicate for $480 million, and Morgan made it the core of U.S. Steel, the first billion-dollar corporation.",
     "Homestead, 1892, is the permanent stain: a lockout at his own mill, Pinkertons and strikers dead, the union broken for a generation — while Carnegie, philosopher of labour's dignity in print, kept to Scotland and let Frick swing the club. No account of the giving survives without this chapter, and the serious biographies no longer try.",
     "The giving itself was doctrine before it was charity. 'The Gospel of Wealth' (1889) argued the rich are trustees obligated to die poor, having administered their surplus for the community — and he nearly did: some 2,500 libraries, Carnegie Hall, the Peace Palace at The Hague, universities and pensions for teachers, most of the fortune gone before the end. The libraries were the perfect Carnegie instrument: infrastructure for self-improvement, offered to every town that would tax itself to stock and staff one."
+  ],
+  "facts": [
+    {
+      "b": "$480 million",
+      "s": "Carnegie's asking price for Carnegie Steel, accepted by Morgan in 1901: 'The Deal of the Century', American Heritage, July/August 1998; PBS American Experience, 'Timeline: Rags to Riches'"
+    }
   ],
   "bio": {
     "t": "Andrew Carnegie",
@@ -23,6 +29,9 @@
     "y": "2006",
     "why": "The full modern life: unsparing on Homestead, alert to the self-mythologising, and still able to take the Gospel of Wealth seriously as ideas. Replaces the older admiring standards."
   },
+  "corrected": [
+    9
+  ],
   "contested": "How much Carnegie knew and directed at Homestead is still argued — his defenders blame Frick, the correspondence implicates them both. And the Gospel of Wealth reads either as the founding charter of modern philanthropy or as capitalism's most elegant apology for itself; a century of argument has not chosen.",
   "across": [
     {

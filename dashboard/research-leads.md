@@ -45,23 +45,39 @@ holds for the part of it that still does.
 
 ---
 
-## The leads
+## Closed 2026-09-21 — the sourcing pass
 
-| Life | The figure, as the entry states it | The document to open |
+Three `press-researcher` sweeps opened the documents for every row in the old table. Each
+figure below was read in the document named in its `facts` line. Correction 9 records the
+six sentences that said more than their sources.
+
+- `fritz-haber` → Erisman et al. 2008, 48% of world population in 2008 (read in the open
+  copy at iai.int). The "three to four billion alive" is not in the paper: its 4 billion
+  is *births since 1908*. "Half the nitrogen in your body" was found in neither Erisman nor
+  Smil's 1997 *Scientific American* piece, and was cut.
+- `maurice-hilleman` → Simpson, *Scientific American* 2020, and Montana State University.
+- `john-d-rockefeller` → PBS *American Experience*: ~90% by 1879 (its timeline says 1877).
+- `andrew-carnegie` → *American Heritage* 1998 and PBS. "Largest transaction in industrial
+  history" was in neither, and was cut.
+- `robert-moses` → robertcaro.org, $27 billion. Thirteen bridges and hundreds of playgrounds
+  were cut.
+- `steve-jobs` → Computer History Museum, Gladwell (read in a reprint), Alvy Ray Smith,
+  Disney's press release. Lucasfilm purchase dated 3 February 1986, which closes the date
+  question further down this page.
+- `tu-youyou` → WHO (500+ scientists, 60 *institutions*) and Neill, *JCI* 2011.
+
+## Still open after the pass
+
+| Life | What | The document to open |
 |---|---|---|
-| `fritz-haber` | three to four billion people fed | Smil, *Enriching the Earth* (MIT Press, 2001); Erisman et al., *Nature Geoscience* 1:636 (2008) |
-| `fritz-haber` | roughly half the nitrogen in your body | Erisman et al., *Nature Geoscience* 1:636 (2008) |
-| `maurice-hilleman` | forty million doses, 1957 | Offit, *Vaccinated* (2007) |
-| `john-d-rockefeller` | ~90% of American refining, early 1880s | Chernow, *Titan* (1998) |
-| `andrew-carnegie` | $480 million to Morgan's syndicate | *American Heritage*, "The Deal of the Century" (Jul/Aug 1998) |
-| `steve-jobs` | 100,000 pre-IPO shares for $1M | Isaacson, *Steve Jobs* (2011) |
-| `steve-jobs` | $5M + $5M for Lucasfilm's graphics group; ~$7.4bn from Disney, 2006 | Price, *The Pixar Touch* (2008); Disney's own May 2006 filing |
-| `steve-jobs` | 94.1% probability of paternity | *Time*, "Striking It Rich" (3 January 1983) — see the conflict below |
-| `tu-youyou` | >2,000 recipes, 380 extracts | Miller & Su, *Cell* 146:855 (2011) — already opened once for this entry |
-| `norman-borlaug` | a billion lives or more | **see below — this one is not a sourcing job** |
-
-Tu Youyou's entry has had Miller & Su opened for it once already, which makes that the
-shortest row left to close.
+| `steve-jobs` | Time's 94.1 per cent. **Decided 2026-09-21:** the entry prints 94.4, named to *Small Fry* (correction 11). Opening *Time* would settle whether the two ever agreed | *Time*, 3 January 1983: the vault serves page images only; needs a library copy |
+| `steve-jobs` | "28 per cent of American men" — the remark attributed to Jobs | the same *Time* piece |
+| `steve-jobs` | Gladwell was read in a reprint, not on newyorker.com | Isaacson, *Steve Jobs* (2011), or newyorker.com when it admits robots |
+| `robert-moses` | Caro's 250,000 displaced, and 159 buildings / 1,530 families against six / nineteen. Attributed to Caro in the prose, never read here | *The Power Broker* itself |
+| `robert-moses` | Whether Caro's $27 billion is in 1968 dollars, as widely said | *The Power Broker* |
+| `john-d-rockefeller` | Chernow's own date for the ninety per cent (snippets say 1880–82) | *Titan* (1998) |
+| `maurice-hilleman` | The entry's own biography, not yet opened | Offit, *Vaccinated* (2007) |
+| `tu-youyou` | The *Cell* account named in `bio` | Miller & Su, *Cell* 146:855 (2011) |
 
 ---
 
@@ -110,9 +126,21 @@ the entry with the source or leave the sentence as it stands.
 
 ---
 
+## Opened 2026-09-21 by the Wing I pass
+
+- `cost-disease` — the sharpest objection to the 31% administration figure is the NEJM editorial that ran beside it (2003, doi 10.1056/NEJMe030091), arguing the method counts costs that are not comparable overhead. Paywalled; not opened. Open it, then name it in `contested`.
+- `defense-of-bubbles` — the dark-fibre share (85–95%) was cut for want of a source. It most likely traces to a 2001–02 analyst note or a TeleGeography capacity survey. Find it and the number can come back.
+- `movable-type` — Buringh & van Zanden (2009), Journal of Economic History, would settle the count of printing towns by 1500 better than a tertiary citation of Braudel.
+- `baptism-and-chain` — Oxford Academic lists pages 187–225 under Gareth Evans and J. E. J. Altham. Confirm whether that span is Evans's paper alone or the whole symposium.
+- `plastic-tide` — two `facts` lines still name papers nobody here has opened: Jambeck et al., Science 347 (2015), 8 Mt for 2010, range 4.8–12.7 (science.org 403; the author's own PDF host has an expired certificate); and Marfella et al., NEJM 390 (2024), hazard ratio 4.53, 95% CI 2.00–10.27 (nejm.org 403). The check flags both. Every secondary account agrees with the entry; that is corroboration, not a source.
+- `benjamin-franklin` — "the only man who signed" the four documents holds when the signer lists are compared, but no institution was found stating it outright. Isaacson, the entry's own biography, is the place to confirm.
+- `edward-thorp` — "the first wearable computer" is corroborated (Guinness; Thorp's 1998 paper 'The Invention of the First Wearable Computer') but not opened.
+- `genghis-khan` — "largest contiguous land empire" is standard but was not opened this pass; Britannica is the obvious place.
+- **Wikipedia as a source.** Many Wing I lines now name Wikipedia, which is honest about where the house looked and weaker than a primary document. Replace them one by one with the primary source each article cites, opened.
+
 ## Two that are decisions, not lookups
 
-**Borlaug's billion.** The sweep traced the figure to Gregg Easterbrook, "Forgotten
+**Borlaug's billion. Decided 2026-09-21: cut (correction 11).** The sweep traced the figure to Gregg Easterbrook, "Forgotten
 Benefactor of Humanity", *The Atlantic*, January 1997 — and found that Easterbrook's own
 sentence is hedged: the agriculture Borlaug preached *may have* prevented a billion
 deaths. No published methodology was found behind it, then or since: no counterfactual

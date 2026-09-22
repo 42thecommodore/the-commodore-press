@@ -117,8 +117,8 @@ reading list, not an Atlas star.
 
 ## The backlog this wing is carrying
 
-104 kept lines across 30 people were written before `kept` could hold a source, and they
-carry none. `npm run check` warns about them. They are Luca's to fix as he re-hears them,
-not an agent's to backfill — see the row in `dashboard/commissions.md`. When you are in
-this file adding someone new, converting one or two of the old bare strings to `{ k, s }`
-is the cheapest way that number ever comes down.
+104 kept lines across 30 people were written before `kept` could hold a source. Since
+2026-09-20 a bare string prints as a note, "after <name>", labelled as not a quotation, so
+they no longer break the promise. They become quotations only when Luca re-hears them and
+gives each an `s` — never an agent's guess. A line you capture now with its source goes in
+as `{ k, s }`; one you only have the gist of goes in as a plain string, and prints as a note.

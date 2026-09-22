@@ -70,15 +70,15 @@
   "facts": [
     {
       "b": "3",
-      "s": "lectures, 20–29 January 1970 — Princeton University Philosophy Colloquium; Kripke, Naming and Necessity, preface (Harvard, 1980)"
+      "s": "Lectures, given on 20, 22 and 29 January 1970 at the Princeton University Philosophy Colloquium: Wikipedia, 'Naming and Necessity'"
     },
     {
       "b": "187–225",
-      "s": "pages of Evans's 'The Causal Theory of Names', Aristotelian Society Supplementary Volume 47 (1973)"
+      "s": "Pages of 'The Causal Theory of Names', the 1973 symposium listed under Gareth Evans and J. E. J. Altham: Aristotelian Society Supplementary Volume 47(1), 1973 (Oxford Academic listing)"
     },
     {
       "b": "1191–1200",
-      "s": "pages of Mandelkern & Linzen, 'Do Language Models' Words Refer?', Computational Linguistics 50(3), 2024 — MIT Press"
+      "s": "Pages of Mandelkern & Linzen, 'Do Language Models' Words Refer?': Computational Linguistics 50(3), 2024, MIT Press (ACL Anthology)"
     }
   ],
   "contested": "Whether the 'thin' reading of intention is a reading of Kripke or a replacement for him is the honest argument, and it is not settled. Kripke's own text ties transmission to what the receiver 'must intend' (Naming and Necessity, pp. 96–97); the thin version relocates that to membership of a speech community, which is a different claim. Internalists — and most people's first instinct — reply that a system with no beliefs cannot be talking about anything, however good its histories. And the whole apparatus says nothing about whether a model understands; reference and understanding come apart, which is either the point or the problem depending on whom you ask.",
@@ -104,7 +104,7 @@
     {
       "t": "Naming and Necessity",
       "a": "Saul Kripke",
-      "u": "https://en.wikipedia.org/wiki/Naming_and_Necessity",
+      "u": "https://search.worldcat.org/search?q=Naming%20and%20Necessity%20Saul%20Kripke",
       "why": "The lectures themselves. Short, spoken, and clearer than the secondary literature that grew around them."
     },
     {

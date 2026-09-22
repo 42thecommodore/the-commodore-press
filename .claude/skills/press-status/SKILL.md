@@ -1,12 +1,19 @@
 ---
 name: press-status
 description: Report where the Commodore Press stands — what is on the shelves, what is half-finished, what breaks the house rules, and what to pick up next. Use when the user asks how the site is doing, what needs work, what to write next, or opens a working session on the Press.
-allowed-tools: Bash(npm run stats) Bash(npm run check) Bash(git status:*) Bash(git log:*) Read Glob Grep
+allowed-tools: Bash(npm run ready) Bash(npm run stats) Bash(npm run check) Bash(git status:*) Bash(git log:*) Read Glob Grep
 ---
 
 # Press status
 
 The state below is real, not remembered — it was read from the workspace just now.
+
+## Ready for readers?
+
+!`cd "$CLAUDE_PROJECT_DIR" && npm run ready --silent 2>&1 | sed 's/\x1b\[[0-9;]*m//g'`
+
+Lead with this. It is the owner's own checklist, and its "Next" line is usually the answer to
+"what should I do now".
 
 ## Inventory and backlog
 

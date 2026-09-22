@@ -62,15 +62,15 @@
   "facts": [
     {
       "b": "1961",
-      "s": "'The Concept of Law' published — still the field's common starting point"
+      "s": "'The Concept of Law' published by Oxford University Press — still the field's common starting point: Wikipedia, 'The Concept of Law'"
     },
     {
       "b": "1958",
-      "s": "Hart–Fuller debate in the Harvard Law Review"
+      "s": "Hart–Fuller debate in the Harvard Law Review, 71(4): Wikipedia, 'Hart–Fuller debate'"
     },
     {
       "b": "1994",
-      "s": "The Postscript — Hart's posthumous reply to Dworkin"
+      "s": "The Postscript — Hart's posthumous reply to Dworkin, in the second edition: Wikipedia, 'The Concept of Law'"
     }
   ],
   "contested": "Whether the rule of recognition can incorporate moral tests (inclusive versus exclusive positivism) split Hart's own camp. Dworkin's challenge was never resolved so much as absorbed. And critics note the Postscript concedes enough that it is argued to this day how much of the original book survives its own second edition.",
@@ -106,19 +106,19 @@
     {
       "t": "The Concept of Law",
       "a": "H.L.A. Hart, 1961",
-      "u": "https://en.wikipedia.org/wiki/The_Concept_of_Law",
+      "u": "https://search.worldcat.org/search?q=The%20Concept%20of%20Law%20H.L.A.%20Hart",
       "why": "Short, plainly written, and the rare classic that is genuinely the best entry point to itself."
     },
     {
       "t": "Positivism and the Separation of Law and Morals",
-      "a": "Hart, Harvard Law Review 1958",
+      "a": "Hart, Harvard Law Review 1958 — linked to Wikipedia's account of the debate; the article itself is on JSTOR",
       "u": "https://en.wikipedia.org/wiki/Hart%E2%80%93Fuller_debate",
       "why": "Read with Fuller's reply — the pair is the whole debate in one sitting."
     },
     {
       "t": "Taking Rights Seriously",
       "a": "Ronald Dworkin",
-      "u": "https://en.wikipedia.org/wiki/Taking_Rights_Seriously",
+      "u": "https://search.worldcat.org/search?q=Taking%20Rights%20Seriously%20Ronald%20Dworkin",
       "why": "The strongest sustained objection, from the man who made it his career."
     },
     {

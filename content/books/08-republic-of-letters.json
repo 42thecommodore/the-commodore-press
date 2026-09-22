@@ -58,15 +58,15 @@
   "facts": [
     {
       "b": "1665",
-      "s": "Philosophical Transactions founded — the first and longest-running scientific journal"
+      "s": "Philosophical Transactions founded by Oldenburg — the first and longest-running scientific journal: The Royal Society, 'History of Philosophical Transactions'"
     },
     {
       "b": "1662",
-      "s": "The Royal Society receives its charter; Oldenburg runs the correspondence"
+      "s": "The Royal Society receives its charter; Oldenburg runs the correspondence: The Royal Society, 'History of the Royal Society'"
     },
     {
       "b": "20,000",
-      "s": "Letters in the CKCC corpus of 17th-century Dutch scholarly correspondence"
+      "s": "Letters in the CKCC corpus of 17th-century Dutch scholarly correspondence: Huygens Institute (KNAW), CKCC project, 'Corpus'"
     }
   ],
   "contested": "The fragmentation-was-good thesis has an obvious dark twin — fragmentation also produced centuries of European war — and comparative claims about Chinese intellectual life often rest on far thinner sources than the European side of the comparison. The counterfactual is doing heavy lifting.",
@@ -115,7 +115,7 @@
     {
       "t": "The Invention of Science",
       "a": "David Wootton",
-      "u": "https://en.wikipedia.org/wiki/David_Wootton_(historian)",
+      "u": "https://search.worldcat.org/search?q=The%20Invention%20of%20Science%20David%20Wootton",
       "why": "Wootton argues against Shapin. Read them as a pair or don't bother."
     }
   ]

@@ -16,6 +16,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJSON } from "./json.mjs";
+import { publishedLog } from "../build/log.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...a) => path.join(ROOT, ...a);
@@ -41,6 +42,16 @@ for (const d of DIRS) {
     docs.push({ file: `${d}/${f}`, data: readJSON(path.join(full, f)) });
 }
 for (const f of FILES) { try { docs.push({ file: f, data: readJSON(p(f)) }); } catch {} }
+
+/* The Markdown pages, as the reader will see them: a published Log piece paragraph by
+   paragraph, and the About page once it is no longer held back. Drafts are unfinished by
+   design and are read when their status changes. */
+const paras = md => md.split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
+for (const x of publishedLog(ROOT)) docs.push({ file: x.file, data: { title: x.meta.title, dek: x.meta.dek, body: paras(x.body) } });
+if (fs.existsSync(p("content/about.md"))) {
+  const about = fs.readFileSync(p("content/about.md"), "utf8");
+  if (!/\bTODO\b/.test(about)) docs.push({ file: "content/about.md", data: { body: paras(about) } });
+}
 
 /* fields that are prose a reader sees; ids, colours and urls are not */
 const SKIP = new Set(["id", "u", "url", "href", "cover", "spineC", "ink", "accent", "motif",

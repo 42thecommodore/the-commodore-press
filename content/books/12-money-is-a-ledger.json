@@ -62,15 +62,15 @@
   "facts": [
     {
       "b": "~700 yrs",
-      "s": "Duration of the English tally stick system"
+      "s": "Duration of the English Exchequer tally system, c. 1100–1826: Wikipedia, 'Tally stick'"
     },
     {
       "b": "1834",
-      "s": "Burning the tallies destroys the Palace of Westminster"
+      "s": "Burning the tallies destroys the Palace of Westminster: UK Government history blog, 'The Exchequer: a chequered history', 2013"
     },
     {
       "b": "Seconds",
-      "s": "Modern real-time settlement, down from multi-day float"
+      "s": "Modern instant settlement, down from multi-day float: European Central Bank, 'TARGET Instant Payment Settlement (TIPS)'"
     }
   ],
   "contested": "Graeber's 'Debt' popularised the credit-first account and remains contested by economic historians on specifics. The 'myth of barter' claim is well supported by anthropology — no one has found a barter economy that later invented money — but several of his historical set-pieces have been criticised as too neat, and a few are simply wrong on dates.",
@@ -79,7 +79,7 @@
     {
       "t": "Debt: The First 5,000 Years",
       "a": "David Graeber",
-      "u": "https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years",
+      "u": "https://search.worldcat.org/search?q=Debt%3A%20The%20First%205%2C000%20Years%20David%20Graeber",
       "why": "Read it, then read a critical review. Both are worth your time."
     },
     {

@@ -15,12 +15,12 @@
   "copy": [
     "Clair Patterson grew up in Mitchellville, Iowa, and learned mass spectrometry at Oak Ridge, in the wartime plant separating uranium for the bomb. At the University of Chicago Harrison Brown gave him the lead half of an old problem: the age of the Earth, read from the isotopes of lead. The lead would not hold still. There was too much of it in every blank, because it was in the air, the dust, the glassware and the reagents. He began in 1948 in a dusty laboratory in Kent Hall. At Caltech he built a room that kept the lead out, one of the first clean rooms in geochemistry. In 1956 he published the age of the meteorites and the Earth: 4.55 billion years, give or take 70 million. The figure has barely moved since.",
     "The contamination was the finding. If ordinary laboratory air carried that much lead, so did everything else. In 'Contaminated and Natural Lead Environments of Man' (1965) he estimated that many Americans carried more than a hundred times the natural level in their blood, within about a factor of two of the level at which poisoning shows. Snow cores from Greenland put most of the rise inside the last hundred years. In 1980 he and Dorothy Settle found 0.3 nanograms of lead per gram in fresh albacore and 1,400 in canned, where government laboratories had reported a difference of two to one. The lead came from the solder sealing the cans. By 1993 soldered food cans were gone from the United States.",
-    "The popular version is one scientist against the Ethyl Corporation, and it leaves out most of what moved. The case for leaded petrol had been made for forty years by Robert Kehoe, Ethyl's medical director from 1925 and head of the Kettering Laboratory in Cincinnati. He was a competent toxicologist, and his rule was that lead was safe until harm was shown. Patterson testified to Edmund Muskie's Senate subcommittee a week after Kehoe, in June 1966, and said it was difficult to understand \"why the Public Health Service cooperated with the lead industry\" on its report. By his own later account, his Public Health Service contract was then not renewed, nor his contract with the American Petroleum Institute. In 1971 he was left off the National Research Council panel on airborne lead. The average American's blood lead fell 78 per cent between 1976–80 and 1988–91. Algeria, the last country selling leaded petrol, ran out in July 2021."
+    "The popular version is one scientist against the Ethyl Corporation, and it leaves out most of what moved. The case for leaded petrol had been made for forty years by Robert Kehoe, Ethyl's medical director from 1925 and head of the Kettering Laboratory in Cincinnati. He was a competent toxicologist, and his rule was that lead was safe until harm was shown. Patterson testified to Edmund Muskie's Senate subcommittee a week after Kehoe, in June 1966, and said he found it hard to understand why the Public Health Service had cooperated with the lead industry on its report. By his own later account, his Public Health Service contract was then not renewed, nor his contract with the American Petroleum Institute. In 1971 he was left off the National Research Council panel on airborne lead. The average American's blood lead fell 78 per cent between 1976–80 and 1988–91. Algeria, the last country selling leaded petrol, ran out in July 2021."
   ],
   "facts": [
     {
       "b": "4.55 bn yrs",
-      "s": "Patterson, 'Age of meteorites and the earth', Geochimica et Cosmochimica Acta 10 (1956)"
+      "s": "Age of the earth, ± 0.07 billion years: Clair Patterson, 'Age of meteorites and the earth', Geochimica et Cosmochimica Acta 10, 1956, pp. 230–237"
     },
     {
       "b": "100×",
@@ -62,5 +62,8 @@
       "label": "Florence Nightingale",
       "txt": "— the first to turn a death count into a chart a government could not ignore."
     }
+  ],
+  "corrected": [
+    16
   ]
 }

@@ -8,6 +8,8 @@ All three wings are about people. The Press is the ideas people spent their live
 
 Read that sentence again before changing anything. It is the product.
 
+Beside the wings sits **the Log**, the editor's signed column (Markdown in `content/log/`, `/press-log`). It is where opinion lives, because every piece has Luca's name and a date on it — and it is still held to the same rules on figures, quotations and corrections. The Log's views are Luca's; help him write them, never supply them. The Press is the brand; Luca is its named editor.
+
 ## The one rule that outranks the others
 
 **The site's public promises are load-bearing.** The colophon tells readers:
@@ -29,6 +31,10 @@ The Commodore/
 │   ├── adjacent/NN-slug.json   Wing I · adjacent shelf
 │   ├── lives/NN-slug.json      Wing II · lives     (id must match its plate)
 │   ├── atlas/                  Wing III · domains, domain-colors, principles, people, sources
+│   ├── log/YYYY-MM-DD-slug.md  the Log · the editor's signed column, Markdown, draft until status: published
+│   ├── (any entry) "corrected": [n]   the colophon corrections that apply to it — printed on the entry; add it with every `npm run correct`
+│   ├── newsletter.json         the sign-up form; prints nowhere until `action` and `provider` are set
+│   ├── about.md                the About page, in plain Markdown; held back while it says TODO
 │   ├── corrections.json        append-only, printed in the colophon
 │   ├── plate-licences.json     plates that are not plain public domain, with the credit the colophon owes
 │   └── http-allowlist.json     links that are genuinely http-only, with reasons
@@ -37,6 +43,8 @@ The Commodore/
 ├── theme/press.js              # the engine — rendering, search, night mode, Atlas
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
 ├── build/build.mjs             # assembles everything into dist/index.html
+├── build/pages.mjs             # one crawlable page per entry: dist/t/<id>/, dist/l/<id>/ — plus about/, log/, feed.xml
+├── build/log.mjs               # reads content/log/ — shared by build, check, links and proofread
 ├── tools/                      # validate, new, plate, correct, stats, serve, json (friendly parse errors)
 ├── schemas/                    # what every content field means — editor hover help AND the check's field list
 ├── .vscode/settings.json       # wires schemas/ into VS Code/Cursor; dist/ and corrections.json open read-only
@@ -45,7 +53,7 @@ The Commodore/
 │                               # what finished means, and how to change a rule on this list
 ├── dashboard/                  # commissions.md (the queue), rhythm.md, changelog.md,
 │                               # research-leads.md (documents still to open — NOT sources)
-├── dist/index.html             # THE DEPLOYABLE — generated, never hand-edited
+├── dist/                       # THE DEPLOYABLE — index.html + entry pages + sitemap, generated, never hand-edited
 └── .claude/
     ├── settings.json           # permissions + the two hooks below
     ├── hooks/                  # guard-generated (PreToolUse deny), check-content (PostToolUse)
@@ -74,6 +82,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | | |
 |---|---|
 | `npm start` | preview on :4321, rebuilds and reloads on save |
+| `npm run ready` | the owner's launch checklist: what is done, what is not, the next action. Changes nothing |
 | `npm run check` | the house rules — **exits 1 on any error** |
 | `npm run links` | visits every link the site prints; **exits 1 on any dead one**. Off the fast gate because it needs the network — run it monthly, and after any reading-list edit |
 | `npm run proofread` | reads the prose for what a grep can be sure of: placeholder text that would print, a repeated word, a space before a comma. Judgment stays with `/press-proofread` |
@@ -81,7 +90,9 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run stats` | inventory and editorial backlog |
 | `npm run voice` | the house's own sentence and punctuation numbers, measured off `content/` |
 | `npm run new book\|life\|adjacent "Title"` | scaffold a house-shaped stub |
+| `npm run new log "Title"` | start a Log piece, as a draft |
 | `npm run plate -- <image> <life-id>` | make a duotone plate |
+| `npm run card` | re-render the share cards — the front door's and one per title — with headless Chrome. Look at them; the check warns when one is stale |
 | `npm run correct -- "Title." "Body."` | append a correction |
 | `npm run ship -- "what changed"` | the whole release, one command: refuses to run off `main`, then check → proofread → links → build → commit → push. `--allow-branch` to ship a branch deliberately, `--skip-links` when offline |
 | `npm run verify -- <old.html> <new.html>` | prove two builds carry identical content |
@@ -94,7 +105,7 @@ command and runs the same gate locally first; `/press-publish` stays human-invok
 ## Rules for agents working here
 
 - **Edit `content/`, never `dist/`.** `dist/index.html` is generated and will be overwritten without warning.
-- **Never hand-edit `content/corrections.json`.** Use `npm run correct`. Appending is the promise.
+- **Never hand-edit `content/corrections.json`.** Use `npm run correct`. Appending is the promise. Then add the new number to the affected entry's `corrected` list, in the same change.
 - **A new field is described in `schemas/` in the same change.** `npm run check` fails on any field name the schemas do not list — that keeps the editor's help true and catches misspellings the page would silently drop. If a command or field changes, update `EDITING.md` too; the owner maintains the site from it.
 - **A number with no source does not ship.** `facts` entries need both `b` (the number) and `s` (the named source). The validator enforces it.
 - **Research before writing.** Use web search; do not write figures from memory. Every entry the house has had to correct came from a remembered factoid.

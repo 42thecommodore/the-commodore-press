@@ -44,9 +44,11 @@
         "t": { "type": "string", "x-means": "title", "description": "Exact title. The site turns it into a WorldCat search, so a typo breaks the link." },
         "a": { "type": "string", "x-means": "author", "description": "Exact author." },
         "y": { "type": "string", "x-means": "year", "description": "Year published, as text: \"2013 / 2018\"." },
+        "u": { "type": "string", "format": "uri", "x-means": ["url", "link"], "description": "Only when the place to start is not a book — an article, an exhibition, an archive. The reader then links it directly and heads the section \"Where to start\" instead of offering a library search for a book that does not exist." },
         "why": { "type": "string", "description": "Why this book and not the famous one." }
       }
     },
+    "corrected": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "x-means": ["corrections", "correction"], "description": "The numbers of the colophon corrections that apply to this entry, e.g. [2]. The reader prints them on the entry, so someone reading it learns it was corrected and what changed. Add the number in the same change that runs `npm run correct`." },
     "contested": { "type": "string", "x-means": "dispute", "description": "What is disputed about this life, and by whom — the strongest critique, named." },
     "across": { "$ref": "title.schema.json#/definitions/across" }
   }
