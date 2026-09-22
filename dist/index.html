@@ -630,19 +630,9 @@
   .cta kbd{font-family:var(--mono);font-size:10.5px;border:1px solid var(--rule);border-radius:3px;padding:0 5px;margin-left:4px}
   .cta:active{transform:scale(.97)}
 
-  /* the house rules, at the foot of the front door; the full colophon has its own page */
-  .promises{margin:64px 0 10px;padding:34px 0 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:190px 1fr;gap:14px 40px;align-items:start}
-  .promises ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 36px;font-size:18px;line-height:1.45;color:var(--ink-mid)}
-  .promises li{border-left:2px solid var(--oxblood);padding-left:14px}
-  .promises b{font-weight:500;color:var(--ink)}
-  .promises .door-go{grid-column:2;justify-self:start;margin-top:12px;text-decoration:none}
+  /* the colophon has its own page */
   [data-wing=colophon] .colophon{border-top:0;margin-top:14px;padding-top:30px}
   [data-wing=colophon] .wing-head .side a{color:inherit;text-underline-offset:4px}
-  @media (max-width:860px){
-    .promises{grid-template-columns:1fr}
-    .promises ul{grid-template-columns:1fr}
-    .promises .door-go{grid-column:1}
-  }
 
   @media (max-width:1000px){
     .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -722,19 +712,6 @@
            the shelf. All three are drawn from content/ by renderDoors() in press.js. -->
       <div class="doors" id="doors"></div>
 
-      <!-- The house promises, in one line each. The full colophon — method, plate credits,
-           every correction, the disclosure — has its own page at #colophon; the front door
-           keeps the promises in view and one click away from their proof. -->
-      <div class="promises" data-reveal>
-        <div class="lbl">The house rules</div>
-        <ul>
-          <li><b>Every figure</b> carries a named source.</li>
-          <li><b>Every dispute</b> is printed, not hidden.</li>
-          <li><b>Every correction</b> is appended, never patched — <span id="nCorr"></span> so far.</li>
-          <li><b>Built with AI assistance</b>, and it says so.</li>
-        </ul>
-        <a class="door-go" href="#colophon" onclick="go('colophon');return false;">Colophon, corrections &amp; disclosure →</a>
-      </div>
     </div>
   </section>
 
@@ -1054,7 +1031,6 @@ function renderFront(){
   document.getElementById("corrections").innerHTML=
     `<div class="lbl q" style="margin-bottom:10px">Corrections — kept visible</div>`+
     CORRECTIONS.map(c=>`<div style="margin-bottom:12px"><b>${c.t}</b> ${c.b} <span style="font-family:var(--mono);font-size:11.5px;opacity:.6">${c.d}</span></div>`).join("");
-  const nc=document.getElementById("nCorr"); if(nc)nc.textContent=CORRECTIONS.length;
   document.getElementById("stat").textContent=`${BOOKS.length} titles · ${LIVES.length} lives · ${PEOPLE.length} people · ${PRINCIPLES.length} principles`;
   renderDoors(withPlates,dayN);
 }
