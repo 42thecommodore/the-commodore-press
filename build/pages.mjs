@@ -213,7 +213,10 @@ function page(kind, b, ctx) {
   // A short lede makes a thin search snippet; top it up with the opening of the copy.
   const lead = isPress ? (b.claim || b.lede) : b.lede;
   const desc = clip(strip(lead).length < 110 ? `${strip(lead)} ${strip(b.copy[0])}` : lead, 158);
-  const image = plateFile ? `${SITE}/plates/${plateFile}` : ctx.hasCard ? `${SITE}/cards/${b.id}.png` : `${SITE}/og.png`;
+  // The entry's own card first (titles and lives both have one, from `npm run card`); a
+  // life with no card yet falls back to its bare plate, in the small square preview.
+  const image = ctx.card ? `${SITE}/${ctx.card}` : plateFile ? `${SITE}/plates/${plateFile}` : `${SITE}/og.png`;
+  const small = !ctx.card && !!plateFile;
   const words = wordsOf(b), mins = minsOf(b);
   const wingName = isPress ? "The Press" : "Lives", wingUrl = `${SITE}/contents/`;
   const ld = [{
@@ -257,9 +260,9 @@ function page(kind, b, ctx) {
 <meta property="og:description" content="${attr(desc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${image}">
-<meta property="og:image:alt" content="${attr(plateFile ? "Portrait of " + b.n : ctx.hasCard ? name + " — The Commodore Press" : "The Commodore Press")}">
-<meta name="twitter:card" content="${plateFile ? "summary" : "summary_large_image"}">
-${!plateFile ? `<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="${attr(ctx.card ? name + " — The Commodore Press" : small ? "Portrait of " + b.n : "The Commodore Press")}">
+<meta name="twitter:card" content="${small ? "summary" : "summary_large_image"}">
+${!small ? `<meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">` : ""}
 <meta name="twitter:title" content="${attr(name)}">
 <meta name="twitter:description" content="${attr(desc)}">
@@ -321,6 +324,12 @@ export function writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout, 
   if (fs.existsSync(cardsSrc)) {
     fs.mkdirSync(cardsOut, { recursive: true });
     for (const f of fs.readdirSync(cardsSrc).filter(f => f.endsWith(".png"))) { fs.copyFileSync(path.join(cardsSrc, f), path.join(cardsOut, f)); cards.add(f.slice(0, -4)); }
+    // lives' cards live in cards/l/, so a life can never share a file name with a title
+    const lsrc = path.join(cardsSrc, "l");
+    if (fs.existsSync(lsrc)) {
+      fs.mkdirSync(path.join(cardsOut, "l"), { recursive: true });
+      for (const f of fs.readdirSync(lsrc).filter(f => f.endsWith(".png"))) { fs.copyFileSync(path.join(lsrc, f), path.join(cardsOut, "l", f)); cards.add("l/" + f.slice(0, -4)); }
+    }
   }
 
   const byRef = {};
@@ -334,7 +343,7 @@ export function writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout, 
       const plateFile = kind === "lives" && !b.plateless ? plates[b.id] : null;
       const d = path.join(dist, dir, b.id);
       fs.mkdirSync(d, { recursive: true });
-      fs.writeFileSync(path.join(d, "index.html"), page(kind, b, { SITE, known, plateFile, wing, hasAbout, prev, next, NEWS, hasLog, hasCard: kind === "press" && cards.has(b.id), CORR, byRef, modified: DATES[b.id] }));
+      fs.writeFileSync(path.join(d, "index.html"), page(kind, b, { SITE, known, plateFile, wing, hasAbout, prev, next, NEWS, hasLog, card: kind === "press" ? (cards.has(b.id) ? `cards/${b.id}.png` : null) : (cards.has("l/" + b.id) ? `cards/l/${b.id}.png` : null), CORR, byRef, modified: DATES[b.id] }));
       urls.push({ loc: `${SITE}/${dir}/${b.id}/`, lastmod: DATES[b.id] });
     });
   }
@@ -431,7 +440,7 @@ const MONTHS = ["January","February","March","April","May","June","July","August
 const longDate = d => { const [y, m, day] = d.split("-").map(Number); return `${day} ${MONTHS[m - 1]} ${y}`; };
 const LOG_LIVERY = { cover: "#2A2F45", ink: "#F0EFEA", accent: "#D8A657" };
 const FEED_LINK = root => `<link rel="alternate" type="application/rss+xml" title="The Commodore Press — the Log" href="${root}feed.xml">`;
-const FONTS = `<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1' stroke='%231E1C18' stroke-width='1.6'/%3E%3Cpath d='M11 1.5V20.5M1.5 11H20.5' stroke='%231E1C18' stroke-width='1.6'/%3E%3C/svg%3E">
+const FONTS = `<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22' fill='none' stroke='%231E1C18' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1'/%3E%3Cpath d='M9 1.6V15'/%3E%3Cpath d='M9 3.6 17.4 5.3 14.5 6.8 17.4 8.3 9 10Z' fill='%231E1C18' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">`;

@@ -179,7 +179,7 @@ const readMins=b=>Math.max(2,Math.round(words(b)/210));
 function openLife(id){go('lives');setTimeout(()=>openReader('lives',id),340)}
 const plateOrMark=(b,cls)=>PLATES[b.id]
   ? `<img class="${cls}" src="${PLATES[b.id]}" alt="" loading="lazy">`
-  : `<span class="${cls} nomark" aria-hidden="true"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="none" stroke="currentColor" stroke-width=".9"/><path d="M11 1V21M1 11H21" stroke="currentColor" stroke-width=".9"/></svg></span>`;
+  : `<span class="${cls} nomark" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round"><g><circle cx="11" cy="11" r="10" stroke-width="0.9"/><path d="M9 1.2V15" stroke-width="0.9"/><path class="pn" d="M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z" fill="currentColor" stroke="none"/><path d="M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0" stroke-width="0.9"/><path d="M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0" stroke-width="0.72" opacity=".5"/></g></svg></span>`;
 /* Every Press → Lives → Atlas path the content actually contains. Built from `across`
    rather than written down, so the panel below cannot outlive the links it describes:
    pull a link and the thread it was showing stops being offered. */
@@ -375,7 +375,7 @@ function readerHTML(kind,b){
 
   const plate = isPress ? "" : (PLATES[b.id]
     ? `<figure class="plate" data-reveal style="--d:150ms"><img src="${PLATES[b.id]}" alt="Portrait of ${b.n}"><figcaption>Plate · ${b.n}</figcaption></figure>`
-    : `<figure class="plate mark" data-reveal style="--d:150ms"><svg width="84" height="84" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="none" stroke="currentColor" stroke-width=".8" opacity=".6"/><path d="M11 1V21M1 11H21" stroke="currentColor" stroke-width=".8" opacity=".6"/><path d="M4 4 18 18M18 4 4 18" stroke="currentColor" stroke-width=".5" opacity=".35"/></svg><figcaption>No plate — see colophon</figcaption></figure>`);
+    : `<figure class="plate mark" data-reveal style="--d:150ms"><svg width="84" height="84" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g opacity="0.7"><circle cx="11" cy="11" r="10" stroke-width="0.8"/><path d="M9 1.2V15" stroke-width="0.8"/><path class="pn" d="M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z" fill="currentColor" stroke="none"/><path d="M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0" stroke-width="0.8"/><path d="M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0" stroke-width="0.64" opacity=".5"/></g></svg><figcaption>No plate — see colophon</figcaption></figure>`);
   return `<div class="wrap">
     <div class="rbar">
       <button class="back" onclick="closeReader()"><span class="arw">←</span> ${isPress?"All titles":"All lives"}</button>
@@ -577,13 +577,16 @@ function applySpines(on){
   document.querySelectorAll(".chip.spineview").forEach(c=>c.setAttribute("aria-pressed",String(on)));
 }
 function toggleSpines(){
-  if(!onShelf())return;
+  // off the shelves (the front door, the colophon) S means "show me the spines": take the reader there
+  if(!onShelf()){if(wing==="atlas")return;go("press");applySpines(true);return}
   applySpines(!document.body.classList.contains("spines"));
 }
 function spineChip(){
   return `<button class="chip spineview" aria-pressed="${document.body.classList.contains("spines")}" onclick="toggleSpines()" title="Spines ( S )">Spines</button>`;
 }
 function shelfStep(d){
+  // from the front door the arrows open the Press shelf and land on its first (or last) book
+  if(!onShelf()){if(wing==="atlas")return;go("press");setTimeout(()=>shelfStep(d),340);return}
   const slots=[...document.querySelectorAll((wing==="press"?"#shelf":"#livesShelf")+" .slot")];
   if(!slots.length)return;
   const i=slots.indexOf(document.activeElement);
@@ -751,8 +754,8 @@ addEventListener("keydown",e=>{
   if(e.key==="/"&&!document.getElementById("smodal").classList.contains("on")){e.preventDefault();return openSearch()}
   if(current&&e.key==="ArrowRight"){e.preventDefault();return step(1)}
   if(current&&e.key==="ArrowLeft"){e.preventDefault();return step(-1)}
-  if(!current&&onShelf()&&e.key==="ArrowRight"){e.preventDefault();return shelfStep(1)}
-  if(!current&&onShelf()&&e.key==="ArrowLeft"){e.preventDefault();return shelfStep(-1)}
+  if(!current&&wing!=="atlas"&&e.key==="ArrowRight"){e.preventDefault();return shelfStep(1)}
+  if(!current&&wing!=="atlas"&&e.key==="ArrowLeft"){e.preventDefault();return shelfStep(-1)}
   const k=e.key.toLowerCase();
   if(k==="r"){e.preventDefault();surprise()}
   if(k==="s"&&!current){e.preventDefault();toggleSpines()}

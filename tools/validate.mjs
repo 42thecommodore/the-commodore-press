@@ -1,5 +1,6 @@
 /* Commodore Press validator — enforces the house rules the site promises publicly.
    Run: npm run check   (exit 1 on any error; warnings never block a build) */
+import { lifeStamp } from "./cards.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -425,6 +426,12 @@ const HEX = /^#[0-9a-fA-F]{6}$/;
   for (const { data: t } of [...books, ...adjacent]) {
     const now = [t.title, t.claim || t.sub || "", t.cover].join(" | ");
     if (!said[t.id]) missing.push(t.id); else if (said[t.id] !== now) stale.push(t.id);
+  }
+  // lives: the stamp tools/og-card.mjs writes, from the same function (tools/cards.mjs)
+  const LIC = fs.existsSync(p("content/plate-licences.json")) ? readJSON(p("content/plate-licences.json")) : {};
+  for (const { data: l } of lives) {
+    const now = lifeStamp(ROOT, l, LIC);
+    if (!said["l/" + l.id]) missing.push(l.id); else if (said["l/" + l.id] !== now) stale.push(l.id);
   }
   if (missing.length || stale.length)
     warn("assets/cards", `${[...missing.map(i => i + " (no card)"), ...stale.map(i => i + " (card is out of date)")].join(", ")} — run \`npm run card\``);

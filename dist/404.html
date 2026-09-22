@@ -50,7 +50,7 @@
 }
 </script>
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1' stroke='%231E1C18' stroke-width='1.6'/%3E%3Cpath d='M11 1.5V20.5M1.5 11H20.5' stroke='%231E1C18' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22' fill='none' stroke='%231E1C18' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1'/%3E%3Cpath d='M9 1.6V15'/%3E%3Cpath d='M9 3.6 17.4 5.3 14.5 6.8 17.4 8.3 9 10Z' fill='%231E1C18' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -116,10 +116,12 @@
   body.night header.mast.stuck{border-bottom-color:var(--line)}
   .mast-in{display:flex;align-items:center;gap:20px;height:64px}
   .mark{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
-  .mark svg{display:block;transition:transform .9s var(--ease)}
-  .mark:hover svg{transform:rotate(180deg)}
-  .mark svg circle,.mark svg path{stroke:var(--ink);transition:stroke .6s}
-  body.night .mark svg circle,body.night .mark svg path{stroke:var(--parchment)}
+  .mark svg{display:block;color:var(--ink);transition:color .6s}
+  body.night .mark svg{color:var(--parchment)}
+  /* the pennant catches the wind on hover; the seal itself stays put */
+  .mark svg .pn{transform-origin:9px 6.8px;transition:transform .7s var(--ease)}
+  .mark:hover svg .pn{transform:scaleX(1.12) skewY(-5deg)}
+  @media (prefers-reduced-motion:reduce){.mark svg .pn{transition:none}}
   .mark b{font-weight:600;font-size:20px;letter-spacing:.004em;white-space:nowrap}
   .mast nav{margin-left:auto;display:flex;align-items:center;gap:2px;flex-wrap:wrap}
   .navbtn{padding:7px 13px;border-radius:999px;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
@@ -479,6 +481,10 @@
   body.night .foot{color:var(--parchment-dim)}
   .foot .grow{margin-left:auto;text-align:right}
   kbd{font-family:var(--serif);font-weight:600;font-size:13.5px;padding:0 3px}
+  .foot .keys{color:inherit}
+  .foot .keys>span{opacity:.62}
+  .foot .keys button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;opacity:.62;transition:opacity .2s}
+  .foot .keys button:hover,.foot .keys button:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:3px}
 
   @media (max-width:1000px){
     .front{grid-template-columns:1fr;gap:40px}
@@ -719,8 +725,8 @@
   /* the press mark, drawn rather than set: the house fonts have no ornament glyph, and a
      fallback font printed it at half size */
   .rs-end .rs-fin::before{content:"";display:block;width:24px;height:24px;margin:0 auto 12px;background:currentColor;opacity:.75;
-    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M11 1V21M1 11H21' stroke-width='1'/%3E%3Cpath d='M4 4 18 18M18 4 4 18' stroke-width='.7'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
-    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M11 1V21M1 11H21' stroke-width='1'/%3E%3Cpath d='M4 4 18 18M18 4 4 18' stroke-width='.7'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
   .rs-end h3{font-weight:500;font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:10px auto 8px;max-width:22ch}
   .rs-end p{font-size:17px;line-height:1.5;opacity:.9;margin:0 auto 20px;max-width:44ch}
   .rs-end .rs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
@@ -766,11 +772,7 @@
 <header class="mast" id="mast">
   <div class="wrap mast-in">
     <a class="mark" href="#home" onclick="go('home');return false;">
-      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
-        <circle cx="11" cy="11" r="10" fill="none" stroke-width="1.2"/>
-        <path d="M11 1V21M1 11H21" stroke-width="1.2"/>
-        <path d="M4 4 18 18M18 4 4 18" stroke-width=".7" opacity=".45"/>
-      </svg>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g><circle cx="11" cy="11" r="10" stroke-width="1.2"/><path d="M9 1.2V15" stroke-width="1.2"/><path class="pn" d="M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z" fill="currentColor" stroke="none"/><path d="M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0" stroke-width="1.2"/><path d="M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0" stroke-width="0.96" opacity=".5"/></g></svg>
       <b>Commodore Press</b>
     </a>
     <nav id="nav"></nav>
@@ -923,7 +925,7 @@
       <div><a href="contents/">Contents</a></div>
     </div>
     <div class="grow">
-      <div style="opacity:.62"><kbd>/</kbd> search · <kbd>S</kbd> spines · <kbd>R</kbd> random · <kbd>←</kbd> <kbd>→</kbd> browse · <kbd>Esc</kbd> close</div>
+      <div class="keys"><button type="button" onclick="openSearch()"><kbd>/</kbd> search</button> · <button type="button" onclick="toggleSpines()"><kbd>S</kbd> spines</button> · <button type="button" onclick="surprise()"><kbd>R</kbd> random</button> · <button type="button" onclick="shelfStep(1)"><kbd>←</kbd> <kbd>→</kbd> browse</button> · <span><kbd>Esc</kbd> close</span></div>
       <div>MMXXVI — no rights reserved, go read the sources</div>
     </div>
   </div>
@@ -1421,7 +1423,7 @@ const readMins=b=>Math.max(2,Math.round(words(b)/210));
 function openLife(id){go('lives');setTimeout(()=>openReader('lives',id),340)}
 const plateOrMark=(b,cls)=>PLATES[b.id]
   ? `<img class="${cls}" src="${PLATES[b.id]}" alt="" loading="lazy">`
-  : `<span class="${cls} nomark" aria-hidden="true"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="none" stroke="currentColor" stroke-width=".9"/><path d="M11 1V21M1 11H21" stroke="currentColor" stroke-width=".9"/></svg></span>`;
+  : `<span class="${cls} nomark" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round"><g><circle cx="11" cy="11" r="10" stroke-width="0.9"/><path d="M9 1.2V15" stroke-width="0.9"/><path class="pn" d="M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z" fill="currentColor" stroke="none"/><path d="M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0" stroke-width="0.9"/><path d="M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0" stroke-width="0.72" opacity=".5"/></g></svg></span>`;
 /* Every Press → Lives → Atlas path the content actually contains. Built from `across`
    rather than written down, so the panel below cannot outlive the links it describes:
    pull a link and the thread it was showing stops being offered. */
@@ -1617,7 +1619,7 @@ function readerHTML(kind,b){
 
   const plate = isPress ? "" : (PLATES[b.id]
     ? `<figure class="plate" data-reveal style="--d:150ms"><img src="${PLATES[b.id]}" alt="Portrait of ${b.n}"><figcaption>Plate · ${b.n}</figcaption></figure>`
-    : `<figure class="plate mark" data-reveal style="--d:150ms"><svg width="84" height="84" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="none" stroke="currentColor" stroke-width=".8" opacity=".6"/><path d="M11 1V21M1 11H21" stroke="currentColor" stroke-width=".8" opacity=".6"/><path d="M4 4 18 18M18 4 4 18" stroke="currentColor" stroke-width=".5" opacity=".35"/></svg><figcaption>No plate — see colophon</figcaption></figure>`);
+    : `<figure class="plate mark" data-reveal style="--d:150ms"><svg width="84" height="84" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g opacity="0.7"><circle cx="11" cy="11" r="10" stroke-width="0.8"/><path d="M9 1.2V15" stroke-width="0.8"/><path class="pn" d="M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z" fill="currentColor" stroke="none"/><path d="M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0" stroke-width="0.8"/><path d="M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0" stroke-width="0.64" opacity=".5"/></g></svg><figcaption>No plate — see colophon</figcaption></figure>`);
   return `<div class="wrap">
     <div class="rbar">
       <button class="back" onclick="closeReader()"><span class="arw">←</span> ${isPress?"All titles":"All lives"}</button>
@@ -1819,13 +1821,16 @@ function applySpines(on){
   document.querySelectorAll(".chip.spineview").forEach(c=>c.setAttribute("aria-pressed",String(on)));
 }
 function toggleSpines(){
-  if(!onShelf())return;
+  // off the shelves (the front door, the colophon) S means "show me the spines": take the reader there
+  if(!onShelf()){if(wing==="atlas")return;go("press");applySpines(true);return}
   applySpines(!document.body.classList.contains("spines"));
 }
 function spineChip(){
   return `<button class="chip spineview" aria-pressed="${document.body.classList.contains("spines")}" onclick="toggleSpines()" title="Spines ( S )">Spines</button>`;
 }
 function shelfStep(d){
+  // from the front door the arrows open the Press shelf and land on its first (or last) book
+  if(!onShelf()){if(wing==="atlas")return;go("press");setTimeout(()=>shelfStep(d),340);return}
   const slots=[...document.querySelectorAll((wing==="press"?"#shelf":"#livesShelf")+" .slot")];
   if(!slots.length)return;
   const i=slots.indexOf(document.activeElement);
@@ -1993,8 +1998,8 @@ addEventListener("keydown",e=>{
   if(e.key==="/"&&!document.getElementById("smodal").classList.contains("on")){e.preventDefault();return openSearch()}
   if(current&&e.key==="ArrowRight"){e.preventDefault();return step(1)}
   if(current&&e.key==="ArrowLeft"){e.preventDefault();return step(-1)}
-  if(!current&&onShelf()&&e.key==="ArrowRight"){e.preventDefault();return shelfStep(1)}
-  if(!current&&onShelf()&&e.key==="ArrowLeft"){e.preventDefault();return shelfStep(-1)}
+  if(!current&&wing!=="atlas"&&e.key==="ArrowRight"){e.preventDefault();return shelfStep(1)}
+  if(!current&&wing!=="atlas"&&e.key==="ArrowLeft"){e.preventDefault();return shelfStep(-1)}
   const k=e.key.toLowerCase();
   if(k==="r"){e.preventDefault();surprise()}
   if(k==="s"&&!current){e.preventDefault();toggleSpines()}
