@@ -137,7 +137,7 @@ function renderFront(){
 
   // The daily pick comes from the lives nobody has heard of when there are any with plates:
   // they are the reason to visit, and the famous ones are a click away on the shelf.
-  const plated=LIVES.filter(b=>PLATES[b.id]), obscure=plated.filter(b=>b.group==="obscure");
+  const plated=LIVES.filter(b=>PLATES[b.id]&&!b.plateOf), obscure=plated.filter(b=>b.group==="obscure");
   const withPlates=obscure.length?obscure:plated;
   const dayN=Math.floor(midnight(new Date()).getTime()/86400000);
   const pick=withPlates[dayN%withPlates.length];
@@ -179,7 +179,7 @@ const readMins=b=>Math.max(2,Math.round(words(b)/210));
 function openLife(id){go('lives');setTimeout(()=>openReader('lives',id),340)}
 const plateOrMark=(b,cls)=>PLATES[b.id]
   ? `<img class="${cls}" src="${PLATES[b.id]}" alt="" loading="lazy">`
-  : `<span class="${cls} nomark" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round"><g><circle cx="11" cy="11" r="10" stroke-width="0.9"/><path d="M9 1.2V15" stroke-width="0.9"/><path class="pn" d="M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z" fill="currentColor" stroke="none"/><path d="M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0" stroke-width="0.9"/><path d="M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0" stroke-width="0.72" opacity=".5"/></g></svg></span>`;
+  : `<span class="${cls} nomark" aria-hidden="true">{{MARK sw=0.9 pn}}</span>`;
 /* Every Press → Lives → Atlas path the content actually contains. Built from `across`
    rather than written down, so the panel below cannot outlive the links it describes:
    pull a link and the thread it was showing stops being offered. */
@@ -374,8 +374,10 @@ function readerHTML(kind,b){
   if(b.reading){S.push(`<section class="sec" id="s-reading" data-reveal><h4>Go to the source</h4><ul class="reading">${b.reading.map(r=>`<li><a href="${r.u}" target="_blank" rel="noopener"><div class="row"><span class="t">${r.t}</span><span class="a">${r.a} ↗</span></div>${r.why?`<div class="why">${r.why}</div>`:""}</a></li>`).join("")}</ul></section>`);toc.push(["s-reading","Sources"])}
 
   const plate = isPress ? "" : (PLATES[b.id]
-    ? `<figure class="plate" data-reveal style="--d:150ms"><img src="${PLATES[b.id]}" alt="Portrait of ${b.n}"><figcaption>Plate · ${b.n}</figcaption></figure>`
-    : `<figure class="plate mark" data-reveal style="--d:150ms"><svg width="84" height="84" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><g opacity="0.7"><circle cx="11" cy="11" r="10" stroke-width="0.8"/><path d="M9 1.2V15" stroke-width="0.8"/><path class="pn" d="M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z" fill="currentColor" stroke="none"/><path d="M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0" stroke-width="0.8"/><path d="M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0" stroke-width="0.64" opacity=".5"/></g></svg><figcaption>No plate — see colophon</figcaption></figure>`);
+    ? (b.plateOf
+      ? `<figure class="plate" data-reveal style="--d:150ms"><img src="${PLATES[b.id]}" alt="${b.plateOf.replace(/"/g,"&quot;")}"><figcaption class="obj">${b.plateOf}</figcaption></figure>`
+      : `<figure class="plate" data-reveal style="--d:150ms"><img src="${PLATES[b.id]}" alt="Portrait of ${b.n}"><figcaption>Plate · ${b.n}</figcaption></figure>`)
+    : `<figure class="plate mark" data-reveal style="--d:150ms">{{MARK size=84 sw=0.8 pn aria opacity=0.7}}<figcaption>No plate — see colophon</figcaption></figure>`);
   return `<div class="wrap">
     <div class="rbar">
       <button class="back" onclick="closeReader()"><span class="arw">←</span> ${isPress?"All titles":"All lives"}</button>
@@ -750,12 +752,18 @@ addEventListener("keydown",e=>{
   if(e.metaKey||e.ctrlKey||e.altKey)return;
   if(/^(input|textarea|select)$/i.test(e.target.tagName))return;
   if(document.querySelector("dialog[open]"))return;
-  if(e.key==="Escape"){const sm=document.getElementById("smodal");if(sm.classList.contains("on"))return closeSearch();if(current)return closeReader();return closeDrawer()}
+  if(e.key==="Escape"){const sm=document.getElementById("smodal");if(sm.classList.contains("on"))return closeSearch();if(current)return closeReader();if(document.getElementById("drawer").classList.contains("on"))return closeDrawer();
+    // nothing left to close: Esc is the way out
+    const s=getSelection();if(s&&!s.isCollapsed)return;e.preventDefault();return Reading.forward()}
   if(e.key==="/"&&!document.getElementById("smodal").classList.contains("on")){e.preventDefault();return openSearch()}
   if(current&&e.key==="ArrowRight"){e.preventDefault();return step(1)}
   if(current&&e.key==="ArrowLeft"){e.preventDefault();return step(-1)}
-  if(!current&&wing!=="atlas"&&e.key==="ArrowRight"){e.preventDefault();return shelfStep(1)}
-  if(!current&&wing!=="atlas"&&e.key==="ArrowLeft"){e.preventDefault();return shelfStep(-1)}
+  // On a shelf the arrows browse it. Anywhere else (the front door) they open the Press shelf,
+  // but only when nothing has focus: a reader tabbing through the page, or scrolling the
+  // phone's sideways nav, keeps the arrows the browser gives them.
+  const arrowsFree=onShelf()||document.activeElement===document.body||!document.activeElement;
+  if(!current&&wing!=="atlas"&&arrowsFree&&e.key==="ArrowRight"){e.preventDefault();return shelfStep(1)}
+  if(!current&&wing!=="atlas"&&arrowsFree&&e.key==="ArrowLeft"){e.preventDefault();return shelfStep(-1)}
   const k=e.key.toLowerCase();
   if(k==="r"){e.preventDefault();surprise()}
   if(k==="s"&&!current){e.preventDefault();toggleSpines()}

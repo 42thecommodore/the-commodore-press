@@ -270,7 +270,50 @@
     progress({ scroller: window, start: doc.querySelector("main"), end: doc.getElementById("rend"), mins: c.mins,
       label: doc.getElementById("rleft"), bar: doc.getElementById("rbar"), key: c.key, theme: c.theme });
     quotes({ root: doc.querySelector("main"), within: ".lede,.essay,.keepq p,.callout p,.note p", scroller: window, meta: function () { return m; } });
+    escape();
   }
 
-  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory };
+  /* forward(): Esc with nothing left to close is the way out, to relentless.com. A curtain
+     comes down, the address is set, a rule draws across, and the page goes. Esc again goes
+     at once; "stay" or a click on the curtain calls it off. The footer's "Esc close" and any
+     [data-forward] link run the same thing. */
+  var FWD = "https://relentless.com/", fwd = null, fwdT = 0;
+  function forward() {
+    if (fwd) { clearTimeout(fwdT); location.href = FWD; return; }
+    var still = matchMedia("(prefers-reduced-motion:reduce)").matches;
+    fwd = doc.createElement("div");
+    fwd.className = "rs-fwd"; fwd.setAttribute("role", "status");
+    fwd.innerHTML = '<div class="rs-fwd-in"><div class="rs-fwd-lbl">Esc · forwarding you to</div>'
+      + '<div class="rs-fwd-to">relentless<span>.com</span></div><div class="rs-fwd-bar"><i></i></div>'
+      + '<div class="rs-fwd-foot"><button type="button" class="rs-fwd-stay">stay here</button><span>Esc again to go now</span></div></div>';
+    doc.body.appendChild(fwd);
+    fwd.addEventListener("click", function (e) { if (e.target === fwd || e.target.closest(".rs-fwd-stay")) stay(); });
+    fwd.offsetWidth; fwd.classList.add("on");
+    fwdT = setTimeout(function () { location.href = FWD; }, still ? 700 : 1900);
+  }
+  function stay() {
+    if (!fwd) return;
+    clearTimeout(fwdT);
+    var el = fwd; fwd = null; el.classList.remove("on");
+    setTimeout(function () { el.remove(); }, 400);
+  }
+  // Coming back with the browser's back button can restore this page mid-curtain; lift it.
+  addEventListener("pageshow", function (e) { if (e.persisted) stay(); });
+  doc.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("[data-forward]");
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault(); forward();
+  });
+  /* The entry pages' Escape. The library (theme/press.js) has its own, which closes search,
+     a reader or a drawer first and only then calls forward(). */
+  function escape() {
+    doc.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || e.metaKey || e.ctrlKey || e.altKey || e.defaultPrevented) return;
+      if (/^(input|textarea|select)$/i.test(e.target.tagName) || doc.querySelector("dialog[open]")) return;
+      var s = getSelection(); if (s && !s.isCollapsed) return;   // Esc first drops a selected passage
+      e.preventDefault(); forward();
+    });
+  }
+
+  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory, forward: forward };
 })();

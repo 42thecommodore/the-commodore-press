@@ -20,7 +20,7 @@
 <meta name="twitter:description" content="Her father-in-law died before the bridge began. Her husband was too ill to visit the site. For eleven years the person who went instead was her.">
 <meta name="twitter:image" content="https://42thecommodore.github.io/the-commodore-press/cards/l/emily-warren-roebling.png">
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Emily Warren Roebling","description":"Her father-in-law died before the bridge began. Her husband was too ill to visit the site. For eleven years the person who went instead was her.","url":"https://42thecommodore.github.io/the-commodore-press/l/emily-warren-roebling/","mainEntityOfPage":"https://42thecommodore.github.io/the-commodore-press/l/emily-warren-roebling/","image":"https://42thecommodore.github.io/the-commodore-press/cards/l/emily-warren-roebling.png","inLanguage":"en","wordCount":528,"dateModified":"2026-09-20","about":{"@type":"Person","name":"Emily Warren Roebling","description":"Engineering, 1843–1903"},"author":{"@type":"Person","name":"Luca Falvo","jobTitle":"Editor"},"publisher":{"@type":"Organization","name":"The Commodore Press","url":"https://42thecommodore.github.io/the-commodore-press/"},"isPartOf":{"@type":"WebSite","name":"The Commodore Press","url":"https://42thecommodore.github.io/the-commodore-press/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Commodore Press","item":"https://42thecommodore.github.io/the-commodore-press/"},{"@type":"ListItem","position":2,"name":"Lives","item":"https://42thecommodore.github.io/the-commodore-press/contents/"},{"@type":"ListItem","position":3,"name":"Emily Warren Roebling","item":"https://42thecommodore.github.io/the-commodore-press/l/emily-warren-roebling/"}]}]</script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22' fill='none' stroke='%231E1C18' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1'/%3E%3Cpath d='M9 1.6V15'/%3E%3Cpath d='M9 3.6 17.4 5.3 14.5 6.8 17.4 8.3 9 10Z' fill='%231E1C18' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22' fill='none' stroke='%231E1C18' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='9.5' stroke-width='1.6' fill='%23F2EDE1'/%3E%3Cpath d='M9 1.7V15' stroke-width='1.6'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%231E1C18' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -163,10 +163,10 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
   .rs-end{margin-top:72px;padding:34px 0 0;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent);text-align:center}
   .rs-end .rs-fin{font:11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;opacity:.85}
   /* the press mark, drawn rather than set: the house fonts have no ornament glyph, and a
-     fallback font printed it at half size */
+     fallback font printed it at half size. The mask token is filled from build/mark.mjs. */
   .rs-end .rs-fin::before{content:"";display:block;width:24px;height:24px;margin:0 auto 12px;background:currentColor;opacity:.75;
-    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
-    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='0.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='0.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
   .rs-end h3{font-weight:500;font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:10px auto 8px;max-width:22ch}
   .rs-end p{font-size:17px;line-height:1.5;opacity:.9;margin:0 auto 20px;max-width:44ch}
   .rs-end .rs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
@@ -203,13 +203,32 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
   @media (prefers-reduced-motion:reduce){.rs-sheet[open],.rs-pill,.rs-resume{animation:none}.rs-next,.rs-next .rs-nm b{transition:none}}
   @media (max-width:560px){.rs-in{padding:18px 18px 16px}.rs-q{font-size:19px}.rs-next .rs-nt{font-size:22px}
     .rs-resume{padding-left:14px;font-size:11px}.rs-resume span{margin-right:2px}}
+
+  /* ---------- the way out — Esc with nothing open, drawn by forward() in theme/reading.js ---------- */
+  .rs-fwd{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#1E1C18;color:#F2EDE1;cursor:pointer;
+    clip-path:inset(100% 0 0 0);transition:clip-path .55s var(--ease,cubic-bezier(.19,.9,.22,1))}
+  .rs-fwd.on{clip-path:inset(0 0 0 0)}
+  .rs-fwd-in{width:min(560px,calc(100vw - 32px));cursor:default}
+  .rs-fwd-lbl{font:11px/1.4 var(--mono,monospace);letter-spacing:.18em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:all .5s .25s}
+  .rs-fwd-to{font:500 clamp(40px,11vw,92px)/1 var(--serif,serif);letter-spacing:-.02em;margin:14px 0 22px;opacity:0;transform:translateY(22px);transition:all .7s .32s var(--ease,ease)}
+  .rs-fwd-to span{font-style:italic;color:#E0A458}
+  .rs-fwd-bar{height:1px;background:rgba(242,237,225,.2);overflow:hidden}
+  .rs-fwd-bar i{display:block;height:100%;background:#F2EDE1;transform:scaleX(0);transform-origin:left;transition:transform 1.3s .5s linear}
+  .rs-fwd-foot{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font:11px/1.4 var(--mono,monospace);letter-spacing:.1em;opacity:0;transition:opacity .4s .6s}
+  .rs-fwd-foot span{opacity:.55}
+  .rs-fwd-stay{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+  .rs-fwd.on .rs-fwd-lbl,.rs-fwd.on .rs-fwd-to{opacity:1;transform:none}
+  .rs-fwd.on .rs-fwd-lbl{opacity:.6}
+  .rs-fwd.on .rs-fwd-foot{opacity:1}
+  .rs-fwd.on .rs-fwd-bar i{transform:scaleX(1)}
+  @media (prefers-reduced-motion:reduce){.rs-fwd,.rs-fwd *{transition:none!important}}
 </style>
 <script>document.documentElement.classList.add("rs-js")</script>
 </head>
 <body style="--cover:#5A4636;--cink:#F6EFE5;--accent:#D9B98C">
 <nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">Lives</a><i>/</i><span>Emily Warren Roebling</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">3 min read</span><button class="rs-go rs-js-only" type="button" data-rs="share"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>Share</button><a class="wl" href="../../#lives">All lives →</a></span><span class="rs-bar" id="rbar"></span></nav>
 <header class="band"><div class="in">
-  
+  <figure class="plate"><img src="../../plates/emily-warren-roebling.jpg" alt="Portrait of Emily Warren Roebling" width="260" height="325"></figure>
   <div class="kick">Lives · 1843–1903</div>
   <h1>Emily Warren Roebling</h1>
   <p class="sub">Engineering · United States · 1843–1903</p>
@@ -510,9 +529,52 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
     progress({ scroller: window, start: doc.querySelector("main"), end: doc.getElementById("rend"), mins: c.mins,
       label: doc.getElementById("rleft"), bar: doc.getElementById("rbar"), key: c.key, theme: c.theme });
     quotes({ root: doc.querySelector("main"), within: ".lede,.essay,.keepq p,.callout p,.note p", scroller: window, meta: function () { return m; } });
+    escape();
   }
 
-  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory };
+  /* forward(): Esc with nothing left to close is the way out, to relentless.com. A curtain
+     comes down, the address is set, a rule draws across, and the page goes. Esc again goes
+     at once; "stay" or a click on the curtain calls it off. The footer's "Esc close" and any
+     [data-forward] link run the same thing. */
+  var FWD = "https://relentless.com/", fwd = null, fwdT = 0;
+  function forward() {
+    if (fwd) { clearTimeout(fwdT); location.href = FWD; return; }
+    var still = matchMedia("(prefers-reduced-motion:reduce)").matches;
+    fwd = doc.createElement("div");
+    fwd.className = "rs-fwd"; fwd.setAttribute("role", "status");
+    fwd.innerHTML = '<div class="rs-fwd-in"><div class="rs-fwd-lbl">Esc · forwarding you to</div>'
+      + '<div class="rs-fwd-to">relentless<span>.com</span></div><div class="rs-fwd-bar"><i></i></div>'
+      + '<div class="rs-fwd-foot"><button type="button" class="rs-fwd-stay">stay here</button><span>Esc again to go now</span></div></div>';
+    doc.body.appendChild(fwd);
+    fwd.addEventListener("click", function (e) { if (e.target === fwd || e.target.closest(".rs-fwd-stay")) stay(); });
+    fwd.offsetWidth; fwd.classList.add("on");
+    fwdT = setTimeout(function () { location.href = FWD; }, still ? 700 : 1900);
+  }
+  function stay() {
+    if (!fwd) return;
+    clearTimeout(fwdT);
+    var el = fwd; fwd = null; el.classList.remove("on");
+    setTimeout(function () { el.remove(); }, 400);
+  }
+  // Coming back with the browser's back button can restore this page mid-curtain; lift it.
+  addEventListener("pageshow", function (e) { if (e.persisted) stay(); });
+  doc.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("[data-forward]");
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault(); forward();
+  });
+  /* The entry pages' Escape. The library (theme/press.js) has its own, which closes search,
+     a reader or a drawer first and only then calls forward(). */
+  function escape() {
+    doc.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || e.metaKey || e.ctrlKey || e.altKey || e.defaultPrevented) return;
+      if (/^(input|textarea|select)$/i.test(e.target.tagName) || doc.querySelector("dialog[open]")) return;
+      var s = getSelection(); if (s && !s.isCollapsed) return;   // Esc first drops a selected passage
+      e.preventDefault(); forward();
+    });
+  }
+
+  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory, forward: forward };
 })();
 
 Reading.page({"url":"https://42thecommodore.github.io/the-commodore-press/l/emily-warren-roebling/","title":"Emily Warren Roebling","sub":"Engineering · 1843–1903","text":"Her father-in-law died before the bridge began. Her husband was too ill to visit the site. For eleven years the person who went instead was her.","keep":"A record can prove somebody was indispensable and still not say what they decided.","mins":3,"key":"l/emily-warren-roebling","theme":{"bg":"#5A4636","ink":"#F6EFE5","accent":"#D9B98C"}})</script>

@@ -45,6 +45,8 @@ The Commodore/
 │                               # share sheet, progress + minutes left, select-a-passage quoting,
 │                               # read-next card, reading memory (localStorage "cp-read" — the
 │                               # colophon names it; storing anything more changes that sentence)
+├── build/mark.mjs              # the press mark, drawn once; {{MARK …}} {{MARK_MASK}} {{MARK_FAVICON}} tokens
+│                               # (the check fails on a hand-drawn copy anywhere else)
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
 ├── build/build.mjs             # assembles everything into dist/index.html
 ├── build/pages.mjs             # one crawlable page per entry: dist/t/<id>/, dist/l/<id>/ — plus about/, log/, feed.xml
@@ -91,6 +93,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run links` | visits every link the site prints; **exits 1 on any dead one**. Off the fast gate because it needs the network — run it monthly, and after any reading-list edit |
 | `npm run proofread` | reads the prose for what a grep can be sure of: placeholder text that would print, a repeated word, a space before a comma. Judgment stays with `/press-proofread` |
 | `npm run build` | content + theme → `dist/index.html` |
+| `npm test` | drives headless Chrome through the built site: share links, the quote credit rule, verbatim quoting, progress, read-next agreement, arrow keys. **Exits 1 on any failure**; `ship` runs it after the build |
 | `npm run stats` | inventory and editorial backlog |
 | `npm run voice` | the house's own sentence and punctuation numbers, measured off `content/` |
 | `npm run new book\|life\|adjacent "Title"` | scaffold a house-shaped stub |
@@ -98,7 +101,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run plate -- <image> <life-id>` | make a duotone plate |
 | `npm run card` | re-render the share cards — the front door's and one per title — with headless Chrome. Look at them; the check warns when one is stale |
 | `npm run correct -- "Title." "Body."` | append a correction |
-| `npm run ship -- "what changed"` | the whole release, one command: refuses to run off `main`, then check → proofread → links → build → commit → push. `--allow-branch` to ship a branch deliberately, `--skip-links` when offline |
+| `npm run ship -- "what changed"` | the whole release, one command: refuses to run off `main`, then check → proofread → links → build → test → commit → push. `--allow-branch` to ship a branch deliberately, `--skip-links` when offline |
 | `npm run verify -- <old.html> <new.html>` | prove two builds carry identical content |
 
 The site is live at **https://42thecommodore.github.io/the-commodore-press/**, deployed from

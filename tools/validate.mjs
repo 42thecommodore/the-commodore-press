@@ -437,6 +437,21 @@ const HEX = /^#[0-9a-fA-F]{6}$/;
     warn("assets/cards", `${[...missing.map(i => i + " (no card)"), ...stale.map(i => i + " (card is out of date)")].join(", ")} — run \`npm run card\``);
 }
 
+/* ---------- the press mark is drawn in one place ----------
+   It was copied by hand into seven files under a comment asking that they change together,
+   and the favicon had already drifted. build/mark.mjs is the one drawing now; a copy of the
+   pennant's path anywhere else in the source is a second drawing waiting to disagree. */
+{
+  const { MARK_PATHS } = await import("../build/mark.mjs");
+  const walk = d => fs.existsSync(p(d)) ? fs.readdirSync(p(d), { withFileTypes: true }).flatMap(e =>
+    e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]) : [];
+  for (const f of ["theme", "templates", "build", "tools"].flatMap(walk)) {
+    if (f === path.join("build", "mark.mjs") || !/\.(m?js|css|html)$/.test(f)) continue;
+    const src = fs.readFileSync(p(f), "utf8");
+    if (MARK_PATHS.some(m => src.includes(m))) err(f, "draws the press mark by hand — use {{MARK …}}, {{MARK_MASK}}, {{MARK_FAVICON}} or build/mark.mjs, so there is one drawing");
+  }
+}
+
 /* ---------- report ---------- */
 const c = { r: "\x1b[31m", y: "\x1b[33m", g: "\x1b[32m", d: "\x1b[2m", x: "\x1b[0m" };
 if (warns.length) { console.log(`\n${c.y}${warns.length} warning(s)${c.x}`); warns.forEach(w => console.log(`  ${c.y}·${c.x} ${w}`)); }

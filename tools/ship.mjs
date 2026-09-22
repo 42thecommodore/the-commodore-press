@@ -62,6 +62,9 @@ step("The prose", "npm", ["run", "proofread"]);
 if (FLAGS.has("--skip-links")) say(`\n${y}  Skipping the link check because you asked.${x}`);
 else step("Every link still opens", "npm", ["run", "links", "--", "--quiet"]);
 step("Build", "npm", ["run", "build"]);
+/* The reading tools in a real browser: share links, the quote credit, progress. `check`
+   reads content and cannot see behaviour; this can. Without Chrome it skips and says so. */
+step("The reading tools", "npm", ["test"]);
 
 git("add -A");
 const staged = git("diff --cached --stat");

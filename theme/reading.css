@@ -54,10 +54,10 @@
   .rs-end{margin-top:72px;padding:34px 0 0;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent);text-align:center}
   .rs-end .rs-fin{font:11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;opacity:.85}
   /* the press mark, drawn rather than set: the house fonts have no ornament glyph, and a
-     fallback font printed it at half size */
+     fallback font printed it at half size. The mask token is filled from build/mark.mjs. */
   .rs-end .rs-fin::before{content:"";display:block;width:24px;height:24px;margin:0 auto 12px;background:currentColor;opacity:.75;
-    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
-    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+    -webkit-mask:{{MARK_MASK}} center/contain no-repeat;
+    mask:{{MARK_MASK}} center/contain no-repeat}
   .rs-end h3{font-weight:500;font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:10px auto 8px;max-width:22ch}
   .rs-end p{font-size:17px;line-height:1.5;opacity:.9;margin:0 auto 20px;max-width:44ch}
   .rs-end .rs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
@@ -94,3 +94,22 @@
   @media (prefers-reduced-motion:reduce){.rs-sheet[open],.rs-pill,.rs-resume{animation:none}.rs-next,.rs-next .rs-nm b{transition:none}}
   @media (max-width:560px){.rs-in{padding:18px 18px 16px}.rs-q{font-size:19px}.rs-next .rs-nt{font-size:22px}
     .rs-resume{padding-left:14px;font-size:11px}.rs-resume span{margin-right:2px}}
+
+  /* ---------- the way out — Esc with nothing open, drawn by forward() in theme/reading.js ---------- */
+  .rs-fwd{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#1E1C18;color:#F2EDE1;cursor:pointer;
+    clip-path:inset(100% 0 0 0);transition:clip-path .55s var(--ease,cubic-bezier(.19,.9,.22,1))}
+  .rs-fwd.on{clip-path:inset(0 0 0 0)}
+  .rs-fwd-in{width:min(560px,calc(100vw - 32px));cursor:default}
+  .rs-fwd-lbl{font:11px/1.4 var(--mono,monospace);letter-spacing:.18em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:all .5s .25s}
+  .rs-fwd-to{font:500 clamp(40px,11vw,92px)/1 var(--serif,serif);letter-spacing:-.02em;margin:14px 0 22px;opacity:0;transform:translateY(22px);transition:all .7s .32s var(--ease,ease)}
+  .rs-fwd-to span{font-style:italic;color:#E0A458}
+  .rs-fwd-bar{height:1px;background:rgba(242,237,225,.2);overflow:hidden}
+  .rs-fwd-bar i{display:block;height:100%;background:#F2EDE1;transform:scaleX(0);transform-origin:left;transition:transform 1.3s .5s linear}
+  .rs-fwd-foot{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font:11px/1.4 var(--mono,monospace);letter-spacing:.1em;opacity:0;transition:opacity .4s .6s}
+  .rs-fwd-foot span{opacity:.55}
+  .rs-fwd-stay{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+  .rs-fwd.on .rs-fwd-lbl,.rs-fwd.on .rs-fwd-to{opacity:1;transform:none}
+  .rs-fwd.on .rs-fwd-lbl{opacity:.6}
+  .rs-fwd.on .rs-fwd-foot{opacity:1}
+  .rs-fwd.on .rs-fwd-bar i{transform:scaleX(1)}
+  @media (prefers-reduced-motion:reduce){.rs-fwd,.rs-fwd *{transition:none!important}}

@@ -19,6 +19,10 @@
       "type": "string", "maxLength": 300, "x-means": "no portrait, on purpose",
       "description": "Set this only when the house has decided a life gets the press mark rather than a plate, and say why in one line. `npm run stats` then stops listing it as a gap — a warning that is permanently wrong is how you learn to ignore warnings. Never use it to silence a portrait that simply has not been made yet."
     },
+    "plateOf": {
+      "type": "string", "maxLength": 160, "x-means": "what the plate shows, when it is not a portrait",
+      "description": "Set this only when the plate is an object from the life rather than a likeness — a boat, a manuscript — because no portrait can be used. It replaces \"Portrait of …\" as the image's description and prints under the plate, on the entry and on its share card, so nobody takes the object for the person. Say what it is, when, and where it is held, from the image's own record: \"Submarine B-59 … U.S. Navy photograph — the boat, not the man.\""
+    },
     "years": { "type": "string", "x-means": "lived", "description": "Lived, shown as 'Lived' in the reader: \"1869–1948\", \"c. 69–30 BC\"." },
     "place": { "type": "string", "x-means": "where", "description": "Where, printed beside the field: \"India\"." },
     "field": { "type": "string", "description": "The field, e.g. \"Politics & Ethics\"." },

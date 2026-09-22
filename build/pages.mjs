@@ -11,6 +11,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { favicon, fillMark } from "./mark.mjs";
 
 /* The date an entry's file last changed, from git. The sitemap and each page's JSON-LD say
    when a page was modified; stamping every page with the build date taught crawlers to
@@ -174,7 +175,7 @@ function body(kind, b, known, plateFile, CORR = [], share = "") {
    No third-party script and no tracking — the colophon promises none. */
 const enc = encodeURIComponent;
 const THEME = ["reading.css", "reading.js"].map(f => new URL(`../theme/${f}`, import.meta.url));
-const [READING_CSS, READING_JS] = THEME.map(u => fs.readFileSync(u, "utf8"));
+const [READING_CSS, READING_JS] = THEME.map(u => fillMark(fs.readFileSync(u, "utf8")));
 const SHARE_ICON = `<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
 const END_LINE = "The link opens its own page: the whole entry, with its sources, its disputes and any corrections.";
 /* Reading time, counted over the same fields as words() in theme/press.js, so the reader
@@ -260,7 +261,7 @@ function page(kind, b, ctx) {
 <meta property="og:description" content="${attr(desc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${image}">
-<meta property="og:image:alt" content="${attr(ctx.card ? name + " — The Commodore Press" : small ? "Portrait of " + b.n : "The Commodore Press")}">
+<meta property="og:image:alt" content="${attr(ctx.card ? name + " — The Commodore Press" : small ? (b.plateOf || "Portrait of " + b.n) : "The Commodore Press")}">
 <meta name="twitter:card" content="${small ? "summary" : "summary_large_image"}">
 ${!small ? `<meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">` : ""}
@@ -275,7 +276,7 @@ ${FONTS}
 <body style="--cover:${b.cover};--cink:${b.ink};--accent:${b.accent}">
 <nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">${wingName}</a><i>/</i><span>${name}</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">${mins} min read</span><button class="rs-go rs-js-only" type="button" data-rs="share">${SHARE_ICON}Share</button><a class="wl" href="../../#${isPress ? "press" : "lives"}">${wing} →</a></span><span class="rs-bar" id="rbar"></span></nav>
 <header class="band"><div class="in">
-  ${plateFile ? `<figure class="plate"><img src="../../plates/${plateFile}" alt="Portrait of ${attr(b.n)}" width="260" height="325"></figure>` : ""}
+  ${plateFile ? `<figure class="plate"><img src="../../plates/${plateFile}" alt="${attr(b.plateOf || "Portrait of " + b.n)}" width="260" height="325">${b.plateOf ? `<figcaption>${b.plateOf}</figcaption>` : ""}</figure>` : ""}
   <div class="kick">${isPress ? `The Press · ${b.field}` : `Lives · ${b.years}`}</div>
   <h1>${name}</h1>
   <p class="sub">${sub}</p>
@@ -440,7 +441,7 @@ const MONTHS = ["January","February","March","April","May","June","July","August
 const longDate = d => { const [y, m, day] = d.split("-").map(Number); return `${day} ${MONTHS[m - 1]} ${y}`; };
 const LOG_LIVERY = { cover: "#2A2F45", ink: "#F0EFEA", accent: "#D8A657" };
 const FEED_LINK = root => `<link rel="alternate" type="application/rss+xml" title="The Commodore Press — the Log" href="${root}feed.xml">`;
-const FONTS = `<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22' fill='none' stroke='%231E1C18' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='9.5' fill='%23F2EDE1'/%3E%3Cpath d='M9 1.6V15'/%3E%3Cpath d='M9 3.6 17.4 5.3 14.5 6.8 17.4 8.3 9 10Z' fill='%231E1C18' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0'/%3E%3C/svg%3E">
+const FONTS = `<link rel="icon" href="${favicon()}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">`;

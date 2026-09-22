@@ -25,22 +25,15 @@ import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { plateOf, creditOf, lifeStamp } from "./cards.mjs";
+import { markInner } from "../build/mark.mjs";
+import { CHROME } from "./chrome.mjs";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...a) => path.join(ROOT, ...a);
-/* Any Chromium will do. The path was macOS-only, which was fine while the card was only
-   ever regenerated on one laptop — and not fine the day the counts changed somewhere else
-   and the card kept advertising wings the site no longer had. CHROME=/path overrides. */
-const CHROME = [
-  process.env.CHROME,
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-  "/Applications/Chromium.app/Contents/MacOS/Chromium",
-  "/opt/pw-browsers/chromium",
-  "/usr/bin/google-chrome",
-  "/usr/bin/chromium-browser",
-  "/usr/bin/chromium",
-].find(c => c && fs.existsSync(c));
+/* Chrome is found by tools/chrome.mjs (any Chromium; CHROME=/path overrides). The path was
+   once macOS-only, and the card kept advertising wings the site no longer had the day the
+   counts changed on another machine. */
 if (!CHROME) {
   console.error("\n  Needs Chrome or Chromium to render the card, and found neither. Set CHROME=/path\n  to one. The committed assets/og.png still works; nothing breaks until the counts change.\n");
   process.exit(1);
@@ -80,12 +73,8 @@ try {
   process.exit(1);
 }
 
-/* The press mark: a commodore's broad pennant at the masthead, over water, in the seal.
-   The old mark was a circle quartered by a cross; the meridian became the mast and the
-   horizon became the sea. Same drawing as templates/shell.html, theme/press.js,
-   theme/reading.css and build/pages.mjs — change them together. */
-const MARK_INNER = (sw, sea = true) => `<circle cx="11" cy="11" r="10" stroke-width="${sw}"/><path d="M9 1.2V15" stroke-width="${sw}"/><path d="M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z" fill="currentColor" stroke="none"/><path d="M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0" stroke-width="${sw}"/>${sea ? `<path d="M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0" stroke-width="${sw * .8}" opacity=".5"/>` : ""}`;
-const markSvg = (size, sw = 1.05, cls = "") => `<svg${cls ? ` class="${cls}"` : ""} width="${size}" height="${size}" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round">${MARK_INNER(sw)}</svg>`;
+/* The press mark comes from build/mark.mjs, the one drawing of it. */
+const markSvg = (size, sw = 1.05, cls = "") => `<svg${cls ? ` class="${cls}"` : ""} width="${size}" height="${size}" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round">${markInner(sw)}</svg>`;
 /* A swallow-tailed pennant flying from the spine band, so the spine reads as a mast. */
 const pennant = (color, w = 80) => `<svg class="pennant" width="${w}" height="${w * .6}" viewBox="0 0 66 40"><path d="M66 0 0 7 22 20 0 33 66 40Z" fill="${color}"/></svg>`;
 /* The sea along the foot of every card: a few long swells, each fainter than the one

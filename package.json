@@ -19,7 +19,8 @@
     "correct": "node tools/correct.mjs",
     "verify": "node tools/verify-migration.mjs",
     "links": "node tools/links.mjs",
-    "proofread": "node tools/proofread.mjs"
+    "proofread": "node tools/proofread.mjs",
+    "test": "node tools/test-reading.mjs"
   },
   "engines": {
     "node": ">=18"
