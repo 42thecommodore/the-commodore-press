@@ -97,6 +97,7 @@ const SITE = (process.env.SITE_URL || "https://42thecommodore.github.io/the-comm
 
 const fill = s => s
   .replace(/{{SITE}}/g, SITE)
+  .replace(/{{EDITOR}}/g, EDITOR)
   .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{W_BOOKS_CAP}}/g, cap(words(BOOKS.length)))
   .replace(/{{W_LIVES_CAP}}/g, cap(words(LIVES.length))).replace(/{{W_PEOPLE_CAP}}/g, cap(words(PEOPLE.length)))
   .replace(/{{N_LIVES}}/g, words(LIVES.length)).replace(/{{N_PEOPLE}}/g, words(PEOPLE.length))

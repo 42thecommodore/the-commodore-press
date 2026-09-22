@@ -30,9 +30,10 @@ export function entryDates(ROOT) {
   return out;
 }
 
-/* The byline. The colophon names the editor by first name only; a surname goes here, and
-   on the page, only when the editor decides to put it there. */
-export const EDITOR = "Luca";
+/* The byline, set once and used everywhere a page names its editor: bylines, footers, the
+   Log, structured data. Full name by the editor's decision, 2026-09-21. The template's own
+   two mentions (the front-door label and the colophon disclosure) are filled from this too. */
+export const EDITOR = "Luca Falvo";
 
 const strip = s => String(s || "").replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
 const attr = s => strip(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
