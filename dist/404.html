@@ -483,8 +483,8 @@
   kbd{font-family:var(--serif);font-weight:600;font-size:13.5px;padding:0 3px}
   .foot .keys{color:inherit}
   .foot .keys>span{opacity:.62}
-  .foot .keys button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;opacity:.62;transition:opacity .2s}
-  .foot .keys button:hover,.foot .keys button:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:3px}
+  .foot .keys button,.foot .keys a{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;opacity:.62;transition:opacity .2s;text-decoration:none}
+  .foot .keys button:hover,.foot .keys button:focus-visible,.foot .keys a:hover,.foot .keys a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:3px}
 
   @media (max-width:1000px){
     .front{grid-template-columns:1fr;gap:40px}
@@ -925,7 +925,7 @@
       <div><a href="contents/">Contents</a></div>
     </div>
     <div class="grow">
-      <div class="keys"><button type="button" onclick="openSearch()"><kbd>/</kbd> search</button> · <button type="button" onclick="toggleSpines()"><kbd>S</kbd> spines</button> · <button type="button" onclick="surprise()"><kbd>R</kbd> random</button> · <button type="button" onclick="shelfStep(1)"><kbd>←</kbd> <kbd>→</kbd> browse</button> · <span><kbd>Esc</kbd> close</span></div>
+      <div class="keys"><button type="button" onclick="openSearch()"><kbd>/</kbd> search</button> · <button type="button" onclick="toggleSpines()"><kbd>S</kbd> spines</button> · <button type="button" onclick="surprise()"><kbd>R</kbd> random</button> · <button type="button" onclick="shelfStep(1)"><kbd>←</kbd> <kbd>→</kbd> browse</button> · <a href="https://relentless.com/"><kbd>Esc</kbd> close</a></div>
       <div>MMXXVI — no rights reserved, go read the sources</div>
     </div>
   </div>

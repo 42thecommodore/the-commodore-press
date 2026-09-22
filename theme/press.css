@@ -426,8 +426,8 @@
   kbd{font-family:var(--serif);font-weight:600;font-size:13.5px;padding:0 3px}
   .foot .keys{color:inherit}
   .foot .keys>span{opacity:.62}
-  .foot .keys button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;opacity:.62;transition:opacity .2s}
-  .foot .keys button:hover,.foot .keys button:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:3px}
+  .foot .keys button,.foot .keys a{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;opacity:.62;transition:opacity .2s;text-decoration:none}
+  .foot .keys button:hover,.foot .keys button:focus-visible,.foot .keys a:hover,.foot .keys a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:3px}
 
   @media (max-width:1000px){
     .front{grid-template-columns:1fr;gap:40px}
