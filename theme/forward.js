@@ -15,7 +15,9 @@
   var FWD = "https://relentless.com/", fwd = null, fwdT = [];
   function forward() {
     if (fwd) { fwdT.forEach(clearTimeout); location.href = FWD; return; }
-    var still = matchMedia("(prefers-reduced-motion:reduce)").matches, i, flags = "", word = "";
+    var still = matchMedia("(prefers-reduced-motion:reduce)").matches,
+      touch = matchMedia("(hover:none) and (pointer:coarse)").matches,   // a phone has no Esc key to offer
+      i, flags = "", word = "";
     for (i = 0; i < 12; i++) flags += '<i style="--i:' + i + '"></i>';
     "relentless.com".split("").forEach(function (ch, n) {
       word += '<span' + (n >= 10 ? ' class="tld"' : "") + ' style="--i:' + n + '">' + ch + "</span>";
@@ -28,18 +30,20 @@
       + '<div class="rs-fwd-flags" aria-hidden="true">' + flags + '</div>'
       + '<div class="rs-fwd-sea" aria-hidden="true"><b class="rs-fwd-ship"></b></div>'
       + '<div class="rs-fwd-foot"><button type="button" class="rs-fwd-stay">stay aboard</button>'
-      + '<span>casting off in <em class="rs-fwd-n">3</em> · Esc to go now</span></div></div>';
+      + '<span>casting off in <em class="rs-fwd-n">3</em>' + (touch ? "" : " · Esc to go now") + '</span></div></div>';
     doc.body.appendChild(fwd);
     fwd.addEventListener("click", function (e) { if (e.target === fwd || e.target.closest(".rs-fwd-stay")) stay(); });
     fwd.offsetWidth; fwd.classList.add("on");
     var n = fwd.querySelector(".rs-fwd-n"), beat = still ? 250 : 800;
     fwdT = [
-      setTimeout(function () { n.textContent = "2"; }, beat),
-      setTimeout(function () { n.textContent = "1"; }, beat * 2),
+      setTimeout(function () { tick(n, "2"); }, beat),
+      setTimeout(function () { tick(n, "1"); }, beat * 2),
       setTimeout(function () { if (fwd) fwd.classList.add("away"); }, beat * 3),
       setTimeout(function () { location.href = FWD; }, beat * 3 + (still ? 0 : 450))
     ];
   }
+  // each count drops in rather than snapping over the last
+  function tick(n, v) { n.textContent = v; n.classList.remove("t"); n.offsetWidth; n.classList.add("t"); }
   function stay() {
     if (!fwd) return;
     fwdT.forEach(clearTimeout);
