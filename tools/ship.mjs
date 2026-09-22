@@ -65,11 +65,17 @@ step("Build", "npm", ["run", "build"]);
 
 git("add -A");
 const staged = git("diff --cached --stat");
-if (!staged) { say(`\n${g}  Nothing changed. The live site is already current.${x}\n`); process.exit(0); }
-say(`\n${d}${staged}${x}`);
-
-/* Content and dist/ go together, so the deployable file always matches its sources. */
-step("Commit", "git", ["commit", "-q", "-m", message]);
+/* Nothing new to commit is not the same as nothing to publish: commits made earlier and
+   never pushed still have to go out. This used to exit here and print "the live site is
+   already current" with two unpushed commits sitting on main. */
+spawnSync("git", ["fetch", "--quiet", "origin"], { cwd: ROOT, stdio: "inherit" });
+const unpushed = git("rev-list --count origin/main..HEAD");
+if (!staged && unpushed === "0") { say(`\n${g}  Nothing changed. The live site is already current.${x}\n`); process.exit(0); }
+if (staged) {
+  say(`\n${d}${staged}${x}`);
+  /* Content and dist/ go together, so the deployable file always matches its sources. */
+  step("Commit", "git", ["commit", "-q", "-m", message]);
+} else say(`\n${d}  Nothing new to commit; ${unpushed} earlier commit(s) not yet published.${x}`);
 
 /* More than one person — or session — works in this repo, and a remote that has moved
    on is the ordinary case, not an error. Rebase onto it rather than failing the push.
