@@ -127,6 +127,12 @@
   .feat-link{align-self:flex-start;margin:6px 0 4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--nbrass);border-bottom:1px solid transparent}
   .feat-link:hover{border-bottom-color:var(--nbrass)}
   .ic-row{display:flex;gap:8px;flex-wrap:wrap}
+  .echo-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .echo .shape{flex:none;width:116px;height:56px;border:1px solid rgba(216,166,87,.35);background:#0b1022}
+  .echo .shape path{fill:none;stroke:var(--parchment);stroke-width:1;opacity:.85}
+  .echo .shape circle{fill:var(--parchment)}
+  /* on a laptop the whole chart fits the first screen: it never grows taller than the window */
+  @media (min-width:981px){.chart-svg{max-height:calc(100vh - 120px);min-height:440px}}
   .echo-map{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--nbrass);margin:-4px 0 10px;border-bottom:1px solid transparent}
   .echo-map:hover{border-bottom-color:var(--nbrass)}
   /* phones see the islands first, straight under the title; the card follows */

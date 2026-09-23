@@ -77,6 +77,10 @@
       {
         "who": "Mike Jones",
         "note": "Surround yourself with great people."
+      },
+      {
+        "who": "Greg LaVecchia",
+        "note": "Surround yourself with people who fill your weaknesses, so you can work purely on your own skills."
       }
     ]
   },
@@ -142,6 +146,10 @@
       {
         "who": "William Hockey",
         "note": "Do things differently, and think differently."
+      },
+      {
+        "who": "Greg LaVecchia",
+        "note": "Do things that are different."
       }
     ]
   },
@@ -168,6 +176,66 @@
       {
         "who": "Teddy Tarantino",
         "note": "It takes time."
+      }
+    ]
+  },
+  {
+    "idea": "Where your time goes",
+    "notes": [
+      {
+        "who": "Michael Easter",
+        "note": "Where are you spending your time?"
+      },
+      {
+        "who": "Mark Bertolini",
+        "note": "Am I spending my time doing the right things, with the right people?"
+      },
+      {
+        "who": "Damon West",
+        "note": "All the money in the world does not buy more time."
+      }
+    ]
+  },
+  {
+    "idea": "Do the right thing",
+    "notes": [
+      {
+        "who": "Adam Lane Smith",
+        "note": "Do the right thing."
+      },
+      {
+        "who": "Teddy Tarantino",
+        "note": "Do the hard thing; do the right thing."
+      },
+      {
+        "who": "Dovid Lichtenstein",
+        "note": "You are right if you are doing the right thing."
+      }
+    ]
+  },
+  {
+    "idea": "Avoid stupid things",
+    "notes": [
+      {
+        "who": "Mark Bertolini",
+        "note": "Avoid stupid things."
+      },
+      {
+        "who": "Greg LaVecchia",
+        "note": "Avoid stupid things."
+      }
+    ]
+  },
+  {
+    "idea": "Work hard now",
+    "notes": [
+      {
+        "who": "Chris Camillo",
+        "note": "Work hard now."
+      },
+      {
+        "who": "Boyd Varty",
+        "note": "I don't think I'm smart, but I do work hard."
       }
     ]
   }
