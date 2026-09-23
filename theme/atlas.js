@@ -144,7 +144,7 @@ function layoutIsles(W, H, k = 1, fs = 22, wrap = 99, fsm = 12.5) {
     p.seed = seedOf(p.pr.id);
   });
   /* every label is a box under its island; settle until no box meets another box or coast */
-  nodes.forEach(p => { p.lines = wrapName(p.pr.name, wrap); p.lw = Math.max(Math.max(...p.lines.map(l => l.length)) * fs * .68 * .84, countLine(p.pr).length * fsm * .66); p.lh = p.lines.length * fs * .68 * 1.3 + fsm + 10; });
+  nodes.forEach(p => { p.lines = wrapName(p.pr.name, wrap); p.lw = Math.max(...p.lines.map(l => l.length)) * fs * .68 * .84; p.lh = p.lines.length * fs * .68 * 1.3 + 8; });
   const box = p => ({ x0: p.x - p.lw / 2 - 8, x1: p.x + p.lw / 2 + 8, y0: p.y + p.r * 1.12, y1: p.y + p.r * 1.3 + p.lh + 6 });
   const hit = (a, b) => a.x0 < b.x1 && b.x0 < a.x1 && a.y0 < b.y1 && b.y0 < a.y1;
   const disc = p => ({ x0: p.x - p.r * 1.15, x1: p.x + p.r * 1.15, y0: p.y - p.r * 1.15, y1: p.y + p.r * 1.12 });
@@ -165,8 +165,8 @@ function layoutIsles(W, H, k = 1, fs = 22, wrap = 99, fsm = 12.5) {
       p.x = Math.max(half + 14, Math.min(W - half - 14, p.x));
       p.y = Math.max(p.r * 1.25 + 18, Math.min(H - p.r * 1.3 - p.lh - 18, p.y));
       /* keep clear of the cartouche in the lower right */
-      const cw = W < 700 ? 300 : 270, ch = W < 700 ? 104 : 92, cx0 = W - 35 - cw, cy0 = H - 35 - ch;
-      if (p.x + Math.max(p.r, p.lw / 2) > cx0 - 10 && p.y + p.r * 1.3 + p.lh > cy0 - 10) { p.y = Math.min(p.y, cy0 - 10 - p.r * 1.3 - p.lh); moved = true; }
+      const cw = 330, ch = 112, cx0 = W - 35 - cw, cy0 = H - 35 - ch;
+      if (W >= 700 && p.x + Math.max(p.r, p.lw / 2) > cx0 - 10 && p.y + p.r * 1.3 + p.lh > cy0 - 10) { p.y = Math.min(p.y, cy0 - 10 - p.r * 1.3 - p.lh); moved = true; }
     });
     if (!moved) break;
   }
@@ -235,8 +235,8 @@ function renderChart() {
   const relaid = !!chartMode && chartMode !== mode;
   if (relaid) { cancelAnimationFrame(flyRaf); chartView = { x: 0, y: 0, k: 1 }; }  /* a new layout starts at full view; a flight to the old one is void */
   chartMode = mode;
-  isleNodes = layoutIsles(W, H, narrow ? .74 : 1, narrow ? 23 : 22, narrow ? 15 : 99, narrow ? 13.5 : 12.5);
-  const fs = narrow ? 23 : 22, fsm = narrow ? 13.5 : 12.5;
+  isleNodes = layoutIsles(W, H, narrow ? .74 : 1, narrow ? 32 : 26, narrow ? 14 : 99, narrow ? 21 : 17);
+  const fs = narrow ? 32 : 26, fsm = narrow ? 21 : 17;
   const tnames = [];
 
   /* lanes, lightest first so the heavy ones sit on top */
@@ -255,17 +255,17 @@ function renderChart() {
   for (let x = B1, i = 0; x < W - B1; x += step, i++) if (i % 2 === 0) bars += `<rect x="${x}" y="${B0}" width="${Math.min(step, W - B1 - x)}" height="${B1 - B0}"/><rect x="${x}" y="${H - B1}" width="${Math.min(step, W - B1 - x)}" height="${B1 - B0}"/>`;
   for (let y = B1, i = 0; y < H - B1; y += step, i++) if (i % 2 === 0) bars += `<rect x="${B0}" y="${y}" width="${B1 - B0}" height="${Math.min(step, H - B1 - y)}"/><rect x="${W - B1}" y="${y}" width="${B1 - B0}" height="${Math.min(step, H - B1 - y)}"/>`;
   /* the cartouche: what this chart is, and whose */
-  const cw = narrow ? 300 : 270, ch = narrow ? 104 : 92, cx0 = W - B1 - 22 - cw, cy0 = H - B1 - 22 - ch;
-  const cart = `<g class="cart"><rect x="${cx0}" y="${cy0}" width="${cw}" height="${ch}"/><rect class="c2" x="${cx0 + 4}" y="${cy0 + 4}" width="${cw - 8}" height="${ch - 8}"/>
-    <text class="c-t" x="${cx0 + cw / 2}" y="${cy0 + ch * .36}" font-size="${narrow ? 17 : 15}">A CHART OF LESSONS</text>
-    <text class="c-s" x="${cx0 + cw / 2}" y="${cy0 + ch * .6}" font-size="${narrow ? 15 : 13}">from the listening notes of {{EDITOR}}</text>
-    <text class="c-m" x="${cx0 + cw / 2}" y="${cy0 + ch * .82}" font-size="${narrow ? 11 : 10}">${PEOPLE.length} PEOPLE · ${PRINCIPLES.length} LESSONS · MMXXVI</text></g>`;
+  const cw = 330, ch = 112, cx0 = W - B1 - 22 - cw, cy0 = H - B1 - 22 - ch;
+  const cart = narrow ? "" : `<g class="cart"><rect x="${cx0}" y="${cy0}" width="${cw}" height="${ch}"/><rect class="c2" x="${cx0 + 4}" y="${cy0 + 4}" width="${cw - 8}" height="${ch - 8}"/>
+    <text class="c-t" x="${cx0 + cw / 2}" y="${cy0 + ch * .36}" font-size="19">A CHART OF LESSONS</text>
+    <text class="c-s" x="${cx0 + cw / 2}" y="${cy0 + ch * .6}" font-size="17">from the listening notes of {{EDITOR}}</text>
+    <text class="c-m" x="${cx0 + cw / 2}" y="${cy0 + ch * .83}" font-size="13">${PEOPLE.length} PEOPLE · ${PRINCIPLES.length} LESSONS · MMXXVI</text></g>`;
 
   const isles = isleNodes.map(n => {
     const pr = n.pr, towns = holdersNow(pr).map((p, k, arr) => {
       const a = k * 2.39996 + n.seed, rad = n.r * .6 * Math.sqrt((k + .5) / arr.length);
       const tx = n.x + Math.cos(a) * rad, ty = n.y + Math.sin(a) * rad;
-      tnames.push(`<g class="tn" data-i="${pr.id}" data-p="${p.id}" data-x="${f1(tx)}" data-y="${f1(ty)}"><text x="6.5" y="4" font-size="${narrow ? 21 : 16}">${p.name}</text></g>`);
+      tnames.push(`<g class="tn" data-i="${pr.id}" data-p="${p.id}" data-x="${f1(tx)}" data-y="${f1(ty)}"><text x="6.5" y="5" font-size="${narrow ? 23 : 18}">${p.name}</text></g>`);
       return `<circle class="town" data-p="${p.id}" cx="${f1(tx)}" cy="${f1(ty)}" r="${narrow ? 4.2 : 4}" fill="${p.color}" style="--tw:-${((k * .61 + n.seed) % 3.6).toFixed(2)}s"/>`;
     }).join("");
     const ports = pr.ports.map((pt, k) => {
@@ -282,11 +282,10 @@ function renderChart() {
      (applyView counter-scales them), so going in gives the names room instead of just
      making them bigger. The meaning of each lesson appears at the first zoom step. */
   const labels = isleNodes.map(n => {
-    const pr = n.pr, nf = fs * .68, lh = nf * 1.3, yc = (n.lines.length - 1) * lh + fsm + 6;
+    const pr = n.pr, nf = fs * .68, lh = nf * 1.3, yc = (n.lines.length - 1) * lh;
     const gl = wrapName(pr.gloss, 30);
     return `<g class="lbl-i" data-i="${pr.id}" data-x="${f1(n.x)}" data-y="${f1(n.y + n.r * 1.3)}"><text class="nm" x="0" y="${f1(nf + 4)}" font-size="${f1(nf)}">${n.lines.map((l, i) => `<tspan x="0" dy="${i ? f1(lh) : 0}">${l}</tspan>`).join("")}</text>
-      <text class="ct" x="0" y="${f1(nf + 4 + yc)}" font-size="${fsm}">${countLine(pr)}</text>
-      <text class="gl" x="0" y="${f1(nf + 4 + yc + fsm + 8)}" font-size="${fsm + 2}">${gl.map((l, i) => `<tspan x="0" dy="${i ? f1((fsm + 2) * 1.15) : 0}">${l}</tspan>`).join("")}</text></g>`;
+      <text class="gl" x="0" y="${f1(nf + 4 + yc + fsm + 4)}" font-size="${fsm}">${gl.map((l, i) => `<tspan x="0" dy="${i ? f1(fsm * 1.2) : 0}">${l}</tspan>`).join("")}</text></g>`;
   }).join("");
 
   const ship = false && heavy && !reduce ? `<g class="chartship"><g transform="translate(-13 -19)">{{MARK size=26 sw=1.1 pn aria}}</g>
@@ -301,7 +300,7 @@ function renderChart() {
       <g class="isles">${isles}</g>
       <g class="labels" aria-hidden="true">${labels}</g>
       <path class="const-line" id="constLine" d=""/>
-      <g class="const-lbl" id="constLbl" data-x="0" data-y="0" style="display:none"><text x="0" y="-2" font-size="${narrow ? 22 : 17}"></text></g>
+      <g class="const-lbl" id="constLbl" data-x="0" data-y="0" style="display:none"><text x="0" y="-2" font-size="${narrow ? 24 : 20}"></text></g>
       <path class="leader" id="chartLeaders" d=""/>
       <g class="tnames" aria-hidden="true">${tnames.join("")}</g>
     </g>
@@ -359,7 +358,7 @@ function callouts(svg) {
   const sc = (svg.clientWidth || chartW) / chartW, gap = 21 / (k * sc), items = [...svg.querySelectorAll(`.tn[data-i="${n.pr.id}"]`)].map(t => ({ t, x: +t.dataset.x, y: +t.dataset.y }));
   let d = "";
   /* a column that would run off the visible chart joins the other side */
-  const vx0 = -chartView.x / k, vx1 = (chartW - chartView.x) / k, fsz = chartMode === "tall" ? 21 : 16;
+  const vx0 = -chartView.x / k, vx1 = (chartW - chartView.x) / k, fsz = chartMode === "tall" ? 23 : 18;
   const wOf = o => (o.t.textContent.length * fsz * .5 + 10) / k, reach = n.r * 1.25 + 16 / (k * sc);
   const leftFits = items.every(o => o.x >= n.x || n.x - reach - wOf(o) > vx0), rightFits = items.every(o => o.x < n.x || n.x + reach + wOf(o) < vx1);
   const sideOf = o => !leftFits && rightFits ? 1 : leftFits && !rightFits ? -1 : (o.x >= n.x ? 1 : -1);
@@ -654,16 +653,22 @@ function drawConst(e) {
   const pts = best || [];
   pts.forEach(p => p.c.classList.add("hl"));
   path.setAttribute("d", pts.map((p, i) => `${i ? "L" : "M"}${f1(p.x)} ${f1(p.y)}`).join(""));
-  /* the name runs along the longest leg, just off the line, turned to read left to right */
-  let leg = 0, lx = 0;
-  for (let k = 1; k < pts.length; k++) { const L = Math.hypot(pts[k].x - pts[k - 1].x, pts[k].y - pts[k - 1].y); if (L > lx) { lx = L; leg = k; } }
-  if (pts.length > 1) {
-    const a = pts[leg - 1], b = pts[leg]; let ang = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
-    if (ang > 90) ang -= 180; if (ang < -90) ang += 180;
-    /* a steep leg would stand the name on end; past 35° it sits level, beside the line */
-    if (Math.abs(ang) > 35) { const top = pts.reduce((m, p) => p.y < m.y ? p : m, pts[0]); lbl.dataset.x = f1(top.x); lbl.dataset.y = f1(top.y - 16); lbl.dataset.r = "0"; }
-    else { const r = ang * Math.PI / 180, off = 12; lbl.dataset.x = f1((a.x + b.x) / 2 + Math.sin(r) * off); lbl.dataset.y = f1((a.y + b.y) / 2 - Math.cos(r) * off); lbl.dataset.r = ang.toFixed(1); }
-  } else if (pts.length) { lbl.dataset.x = f1(pts[0].x); lbl.dataset.y = f1(pts[0].y - 14); lbl.dataset.r = "0"; }
+  /* The name is set level (slanted lettering reads slower) in whichever of six places
+     around the constellation touches no island and no island's name. */
+  if (pts.length) {
+    const fsz = chartMode === "tall" ? 24 : 20, w = e.idea.length * fsz * .46, h = fsz * 1.1;
+    const xs = pts.map(p => p.x), ys = pts.map(p => p.y), x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+    let leg = 1, lx = 0; for (let k = 1; k < pts.length; k++) { const L = Math.hypot(pts[k].x - pts[k - 1].x, pts[k].y - pts[k - 1].y); if (L > lx) { lx = L; leg = k; } }
+    const mx = pts.length > 1 ? (pts[leg - 1].x + pts[leg].x) / 2 : pts[0].x, my = pts.length > 1 ? (pts[leg - 1].y + pts[leg].y) / 2 : pts[0].y;
+    const cands = [[(x0 + x1) / 2, y0 - 18], [(x0 + x1) / 2, y1 + h + 10], [mx, my - 14], [mx, my + h + 8], [x0 - w / 2 - 14, (y0 + y1) / 2 + h / 3], [x1 + w / 2 + 14, (y0 + y1) / 2 + h / 3]];
+    const boxes = isleNodes.flatMap(n => [[n.x - n.r * 1.15, n.y - n.r * 1.15, n.x + n.r * 1.15, n.y + n.r * 1.15],
+      [n.x - n.lw / 2 - 6, n.y + n.r * 1.2, n.x + n.lw / 2 + 6, n.y + n.r * 1.3 + n.lh]]);
+    const cost = ([cx, cy]) => { const a = [cx - w / 2, cy - h, cx + w / 2, cy + 4]; let o = 0;
+      for (const b of boxes) o += Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+      if (a[0] < 20 || a[2] > chartW - 20 || a[1] < 20 || a[3] > chartH - 20) o += 1e6; return o; };
+    const [bx, by] = cands.reduce((m, c) => cost(c) < cost(m) ? c : m, cands[0]);
+    lbl.dataset.x = f1(bx); lbl.dataset.y = f1(by); lbl.dataset.r = "0";
+  }
   lbl.style.display = pts.length ? "" : "none";
   lbl.querySelector("text").textContent = e.idea;
   if (constFly && pts.length > 1) {
