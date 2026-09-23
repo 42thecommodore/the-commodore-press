@@ -315,3 +315,19 @@
   .chart-sea.boating .chart-svg,.chart-sea.boating .chart-svg *{cursor:crosshair}
   @media (prefers-reduced-motion:reduce){.boat,.wake{display:none}}
   .minimap .mm-boat{color:var(--parchment)}
+
+  /* the constellation's name, when the chart has no clear water for it */
+  .const-plaque{position:absolute;left:22px;top:20px;z-index:3;display:none;flex-direction:column;gap:2px;max-width:min(62%,300px);
+    padding:9px 12px;background:rgba(10,14,27,.92);border:1px solid rgba(216,166,87,.55);pointer-events:none}
+  .const-plaque.on{display:flex}
+  .const-plaque .pq-k{font-family:var(--mono);font-size:var(--fs-0,12px);letter-spacing:.12em;text-transform:uppercase;color:var(--nbrass)}
+  .const-plaque i{font-size:var(--fs-3,17px);line-height:1.25;color:var(--parchment)}
+  .const-plaque .pq-n{font-family:var(--mono);font-size:var(--fs-0,12px);color:var(--parchment-dim)}
+  /* on a phone the plaque is a caption above the chart, never laid over an island; the zoom
+     buttons move to the foot so the two never meet */
+  @media (max-width:700px){
+    .chart-sea{display:flex;flex-direction:column}
+    .const-plaque{position:static;order:-1;max-width:none;border-width:0 0 1px;padding:10px 14px}
+    .const-plaque.on{display:flex}
+    .chart-tools{top:auto;bottom:10px}
+  }

@@ -93,7 +93,6 @@ function engrave(n) {
       <path class="shore" d="${coast(x, y, r, seed)}"/>`;
 }
 const shared = (a, b) => a.members.filter(m => b.members.includes(m));
-const holdersNow = pr => pr.members;
 
 /* ---------- derive: ports, and each principle's place ---------- */
 function atlasDerive() {
@@ -247,7 +246,6 @@ function renderChart() {
   }
   lanes.sort((x, y) => x.s.length - y.s.length);
   const maxS = Math.max(1, ...lanes.map(l => l.s.length));
-  const heavy = lanes[lanes.length - 1];
 
   const r1 = roseSVG(W * .085, H * .12, narrow ? 40 : 34);
   /* the border a printed chart carries: a band graduated in alternate filled and open bars */
@@ -262,7 +260,7 @@ function renderChart() {
     <text class="c-m" x="${cx0 + cw / 2}" y="${cy0 + ch * .83}" font-size="13">${PEOPLE.length} PEOPLE · ${PRINCIPLES.length} LESSONS · MMXXVI</text></g>`;
 
   const isles = isleNodes.map(n => {
-    const pr = n.pr, towns = holdersNow(pr).map((p, k, arr) => {
+    const pr = n.pr, towns = pr.members.map((p, k, arr) => {
       const a = k * 2.39996 + n.seed, rad = n.r * .6 * Math.sqrt((k + .5) / arr.length);
       const tx = n.x + Math.cos(a) * rad, ty = n.y + Math.sin(a) * rad;
       tnames.push(`<g class="tn" data-i="${pr.id}" data-p="${p.id}" data-x="${f1(tx)}" data-y="${f1(ty)}"><text x="6.5" y="5" font-size="${narrow ? 23 : 18}">${p.name}</text></g>`);
@@ -288,8 +286,6 @@ function renderChart() {
       <text class="gl" x="0" y="${f1(nf + 4 + yc + fsm + 4)}" font-size="${fsm}">${gl.map((l, i) => `<tspan x="0" dy="${i ? f1(fsm * 1.2) : 0}">${l}</tspan>`).join("")}</text></g>`;
   }).join("");
 
-  const ship = false && heavy && !reduce ? `<g class="chartship"><g transform="translate(-13 -19)">{{MARK size=26 sw=1.1 pn aria}}</g>
-      <animateMotion dur="38s" repeatCount="indefinite" rotate="0" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" path="${lanePath(heavy.a, heavy.b)}"/></g>` : "";
 
   chartW = W; chartH = H;
   host.innerHTML = `<svg class="chart-svg" viewBox="0 0 ${W} ${H}" role="group" aria-label="A chart of the lessons as islands. Drag to move, pinch or command-scroll to zoom.">
@@ -312,6 +308,7 @@ function renderChart() {
   <div class="chart-tools"><button type="button" onclick="chartZoomBtn(1.6)" aria-label="Zoom in">+</button><button type="button" onclick="chartZoomBtn(1/1.6)" aria-label="Zoom out">−</button><button type="button" onclick="chartReset()" aria-label="Show the whole chart">⊙</button><span id="chartZoom" aria-hidden="true"></span></div>
   <div class="chart-hint" id="chartHint">${narrow ? "pinch to zoom · tap anyone" : "drag to move · pinch or ⌘-scroll to zoom · point at anyone"}</div>
   <div class="chart-tip" id="chartTip" role="status" hidden></div>
+  <div class="const-plaque" id="constPlaque" aria-hidden="true"></div>
   <svg class="wake" id="chartWake" aria-hidden="true"><path d=""/></svg>
   <div class="boat" id="chartBoat" aria-hidden="true"><div class="boat-i">{{MARK size=30 sw=1.1 pn aria}}</div></div>`;
 
@@ -619,7 +616,7 @@ function drawConst(e) {
   const path = svg.querySelector("#constLine"), lbl = svg.querySelector("#constLbl");
   svg.querySelectorAll(".town.hl").forEach(t => t.classList.remove("hl"));
   svg.classList.toggle("feat-on", !!e);
-  if (!e) { path.setAttribute("d", ""); lbl.style.display = "none"; return; }
+  if (!e) { path.setAttribute("d", ""); lbl.style.display = "none"; plaque(null); return; }
   const ids = e.notes.map(n => (PEOPLE.find(q => q.name === n.who) || {}).id).filter(Boolean);
   const dots = id => [...svg.querySelectorAll(`.town[data-p="${id}"]`)].map(c => ({ c, x: +c.getAttribute("cx"), y: +c.getAttribute("cy") }));
   /* Each person has a dot on every island they hold, so which dots to join is a choice. Make
@@ -666,10 +663,13 @@ function drawConst(e) {
     const cost = ([cx, cy]) => { const a = [cx - w / 2, cy - h, cx + w / 2, cy + 4]; let o = 0;
       for (const b of boxes) o += Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
       if (a[0] < 20 || a[2] > chartW - 20 || a[1] < 20 || a[3] > chartH - 20) o += 1e6; return o; };
-    const [bx, by] = cands.reduce((m, c) => cost(c) < cost(m) ? c : m, cands[0]);
-    lbl.dataset.x = f1(bx); lbl.dataset.y = f1(by); lbl.dataset.r = "0";
+    const best = cands.reduce((m, c) => cost(c) < cost(m) ? c : m, cands[0]);
+    lbl.dataset.x = f1(best[0]); lbl.dataset.y = f1(best[1]); lbl.dataset.r = "0";
+    /* Where no clear place exists (on a phone, almost never), the name goes on a plaque in
+       the chart's corner instead: set as text, at one readable size, touching nothing. */
+    plaque(chartMode === "tall" || cost(best) > 0 ? e : null);
   }
-  lbl.style.display = pts.length ? "" : "none";
+  lbl.style.display = pts.length && !document.getElementById("constPlaque").classList.contains("on") ? "" : "none";
   lbl.querySelector("text").textContent = e.idea;
   if (constFly && pts.length > 1) {
     constFly = false;
@@ -679,6 +679,11 @@ function drawConst(e) {
   }
   if (!reduce && pts.length > 1) { const L = path.getTotalLength(); path.style.transition = "none"; path.style.strokeDasharray = `${L}`; path.style.strokeDashoffset = `${L}`; path.getBoundingClientRect(); path.style.transition = "stroke-dashoffset 1.2s cubic-bezier(.62,.02,.2,1)"; path.style.strokeDashoffset = "0"; }
   applyView();
+}
+function plaque(e) {
+  const el = document.getElementById("constPlaque"); if (!el) return;
+  el.classList.toggle("on", !!e);
+  if (e) el.innerHTML = `<span class="pq-k">✦ Constellation</span><i>${e.idea}</i><span class="pq-n">${e.notes.length} people, joined in white</span>`;
 }
 function isleCard() {
   const el = document.getElementById("isleCard"); if (!el) return;

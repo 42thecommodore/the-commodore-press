@@ -94,6 +94,10 @@ const cap = s => s[0].toUpperCase() + s.slice(1);
    domain: SITE_URL=https://commodorepress.org npm run build */
 const SITE = (process.env.SITE_URL || "https://42thecommodore.github.io/the-commodore-press").replace(/\/+$/, "");
 
+/* The Atlas's source is written to be read (its comments explain why each mark means what it
+   does); the page it ships in has a 500 KB budget. Block comments and indentation go at build
+   time, from the Atlas files only. */
+const lean = s => s.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^[ \t]+/gm, "").replace(/\n{2,}/g, "\n");
 const fill = s => fillMark(s)
   .replace(/{{SITE}}/g, SITE)
   .replace(/{{EDITOR}}/g, EDITOR)
@@ -132,10 +136,10 @@ const out = fill(read("templates/shell.html"))
   // the colophon promises no cookies and no analytics; once a sign-up exists it also says who holds the addresses
   .replace("<!--NEWSCOLOPHON-->", NEWS && NEWS.action ? ` If you subscribe to the newsletter, your address is held by ${NEWS.provider}, used only to send it; every issue carries its own unsubscribe link.` : "")
   .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the three wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
-  .replace("<!--CSS-->", () => read("theme/press.css") + read("theme/atlas.css") + fillMark(read("theme/reading.css")))
+  .replace("<!--CSS-->", () => read("theme/press.css") + lean(read("theme/atlas.css")) + fillMark(read("theme/reading.css")))
   .replace("<!--DATA-->", () => DATA)
   // reading.js and atlas.js first: the engine calls both (atlas.js holds only declarations), and the entry pages run reading.js too
-  .replace("<!--ENGINE-->", () => safe(read("theme/reading.js")) + "\n" + safe(fill(read("theme/atlas.js"))) + "\n" + safe(fill(read("theme/press.js"))));
+  .replace("<!--ENGINE-->", () => safe(read("theme/reading.js")) + "\n" + safe(fill(lean(read("theme/atlas.js")))) + "\n" + safe(fill(read("theme/press.js"))));
 
 /* A token nobody filled prints as `{{N_THING}}` on the live page, and a build that
    succeeds is the only signal anyone checks. Two of these were added and wired in the
