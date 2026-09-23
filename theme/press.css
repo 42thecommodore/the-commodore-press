@@ -340,6 +340,8 @@
   .foot{display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;font-family:var(--mono);font-size:var(--fs-0);color:var(--ink-soft);line-height:1.95;letter-spacing:.02em}
   body.night .foot{color:var(--parchment-dim)}
   .foot .grow{margin-left:auto;text-align:right}
+  .foot .keys button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:none}
+  .foot .keys button:hover,.foot .keys button:focus-visible{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
   kbd{font-family:var(--serif);font-weight:600;font-size:var(--fs-1);padding:0 3px}
 
   @media (max-width:1000px){
@@ -384,12 +386,8 @@
     *{transition-duration:.01ms !important;animation-duration:.01ms !important}
   }
 
-  /* ---------- front door: the specimen, one band per wing, the record ----------
-     Drawn by renderFront() in press.js. The specimen is one real entry with its parts
-     proof-marked in the margin; the bands show what each wing actually holds. */
-  .specimen{background:#FBF8F1;border:1px solid var(--rule);box-shadow:0 1px 0 var(--rule),0 18px 40px -24px rgba(30,28,24,.35);padding:28px 30px 22px}
-  body.dusk .specimen{background:var(--paper-2);box-shadow:none}
-  /* Captain of the day: the same card stock as the specimen, a plate in place of the marks */
+  /* ---------- front door: the Captain of the day, one band per wing, the colophon ----------
+     Drawn by renderFront() in press.js. The captain is one of the crew the editor picked. */
   .captain{background:#FBF8F1;border:1px solid var(--rule);box-shadow:0 1px 0 var(--rule),0 18px 40px -24px rgba(30,28,24,.35);padding:28px 30px 22px}
   body.dusk .captain{background:var(--paper-2);box-shadow:none}
   .captain h2{margin:0;font-size:var(--fs-7);line-height:1.05;font-weight:500;letter-spacing:-.01em}
@@ -398,27 +396,9 @@
   .cap-img{display:block;width:132px;height:165px;object-fit:cover;background:var(--paper-2)}
   .cap-img.nomark{display:flex;align-items:center;justify-content:center;color:var(--ink-soft)}
   .cap-ld{font-size:var(--fs-4);line-height:1.45;margin:16px 0 18px}
-  /* in the Lives band, beside the wall of faces it is chosen from */
-  .crew{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:48px;align-items:start}
-  @media (max-width:1000px){.crew{grid-template-columns:1fr;gap:32px}}
   .sp-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:14px}
-  .specimen h2{margin:0;font-size:var(--fs-7);line-height:1.05;font-weight:500;letter-spacing:-.01em}
   .sp-sub{font-style:italic;font-size:var(--fs-3);color:var(--ink-soft);margin:4px 0 12px}
-  .marks{list-style:none;margin:0;padding:0}
-  .marks li{display:grid;grid-template-columns:118px minmax(0,1fr);gap:14px;padding:15px 0;border-top:1px solid var(--rule)}
-  .mk{display:flex;flex-direction:column;align-items:flex-start;gap:6px;font-family:var(--mono);font-size:var(--fs-0);letter-spacing:.12em;text-transform:uppercase;color:var(--oxblood)}
-  /* the proof mark: a numbered swallow-tail pennant */
-  .pen{display:block;width:26px;height:14px;background:var(--oxblood);clip-path:polygon(0 0,100% 0,72% 50%,100% 100%,0 100%)}
-  .mb p{margin:0}
-  .sp-claim{font-size:var(--fs-4);line-height:1.4}
-  .sp-fact{display:flex;gap:14px;align-items:baseline}
-  .sp-fact b{flex:none;font-size:var(--fs-8);line-height:.9;font-weight:500;font-variant-numeric:tabular-nums}
-  .sp-fact span{font-family:var(--mono);font-size:var(--fs-0);line-height:1.55;color:var(--ink-soft)}
-  .sp-q{font-size:var(--fs-2);line-height:1.45;font-style:italic;color:var(--ink-mid)}
   .sp-n{font-family:var(--mono);font-size:var(--fs-0);letter-spacing:.06em;color:var(--ink-soft)}
-  .sp-c{display:block;font-size:var(--fs-3);line-height:1.45;color:var(--ink-mid);text-decoration:none}
-  .sp-c:hover{color:var(--oxblood)}
-  .sp-c span{display:block;font-family:var(--mono);font-size:var(--fs-0);letter-spacing:.06em;color:var(--oxblood)}
   .sp-foot{border-top:1px solid var(--ink);padding-top:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
   .sp-foot p{margin:0;font-size:var(--fs-3);line-height:1.4;font-style:italic;max-width:34ch}
   .sp-go,.band-go{flex:none;min-height:44px;font-family:var(--mono);font-size:var(--fs-0);letter-spacing:.04em;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
@@ -432,13 +412,34 @@
   .band-h p{margin:0;font-size:var(--fs-3);line-height:1.5;color:var(--ink-soft)}
 
   /* Wing I: the titles as spines in their own liveries, which they keep at night */
-  .rack{display:flex;align-items:flex-end;gap:4px;padding:20px 4px 0;border-bottom:3px solid var(--ink);overflow-x:auto;scrollbar-width:none}
+  .rack{display:flex;align-items:flex-end;gap:4px;padding:20px 4px 0;border-bottom:3px solid var(--ink)}
   .rack::-webkit-scrollbar{display:none}
-  .rk{flex:1 0 34px;max-width:54px;height:280px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;
-    padding:10px 0 9px;border-radius:1px 2px 2px 1px;box-shadow:inset -3px 0 0 rgba(0,0,0,.18),inset 2px 0 0 rgba(255,255,255,.08);}
-  .rk i{width:70%;height:2px;background:var(--ac)}
-  .rk span{writing-mode:vertical-rl;font-size:var(--fs-2);line-height:1;white-space:nowrap;overflow:hidden;max-height:210px}
-  .rk svg{color:var(--ac)}
+  /* Each spine is a closed book. With a mouse over it the front cover swings open from the
+     spine, like a book taken half off the shelf; only transforms move, so nothing reflows.
+     The last five open to the left, to stay on the shelf. */
+  .rk{position:relative;flex:1 1 0;min-width:24px;max-width:54px;height:280px;padding:0;perspective:1100px;color:var(--ink)}
+  .rk-sp{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:10px 0 9px;
+    background:var(--cv);border-radius:1px 2px 2px 1px;box-shadow:inset -3px 0 0 rgba(0,0,0,.18),inset 2px 0 0 rgba(255,255,255,.08)}
+  .rk-sp>i{width:70%;height:2px;background:var(--ac)}
+  .rk-sp>span{writing-mode:vertical-rl;font-size:var(--fs-2);line-height:1;white-space:nowrap;overflow:hidden;max-height:210px}
+  .rk svg{color:var(--ac);flex:none}
+  .rk-cv{position:absolute;top:0;left:100%;width:190px;height:100%;z-index:4;display:flex;flex-direction:column;align-items:flex-start;gap:10px;
+    padding:30px 20px 18px;box-sizing:border-box;text-align:left;background:var(--cv);border-radius:0 3px 3px 0;
+    box-shadow:inset 3px 0 8px rgba(0,0,0,.3),10px 14px 30px -12px rgba(0,0,0,.55);
+    transform-origin:left center;transform:rotateY(-92deg);visibility:hidden;pointer-events:none;
+    transition:transform .16s ease-in,visibility 0s .16s}
+  .rk.end .rk-cv{left:auto;right:100%;border-radius:3px 0 0 3px;transform-origin:right center;transform:rotateY(92deg)}
+  .rk-cv b{font-size:var(--fs-5);font-weight:500;line-height:1.1}
+  .rk-cv>i{width:28px;height:2px;background:var(--ac)}
+  .rk-cv em{font-size:var(--fs-2);line-height:1.35}
+  .rk-cv small{margin-top:auto;font-family:var(--mono);font-size:var(--fs-0);letter-spacing:.06em;opacity:.8}
+  @media (hover:hover){
+    .rk:hover,.rk:focus-visible{z-index:5}
+    .rk:hover .rk-cv,.rk:focus-visible .rk-cv{transform:none;visibility:visible;transition:transform .34s cubic-bezier(.2,.75,.25,1) .1s,visibility 0s .1s}
+  }
+  @media (prefers-reduced-motion:reduce){.rk-cv,.rk:hover .rk-cv{transition:none}}
+  /* below 760px the spines stop shrinking and the shelf scrolls on its own; covers stay shut */
+  @media (max-width:760px){.rack{overflow-x:auto;scrollbar-width:none}.rk{flex:0 0 34px}.rk-cv{display:none}}
 
   .fn .nw{display:block;font-style:normal;font-family:var(--mono);font-size:var(--fs-0);letter-spacing:.06em;color:var(--oxblood)}
 
@@ -498,17 +499,14 @@
   @media (max-width:560px){
     .front{padding:40px 0 44px}
     .tally{gap:8px 22px}
-    .specimen,.captain{padding:22px 18px 18px}
+    .captain{padding:22px 18px 18px}
     .cap-row{grid-template-columns:96px minmax(0,1fr);gap:14px}
     .cap-img{width:96px;height:120px}
     .captain h2{font-size:var(--fs-6)}
-    .marks li{grid-template-columns:1fr;gap:8px}
-    .mk{flex-direction:row;align-items:center;gap:8px}
     .sp-foot{flex-direction:column;align-items:flex-start;gap:4px}
     .band{padding:44px 0 52px}
     .band-h{flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:26px}
     .rack{margin-right:-20px;padding-right:20px}
-    .rk{flex:0 0 36px}
     .fc-notes{grid-template-columns:1fr}
     .log .dt{display:none}
   }

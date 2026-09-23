@@ -105,40 +105,7 @@ function openLife(id){go('lives');setTimeout(()=>openReader('lives',id),340)}
 const plateOrMark=(b,cls)=>PLATES[b.id]
   ? `<img class="${cls}" src="${PLATES[b.id]}" alt="" loading="lazy">`
   : `<span class="${cls} nomark" aria-hidden="true">{{MARK sw=0.9 pn}}</span>`;
-/* The specimen: a title whose latest correction belongs to it alone, so the correction's own
-   title says what was wrong on this entry. It carries a sourced figure, a printed dispute and
-   the correction left in view, which is every promise the colophon makes, on one entry. It
-   reads stored fields only, and prints the dispute whole, because a dispute is never cut. */
-function pickSpecimen(){
-  const owners={};
-  for(const e of [...BOOKS,...ADJACENT,...LIVES])for(const n of (e.corrected||[]))owners[n]=(owners[n]||0)+1;
-  let best=null,any=null;
-  for(const b of BOOKS){
-    const fact=(b.facts||[]).find(f=>/: /.test(f.s));   // the house form: "what it counts: where it was read"
-    if(!(b.claim&&fact&&b.contested&&b.keep&&b.corrected&&b.corrected.length))continue;
-    for(const n of b.corrected){
-      if(!CORRECTIONS[n-1])continue;
-      if(owners[n]===1&&(!best||n>best.n))best={b,n,fact};
-      if(!any||n>any.n)any={b,n,fact};
-    }
-  }
-  return best||any;
-}
 const toCorrections=`href="#corrections" onclick="go('colophon');setTimeout(()=>document.getElementById('corrections').scrollIntoView(),60);return false;"`;
-function specimenHTML(){
-  const s=pickSpecimen(); if(!s)return "";
-  const {b,n,fact:f}=s, c=CORRECTIONS[n-1];
-  const mark=(label,body)=>`<li><span class="mk"><span class="pen" aria-hidden="true"></span>${label}</span><div class="mb">${body}</div></li>`;
-  return `<div class="sp-top"><span class="lbl q">Specimen · Wing I</span></div>
-    <h2>${b.title}</h2><div class="sp-sub">${b.sub}</div>
-    <ol class="marks">
-      ${mark("The claim",`<p class="sp-claim">${b.claim}</p>`)}
-      ${mark("The source",`<div class="sp-fact"><b>${f.b}</b><span>${f.s}</span></div>`)}
-      ${mark("The dispute",`<p class="sp-q">${b.contested}</p>`)}
-      ${mark("Corrected",`<a class="sp-c" ${toCorrections}><span>No. ${n} · ${c.d}</span> ${c.t}</a>`)}
-    </ol>
-    <div class="sp-foot"><p>${b.keep}</p><button class="sp-go" onclick="openReader('press','${b.id}')">Read the entry →</button></div>`;
-}
 /* Captain of the day: one of the crew the editor picked in content/captains.json, in turn,
    changing at the reader's midnight. The card prints the person's own entry and nothing
    else: their act, in the entry's words, not a lesson drawn from them. */
@@ -187,7 +154,7 @@ function renderFront(){
     `<span><b>${BOOKS.length}</b>titles</span><span><b>${LIVES.length}</b>lives</span>`+
     `<span><b>${PEOPLE.length}</b>people</span><span><b>${CORRECTIONS.length}</b>corrections</span>`;
   const cap=captainOfTheDay();
-  document.getElementById("specimen").innerHTML=specimenHTML();
+  document.getElementById("bridge").innerHTML=cap?captainHTML(cap):"";
 
   const fresh=new Set(LIVES.slice(-4).map(b=>b.id));
   const last=CORRECTIONS.map((c,i)=>({c,n:i+1})).slice(-3).reverse();
@@ -199,14 +166,15 @@ function renderFront(){
    `<section class="band" aria-labelledby="bPress"><div class="wrap">
       ${bandHead("Wing I · The Press","bPress","{{W_BOOKS_CAP}} ideas, on one shelf.",
         "Each with its timeline, its numbers and its objections.","go('press')","All titles →")}
-      <div class="rack">${BOOKS.map(b=>`<button class="rk" style="background:${b.cover};color:${b.ink};--ac:${b.accent}" onclick="openReader('press','${b.id}')"><i></i><span>${b.spineTitle||b.title}</span>{{MARK size=14 sw=1.4}}</button>`).join("")}</div>
+      <div class="rack">${BOOKS.map((b,i)=>`<button class="rk${i>=BOOKS.length-5?" end":""}" style="--cv:${b.cover};--ink:${b.ink};--ac:${b.accent}" onclick="openReader('press','${b.id}')" aria-label="${b.title.replace(/&amp;/g,"and")}">
+        <span class="rk-sp"><i></i><span>${b.spineTitle||b.title}</span>{{MARK size=14 sw=1.4}}</span>
+        <span class="rk-cv" aria-hidden="true"><b>${b.title}</b><i></i><em>${b.sub||""}</em><small>${[b.field,b.years].filter(Boolean).join(" · ")}</small>{{MARK size=18 sw=1.2}}</span></button>`).join("")}</div>
     </div></section>
     <section class="band" aria-labelledby="bLives"><div class="wrap">
       ${bandHead("Wing II · Lives","bLives",`${LIVES.length} people. Pick a face.`,
         `The one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_OBSCURE}} you have never heard of.`,"go('lives')","All lives →")}
-      <div class="${cap?"crew":""}">${cap?captainHTML(cap):""}
       <div class="wall">${LIVES.map(b=>`<button class="wface" onclick="openLife('${b.id}')" aria-label="${b.n}, ${b.years}${fresh.has(b.id)?", new on the shelf":""}" title="${b.n} · ${b.years}">
-          ${plateOrMark(b,"fp-img")}<span class="fn">${b.n}${fresh.has(b.id)?`<em class="nw">new</em>`:""}</span></button>`).join("")}</div></div>
+          ${plateOrMark(b,"fp-img")}<span class="fn">${b.n}${fresh.has(b.id)?`<em class="nw">new</em>`:""}</span></button>`).join("")}</div>
     </div></section>
     <section class="band night" aria-labelledby="bAtlas"><div class="wrap">
       ${bandHead("Wing III · The Atlas","bAtlas","{{W_PEOPLE_CAP}} people, and what they taught me.",

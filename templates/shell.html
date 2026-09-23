@@ -81,8 +81,8 @@
           </div>
           <div class="tally" id="tally"></div>
         </div>
-        <!-- One real entry, proof-marked: the method shown instead of described. renderFront() in press.js. -->
-        <article class="specimen" id="specimen" aria-label="A specimen entry"></article>
+        <!-- Captain of the day, from the crew in content/captains.json. renderFront() in press.js. -->
+        <div id="bridge"></div>
       </div>
     </div>
     <!-- One band per wing, then the record of corrections. Also renderFront(). -->
@@ -193,6 +193,7 @@
       <div><a href="contents/">Contents</a></div>
     </div>
     <div class="grow">
+      <div class="keys"><button type="button" onclick="openSearch()"><kbd>/</kbd> search</button> · <button type="button" onclick="toggleSpines()"><kbd>S</kbd> spines</button> · <button type="button" onclick="surprise()"><kbd>R</kbd> random</button> · <button type="button" onclick="shelfStep(1)"><kbd>←</kbd> <kbd>→</kbd> browse</button> · <span><kbd>Esc</kbd> close</span></div>
       <div>MMXXVI — no rights reserved, go read the sources</div>
     </div>
   </div>
