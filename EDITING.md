@@ -143,7 +143,22 @@ The number at the front of the filename is the order. Rename `05-the-box.json` t
 
 ### 6. Add a person to the Atlas
 
-In `content/atlas/people.json`, copy an existing `{ … }` block, paste it after the last one with a comma between, and rewrite it. `domain` must be one of the domain ids; `p` lists principle ids. Hover either for the list.
+**The easy way: from your notes.** Keep taking notes in your "People 🫂" Google Doc the way you do now, with one `# Name` heading per person. Three optional lines under the heading make the sync almost mechanical:
+
+```
+# Joe Liemandt
+Who: founder of Trilogy Software; principal of Alpha School
+Heard on: The Knowledge Project, 2026-09-14
+Mentions: Marcus Aurelius
+```
+
+Then either tell Claude "sync my notes", or do the first half yourself: in Google Docs choose File → Download → Markdown, then run `npm run notes -- "~/Downloads/People 🫂.md"`. It writes a private review to `.private/notes-review.md` (git never sees that folder) listing who is in your notes but not on the chart, new lines under people who are, and ideas that turn up under two people, which are your next constellations. It changes nothing on the site.
+
+With Claude: It reads the doc, compares it with the site, and shows you what it would add: new people, new notes, new constellations (the same idea in your notes on two people), and anyone on the Lives shelf they named. Nothing goes up until you pick it, because the doc has private lines in it.
+
+**By hand:** `npm run new person "Their Name" --domain mind --lessons hard,disc` adds a stub to the end of `content/atlas/people.json` and prints the next steps. Every field it leaves says TODO, and `npm run check` refuses to pass until each is answered, so a half-added person can't ship. Or copy an existing `{ … }` block, paste it after the last one with a comma between, and rewrite it. `domain` must be one of the domain ids; `p` lists principle ids. Hover either for the list.
+
+**How they join the map.** Their dots go on the islands in `p`. They join a constellation when you add them to `content/atlas/echoes.json`: an idea plus the line from your notes on each person who said it, at least two people. They connect to the Lives shelf through `"mentions": [{ "to": "lives:mandela", "note": "…" }]`. Everything else (island sizes, lanes, counts, "Who they are") redraws itself.
 
 `take` is your reading of what they teach, in a sentence or two — your words, not theirs.
 
@@ -233,7 +248,7 @@ Bing Webmaster Tools works the same way with its `BingSiteAuth.xml`. Do it again
 
 ### 14. Something already published was wrong
 
-After `npm run correct`, add the correction's number to the entry it is about: `"corrected": [14]`. The entry then prints the correction itself, so someone reading it learns what changed without finding the colophon. The check refuses a number that does not exist.
+After `npm run correct`, add the correction's number to the entry it is about: `"corrected": [14]`. The entry then prints the correction itself, so someone reading it learns what changed without finding the colophon. In the Atlas it goes on the person in `content/atlas/people.json`, and prints in their drawer. The check refuses a number that does not exist.
 
 Do two things. Fix the entry, and print the correction:
 
@@ -242,6 +257,16 @@ npm run correct -- "Short title." "What was wrong, what is right, and how you kn
 ```
 
 Never quietly edit the mistake away. Corrections are appended, never patched — it is one of the five promises the site makes.
+
+### 15. Pick the Captain of the day
+
+The front door names one Captain of the day, taken in turn from a crew you pick in `content/captains.json`. It changes at the reader's midnight.
+
+```json
+{ "crew": ["ernest-shackleton", "frances-perkins", "tu-youyou"] }
+```
+
+Use the life's id, the part of its filename after the number. Nobody is a captain unless you put them here; the card prints only what their own entry says, their act and not a lesson drawn from it. The check refuses a name that is not on the shelf, or one listed twice. An empty list takes the card away.
 
 ---
 

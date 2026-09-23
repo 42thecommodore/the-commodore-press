@@ -2,3 +2,7 @@ node_modules/
 .DS_Store
 *.log
 .cache/
+dist/
+
+# private working files (the notes review): never pushed
+.private/

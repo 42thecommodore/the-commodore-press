@@ -3,6 +3,7 @@
           node tools/new.mjs life "Marcus Aurelius" [--field Philosophy]
           node tools/new.mjs adjacent "Title"
           node tools/new.mjs log "The question goes with the number"
+          node tools/new.mjs person "Joe Liemandt" [--domain mind] [--lessons hard,disc]
    Every stub is deliberately full of TODOs: `npm run check` will refuse to pass
    until each one is answered, which is the point. */
 import fs from "node:fs";
@@ -15,7 +16,7 @@ const kind = argv[0];
 const title = argv.find((a, i) => i > 0 && !a.startsWith("--") && !argv[i - 1]?.startsWith("--"));
 const flag = (n, d) => { const i = argv.indexOf("--" + n); return i < 0 ? d : argv[i + 1]; };
 
-const KINDS = ["book", "adjacent", "life", "log"];
+const KINDS = ["book", "adjacent", "life", "log", "person"];
 if (!KINDS.includes(kind) || !title) {
   console.error(`usage: node tools/new.mjs <${KINDS.join("|")}> "Title" [--field Science]`);
   process.exit(1);
@@ -23,6 +24,33 @@ if (!KINDS.includes(kind) || !title) {
 
 const slug = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
   .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+/* An Atlas person is one block appended to content/atlas/people.json. The stub carries TODOs
+   the check refuses, so a half-added person can never ship; the next steps say how they
+   join the map (lessons), and how they connect (constellations, Lives they name). */
+if (kind === "person") {
+  const file = path.join(ROOT, "content/atlas/people.json");
+  const people = JSON.parse(fs.readFileSync(file, "utf8"));
+  if (people.some(p => p.name.toLowerCase() === title.toLowerCase())) { console.error(`  ${title} is already on the chart — add notes to them instead.`); process.exit(1); }
+  const domains = JSON.parse(fs.readFileSync(path.join(ROOT, "content/atlas/domains.json"), "utf8"));
+  const lessons = JSON.parse(fs.readFileSync(path.join(ROOT, "content/atlas/principles.json"), "utf8"));
+  const dom = flag("domain", "TODO"), ps = (flag("lessons", "") || "").split(",").map(x => x.trim()).filter(Boolean);
+  const bad = ps.filter(x => !lessons.some(l => l.id === x));
+  if (bad.length) { console.error(`  no lesson called ${bad.join(", ")}. The lessons are:\n` + lessons.map(l => `    ${l.id.padEnd(8)} ${l.name}`).join("\n")); process.exit(1); }
+  people.push({ name: title, domain: dom, role: "TODO — who they are, to a stranger, in one line. It is a fact: check it.",
+    take: "TODO — what they taught you, in your words: a sentence someone could disagree with.", p: ps,
+    kept: ["TODO — a line from your notes on them. Plain text prints as a note, after them. Delete this if there is none yet."] });
+  fs.writeFileSync(file, JSON.stringify(people, null, 2) + "\n");
+  console.log(`\n  ${title} added to content/atlas/people.json (the last block)\n\n  Next:`);
+  [`domain — one of: ${domains.map(d => `${d.id} (${d.label})`).join(", ")}`,
+   `lessons (p) — ids from principles.json: ${lessons.map(l => l.id).join(", ")}`,
+   `role, take and kept — answer every TODO`,
+   `constellations — does a line say what your notes say about someone else? add it to content/atlas/echoes.json`,
+   `Lives they name — add  "mentions": [{ "to": "lives:<id>", "note": "…" }]`,
+   `npm run check, then npm start and find them on the map`].forEach((x, i) => console.log(`    ${i + 1}. ${x}`));
+  console.log();
+  process.exit(0);
+}
 
 /* A Log piece is Markdown, not JSON, and needs no livery: it is the editor's column, not
    a book on a shelf. It starts as a draft, which stays off the site until status changes. */

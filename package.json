@@ -11,16 +11,15 @@
     "ready": "node tools/ready.mjs",
     "stats": "node tools/stats.mjs",
     "voice": "node .claude/skills/press-voice/scripts/measure-voice.mjs",
-    "publish:check": "npm run check && npm run build",
     "ship": "node tools/ship.mjs",
     "new": "node tools/new.mjs",
+    "notes": "node tools/notes.mjs",
     "plate": "node tools/plate.mjs",
     "card": "node tools/og-card.mjs",
     "correct": "node tools/correct.mjs",
-    "verify": "node tools/verify-migration.mjs",
     "links": "node tools/links.mjs",
     "proofread": "node tools/proofread.mjs",
-    "test": "node tools/test-reading.mjs"
+    "test": "node tools/test-reading.mjs && node tools/test-atlas.mjs"
   },
   "engines": {
     "node": ">=18"

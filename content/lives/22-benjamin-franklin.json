@@ -29,6 +29,11 @@
       "to": "press:republic-of-letters",
       "label": "The Republic of Letters",
       "txt": "— Franklin was the network's American terminus, and worked it like a printer works a market."
+    },
+    {
+      "to": "atlas:public",
+      "label": "The Atlas · Build in public",
+      "txt": "— the stove, the lightning rod and bifocals, none patented, on the stated principle that we should serve others freely with our inventions as we enjoy theirs."
     }
   ]
 }

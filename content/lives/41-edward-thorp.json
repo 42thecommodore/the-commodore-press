@@ -44,6 +44,11 @@
       "to": "press:being-wrong",
       "label": "Being Wrong Productively",
       "txt": "— the rule made expensive. Kelly only works if the edge you state in advance is the edge you actually have."
+    },
+    {
+      "to": "atlas:bet",
+      "label": "The Atlas · Bet on yourself",
+      "txt": "— and the objection to it. Knowing you are right tells you to bet, not how much: stake more than the edge and ordinary bad luck takes you out while you are still right."
     }
   ],
   "corrected": [

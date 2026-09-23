@@ -2,9 +2,9 @@
  *
  *   npm run ship -- "Press: add The Heated Disk"
  *
- * Runs the house rules, rebuilds dist/, commits content and the built file together,
- * and pushes. GitHub Actions runs the same check again before it deploys, so a broken
- * entry cannot reach readers even if this script is run in a hurry.
+ * Runs the house rules, builds and tests locally, commits the sources and pushes.
+ * GitHub Actions runs the check again and builds dist/ itself before it deploys, so a
+ * broken entry cannot reach readers even if this script is run in a hurry.
  *
  * This is the human's command. /press-publish stays human-invoked for the same reason:
  * nothing about the Press publishes itself. */
@@ -76,7 +76,6 @@ const unpushed = git("rev-list --count origin/main..HEAD");
 if (!staged && unpushed === "0") { say(`\n${g}  Nothing changed. The live site is already current.${x}\n`); process.exit(0); }
 if (staged) {
   say(`\n${d}${staged}${x}`);
-  /* Content and dist/ go together, so the deployable file always matches its sources. */
   step("Commit", "git", ["commit", "-q", "-m", message]);
 } else say(`\n${d}  Nothing new to commit; ${unpushed} earlier commit(s) not yet published.${x}`);
 
@@ -92,12 +91,6 @@ if (behind !== "0") {
   if (rb.status !== 0) {
     spawnSync("git", ["rebase", "--abort"], { cwd: ROOT, stdio: "ignore" });
     die(`Your commit is made but conflicts with origin/main. Nothing was pushed.\n  Resolve by hand: git pull --rebase origin main`);
-  }
-  /* The rebase may have brought in content changes; the built file must match again. */
-  step("Rebuild after rebase", "npm", ["run", "build"]);
-  if (git("status --porcelain dist")) {
-    git("add dist");
-    spawnSync("git", ["commit", "-q", "--amend", "--no-edit"], { cwd: ROOT, stdio: "inherit" });
   }
 }
 if (spawnSync("git", ["push", "origin", "HEAD:main"], { cwd: ROOT, stdio: "inherit" }).status !== 0) {

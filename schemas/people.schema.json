@@ -14,6 +14,15 @@
         "description": "Which domain they sit in — an id from domains.json: found, market, mind, craft, recov or inner."
       },
       "role": { "type": "string", "description": "Who they are, in a line: \"Executive coach; Art of Accomplishment\"." },
+      "corrected": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "x-means": ["corrections", "correction"], "description": "The numbers of the colophon corrections that apply to this person, e.g. [17]. The drawer prints them, so a reader learns the entry was corrected and what changed. Add the number in the same change that runs `npm run correct`." },
+      "mentions": {
+        "type": "array", "x-means": ["cites", "citations", "names"],
+        "description": "People on the Lives shelf that come up in your notes on this person — who they cite, work with, or name. Prints under 'How they connect' and in their drawer. Only what your notes say; never inferred.",
+        "items": { "type": "object", "additionalProperties": false, "required": ["to", "note"],
+          "properties": {
+            "to": { "type": "string", "pattern": "^lives:", "description": "The Life they name: \"lives:<id>\"." },
+            "note": { "type": "string", "description": "What your notes say about it, in a sentence. A note, not a quotation." } } }
+      },
       "take": { "type": "string", "description": "Your take on what they teach — a sentence or two." },
       "p": {
         "type": "array", "items": { "type": "string" }, "x-means": "principles",

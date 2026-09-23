@@ -8,7 +8,6 @@
       "Bash(npm run new:*)",
       "Bash(npm run plate:*)",
       "Bash(npm run correct:*)",
-      "Bash(npm run verify:*)",
       "Bash(node tools/validate.mjs)",
       "Bash(node tools/stats.mjs)",
       "Bash(node build/build.mjs)",

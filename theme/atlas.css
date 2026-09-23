@@ -1,0 +1,310 @@
+
+  /* ================= THE ATLAS — a sea chart (theme/atlas.js) =================
+     The one room kept dark. Water is the panel colour, land is a dark gilt, ink is brass.
+     Nothing moves unless it carries meaning: the lanes light with an island, a route draws
+     for a person, and the ship in the crossing is where your scroll has reached in time. */
+
+  .chart{display:grid;grid-template-columns:minmax(0,1fr) 320px;align-items:start;gap:0;margin-top:28px;
+    border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--panel)}
+  .chart-sea{position:relative;min-width:0;background:
+    radial-gradient(120% 90% at 50% 40%,#101a33 0%,var(--panel) 62%,#0b1022 100%)}
+  .chart-svg{display:block;width:100%;height:auto}
+  .chart-svg .rhumb path{stroke:var(--nbrass);stroke-width:.5;opacity:.06;fill:none}
+  .chart-svg .neat{fill:none;stroke:var(--nbrass);stroke-width:1;opacity:.7}
+  .chart-svg .neat2{fill:none;stroke:var(--nbrass);stroke-width:.6;opacity:.55}
+  .chart-svg .bars rect{fill:var(--nbrass);opacity:.5}
+  /* the cartouche: set like a title page, in the same brass */
+  .chart-svg .cart rect{fill:rgba(12,17,32,.94);stroke:var(--nbrass);stroke-width:.8;opacity:.9}
+  .chart-svg .cart .c2{fill:none;stroke-width:.4}
+  .chart-svg .cart text{text-anchor:middle;fill:var(--parchment)}
+  .chart-svg .c-t{font-family:var(--serif);letter-spacing:.24em;font-weight:500}
+  .chart-svg .c-s{font-family:var(--serif);font-style:italic;fill:var(--parchment-dim)!important}
+  .chart-svg .c-m{font-family:var(--mono);letter-spacing:.16em;fill:var(--nbrass)!important}
+  .chart-svg .rose .rs1{fill:var(--nbrass);opacity:.55}
+  .chart-svg .rose .rs2{fill:none;stroke:var(--nbrass);stroke-width:.8;opacity:.5}
+  .chart-svg .rose .rs0{fill:var(--panel);stroke:var(--nbrass);stroke-width:.8;opacity:.8}
+
+  /* a lane is a hairline; how many people it carries shows as how dark it is, not how thick */
+  .chart-svg .lane{fill:none;stroke:var(--nbrass);stroke-width:.8;opacity:calc(var(--o) * .85);
+    transition:opacity .35s var(--ease)}
+  .chart-svg .lane.minor{opacity:0}
+  .chart-svg.focus .lane{opacity:.04}
+  .chart-svg.focus .lane.on{opacity:.9;stroke:var(--nbrass-b)}
+  .chart-svg .route{fill:none;stroke:var(--parchment);stroke-width:1.3;stroke-dasharray:5 3;stroke-linecap:round;opacity:.9;pointer-events:none}
+
+  .chart-svg .isle{cursor:pointer;outline:none;transition:opacity .35s var(--ease)}
+  .chart-svg .isle.dim,.chart-svg .lbl-i.dim{opacity:.28}
+  .chart-svg .lbl-i{pointer-events:none;transition:opacity .35s var(--ease)}
+  /* the engraving: every line brass, weights and opacities doing the work of colour */
+  .chart-svg .wl{fill:none;stroke:var(--nbrass);stroke-width:.7;opacity:calc(var(--w) * .55)}
+  .chart-svg .sand{fill:none;stroke:var(--nbrass-b);stroke-width:1.5;stroke-dasharray:.1 3.2;stroke-linecap:round;opacity:.55}
+  .chart-svg .land{fill:#2B2517;stroke:none;transition:fill .3s}
+  .chart-svg .hach{fill:none;stroke:var(--nbrass);stroke-width:.75;stroke-linecap:round;opacity:.5}
+  .chart-svg .hill{fill:none;stroke:var(--nbrass);stroke-width:.8;stroke-linecap:round;opacity:.4}
+  .chart-svg .shore{fill:none;stroke:var(--nbrass-b);stroke-width:1.5;stroke-linejoin:round;opacity:.92;transition:stroke-width .3s}
+  .chart-svg .shore2{fill:none;stroke:var(--nbrass);stroke-width:.6;opacity:.6}
+  .chart-svg .isle:hover .land,.chart-svg .isle:focus-visible .land{fill:#372F1C}
+  .chart-svg .isle.sel .land{fill:#40361F}
+  .chart-svg .isle.sel .shore{stroke-width:2.4}
+  .chart-svg .isle:focus-visible .wl{opacity:.8}
+  /* a person is a survey mark in the chart's one ink; the field they work in is in the legend
+     and their drawer, not splashed across the islands in six colours */
+  .chart-svg .town{fill:#1b1810;stroke:var(--nbrass-b);stroke-width:1.1;vector-effect:non-scaling-stroke}
+  .chart-svg .town.me{fill:var(--parchment);stroke:var(--parchment)}
+  .chart-svg .oldport circle{fill:var(--panel);stroke:var(--nbrass-b);stroke-width:1.1}
+  .chart-svg .oldport path{fill:none;stroke:var(--nbrass-b);stroke-width:.9;stroke-linecap:round}
+  /* islands are named the way charts name land: spaced roman capitals. Italic is kept for
+     the sea's own lettering (a constellation) and for notes */
+  .chart-svg .nm{fill:var(--parchment);font-family:var(--serif);font-weight:500;letter-spacing:.16em;text-anchor:middle;paint-order:stroke;stroke:#0d1428;stroke-width:5px;stroke-linejoin:round}
+  .chart-svg .ct{fill:var(--parchment-dim);font-family:var(--mono);letter-spacing:.08em;text-anchor:middle;text-transform:uppercase;paint-order:stroke;stroke:#0d1428;stroke-width:4px}
+  .chart-svg .lbl-i.sel .nm{fill:var(--nbrass-b)}
+
+  /* ---------- moving about: controls, zoom levels, the hover card ---------- */
+  .chart-svg{cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+  .chart-svg.grabbing{cursor:grabbing}
+  .chart-svg .lane,.chart-svg .route,.chart-svg .wl,.chart-svg .sand,.chart-svg .hach,.chart-svg .hill,
+  .chart-svg .shore,.chart-svg .shore2,.chart-svg .rhumb path,.chart-svg .swell path{vector-effect:non-scaling-stroke}
+  .chart-svg .town{cursor:pointer}
+  .chart-svg .oldport{cursor:pointer}
+  .chart-svg .gl{fill:var(--parchment-dim);font-family:var(--serif);font-style:italic;text-anchor:middle;opacity:0;
+    paint-order:stroke;stroke:#0d1428;stroke-width:4px;transition:opacity .4s}
+  .chart-svg.z2 .gl{opacity:1}
+  .chart-svg .tn{display:none;pointer-events:none}
+  .chart-svg .tn text{fill:var(--parchment);font-family:var(--serif);paint-order:stroke;stroke:#1d1a12;stroke-width:3.5px;stroke-linejoin:round}
+  .chart-svg.z3 .tn,.chart-svg.z2 .tn.on{display:inline}
+  .chart-svg .lbl-i.dim .gl{opacity:0}
+  .chart-svg.co-on .lbl-i:not(.sel){opacity:.12}
+  .chart-svg .leader{fill:none;stroke:var(--parchment);stroke-width:.7;opacity:.45;vector-effect:non-scaling-stroke;pointer-events:none}
+  .chart-svg .tn.co text{fill:var(--parchment);stroke:#0d1428;stroke-width:4px}
+  .chart-tools{position:absolute;right:14px;top:14px;display:flex;gap:6px;align-items:center}
+  .chart-tools button{font-family:var(--mono);font-size:14px;line-height:1;color:var(--parchment-dim);background:rgba(10,14,27,.9);
+    border:1px solid var(--line);border-radius:2px;width:34px;height:34px;transition:.15s}
+  .chart-tools button:hover{color:var(--nbrass-b);border-color:var(--nbrass)}
+  .chart-tools span{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--parchment-dim);min-width:30px}
+  .chart-hint{position:absolute;left:24px;bottom:22px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--parchment-dim);opacity:.8;
+    pointer-events:none;transition:color .2s,border-color .2s}
+  .chart-hint{opacity:0;transition:opacity .5s}
+  .chart-hint.flash{color:var(--nbrass-b);opacity:1;background:rgba(10,14,27,.92);padding:6px 10px;border:1px solid rgba(216,166,87,.5)}
+  .chart-tip{position:absolute;left:0;top:0;z-index:5;max-width:300px;pointer-events:none;display:flex;flex-direction:column;gap:3px;
+    background:#0c1120;border:1px solid rgba(216,166,87,.6);border-radius:2px;padding:12px 14px;color:var(--parchment)}
+  .chart-tip[hidden]{display:none}
+  .chart-tip .tt-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--nbrass)}
+  .chart-tip b{font-weight:500;font-size:19px;line-height:1.15}
+  .chart-tip .tt-x{font-style:italic;font-weight:400;color:var(--parchment-dim);font-size:15px}
+  .chart-tip small{font-size:13px;color:var(--parchment-dim);line-height:1.35}
+  .chart-tip .tt-m{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--parchment-dim);margin-top:2px}
+  .chart-tip i{font-size:14px;line-height:1.45;margin-top:5px}
+  .chart-tip em{font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--nbrass);margin-top:6px}
+  @media (max-width:700px){.chart-tools{right:10px;top:10px}.chart-hint{left:10px;bottom:10px}}
+
+  /* ---------- a constellation drawn over the chart ----------
+     The one bright thing on first sight: an idea several people told me, its people's dots
+     lit and joined like stars, its name set above them. Everything else steps back. */
+  .chart-svg .const-line{fill:none;stroke:var(--parchment);stroke-width:1.1;stroke-linejoin:round;opacity:.95;
+    vector-effect:non-scaling-stroke;pointer-events:none}
+  .chart-svg .const-lbl text{fill:var(--parchment);font-family:var(--serif);font-style:italic;text-anchor:middle;
+    paint-order:stroke;stroke:#0d1428;stroke-width:5px;stroke-linejoin:round}
+  .chart-svg.feat-on .town{opacity:.5}
+  .chart-svg.feat-on .town.hl{opacity:1;fill:var(--parchment);stroke:var(--parchment)}
+  .chart-svg.feat-on .lane{opacity:calc(var(--o) * .45)}
+  .feat{border:1px solid rgba(216,166,87,.55);border-radius:2px;padding:14px 14px 8px;background:none;display:flex;flex-direction:column;gap:4px}
+  .feat-h{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .feat-h .lbl.q{margin:0}
+  .feat-nav{display:flex;gap:5px}
+  .feat-nav button{width:30px;height:30px;border:1px solid var(--line);border-radius:2px;color:var(--parchment-dim);font-size:14px;transition:.15s}
+  .feat-nav button:hover{color:var(--nbrass-b);border-color:var(--nbrass)}
+  .feat-i{margin:4px 0 0;font-size:25px;line-height:1.12;font-style:italic;color:var(--nbrass-b)}
+  .feat-s{margin:0 0 4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--parchment-dim)}
+  .feat-p{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;padding:9px 6px;border-top:1px solid var(--line);color:var(--parchment);border-radius:2px}
+  .feat-p:hover,.feat-p:focus-visible{background:var(--panel-2)}
+  .feat-p .s{width:8px;height:8px;border-radius:50%;flex:none;margin-top:7px}
+  .feat-t{display:flex;flex-direction:column;min-width:0}
+  .feat-t b{font-weight:500;font-size:16px;line-height:1.2}
+  .feat-t small{font-size:12.5px;color:var(--parchment-dim);line-height:1.3}
+  .feat-t i{font-size:14.5px;line-height:1.45;margin-top:4px;color:var(--parchment)}
+  .feat-t i::before{content:"~ ";color:var(--nbrass)}
+  .feat-link{align-self:flex-start;margin:6px 0 4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--nbrass);border-bottom:1px solid transparent}
+  .feat-link:hover{border-bottom-color:var(--nbrass)}
+  .ic-row{display:flex;gap:8px;flex-wrap:wrap}
+  .echo-map{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--nbrass);margin:-4px 0 10px;border-bottom:1px solid transparent}
+  .echo-map:hover{border-bottom-color:var(--nbrass)}
+  @media (max-width:980px){.isle-card{order:-1;border-top:0;border-bottom:1px solid var(--line)}}
+
+  /* the card beside the chart */
+  .isle-card{border-left:1px solid var(--line);padding:24px 24px 26px;display:flex;flex-direction:column;gap:14px;
+    max-height:100%;overflow:auto;color:var(--parchment);background:rgba(10,14,27,.55)}
+  .isle-card .lbl.q,.drawer .lbl.q,.crossing .lbl.q,.harbour .lbl.q{color:var(--parchment-dim);margin-bottom:8px}
+  .isle-card h3{font-size:30px;line-height:1.02;margin:0;font-weight:500}
+  .ic-dek,.ic-gl{margin:0;font-size:15.5px;line-height:1.5;color:var(--parchment-dim)}
+  .ic-gl{font-style:italic}
+  .ic-sec{display:flex;flex-direction:column;gap:8px}
+  .ic-sec .const-stars{margin-top:0}
+  .ic-none{margin:0;font-size:14px;line-height:1.5;font-style:italic;color:var(--parchment-dim)}
+  .ic-hint{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--parchment-dim)}
+  .ic-go,.ic-x{align-self:flex-start;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--nbrass);
+    border:1px solid var(--line);border-radius:2px;padding:8px 14px;transition:.15s}
+  .ic-go:hover,.ic-x:hover{border-color:var(--nbrass);color:var(--nbrass-b)}
+  .key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--parchment-dim)}
+  .key li{display:flex;align-items:center;gap:10px}
+  .key svg{flex:none}
+  .key .k-lane{stroke:var(--nbrass);stroke-width:2;stroke-dasharray:1.5 4;stroke-linecap:round}
+  .key .oldport circle{fill:var(--panel);stroke:var(--nbrass-b);stroke-width:1.1}
+  .key .oldport path{fill:none;stroke:var(--nbrass-b);stroke-width:.9;stroke-linecap:round}
+
+  /* an old port, as a row: its plate, its name, the house's own line about the link */
+  .portrow{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;padding:10px;border:1px solid var(--line);
+    border-radius:2px;background:var(--panel-2);transition:border-color .15s;color:var(--parchment)}
+  .portrow:hover{border-color:var(--nbrass)}
+  .portrow .pr-img{width:46px;height:57px;object-fit:cover;flex:none;border:1px solid #3a3222;background:#1b1a17;filter:sepia(.25)}
+  .portrow .pr-img.nomark{display:flex;align-items:center;justify-content:center;color:var(--nbrass)}
+  .portrow .pr-img.nomark svg{width:26px;height:26px}
+  .pr-t{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .pr-t b{font-weight:500;font-size:16px}
+  .pr-t small{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--parchment-dim)}
+  .pr-t i{font-size:13.5px;line-height:1.45;color:var(--parchment-dim);margin-top:3px}
+
+  /* an index of lessons, set like a chart's: name, dotted leader, count */
+  .isle-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:0 36px;margin-top:22px}
+  .isle-strip .ix-h{grid-column:1/-1;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--parchment-dim);padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:4px}
+  .isle-strip button{display:flex;align-items:baseline;gap:8px;width:100%;text-align:left;padding:8px 0;color:var(--parchment);border-bottom:1px solid rgba(36,48,73,.6);font-size:16px}
+  .isle-strip button::after{content:"";order:2;flex:1;border-bottom:1px dotted rgba(216,166,87,.35);transform:translateY(-4px)}
+  .isle-strip button span{order:3;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--parchment-dim);white-space:nowrap}
+  .isle-strip button:hover,.isle-strip button[aria-pressed="true"]{color:var(--nbrass-b)}
+
+  /* a person, said plainly: name, who they are, how much of them is in the notes */
+  .who{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:8px 10px;border-radius:2px;
+    border:1px solid transparent;color:var(--parchment);transition:border-color .15s,background .15s}
+  .who:hover,.who:focus-visible{border-color:var(--line);background:var(--panel-2)}
+  .who .s{width:8px;height:8px;border-radius:50%;flex:none}
+  .who-t{display:flex;flex-direction:column;min-width:0;flex:1}
+  .who-t b{font-weight:500;font-size:16px;line-height:1.2}
+  .who-t small{font-size:13px;line-height:1.35;color:var(--parchment-dim)}
+  .who-n{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--parchment-dim);white-space:nowrap}
+
+  /* ---------- how they connect ---------- */
+  .links{padding-top:64px;color:var(--parchment)}
+  .links .sec-head h3{color:var(--parchment)}
+  .links .sec-head span{color:var(--parchment-dim)}
+  .lk-list{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(420px,100%),1fr));gap:12px}
+  .lk-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:14px 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel)}
+  .lk-p{display:inline-flex;flex-direction:column;text-align:left;color:var(--parchment)}
+  .lk-p b{font-weight:500;font-size:17px;line-height:1.2}
+  .lk-p small{font-size:12.5px;color:var(--parchment-dim);line-height:1.3}
+  .lk-p:hover b{color:var(--nbrass-b)}
+  .lk-and{font-style:italic;color:var(--parchment-dim);font-size:15px}
+  .lk-list p{flex-basis:100%;margin:6px 0 0;font-size:15px;line-height:1.5;color:var(--parchment-dim)}
+  .lk-list .cx-isle{font-size:15px}
+  .hb-reg .who{margin-left:-10px}
+  .echoes{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:14px;margin-top:22px}
+  .echo{border:1px solid var(--line);border-top:2px solid var(--nbrass);border-radius:2px;background:var(--panel);padding:16px 18px}
+  .echo h4{margin:0 0 10px;font-size:21px;font-weight:500;font-style:italic;color:var(--nbrass-b);line-height:1.2}
+  .echo ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .echo li{padding-top:10px;border-top:1px solid var(--line)}
+  .echo li:first-child{padding-top:0;border-top:0}
+  .echo .lk-p b{display:flex;align-items:center;gap:7px;font-size:16px}
+  .echo .s{width:7px;height:7px;border-radius:50%;flex:none}
+  .echo p{margin:4px 0 0;font-size:15px;line-height:1.5;font-style:italic;color:var(--parchment)}
+  .echo p::before{content:"~ ";color:var(--nbrass)}
+  .echo-d{display:flex;flex-direction:column;gap:2px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .echo-d b{font-weight:500;font-style:italic;color:var(--nbrass-b)}
+  .echo-d span{color:var(--parchment-dim)}
+  @media (max-width:560px){.lk-list{grid-template-columns:1fr}}
+
+  /* ---------- the crossing ---------- */
+  .crossing{padding-top:64px;color:var(--parchment)}
+  .crossing .sec-head h3,.harbour .sec-head h3{color:var(--parchment)}
+  .crossing .sec-head span,.harbour .sec-head span{color:var(--parchment-dim)}
+  .cx-body{position:relative;margin-top:26px;padding:10px 0 20px}
+  .cx-track{position:absolute;left:0;top:0;pointer-events:none;overflow:visible;z-index:0}
+  .cx-wake{fill:none;stroke:var(--nbrass);stroke-width:1;stroke-dasharray:2 6;opacity:.3}
+  .cx-ink{fill:none;stroke:var(--nbrass-b);stroke-width:2;stroke-linecap:round;opacity:.9}
+  .cx-ship{color:var(--nbrass-b);transition:opacity .3s}
+  .cx-dial{position:sticky;top:calc(var(--mast-h,64px) + 18px);z-index:3;height:0;overflow:visible;pointer-events:none}
+  .cx-dial span{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--nbrass-b);
+    background:rgba(10,14,27,.86);border:1px solid var(--line);border-radius:2px;padding:6px 12px;backdrop-filter:blur(4px)}
+  .cx-list{list-style:none;margin:0;padding:0;position:relative;z-index:1}
+  .cx-port{position:relative;display:grid;grid-template-columns:1fr 48px 1fr;align-items:center;padding:26px 0}
+  .cx-dot{grid-column:2;justify-self:center;width:14px;height:14px;border-radius:50%;background:var(--panel);
+    border:1.5px solid var(--nbrass);box-shadow:0 0 0 5px rgba(10,14,27,.9);transition:background .4s,box-shadow .4s}
+  .cx-port.reached .cx-dot{background:var(--nbrass-b);box-shadow:0 0 0 5px rgba(10,14,27,.9)}
+  .cx-card{grid-row:1;background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:18px 20px;
+    display:flex;flex-direction:column;gap:12px;opacity:.55;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease),border-color .3s}
+  .cx-port.reached .cx-card{opacity:1;transform:none}
+  .cx-port[style*="--k:0"] .cx-card{grid-column:1}
+  .cx-port[style*="--k:1"] .cx-card{grid-column:3}
+  .cx-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .cx-isle{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--nbrass-b);border-bottom:1px solid transparent;text-align:left}
+  button.cx-isle:hover{border-bottom-color:var(--nbrass-b)}
+  .cx-yr{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--parchment-dim);white-space:nowrap}
+  .cx-life{display:flex;gap:12px;align-items:center;text-align:left;color:var(--parchment)}
+  .cx-life .cx-img{width:52px;height:65px;object-fit:cover;flex:none;border:1px solid #3a3222;filter:sepia(.25)}
+  .cx-life .cx-img.nomark{display:flex;align-items:center;justify-content:center;color:var(--nbrass);background:#1b1a17}
+  .cx-life .cx-img.nomark svg{width:28px;height:28px}
+  .cx-life b{display:block;font-size:22px;font-weight:500;line-height:1.05}
+  .cx-life small{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--parchment-dim)}
+  .cx-life:hover b{color:var(--nbrass-b)}
+  .cx-txt{margin:0;font-size:16px;line-height:1.55;color:var(--parchment)}
+  .cx-now .const-stars{margin-top:0}
+  .star-pill.more{color:var(--parchment-dim)}
+  .cx-inline{font:inherit;font-style:italic;color:var(--nbrass-b);border-bottom:1px solid rgba(243,207,138,.35)}
+  .cx-gap{display:grid;grid-template-columns:1fr 48px 1fr;padding:6px 0}
+  .cx-gap span{grid-column:1/4;justify-self:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--parchment-dim);background:var(--sky);padding:4px 10px;position:relative;z-index:1}
+  .cx-harbour .cx-card{border-color:var(--nbrass)}
+
+  /* ---------- the harbour ---------- */
+  .harbour{padding-top:64px;padding-bottom:40px;color:var(--parchment)}
+  .hb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:26px 34px;margin-top:22px}
+  .hb-reg .lbl.q{display:flex;align-items:center;gap:8px}
+  .hb-reg .dot{width:8px;height:8px;border-radius:50%;flex:none}
+  .hb-reg .const-stars{margin-top:0}
+
+  /* ---------- the drawer's map ---------- */
+  .minimap{display:block;width:100%;height:auto;background:#0b1022}
+  .minimap .mm-frame{fill:none;stroke:var(--nbrass);stroke-width:.8;opacity:.6}
+  .minimap .mm-off{fill:none;stroke:var(--nbrass);stroke-width:.6;opacity:.35}
+  .minimap .mm-on{fill:#2B2517;stroke:var(--nbrass-b);stroke-width:1}
+  .minimap .mm-wl{fill:none;stroke:var(--nbrass);stroke-width:.4;opacity:.35}
+  .minimap .mm-stop circle{fill:#0b1022;stroke:var(--parchment);stroke-width:.9}
+  .minimap .mm-stop text{fill:var(--parchment);font-family:var(--mono);font-size:8px;text-anchor:middle}
+  .minimap .mm-route{fill:none;stroke:var(--parchment);stroke-width:1;stroke-dasharray:3 2.5;opacity:.85}
+  .mm-isles{list-style:none;counter-reset:st;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+  .mm-isles li{counter-increment:st;display:flex;gap:10px;align-items:baseline}
+  .mm-isles li::before{content:counter(st);font-family:var(--mono);font-size:10px;color:var(--parchment-dim);width:14px;text-align:right}
+  .drawer .portrow{margin-bottom:7px}
+
+  @media (max-width:980px){
+    .chart{grid-template-columns:1fr}
+    .isle-card{border-left:0;border-top:1px solid var(--line);max-height:none}
+  }
+  @media (max-width:700px){
+    .cx-port,.cx-gap{grid-template-columns:30px 1fr}
+    .cx-dot{grid-column:1}
+    .cx-port .cx-card,.cx-port[style*="--k:0"] .cx-card,.cx-port[style*="--k:1"] .cx-card{grid-column:2}
+    .cx-gap span{grid-column:2;justify-self:start}
+    .cx-card{padding:15px 16px}
+    .cx-life b{font-size:20px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .cx-card{opacity:1;transform:none}
+  }
+
+  /* the drawer and shared pills, squared to match the chart */
+  .star-pill,.clink,.drawer .x{border-radius:2px}
+  .who .s,.echo .s,.feat-p .s,.hb-reg .dot{border-radius:50%}
+
+  /* ---------- the boat: the press mark, sailing where the pointer goes ---------- */
+  .boat{position:absolute;left:0;top:0;z-index:4;width:0;height:0;pointer-events:none;opacity:0;transition:opacity .25s}
+  .boat.on{opacity:1}
+  .boat-i{position:absolute;left:-15px;top:-24px;width:30px;height:30px;color:var(--parchment);transform-origin:15px 22px;transition:color .2s}
+  .boat-i svg{display:block;transition:transform .2s}
+  .boat.port .boat-i{color:var(--nbrass-b)}
+  .boat.port .boat-i svg{transform:scale(1.18)}
+  .wake{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:visible}
+  .wake path{fill:none;stroke:var(--parchment);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;opacity:.35;stroke-dasharray:1 4}
+  /* the real pointer stays visible (a fine crosshair) and the boat trails it: hiding the
+     system cursor loses the reader who needs to see exactly where they are pointing */
+  .chart-sea.boating .chart-svg,.chart-sea.boating .chart-svg *{cursor:crosshair}
+  @media (prefers-reduced-motion:reduce){.boat,.wake{display:none}}
+  .minimap .mm-boat{color:var(--parchment)}

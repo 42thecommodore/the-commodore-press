@@ -16,6 +16,12 @@
       "Let the natural world be your teacher.",
       "Things that looked like the end of people so often turn out to be the catalyst of their growth.",
       "A great danger is the danger of no danger."
+    ],
+    "mentions": [
+      {
+        "to": "lives:mandela",
+        "note": "The Varty family's reserve, Londolozi, is where Mandela stayed after his release from prison. Noted from Boyd Varty; the stay is recorded on the Londolozi blog."
+      }
     ]
   },
   {
@@ -67,17 +73,6 @@
       "You are built for challenge, not complication — simplify the life.",
       "There is no such thing as overworked, only under-rested.",
       "When you're stuck, go to people who can show the way. Nobody is meant to operate solo."
-    ]
-  },
-  {
-    "name": "James Sexton",
-    "domain": "inner",
-    "role": "Trial lawyer; on relationships & human nature",
-    "take": "People want to know the rules. The real work is saying the thing you're not saying out loud.",
-    "p": [
-      "connect",
-      "track",
-      "memento"
     ]
   },
   {
@@ -147,7 +142,7 @@
   },
   {
     "name": "Scott Galloway",
-    "domain": "mind",
+    "domain": "market",
     "role": "NYU professor; Prof G",
     "take": "Every great yes comes after a lot of no's. Control what you can and take as many shots as you can.",
     "p": [
@@ -274,28 +269,6 @@
     ]
   },
   {
-    "name": "Daniel Broukhim",
-    "domain": "found",
-    "role": "Co-founder & co-CEO, FabFitFun",
-    "take": "Pivoted an agency into a membership platform without ego. Build the muscle, then the machine.",
-    "p": [
-      "bet",
-      "story",
-      "misogi"
-    ]
-  },
-  {
-    "name": "Reid Hoffman",
-    "domain": "found",
-    "role": "Co-founder, LinkedIn; Masters of Scale",
-    "take": "To build something big you do things that don't scale — right up until the day you have to scale them.",
-    "p": [
-      "bet",
-      "public",
-      "story"
-    ]
-  },
-  {
     "name": "William Hockey",
     "domain": "market",
     "role": "Co-founder, Plaid & Column",
@@ -330,7 +303,10 @@
   {
     "name": "Mark Bertolini",
     "domain": "market",
-    "role": "Former CEO, Aetna; co-CEO, Oscar Health",
+    "role": "Former CEO, Aetna; CEO, Oscar Health",
+    "corrected": [
+      17
+    ],
     "take": "Courage is moving without perfect information. Never waste a good crisis — there's opportunity in everything.",
     "p": [
       "memento",
@@ -410,7 +386,6 @@
   {
     "name": "Teddy Tarantino",
     "domain": "recov",
-    "role": "Long-term thinking",
     "take": "Better to be clean dreaming about using than using dreaming about being clean. Follow your word.",
     "p": [
       "disc",
@@ -440,17 +415,7 @@
     ]
   },
   {
-    "name": "Brandon Novak",
-    "domain": "recov",
-    "role": "Author & speaker",
-    "take": "From total wreckage back to purpose. The point was never the fall — it's the daily decision to rebuild.",
-    "p": [
-      "backup",
-      "connect"
-    ]
-  },
-  {
-    "name": "Fred Again",
+    "name": "Fred again..",
     "domain": "craft",
     "role": "Musician & producer",
     "take": "Do the unconventional thing that works for you. You won't make the best thing every time — but make something.",
@@ -499,7 +464,7 @@
   {
     "name": "Ben Yahalom",
     "domain": "found",
-    "role": "CEO, True Classic — bootstrapped to nine figures; first outside capital in 2025 at an $850M valuation",
+    "role": "CEO, True Classic",
     "take": "Every dollar either generates revenue or visibly supports it. If a request can't say which, it doesn't pass.",
     "p": [
       "disc",
@@ -527,6 +492,42 @@
       "Go further with your boredom — the boring basics are where the needle moves.",
       "What is the worst thing that can happen? Answer it honestly and most fear evaporates.",
       "Do what you are good at and hire for what you are bad at."
+    ]
+  },
+  {
+    "name": "Joe Liemandt",
+    "domain": "mind",
+    "role": "Founder, Trilogy Software; principal, Alpha School",
+    "take": "Age grade and knowledge grade are different things. Master the foundation at the pace you actually learn, and high standards stop feeling like pressure and start feeling like support.",
+    "p": [
+      "disc",
+      "hard",
+      "quit"
+    ],
+    "kept": [
+      "Age grade and knowledge grade are very different things.",
+      "Time-based education versus mastery-based education.",
+      "The key to a child's happiness is high standards: high support and high standards.",
+      "Receiving feedback is one of the most important life skills: go looking for it, the way you replay a game to see where you failed.",
+      "Good marketing needs to attract and repel. If nobody is saying the opposite, your message is not getting across."
+    ]
+  },
+  {
+    "name": "Dovid Lichtenstein",
+    "domain": "market",
+    "role": "Founder, the Lightstone Group; host, Halacha Headlines",
+    "take": "Labour without a vision is just exhaustion. You are right because you are doing the right thing, not because people tell you so.",
+    "p": [
+      "story",
+      "backup",
+      "bet"
+    ],
+    "kept": [
+      "Labour without a vision is just exhaustion.",
+      "If there is no risk, there is no story.",
+      "Sheva yipol tzadik v'kam: a righteous man falls seven times and gets back up (Proverbs 24:16).",
+      "You are not right because people say you are right. You are right if you are doing the right thing.",
+      "Reputation is what people look at when you fail."
     ]
   }
 ]

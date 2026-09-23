@@ -1,6 +1,6 @@
 # Deploying and maintaining the Press
 
-`dist/index.html` is the entire website — one file, no dependencies, no server code, no tracking. Everything below is about getting that file onto the internet and keeping it current.
+`npm run build` writes the whole website into `dist/` — static files, no dependencies, no server code, no tracking. `dist/` is not committed; the deploy workflow builds it fresh from the sources. Everything below is about getting it onto the internet and keeping it current.
 
 **This site is already published**, at **https://42thecommodore.github.io/the-commodore-press/**, from `github.com/42thecommodore/the-commodore-press`. If you only want to update it, skip to *Update it, forever*.
 
@@ -22,7 +22,7 @@ Run `npm run build`, then drag the `dist` folder into their drop zone. Both are 
 
 ### A custom domain
 
-Around $10/yr. Point it at your host, then add a `CNAME` file containing the bare domain to `dist/` (GitHub Pages) or set it in the host's dashboard.
+Around $10/yr. Point it at your host, then add a `CNAME` file containing the bare domain to `assets/root/` — the build copies it into the site (GitHub Pages) or set it in the host's dashboard.
 
 ## Update it, forever
 
@@ -38,7 +38,7 @@ Preview on :4321; it rebuilds and reloads as you save. When the entry is finishe
 npm run ship -- "Press: add The Heated Disk"
 ```
 
-That runs the house rules, rebuilds `dist/index.html`, commits `content/` and `dist/` together so the deployable file always matches its sources, and pushes. GitHub Actions then runs the same check again before deploying — about two minutes to live. **If the check fails at either end, nothing is committed and nothing is deployed.**
+That runs the house rules, builds and tests the site locally, commits the sources, and pushes. GitHub Actions then runs the same check again, builds `dist/` itself and deploys — about two minutes to live. **If the check fails at either end, nothing is committed and nothing is deployed.**
 
 It refuses to run without a message, and refuses a message under twelve characters. A commit nobody can read in six months is worth less than no commit.
 
@@ -93,7 +93,3 @@ npm run check     # the house rules
 ```
 
 `stats` is the one to run at the start of a session: it names the lives missing plates, the entries that link to nothing, and the titles that name nothing contested.
-
-## If a build ever looks wrong
-
-`npm run verify -- <old.html> <new.html>` deep-compares the content of two built files and reports any wing that differs. It was written to prove the original hand-made site and the first generated build were identical, and it still works for checking any two builds against each other.

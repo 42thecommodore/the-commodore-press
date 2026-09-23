@@ -35,9 +35,11 @@ const DCOLOR     = one("content/atlas/domain-colors.json");
 const PRINCIPLES = one("content/atlas/principles.json");
 const PEOPLE     = one("content/atlas/people.json");
 const SOURCES    = one("content/atlas/sources.json");
+const ECHOES     = one("content/atlas/echoes.json") || [];
 const CORRECTIONS= one("content/corrections.json");
 const PLATELIC   = one("content/plate-licences.json");
 const NEWS       = one("content/newsletter.json");
+const CAPTAINS   = fs.existsSync(p("content/captains.json")) ? one("content/captains.json").crew || [] : [];
 const LOG        = publishedLog(ROOT);   // the editor's column, published pieces only, newest first
 
 /* The wings, named once. A typed "five wings" outlived the wings themselves in four
@@ -47,13 +49,7 @@ const WINGS = ["The Press", "Lives", "The Atlas"];
 const licenced = (re) => Object.keys(PLATELIC)
   .filter(k => k[0] !== "_" && (!re || re.test(PLATELIC[k].licence)));
 
-/* ---------- plates: keyed by life id, served as files from dist/plates/ ----------
-   They were inlined as base64 while the site was one self-contained file. It stopped being
-   one file when the entry pages arrived (dist/ now holds a page per entry and the plates as
-   real files for their share cards), so the inlining bought nothing and cost every reader
-   533 KB — 57% of the front door, downloaded before the headline could appear, because
-   the headline is revealed by the script at the foot of the page. Decided 2026-09-21; the
-   2026-09-15 row in dashboard/commissions.md records the earlier decision and its trigger. */
+/* ---------- plates: keyed by life id, served as files from dist/plates/ ---------- */
 const MIME = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".gif": "image/gif" };
 const PLATES = {};
 const platesDir = p("assets/plates");
@@ -83,7 +79,9 @@ const DATA = safe([
   K("PRINCIPLES", PRINCIPLES),
   K("PEOPLE", PEOPLE),
   K("SOURCES", SOURCES),
+  K("ECHOES", ECHOES),
   K("CORRECTIONS", CORRECTIONS),
+  K("CAPTAINS", CAPTAINS),
   K("LOG", LOG.map(x => ({ slug: x.slug, title: x.meta.title, date: x.meta.date, dek: x.meta.dek }))),
 ].join("\n"));
 
@@ -134,10 +132,10 @@ const out = fill(read("templates/shell.html"))
   // the colophon promises no cookies and no analytics; once a sign-up exists it also says who holds the addresses
   .replace("<!--NEWSCOLOPHON-->", NEWS && NEWS.action ? ` If you subscribe to the newsletter, your address is held by ${NEWS.provider}, used only to send it; every issue carries its own unsubscribe link.` : "")
   .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the three wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
-  .replace("<!--CSS-->", () => read("theme/press.css") + fillMark(read("theme/reading.css")) + fillMark(read("theme/forward.css")))
+  .replace("<!--CSS-->", () => read("theme/press.css") + read("theme/atlas.css") + fillMark(read("theme/reading.css")))
   .replace("<!--DATA-->", () => DATA)
-  // forward.js and reading.js first: the engine calls both, and the entry pages run the same files
-  .replace("<!--ENGINE-->", () => safe(read("theme/forward.js")) + "\n" + safe(read("theme/reading.js")) + "\n" + safe(fill(read("theme/press.js"))));
+  // reading.js and atlas.js first: the engine calls both (atlas.js holds only declarations), and the entry pages run reading.js too
+  .replace("<!--ENGINE-->", () => safe(read("theme/reading.js")) + "\n" + safe(fill(read("theme/atlas.js"))) + "\n" + safe(fill(read("theme/press.js"))));
 
 /* A token nobody filled prints as `{{N_THING}}` on the live page, and a build that
    succeeds is the only signal anyone checks. Two of these were added and wired in the

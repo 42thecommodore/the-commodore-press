@@ -14,7 +14,7 @@
   "lede": "The most powerful man alive kept a private notebook reminding himself not to be corrupted by it — and never meant anyone to read it.",
   "copy": [
     "Emperor from 161 to 180, Marcus spent most of his reign not in Rome but in army camps on the Danube, holding the frontier through plague and war. There he wrote what we call the Meditations. They are spiritual exercises in Greek, for no audience but himself — reminders to meet the day's obstructions, flatterers and losses as material for practice rather than occasions for rage. Stoicism, in his hands, is not a theory but a discipline performed daily, in writing, under pressure.",
-    "The first book is nothing but gratitude with names attached: from my grandfather, good morals; from my mother, piety and generosity; from Rusticus, to read carefully and not be satisfied with a superficial understanding. He audits his own character as a ledger of debts to specific people. The Atlas wing of this house borrows its shape and its title from that book, because it is the best template ever written for honest accounting of where your operating system came from.",
+    "The first book is nothing but gratitude with names attached: from my grandfather, good morals; from my mother, piety and generosity; from Rusticus, to read carefully and not be satisfied with a superficial understanding. He audits his own character as a ledger of debts to specific people. The Atlas wing of this house borrows its shape from that book, because it is the best template ever written for honest accounting of where your operating system came from.",
     "The standing irony is that philosophy's model king was succeeded by his own son Commodus, one of Rome's disasters. The fact has been used ever since to argue both that Stoicism cannot govern and that even it cannot fix inheritance. He remains the proof-of-concept everyone reaches for: that power and self-command can coexist, at least for one lifetime, provided the notebook is kept up."
   ],
   "bio": {
@@ -27,13 +27,18 @@
   "across": [
     {
       "to": "atlas",
-      "label": "The Atlas · Debts & Lessons",
-      "txt": "— Wing III borrows its name and its method from Book 1, where he thanks his teachers one by one."
+      "label": "The Atlas",
+      "txt": "— Wing III borrows its method from Book 1, where he thanks his teachers one by one."
     },
     {
       "to": "lives:confucius",
       "label": "Confucius",
       "txt": "— the other tradition that put the ruler's character, not the ruler's power, at the centre."
+    },
+    {
+      "to": "atlas:disc",
+      "label": "The Atlas · Discipline is freedom",
+      "txt": "— Stoicism as a discipline performed daily, in writing, under pressure, by the one man in the empire nobody could hold to it."
     }
   ]
 }

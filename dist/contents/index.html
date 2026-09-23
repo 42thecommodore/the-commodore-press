@@ -60,69 +60,10 @@ footer{border-top:1px solid var(--rule);padding:20px;font:12px/1.6 var(--mono);c
 .body .list{list-style:none;padding:0;margin:0}.list li{padding:22px 0;border-bottom:1px solid var(--rule)}
 .list a{text-decoration:none}.list .d{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
 .list .t{display:block;font-size:28px;line-height:1.2;margin:6px 0}.list .k{color:var(--ink-soft);font-size:18px}
-.body .list .t{font-size:24px}  /* ---------- the way out — Esc with nothing open, drawn by forward() in theme/forward.js ----------
-     The Atlas's night sea and brass, the press mark under sail, a hoist of triangle pennants.
-     Everything that moves animates transform or opacity only, so the compositor carries it
-     and nothing is repainted frame by frame: the sea rises as a scaled disc, not a clip-path;
-     the ship and the swell slide, they do not change `left` or `background-position`. */
-  .rs-fwd{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;cursor:pointer;color:#ECE3D0;overflow:hidden;
-    --fwd-ease:cubic-bezier(.22,1,.36,1)}
-  .rs-fwd::before{content:"";position:absolute;left:50%;top:100%;width:300vmax;height:300vmax;border-radius:50%;
-    background:radial-gradient(circle,#16305A 0%,#0E1426 16%,#0A0E1B 34%);
-    transform:translate(-50%,-50%) scale(0);will-change:transform;transition:transform .9s var(--fwd-ease)}
-  .rs-fwd.on::before{transform:translate(-50%,-50%) scale(1)}
-  .rs-fwd-in{position:relative;width:min(620px,calc(100vw - 32px));cursor:default;will-change:transform,opacity;
-    transition:transform .5s cubic-bezier(.55,0,.45,1),opacity .5s cubic-bezier(.55,0,.45,1)}
-  .rs-fwd.away .rs-fwd-in{transform:translate3d(-8vw,0,0);opacity:0}
-  .rs-fwd-lbl{font:11px/1.4 var(--mono,monospace);letter-spacing:.2em;text-transform:uppercase;color:#D8A657;
-    opacity:0;transform:translate3d(0,6px,0);transition:opacity .6s .3s var(--fwd-ease),transform .6s .3s var(--fwd-ease)}
-  .rs-fwd-to{font:500 clamp(40px,11vw,96px)/1.05 var(--serif,serif);letter-spacing:-.02em;margin:14px 0 26px;white-space:nowrap}
-  .rs-fwd-to span{display:inline-block;opacity:0;transform:translate3d(0,.6em,0) rotate(6deg);will-change:transform,opacity}
-  .rs-fwd-to .tld{font-style:italic;color:#F3CF8A}
-  .rs-fwd.on .rs-fwd-to span{animation:rs-buoy .9s calc(.35s + var(--i) * 40ms) var(--fwd-ease) forwards,
-    rs-bob 2.8s calc(1.3s + var(--i) * 110ms) ease-in-out infinite}
-  @keyframes rs-buoy{to{opacity:1;transform:translate3d(0,0,0) rotate(0)}}
-  @keyframes rs-bob{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(0,-.05em,0) rotate(-1deg)}}
-  /* the hoist: a rope with twelve pennants run up in turn */
-  .rs-fwd-flags{display:flex;gap:clamp(4px,1.4vw,10px);height:22px;border-top:1px solid rgba(236,227,208,.35)}
-  .rs-fwd-flags i{flex:1;height:100%;clip-path:polygon(0 0,100% 0,50% 100%);background:#D8A657;
-    transform-origin:top;transform:scaleY(0);will-change:transform}
-  .rs-fwd-flags i:nth-child(3n+2){background:#ECE3D0}
-  .rs-fwd-flags i:nth-child(3n){background:#CE7B6E}
-  .rs-fwd.on .rs-fwd-flags i{animation:rs-hoist .55s calc(.5s + var(--i) * 120ms) cubic-bezier(.34,1.4,.64,1) forwards}
-  @keyframes rs-hoist{to{transform:scaleY(1)}}
-  /* the sea: a strip twice the width, slid one wave-length at a time; the ship crosses it */
-  .rs-fwd-sea{position:relative;height:58px;margin-top:18px;overflow:hidden;container-type:inline-size}
-  .rs-fwd-sea::before{content:"";position:absolute;left:0;bottom:0;width:calc(100% + 40px);height:12px;will-change:transform;
-    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12' viewBox='0 0 40 12'%3E%3Cpath d='M0 6c5-5 10-5 20 0s15 5 20 0' fill='none' stroke='%23ECE3D0' stroke-opacity='.45' stroke-width='1.2'/%3E%3C/svg%3E") 0 0/40px 12px repeat-x;
-    animation:rs-swell 1.8s linear infinite}
-  @keyframes rs-swell{to{transform:translate3d(-40px,0,0)}}
-  .rs-fwd-ship{position:absolute;left:0;bottom:4px;width:46px;height:46px;will-change:transform}
-  .rs-fwd-ship::after{content:"";position:absolute;inset:0;background:#ECE3D0;will-change:transform;
-    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='0.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='10' stroke-width='1'/%3E%3Cpath d='M9 1.2V15' stroke-width='1'/%3E%3Cpath d='M9 3.4 17.6 5.2 14.6 6.8 17.6 8.4 9 10.2Z' fill='%23000' stroke='none'/%3E%3Cpath d='M1.83 15c1.5-1.7 3.08-1.7 4.58 0s3.08 1.7 4.58 0 3.08-1.7 4.58 0 3.08 1.7 4.58 0' stroke-width='1'/%3E%3Cpath d='M3.86 18c1.55-1.1 3.2-1.1 4.76 0s3.2 1.1 4.76 0 3.2-1.1 4.76 0' stroke-width='0.8' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
-    animation:rs-rock 1.4s ease-in-out infinite alternate}
-  .rs-fwd.on .rs-fwd-ship{animation:rs-sail 2.1s .25s cubic-bezier(.45,.05,.3,1) forwards}
-  @keyframes rs-sail{to{transform:translate3d(calc(100cqw - 46px),0,0)}}
-  @keyframes rs-rock{from{transform:translate3d(0,2px,0) rotate(-6deg)}to{transform:translate3d(0,-3px,0) rotate(5deg)}}
-  .rs-fwd-foot{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font:11px/1.4 var(--mono,monospace);letter-spacing:.1em;
-    opacity:0;transition:opacity .6s .6s var(--fwd-ease)}
-  .rs-fwd.on .rs-fwd-foot{opacity:1}
-  .rs-fwd.on .rs-fwd-lbl{opacity:1;transform:none}
-  .rs-fwd-foot span{opacity:.6;text-align:right}
-  .rs-fwd-stay{white-space:nowrap}
-  /* the footer's "Esc close" is the phone's only way in: give a thumb room to hit it */
-  @media (pointer:coarse){.foot .keys a[data-forward]{display:inline-block;padding:12px 6px;margin:-12px -6px}
-    .rs-fwd-stay{padding:10px 0;margin:-10px 0}}
-  .rs-fwd-n{font-style:normal;color:#F3CF8A;display:inline-block;min-width:1ch}
-  .rs-fwd-n.t{animation:rs-tick .45s var(--fwd-ease)}
-  @keyframes rs-tick{from{opacity:0;transform:translate3d(0,-.6em,0)}to{opacity:1;transform:none}}
-  .rs-fwd-stay{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-  @media (prefers-reduced-motion:reduce){.rs-fwd,.rs-fwd *,.rs-fwd::before,.rs-fwd *::before,.rs-fwd *::after{transition:none!important;animation:none!important}
-    .rs-fwd-to span,.rs-fwd-flags i{opacity:1;transform:none}.rs-fwd-ship{transform:translate3d(calc(100cqw - 46px),0,0)}}
-</style>
+.body .list .t{font-size:24px}</style>
 </head>
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
-<nav class="top"><a href="../">The Commodore Press</a><a href="../#home">The library →</a></nav>
+<nav class="top"><a href="../">The Commodore Press</a><a href="../">The library →</a></nav>
 <header class="band"><div class="in"><div class="kick">Contents</div><h1>Everything on the shelves</h1>
 <p class="sub">24 titles and 43 lives. Every figure carries its source.</p></div></header>
 <main class="body">
@@ -131,79 +72,5 @@ footer{border-top:1px solid var(--rule);padding:20px;font:12px/1.6 var(--mono);c
 
 </main>
 <footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a></footer>
-<script>/* The way out — Esc with nothing left to close goes to relentless.com, by way of a voyage.
-   Its own file so that every page can carry it: the library (build/build.mjs puts it ahead
-   of the engine) and every page build/pages.mjs writes — entries, About, Contents, the Log.
-   The library's own Escape closes search, a reader or a drawer first and then calls
-   Forward.go(); every other page calls Forward.escape() once, which listens for itself. */
-(function () {
-  "use strict";
-  var doc = document;
-  /* forward(): Esc with nothing left to close is the way out, to relentless.com. A voyage:
-     the night sea of the Atlas comes up over the page, the press mark sails across it, a
-     line of signal pennants is run up one by one while the count goes 3 · 2 · 1, and the
-     address rises letter by letter like buoys. Esc again casts off at once; "stay aboard"
-     or a click on the sea calls it off. The footer's "Esc close" and any [data-forward]
-     link run the same thing. */
-  var FWD = "https://relentless.com/", fwd = null, fwdT = [];
-  function forward() {
-    if (fwd) { fwdT.forEach(clearTimeout); location.href = FWD; return; }
-    var still = matchMedia("(prefers-reduced-motion:reduce)").matches,
-      touch = matchMedia("(hover:none) and (pointer:coarse)").matches,   // a phone has no Esc key to offer
-      i, flags = "", word = "";
-    for (i = 0; i < 12; i++) flags += '<i style="--i:' + i + '"></i>';
-    "relentless.com".split("").forEach(function (ch, n) {
-      word += '<span' + (n >= 10 ? ' class="tld"' : "") + ' style="--i:' + n + '">' + ch + "</span>";
-    });
-    fwd = doc.createElement("div");
-    fwd.className = "rs-fwd"; fwd.setAttribute("role", "status");
-    fwd.setAttribute("aria-label", "Forwarding you to relentless.com");
-    fwd.innerHTML = '<div class="rs-fwd-in"><div class="rs-fwd-lbl">Esc · forwarding you to</div>'
-      + '<div class="rs-fwd-to" aria-hidden="true">' + word + '</div>'
-      + '<div class="rs-fwd-flags" aria-hidden="true">' + flags + '</div>'
-      + '<div class="rs-fwd-sea" aria-hidden="true"><b class="rs-fwd-ship"></b></div>'
-      + '<div class="rs-fwd-foot"><button type="button" class="rs-fwd-stay">stay aboard</button>'
-      + '<span>casting off in <em class="rs-fwd-n">3</em>' + (touch ? "" : " · Esc to go now") + '</span></div></div>';
-    doc.body.appendChild(fwd);
-    fwd.addEventListener("click", function (e) { if (e.target === fwd || e.target.closest(".rs-fwd-stay")) stay(); });
-    fwd.offsetWidth; fwd.classList.add("on");
-    var n = fwd.querySelector(".rs-fwd-n"), beat = still ? 250 : 800;
-    fwdT = [
-      setTimeout(function () { tick(n, "2"); }, beat),
-      setTimeout(function () { tick(n, "1"); }, beat * 2),
-      setTimeout(function () { if (fwd) fwd.classList.add("away"); }, beat * 3),
-      setTimeout(function () { location.href = FWD; }, beat * 3 + (still ? 0 : 450))
-    ];
-  }
-  // each count drops in rather than snapping over the last
-  function tick(n, v) { n.textContent = v; n.classList.remove("t"); n.offsetWidth; n.classList.add("t"); }
-  function stay() {
-    if (!fwd) return;
-    fwdT.forEach(clearTimeout);
-    var el = fwd; fwd = null; el.classList.remove("on");
-    setTimeout(function () { el.remove(); }, 400);
-  }
-  // Coming back with the browser's back button can restore this page mid-curtain; lift it.
-  addEventListener("pageshow", function (e) { if (e.persisted) stay(); });
-  doc.addEventListener("click", function (e) {
-    var a = e.target.closest && e.target.closest("[data-forward]");
-    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
-    e.preventDefault(); forward();
-  });
-  /* The entry pages' Escape. The library (theme/press.js) has its own, which closes search,
-     a reader or a drawer first and only then calls forward(). */
-  function escape() {
-    doc.addEventListener("keydown", function (e) {
-      if (e.key !== "Escape" || e.metaKey || e.ctrlKey || e.altKey || e.defaultPrevented) return;
-      if (/^(input|textarea|select)$/i.test(e.target.tagName) || doc.querySelector("dialog[open]")) return;
-      var s = getSelection(); if (s && !s.isCollapsed) { e.preventDefault(); s.removeAllRanges(); return; }   // Esc first drops a selected passage
-      e.preventDefault(); forward();
-    });
-  }
-
-  window.Forward = { go: forward, stay: stay, escape: escape };
-})();
-
-Forward.escape()</script>
 </body>
 </html>

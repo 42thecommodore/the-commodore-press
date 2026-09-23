@@ -251,7 +251,17 @@
     });
     doc.addEventListener("pointerdown", function (e) { if (!pill || !pill.contains(e.target)) down = true; });
     doc.addEventListener("pointerup", function () { if (down) { down = false; later(); } });
-    doc.addEventListener("keydown", function (e) { if (e.key === "Escape") hide(); });
+    // Esc with a passage selected drops the selection, and does only that: stopping it here
+    // keeps the library's own Esc (theme/press.js, on window) from closing the reader under a
+    // reader who only meant to let go of some text. The next Esc does what Esc normally does.
+    doc.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var s = getSelection();
+      if (s && s.rangeCount && !s.isCollapsed && inside(s.getRangeAt(0).startContainer)) {
+        e.stopPropagation(); s.removeAllRanges();
+      }
+      hide();
+    });
     (o.scroller || window).addEventListener("scroll", hide, { passive: true });
     if (o.scroller && o.scroller !== window) addEventListener("scroll", hide, { passive: true });
   }

@@ -10,7 +10,8 @@
     { "fileMatch": ["/content/atlas/domains.json"], "url": "./schemas/domains.schema.json" },
     { "fileMatch": ["/content/atlas/domain-colors.json"], "url": "./schemas/domain-colors.schema.json" },
     { "fileMatch": ["/content/atlas/sources.json"], "url": "./schemas/sources.schema.json" },
-    { "fileMatch": ["/content/corrections.json"], "url": "./schemas/corrections.schema.json" }
+    { "fileMatch": ["/content/corrections.json"], "url": "./schemas/corrections.schema.json" },
+    { "fileMatch": ["/content/captains.json"], "url": "./schemas/captains.schema.json" }
   ],
 
   // Paragraphs are one long line each; wrap them so they can be read.
@@ -23,5 +24,5 @@
   },
 
   // Searching for a sentence should find the source, not the built copy of it.
-  "search.exclude": { "dist": true, "archive": true }
+  "search.exclude": { "dist": true }
 }

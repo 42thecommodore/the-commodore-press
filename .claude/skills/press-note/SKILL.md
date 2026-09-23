@@ -32,8 +32,8 @@ One entry in `content/atlas/people.json`:
 }
 ```
 
-`npm run new` does not scaffold Atlas people — this is a hand edit to one array. Copy the
-nearest existing block rather than typing a fresh one.
+`npm run new person "Name" --domain <id> --lessons a,b` appends a stub whose TODOs the check
+refuses until answered. Or copy the nearest existing block rather than typing a fresh one.
 
 ---
 
@@ -41,7 +41,7 @@ nearest existing block rather than typing a fresh one.
 
 ### 1. Does this person earn a place?
 
-Thirty-four people is already a lot, and the Atlas gets weaker as it gets longer. A
+Thirty-odd people is already a lot, and the Atlas gets weaker as it gets longer. A
 person earns a place when **you can say what they taught you that nobody else on the wall
 taught you.** "Good episode" is not that. If the take would duplicate someone already
 there, add a kept line to the existing person instead of a new star.
@@ -82,10 +82,29 @@ shows, the `s` field is the episode.
 `p` holds ids from `content/atlas/principles.json`, and they are what draw the lines in
 the Atlas — a person with none floats unconnected, and `npm run check` says so.
 
-**A new principle needs at least two people.** The Atlas only renders constellations with
-two or more members (`ACTIVE_PR` in `theme/press.js`), so a principle invented for one
-person will not draw at all. Either find the second person already on the wall who
-belongs to it, or use an existing principle and wait.
+**A new principle needs at least two people.** Each principle is an island on the chart
+(`theme/atlas.js`); an island with one person on it is a lesson nobody else taught you,
+which is a `take`, not a principle. Either find the second person already on the chart
+who belongs to it, or use an existing principle and wait.
+
+### 5. How they connect — this is the part readers came for
+
+Two readers of the first Atlas said the same thing: they liked it, and could not tell who
+these people were or how they were connected. So every capture ends by asking how this
+person connects, and writing down only what the notes show:
+
+- **Echoes** (`content/atlas/echoes.json`). Does a line in the new notes say the same
+  thing as a line in the notes on someone already on the chart? Then it is an echo: add
+  this person to that echo, or start a new one with both. Copy both lines from the notes,
+  spelling fixed. Echoes print first under "How they connect", so they are worth more than
+  anything else you capture.
+- **Mentions** (`mentions` on the person). Do they name, cite, or work with someone on the
+  Lives shelf? Add `{ "to": "lives:<id>", "note": "…" }`. If the note says something
+  checkable (Mandela stayed at Londolozi), check it before it goes in.
+- **The role line** says who they are to a stranger. It is a factual claim; verify it.
+
+Never infer a connection the notes do not contain. "They both seem like the type" is how a
+chart starts lying.
 
 ---
 
@@ -95,10 +114,37 @@ belongs to it, or use an existing principle and wait.
 npm run check
 ```
 
-It will tell you if the domain or a principle id is wrong, if the person floats with no
-principle, and if any kept line is missing its source. Then `npm start` and look at the
-Atlas — the person should appear as a star with lines running to the people they share
-principles with. If they float alone, the `p` list is the reason.
+It will tell you if the domain or a principle id is wrong, if the person has no
+principle, if an echo names someone not on the chart, and if a mention points at a Life
+that does not exist. Then `npm start` and look at the Atlas: the person should appear as a
+dot on each island they hold, and in any echo you added under "How they connect".
+
+---
+
+## Syncing from the notes doc
+
+Luca's listening notes live in a Google Doc titled **"People 🫂"**. The original is owned by
+his UCLA account (created 10 Nov 2025); a later copy on his personal account is not the
+one to read. Each person is a `# Name` heading with their notes below it.
+
+Notes may carry three optional lines under the heading: `Who:` (the role line, still to be
+verified), `Heard on:` (show, episode or date: this is what turns a note into a quotation
+later), and `Mentions:` (Lives they named). Use them when present; never require them.
+
+When Luca says he has added notes, read the original through the Drive connector and diff
+it against `people.json` and `echoes.json`:
+
+1. New headings: people not on the chart. Propose each with the four decisions above.
+2. New lines under people already on the chart: propose new `kept` notes.
+3. New echoes: lines under different people that say the same thing.
+4. New mentions: Lives named in the notes.
+
+If Luca has downloaded the doc as Markdown, `npm run notes -- <file>` does steps 1–3 mechanically
+and writes `.private/notes-review.md` (git-ignored). Start from that review when it exists.
+
+**Propose, never publish.** The doc is private and has personal lines in it: relationship
+notes, jokes, asides to himself. Nothing goes from the doc to the page without Luca
+choosing it. Show the proposal, then write what he approves, then `npm run check`.
 
 ---
 

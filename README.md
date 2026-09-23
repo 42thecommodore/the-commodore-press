@@ -84,7 +84,7 @@ See **[ENGINEERING.md](ENGINEERING.md)** — the three tiers of rule (enforced b
 
 ## Publishing
 
-See **[DEPLOY.md](DEPLOY.md)**. Short version: push to GitHub and the included workflow checks, builds and deploys to Pages — or drag `dist/index.html` into Netlify. Both are free at this scale.
+See **[DEPLOY.md](DEPLOY.md)**. Short version: push to GitHub and the included workflow checks, builds and deploys to Pages. Free at this scale.
 
 ## In the reader
 

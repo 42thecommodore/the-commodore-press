@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Captain of the day — content/captains.json",
+  "description": "The lives the front door may name Captain of the day, one a day in turn. The editor picks this list by hand: nobody is cast as a captain by default. The card prints only what the person's own entry says.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "crew": {
+      "type": "array",
+      "description": "Life ids, from content/lives/, in the order they take the bridge. Every id must be on the shelf; `npm run check` refuses one that is not. Empty, and the front door shows the specimen instead.",
+      "items": { "type": "string" },
+      "x-means": ["captain", "daily", "featured", "rotation"]
+    }
+  }
+}

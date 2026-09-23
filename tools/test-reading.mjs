@@ -15,6 +15,8 @@
  *   - the progress line reaches "Finished", and the browser remembers it
  *   - the library and the entry page agree on the minutes and on what to read next
  *   - the front door's arrow keys leave a focused control alone
+ *   - Esc closes only what is open — the share sheet, then the reader, and a selected
+ *     passage is let go before anything closes — and never takes the reader off the page
  * and, without a browser, that every entry page's share link, end block and read-next link
  * are present and resolve.
  *
@@ -85,6 +87,23 @@ window.__run = async function (tests) {
 
 /* Select text inside a paragraph and return the pill's quote, the way a reader would. */
 const QUOTE = String.raw`
+// Esc must never take a reader off the page. A page that navigates away ends this script,
+// so a left page also shows up as "no results came back"; this names it when it can.
+async function staysPut(t, wait, name, href) {
+  await wait(3000);
+  t(name, location.href === href, "address is now " + location.href);
+}
+async function escSelection(t, wait, esc, p, stillOpen) {
+  const tn = [...p.childNodes].find(n => n.nodeType === 3 && n.data.length > 40);
+  const rg = document.createRange(); rg.setStart(tn, 0); rg.setEnd(tn, 30);
+  getSelection().removeAllRanges(); getSelection().addRange(rg);
+  document.dispatchEvent(new Event("selectionchange")); await wait(700);
+  const href = location.href;
+  esc(); await wait(150);
+  t("Esc with a passage selected lets go of the selection", getSelection().isCollapsed || !getSelection().rangeCount);
+  t("…and closes nothing else", !document.querySelector("dialog[open]") && !document.querySelector(".rs-pill") && stillOpen(), "something else closed");
+  await staysPut(t, wait, "…and keeps the reader on the page", href);
+}
 async function quotePassage(t, wait, p, credit) {
   const tn = [...p.childNodes].find(n => n.nodeType === 3 && n.data.length > 70);
   if (!tn) return t("a paragraph long enough to quote", false);
@@ -119,8 +138,10 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   t("the X text leaves room for the link", xt.length <= 256, xt.length + " characters");
   dl.querySelector("[data-a=link]").click(); await wait(80);
   t("Copy link copies the page's address", window.__copied === canon, window.__copied);
+  const href = location.href;
   esc(); await wait(80);
   t("Escape closes the sheet", !document.querySelector("dialog[open]"));
+  await staysPut(t, wait, "…and keeps the reader on the page", href);
   const line = document.querySelector("[data-rs=line]");
   if (line) {
     line.click(); await wait(150); dl = document.querySelector("dialog[open]");
@@ -130,10 +151,15 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   }
   await quotePassage(t, wait, document.querySelector(".essay p"), ${JSON.stringify(credit)});
   esc(); await wait(80);
+  await escSelection(t, wait, esc, document.querySelector(".essay p"), () => true);
   scrollTo(0, document.documentElement.scrollHeight); dispatchEvent(new Event("scroll")); await wait(400);
   t("reading to the end says Finished", document.getElementById("rleft").textContent === "Finished ✓", document.getElementById("rleft").textContent + " at scrollY " + scrollY + " of " + document.documentElement.scrollHeight + ", dialog open: " + !!document.querySelector("dialog[open]"));
   const mem = JSON.parse(localStorage.getItem("cp-read") || "{}");
   t("the browser remembers the entry was finished", Object.values(mem).some(v => v.d === 1), JSON.stringify(mem));
+  // nothing open, nothing selected: Esc has nothing to do, and must not leave the site
+  getSelection().removeAllRanges(); const here = location.href;
+  esc(); await wait(150);
+  await staysPut(t, wait, "Esc with nothing open keeps the reader on the page", here);
 }), 300));
 </script>`;
 
@@ -148,8 +174,10 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   sheet.querySelector(".rbar .rs-go").click(); await wait(150);
   let dl = document.querySelector("dialog[open]");
   t("Share in the reader links the entry's own page, not the #hash", dl && dl.querySelector("input").value === ${JSON.stringify(want.url)}, dl && dl.querySelector("input").value);
+  const href = location.href;
   esc(); await wait(80);
   t("Escape closes the sheet and leaves the reader open", !document.querySelector("dialog[open]") && current === ${JSON.stringify(id)});
+  await staysPut(t, wait, "…and keeps the reader on the page", href);
   const line = sheet.querySelector(".rs-lineshare");
   if (line) {
     line.click(); await wait(150); dl = document.querySelector("dialog[open]");
@@ -158,12 +186,18 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   }
   await quotePassage(t, wait, sheet.querySelector(".rbody .copy p"), ${JSON.stringify(credit)});
   esc(); await wait(80);
+  await escSelection(t, wait, esc, sheet.querySelector(".rbody .copy p"), () => current === ${JSON.stringify(id)});
   reader.scrollTop = reader.scrollHeight; reader.dispatchEvent(new Event("scroll")); await wait(400);
   t("reading to the end says Finished", document.getElementById("rleft").textContent === "Finished ✓", document.getElementById("rleft").textContent + " at scrollTop " + reader.scrollTop + " of " + reader.scrollHeight + ", dialog open: " + !!document.querySelector("dialog[open]"));
-  closeReader(); await wait(1000);
+  const onSite = location.origin + location.pathname;
+  esc(); await wait(1000);
+  t("Esc in the reader closes the reader", current === null, "still reading " + current);
+  await wait(3000);
+  t("…and keeps the reader on the site", location.origin + location.pathname === onSite, "address is now " + location.href);
   const slot = document.querySelector((${JSON.stringify(kind)} === "press" ? "#shelf" : "#livesShelf") + " .slot[data-id=" + ${JSON.stringify(JSON.stringify(id))} + "]");
   t("a finished entry is marked Read on its shelf", slot && slot.classList.contains("read"));
   go("home"); await wait(500);
+  t("the front door keeps the bare address, the one a reader shares", location.hash === "", "address ends " + location.hash);
   const nb = document.querySelector("#nav .navbtn"); nb.focus();
   nb.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true })); await wait(500);
   t("on the front door, arrows leave a focused button alone", wing === "home", "went to " + wing);
@@ -184,7 +218,8 @@ function drive(page, script) {
   } catch (e) { /* reported below */ }
   fs.rmSync(tmp, { recursive: true, force: true });
   const m = dom.match(/<script type="application\/json" id="__results">([^]*?)<\/script>/);
-  return m ? JSON.parse(m[1]) : [{ n: "the page ran its tests", ok: false, d: "no results came back from Chrome" }];
+  return m ? JSON.parse(m[1]) : [{ n: "the page ran its tests", ok: false,
+    d: "no results came back from Chrome — usually the page navigated away mid-test (an Esc that leaves the site does exactly this), or a script threw before the tests began" }];
 }
 
 /* What the entry page says, so the library can be held to it. */

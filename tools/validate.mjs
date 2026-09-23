@@ -31,6 +31,7 @@ const dcolor = one("content/atlas/domain-colors.json") || {};
 const principles = one("content/atlas/principles.json") || [];
 const people = one("content/atlas/people.json") || [];
 const sources = one("content/atlas/sources.json") || [];
+const echoes = one("content/atlas/echoes.json") || [];
 const corrections = one("content/corrections.json") || [];
 const httpOK = one("content/http-allowlist.json") || {};
 const plateLic = one("content/plate-licences.json") || {};
@@ -51,6 +52,9 @@ fieldsOf(schema("people"), people, "content/atlas/people.json");
 fieldsOf(schema("principles"), principles, "content/atlas/principles.json");
 fieldsOf(schema("domains"), domains, "content/atlas/domains.json");
 fieldsOf(schema("sources"), sources, "content/atlas/sources.json");
+fieldsOf(schema("echoes"), echoes, "content/atlas/echoes.json");
+/* an echo names people on the chart, at least two of them, or it connects nobody */
+echoes.forEach(e => { const who = (e.notes || []).map(n => n.who); who.forEach(w => { if (!people.some(p => p.name === w)) err("content/atlas/echoes.json", `"${e.idea}" names ${w}, who is not in people.json`); }); if (new Set(who).size < 2) err("content/atlas/echoes.json", `"${e.idea}" needs notes on at least two different people`); });
 fieldsOf(schema("corrections"), corrections, "content/corrections.json");
 
 /* ---------- ids must be unique and stable: they are the site's permalinks ---------- */
@@ -211,6 +215,14 @@ for (const { file, data } of [...books, ...adjacent, ...lives])
   (data.corrected || []).forEach(n => {
     if (!Number.isInteger(n) || n < 1 || n > corrections.length) err(file, `\`corrected\` lists ${n}, but the colophon has corrections 1–${corrections.length}`);
   });
+/* a half-added person (npm run new person) cannot ship: every TODO must be answered */
+people.forEach(x => { const t = JSON.stringify(x); if (/TODO/.test(t)) err(`content/atlas/people.json (${x.name})`, "still has TODOs — answer them, or remove the person until the notes are ready"); });
+people.forEach(x => (x.mentions || []).forEach(m => {
+  if (!m.to || !m.to.startsWith("lives:") || !known.lives.has(m.to.slice(6))) err(`content/atlas/people.json (${x.name})`, `\`mentions\` points at "${m.to}", which is not a Life on the shelf`);
+}));
+people.forEach(x => (x.corrected || []).forEach(n => {
+  if (!Number.isInteger(n) || n < 1 || n > corrections.length) err(`content/atlas/people.json (${x.name})`, `\`corrected\` lists ${n}, but the colophon has corrections 1–${corrections.length}`);
+}));
 
 /* ---------- "Go to the source" has to go to it ----------
    On 2026-09-21, 16 books in reading lists linked to Wikipedia's article about the book —
@@ -402,6 +414,20 @@ const HEX = /^#[0-9a-fA-F]{6}$/;
       if (!n.provider) err("content/newsletter.json", "`action` is set but `provider` is empty — the colophon has to say who holds subscribers' addresses");
       if (/\/username\/|<|>/.test(n.action)) err("content/newsletter.json", "`action` still has the example's placeholder in it — put your own username in");
     }
+  }
+}
+
+/* ---------- Captain of the day: a crew the editor picked, every one on the shelf ----------
+   The list is chosen by hand so nobody is cast as a captain by default. A name that is not
+   a life would print an empty card on the front door. */
+{
+  const c = fs.existsSync(p("content/captains.json")) ? one("content/captains.json") : null;
+  if (c) {
+    fieldsOf(schema("captains"), c, "content/captains.json");
+    const ids = new Set(lives.map(l => l.data.id));
+    for (const id of c.crew || []) if (!ids.has(id)) err("content/captains.json", `"${id}" is not a life on the shelf — use its id from content/lives/`);
+    const dup = (c.crew || []).filter((id, i, a) => a.indexOf(id) !== i);
+    if (dup.length) err("content/captains.json", `${dup.join(", ")} listed twice — each captain takes one turn`);
   }
 }
 
