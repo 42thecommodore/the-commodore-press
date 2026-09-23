@@ -227,7 +227,9 @@ function roseSVG(x, y, s) {
 }
 function renderChart() {
   const host = document.getElementById("chartSvgHost"); if (!host) return;
-  const narrow = host.clientWidth && host.clientWidth < 700;
+  /* drawn before its wing is shown, the chart has no width yet: judge by the screen, or a
+     phone gets the desktop layout squeezed into it until the first resize */
+  const narrow = (host.clientWidth || (host.parentElement && host.parentElement.clientWidth) || innerWidth) < 700;
   const mode = narrow ? "tall" : "wide";
   const W = narrow ? 600 : 1200, H = narrow ? 980 : 760;
   const relaid = !!chartMode && chartMode !== mode;
@@ -679,8 +681,7 @@ function isleCard() {
     const first = PORTS[0];
     const E = echoList(), e = E[featIdx % Math.max(1, E.length)];
     el.innerHTML = `<div class="lbl q">Start here</div>
-      <h3>Founders, coaches, investors, a lion tracker, a surgeon</h3>
-      <p class="ic-dek">Each island is one lesson they taught me. Each small mark on it is a person.</p>
+      <p class="ic-dek">Each island is one lesson they taught me. Each small mark on it is a person. Some ideas turn up in my notes on several of them:</p>
       ${e ? `<div class="feat" aria-live="polite">
         <div class="feat-h"><span class="lbl q">A constellation · ${featIdx % E.length + 1} of ${E.length}</span>
           <span class="feat-nav"><button type="button" onclick="stepEcho(-1)" aria-label="Previous constellation">←</button><button type="button" onclick="stepEcho(1)" aria-label="Next constellation">→</button></span></div>

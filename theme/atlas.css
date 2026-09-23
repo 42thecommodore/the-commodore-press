@@ -129,7 +129,8 @@
   .ic-row{display:flex;gap:8px;flex-wrap:wrap}
   .echo-map{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--nbrass);margin:-4px 0 10px;border-bottom:1px solid transparent}
   .echo-map:hover{border-bottom-color:var(--nbrass)}
-  @media (max-width:980px){.isle-card{order:-1;border-top:0;border-bottom:1px solid var(--line)}}
+  /* phones see the islands first, straight under the title; the card follows */
+  @media (max-width:700px){[data-wing="atlas"] .wing-head .side{display:none}}
 
   /* the card beside the chart */
   .isle-card{border-left:1px solid var(--line);padding:24px 24px 26px;display:flex;flex-direction:column;gap:14px;
