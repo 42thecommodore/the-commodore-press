@@ -1,6 +1,5 @@
 /* ===================== ENGINE ===================== */
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-const EASE="cubic-bezier(.19,.9,.22,1)", EASE_IO="cubic-bezier(.62,.02,.2,1)";
 const WINGS=[["home","Home"],["press","The Press"],["lives","Lives"],["atlas","The Atlas"],["colophon","Colophon"]];
 let wing="home", searchFocus=null, readerFocus=null, current=null, currentKind=null, activeConst=null, activeRegion=null, selectedPerson=null;
 
@@ -106,47 +105,37 @@ function openLife(id){go('lives');setTimeout(()=>openReader('lives',id),340)}
 const plateOrMark=(b,cls)=>PLATES[b.id]
   ? `<img class="${cls}" src="${PLATES[b.id]}" alt="" loading="lazy">`
   : `<span class="${cls} nomark" aria-hidden="true">{{MARK sw=0.9 pn}}</span>`;
-// a sentence ends at . ! or ? followed by a space and a capital, so "$1.5 billion" stays whole
-const sentences=s=>s.split(/(?<=[.!?])\s+(?=[A-Z'‘"“])/);
-/* The sentences of correction n that are about entry b: from the one naming it, up to the
-   next one naming a different title. Empty when the correction never names it. */
-function correctionNote(b,n){
-  const c=CORRECTIONS[n-1]; if(!c)return "";
-  const out=[]; let on=false, named=t=>t.replace(/^The /,"");   // "Cost Disease said…" names The Cost Disease
-  for(const s of sentences(c.b)){
-    if(s.includes(named(b.title))){on=true;out.push(s);continue}
-    if(on&&BOOKS.some(o=>o!==b&&s.includes(named(o.title))))break;
-    if(on)out.push(s);
-  }
-  return out.join(" ").trim();
-}
-/* The specimen is the title whose latest correction changed a number: it carries a sourced
-   figure, a printed dispute and a correction left in view, which is every promise the
-   colophon makes, on one entry. It moves on by itself when the house corrects a figure. */
+/* The specimen: a title whose latest correction belongs to it alone, so the correction's own
+   title says what was wrong on this entry. It carries a sourced figure, a printed dispute and
+   the correction left in view, which is every promise the colophon makes, on one entry. It
+   reads stored fields only, and prints the dispute whole, because a dispute is never cut. */
 function pickSpecimen(){
-  let best=null;
+  const owners={};
+  for(const e of [...BOOKS,...ADJACENT,...LIVES])for(const n of (e.corrected||[]))owners[n]=(owners[n]||0)+1;
+  let best=null,any=null;
   for(const b of BOOKS){
-    if(!(b.claim&&b.facts&&b.facts.length&&b.contested&&b.keep&&b.corrected))continue;
+    const fact=(b.facts||[]).find(f=>/: /.test(f.s));   // the house form: "what it counts: where it was read"
+    if(!(b.claim&&fact&&b.contested&&b.keep&&b.corrected&&b.corrected.length))continue;
     for(const n of b.corrected){
-      const note=correctionNote(b,n);
-      if(!/\d/.test(note)||(best&&best.n>=n))continue;
-      const fact=b.facts.find(f=>note.includes(f.b))||b.facts[0];
-      best={b,n,note,fact};
+      if(!CORRECTIONS[n-1])continue;
+      if(owners[n]===1&&(!best||n>best.n))best={b,n,fact};
+      if(!any||n>any.n)any={b,n,fact};
     }
   }
-  return best;
+  return best||any;
 }
+const toCorrections=`href="#corrections" onclick="go('colophon');setTimeout(()=>document.getElementById('corrections').scrollIntoView(),60);return false;"`;
 function specimenHTML(){
   const s=pickSpecimen(); if(!s)return "";
-  const {b,n,note,fact}=s, c=CORRECTIONS[n-1], idx=BOOKS.indexOf(b)+1;
-  const mark=(i,label,body)=>`<li><span class="mk"><span class="pen" aria-hidden="true">${i}</span>${label}</span><div class="mb">${body}</div></li>`;
-  return `<div class="sp-top"><span class="lbl q">Specimen · Wing I</span><span class="sp-n">${idx} of ${BOOKS.length}</span></div>
+  const {b,n,fact:f}=s, c=CORRECTIONS[n-1];
+  const mark=(label,body)=>`<li><span class="mk"><span class="pen" aria-hidden="true"></span>${label}</span><div class="mb">${body}</div></li>`;
+  return `<div class="sp-top"><span class="lbl q">Specimen · Wing I</span></div>
     <h2>${b.title}</h2><div class="sp-sub">${b.sub}</div>
     <ol class="marks">
-      ${mark(1,"The claim",`<p class="sp-claim">${b.claim}</p>`)}
-      ${mark(2,"The source",`<div class="sp-fact"><b>${fact.b}</b><span>${fact.s}</span></div>`)}
-      ${mark(3,"The dispute",`<p class="sp-q">${sentences(b.contested).slice(-1)[0].trim()}</p>`)}
-      ${mark(4,"Corrected",`<p class="sp-c"><span>No. ${n} · ${c.d} —</span> ${note}</p>`)}
+      ${mark("The claim",`<p class="sp-claim">${b.claim}</p>`)}
+      ${mark("The source",`<div class="sp-fact"><b>${f.b}</b><span>${f.s}</span></div>`)}
+      ${mark("The dispute",`<p class="sp-q">${b.contested}</p>`)}
+      ${mark("Corrected",`<a class="sp-c" ${toCorrections}><span>No. ${n} · ${c.d}</span> ${c.t}</a>`)}
     </ol>
     <div class="sp-foot"><p>${b.keep}</p><button class="sp-go" onclick="openReader('press','${b.id}')">Read the entry →</button></div>`;
 }
@@ -157,7 +146,9 @@ function captainOfTheDay(){
   const crew=CAPTAINS.map(id=>LIVES.find(b=>b.id===id)).filter(Boolean);
   if(!crew.length)return null;
   const d=new Date(), day=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000);
-  return crew[day%crew.length];
+  const cap=crew[day%crew.length];
+  cap._next=crew[(day+1)%crew.length]; cap._crew=crew.length;
+  return cap;
 }
 function captainHTML(b){
   return `<article class="captain" aria-labelledby="capN">
@@ -168,9 +159,10 @@ function captainHTML(b){
     </div>
     <p class="cap-ld">${b.lede}</p>
     <div class="sp-foot"><p>${b.keep||""}</p><button class="sp-go" onclick="openLife('${b.id}')">Read the life →</button></div>
+    ${b._crew>1?`<p class="watch">One of a crew of ${b._crew}, chosen by the editor. The watch changes at midnight; next, <button onclick="openLife('${b._next.id}')">${b._next.n}</button>.</p>`:""}
   </article>`;
 }
-const bandHead=(tag,id,h,dek,go,link)=>`<div class="band-h"><div><div class="lbl">${tag}</div><h2 id="${id}">${h}</h2><p>${dek}</p></div>`+
+const bandHead=(tag,id,h,dek,go,link)=>`<div class="band-h"><div><div class="lbl">${tag}</div><h2 id="${id}">${h}</h2>${dek?`<p>${dek}</p>`:""}</div>`+
   (link?`<button class="band-go" onclick="${go}">${link}</button>`:"")+`</div>`;
 /* One constellation from the Atlas: one idea, turning up in the editor's notes on several
    people (content/atlas/echoes.json), a different one each day. Notes, not quotations. */
@@ -194,41 +186,50 @@ function renderFront(){
   document.getElementById("tally").innerHTML =
     `<span><b>${BOOKS.length}</b>titles</span><span><b>${LIVES.length}</b>lives</span>`+
     `<span><b>${PEOPLE.length}</b>people</span><span><b>${CORRECTIONS.length}</b>corrections</span>`;
-  const spec=pickSpecimen(), cap=captainOfTheDay();
+  const cap=captainOfTheDay();
   document.getElementById("specimen").innerHTML=specimenHTML();
 
   const fresh=new Set(LIVES.slice(-4).map(b=>b.id));
   const last=CORRECTIONS.map((c,i)=>({c,n:i+1})).slice(-3).reverse();
   document.getElementById("bands").innerHTML=
-   `<div class="wrap"><div class="swell" aria-hidden="true"></div></div>
-    <section class="band" aria-labelledby="bPress"><div class="wrap">
+   (LOG.length?`<section class="band logband" aria-labelledby="bLog"><div class="wrap">
+      <div class="lbl">The Log · signed and dated</div>
+      <a class="logpiece" href="log/${LOG[0].slug}/"><span class="dt">${LOG[0].date}</span><h2 id="bLog">${LOG[0].title}</h2><p>${LOG[0].dek}</p><span class="band-go">Read it →</span></a>
+    </div></section>`:"")+
+   `<section class="band" aria-labelledby="bPress"><div class="wrap">
       ${bandHead("Wing I · The Press","bPress","{{W_BOOKS_CAP}} ideas, on one shelf.",
-        "Each with its timeline, its numbers and its objections."+(spec?" The raised spine is the specimen above.":""),"go('press')","All titles →")}
-      <div class="rack">${BOOKS.map((b,i)=>`<button class="rk${spec&&spec.b===b?" up":""}" style="--h:${250+(i*37%5)*14}px;background:${b.cover};color:${b.ink};--ac:${b.accent}" onclick="openReader('press','${b.id}')"><i></i><span>${b.spineTitle||b.title}</span>{{MARK size=14 sw=1.4}}</button>`).join("")}</div>
+        "Each with its timeline, its numbers and its objections.","go('press')","All titles →")}
+      <div class="rack">${BOOKS.map(b=>`<button class="rk" style="background:${b.cover};color:${b.ink};--ac:${b.accent}" onclick="openReader('press','${b.id}')"><i></i><span>${b.spineTitle||b.title}</span>{{MARK size=14 sw=1.4}}</button>`).join("")}</div>
     </div></section>
-    <div class="wrap"><div class="swell" aria-hidden="true"></div></div>
     <section class="band" aria-labelledby="bLives"><div class="wrap">
       ${bandHead("Wing II · Lives","bLives",`${LIVES.length} people. Pick a face.`,
-        `The one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_OBSCURE}} you have never heard of. <span class="newtag">New</span> marks the four most recent.`,"go('lives')","All lives →")}
+        `The one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_OBSCURE}} you have never heard of.`,"go('lives')","All lives →")}
       <div class="${cap?"crew":""}">${cap?captainHTML(cap):""}
-      <div class="wall">${LIVES.map(b=>`<button class="wface" onclick="openLife('${b.id}')" aria-label="${b.n}, ${b.years}${fresh.has(b.id)?", new":""}" title="${b.n} · ${b.years}">
-          <span class="wf">${plateOrMark(b,"fp-img")}${fresh.has(b.id)?`<span class="newtag">New</span>`:""}</span><span class="fn">${b.n}</span></button>`).join("")}</div></div>
+      <div class="wall">${LIVES.map(b=>`<button class="wface" onclick="openLife('${b.id}')" aria-label="${b.n}, ${b.years}${fresh.has(b.id)?", new on the shelf":""}" title="${b.n} · ${b.years}">
+          ${plateOrMark(b,"fp-img")}<span class="fn">${b.n}${fresh.has(b.id)?`<em class="nw">new</em>`:""}</span></button>`).join("")}</div></div>
     </div></section>
     <section class="band night" aria-labelledby="bAtlas"><div class="wrap">
       ${bandHead("Wing III · The Atlas","bAtlas","{{W_PEOPLE_CAP}} people, and what they taught me.",
-        "Each island on the chart is one lesson; the people on it are the ones who taught it to me.","go('atlas')","Open the chart →")}
+        "Each island on the chart is one lesson; the people on it are the ones who taught it to me.")}
       ${constellationHTML()}
     </div></section>
-    <section class="band ledger" aria-labelledby="bRec"><div class="wrap">
-      <div><div class="lbl">The record</div><h2 id="bRec">Corrected here, in public.</h2>
-        <p>Every correction is appended and numbered. None is quietly patched.</p></div>
-      <div><ol>${last.map(({c,n})=>`<li><span class="no">No. ${n}</span><span class="dt">${c.d}</span><a href="#corrections" onclick="go('colophon');setTimeout(()=>document.getElementById('corrections').scrollIntoView(),340);return false;">${c.t}</a></li>`).join("")}</ol>
-        <a class="all" href="#corrections" onclick="go('colophon');setTimeout(()=>document.getElementById('corrections').scrollIntoView(),340);return false;">All ${CORRECTIONS.length} corrections →</a></div>
+    <section class="band colo" aria-labelledby="bColo"><div class="wrap">
+      <div class="colo-l"><figure class="seal">{{MARK size=56 sw=0.9 pn aria}}<figcaption>The press mark: a commodore's broad pennant, over water.</figcaption></figure>
+        <div class="lbl">Colophon</div><h2 id="bColo">How this house works.</h2><div id="coloFront"></div>
+        <a class="band-go" href="#colophon" onclick="go('colophon');return false;">The whole colophon →</a></div>
+      <div class="colo-r"><div class="lbl">The log of corrections</div>
+        <table class="log"><thead><tr><th scope="col">No.</th><th scope="col">Date</th><th scope="col">Entry</th></tr></thead>
+        <tbody>${last.map(({c,n})=>`<tr><td class="no">${n}</td><td class="dt">${c.d}</td><td><a ${toCorrections}>${c.t}</a></td></tr>`).join("")}</tbody></table>
+        <a class="band-go" ${toCorrections}>All ${CORRECTIONS.length} corrections →</a></div>
     </div></section>`;
+  // The colophon's own paragraphs, copied from the colophon page at load, so the two can never disagree:
+  // the method, and how the house is set and corrected.
+  const colo=[...document.querySelectorAll('[data-wing="colophon"] .colophon .body > p')];
+  document.getElementById("coloFront").innerHTML=[colo[0],colo[2]].filter(Boolean).map(p=>`<p>${p.innerHTML}</p>`).join("");
 
   document.getElementById("corrections").innerHTML=
     `<div class="lbl q" style="margin-bottom:10px">Corrections — kept visible</div>`+
-    CORRECTIONS.map(c=>`<div style="margin-bottom:12px"><b>${c.t}</b> ${c.b} <span style="font-family:var(--mono);font-size:11.5px;opacity:.6">${c.d}</span></div>`).join("");
+    CORRECTIONS.map(c=>`<div style="margin-bottom:12px"><b>${c.t}</b> ${c.b} <span style="font-family:var(--mono);font-size:var(--fs-0);opacity:.6">${c.d}</span></div>`).join("");
   document.getElementById("stat").textContent=`${BOOKS.length} titles · ${LIVES.length} lives · ${PEOPLE.length} people · ${PRINCIPLES.length} principles`;
 }
 
@@ -242,18 +243,12 @@ function renderPressControls(){
     +`<span class="count" id="pressCount"></span>`;
   document.getElementById("pressSide").innerHTML=`${BOOKS.length} titles · ${ADJACENT.length} adjacent<br>each with sources and objections`;
 }
-function filterPress(f){pressFilter=f;renderPressControls();renderShelf(true)}
-function renderShelf(anim){
-  const shelf=document.getElementById("shelf"),prev=new Map();
-  if(anim&&!reduce)shelf.querySelectorAll(".slot").forEach(s=>prev.set(s.dataset.id,s.getBoundingClientRect()));
+function filterPress(f){pressFilter=f;renderPressControls();renderShelf()}
+function renderShelf(){
+  const shelf=document.getElementById("shelf");
   const list=BOOKS.filter(b=>pressFilter==="all"||b.field===pressFilter);
   shelf.innerHTML=list.map((b,i)=>`<button class="slot" data-id="${b.id}" style="--i:${i}" onclick="openReader('press','${b.id}',{src:this})" aria-label="Open ${b.title.replace(/&amp;/g,"and")}">
       ${pressBook(b)}<div class="meta"><h3>${b.title}</h3><p>${b.field==="History"?"History &amp; philosophy":b.field==="Economics"?"Economics &amp; finance":b.field} · ${b.years}</p></div></button>`).join("");
-  const slots=[...shelf.querySelectorAll(".slot")];
-  slots.forEach(s=>{if(prev.has(s.dataset.id)){s.classList.add("in");s.style.setProperty("--d","0ms")}});
-  if(prev.size)slots.forEach(s=>{const o=prev.get(s.dataset.id);if(!o)return;const n=s.getBoundingClientRect();
-    const dx=o.left-n.left,dy=o.top-n.top;if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
-    s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
   document.getElementById("pressCount").textContent=list.length+(list.length===1?" title":" titles");
   markRead();
 }
@@ -274,18 +269,12 @@ function renderLivesControls(){
     +`<span class="count" id="livesCount"></span>`;
   document.getElementById("livesSide").innerHTML=`${LIVES.length} lives · one book each<br>${LIVES.filter(b=>b.group==="famous").length} famous · ${LIVES.filter(b=>b.group==="obscure").length} you have never heard of`;
 }
-function filterLives(f){livesFilter=f;renderLivesControls();renderLivesShelf(true)}
-function renderLivesShelf(anim){
-  const shelf=document.getElementById("livesShelf"),prev=new Map();
-  if(anim&&!reduce)shelf.querySelectorAll(".slot").forEach(s=>prev.set(s.dataset.id,s.getBoundingClientRect()));
+function filterLives(f){livesFilter=f;renderLivesControls();renderLivesShelf()}
+function renderLivesShelf(){
+  const shelf=document.getElementById("livesShelf");
   const list=LIVES.filter(b=>livesFilter==="all"||b.group===livesFilter);
   shelf.innerHTML=list.map((b,i)=>`<button class="slot" data-id="${b.id}" style="--i:${i}" onclick="openReader('lives','${b.id}',{src:this})" aria-label="Open ${b.n}">
       ${lifeBook(b)}<div class="meta"><h3>${b.n}</h3><p>${b.years}</p></div></button>`).join("");
-  const slots=[...shelf.querySelectorAll(".slot")];
-  slots.forEach(s=>{if(prev.has(s.dataset.id)){s.classList.add("in");s.style.setProperty("--d","0ms")}});
-  if(prev.size)slots.forEach(s=>{const o=prev.get(s.dataset.id);if(!o)return;const n=s.getBoundingClientRect();
-    const dx=o.left-n.left,dy=o.top-n.top;if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
-    s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
   document.getElementById("livesCount").textContent=list.length+(list.length===1?" life":" lives");
   markRead();
 }
@@ -417,44 +406,6 @@ function railScroll(){
     bk.style.setProperty("--rx",(4-p*3).toFixed(2)+"deg")});
 }
 function gotoSec(id){const el=document.getElementById(id);if(el)document.getElementById("reader").scrollTo({top:el.offsetTop-70,behavior:reduce?"auto":"smooth"})}
-function flyIn(slot,kind){
-  const target=document.querySelector("#sheet .rbook"),sBook=slot&&slot.querySelector(".book");
-  if(!target||!sBook)return;
-  const tBook=target.querySelector(".book"),sr=slot.getBoundingClientRect(),tr=target.getBoundingClientRect();
-  const fw=slot.clientWidth,fh=sBook.offsetHeight,tw=tr.width;
-  if(!fw||!tw)return;
-  const cs=getComputedStyle(sBook);
-  const ry0=(cs.getPropertyValue("--ry")||"26deg").trim()||"26deg", rx0=(cs.getPropertyValue("--rx")||"3deg").trim()||"3deg";
-  const wrap=document.createElement("div");wrap.className="ghostwrap";
-  wrap.style.cssText=`left:${sr.left}px;top:${sr.top}px;width:${fw}px;height:${fh}px`;
-  const clone=sBook.cloneNode(true);clone.style.transform="none";wrap.appendChild(clone);
-  document.getElementById("flip").appendChild(wrap);target.style.opacity="0";
-  const s=tw/fw,opt={duration:660,easing:EASE_IO,fill:"forwards"};
-  const a=wrap.animate([{transform:"translate(0,0) scale(1)"},{transform:`translate(${tr.left-sr.left}px,${tr.top-sr.top}px) scale(${s})`}],opt);
-  clone.animate([{transform:`rotateY(${ry0}) rotateX(${rx0})`},{transform:"rotateY(21deg) rotateX(4deg)"}],opt);
-  const done=()=>{target.style.opacity="";wrap.remove()};
-  a.finished.then(done).catch(done);
-}
-function flyOut(kind,id,after){
-  const slot=document.querySelector((kind==="press"?"#shelf":"#livesShelf")+` .slot[data-id="${id}"]`);
-  const source=document.querySelector("#sheet .rbook");
-  if(reduce||!slot||!source){after();return}
-  const sBook=source.querySelector(".book"),tBook=slot.querySelector(".book");
-  const sr=source.getBoundingClientRect(),tr=slot.getBoundingClientRect();
-  if(tr.bottom<-200||tr.top>innerHeight+200){after();return}
-  const fw=sr.width,fh=sBook.offsetHeight,tw=slot.clientWidth;
-  if(!fw||!tw){after();return}
-  const ry0=(getComputedStyle(sBook).getPropertyValue("--ry")||"21deg").trim()||"21deg";
-  const wrap=document.createElement("div");wrap.className="ghostwrap";
-  wrap.style.cssText=`left:${sr.left}px;top:${sr.top}px;width:${fw}px;height:${fh}px`;
-  const clone=sBook.cloneNode(true);clone.style.transform="none";wrap.appendChild(clone);
-  document.getElementById("flip").appendChild(wrap);tBook.style.opacity="0";after();
-  const s=tw/fw,opt={duration:560,easing:EASE_IO,fill:"forwards"};
-  const a=wrap.animate([{transform:"translate(0,0) scale(1)"},{transform:`translate(${tr.left-sr.left}px,${tr.top-sr.top}px) scale(${s})`}],opt);
-  clone.animate([{transform:`rotateY(${ry0}) rotateX(4deg)`},{transform:"rotateY(26deg) rotateX(3deg)"}],opt);
-  const done=()=>{tBook.style.opacity="";wrap.remove()};
-  a.finished.then(done).catch(done);
-}
 function openReader(kind,id,opts){
   opts=opts||{};
   const uni=kind==="press"?ALL:LIVES, b=uni.find(x=>x.id===id);
@@ -474,10 +425,6 @@ function openReader(kind,id,opts){
   const hash="#"+(kind==="press"?"t":"l")+"/"+id;
   if(opts.push!==false&&location.hash!==hash)history.pushState({kind:kind,id:id},"",hash);
   document.title=(kind==="press"?b.title.replace(/&amp;/g,"&"):b.n)+" — The Commodore Press";
-  if(!wasOpen&&!reduce){
-    const src=opts.src||document.querySelector((kind==="press"?"#shelf":"#livesShelf")+` .slot[data-id="${id}"]`);
-    if(src&&src.classList.contains("slot"))requestAnimationFrame(()=>flyIn(src,kind));
-  }
 }
 /* Shares the entry's own page, never the #hash: a hash previews as the front door, the page
    previews as the entry, with its own card. The sheet itself is theme/reading.js, shared
@@ -497,7 +444,6 @@ Reading.quotes({root:document.getElementById("reader"),scroller:document.getElem
   meta:()=>current?entryMeta(currentKind==="press"?"t":"l",current):null});
 function closeReader(push){
   if(!current)return;
-  const kind=currentKind,id=current;
   const finish=()=>{current=null;currentKind=null;
     const r=document.getElementById("reader");
     r.classList.remove("on");r.setAttribute("aria-hidden","true");
@@ -507,7 +453,7 @@ function closeReader(push){
     markRead();
     const el=readerFocus;readerFocus=null;giveBack(el)};
   if(push!==false)history.pushState({w:wing},"",wingURL(wing));
-  flyOut(kind,id,finish);
+  finish();
 }
 function step(d){
   const uni=currentKind==="press"?ALL:LIVES;
@@ -629,8 +575,8 @@ document.getElementById("smodal").addEventListener("click",e=>{if(e.target.id===
 
 /* ---------- boot ---------- */
 initTheme();renderNav();renderFront();
-renderPressControls();renderShelf(false);renderWide();
-renderLivesControls();renderLivesShelf(false);
+renderPressControls();renderShelf();renderWide();
+renderLivesControls();renderLivesShelf();
 renderAtlas();
 
 route(false);

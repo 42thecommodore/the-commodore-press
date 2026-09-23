@@ -7,90 +7,89 @@
     background:var(--rs-bg,#F2EDE1);color:var(--rs-ink,#1E1C18);border-radius:14px;
     box-shadow:0 30px 80px rgba(0,0,0,.38),0 0 0 1px rgba(0,0,0,.06);font-family:var(--serif)}
   .rs-sheet::backdrop{background:rgba(10,10,12,.42);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-  .rs-sheet[open]{animation:rs-in .34s var(--ease,cubic-bezier(.19,.9,.22,1))}
-  @keyframes rs-in{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+  .rs-sheet[open]{animation:rs-in .12s ease-out}
+  @keyframes rs-in{from{opacity:0}to{opacity:1}}
   .rs-in{padding:22px 24px 20px;position:relative}
   .rs-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
-  .rs-lbl{font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  .rs-lbl{font:var(--fs-0)/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.8}
   .rs-x{width:30px;height:30px;border-radius:50%;border:1px solid currentColor;background:none;color:inherit;opacity:.7;
-    font:15px/1 var(--mono);cursor:pointer;display:grid;place-items:center}
+    font:var(--fs-2)/1 var(--mono);cursor:pointer;display:grid;place-items:center}
   .rs-x:hover{opacity:1}
   .rs-card{border:1px solid color-mix(in srgb,currentColor 30%,transparent);border-radius:8px;padding:18px 18px 16px}
-  .rs-q{font-size:21px;line-height:1.4;font-style:italic;margin:0 0 12px}
-  .rs-t{font-size:22px;line-height:1.2;font-weight:500;margin:0 0 4px}
-  .rs-s{font-size:16px;line-height:1.4;font-style:italic;opacity:.85;margin:0}
-  .rs-by{font:11px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:12px;padding-top:10px;
+  .rs-q{font-size:var(--fs-5);line-height:1.4;font-style:italic;margin:0 0 12px}
+  .rs-t{font-size:var(--fs-5);line-height:1.2;font-weight:500;margin:0 0 4px}
+  .rs-s{font-size:var(--fs-3);line-height:1.4;font-style:italic;opacity:.85;margin:0}
+  .rs-by{font:var(--fs-0)/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:12px;padding-top:10px;
     border-top:1px solid color-mix(in srgb,currentColor 22%,transparent)}
   .rs-link{display:flex;gap:8px;margin-top:14px}
-  .rs-link input{flex:1;min-width:0;font:12.5px/1 var(--mono);color:inherit;background:color-mix(in srgb,currentColor 7%,transparent);
+  .rs-link input{flex:1;min-width:0;font:var(--fs-1)/1 var(--mono);color:inherit;background:color-mix(in srgb,currentColor 7%,transparent);
     border:1px solid color-mix(in srgb,currentColor 25%,transparent);border-radius:6px;padding:10px 10px;text-overflow:ellipsis}
   .rs-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .rs-acts .rs-b{flex:1 1 auto}
   .rs-b{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:10px 12px;border-radius:6px;cursor:pointer;
-    font:12px/1 var(--mono);letter-spacing:.06em;text-decoration:none;color:inherit;background:none;white-space:nowrap;
-    border:1px solid color-mix(in srgb,currentColor 35%,transparent);transition:border-color .2s,background .2s}
+    font:var(--fs-0)/1 var(--mono);letter-spacing:.06em;text-decoration:none;color:inherit;background:none;white-space:nowrap;
+    border:1px solid color-mix(in srgb,currentColor 35%,transparent);}
   .rs-b:hover{border-color:currentColor;background:color-mix(in srgb,currentColor 7%,transparent)}
   .rs-b.rs-main{background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);border-color:var(--rs-ink,#1E1C18)}
   .rs-b.rs-main:hover{opacity:.9}
   .rs-b:focus-visible,.rs-x:focus-visible,.rs-pill button:focus-visible{outline:2px solid var(--rs-accent,currentColor);outline-offset:2px}
-  .rs-note{font:11px/1.5 var(--mono);opacity:.75;margin:12px 0 0}
+  .rs-note{font:var(--fs-0)/1.5 var(--mono);opacity:.75;margin:12px 0 0}
 
   /* the pill that appears over a selected passage */
   .rs-pill{position:fixed;z-index:2147483000;display:flex;gap:2px;padding:4px;border-radius:999px;
     background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);box-shadow:0 8px 24px rgba(0,0,0,.28);
-    transform:translate(-50%,0);animation:rs-pop .18s ease-out}
-  @keyframes rs-pop{from{opacity:0;transform:translate(-50%,4px)}to{opacity:1;transform:translate(-50%,0)}}
-  .rs-pill button{font:11.5px/1 var(--mono);letter-spacing:.06em;color:inherit;background:none;border:0;padding:9px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+    transform:translate(-50%,0);animation:rs-pop .12s ease-out}
+  @keyframes rs-pop{from{opacity:0}to{opacity:1}}
+  .rs-pill button{font:var(--fs-0)/1 var(--mono);letter-spacing:.06em;color:inherit;background:none;border:0;padding:9px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
   .rs-pill button:hover{background:color-mix(in srgb,currentColor 16%,transparent)}
 
   /* the line that tracks how far through the entry the reader is */
-  .rs-left{font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;opacity:.85;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .rs-left{font:var(--fs-0)/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;opacity:.85;white-space:nowrap;font-variant-numeric:tabular-nums}
   .rs-go{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;border:1px solid currentColor;
-    font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:inherit;background:none;cursor:pointer;transition:background .2s,color .2s}
+    font:var(--fs-0)/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:inherit;background:none;cursor:pointer;}
   .rs-go svg{width:12px;height:12px}
   .rs-go:hover{background:var(--rs-ink,currentColor);color:var(--rs-bg,inherit)}
 
   /* the end of an entry: where a reader who finished decides what to do with it */
   .rs-end{margin-top:72px;padding:34px 0 0;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent);text-align:center}
-  .rs-end .rs-fin{font:11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+  .rs-end .rs-fin{font:var(--fs-0)/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
   /* the press mark, drawn rather than set: the house fonts have no ornament glyph, and a
      fallback font printed it at half size. The mask token is filled from build/mark.mjs. */
   .rs-end .rs-fin::before{content:"";display:block;width:24px;height:24px;margin:0 auto 12px;background:currentColor;opacity:.75;
     -webkit-mask:{{MARK_MASK}} center/contain no-repeat;
     mask:{{MARK_MASK}} center/contain no-repeat}
   .rs-end h3{font-weight:500;font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:10px auto 8px;max-width:22ch}
-  .rs-end p{font-size:17px;line-height:1.5;opacity:.9;margin:0 auto 20px;max-width:44ch}
+  .rs-end p{font-size:var(--fs-3);line-height:1.5;opacity:.9;margin:0 auto 20px;max-width:44ch}
   .rs-end .rs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
   .rs-end .rs-b{min-width:112px}
   .rs-end .rs-b.rs-main{min-width:170px}
   /* read next: the entry this one argues with, from its own `across` links */
   .rs-next{display:block;max-width:520px;margin:34px auto 0;padding:20px 22px;text-align:left;text-decoration:none;color:inherit;
     border:1px solid color-mix(in srgb,currentColor 35%,transparent);border-radius:10px;cursor:pointer;
-    transition:border-color .25s,transform .3s var(--ease,ease),background .25s}
-  .rs-next:hover{border-color:currentColor;background:color-mix(in srgb,currentColor 5%,transparent);transform:translateY(-2px)}
-  .rs-next .rs-nk{display:block;font:11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
-  .rs-next .rs-nt{display:block;font-size:25px;line-height:1.15;font-weight:500}
-  .rs-next .rs-nd{display:block;font-size:17px;line-height:1.45;font-style:italic;opacity:.9;margin-top:6px}
-  .rs-next .rs-nm{display:flex;justify-content:space-between;gap:12px;font:11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:14px}
-  .rs-next:hover .rs-nm b{transform:translateX(4px)}
-  .rs-next .rs-nm b{font-weight:400;display:inline-block;transition:transform .3s var(--ease,ease)}
+    }
+  .rs-next:hover{border-color:currentColor;background:color-mix(in srgb,currentColor 5%,transparent);}
+  .rs-next .rs-nk{display:block;font:var(--fs-0)/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+  .rs-next .rs-nt{display:block;font-size:var(--fs-6);line-height:1.15;font-weight:500}
+  .rs-next .rs-nd{display:block;font-size:var(--fs-3);line-height:1.45;font-style:italic;opacity:.9;margin-top:6px}
+  .rs-next .rs-nm{display:flex;justify-content:space-between;gap:12px;font:var(--fs-0)/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:14px}
+  .rs-next .rs-nm b{font-weight:400;display:inline-block;}
 
   /* the offer to pick up where you left off */
   .rs-resume{position:fixed;left:50%;bottom:22px;z-index:2147482000;transform:translateX(-50%);display:flex;align-items:center;gap:4px;
     max-width:calc(100vw - 24px);padding:6px 6px 6px 18px;border-radius:999px;background:var(--rs-ink,#1E1C18);color:var(--rs-bg,#F2EDE1);
-    box-shadow:0 12px 32px rgba(0,0,0,.3);font:11.5px/1.3 var(--mono);letter-spacing:.05em;animation:rs-up .4s var(--ease,ease)}
-  @keyframes rs-up{from{opacity:0;transform:translate(-50%,16px)}to{opacity:1;transform:translate(-50%,0)}}
+    box-shadow:0 12px 32px rgba(0,0,0,.3);font:var(--fs-0)/1.3 var(--mono);letter-spacing:.05em;animation:rs-up .12s ease-out}
+  @keyframes rs-up{from{opacity:0}to{opacity:1}}
   .rs-resume span{margin-right:8px}
   .rs-resume button{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:9px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
   .rs-resume button[data-a=go]{background:var(--rs-bg,#F2EDE1);color:var(--rs-ink,#1E1C18)}
   .rs-resume button:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 
-  .rs-lineshare{display:inline-block;margin-top:14px;font:11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:inherit;background:none;border:0;
+  .rs-lineshare{display:inline-block;margin-top:14px;font:var(--fs-0)/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:inherit;background:none;border:0;
     border-bottom:1px solid currentColor;padding:0 0 3px;cursor:pointer;opacity:.85}
   .rs-lineshare:hover{opacity:1}
   .rs-js-only{display:none !important}
   .rs-js .rs-js-only{display:inline-flex !important}
   .rs-js .rs-nojs{display:none !important}
-  @media (prefers-reduced-motion:reduce){.rs-sheet[open],.rs-pill,.rs-resume{animation:none}.rs-next,.rs-next .rs-nm b{transition:none}}
-  @media (max-width:560px){.rs-in{padding:18px 18px 16px}.rs-q{font-size:19px}.rs-next .rs-nt{font-size:22px}
-    .rs-resume{padding-left:14px;font-size:11px}.rs-resume span{margin-right:2px}}
+  @media (prefers-reduced-motion:reduce){.rs-sheet[open],.rs-pill,.rs-resume{animation:none}.rs-next,.rs-next .rs-nm b{}}
+  @media (max-width:560px){.rs-in{padding:18px 18px 16px}.rs-q{font-size:var(--fs-4)}.rs-next .rs-nt{font-size:var(--fs-5)}
+    .rs-resume{padding-left:14px;font-size:var(--fs-0)}.rs-resume span{margin-right:2px}}
