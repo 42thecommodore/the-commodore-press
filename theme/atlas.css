@@ -155,6 +155,7 @@
   .key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:var(--fs-1,13px);color:var(--parchment-dim)}
   .key li{display:flex;align-items:center;gap:10px}
   .key svg{flex:none}
+  .key .k-mark{fill:#1b1810;stroke:var(--nbrass-b);stroke-width:1.1}
   .key .k-lane{stroke:var(--nbrass);stroke-width:2;stroke-dasharray:1.5 4;stroke-linecap:round}
   .key .oldport circle{fill:var(--panel);stroke:var(--nbrass-b);stroke-width:1.1}
   .key .oldport path{fill:none;stroke:var(--nbrass-b);stroke-width:.9;stroke-linecap:round}

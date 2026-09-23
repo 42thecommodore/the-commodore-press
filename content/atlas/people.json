@@ -99,7 +99,7 @@
     "role": "Nobel laureate; behavioral economics",
     "take": "Make what you want less of harder, and what you want more of easier. Design your own defaults.",
     "p": [
-      "misogi"
+      "disc"
     ],
     "kept": [
       "Make it hard to do what you want less of, and easy to do what you want more of.",
@@ -255,7 +255,7 @@
   {
     "name": "Furqan Rydhan",
     "domain": "found",
-    "role": "Founder/engineer",
+    "role": "Co-founder, thirdweb",
     "take": "Impatient with action, patient with results. Take the risks with the biggest leverage — survive first.",
     "p": [
       "quit",
@@ -395,12 +395,13 @@
       "Do the hard thing; do the right thing.",
       "Every single relationship has boundaries.",
       "Long-term thinking: do things for the long term, and follow your word."
-    ]
+    ],
+    "role": "Host, Hell Has an Exit, a podcast on addiction recovery"
   },
   {
     "name": "Jeremy London",
     "domain": "recov",
-    "role": "Surgeon; discipline & consistency",
+    "role": "Cardiovascular surgeon; host, The Dr. London Podcast",
     "take": "Dealing with fear is temporary; dealing with regret is permanent. Once you start, consistency compounds.",
     "p": [
       "disc",
@@ -447,7 +448,7 @@
   {
     "name": "Cynthia Boccara",
     "domain": "mind",
-    "role": "Chiropractor; Major League Pickleball medical team — 'the Pickleball Doc'",
+    "role": "Chiropractor; head of Major League Pickleball's medical staff",
     "take": "The joint that hurts is rarely the joint that failed. Look upstream and downstream before you treat the knee.",
     "p": [
       "backup",

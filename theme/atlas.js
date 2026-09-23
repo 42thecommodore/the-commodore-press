@@ -100,7 +100,10 @@ function atlasDerive() {
   for (const l of LIVES) for (const a of (l.across || [])) {
     if (!a.to.startsWith("atlas:")) continue;
     const pr = P_BY_ID[a.to.slice(6)]; if (!pr) continue;
-    PORTS.push({ life: l, pr, txt: a.txt.replace(/^—\s*/, ""), year: lifeYear(l.years) });
+    /* the line was written to follow a heading on the Life's own page ("— and the objection
+       to it"); standing alone under a port it starts as a sentence */
+    const t = a.txt.replace(/^—\s*/, "").replace(/^and\s+/i, "");
+    PORTS.push({ life: l, pr, txt: t.charAt(0).toUpperCase() + t.slice(1), year: lifeYear(l.years) });
   }
   PORTS.sort((a, b) => a.year - b.year);
   PRINCIPLES.forEach(pr => pr.ports = PORTS.filter(p => p.pr === pr));
@@ -701,7 +704,7 @@ function isleCard() {
         <button class="feat-link" type="button" onclick="copyAtlasLink(this)">Copy a link to this constellation</button>
       </div>` : ""}
       <ul class="key">
-        <li><svg width="30" height="10" aria-hidden="true"><circle cx="15" cy="5" r="3.2" fill="#6F93B0"/></svg>a person, coloured by the field they work in</li>
+        <li><svg width="30" height="12" aria-hidden="true"><circle class="k-mark" cx="15" cy="6" r="3.6"/></svg>a person, marked on each lesson they taught me</li>
         <li><svg width="30" height="10" aria-hidden="true"><path d="M1 5H29" class="k-lane"/></svg>the same people taught both lessons</li>
         <li><svg width="30" height="14" aria-hidden="true"><g class="oldport" transform="translate(15 7)"><circle r="5"/><path d="M0 -2.6V2.8M-2.4 1.2Q0 3.6 2.4 1.2M-1.6 -1H1.6"/></g></svg>someone from the Lives shelf who lived by it</li>
       </ul>
@@ -912,7 +915,7 @@ function openDrawer(p) {
   const lbl = t => `<div class="lbl q">${t}</div>`;
   document.getElementById("dBody").innerHTML =
     `<div>${lbl("My take")}<p class="pull">${p.take}</p></div>
-     <div>${lbl("Their lessons, as a route")}${miniMap(p)}<ol class="mm-isles">${(miniMap.order || p.p).map(id => `<li><button class="cx-isle" onclick="closeDrawer();selectIsle('${id}',true)">${P_BY_ID[id].name}</button></li>`).join("")}</ol></div>
+     ${p.p.length > 1 ? `<div>${lbl("Their lessons, as a route")}${miniMap(p)}<ol class="mm-isles">${(miniMap.order || p.p).map(id => `<li><button class="cx-isle" onclick="closeDrawer();selectIsle('${id}',true)">${P_BY_ID[id].name}</button></li>`).join("")}</ol></div>` : !p.p.length ? "" : `<div>${lbl("Their lesson")}<button class="cx-isle" onclick="closeDrawer();selectIsle('${p.p[0]}',true)">${P_BY_ID[p.p[0]].name}</button></div>`}
      ${(() => { const mine = (typeof ECHOES === "undefined" ? [] : ECHOES).filter(e => e.notes.some(n => n.who === p.name)); return mine.length ? `<div>${lbl("Heard the same from")}${mine.map(e => { const others = e.notes.filter(n => n.who !== p.name).map(n => PEOPLE.find(q => q.name === n.who)).filter(Boolean); return `<div class="echo-d"><b>${e.idea}</b><span>also ${others.map(q => `<button class="cx-inline" onclick="openDrawer(PEOPLE.find(z=>z.id==='${q.id}'))">${q.name}</button>`).join(", ")}</span></div>`; }).join("")}</div>` : ""; })()}
      ${(p.mentions || []).length ? `<div>${lbl("Names someone on the Lives shelf")}${p.mentions.map(m => { const l = LIVES.find(x => x.id === m.to.slice(6)); return l ? `<button class="portrow" onclick="openLife('${l.id}')">${plateOrMark(l, "pr-img")}<span class="pr-t"><b>${l.n}</b><small>${l.years}</small><i>${m.note}</i></span></button>` : ""; }).join("")}</div>` : ""}
      ${earlier.length ? `<div>${lbl("From the Lives shelf, on the same lessons")}${earlier.map(pt => portRow(pt, true)).join("")}</div>` : ""}
