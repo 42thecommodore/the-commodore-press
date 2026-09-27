@@ -8,6 +8,7 @@ import { fillMark } from "./mark.mjs";
 import { motifSVG } from "./motif.mjs";
 import { writeEntryPages, writeAbout, writeLog, writeContents, EDITOR, minsOf } from "./pages.mjs";
 import crypto from "node:crypto";
+import { execSync } from "node:child_process";
 import { publishedLog } from "./log.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -94,6 +95,12 @@ window.__library(${JSON.stringify({ press: { ...BOOK_BODIES, ...ADJ_BODIES }, li
 // the name changes when the text does, so a reader's browser never keeps a stale copy
 const LIBRARY_FILE = `library.${crypto.createHash("sha1").update(LIBRARY).digest("hex").slice(0, 10)}.js`;
 
+/* The commit this build was made from, stamped into the front door, so `npm run live` can
+   tell the page a reader is served now from the one before the push — "deployed" becomes
+   something the house checks rather than something it waits two minutes and hopes for.
+   CI builds from the pushed commit (GITHUB_SHA); a local build names the commit it sits on. */
+const BUILD = process.env.GITHUB_SHA || (() => { try { return execSync("git rev-parse HEAD", { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim(); } catch { return "unknown"; } })();
+
 const DATA = safe([
   "/* GENERATED — do not edit here. Sources live in content/ and assets/plates/. */",
   K("PLATES", PLATES),
@@ -157,6 +164,7 @@ const fill = s => fillMark(s)
 fs.mkdirSync(p("dist"), { recursive: true });
 const ABOUT_URL = writeAbout({ ROOT, SITE, fill, NEWS, hasLog: LOG.length > 0 });
 const out = fill(read("templates/shell.html"))
+  .replace("<head>", `<head>\n<meta name="press-build" content="${BUILD}">`)
   // the footer names the editor, and links the name once the About page exists
   .replace("<!--EDITOR-->", ABOUT_URL ? `<a href="about/">${EDITOR}, editor</a>` : EDITOR)
   // the Log appears in the library only once it has a published piece

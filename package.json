@@ -18,6 +18,7 @@
     "card": "node tools/og-card.mjs",
     "correct": "node tools/correct.mjs",
     "links": "node tools/links.mjs",
+    "live": "node tools/live.mjs",
     "proofread": "node tools/proofread.mjs",
     "test": "node tools/test-reading.mjs && node tools/test-atlas.mjs"
   },

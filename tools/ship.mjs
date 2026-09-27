@@ -2,7 +2,9 @@
  *
  *   npm run ship -- "Press: add The Heated Disk"
  *
- * Runs the house rules, builds and tests locally, commits the sources and pushes.
+ * Runs the house rules, builds and tests locally, commits the sources, pushes, then waits
+ * for the deploy and checks every live page (tools/live.mjs) — so it ends in "live and
+ * verified" or in the list of what is wrong.
  * GitHub Actions runs the check again and builds dist/ itself before it deploys, so a
  * broken entry cannot reach readers even if this script is run in a hurry.
  *
@@ -97,7 +99,15 @@ if (spawnSync("git", ["push", "origin", "HEAD:main"], { cwd: ROOT, stdio: "inher
   die(`Push failed. Your commit is safe locally — nothing was lost.\n  Usually: git pull --rebase origin main, then npm run ship again.`);
 }
 
-say(`\n${g}  Pushed.${x} ${d}GitHub Actions is checking and deploying now.${x}`);
-say(`${d}  Watch:  https://github.com/42thecommodore/the-commodore-press/actions${x}`);
-say(`${d}  Live:   https://42thecommodore.github.io/the-commodore-press/${x}`);
-say(`${d}  It takes about two minutes. If the check fails there, the live site is left alone.${x}\n`);
+say(`\n${g}  Pushed.${x} ${d}GitHub Actions is checking the house rules and deploying.${x}`);
+
+/* A release ends in an answer, not in "it takes about two minutes": tools/live.mjs waits
+   until the live front door carries this commit's stamp, then visits every page a reader
+   can reach. If the check fails on GitHub the live site is left alone, and this says so.
+   --no-wait skips it (offline, or in a hurry); `npm run live` runs it on its own later. */
+if (FLAGS.has("--no-wait")) {
+  say(`${d}  Not waiting for the deploy. Check it later with:  npm run live${x}\n`);
+} else {
+  const live = spawnSync("node", ["tools/live.mjs"], { cwd: ROOT, stdio: "inherit" });
+  if (live.status !== 0) die("Pushed, but the live site is not right — the list above says what. Your commit is safe.");
+}

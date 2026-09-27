@@ -28,7 +28,7 @@ Opens a preview on **http://localhost:4321**. Edit anything in `content/` and th
 | make a portrait plate | `npm run plate -- photo.jpg marcus-aurelius` |
 | publish | `npm run ship -- "Press: add The Heated Disk"` |
 
-`ship` runs the house rules, rebuilds the page, commits and pushes. GitHub Actions checks it again and deploys — about two minutes. If the check fails, nothing is committed and the live site is left alone.
+`ship` runs the house rules, rebuilds the page, commits and pushes. GitHub Actions checks it again and deploys, and `ship` waits, visits every live page and ends in "live and verified". If the check fails, nothing is committed and the live site is left alone.
 
 ## How it fits together
 

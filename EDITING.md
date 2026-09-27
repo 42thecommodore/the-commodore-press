@@ -10,7 +10,7 @@ The guide for keeping the Press yourself. You never need to touch code: every wo
 | While you write | `npm start` | The site on http://localhost:4321, reloading every time you save |
 | You want to write something of your own | `npm run new log "Title"` | Starts a Log piece as a draft (§9) |
 | You think you are done | `npm run check` | The house rules, in plain language |
-| You want readers to see it | `npm run ship -- "what changed"` | Checks everything, then publishes; the live site updates in about two minutes |
+| You want readers to see it | `npm run ship -- "what changed"` | Checks everything, publishes, then visits every live page and ends in **live and verified** |
 
 Everything else in this guide is detail. If you only remember one, remember `npm run ready`.
 
@@ -336,9 +336,9 @@ corrections list, which is where it learned them.
 npm run ship -- "Press: fix the date in The Heated Disk"
 ```
 
-It runs the whole gate in order — the house rules, the prose check, every link, then the rebuild — and only then commits and pushes. The live site updates in about two minutes. If anything fails, nothing is sent and the live site is left alone. Write the message as a sentence you will understand in six months.
+It runs the whole gate in order — the house rules, the prose check, every link, then the rebuild — and only then commits and pushes. Then it waits for the live site to update (about a minute) and visits every page a reader can reach — the front door, every title and life, their share cards — and ends in **live and verified**, or in a plain list of what is wrong. You do not need to go and look. If anything fails before the push, nothing is sent and the live site is left alone; if the house rules fail on GitHub, the live site is left alone too and `ship` says so. To check the live site on its own at any time: `npm run live`. Write the message as a sentence you will understand in six months.
 
-**It will refuse to run unless you are on `main`.** `ship` publishes whatever branch you are standing on, so running it from a half-finished branch would put that branch in front of readers. If that is genuinely what you want, add `--allow-branch`. Offline, add `--skip-links` — though the link check caches for a fortnight, so it is usually instant.
+**It will refuse to run unless you are on `main`.** `ship` publishes whatever branch you are standing on, so running it from a half-finished branch would put that branch in front of readers. If that is genuinely what you want, add `--allow-branch`. Offline, add `--skip-links --no-wait` — though the link check caches for a fortnight, so it is usually instant — and run `npm run live` once you are back online.
 
 ### The link to share
 
@@ -370,5 +370,6 @@ Open the folder in Claude and ask in plain words. It knows the house rules and r
 - *"Add a reading link to the Gandhi entry for Ambedkar's Annihilation of Caste."*
 - *"Check the Marie Curie entry is right."*
 - *"How's the Press doing — what should I work on?"*
+- *"Look at the front door as a first-time reader and fix the one thing that most needs it."* — design work runs as a process (`/press-design`): it starts from a reader, changes one thing, turns any new rule into a check, and ends live and verified.
 
 It cannot edit `dist/` or rewrite corrections, and it never publishes unless you ask for it by name with `/press-publish`.

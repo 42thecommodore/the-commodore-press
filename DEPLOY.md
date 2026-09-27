@@ -38,7 +38,7 @@ Preview on :4321; it rebuilds and reloads as you save. When the entry is finishe
 npm run ship -- "Press: add The Heated Disk"
 ```
 
-That runs the house rules, builds and tests the site locally, commits the sources, and pushes. GitHub Actions then runs the same check again, builds `dist/` itself and deploys — about two minutes to live. **If the check fails at either end, nothing is committed and nothing is deployed.**
+That runs the house rules, builds and tests the site locally, commits the sources, and pushes. GitHub Actions then runs the same check again, builds `dist/` itself and deploys. `ship` waits for that — the front door carries the commit it was built from — then visits every page a reader can reach (`npm run live`) and ends in **live and verified**. **If the check fails at either end, nothing is committed and nothing is deployed.**
 
 It refuses to run without a message, and refuses a message under twelve characters. A commit nobody can read in six months is worth less than no commit.
 

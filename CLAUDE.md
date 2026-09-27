@@ -70,7 +70,8 @@ The Commodore/
     └── skills/                 # press-status, press-new-title, press-new-life,
                                 # press-plate, press-factcheck, press-correct, press-publish,
                                 # press-voice (the house voice, long form + measurements),
-                                # press-proofread (the release gate, run before anything ships)
+                                # press-proofread (the release gate, run before anything ships),
+                                # press-design (the process for any change to how the site looks or behaves)
 ```
 
 ## What is enforced, not merely asked
@@ -98,6 +99,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm start` | preview on :4321, rebuilds and reloads on save |
 | `npm run ready` | the owner's launch checklist: what is done, what is not, the next action. Changes nothing |
 | `npm run check` | the house rules — **exits 1 on any error** |
+| `npm run live` | waits until the live site serves `main`, then visits every page a reader can reach; **exits 1 on any problem**. `ship` runs it after pushing. `--now` checks without waiting |
 | `npm run links` | visits every link the site prints; **exits 1 on any dead one**. Off the fast gate because it needs the network — run it monthly, and after any reading-list edit |
 | `npm run proofread` | reads the prose for what a grep can be sure of: placeholder text that would print, a repeated word, a space before a comma. Judgment stays with `/press-proofread` |
 | `npm run build` | content + theme → `dist/index.html` |
@@ -109,7 +111,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run plate -- <image> <life-id>` | make a duotone plate |
 | `npm run card` | re-render the share cards — the front door's and one per title — with headless Chrome. Look at them; the check warns when one is stale |
 | `npm run correct -- "Title." "Body."` | append a correction |
-| `npm run ship -- "what changed"` | the whole release, one command: refuses to run off `main`, then check → proofread → links → build → test → commit sources → push. `--allow-branch` to ship a branch deliberately, `--skip-links` when offline |
+| `npm run ship -- "what changed"` | the whole release, one command: refuses to run off `main`, then check → proofread → links → build → test → commit sources → push → **live** (waits for the deploy, visits every page). Ends in "live and verified". `--allow-branch` to ship a branch deliberately, `--skip-links --no-wait` when offline |
 
 The site is live at **https://42thecommodore.github.io/the-commodore-press/**, deployed from
 `main` by `.github/workflows/deploy.yml`. The workflow runs `npm run check` before it
@@ -154,3 +156,5 @@ Its sentence-length and punctuation targets were **measured off `content/`**, no
 **The type rule** (stated at the top of `press.css`): EB Garamond sets everything a reader reads *or presses* — nav, buttons, filters, labels. Plex Mono is for data only (a year, a date, a count, a source line), in natural case, never as tracked capitals. Labels are Garamond capitals at 13px, .08em. Square corners, hairline rules, no shadows except on the books. Oxblood means a correction or a dispute, nothing else. Motion belongs to objects (a book turning, flying to the reader), never to entrances for show. The same rules hold on the entry pages in `build/pages.mjs` — they are the link other people receive. Two dark treatments exist and they are different things — `body.dusk` dims the house furniture, while `body.night` is the reading mode. **The books, plates, readers and Atlas keep their own printed liveries in night mode; only the walls dim.** That is a deliberate decision, not an oversight.
 
 Each title carries a `livery` — `cover`, `spineC`, `ink`, `accent`, `motif`. `npm run new` picks an unused one automatically.
+
+**Design work runs through `/press-design`**: a reader's journey → look → measure → one focus → change at the single source → enforce with a check (proved by breaking it) → verify → ship → live and verified. It exists because many small reasonable edits, with no rule able to say no, once turned the site into a template.
