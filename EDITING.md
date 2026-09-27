@@ -346,6 +346,10 @@ Every title and life also gets a page of its own, built from the same file: `…
 
 The preview card for a title or a life is a picture in the entry's own colours, made by `npm run card` (it needs Google Chrome installed): titles in `assets/cards/`, lives in `assets/cards/l/` with their portrait, and the photographer's credit printed on the card when the plate's licence asks for one. When you rename an entry, rewrite a title's claim or a life's lede, replace a portrait, or add a new entry, the check says so in yellow — run `npm run card` and look at the pictures before shipping. It also measures every card and stops with a list if any text does not fit; shorten that entry's claim or lede, or ask for the type to be adjusted. Separately, `npm run ship` now runs `npm test`, which opens the built site in a hidden Chrome and checks that sharing, quoting and the progress line still work; if it stops a release, the list it prints says what broke.
 
+### When the check says a colour is too faint
+
+Each title and life is printed in its own colours — `cover`, `ink`, `accent` — and the check reads them the way a reader's eye will. If it stops with **"livery accent … is 4.3:1 on its cover"**, the small gold (or whatever) lettering on that book is too faint to read comfortably: nudge the `accent` a little lighter on a dark cover, or darker on a light one, and run the check again. Five or ten steps on one hex digit is usually enough. If it says **"livery reads … where the reader is faintest"**, do the same with `cover` and `spineC` together. Every entry on the shelf passes today; this only fires when a new colour is picked by hand.
+
 ## Undo
 
 **Before you ship**, to throw away every unshipped change to one file and go back to the last published version:

@@ -83,6 +83,11 @@ of the time and the colophon's promises need better than that:
 
 After any edit under `content/`, the validator runs automatically and reports real errors.
 
+The design system is enforced the same way, by `npm run check` (and so by CI before every deploy):
+
+- **The type rule.** Any rule in the site's styles, the entry pages' or the share cards' that sets Plex Mono in capitals, or a radius of 12px or more (a pill), fails. The one named exception is the Atlas chart's own lettering.
+- **Contrast, as the reader renders it.** Every reader rule that fades text (in `press.css` and `reading.css`) is read, nested fades are multiplied, and the faintest is held to 4.5:1 on every livery. Each livery's `accent` is held to 4.5:1 on its own cover. Raise an opacity or change a colour and the check measures the new one.
+
 **`/press-publish` is human-invoked only** (`disable-model-invocation: true`). Never route
 around that by running the deploy steps yourself when the user has not asked to publish.
 

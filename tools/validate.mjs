@@ -375,32 +375,55 @@ const todos = (node, file, at = "") => {
 
 /* ---------- a livery must be readable, as the reader actually renders it ----------
    Liveries are hand-picked once the palette in tools/new.mjs runs out, and nothing used to
-   check them: four entries shipped with prose under WCAG AA on their own covers. The check
-   is not ink-on-cover at full strength, because the reader never renders it that way — the
-   prose sits at the opacity `.rbody .copy` sets and the small uppercase labels at the one
-   `.rbody h4` sets. Both are read out of theme/press.css, so changing the reader's opacity
-   changes what this measures instead of leaving it checking a number nobody uses.
-   Books, plates and readers keep their liveries in night mode, so one check covers all three
-   modes. Prose is an error; the labels are a warning. */
-const css = fs.existsSync(p("theme/press.css")) ? fs.readFileSync(p("theme/press.css"), "utf8") : "";
-const opacityOf = (sel, fallback) => {
-  const m = css.match(new RegExp(sel.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\{[^}]*?opacity:\\s*([0-9.]+)"));
-  return m ? parseFloat(m[1]) : fallback;
-};
-const PROSE = opacityOf(".rbody .copy", 0.92), LABELS = opacityOf(".rbody h4", 0.8), AA = 4.5;
+   check them: four entries shipped with prose under WCAG AA on their own covers. The reader
+   never renders ink at full strength — its text is faded with opacity over the cover — so
+   the check measures what it actually prints.
+
+   It used to read two selectors (the prose and the section heads) and trust the rest. The
+   rest is where it failed: on 2026-09-26 the reader's contents rail was at .55 and read under
+   4.5:1 on 57 of 67 liveries, and the Field/Period table's labels sat at .75 inside a box at
+   .72 — .54, because opacity compounds. So now every reader rule in theme/press.css and
+   theme/reading.css that fades text is read, nested fades are multiplied, and the weakest is
+   held to AA on every livery. Change an opacity in the reader and this measures the new one.
+
+   The accent is held to AA too: it sets the kicker on the entry page's band and the subtitle
+   on the cover, both small text on the cover colour.
+   Books, plates and readers keep their liveries in night mode, so one check covers all modes. */
+const cssOf = f => fs.existsSync(p(f)) ? fs.readFileSync(p(f), "utf8") : "";
+const rulesOf = src => [...src.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+  .flatMap(m => m[1].split(",").map(sel => ({ sel: sel.trim().split("\n").pop().trim(), body: m[2] })));
+const READER = /^(\.rbody|\.toc|\.rmeta|\.tl\b|\.facts|\.figs|\.reading|\.biobox|\.endnav|\.rbar|\.quoteblock|\.keepbox|\.corrbox|\.across|\.bookfind|figure\.plate|\.rs-)/;
+const faded = {};
+for (const { sel, body } of rulesOf(cssOf("theme/press.css") + cssOf("theme/reading.css"))) {
+  const o = body.match(/(?:^|;)\s*opacity:\s*([0-9.]+)/);
+  // text only: not a pseudo-element's rule, not a hover state (it only ever raises), not the progress bar
+  if (!o || !READER.test(sel) || /::?(before|after)|:hover|rprog|backdrop/.test(sel)) continue;
+  faded[sel] = Math.min(faded[sel] ?? 1, parseFloat(o[1]));
+}
+const effective = Object.entries(faded).map(([sel, o]) => {
+  let v = o;   // a faded rule inside a faded rule prints at the product of the two
+  for (const [anc, a] of Object.entries(faded)) if (anc !== sel && sel.startsWith(anc + " ")) v *= a;
+  return [sel, +v.toFixed(3)];
+}).sort((a, b) => a[1] - b[1]);
+const [WEAKEST, FLOOR] = effective[0] || [".rbody .copy", 1], AA = 4.5;
 const rgb = h => [0, 2, 4].map(i => parseInt(h.slice(1 + i, 3 + i), 16));
 const lum = h => rgb(h).map(v => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; })
   .reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
 const blend = (fg, bg, a) => "#" + rgb(fg).map((v, i) => Math.round(v * a + rgb(bg)[i] * (1 - a)).toString(16).padStart(2, "0")).join("");
 const contrast = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
 const HEX = /^#[0-9a-fA-F]{6}$/;
+const dim = [];
 [...books, ...adjacent, ...lives].forEach(({ file, data }) => {
-  const { ink, cover } = data;
+  const { ink, cover, accent } = data;
   if (!HEX.test(ink || "") || !HEX.test(cover || "")) return;   // a malformed colour is the schema's job
-  const prose = contrast(blend(ink, cover, PROSE), cover), labels = contrast(blend(ink, cover, LABELS), cover);
-  if (prose < AA) err(file, `livery prose is ${prose.toFixed(2)}:1 on its own cover (ink ${ink} at ${PROSE} on ${cover}); needs ${AA}:1 — darken \`cover\` and \`spineC\` together`);
-  else if (labels < AA) warn(file, `livery labels are ${labels.toFixed(2)}:1 (ink ${ink} at ${LABELS} on ${cover}); the reader's small uppercase apparatus needs ${AA}:1`);
+  const worst = contrast(blend(ink, cover, FLOOR), cover);
+  if (worst < AA) dim.push([file, worst]);
+  if (HEX.test(accent || "") && contrast(accent, cover) < AA)
+    err(file, `livery accent ${accent} is ${contrast(accent, cover).toFixed(2)}:1 on its cover ${cover}; the entry page's kicker and the cover's subtitle are set in it and need ${AA}:1 — lighten it on a dark cover, darken it on a light one`);
 });
+// one line for the whole shelf when the reader itself is too faint; one per livery when a livery is
+if (dim.length > 3) err("theme/press.css", `\`${WEAKEST}\` prints reader text at ${FLOOR} opacity, which reads under ${AA}:1 on ${dim.length} liveries (worst ${Math.min(...dim.map(d => d[1])).toFixed(2)}:1) — raise it; .8 clears every livery on the shelf today`);
+else dim.forEach(([file, v]) => err(file, `livery reads ${v.toFixed(2)}:1 where the reader is faintest (\`${WEAKEST}\`, ink at ${FLOOR} on the cover); needs ${AA}:1 — darken \`cover\` and \`spineC\` together`));
 
 /* ---------- the newsletter: a form that posts somewhere real, and a named holder ----------
    The colophon tells readers who holds their address. A form with no named provider would
@@ -475,6 +498,27 @@ const HEX = /^#[0-9a-fA-F]{6}$/;
     if (f === path.join("build", "mark.mjs") || !/\.(m?js|css|html)$/.test(f)) continue;
     const src = fs.readFileSync(p(f), "utf8");
     if (MARK_PATHS.some(m => src.includes(m))) err(f, "draws the press mark by hand — use {{MARK …}}, {{MARK_MASK}}, {{MARK_FAVICON}} or build/mark.mjs, so there is one drawing");
+  }
+}
+
+/* ---------- the type rule is kept, not merely stated ----------
+   theme/press.css opens with the house's type rule: Garamond for everything read or pressed,
+   Plex Mono for data only and never as tracked capitals; square corners, no pills. It was
+   written down on 2026-09-26 after 78 elements on the front door had drifted into mono
+   capitals and pills one reasonable edit at a time — each a small label, none a decision.
+   A rule that lives only in a comment gets the same fate, so the check reads every rule in
+   the site's styles, the entry pages' and the share cards'. The one exception is named. */
+{
+  const EXCEPT = { ".chart-svg .ct": "the lettering printed on the Atlas's chart itself, as a printed chart letters its cartouche" };
+  for (const f of ["theme/press.css", "theme/atlas.css", "theme/reading.css", "build/pages.mjs", "tools/og-card.mjs"]) {
+    for (const { sel, body } of rulesOf(cssOf(f))) {
+      if (EXCEPT[sel]) continue;
+      const mono = /font-family:\s*(var\(--mono\)|'IBM Plex Mono')|font:[^;]*var\(--mono\)/.test(body);
+      if (mono && /text-transform:\s*uppercase/.test(body))
+        err(f, `\`${sel}\` sets Plex Mono in capitals — mono is for data, in its own case; a label is Garamond capitals (13px, .08em)`);
+      const pill = [...body.matchAll(/border-radius:\s*([0-9.]+)px/g)].map(x => +x[1]).find(v => v >= 12);
+      if (pill) err(f, `\`${sel}\` has a ${pill}px radius — the house has square corners (2px at most on a card; 50% for a true circle)`);
+    }
   }
 }
 
