@@ -47,6 +47,8 @@ The Commodore/
 │                               # colophon names it; storing anything more changes that sentence)
 ├── build/mark.mjs              # the press mark, drawn once; {{MARK …}} {{MARK_MASK}} {{MARK_FAVICON}} tokens
 │                               # (the check fails on a hand-drawn copy anywhere else)
+├── build/motif.mjs             # the pattern pressed into a cover, drawn once; the library gets it as {{MOTIF_FN}},
+│                               # the entry pages import it — both print the same board
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
 ├── build/build.mjs             # assembles everything into dist/index.html; each entry's body (essay, timeline,
 │                               # facts, dispute, reading list…) goes to dist/library.<hash>.js, loaded on first open

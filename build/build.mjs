@@ -5,6 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJSON } from "../tools/json.mjs";
 import { fillMark } from "./mark.mjs";
+import { motifSVG } from "./motif.mjs";
 import { writeEntryPages, writeAbout, writeLog, writeContents, EDITOR, minsOf } from "./pages.mjs";
 import crypto from "node:crypto";
 import { publishedLog } from "./log.mjs";
@@ -126,6 +127,7 @@ const SITE = (process.env.SITE_URL || "https://42thecommodore.github.io/the-comm
    time, from the Atlas files only. */
 const lean = s => s.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^[ \t]+/gm, "").replace(/\n{2,}/g, "\n");
 const fill = s => fillMark(s)
+  .replace(/{{MOTIF_FN}}/g, () => motifSVG.toString())
   .replace(/{{SITE}}/g, SITE)
   .replace(/{{EDITOR}}/g, EDITOR)
   .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{W_BOOKS_CAP}}/g, cap(words(BOOKS.length)))

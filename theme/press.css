@@ -145,7 +145,7 @@
   .cover::after{content:"";position:absolute;inset:0;pointer-events:none;
     background:linear-gradient(100deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,0) 26%,rgba(0,0,0,.14) 100%)}
   .motif{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;display:block;
-    -webkit-mask-image:linear-gradient(to bottom,transparent 45%,#000 72%);mask-image:linear-gradient(to bottom,transparent 45%,#000 72%)}
+    -webkit-mask-image:linear-gradient(to bottom,transparent 42%,#000 64%,#000 76%,transparent 84%);mask-image:linear-gradient(to bottom,transparent 42%,#000 64%,#000 76%,transparent 84%)}
   .gloss{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .45s var(--ease);z-index:3;
     background:radial-gradient(60% 45% at var(--gx,50%) var(--gy,25%),rgba(255,255,255,.20),rgba(255,255,255,0) 70%)}
   .slot:hover .gloss{opacity:1}

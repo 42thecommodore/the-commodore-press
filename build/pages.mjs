@@ -12,6 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { favicon, fillMark } from "./mark.mjs";
+import { motifSVG } from "./motif.mjs";
 
 /* The date an entry's file last changed, from git. The sitemap and each page's JSON-LD say
    when a page was modified; stamping every page with the build date taught crawlers to
@@ -135,6 +136,31 @@ const ENTRY_CSS = `
 .callout.corr{background:color-mix(in srgb,var(--oxblood) 8%,var(--paper));border-left-color:var(--oxblood)}
 .note p{font-style:italic;font-size:var(--fs-5)}
 html{scroll-padding-top:64px}
+.band .in{display:flex;flex-direction:column;gap:30px}
+.ecov{order:-1;margin:0;width:132px;perspective:1400px}
+.ebk{position:relative;aspect-ratio:5/7.3;background:var(--cover);color:var(--cink);border-radius:2px 4px 4px 2px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:16% 11% 10%;text-align:center;
+  transform:rotateY(21deg) rotateX(4deg);transform-origin:left center;
+  box-shadow:inset 5px 0 9px rgba(0,0,0,.34),inset -1px 0 0 rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.2),22px 26px 44px -16px rgba(0,0,0,.6)}
+.ebk::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(255,255,255,.13),rgba(255,255,255,0) 28%,rgba(0,0,0,.16))}
+.ebk .motif{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 42%,#000 64%,#000 76%,transparent 84%);mask-image:linear-gradient(to bottom,transparent 42%,#000 64%,#000 76%,transparent 84%)}
+.ect{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.ect b{font-weight:500;font-size:clamp(13px,1.7vw,21px);line-height:1.15}
+.ect i{display:block;width:26px;height:1px;margin:10px 0}
+.ect span{font-style:italic;font-size:clamp(9px,1vw,13px);line-height:1.35}
+.eplate{display:block;width:58%;height:auto;margin:0 0 10px;border:1px solid rgba(0,0,0,.28)}
+.efoot{position:relative;z-index:1;font-size:clamp(7px,.75vw,10px);letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.ecov figcaption{margin-top:14px;font-size:var(--fs-1);line-height:1.4;opacity:.85;max-width:240px}
+@media (min-width:820px){
+  .band{padding:72px 20px 64px}
+  .band .in{display:grid;grid-template-columns:minmax(0,1fr) 190px;column-gap:48px;align-items:center}
+  .ecov{order:0;width:190px}
+}
+@media (min-width:1100px){
+  .band .in{max-width:936px;grid-template-columns:minmax(0,1fr) 250px;column-gap:72px}
+  .ecov{width:250px}
+}
 body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
 .top.entry{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 90%,transparent);
   backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px)}
@@ -275,12 +301,12 @@ ${FONTS}
 <body style="--cover:${b.cover};--cink:${b.ink};--accent:${b.accent}">
 <nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">${wingName}</a><i>/</i><span>${name}</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">${mins} min read</span><button class="rs-go rs-js-only" type="button" data-rs="share">${SHARE_ICON}Share</button><a class="wl" href="../../#${isPress ? "press" : "lives"}">${wing} →</a></span><span class="rs-bar" id="rbar"></span></nav>
 <header class="band"><div class="in">
-  ${plateFile ? `<figure class="plate"><img src="../../plates/${plateFile}" alt="${attr(b.plateOf || "Portrait of " + b.n)}" width="260" height="325">${b.plateOf ? `<figcaption>${b.plateOf}</figcaption>` : ""}</figure>` : ""}
-  <div class="kick">${isPress ? `The Press · ${b.field}` : `Lives · ${b.years}`}</div>
+  <div class="btxt"><div class="kick">${isPress ? `The Press · ${b.field}` : `Lives · ${b.years}`}</div>
   <h1>${name}</h1>
   <p class="sub">${sub}</p>
   ${isPress && b.claim ? `<p class="claim">${b.claim}</p>` : ""}
-  <div class="glance">${glance}</div>
+  <div class="glance">${glance}</div></div>
+  ${coverHTML(b, isPress, plateFile)}
 </div></header>
 <div class="layout">
 <aside class="rail" aria-label="On this page"><span class="lbl">On this page</span>${toc.map(([id, h]) => `<a href="#${id}">${h}</a>`).join("")}</aside>
@@ -298,6 +324,18 @@ Reading.page(${JSON.stringify(conf).replace(/</g, "\\u003c")})</script>
 </body>
 </html>
 `;
+}
+
+/* The book itself, at the head of its own page, on its own colour — the way a publisher's
+   page shows the object, not a thumbnail of it. The same board as the shelf: livery, pressed
+   pattern (build/motif.mjs), and for a life the plate set into the cover. The lettering is
+   the h1's twin, so it is hidden from screen readers; the plate keeps its alt. */
+function coverHTML(b, isPress, plateFile) {
+  const title = isPress ? b.title : b.n, sub = isPress ? b.sub : b.field;
+  const plate = plateFile ? `<img class="eplate" src="../../plates/${plateFile}" alt="${attr(b.plateOf || "Portrait of " + b.n)}" width="260" height="325">` : "";
+  return `<figure class="ecov"><div class="ebk">${motifSVG(b.motif, b.accent)}
+    <div class="ect">${plate}<b aria-hidden="true">${title}</b><i style="background:${b.accent}"></i><span aria-hidden="true" style="color:${b.accent}">${sub || ""}</span></div>
+    <span class="efoot" aria-hidden="true">Commodore Press</span></div>${b.plateOf ? `<figcaption>${b.plateOf}</figcaption>` : ""}</figure>`;
 }
 
 /* Writes dist/t/<id>/, dist/l/<id>/ and dist/plates/, returns the URLs for the sitemap. */
