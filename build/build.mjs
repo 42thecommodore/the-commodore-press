@@ -5,7 +5,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJSON } from "../tools/json.mjs";
 import { fillMark } from "./mark.mjs";
-import { writeEntryPages, writeAbout, writeLog, writeContents, EDITOR } from "./pages.mjs";
+import { writeEntryPages, writeAbout, writeLog, writeContents, EDITOR, minsOf } from "./pages.mjs";
+import crypto from "node:crypto";
 import { publishedLog } from "./log.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -67,13 +68,39 @@ if (fs.existsSync(platesDir)) {
 const safe = s => s.replace(/<\/script/gi, "<\\/script");
 const K = (name, val) => `const ${name} = ${JSON.stringify(val)};`;
 
+/* The front door carries what the shelves show — title, livery, lede, keep, the across
+   links the Atlas draws from — and not the body of every entry. The bodies (about 210 KB,
+   the essay, timeline, figures, numbers, dispute, second thoughts, book, reading list) ship
+   beside it as dist/library.js and are fetched when a reader first reaches for a book or
+   for search. A script file, not JSON, so it loads from file:// as well (the tests do).
+   Reading time is counted here, over the whole entry, by the same minsOf the entry pages use. */
+const BODY = ["copy", "reading", "timeline", "facts", "figures", "contested", "changed", "bio"];
+const split = list => {
+  const cards = [], bodies = {};
+  for (const b of list) {
+    const c = { mins: minsOf(b) }, body = {};
+    for (const [k, v] of Object.entries(b)) (BODY.includes(k) ? body : c)[k] = v;
+    cards.push(c); bodies[b.id] = body;
+  }
+  return [cards, bodies];
+};
+const [BOOK_CARDS, BOOK_BODIES] = split(BOOKS);
+const [ADJ_CARDS, ADJ_BODIES] = split(ADJACENT);
+const [LIFE_CARDS, LIFE_BODIES] = split(LIVES);
+const LIBRARY = safe(`/* GENERATED — do not edit. The bodies of every entry, from content/. */
+window.__library(${JSON.stringify({ press: { ...BOOK_BODIES, ...ADJ_BODIES }, lives: LIFE_BODIES })});
+`);
+// the name changes when the text does, so a reader's browser never keeps a stale copy
+const LIBRARY_FILE = `library.${crypto.createHash("sha1").update(LIBRARY).digest("hex").slice(0, 10)}.js`;
+
 const DATA = safe([
   "/* GENERATED — do not edit here. Sources live in content/ and assets/plates/. */",
   K("PLATES", PLATES),
-  K("BOOKS", BOOKS),
-  K("ADJACENT", ADJACENT),
+  K("LIBRARY_FILE", LIBRARY_FILE),
+  K("BOOKS", BOOK_CARDS),
+  K("ADJACENT", ADJ_CARDS),
   "const ALL = BOOKS.concat(ADJACENT);",
-  K("LIVES", LIVES),
+  K("LIVES", LIFE_CARDS),
   K("DOMAINS", DOMAINS),
   K("DCOLOR", DCOLOR),
   K("PRINCIPLES", PRINCIPLES),
@@ -169,6 +196,8 @@ if (stray) {
 
 fs.mkdirSync(p("dist"), { recursive: true });
 fs.writeFileSync(p("dist/index.html"), out);
+for (const f of fs.readdirSync(p("dist")).filter(f => /^library\.[0-9a-f]+\.js$/.test(f))) fs.rmSync(p("dist", f));
+fs.writeFileSync(p("dist", LIBRARY_FILE), LIBRARY);
 
 // A 404 that is just the site: any deep link lands on the front door.
 // It is served at whatever deep path was missed, so relative links (plates/, log/) need a base.
@@ -183,8 +212,8 @@ else fs.rmSync(p("dist/CNAME"), { force: true });
 fs.writeFileSync(p("dist/robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 
 /* The card people see when the link is pasted somewhere. Rendered by `npm run card`
-   and committed, so CI never needs a browser. The page itself stays self-contained;
-   this sits beside it the way robots.txt does. */
+   and committed, so CI never needs a browser. Only the share tags point at it; the
+   page never loads it, and it sits beside the page the way robots.txt does. */
 const CARD = p("assets/og.png");
 if (fs.existsSync(CARD)) fs.copyFileSync(CARD, p("dist/og.png"));
 else console.log("  no assets/og.png — run `npm run card` (shared links will show no image)");
@@ -207,7 +236,7 @@ const ROOTFILES = p("assets/root");
 if (fs.existsSync(ROOTFILES)) for (const f of fs.readdirSync(ROOTFILES).filter(f => !f.startsWith("."))) fs.copyFileSync(path.join(ROOTFILES, f), p("dist", f));
 
 const kb = n => (n / 1024).toFixed(0) + " KB";
-console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}`);
+console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}, and ${LIBRARY_FILE} — ${kb(Buffer.byteLength(LIBRARY))}, fetched when a book or search is opened`);
 console.log(`  ${BOOKS.length} books · ${ADJACENT.length} adjacent · ${LIVES.length} lives`);
 console.log(`  ${ENTRY_URLS.length} entry pages in dist/t/ and dist/l/, a contents page, llms.txt`);
 console.log(LOG.length ? `  the Log: ${LOG.length} published piece(s), feed.xml` : `  the Log: nothing published yet — held back`);

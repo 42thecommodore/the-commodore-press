@@ -1,5 +1,6 @@
 /* ===================== ENGINE ===================== */
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const EASE="cubic-bezier(.19,.9,.22,1)", EASE_IO="cubic-bezier(.62,.02,.2,1)";
 const WINGS=[["home","Home"],["press","The Press"],["lives","Lives"],["atlas","The Atlas"],["colophon","Colophon"]];
 let wing="home", searchFocus=null, readerFocus=null, current=null, currentKind=null, activeConst=null, activeRegion=null, selectedPerson=null;
 
@@ -14,12 +15,24 @@ const DOM_BY_ID=Object.fromEntries(DOMAINS.map(d=>[d.id,d]));
 
 
 /* ---------- cover art ---------- */
-function motifSVG(kind,a){
-  if(kind==="rings")return `<svg class="motif" viewBox="0 0 100 150" preserveAspectRatio="none"><g fill="none" stroke="${a}" stroke-width=".5" opacity=".55"><circle cx="50" cy="75" r="18"/><circle cx="50" cy="75" r="30"/><circle cx="50" cy="75" r="42"/><circle cx="50" cy="75" r="54"/></g></svg>`;
-  if(kind==="grid")return `<svg class="motif" viewBox="0 0 100 150" preserveAspectRatio="none"><g stroke="${a}" stroke-width=".4" opacity=".4">${Array.from({length:11},(_,i)=>`<line x1="${i*10}" y1="0" x2="${i*10}" y2="150"/>`).join("")}${Array.from({length:16},(_,i)=>`<line x1="0" y1="${i*10}" x2="100" y2="${i*10}"/>`).join("")}</g></svg>`;
-  if(kind==="lines")return `<svg class="motif" viewBox="0 0 100 150" preserveAspectRatio="none"><g stroke="${a}" stroke-width=".6" opacity=".45">${Array.from({length:14},(_,i)=>`<line x1="-10" y1="${i*13}" x2="110" y2="${i*13-26}"/>`).join("")}</g></svg>`;
-  if(kind==="dots")return `<svg class="motif" viewBox="0 0 100 150" preserveAspectRatio="none"><g fill="${a}" opacity=".38">${Array.from({length:120},(_,i)=>{const x=(i%10)*10+5,y=Math.floor(i/10)*12+6;return `<circle cx="${x}" cy="${y}" r="${(1.6-Math.abs(x-50)/90).toFixed(2)}"/>`}).join("")}</g></svg>`;
-  return `<svg class="motif" viewBox="0 0 100 150" preserveAspectRatio="none"><circle cx="50" cy="60" r="60" fill="${a}" opacity=".13"/><circle cx="50" cy="60" r="34" fill="${a}" opacity=".10"/></svg>`;
+/* The pattern pressed into the cover (schemas: "motif"), drawn the way a blind stamp sits in
+   cloth — a dark line with a faint highlight beside it, in the cover's own colour, never in a
+   printed accent — and kept to the lower part of the board, clear of the title. The five
+   names are the liveries' own; what they draw is the house's sea: waves, ripples, a chart's
+   graticule, a row of pennants, a low sun on the horizon. */
+function motifSVG(kind,a,wide){
+  const press=(d,fill)=>fill
+    ?`<g fill="rgba(0,0,0,.30)" transform="translate(0 .6)">${d}</g><g fill="rgba(255,255,255,.10)">${d}</g>`
+    :`<g fill="none" stroke="rgba(0,0,0,.34)" stroke-width=".7" transform="translate(0 .6)">${d}</g><g fill="none" stroke="rgba(255,255,255,.11)" stroke-width=".6">${d}</g>`;
+  // a book's board has the drawing's own proportions; a wide card crops it from the foot instead of stretching it
+  const svg=inner=>`<svg class="motif" viewBox="0 0 100 150" preserveAspectRatio="${wide?"xMidYMax slice":"none"}" aria-hidden="true">${inner}</svg>`;
+  if(kind==="lines")return svg(press(Array.from({length:9},(_,r)=>`<path d="M-10 ${86+r*8} q5 -2.6 10 0${" t10 0".repeat(11)}"/>`).join("")));
+  if(kind==="rings")return svg(press(Array.from({length:7},(_,r)=>`<circle cx="50" cy="150" r="${14+r*11}"/>`).join("")));
+  if(kind==="grid")return svg(press([12.5,37.5,62.5,87.5].map(x=>`<line x1="${x}" y1="80" x2="${x}" y2="150"/>`).join("")
+    +[92,117,142].map(y=>`<line x1="0" y1="${y}" x2="100" y2="${y}"/>`).join("")
+    +Array.from({length:8},(_,k)=>{const t=k*Math.PI/8;return `<line x1="${(50-60*Math.cos(t)).toFixed(1)}" y1="${(122-60*Math.sin(t)).toFixed(1)}" x2="${(50+60*Math.cos(t)).toFixed(1)}" y2="${(122+60*Math.sin(t)).toFixed(1)}"/>`}).join("")));
+  if(kind==="dots")return svg(press(Array.from({length:24},(_,k)=>{const x=10+(k%6)*16+(Math.floor(k/6)%2)*8,y=94+Math.floor(k/6)*14;return `<path d="M${x} ${y}l7 2.6l-7 2.6z"/>`}).join(""),true));
+  return svg(press(`<circle cx="50" cy="128" r="26"/><line x1="0" y1="128" x2="100" y2="128"/>`+[134,139,143].map((y,k)=>`<line x1="${22+k*8}" y1="${y}" x2="${78-k*8}" y2="${y}"/>`).join("")));
 }
 function bookHTML(b,titleText,subText,spineText){
   return `<div class="book">
@@ -120,16 +133,13 @@ function captainOfTheDay(){
 function captainHTML(b){
   return `<article class="captain" aria-labelledby="capN">
     <div class="sp-top"><span class="lbl q">Captain of the day</span><span class="sp-n">${b.years}</span></div>
-    <div class="cap-row">
-      <button class="cap-plate" onclick="openLife('${b.id}')" aria-label="Read the life of ${b.n}">${plateOrMark(b,"cap-img")}</button>
-      <div><h2 id="capN">${b.n}</h2><div class="sp-sub">${b.field}</div></div>
-    </div>
-    <p class="cap-ld">${b.lede}</p>
-    <div class="sp-foot"><p>${b.keep||""}</p><button class="sp-go" onclick="openLife('${b.id}')">Read the life →</button></div>
-    ${b._crew>1?`<p class="watch">One of a crew of ${b._crew}, chosen by the editor. The watch changes at midnight; next, <button onclick="openLife('${b._next.id}')">${b._next.n}</button>.</p>`:""}
+    <button class="cap-plate" onclick="openLife('${b.id}')" aria-label="Read the life of ${b.n}">${plateOrMark(b,"cap-img")}</button>
+    <div class="cap-main"><h2 id="capN">${b.n}</h2><div class="sp-sub">${b.field}</div><p class="cap-ld">${b.lede}</p></div>
+    <div class="cap-side">${b.keep?`<p class="cap-keep">${b.keep}</p>`:""}<button class="sp-go" onclick="openLife('${b.id}')">Read the life →</button>
+      ${b._crew>1?`<p class="watch">One of a crew of ${b._crew}, chosen by the editor. The watch changes at midnight; next, <button onclick="openLife('${b._next.id}')">${b._next.n}</button>.</p>`:""}</div>
   </article>`;
 }
-const bandHead=(tag,id,h,dek,go,link)=>`<div class="band-h"><div><div class="lbl">${tag}</div><h2 id="${id}">${h}</h2>${dek?`<p>${dek}</p>`:""}</div>`+
+const bandHead=(tag,id,h,dek,go,link)=>`<div class="band-h"><div><h2 id="${id}">${h}</h2>${dek?`<p>${dek}</p>`:""}</div>`+
   (link?`<button class="band-go" onclick="${go}">${link}</button>`:"")+`</div>`;
 /* One constellation from the Atlas: one idea, turning up in the editor's notes on several
    people (content/atlas/echoes.json), a different one each day. Notes, not quotations. */
@@ -166,7 +176,7 @@ function renderFront(){
    `<section class="band" aria-labelledby="bPress"><div class="wrap">
       ${bandHead("Wing I · The Press","bPress","{{W_BOOKS_CAP}} ideas, on one shelf.",
         "Each with its timeline, its numbers and its objections.","go('press')","All titles →")}
-      <div class="rack">${BOOKS.map((b,i)=>`<button class="rk${i>=BOOKS.length-5?" end":""}" style="--cv:${b.cover};--ink:${b.ink};--ac:${b.accent}" onclick="openReader('press','${b.id}')" aria-label="${b.title.replace(/&amp;/g,"and")}">
+      <div class="rack">${BOOKS.map((b,i)=>`<button class="rk${i>=BOOKS.length-5?" end":""}" style="--i:${i};--cv:${b.cover};--ink:${b.ink};--ac:${b.accent}" onclick="openReader('press','${b.id}')" aria-label="${b.title.replace(/&amp;/g,"and")}">
         <span class="rk-sp"><i></i><span>${b.spineTitle||b.title}</span>{{MARK size=14 sw=1.4}}</span>
         <span class="rk-cv" aria-hidden="true"><b>${b.title}</b><i></i><em>${b.sub||""}</em><small>${[b.field,b.years].filter(Boolean).join(" · ")}</small>{{MARK size=18 sw=1.2}}</span></button>`).join("")}</div>
     </div></section>
@@ -183,9 +193,9 @@ function renderFront(){
     </div></section>
     <section class="band colo" aria-labelledby="bColo"><div class="wrap">
       <div class="colo-l"><figure class="seal">{{MARK size=56 sw=0.9 pn aria}}<figcaption>The press mark: a commodore's broad pennant, over water.</figcaption></figure>
-        <div class="lbl">Colophon</div><h2 id="bColo">How this house works.</h2><div id="coloFront"></div>
+        <h2 id="bColo">How this house works.</h2><div id="coloFront"></div>
         <a class="band-go" href="#colophon" onclick="go('colophon');return false;">The whole colophon →</a></div>
-      <div class="colo-r"><div class="lbl">The log of corrections</div>
+      <div class="colo-r"><h3 class="colo-h3">The log of corrections</h3>
         <table class="log"><thead><tr><th scope="col">No.</th><th scope="col">Date</th><th scope="col">Entry</th></tr></thead>
         <tbody>${last.map(({c,n})=>`<tr><td class="no">${n}</td><td class="dt">${c.d}</td><td><a ${toCorrections}>${c.t}</a></td></tr>`).join("")}</tbody></table>
         <a class="band-go" ${toCorrections}>All ${CORRECTIONS.length} corrections →</a></div>
@@ -209,21 +219,22 @@ function renderPressControls(){
     fs.map(f=>`<button class="chip" data-f="${f[0]}" aria-pressed="${f[0]===pressFilter}" onclick="filterPress('${f[0]}')">${f[1]}</button>`).join("")
     +`<span class="spacer"></span>`+spineChip()
     +`<span class="count" id="pressCount"></span>`;
-  document.getElementById("pressSide").innerHTML=`${BOOKS.length} titles · ${ADJACENT.length} adjacent<br>each with sources and objections`;
 }
-function filterPress(f){pressFilter=f;renderPressControls();renderShelf()}
-function renderShelf(){
-  const shelf=document.getElementById("shelf");
+function filterPress(f){pressFilter=f;renderPressControls();renderShelf(true)}
+function renderShelf(anim){
+  const shelf=document.getElementById("shelf"),prev=new Map();
+  if(anim&&!reduce)shelf.querySelectorAll(".slot").forEach(s=>prev.set(s.dataset.id,s.getBoundingClientRect()));
   const list=BOOKS.filter(b=>pressFilter==="all"||b.field===pressFilter);
   shelf.innerHTML=list.map((b,i)=>`<button class="slot" data-id="${b.id}" style="--i:${i}" onclick="openReader('press','${b.id}',{src:this})" aria-label="Open ${b.title.replace(/&amp;/g,"and")}">
       ${pressBook(b)}<div class="meta"><h3>${b.title}</h3><p>${b.field==="History"?"History &amp; philosophy":b.field==="Economics"?"Economics &amp; finance":b.field} · ${b.years}</p></div></button>`).join("");
+  if(prev.size)slideFrom(shelf,prev);
   document.getElementById("pressCount").textContent=list.length+(list.length===1?" title":" titles");
   markRead();
 }
 function renderWide(){
   const w=document.getElementById("wide");
   w.innerHTML=ADJACENT.map((a,i)=>`<button class="card" style="background:${a.cover};color:${a.ink}" onclick="openReader('press','${a.id}')">
-      ${motifSVG(a.motif,a.accent)}<div class="lbl">${a.years}</div><h4>${a.title}</h4><p>${a.sub}</p></button>`).join("");
+      ${motifSVG(a.motif,a.accent,true)}<div class="lbl">${a.years}</div><h4>${a.title}</h4><p>${a.sub}</p></button>`).join("");
   
 }
 
@@ -235,25 +246,43 @@ function renderLivesControls(){
     fs.map(f=>`<button class="chip ${f[0]==="obscure"?"warn":""}" aria-pressed="${f[0]===livesFilter}" onclick="filterLives('${f[0]}')">${f[1]}</button>`).join("")
     +`<span class="spacer"></span>`+spineChip()
     +`<span class="count" id="livesCount"></span>`;
-  document.getElementById("livesSide").innerHTML=`${LIVES.length} lives · one book each<br>${LIVES.filter(b=>b.group==="famous").length} famous · ${LIVES.filter(b=>b.group==="obscure").length} you have never heard of`;
 }
-function filterLives(f){livesFilter=f;renderLivesControls();renderLivesShelf()}
-function renderLivesShelf(){
-  const shelf=document.getElementById("livesShelf");
+function filterLives(f){livesFilter=f;renderLivesControls();renderLivesShelf(true)}
+function renderLivesShelf(anim){
+  const shelf=document.getElementById("livesShelf"),prev=new Map();
+  if(anim&&!reduce)shelf.querySelectorAll(".slot").forEach(s=>prev.set(s.dataset.id,s.getBoundingClientRect()));
   const list=LIVES.filter(b=>livesFilter==="all"||b.group===livesFilter);
   shelf.innerHTML=list.map((b,i)=>`<button class="slot" data-id="${b.id}" style="--i:${i}" onclick="openReader('lives','${b.id}',{src:this})" aria-label="Open ${b.n}">
       ${lifeBook(b)}<div class="meta"><h3>${b.n}</h3><p>${b.years}</p></div></button>`).join("");
+  if(prev.size)slideFrom(shelf,prev);
   document.getElementById("livesCount").textContent=list.length+(list.length===1?" life":" lives");
   markRead();
 }
 
 /* ---------- reader ---------- */
-function words(b){
-  const p=[].concat(b.copy||[],b.lede||"",b.contested||"",b.changed||"",
-    (b.timeline||[]).map(t=>t.t),(b.figures||[]).map(f=>f.d),(b.reading||[]).map(r=>r.why||""),
-    b.bio?[b.bio.why]:[]);
-  return p.join(" ").trim().split(/\s+/).length;
+/* The shelves carry each entry's card; the body — essay, timeline, figures, numbers, dispute,
+   second thoughts, book, reading list — lives in LIBRARY_FILE, written beside the page by
+   build/build.mjs, and is merged in the first time a reader reaches for a book or for search.
+   Reading time (b.mins) is counted at build over the whole entry, by the entry pages' own count. */
+let libLoaded=false, libLoading=null;
+window.__library=data=>{
+  for(const b of ALL)Object.assign(b,data.press[b.id]||{});
+  for(const b of LIVES)Object.assign(b,data.lives[b.id]||{});
+  libLoaded=true;
+};
+function loadLibrary(){
+  if(libLoaded)return Promise.resolve();
+  return libLoading||(libLoading=new Promise((res,rej)=>{
+    const s=document.createElement("script");s.src=LIBRARY_FILE;s.async=true;
+    s.onload=()=>libLoaded?res():rej(new Error("library.js ran without the entries"));
+    s.onerror=()=>{libLoading=null;s.remove();rej(new Error("library.js did not load"))};
+    document.head.appendChild(s);
+  }));
 }
+/* a pointer over a book, a face or a link into one is the moment to fetch, so the text is
+   usually in hand before the click lands */
+{const warm=e=>{if(!libLoaded&&e.target.closest&&e.target.closest(".slot,.rk,.wface,.cap-plate,.sp-go,.card,#nav,.rs-next,.watch"))loadLibrary().catch(()=>{})};
+  addEventListener("pointerover",warm,{passive:true});addEventListener("focusin",warm);}
 /* Read next: the first entry this one reads across to — a link that exists because the two
    argue (PUBLISHING.md) — and the next on the shelf only when there is none. Same choice as
    readNext() in build/pages.mjs. */
@@ -262,7 +291,7 @@ function readNextHTML(kind,b,next){
   for(const a of b.across||[]){const [w,id]=a.to.split(":"),u=w==="press"?ALL:w==="lives"?LIVES:null,t=u&&u.find(x=>x.id===id);
     if(t){n={kind:w,b:t,why:a.txt};break}}
   if(!n)n={kind,b:next,why:""};
-  const k=n.kind==="press"?"t":"l",name=n.kind==="press"?n.b.title:n.b.n,m=Math.max(2,Math.round(words(n.b)/210));
+  const k=n.kind==="press"?"t":"l",name=n.kind==="press"?n.b.title:n.b.n,m=n.b.mins;
   return `<a class="rs-next" href="#${k}/${n.b.id}" onclick="openReader('${n.kind}','${n.b.id}');return false">
     <span class="rs-nk">${n.why?"Read next":"Next on the shelf"}</span><span class="rs-nt">${name}</span>
     ${n.why?`<span class="rs-nd">${n.why.replace(/^\s*[—–-]\s*/,"")}</span>`:""}
@@ -282,7 +311,7 @@ function readerHTML(kind,b){
   const uni = kind==="press"?ALL:LIVES;
   const idx = uni.findIndex(x=>x.id===b.id);
   const prev = uni[(idx-1+uni.length)%uni.length], next = uni[(idx+1)%uni.length];
-  const mins = Math.max(2,Math.round(words(b)/210));
+  const mins = b.mins;
   const isPress = kind==="press";
   const title = isPress?b.title:b.n;
   const sub   = isPress?b.sub:(b.field+" · "+b.place);
@@ -374,10 +403,74 @@ function railScroll(){
     bk.style.setProperty("--rx",(4-p*3).toFixed(2)+"deg")});
 }
 function gotoSec(id){const el=document.getElementById(id);if(el)document.getElementById("reader").scrollTo({top:el.offsetTop-70,behavior:reduce?"auto":"smooth"})}
+/* A filter reshuffles the shelf: books already on it slide to their new places, new ones rise in. */
+function slideFrom(shelf,prev){
+  shelf.querySelectorAll(".slot").forEach(s=>{const o=prev.get(s.dataset.id);if(!o)return;
+    s.style.animation="none";const n=s.getBoundingClientRect(),dx=o.left-n.left,dy=o.top-n.top;
+    if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
+    s.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:"none"}],{duration:560,easing:EASE})});
+}
+/* The book follows the mouse: it turns toward the pointer and the gloss moves with it. */
+function tiltBooks(){
+  if(reduce||!matchMedia("(hover:hover)").matches)return;
+  document.addEventListener("pointermove",e=>{
+    const slot=e.target.closest&&e.target.closest(".shelf .slot");
+    document.querySelectorAll(".shelf .book.track").forEach(bk=>{if(!slot||!slot.contains(bk)){bk.classList.remove("track");bk.style.removeProperty("--ry");bk.style.removeProperty("--rx")}});
+    if(!slot||document.body.classList.contains("spines"))return;
+    const bk=slot.querySelector(".book");if(!bk)return;
+    const r=slot.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    bk.classList.add("track");
+    bk.style.setProperty("--ry",(10+(x-.5)*-18).toFixed(1)+"deg");
+    bk.style.setProperty("--rx",((y-.5)*-8).toFixed(1)+"deg");
+    const g=bk.querySelector(".gloss");if(g){g.style.setProperty("--gx",(x*100).toFixed(0)+"%");g.style.setProperty("--gy",(y*100).toFixed(0)+"%")}
+  },{passive:true});
+}
+tiltBooks();
+/* Opening a title: the book lifts off the shelf and flies to its place in the reader; closing sends it back. */
+function flyIn(slot,kind){
+  const target=document.querySelector("#sheet .rbook"),sBook=slot&&slot.querySelector(".book");
+  if(!target||!sBook)return;
+  const sr=slot.getBoundingClientRect(),tr=target.getBoundingClientRect();
+  const fw=slot.clientWidth,fh=sBook.offsetHeight,tw=tr.width;
+  if(!fw||!tw)return;
+  const cs=getComputedStyle(sBook);
+  const ry0=(cs.getPropertyValue("--ry")||"26deg").trim()||"26deg", rx0=(cs.getPropertyValue("--rx")||"3deg").trim()||"3deg";
+  const wrap=document.createElement("div");wrap.className="ghostwrap";
+  wrap.style.cssText=`left:${sr.left}px;top:${sr.top}px;width:${fw}px;height:${fh}px`;
+  const clone=sBook.cloneNode(true);clone.classList.remove("track");clone.style.transform="none";wrap.appendChild(clone);
+  document.getElementById("flip").appendChild(wrap);target.style.opacity="0";
+  const s=tw/fw,opt={duration:660,easing:EASE_IO,fill:"forwards"};
+  const a=wrap.animate([{transform:"translate(0,0) scale(1)"},{transform:`translate(${tr.left-sr.left}px,${tr.top-sr.top}px) scale(${s})`}],opt);
+  clone.animate([{transform:`rotateY(${ry0}) rotateX(${rx0})`},{transform:"rotateY(21deg) rotateX(4deg)"}],opt);
+  const done=()=>{target.style.opacity="";wrap.remove()};
+  a.finished.then(done).catch(done);
+}
+function flyOut(kind,id,after){
+  const slot=document.querySelector((kind==="press"?"#shelf":"#livesShelf")+` .slot[data-id="${id}"]`);
+  const source=document.querySelector("#sheet .rbook");
+  if(reduce||!slot||!source||!slot.offsetParent){after();return}
+  const sBook=source.querySelector(".book"),tBook=slot.querySelector(".book");
+  const sr=source.getBoundingClientRect(),tr=slot.getBoundingClientRect();
+  if(tr.bottom<-200||tr.top>innerHeight+200){after();return}
+  const fw=sr.width,fh=sBook.offsetHeight,tw=slot.clientWidth;
+  if(!fw||!tw){after();return}
+  const ry0=(getComputedStyle(sBook).getPropertyValue("--ry")||"21deg").trim()||"21deg";
+  const wrap=document.createElement("div");wrap.className="ghostwrap";
+  wrap.style.cssText=`left:${sr.left}px;top:${sr.top}px;width:${fw}px;height:${fh}px`;
+  const clone=sBook.cloneNode(true);clone.style.transform="none";wrap.appendChild(clone);
+  document.getElementById("flip").appendChild(wrap);tBook.style.opacity="0";after();
+  const s=tw/fw,opt={duration:560,easing:EASE_IO,fill:"forwards"};
+  const a=wrap.animate([{transform:"translate(0,0) scale(1)"},{transform:`translate(${tr.left-sr.left}px,${tr.top-sr.top}px) scale(${s})`}],opt);
+  clone.animate([{transform:`rotateY(${ry0}) rotateX(4deg)`},{transform:"rotateY(26deg) rotateX(3deg)"}],opt);
+  const done=()=>{tBook.style.opacity="";wrap.remove()};
+  a.finished.then(done).catch(done);
+}
 function openReader(kind,id,opts){
   opts=opts||{};
   const uni=kind==="press"?ALL:LIVES, b=uni.find(x=>x.id===id);
   if(!b)return;
+  // the body is not here yet: fetch it, then open; if it cannot come, the entry's own page has it all
+  if(!libLoaded){loadLibrary().then(()=>openReader(kind,id,opts),()=>{location.href=(kind==="press"?"t/":"l/")+id+"/"});return}
   const wasOpen=!!current;
   if(!wasOpen)readerFocus=document.activeElement;
   current=id;currentKind=kind;
@@ -393,6 +486,10 @@ function openReader(kind,id,opts){
   const hash="#"+(kind==="press"?"t":"l")+"/"+id;
   if(opts.push!==false&&location.hash!==hash)history.pushState({kind:kind,id:id},"",hash);
   document.title=(kind==="press"?b.title.replace(/&amp;/g,"&"):b.n)+" — The Commodore Press";
+  if(!wasOpen&&!reduce){
+    const src=opts.src||document.querySelector((kind==="press"?"#shelf":"#livesShelf")+` .slot[data-id="${id}"]`);
+    if(src&&src.classList.contains("slot")&&src.offsetParent)requestAnimationFrame(()=>flyIn(src,kind));
+  }
 }
 /* Shares the entry's own page, never the #hash: a hash previews as the front door, the page
    previews as the entry, with its own card. The sheet itself is theme/reading.js, shared
@@ -412,6 +509,7 @@ Reading.quotes({root:document.getElementById("reader"),scroller:document.getElem
   meta:()=>current?entryMeta(currentKind==="press"?"t":"l",current):null});
 function closeReader(push){
   if(!current)return;
+  const kind=currentKind,id=current;
   const finish=()=>{current=null;currentKind=null;
     const r=document.getElementById("reader");
     r.classList.remove("on");r.setAttribute("aria-hidden","true");
@@ -421,7 +519,7 @@ function closeReader(push){
     markRead();
     const el=readerFocus;readerFocus=null;giveBack(el)};
   if(push!==false)history.pushState({w:wing},"",wingURL(wing));
-  finish();
+  flyOut(kind,id,finish);
 }
 function step(d){
   const uni=currentKind==="press"?ALL:LIVES;
@@ -509,6 +607,8 @@ function buildIndex(){
 let sHits=[];
 function giveBack(el){if(el&&el.isConnected&&typeof el.focus==="function")el.focus({preventScroll:true})}
 function openSearch(){
+  // titles and names are searchable at once; the full text joins the index when it arrives
+  if(!libLoaded)loadLibrary().then(()=>{SIX=null;buildIndex();runSearch(document.getElementById("sinput").value)}).catch(()=>{});
   if(!SIX)buildIndex();
   searchFocus=document.activeElement;
   const m=document.getElementById("smodal");

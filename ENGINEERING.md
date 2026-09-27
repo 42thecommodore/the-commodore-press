@@ -72,7 +72,11 @@ is more than most style guides can say.
 
 ## Decisions carry triggers
 
-The site is one self-contained file. The cost is that portraits are inlined as base64, so
+*Superseded twice, and kept as the record of how a trigger works: the plates left the page on
+21 September, and the entries' text on 26 September (dashboard/commissions.md). The front door
+is now the shelves; each entry's body ships beside it in `dist/library.<hash>.js`.*
+
+The site was one self-contained file. The cost was that portraits were inlined as base64, so
 every reader downloads all of them to reach a front door that shows none: **333 KB of 659
 KB, about half the page.**
 

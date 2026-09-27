@@ -34,7 +34,7 @@
     "spineC": { "$ref": "title.schema.json#/definitions/colour", "description": "Livery: the spine colour — a shade darker than `cover`." },
     "ink": { "$ref": "title.schema.json#/definitions/colour", "description": "Livery: the lettering colour on the cover." },
     "accent": { "$ref": "title.schema.json#/definitions/colour", "description": "Livery: the accent colour." },
-    "motif": { "enum": ["rings", "lines", "grid", "dots", "conic"], "description": "The pattern pressed into the cover. Anything unrecognised prints as conic." },
+    "motif": { "enum": ["rings", "lines", "grid", "dots", "conic"], "description": "The pattern pressed into the cover, tone on tone in the lower part of the board: lines draws waves, rings ripples, grid a chart's graticule, dots a row of pennants, conic a low sun on the horizon. Anything unrecognised prints as conic." },
     "lede": { "type": "string", "x-means": "hook", "description": "The opening line." },
     "copy": {
       "type": "array", "minItems": 1, "items": { "type": "string" }, "x-means": "body",

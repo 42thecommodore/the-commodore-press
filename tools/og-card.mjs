@@ -102,13 +102,13 @@ ${fontFace}</style>
        padding:64px 72px 112px;position:relative;overflow:hidden}
   .rule{position:absolute;left:0;right:0;height:1px;background:#1E1C18;opacity:.18}
   .top{top:0}
-  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;letter-spacing:.18em;
-        text-transform:uppercase;opacity:.62}
+  .mono{font-family:'EB Garamond',serif;font-size:18px;font-weight:500;letter-spacing:.1em;
+        text-transform:uppercase;opacity:.7}
   h1{font-size:104px;line-height:.98;font-weight:500;letter-spacing:-.015em;margin:26px 0 0}
   .promise{font-size:31px;line-height:1.38;max-width:19.5em;margin-top:26px;opacity:.86}
   .promise em{font-style:italic}
   .foot{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
-  .counts{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:.06em;opacity:.72}
+  .counts{font-family:'EB Garamond',serif;font-size:24px;opacity:.75}
   .spines{display:flex;gap:7px;align-items:flex-end}
   .spines i{display:block;width:17px;border-radius:1px}
   .mark{position:absolute;top:56px;right:72px;opacity:.85}
@@ -190,10 +190,10 @@ for (const t of TITLES) {
   body{background:${t.cover};color:${t.ink};font-family:'EB Garamond',Georgia,serif;display:flex;flex-direction:column;
        justify-content:space-between;padding:64px 72px 104px;overflow:hidden;position:relative}
   body:after{content:"";position:absolute;right:0;top:0;bottom:0;width:34px;background:${t.spineC}}
-  .mono{font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:${t.accent}}
+  .mono{font-family:'EB Garamond',serif;font-size:18px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:${t.accent}}
   h1{font-size:${t.title.length > 26 ? 78 : 96}px;line-height:1;font-weight:500;letter-spacing:-.015em;margin-top:24px;max-width:15em}
   .claim{font-size:31px;line-height:1.36;max-width:22em;margin-top:26px;opacity:.9;font-style:italic}
-  .foot{font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.08em;opacity:.75;display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+  .foot{font-family:'EB Garamond',serif;font-size:22px;opacity:.8;display:flex;align-items:center;gap:14px;position:relative;z-index:1}
   .sea{position:absolute;left:0;bottom:-6px;color:${t.accent};opacity:.55}
   .pennant{position:absolute;right:34px;top:60px}
 </style></head><body><div><div class="mono">The Commodore Press · ${t.field}</div><h1>${t.title}</h1>
@@ -234,17 +234,17 @@ for (const l of LIVES) {
        padding:64px 106px 104px 72px;overflow:hidden;position:relative}
   body:after{content:"";position:absolute;right:0;top:0;bottom:0;width:34px;background:${l.spineC}}
   .txt{flex:1;min-width:0;${plate ? "" : "max-width:920px"}}
-  .mono{font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:${l.accent}}
+  .mono{font-family:'EB Garamond',serif;font-size:18px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:${l.accent}}
   h1{font-size:${plate ? (long ? 80 : 98) : (long ? 92 : 108)}px;line-height:1;font-weight:500;letter-spacing:-.015em;margin-top:22px;text-wrap:balance}
   .sub{font-size:30px;font-style:italic;opacity:.88;margin-top:12px}
   .lede{font-size:${plate ? (ledeLen > 150 ? 30 : 33) : 37}px;line-height:1.3;margin-top:22px}
-  .foot{position:absolute;left:72px;bottom:92px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.08em;opacity:.75;display:flex;align-items:center;gap:14px;z-index:1}
+  .foot{position:absolute;left:72px;bottom:92px;font-family:'EB Garamond',serif;font-size:22px;opacity:.8;display:flex;align-items:center;gap:14px;z-index:1}
   .sea{position:absolute;left:0;bottom:-6px;color:${l.accent};opacity:.55}
   .pennant{position:absolute;right:34px;top:60px}
   figure{flex:none;width:300px;display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px}
   figure .frame{width:300px;height:375px;display:grid;place-items:center;border:1px solid color-mix(in srgb,currentColor 35%,transparent);padding:8px}
   figure img{width:100%;height:100%;object-fit:cover;display:block;border-radius:1px}
-  figcaption{font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.4;letter-spacing:.03em;opacity:.8;text-align:center;max-width:300px;text-wrap:balance}
+  figcaption{font-family:'EB Garamond',serif;font-size:17px;line-height:1.35;opacity:.85;text-align:center;max-width:300px;text-wrap:balance}
 </style></head><body><div class="txt"><div><div class="mono">The Commodore Press · Lives · ${l.years}</div><h1 data-fit=".foot">${l.n}</h1>
 <div class="sub" data-fit=".foot">${l.field} · ${l.place}</div><div class="lede" data-fit=".foot">${l.lede}</div></div>
 <div class="foot">${markSvg(28, 1.2)}Every claim carries its source — and the place it is still argued.</div></div>

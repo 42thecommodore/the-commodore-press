@@ -210,6 +210,8 @@ function drive(page, script) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "cp-test-"));
   const src = path.join(tmp, "page.html");
   fs.writeFileSync(src, page.replace("</body>", HARNESS + script + "</body>"));
+  // the entries' bodies ship beside the page (build/build.mjs); the reader fetches them from there
+  for (const f of fs.readdirSync(dist()).filter(f => /^library\.[0-9a-f]+\.js$/.test(f))) fs.copyFileSync(dist(f), path.join(tmp, f));
   let dom = "";
   try {
     dom = execFileSync(CHROME, ["--headless=new", "--disable-gpu", "--no-sandbox", "--window-size=1280,900",

@@ -66,39 +66,38 @@ const CSS = `
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:var(--fs-5)/1.62 var(--serif);-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.top{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 20px;font:var(--fs-0)/1 var(--mono);
-  letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--rule)}
+.top{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 20px;font:var(--fs-3)/1.2 var(--serif);
+  border-bottom:1px solid var(--rule)}
 .top a{text-decoration:none}
 .band{background:var(--cover);color:var(--cink);padding:56px 20px 48px}
 .band .in,.body{max-width:680px;margin:0 auto}
-.kick{font:var(--fs-0)/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h1{font-weight:500;font-size:clamp(38px,7vw,58px);line-height:1.05;margin:14px 0 10px;letter-spacing:-.01em}
+.kick{line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--accent)}
+h1{font-weight:500;font-size:clamp(38px,7vw,58px);line-height:1.05;margin:14px 0 10px;letter-spacing:-.02em}
 .sub{font-style:italic;font-size:var(--fs-5);opacity:.9;margin:0}
 .claim{font-size:var(--fs-5);line-height:1.4;margin:26px 0 0;padding-left:16px;border-left:2px solid var(--accent)}
 .plate{float:right;width:150px;margin:0 0 12px 24px}
 .plate img{width:100%;display:block;border-radius:2px}
 .body{padding:36px 20px 64px}
 .lede{font-size:var(--fs-5);line-height:1.45}
-h2{font:var(--fs-0)/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+h2{line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);
   margin:44px 0 14px;padding-top:14px;border-top:1px solid var(--rule)}
 .row{margin:0 0 14px}.row b{display:block;font-weight:600}
 .row span,.why{color:var(--ink-soft);font-size:var(--fs-4)}
-.fact b{font:600 var(--fs-6)/1.2 var(--mono);color:var(--oxblood)}
+.fact b{font:500 var(--fs-6)/1.2 var(--serif);font-variant-numeric:lining-nums}
 .keep{font-size:var(--fs-6);line-height:1.35;font-style:italic}
-ol.tl{padding-left:0;list-style:none}ol.tl li{margin:0 0 10px}ol.tl .y{font:var(--fs-2) var(--mono);color:var(--oxblood);margin-right:10px}
-.cta{display:inline-block;margin-top:48px;padding:12px 18px;border:1px solid var(--ink);font:var(--fs-1)/1 var(--mono);
-  letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+ol.tl{padding-left:0;list-style:none}ol.tl li{margin:0 0 10px}ol.tl .y{font:var(--fs-1) var(--mono);color:var(--ink-soft);margin-right:12px}
+.cta{display:inline-block;margin-top:48px;padding:12px 20px;border:1px solid var(--ink);font:600 var(--fs-4)/1 var(--serif);text-decoration:none}
 .cta:hover{background:var(--ink);color:var(--paper)}
 .sub-box{display:block;margin-top:48px;padding:20px;border:1px solid var(--rule);font-size:var(--fs-4)}
-.sub-box b{font:var(--fs-0) var(--mono);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:6px}
-.sub-box p{margin:0 0 12px}.sub-box small{display:block;margin-top:10px;font:var(--fs-0)/1.5 var(--mono);color:var(--ink-soft)}
+.sub-box b{font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:500;display:block;margin-bottom:6px}
+.sub-box p{margin:0 0 12px}.sub-box small{display:block;margin-top:10px;font-size:var(--fs-2);line-height:1.5;color:var(--ink-soft)}
 .sub-row{display:flex;gap:8px;flex-wrap:wrap}.sub-row input{flex:1 1 200px;min-width:0;padding:10px 12px;font:var(--fs-3) var(--serif);
   background:transparent;color:var(--ink);border:1px solid var(--ink-soft);border-radius:0}
-.sub-row button{padding:10px 16px;font:var(--fs-0) var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:0;cursor:pointer}
+.sub-row button{padding:10px 18px;font:600 var(--fs-3) var(--serif);background:var(--ink);color:var(--paper);border:0;cursor:pointer}
 .pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;padding-top:18px;border-top:1px solid var(--rule)}
 .pn a{text-decoration:none;font-size:var(--fs-4);line-height:1.3}.pn a:last-child{text-align:right}
-.pn span{display:block;font:var(--fs-0) var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px}
-footer{border-top:1px solid var(--rule);padding:20px;font:var(--fs-0)/1.6 var(--mono);color:var(--ink-soft);text-align:center}
+.pn span{display:block;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);margin-bottom:2px}
+footer{border-top:1px solid var(--rule);padding:24px 20px;font:var(--fs-2)/1.6 var(--serif);color:var(--ink-soft);text-align:center}
 @media (max-width:560px){body{font-size:var(--fs-4)}.plate{float:none;width:130px;margin:0 0 20px}}
 `;
 
@@ -108,29 +107,29 @@ footer{border-top:1px solid var(--rule);padding:20px;font:var(--fs-0)/1.6 var(--
    same-weight headings. Returns the html and the section list for the side rail. */
 const ENTRY_CSS = `
 .crumbs{display:flex;gap:8px;align-items:center;min-width:0;overflow:hidden;white-space:nowrap}
-.crumbs i{font-style:normal;opacity:.4}.crumbs span{opacity:.6;overflow:hidden;text-overflow:ellipsis}
-.glance{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--cink) 25%,transparent);
-  font:var(--fs-0)/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.crumbs i{font-style:normal;opacity:.4}.crumbs span{opacity:.72;overflow:hidden;text-overflow:ellipsis}
+.glance{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--cink) 25%,transparent);
+  font-size:var(--fs-3);line-height:1.4}
 .glance a{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--cink) 40%,transparent)}.glance .warn{color:var(--accent);border-color:var(--accent)}
 .layout{display:block}
 .rail{display:none}
 @media (min-width:1100px){
   .layout{display:grid;grid-template-columns:200px minmax(0,680px);gap:56px;justify-content:center;padding:0 20px}
   .layout .body{margin:0;padding-left:0;padding-right:0}
-  .rail{display:flex;flex-direction:column;gap:9px;position:sticky;top:76px;align-self:start;margin-top:44px;font:var(--fs-0)/1.4 var(--mono);letter-spacing:.04em}
+  .rail{display:flex;flex-direction:column;gap:9px;position:sticky;top:76px;align-self:start;margin-top:44px;font:var(--fs-3)/1.35 var(--serif)}
   .rail a{text-decoration:none;color:var(--ink-soft)}.rail a:hover{color:var(--ink)}
 }
-.lbl{display:block;font:var(--fs-0)/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+.lbl{display:block;line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);margin-bottom:8px}
 .keepq{margin:30px 0 36px;padding:24px 26px;background:color-mix(in srgb,var(--cover) 9%,var(--paper));border-left:4px solid var(--cover)}
 .keepq p{font-size:var(--fs-6);line-height:1.3;font-style:italic;margin:0 0 14px}
 .essay p:first-child::first-letter{float:left;font-size:3.4em;line-height:.85;padding:6px 8px 0 0;font-weight:500}
 .s{margin-top:52px}
 .s h2{display:flex;align-items:baseline;gap:12px;font:500 var(--fs-6)/1.2 var(--serif);letter-spacing:-.005em;text-transform:none;color:var(--ink);
   border-top:1px solid var(--rule);padding-top:18px;margin:0 0 18px}
-.s h2 .n{font:var(--fs-0) var(--mono);letter-spacing:.12em;color:var(--oxblood)}
+.s h2 .n{font:var(--fs-0) var(--mono);color:var(--ink-soft)}
 .facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
 .fact{border:1px solid var(--rule);padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px}
-.fact b{font:600 var(--fs-6)/1.15 var(--mono);color:var(--oxblood)}.fact span{font-size:var(--fs-2);line-height:1.45;color:var(--ink-soft)}
+.fact b{font:500 var(--fs-6)/1.15 var(--serif);font-variant-numeric:lining-nums}.fact span{font-size:var(--fs-2);line-height:1.45;color:var(--ink-soft)}
 .callout{padding:6px 24px 22px;background:color-mix(in srgb,var(--accent) 14%,var(--paper));border-left:4px solid var(--accent)}
 .callout h2{border-top:0}
 .callout.corr{background:color-mix(in srgb,var(--oxblood) 8%,var(--paper));border-left-color:var(--oxblood)}
@@ -146,7 +145,7 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
 .keepq .rs-lineshare{margin-top:0}
 .corrd{border-top:1px solid color-mix(in srgb,var(--oxblood) 30%,transparent);padding:12px 0}
 .corrd summary{cursor:pointer;font-size:var(--fs-4);line-height:1.4}.corrd p{font-size:var(--fs-3);line-height:1.6;margin:10px 0 0}
-@media (max-width:560px){.top.entry .wl{display:none}.top.entry .tr{gap:12px}.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:var(--fs-0);letter-spacing:.1em}.keepq p{font-size:var(--fs-5)}.s h2{font-size:var(--fs-6)}}
+@media (max-width:560px){.top.entry .wl{display:none}.top.entry .tr{gap:12px}.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:var(--fs-2)}.keepq p{font-size:var(--fs-5)}.s h2{font-size:var(--fs-6)}}
 @media (prefers-color-scheme:dark){.keepq{background:color-mix(in srgb,var(--cover) 30%,var(--paper))}}
 `;
 
@@ -178,13 +177,13 @@ const THEME = ["reading.css", "reading.js"].map(f => new URL(`../theme/${f}`, im
 const [READING_CSS, READING_JS] = THEME.map(u => fillMark(fs.readFileSync(u, "utf8")));
 const SHARE_ICON = `<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
 const END_LINE = "The link opens its own page: the whole entry, with its sources, its disputes and any corrections.";
-/* Reading time, counted over the same fields as words() in theme/press.js, so the reader
-   and the page always print the same minutes. */
+/* Reading time. The one count: build/build.mjs stores it on each card as b.mins for the
+   library's reader, so the reader and the entry page always print the same minutes. */
 function wordsOf(b) {
   return strip([...(b.copy || []), b.lede, b.contested, b.changed, ...(b.timeline || []).map(t => t.t),
     ...(b.figures || []).map(f => f.d), ...(b.reading || []).map(r => r.why), b.bio && b.bio.why].filter(Boolean).join(" ")).split(/\s+/).length;
 }
-const minsOf = b => Math.max(2, Math.round(wordsOf(b) / 210));
+export const minsOf = b => Math.max(2, Math.round(wordsOf(b) / 210));
 /* Read next: the first entry this one reads across to, else the next on the shelf — the
    same choice as readNextHTML() in theme/press.js. */
 function readNext(b, next, kind, byRef, known) {
@@ -447,9 +446,9 @@ const FONTS = `<link rel="icon" href="${favicon()}">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">`;
 const LOG_CSS = `.body blockquote{margin:24px 0;padding-left:18px;border-left:2px solid var(--rule);font-style:italic}
 .body ul,.body ol{padding-left:1.2em}.body li{margin:0 0 8px}
-.byline{font:var(--fs-0)/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-top:22px;opacity:.85}
+.byline{line-height:1.5;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-top:22px;opacity:.85}
 .body .list{list-style:none;padding:0;margin:0}.list li{padding:22px 0;border-bottom:1px solid var(--rule)}
-.list a{text-decoration:none}.list .d{font:var(--fs-0) var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.list a{text-decoration:none}.list .d{font:var(--fs-0) var(--mono);color:var(--ink-soft)}
 .list .t{display:block;font-size:var(--fs-6);line-height:1.2;margin:6px 0}.list .k{color:var(--ink-soft);font-size:var(--fs-4)}
 `;
 

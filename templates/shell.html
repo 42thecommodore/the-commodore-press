@@ -57,6 +57,7 @@
     <a class="mark" href="./" onclick="go('home');return false;">
       {{MARK size=22 sw=1.2 pn aria}}
       <b>Commodore Press</b>
+      <span class="tagline">A working library, edited by {{EDITOR}}</span>
     </a>
     <nav id="nav"></nav>
   </div>
@@ -68,7 +69,6 @@
     <div class="wrap">
       <div class="front">
         <div>
-          <div class="lbl">A working library · {{EDITOR}}</div>
           <h1>
             <span><i>Read the sources.</i></span>
             <span><i>Mark what is</i></span>
@@ -81,9 +81,10 @@
           </div>
           <div class="tally" id="tally"></div>
         </div>
-        <!-- Captain of the day, from the crew in content/captains.json. renderFront() in press.js. -->
-        <div id="bridge"></div>
       </div>
+      <!-- Captain of the day, from the crew in content/captains.json: the first band under the
+           door, not a second focus beside the headline. renderFront() in press.js. -->
+      <div id="bridge"></div>
     </div>
     <!-- One band per wing, then the record of corrections. Also renderFront(). -->
     <div id="bands"></div>
@@ -93,11 +94,7 @@
   <section class="wing" data-wing="press">
     <div class="wrap">
       <div class="wing-head">
-        <div>
-          <div class="lbl">Wing I · the ideas</div>
-          <h2>The Press</h2>
-        </div>
-        <div class="side" id="pressSide"></div>
+        <h2>The Press</h2>
       </div>
       <p class="wing-dek">{{W_BOOKS_CAP}} ideas I keep circling back to. Each one carries the argument in a line, an essay, a dated timeline, the people who did the work, the numbers with their sources, the strongest objection I know of, and what I have changed my mind about since.</p>
       <div class="hr"></div>
@@ -112,11 +109,7 @@
   <section class="wing" data-wing="lives">
     <div class="wrap">
       <div class="wing-head">
-        <div>
-          <div class="lbl">Wing II · the canon</div>
-          <h2>Lives That Withstood Time</h2>
-        </div>
-        <div class="side" id="livesSide"></div>
+        <h2>Lives That Withstood Time</h2>
       </div>
       <p class="wing-dek">{{W_LIVES_CAP}} people whose influence genuinely outlasted them, and the one book on each worth your time. {{W_FAMOUS_CAP}} the world remembers; {{N_OBSCURE}} it forgot but shouldn't. Reading lives at volume is the cheapest way to borrow judgment you have not yet earned — a board of directors you will never meet. Every pick carries a note on where specialists would argue with it, because "definitive" is a claim, not a fact.</p>
       <div class="hr"></div>
@@ -129,10 +122,7 @@
   <section class="wing" data-wing="atlas">
     <div class="wrap">
       <div class="wing-head">
-        <div>
-          <div class="lbl" style="color:var(--nbrass)">Wing III · the people I listen to</div>
-          <h2>What They Taught Me</h2>
-        </div>
+        <h2>What They Taught Me</h2>
         <div class="side" id="atlasSide"></div>
       </div>
       <p class="wing-dek" style="color:var(--parchment-dim)">Founders, coaches, investors, a lion tracker, a surgeon: what each of them taught me, from the notes I take while listening. I chart them as sources and pass no verdict on them.</p>
@@ -152,8 +142,8 @@
     <div class="wrap">
       <div class="wing-head">
         <div>
-          <div class="lbl">How this house works</div>
-          <h2>Colophon</h2>
+          <div class="lbl">Colophon</div>
+          <h2>How this house works</h2>
         </div>
         <div class="side"><a href="#corrections" onclick="document.getElementById('corrections').scrollIntoView({behavior:'smooth'});return false;">Jump to the corrections ↓</a></div>
       </div>

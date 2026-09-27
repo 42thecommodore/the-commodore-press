@@ -1,6 +1,6 @@
 # The Commodore Press
 
-A working library in three wings, published as one self-contained web page.
+A working library in three wings, published as a single front door and a page for every entry.
 
 **Read it: https://42thecommodore.github.io/the-commodore-press/**
 

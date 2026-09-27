@@ -2,7 +2,7 @@
 
 ## What this is
 
-A working library published as a single self-contained web page, in three wings: the Press (titles), Lives, and the Atlas. It is a publishing house, not a blog — the thing being sold is that **every claim carries its source and the place it is still argued.**
+A working library published as one web page and a page per entry, in three wings: the Press (titles), Lives, and the Atlas. It is a publishing house, not a blog — the thing being sold is that **every claim carries its source and the place it is still argued.**
 
 All three wings are about people. The Press is the ideas people spent their lives inside, Lives is the people themselves, the Atlas is the people the house listens to now. A fourth and fifth wing — the Field Manuals and the Slipway — were removed in September 2026 because they stated positions with nobody standing behind them, which is the one thing this house has no way to source.
 
@@ -48,7 +48,8 @@ The Commodore/
 ├── build/mark.mjs              # the press mark, drawn once; {{MARK …}} {{MARK_MASK}} {{MARK_FAVICON}} tokens
 │                               # (the check fails on a hand-drawn copy anywhere else)
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
-├── build/build.mjs             # assembles everything into dist/index.html
+├── build/build.mjs             # assembles everything into dist/index.html; each entry's body (essay, timeline,
+│                               # facts, dispute, reading list…) goes to dist/library.<hash>.js, loaded on first open
 ├── build/pages.mjs             # one crawlable page per entry: dist/t/<id>/, dist/l/<id>/ — plus about/, log/, feed.xml
 ├── build/log.mjs               # reads content/log/ — shared by build, check, links and proofread
 ├── tools/                      # validate, new, plate, correct, stats, serve, json (friendly parse errors)
@@ -141,6 +142,8 @@ Its sentence-length and punctuation targets were **measured off `content/`**, no
 
 ## Design
 
-`theme/press.css` is the design system: paper `#F2EDE1`, ink `#1E1C18`, EB Garamond for prose, IBM Plex Mono for apparatus. Two dark treatments exist and they are different things — `body.dusk` dims the house furniture, while `body.night` is the reading mode. **The books, plates, readers and Atlas keep their own printed liveries in night mode; only the walls dim.** That is a deliberate decision, not an oversight.
+`theme/press.css` is the design system: paper `#F2EDE1`, ink `#1E1C18`, EB Garamond for prose, IBM Plex Mono for apparatus.
+
+**The type rule** (stated at the top of `press.css`): EB Garamond sets everything a reader reads *or presses* — nav, buttons, filters, labels. Plex Mono is for data only (a year, a date, a count, a source line), in natural case, never as tracked capitals. Labels are Garamond capitals at 13px, .08em. Square corners, hairline rules, no shadows except on the books. Oxblood means a correction or a dispute, nothing else. Motion belongs to objects (a book turning, flying to the reader), never to entrances for show. The same rules hold on the entry pages in `build/pages.mjs` — they are the link other people receive. Two dark treatments exist and they are different things — `body.dusk` dims the house furniture, while `body.night` is the reading mode. **The books, plates, readers and Atlas keep their own printed liveries in night mode; only the walls dim.** That is a deliberate decision, not an oversight.
 
 Each title carries a `livery` — `cover`, `spineC`, `ink`, `accent`, `motif`. `npm run new` picks an unused one automatically.

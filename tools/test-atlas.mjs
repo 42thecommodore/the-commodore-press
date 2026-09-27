@@ -117,6 +117,7 @@ setTimeout(async () => {
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "cp-atlas-"));
 const src = path.join(tmp, "page.html");
 fs.writeFileSync(src, fs.readFileSync(page, "utf8").replace("</body>", TESTS + "</body>"));
+for (const f of fs.readdirSync(path.dirname(page)).filter(f => /^library\.[0-9a-f]+\.js$/.test(f))) fs.copyFileSync(path.join(path.dirname(page), f), path.join(tmp, f));
 let dom = "";
 try {
   dom = execFileSync(CHROME, ["--headless=new", "--disable-gpu", "--no-sandbox", "--window-size=1440,900",

@@ -25,7 +25,7 @@
     "cover": { "$ref": "#/definitions/colour", "description": "Livery: the cover colour, #RRGGBB. `npm run new` picks an unused set of four." },
     "spineC": { "$ref": "#/definitions/colour", "description": "Livery: the spine colour — a shade darker than `cover`." },
     "ink": { "$ref": "#/definitions/colour", "description": "Livery: the lettering colour on the cover. Light, so it reads against `cover`." },
-    "accent": { "$ref": "#/definitions/colour", "description": "Livery: the accent colour — the motif and the small details." },
+    "accent": { "$ref": "#/definitions/colour", "description": "Livery: the accent colour — the rule under the title, the subtitle and the small details." },
     "motif": { "$ref": "#/definitions/motif" },
     "claim": { "type": "string", "x-means": "argument", "description": "The argument in one sentence, printed large at the top of the reader. The house median is eight words." },
     "lede": { "type": "string", "x-means": "hook", "description": "The opening hook, read straight after the claim." },
@@ -75,7 +75,7 @@
     "colour": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
     "motif": {
       "enum": ["rings", "lines", "grid", "dots", "conic"],
-      "description": "The pattern pressed into the cover. Anything unrecognised prints as conic."
+      "description": "The pattern pressed into the cover, tone on tone in the lower part of the board: lines draws waves, rings ripples, grid a chart's graticule, dots a row of pennants, conic a low sun on the horizon. Anything unrecognised prints as conic."
     },
     "facts": {
       "type": "array", "description": "The numbers, each with its named source. A number with no source does not ship — the colophon promises the reader that every figure carries one, and the check enforces it in both wings.",
