@@ -8,6 +8,7 @@
 
    They are a second printing of the same content/, not a second source. Nothing here is
    written by hand; section names match the reader in theme/press.js so the two agree. */
+import { typeset } from "./typeset.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
@@ -60,10 +61,22 @@ const hrefFor = (to, known) => {
   return `../../#${w === "press" ? "t/" + id : w === "lives" ? "l/" + id : w}`;
 };
 
+/* Dusk on the entry pages: the library's values (theme/press.css, body.dusk), and the reader's
+   own choice first. The library's switch is stored as "cp-theme"; these pages used to follow the
+   device alone, so a reader who chose day in the library opened a shared link at night. The
+   boot line runs before the first paint; with no stored choice, the device decides. */
+const DUSK_VARS = "--paper:#1C1A16;--rule:#3A352C;--ink:#EAE3D1;--ink-soft:#9C9582;--oxblood:#CE7B6E";
+const DUSK = (sel, body = DUSK_VARS) => `${sel === ":root" ? ":root" : ""}[data-theme=dark]${sel === ":root" ? "" : " " + sel}{${body}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light])${sel === ":root" ? "" : " " + sel}{${body}}}`;
+const THEME_BOOT = `<script>try{var t=localStorage.getItem("cp-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>`;
+/* the same switch as the library's, in the page's footer */
+const DUSK_SWITCH = `<button type="button" class="dusk-sw" aria-pressed="false" onclick="var d=document.documentElement,on=!(d.dataset.theme==='dark'||(!d.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches));d.dataset.theme=on?'dark':'light';this.setAttribute('aria-pressed',on);try{localStorage.setItem('cp-theme',d.dataset.theme)}catch(e){}">Dusk</button><script>(function(b){var d=document.documentElement;b.setAttribute("aria-pressed",d.dataset.theme==="dark"||(!d.dataset.theme&&matchMedia("(prefers-color-scheme: dark)").matches))})(document.currentScript.previousElementSibling)</script>`;
+
 const CSS = `
+.dusk-sw{font:inherit;color:inherit;background:none;border:0;padding:0 2px;min-height:44px;cursor:pointer;text-decoration:underline 1px;text-underline-offset:3px}.dusk-sw[aria-pressed=true]{font-weight:600}
 :root{--fs-0:12px;--fs-1:13px;--fs-2:15px;--fs-3:17px;--fs-4:19px;--fs-5:21px;--fs-6:26px;--fs-7:34px;--fs-8:44px;--fs-9:64px;--paper:#F2EDE1;--rule:#D3C9B2;--ink:#1E1C18;--ink-soft:#5C5647;--oxblood:#8A2B25;
   --serif:"EB Garamond","Iowan Old Style",Palatino,Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
-@media (prefers-color-scheme:dark){:root{--paper:#12151F;--rule:#2B3247;--ink:#EAE3D1;--ink-soft:#98917E;--oxblood:#CE7B6E}}
+${DUSK(":root")}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:var(--fs-5)/1.62 var(--serif);-webkit-font-smoothing:antialiased}
 a{color:inherit}
@@ -172,7 +185,7 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
 .corrd{border-top:1px solid color-mix(in srgb,var(--oxblood) 30%,transparent);padding:12px 0}
 .corrd summary{cursor:pointer;font-size:var(--fs-4);line-height:1.4}.corrd p{font-size:var(--fs-3);line-height:1.6;margin:10px 0 0}
 @media (max-width:560px){.top.entry .wl{display:none}.top.entry .tr{gap:12px}.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:var(--fs-2)}.keepq p{font-size:var(--fs-5)}.s h2{font-size:var(--fs-6)}}
-@media (prefers-color-scheme:dark){.keepq{background:color-mix(in srgb,var(--cover) 30%,var(--paper))}}
+${DUSK(".keepq", "background:color-mix(in srgb,var(--cover) 30%,var(--paper))")}
 `;
 
 function body(kind, b, known, plateFile, CORR = [], share = "") {
@@ -276,6 +289,7 @@ function page(kind, b, ctx) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
+${THEME_BOOT}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${attr(name)} — The Commodore Press</title>
 <meta name="description" content="${attr(desc)}">
@@ -320,7 +334,7 @@ ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../../", "Follow the Press",
 </div>
 <script>${READING_JS.replace(/<\/script/gi, "<\\/script")}
 Reading.page(${JSON.stringify(conf).replace(/</g, "\\u003c")})</script>
-<footer>The Commodore Press · edited by ${hasAbout ? `<a href="../../about/">${EDITOR}</a>` : EDITOR} · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a></footer>
+<footer>The Commodore Press · edited by ${hasAbout ? `<a href="../../about/">${EDITOR}</a>` : EDITOR} · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `;
@@ -413,7 +427,8 @@ export function markdown(src, link) {
     else if (/^\d+\. /.test(b) && lines.every(l => /^\d+\. |^\s/.test(l))) html.push(`<ol>${listOf(b, /^\d+\. /)}</ol>`);
     else html.push(`<p>${inline(b.replace(/\n/g, " "), link)}</p>`);
   }
-  return { title, html: html.join("\n") };
+  // typographic quotes, as on every other page (build/typeset.mjs)
+  return { title: typeset(title), html: typeset(html.join("\n")) };
 }
 
 /* The page is built only once the editor has written the editor's section: a placeholder
@@ -436,6 +451,7 @@ export function writeAbout({ ROOT, SITE, fill, NEWS, hasLog }) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
+${THEME_BOOT}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${attr(title)} — The Commodore Press</title>
 <meta name="description" content="${attr(desc)}">
@@ -462,7 +478,7 @@ ${html}
 <a class="cta" href="../">Enter the library →</a>
 ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../", "Follow the Press", hasLog) : ""}
 </main>
-<footer>The Commodore Press · edited by ${EDITOR} · <a href="../#colophon">colophon &amp; corrections</a></footer>
+<footer>The Commodore Press · edited by ${EDITOR} · <a href="../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `);
@@ -525,6 +541,7 @@ export function writeLog({ ROOT, SITE, pieces, BOOKS, ADJACENT, LIVES, PRINCIPLE
 <html lang="en">
 <head>
 <meta charset="utf-8">
+${THEME_BOOT}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${attr(inline(x.meta.title))} — The Commodore Press</title>
 <meta name="description" content="${attr(inline(x.meta.dek))}">
@@ -555,7 +572,7 @@ ${html}
 ${across.length ? `<h2>Reads across to</h2>${across.map(a => `<p><a href="${a.href}">${a.label}</a> <span class="why">· ${a.wing}</span></p>`).join("")}` : ""}
 ${subscribe(root)}
 </main>
-<footer>The Log is the editor's signed column. Figures carry their sources here too, and corrections are appended in the <a href="${root}#colophon">colophon</a>.</footer>
+<footer>The Log is the editor’s signed column. Figures carry their sources here too, and corrections are appended in the <a href="${root}#colophon">colophon</a>. · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `);
@@ -567,6 +584,7 @@ ${subscribe(root)}
 <html lang="en">
 <head>
 <meta charset="utf-8">
+${THEME_BOOT}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Log — The Commodore Press</title>
 <meta name="description" content="The editor's signed column at the Commodore Press: arguments with the library and the people in it, sourced like everything else.">
@@ -589,7 +607,7 @@ ${FONTS}
 <ul class="list">${pieces.map(x => `<li><a href="${x.slug}/"><span class="d">${longDate(x.meta.date)}</span><span class="t">${inline(x.meta.title)}</span><span class="k">${inline(x.meta.dek)}</span></a></li>`).join("")}</ul>
 ${subscribe("../")}
 </main>
-<footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a></footer>
+<footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `);
@@ -639,6 +657,7 @@ export function writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG }) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
+${THEME_BOOT}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contents — The Commodore Press</title>
 <meta name="description" content="Every title and life in the Commodore Press: ${BOOKS.length} ideas and ${LIVES.length} people, each with its sources and the place it is still argued.">
@@ -658,7 +677,7 @@ ${FONTS}
 <h2>Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `${l.field} · ${l.years}`)).join("")}</ul>
 ${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
 </main>
-<footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a></footer>
+<footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `;

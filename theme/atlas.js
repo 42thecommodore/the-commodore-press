@@ -574,9 +574,9 @@ function showRoute(p) {
 
 /* ---------- the island card ---------- */
 function portRow(pt, withIsle) {
-  return `<button class="portrow" onclick="openLife('${pt.life.id}')">
+  return `<a class="portrow" ${entryAttrs("life",pt.life.id)}>
     ${plateOrMark(pt.life, "pr-img")}
-    <span class="pr-t"><b>${pt.life.n}</b><small>${pt.life.years}${withIsle ? ` · ${pt.pr.name}` : ""}</small><i>${pt.txt}</i></span></button>`;
+    <span class="pr-t"><b>${pt.life.n}</b><small>${pt.life.years}${withIsle ? ` · ${pt.pr.name}` : ""}</small><span class="pr-x">${pt.txt}</span></span></a>`;
 }
 function personPill(p) {
   return `<button class="star-pill" onclick="openDrawerById('${p.id}')" onmouseenter="showRoute(PEOPLE.find(x=>x.id==='${p.id}'))" onmouseleave="showRoute(null)" onfocus="showRoute(PEOPLE.find(x=>x.id==='${p.id}'))" onblur="showRoute(null)"><span class="s" style="background:${p.color}"></span>${p.name}</button>`;
@@ -749,7 +749,7 @@ function renderCrossing() {
       <span class="cx-dot" aria-hidden="true"></span>
       <div class="cx-card">
         <div class="cx-top"><button class="cx-isle" onclick="selectIsle('${pt.pr.id}',true)">${pt.pr.name}</button><span class="cx-yr">${fmtYear(pt.year)}</span></div>
-        <button class="cx-life" onclick="openLife('${pt.life.id}')">${plateOrMark(pt.life, "cx-img")}<span><b>${pt.life.n}</b><small>${pt.life.years}</small></span></button>
+        <a class="cx-life" ${entryAttrs("life",pt.life.id)}>${plateOrMark(pt.life, "cx-img")}<span><b>${pt.life.n}</b><small>${pt.life.years}</small></span></a>
         <p class="cx-txt">${pt.txt}</p>
         <div class="cx-now"><span class="lbl q">Who taught it to me now</span><div class="const-stars">${now_.slice(0, 5).map(personPill).join("")}${now_.length > 5 ? `<button class="star-pill more" onclick="selectIsle('${pt.pr.id}',true)">+${now_.length - 5} more</button>` : ""}</div></div>
       </div></li>`);
@@ -859,7 +859,7 @@ function renderLinks() {
     <div class="echoes">${echoes.map(e => `<article class="echo"><div class="echo-h"><div><h4>${e.idea}</h4><button class="echo-map" type="button" onclick="showEcho(${echoes.indexOf(e)})">Show on the map ↑</button></div>${constShape(e)}</div><ul>${e.notes.map(n => { const p = byName(n.who); return p ? `<li><button class="lk-p" onclick="openDrawerById('${p.id}')"><b><span class="s" style="background:${p.color}"></span>${p.name}</b>${p.role ? `<small>${p.role}</small>` : ""}</button><p>${n.note}</p></li>` : ""; }).join("")}</ul></article>`).join("")}</div>
     <p class="notecap" style="margin-top:12px">These are my notes from listening, with the spelling fixed. They are not quotations.</p>
     ${cites.length >= 3 ? `<div class="sec-head" style="padding-top:34px"><h3>Where the shelves meet</h3><span>Where my notes on someone name a person on the Lives shelf.</span></div>
-    <ol class="lk-list">${cites.map(x => `<li>${who(x.p)}<span class="lk-and">on</span><button class="lk-p" onclick="openLife('${x.life.id}')"><b>${x.life.n}</b><small>${x.life.years} · Lives</small></button><p>${x.m.note}</p></li>`).join("")}</ol>` : ""}`;
+    <ol class="lk-list">${cites.map(x => `<li>${who(x.p)}<span class="lk-and">on</span><a class="lk-p" ${entryAttrs("life",x.life.id)}><b>${x.life.n}</b><small>${x.life.years} · Lives</small></a><p>${x.m.note}</p></li>`).join("")}</ol>` : ""}`;
 }
 function renderHarbour() {
   const el = document.getElementById("harbour"); if (!el) return;
@@ -917,7 +917,7 @@ function openDrawer(p) {
     `<div>${lbl("My take")}<p class="pull">${p.take}</p></div>
      ${p.p.length > 1 ? `<div>${lbl("Their lessons, as a route")}${miniMap(p)}<ol class="mm-isles">${(miniMap.order || p.p).map(id => `<li><button class="cx-isle" onclick="closeDrawer();selectIsle('${id}',true)">${P_BY_ID[id].name}</button></li>`).join("")}</ol></div>` : !p.p.length ? "" : `<div>${lbl("Their lesson")}<button class="cx-isle" onclick="closeDrawer();selectIsle('${p.p[0]}',true)">${P_BY_ID[p.p[0]].name}</button></div>`}
      ${(() => { const mine = (typeof ECHOES === "undefined" ? [] : ECHOES).filter(e => e.notes.some(n => n.who === p.name)); return mine.length ? `<div>${lbl("Heard the same from")}${mine.map(e => { const others = e.notes.filter(n => n.who !== p.name).map(n => PEOPLE.find(q => q.name === n.who)).filter(Boolean); return `<div class="echo-d"><b>${e.idea}</b><span>also ${others.map(q => `<button class="cx-inline" onclick="openDrawer(PEOPLE.find(z=>z.id==='${q.id}'))">${q.name}</button>`).join(", ")}</span></div>`; }).join("")}</div>` : ""; })()}
-     ${(p.mentions || []).length ? `<div>${lbl("Names someone on the Lives shelf")}${p.mentions.map(m => { const l = LIVES.find(x => x.id === m.to.slice(6)); return l ? `<button class="portrow" onclick="openLife('${l.id}')">${plateOrMark(l, "pr-img")}<span class="pr-t"><b>${l.n}</b><small>${l.years}</small><i>${m.note}</i></span></button>` : ""; }).join("")}</div>` : ""}
+     ${(p.mentions || []).length ? `<div>${lbl("Names someone on the Lives shelf")}${p.mentions.map(m => { const l = LIVES.find(x => x.id === m.to.slice(6)); return l ? `<a class="portrow" ${entryAttrs("life",l.id)}>${plateOrMark(l, "pr-img")}<span class="pr-t"><b>${l.n}</b><small>${l.years}</small><span class="pr-x">${m.note}</span></span></a>` : ""; }).join("")}</div>` : ""}
      ${earlier.length ? `<div>${lbl("From the Lives shelf, on the same lessons")}${earlier.map(pt => portRow(pt, true)).join("")}</div>` : ""}
      ${near.length ? `<div>${lbl("Most alike in what they taught me")}<div style="display:flex;flex-direction:column;gap:7px">${near.map(x => `<button class="clink" onclick="openDrawer(PEOPLE.find(z=>z.id==='${x.q.id}'))"><span class="g" style="color:${x.q.color}">●</span><span><b>${x.q.name}</b><span>${x.both.length} lessons in common: ${x.both.map(id => P_BY_ID[id].name).join(", ")}</span></span></button>`).join("")}</div></div>` : ""}
      ${keptHTML(p)}

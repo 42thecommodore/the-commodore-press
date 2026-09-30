@@ -1,5 +1,6 @@
 /* Commodore Press build — assembles content/ + theme/ + assets/ into dist/index.html.
    No dependencies. Run: npm run build */
+import { typesetAll, typesetHTML } from "./typeset.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -30,16 +31,17 @@ const dir = d => {
 };
 const one = f => { try { return readJSON(p(f)); } catch (e) { throw new Error(`${f}: ${e.message}`); } };
 
-const BOOKS      = dir("content/books");
-const ADJACENT   = dir("content/adjacent");
-const LIVES      = dir("content/lives");
+// every prose string is set with typographic quotes here, once (build/typeset.mjs); content/ stays as typed
+const BOOKS      = typesetAll(dir("content/books"));
+const ADJACENT   = typesetAll(dir("content/adjacent"));
+const LIVES      = typesetAll(dir("content/lives"));
 const DOMAINS    = one("content/atlas/domains.json");
 const DCOLOR     = one("content/atlas/domain-colors.json");
-const PRINCIPLES = one("content/atlas/principles.json");
-const PEOPLE     = one("content/atlas/people.json");
-const SOURCES    = one("content/atlas/sources.json");
-const ECHOES     = one("content/atlas/echoes.json") || [];
-const CORRECTIONS= one("content/corrections.json");
+const PRINCIPLES = typesetAll(one("content/atlas/principles.json"));
+const PEOPLE     = typesetAll(one("content/atlas/people.json"));
+const SOURCES    = typesetAll(one("content/atlas/sources.json"));
+const ECHOES     = typesetAll(one("content/atlas/echoes.json") || []);
+const CORRECTIONS= typesetAll(one("content/corrections.json"));
 const PLATELIC   = one("content/plate-licences.json");
 const NEWS       = one("content/newsletter.json");
 const CAPTAINS   = fs.existsSync(p("content/captains.json")) ? one("content/captains.json").crew || [] : [];
@@ -163,7 +165,7 @@ const fill = s => fillMark(s)
   .replace(/{{W_WINGS_CAP}}/g, cap(words(WINGS.length))).replace(/{{W_WINGS}}/g, words(WINGS.length));
 fs.mkdirSync(p("dist"), { recursive: true });
 const ABOUT_URL = writeAbout({ ROOT, SITE, fill, NEWS, hasLog: LOG.length > 0 });
-const out = fill(read("templates/shell.html"))
+const out = fill(typesetHTML(read("templates/shell.html")))   // the frame's own prose, quotes curled; scripts and styles untouched
   .replace("<head>", `<head>\n<meta name="press-build" content="${BUILD}">`)
   // the footer names the editor, and links the name once the About page exists
   .replace("<!--EDITOR-->", ABOUT_URL ? `<a href="about/">${EDITOR}, editor</a>` : EDITOR)

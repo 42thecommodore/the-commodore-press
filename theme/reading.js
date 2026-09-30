@@ -14,7 +14,9 @@
    A shared passage is the Press's own words, verbatim, and every quote is credited
    "The Commodore Press, on <entry>" — never set under the entry's name alone, where a line
    the Press wrote about Darwin would read as Darwin's. The colophon promises no invented
-   quotations; a misattributed one is the same failure. One function, credit(), writes it.
+   quotations; a misattributed one is the same failure. One function, credit(), writes it —
+   for the share sheet here and, as Reading.credit, for the keep line on the front door's
+   Captain card, which sat in italic beside Franklin's portrait with no credit at all.
 
    No third-party script and no tracking. The share links are plain URLs; nothing is sent
    anywhere until the reader chooses to. */
@@ -164,7 +166,6 @@
       var st = win ? scrollY : o.scroller.scrollTop, ab = span(), a = ab[0], b = ab[1];
       var p = Math.min(1, Math.max(0, (st - a) / (b - a)));
       if (o.key && p > 0.01) memory.note(o.key, p);
-      if (offer && Math.abs(st - offer.at) > 240) dismiss();
       if (o.bar) o.bar.style.transform = "scaleX(" + p.toFixed(4) + ")";
       if (o.label) {
         var left = Math.ceil(o.mins * (1 - p));
@@ -174,24 +175,27 @@
     }
     function on() { if (!raf) raf = requestAnimationFrame(update); }
     function dismiss() { if (offer) { offer.el.remove(); offer = null; } }
-    // Came back to an entry left part-read: offer to go back, once, and get out of the way.
-    if (saved && !saved.d && saved.p >= 0.08 && saved.p <= 0.95 && o.start && o.end) {
+    /* Came back to an entry left part-read: offer to go back, once. The offer is a line in the
+       text's own flow, above where the reading starts (o.resumeBefore, or the first thing in
+       o.start). It used to float, fixed, over the middle of the essay's lines with a drop shadow,
+       on the very page a newcomer is sent. It stays until answered: taking it away by itself
+       would jump the text under a reader who has started. */
+    var host = o.resumeBefore || (o.start && o.start.firstElementChild);
+    if (saved && !saved.d && saved.p >= 0.08 && saved.p <= 0.95 && host && o.end) {
       var el = doc.createElement("div"), left = Math.max(1, Math.ceil(o.mins * (1 - saved.p)));
       el.className = "rs-resume"; el.setAttribute("role", "status");
-      if (o.theme && o.theme.bg) el.style.setProperty("--rs-bg", o.theme.bg);
-      if (o.theme && o.theme.ink) el.style.setProperty("--rs-ink", o.theme.ink);
       el.innerHTML = '<span>You stopped here before · ' + left + ' min left</span><button type="button" data-a="go">Continue ↓</button><button type="button" data-a="x" aria-label="Dismiss">✕</button>';
       el.addEventListener("click", function (e) {
         var b = e.target.closest("button"); if (!b) return;
-        if (b.getAttribute("data-a") === "go") {
+        var go = b.getAttribute("data-a") === "go";
+        dismiss();                                  // out of the flow first, so the place is measured without it
+        if (go) {
           var ab = span(), top = ab[0] + saved.p * (ab[1] - ab[0]);
           o.scroller.scrollTo({ top: top, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
         }
-        dismiss();
       });
-      doc.body.appendChild(el);
-      offer = { el: el, at: win ? scrollY : o.scroller.scrollTop };
-      setTimeout(dismiss, 12000);
+      host.parentNode.insertBefore(el, host);
+      offer = { el: el };
     }
     o.scroller.addEventListener("scroll", on, { passive: true });
     addEventListener("resize", on);
@@ -282,5 +286,5 @@
     quotes({ root: doc.querySelector("main"), within: ".lede,.essay,.keepq p,.callout p,.note p", scroller: window, meta: function () { return m; } });
   }
 
-  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory };
+  window.Reading = { share: share, copy: copy, copied: copied, progress: progress, quotes: quotes, page: page, close: close, memory: memory, credit: credit };
 })();

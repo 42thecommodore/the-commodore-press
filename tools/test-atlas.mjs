@@ -71,6 +71,11 @@ setTimeout(async () => {
     t("a chosen island names every one of its people", document.querySelectorAll(".tn.co").length === P_BY_ID.hard.members.length,
       document.querySelectorAll(".tn.co").length + " named of " + P_BY_ID.hard.members.length);
     t("the card lists who taught it", document.querySelectorAll("#isleCard .who").length === P_BY_ID.hard.members.length);
+    // the Life beside a lesson: a link to its page, and the house's line under it in roman —
+    // in italic beside a face it read as the person's own words
+    const rows = [...document.querySelectorAll("#isleCard .portrow")];
+    t("a Life beside a lesson links its page, and its line is set in roman", rows.length > 0 && rows.every(a => a.tagName === "A" && a.getAttribute("href").startsWith("l/")
+      && getComputedStyle(a.querySelector(".pr-t > :last-child")).fontStyle !== "italic"), rows.length + " rows");
     selectIsle(null); await wait(800);
     const e2 = E[1]; atlasRoute("c/" + slug(e2.idea)); await wait(900);
     t("#atlas/c/<idea> opens that constellation", document.querySelector(".feat-i").textContent === e2.idea, document.querySelector(".feat-i").textContent);

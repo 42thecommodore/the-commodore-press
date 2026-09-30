@@ -274,7 +274,7 @@ Use the life's id, the part of its filename after the number. Nobody is a captai
 
 Nearly every broken file is one of these.
 
-1. **Text goes in straight double quotes:** `"like this"`. A `"` *inside* the text ends it early — use the typographic `“ ”` the house already uses.
+1. **Text goes in straight double quotes:** `"like this"`. A `"` *inside* the text ends it early — use the typographic `“ ”` the house already uses. Apostrophes and single quotes you can type plainly (`don't`, `'bitter lesson'`): the build curls every one into `’` and `‘ ’` on the page, and the tests fail if a straight one ever gets through.
 2. **A comma between items, and none after the last** one before a `}` or `]`.
 3. **One paragraph, one line.** No pressing Return inside quotes; the editor wraps it for you.
 4. **`[ ]` is a list, `{ }` is a group of fields.** Every one you open, close.

@@ -17,6 +17,12 @@
  *   - the front door's arrow keys leave a focused control alone
  *   - Esc closes only what is open — the share sheet, then the reader, and a selected
  *     passage is let go before anything closes — and never takes the reader off the page
+ *   - the front door's first screen holds the shelf, at 1440×900 and at 375×812, and its one
+ *     count is the corrections, opening the record it counts
+ *   - every book and face is a link to its own page; a plain click opens the reader in place,
+ *     a Cmd-click is left to the browser
+ *   - the keep line on the Captain card is credited to the Press, never set beside the face alone
+ *   - the reader's "№ … of N" counts the shelf the entry stands on
  * and, without a browser, that every entry page's share link, end block and read-next link
  * are present and resolve.
  *
@@ -66,6 +72,33 @@ if (!fs.existsSync(dist("index.html"))) { console.error("\n  No dist/ — run `n
   report("Entry pages", res);
 }
 
+/* ---------- typographic quotes, on everything a reader can open ----------
+   The build sets them (build/typeset.mjs). A straight quote here means prose reached a page
+   by a road that skips it — a new field, a new template, a new page. */
+{
+  const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);
+  const seen = [];
+  const visible = html => html.replace(/<(script|style)\b[^]*?<\/\1>/gi, " ").replace(/<[^>]*>/g, " ")
+    .replace(/&(quot|#34|#x22);/gi, '"').replace(/&(apos|#39|#x27);/gi, "'");
+  const around = (txt, i) => txt.slice(Math.max(0, i - 30), i + 30).replace(/\s+/g, " ").trim();
+  for (const f of walk(dist()).filter(f => f.endsWith(".html"))) {
+    const txt = visible(fs.readFileSync(f, "utf8")), i = txt.search(/['"]/);
+    if (i >= 0) seen.push(`${path.relative(dist(), f)}: …${around(txt, i)}…`);
+  }
+  // the entries' bodies, as the library's reader prints them
+  const { NOT_PROSE } = await import("../build/typeset.mjs");
+  for (const f of fs.readdirSync(dist()).filter(f => /^library\.[0-9a-f]+\.js$/.test(f))) {
+    const data = JSON.parse(fs.readFileSync(dist(f), "utf8").replace(/^[^(]*\(/, "").replace(/\);?\s*$/, ""));
+    const check = (n, k, at) => {
+      if (typeof n === "string") { const txt = visible(n), i = txt.search(/['"]/); if (i >= 0 && !NOT_PROSE.has(k)) seen.push(`${f} ${at}: …${around(txt, i)}…`); }
+      else if (Array.isArray(n)) n.forEach((v, j) => check(v, k, at));
+      else if (n && typeof n === "object") for (const [kk, v] of Object.entries(n)) check(v, kk, at ? at : kk);
+    };
+    for (const kind of ["press", "lives"]) for (const [id, b] of Object.entries(data[kind] || {})) check(b, "", `${kind}/${id}`);
+  }
+  report("Typography", [{ n: "no straight quote reaches a page a reader can open", ok: !seen.length, d: `${seen.length} — ${seen.slice(0, 3).join(" · ")}` }]);
+}
+
 /* ---------- in the browser ---------- */
 const HARNESS = String.raw`
 <script>
@@ -82,6 +115,7 @@ window.__run = async function (tests) {
   try { await tests(t, wait, esc); } catch (e) { t("the test ran to the end", false, e && e.stack || e); }
   const out = document.createElement("script"); out.type = "application/json"; out.id = "__results";
   out.textContent = JSON.stringify(R).replace(/</g, "\\u003c"); document.body.appendChild(out);
+  if (parent !== window) parent.postMessage({ __results: R }, "*");   // run in a frame of a set size: see drive()
 };
 </script>`;
 
@@ -127,6 +161,22 @@ const ENTRY = (credit) => String.raw`
 addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   const canon = document.querySelector("link[rel=canonical]").href;
   t("the reading tools load", typeof Reading === "object");
+  // the reader chose dusk in the library (seeded before load): the shared page opens at dusk, and says so
+  t("an entry page opens in the reader's stored choice", document.documentElement.dataset.theme === "dark" && getComputedStyle(document.body).backgroundColor === "rgb(28, 26, 22)", document.documentElement.dataset.theme + " / " + getComputedStyle(document.body).backgroundColor);
+  const esw = document.querySelector(".dusk-sw");
+  t("…and carries the same Dusk switch, pressed", esw && esw.getAttribute("aria-pressed") === "true");
+  // left part-read (seeded before the page loaded): the offer is a line in the flow, never over the text
+  const rs = document.querySelector(".rs-resume");
+  t("a part-read entry offers to continue", rs);
+  if (rs) {
+    t("…in the text's flow, not floating over it", getComputedStyle(rs).position === "static" && document.querySelector("main").contains(rs), getComputedStyle(rs).position);
+    // --dump-dom never animates a smooth scroll, so the target is taken from the call and jumped to
+    const jump = window.scrollTo; let asked = null;
+    window.scrollTo = o => { asked = o; jump.call(window, { top: o.top, behavior: "auto" }); };
+    rs.querySelector("[data-a=go]").click(); await wait(300); window.scrollTo = jump;
+    t("…and Continue takes the reader back to their place", asked && asked.top > 200 && scrollY > 200 && !document.querySelector(".rs-resume"), "asked for " + (asked && Math.round(asked.top)) + ", at " + scrollY);
+    scrollTo(0, 0); await wait(200);
+  }
   t("the scripts-off links are hidden when scripts run", [...document.querySelectorAll(".rs-nojs")].every(e => getComputedStyle(e).display === "none"));
   const top = document.querySelector(".top [data-rs=share]");
   t("Share is visible in the top bar", top && getComputedStyle(top).display !== "none");
@@ -169,6 +219,11 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   openReader(${JSON.stringify(kind)}, ${JSON.stringify(id)}); await wait(900);
   const sheet = document.getElementById("sheet"), reader = document.getElementById("reader");
   t("the reader opens the entry", current === ${JSON.stringify(id)});
+  const rq = sheet.innerText.search(/['"]/);
+  t("no straight quote in the reader", rq < 0, rq < 0 ? "" : "…" + sheet.innerText.slice(Math.max(0, rq - 30), rq + 30) + "…");
+  const shelfN = [...sheet.querySelectorAll(".rmeta div")].map(d => d.textContent).find(x => /№/.test(x)) || "";
+  const shelfOf = ${JSON.stringify(kind)} === "press" ? (BOOKS.some(b => b.id === ${JSON.stringify(id)}) ? BOOKS : ADJACENT) : LIVES;
+  t("the reader counts the shelf the entry stands on", shelfN.endsWith("of " + shelfOf.length), shelfN + " — the shelf holds " + shelfOf.length);
   t("the reader and the entry page print the same minutes", +document.getElementById("rleft").dataset.mins === ${want.mins}, document.getElementById("rleft").dataset.mins + " vs ${want.mins}");
   t("the reader and the entry page recommend the same next read", sheet.querySelector(".rs-next .rs-nt").textContent.trim() === ${JSON.stringify(want.next)}, sheet.querySelector(".rs-next .rs-nt").textContent);
   sheet.querySelector(".rbar .rs-go").click(); await wait(150);
@@ -206,15 +261,140 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
 }), 600));
 </script>`;
 
-function drive(page, script) {
+/* The front door, at a desk and on a phone. */
+const FRONT = String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  scrollTo(0, 0); await wait(200);
+  const size = innerWidth + "×" + innerHeight;
+  // the phone run starts from a stored dusk: the switch is drawn after the theme is applied, and
+  // it once came up "off" in a house that was already dark
+  if (localStorage.getItem("cp-theme") === "dark")
+    t("a stored dusk opens at dusk, with the switch pressed", document.body.classList.contains("dusk") && document.getElementById("themeBtn").getAttribute("aria-pressed") === "true",
+      "dusk: " + document.body.classList.contains("dusk") + ", pressed: " + document.getElementById("themeBtn").getAttribute("aria-pressed"));
+  const rack = document.querySelector(".front .rack"), r = rack && rack.getBoundingClientRect();
+  // 200px of spines is a shelf you can see; less is the top of something below the fold
+  t("the first screen holds the shelf (" + size + ")", r && innerHeight - r.top >= 200, r ? "the spines start at " + Math.round(r.top) + "px of " + innerHeight : "no shelf on the front door");
+  t("no sideways scroll (" + size + ")", document.documentElement.scrollWidth <= innerWidth, document.documentElement.scrollWidth + "px wide");
+  t("the top of the first screen has no buttons: the shelf is the one thing to do", !document.querySelector(".front-top button, .front-top a"),
+    [...document.querySelectorAll(".front-top button, .front-top a")].map(e => e.textContent.trim()).join(", "));
+  // spine titles, as rendered, in the light the page opens in: a CSS rule once outranked the
+  // livery's ink and printed every title in page-black on a dark spine, and a check run in dark
+  // mode (where page-black is light) passed it
+  applyTheme(false); await wait(300);
+  const lum = c => c.match(/[\d.]+/g).slice(0, 3).map(Number).map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }).reduce((s, v, i) => s + v * [.2126, .7152, .0722][i], 0);
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + .05) / (y + .05); };
+  const dim = [...document.querySelectorAll(".front .rk")].map(a => [a.getAttribute("aria-label"), ratio(getComputedStyle(a.querySelector(".rk-sp > span")).color, getComputedStyle(a.querySelector(".rk-sp")).backgroundColor)]).filter(x => x[1] < 7);
+  t("every spine title reads at 7:1 or better on its spine", !dim.length, dim.slice(0, 4).map(x => x[0] + " " + x[1].toFixed(2) + ":1").join(" · "));
+  const cut = [...document.querySelectorAll(".front .rk-sp > span")].filter(e => e.scrollHeight > e.clientHeight + 1).map(e => e.textContent);
+  t("no spine title is cut off", !cut.length, cut.join(" · "));
+  // dusk, measured: the books keep a lit edge on the wall, portraits sit in a dim mount, the
+  // Atlas stays a different room, and the switch says what it is
+  applyTheme(true); await wait(300);
+  const wall = getComputedStyle(document.body).backgroundColor;
+  const lab = c => { const [r, g, b] = c.match(/[\d.]+/g).slice(0, 3).map(Number).map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; });
+    const f = x => x > .008856 ? Math.cbrt(x) : 7.787 * x + 16 / 116, X = f((r * .4124 + g * .3576 + b * .1805) / .95047), Y = f(r * .2126 + g * .7152 + b * .0722), Z = f((r * .0193 + g * .1192 + b * .9505) / 1.08883);
+    return [116 * Y - 16, 500 * (X - Y), 200 * (Y - Z)]; };
+  const dE = (a, b) => Math.hypot(...lab(a).map((v, i) => v - lab(b)[i]));
+  const sunk = [...document.querySelectorAll(".front .rk-sp")].filter(sp => { const c = getComputedStyle(sp); return parseFloat(c.outlineWidth) < 1 || c.outlineStyle === "none" || ratio(c.outlineColor, wall) < 3; });
+  t("at dusk every book has a lit edge at 3:1 on the wall", !sunk.length, sunk.length + " spines sink into the wall");
+  const mounts = [...document.querySelectorAll(".wall .fp-img")].map(m => ratio(getComputedStyle(m).backgroundColor, wall)), glare = mounts.filter(v => v > 2);
+  t("at dusk the portraits sit in a dim mount, not glaring paper", mounts.length && !glare.length, glare.length + " mounts over 2:1, brightest " + Math.max(...mounts).toFixed(2));
+  const sea = dE(getComputedStyle(document.querySelector(".band.night")).backgroundColor, wall);
+  t("at dusk the Atlas is still its own room", sea >= 10, "ΔE " + sea.toFixed(1) + " from the wall");
+  const sw = document.getElementById("themeBtn");
+  t("the switch is named Dusk and says whether it is on", sw.textContent.trim() === "Dusk" && sw.getAttribute("aria-pressed") === "true", sw.textContent + " / " + sw.getAttribute("aria-pressed"));
+  applyTheme(false); await wait(300);
+  t("…and off by day", sw.getAttribute("aria-pressed") === "false");
+  // search, typed as a reader types: a straight apostrophe must find a curled one
+  await loadLibrary(); SIX = null;
+  const src = ALL.concat(LIVES).find(e => /\w’\w/.test(e.lede || "")), word = src && src.lede.match(/[A-Za-z]+’[A-Za-z]+/)[0];
+  openSearch(); await wait(200); runSearch(word.replace("’", "'"));
+  const found = [...document.querySelectorAll("#sresults .sres b")].map(x => x.textContent);
+  closeSearch();
+  t("search finds “" + word + "” typed with a straight apostrophe", found.includes(src.title || src.n), found.slice(0, 4).join(", ") || "nothing");
+  const tally = document.getElementById("tally"), nums = (tally.textContent.match(/\d+/g) || []);
+  t("the front door's one count is the corrections, and it opens them", nums.length === 1 && +nums[0] === CORRECTIONS.length && tally.querySelector("a[href='#corrections']"), tally.textContent.trim());
+  const books = [...document.querySelectorAll(".front .rack a.rk")], faces = [...document.querySelectorAll(".wall a.wface")];
+  t("every book on the front door links its own page", books.length === BOOKS.length && books.every((a, i) => a.getAttribute("href") === "t/" + BOOKS[i].id + "/"), books.length + " links for " + BOOKS.length + " books");
+  t("every face on the front door links its own page", faces.length === LIVES.length && faces.every((a, i) => a.getAttribute("href") === "l/" + LIVES[i].id + "/"), faces.length + " links for " + LIVES.length + " lives");
+  t("nothing on the page opens an entry from a button", !document.querySelector('button[onclick*="openReader"],button[onclick*="openLife"]'));
+  let left = null; addEventListener("click", e => { left = !e.defaultPrevented; e.preventDefault(); }, { once: true });
+  books[1].dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, metaKey: true })); await wait(200);
+  t("a Cmd-click on a book is left to the browser", left === true && current === null, "prevented: " + !left + ", reader: " + current);
+  const here = location.pathname;
+  await loadLibrary();
+  // without a mouse the first tap opens the cover in place, the second opens the book
+  if (matchMedia("(hover:none),(max-width:760px)").matches) {
+    books[1].click(); await wait(400);
+    t("a first tap opens the book's cover on the shelf (" + size + ")", books[1].classList.contains("open") && current === null && getComputedStyle(books[1].querySelector(".rk-cv")).visibility === "visible", "open: " + books[1].classList.contains("open") + ", reader: " + current);
+  }
+  books[1].click(); await wait(60);
+  t("opening a book from the front-door shelf flies it to the reader (" + size + ")", !!document.querySelector("#flip .ghostwrap"));
+  await wait(1200);
+  t("a plain click on a book opens the reader in place", current === BOOKS[1].id && location.pathname === here, "reader: " + current + ", at " + location.href);
+  // reading comes first: the entry's opening lines start on the first screen, at a desk and on a phone
+  const lede = document.querySelector("#sheet .rbody .lede"), lt = lede && Math.round(lede.getBoundingClientRect().top);
+  t("the reader's first lines are on the first screen (" + size + ")", lede && lt < innerHeight * .6, "the lede starts at " + lt + "px of " + innerHeight);
+  const rd = document.getElementById("reader"), pw = [...document.querySelectorAll("#sheet .rbody .copy p")].map(p => p.getBoundingClientRect().width);
+  t("the reader never scrolls sideways, and its prose runs the full width (" + size + ")", (rd.scrollWidth <= rd.clientWidth || getComputedStyle(rd).overflowX === "hidden") && Math.min(...pw) >= Math.min(rd.clientWidth - 60, 480),
+    "scrolls " + rd.scrollWidth + " in " + rd.clientWidth + ", narrowest paragraph " + Math.round(Math.min(...pw)) + "px");
+  closeReader(); await wait(900);
+  document.querySelectorAll("#flip .ghostwrap").forEach(g => g.remove());
+  const keep = document.querySelector(".cap-keep");
+  if (keep) {
+    const name = document.getElementById("capN").textContent.trim(), by = keep.querySelector(".cap-by");
+    t("the Captain's keep line is credited to the Press, on the life", by && by.textContent === "— The Commodore Press, on " + name, by ? by.textContent : "no credit under it");
+    t("…and set in roman, not as a quotation beside the face", getComputedStyle(keep.querySelector("p")).fontStyle !== "italic");
+  }
+  const lives = [...document.querySelectorAll(".fd-lesson .fl-life")];
+  t("the Atlas lesson on the front door stands beside a Life from the shelf", lives.length > 0 && lives.every(a => /^l\/[^/]+\/$/.test(a.getAttribute("href"))), lives.length + " Lives");
+  t("…and the Life's line is set in roman", lives.every(a => getComputedStyle(a.querySelector(".fl-txt")).fontStyle !== "italic"));
+  // the engine writes prose too (press.js, atlas.js): read every wing as a reader sees it
+  const straight = [];
+  for (const w of ["home", "press", "lives", "atlas", "colophon"]) {
+    go(w, false); await wait(500);
+    const txt = document.querySelector(".wing.on").innerText, i = txt.search(/['"]/);
+    if (i >= 0) straight.push(w + ": …" + txt.slice(Math.max(0, i - 30), i + 30).replace(/\s+/g, " ") + "…");
+  }
+  go("home", false); await wait(300);
+  t("no straight quote on any wing, as rendered", !straight.length, straight.join(" · "));
+  // mono is for data: a year, a date, a count — or a source line. Words set in it (a label, a
+  // button, a field name) broke the type rule for weeks, because the check only read capitals
+  await loadLibrary();
+  const worded = new Set(), scan = (root, where) => root && root.querySelectorAll("*").forEach(e => {
+    if (!e.offsetParent || e.closest("svg, .facts")) return;
+    const tx = [...e.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent).join("").trim();
+    if (tx.length < 2 || !getComputedStyle(e).fontFamily.includes("Plex")) return;
+    if (!/\d/.test(tx) || (/[A-Z]{4,}/.test(tx) && tx === tx.toUpperCase())) worded.add(where + ": " + tx.slice(0, 32));
+  });
+  for (const w of ["home", "press", "lives", "atlas", "colophon"]) { go(w, false); await wait(500); scan(document.querySelector(".wing.on"), w); }
+  atlasRoute("hard"); await wait(900); scan(document.getElementById("isleCard"), "island card");
+  go("home", false); await wait(300);
+  openReader("lives", LIVES.find(l => l.bio).id); await wait(1000); scan(document.getElementById("sheet"), "reader"); closeReader(false); await wait(700);
+  t("mono carries data only: no words, no capitals", !worded.size, [...worded].slice(0, 5).join(" · "));
+}), 600));
+</script>`;
+
+/* `frame` is [width, height]: the page runs in an iframe of exactly that size. Headless Chrome
+   will not make a window narrower than 500px, and its window size is not its viewport, so a
+   phone is measured the way a phone sees it only from inside a frame. */
+function drive(page, script, frame, head = "") {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "cp-test-"));
-  const src = path.join(tmp, "page.html");
-  fs.writeFileSync(src, page.replace("</body>", HARNESS + script + "</body>"));
+  let src = path.join(tmp, "page.html");
+  fs.writeFileSync(src, page.replace("<head>", "<head>" + head).replace("</body>", HARNESS + script + "</body>"));
+  if (frame) {
+    const outer = path.join(tmp, "frame.html");
+    fs.writeFileSync(outer, `<!doctype html><body style="margin:0"><iframe src="page.html" width="${frame[0]}" height="${frame[1]}" style="border:0;display:block"></iframe>
+<script>addEventListener("message", e => { if (!e.data || !e.data.__results) return; const o = document.createElement("script");
+o.type = "application/json"; o.id = "__results"; o.textContent = JSON.stringify(e.data.__results).replace(/</g, "\\u003c"); document.body.appendChild(o); });</script></body>`);
+    src = outer;
+  }
   // the entries' bodies ship beside the page (build/build.mjs); the reader fetches them from there
   for (const f of fs.readdirSync(dist()).filter(f => /^library\.[0-9a-f]+\.js$/.test(f))) fs.copyFileSync(dist(f), path.join(tmp, f));
   let dom = "";
   try {
-    dom = execFileSync(CHROME, ["--headless=new", "--disable-gpu", "--no-sandbox", "--window-size=1280,900",
+    dom = execFileSync(CHROME, ["--headless=new", "--disable-gpu", "--no-sandbox", `--window-size=${frame ? `${frame[0] + 40},${frame[1] + 160}` : "1280,900"}`,
       "--virtual-time-budget=20000", "--dump-dom", `file://${src}`],
       { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"], maxBuffer: 64 << 20, timeout: 120000 });
   } catch (e) { /* reported below */ }
@@ -236,10 +416,15 @@ function entryFacts(k, id) {
 if (!CHROME) {
   console.log(`\n  ${y}No Chrome or Chromium found — the browser tests were skipped. Set CHROME=/path.${x}`);
 } else {
+  // the front door, at a desk and on a phone: the two first screens a new reader meets
+  for (const size of [[1440, 900], [375, 812]])
+    report(`Front door · ${size.join("×")}`, drive(fs.readFileSync(dist("index.html"), "utf8"), FRONT, size,
+      size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>` : ""));
   // a life with a plate and a keep line, and a title: the two shapes an entry comes in
   for (const [k, kind, id] of [["l", "lives", "charles-darwin"], ["t", "press", "compounding-machines"]]) {
     const f = entryFacts(k, id);
-    report(`Entry page · ${k}/${id}`, drive(fs.readFileSync(dist(k, id, "index.html"), "utf8"), ENTRY(f.credit)));
+    const seed = `<script>try{localStorage.setItem("cp-read",JSON.stringify({"${k}/${id}":{p:.4,d:0,t:1}}));localStorage.setItem("cp-theme","dark")}catch(e){}</script>`;
+    report(`Entry page · ${k}/${id}`, drive(fs.readFileSync(dist(k, id, "index.html"), "utf8"), ENTRY(f.credit), null, seed));
     report(`Library reader · ${k}/${id}`, drive(fs.readFileSync(dist("index.html"), "utf8"), LIBRARY(kind, id, f.credit, f)));
   }
 }

@@ -124,7 +124,7 @@
   .feat-t small{font-size:var(--fs-1,13px);color:var(--parchment-dim);line-height:1.3}
   .feat-t i{font-size:var(--fs-2,15px);line-height:1.45;margin-top:4px;color:var(--parchment)}
   .feat-t i::before{content:"~ ";color:var(--nbrass)}
-  .feat-link{align-self:flex-start;margin:6px 0 4px;font-family:var(--mono);font-size:var(--fs-0,12px);letter-spacing:.06em;color:var(--nbrass);border-bottom:1px solid transparent}
+  .feat-link{align-self:flex-start;margin:6px 0 4px;font-family:var(--serif);font-size:var(--fs-2,15px);color:var(--nbrass);border-bottom:1px solid transparent}
   .feat-link:hover{border-bottom-color:var(--nbrass)}
   .ic-row{display:flex;gap:8px;flex-wrap:wrap}
   .echo-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
@@ -133,7 +133,7 @@
   .echo .shape circle{fill:var(--parchment)}
   /* on a laptop the whole chart fits the first screen: it never grows taller than the window */
   @media (min-width:981px){.chart-svg{max-height:calc(100vh - 120px);min-height:440px}}
-  .echo-map{font-family:var(--mono);font-size:var(--fs-0,12px);letter-spacing:.06em;color:var(--nbrass);margin:-4px 0 10px;border-bottom:1px solid transparent}
+  .echo-map{font-family:var(--serif);font-size:var(--fs-2,15px);color:var(--nbrass);margin:-4px 0 10px;border-bottom:1px solid transparent}
   .echo-map:hover{border-bottom-color:var(--nbrass)}
   /* phones see the islands first, straight under the title; the card follows */
   @media (max-width:700px){[data-wing="atlas"] .wing-head .side{display:none}}
@@ -148,8 +148,9 @@
   .ic-sec{display:flex;flex-direction:column;gap:8px}
   .ic-sec .const-stars{margin-top:0}
   .ic-none{margin:0;font-size:var(--fs-2,15px);line-height:1.5;font-style:italic;color:var(--parchment-dim)}
-  .ic-hint{margin:0;font-family:var(--mono);font-size:var(--fs-0,12px);letter-spacing:.06em;color:var(--parchment-dim)}
-  .ic-go,.ic-x{align-self:flex-start;font-family:var(--mono);font-size:var(--fs-0,12px);letter-spacing:.06em;color:var(--nbrass);
+  .ic-hint{margin:0;font-family:var(--serif);font-size:var(--fs-2,15px);color:var(--parchment-dim)}
+  /* buttons are pressed, so Garamond: they were Plex Mono in lowercase, which the capitals check could not see */
+  .ic-go,.ic-x{align-self:flex-start;font-family:var(--serif);font-size:var(--fs-2,15px);color:var(--nbrass);
     border:1px solid var(--line);border-radius:2px;padding:8px 14px;transition:.15s}
   .ic-go:hover,.ic-x:hover{border-color:var(--nbrass);color:var(--nbrass-b)}
   .key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:var(--fs-1,13px);color:var(--parchment-dim)}
@@ -167,10 +168,13 @@
   .portrow .pr-img{width:46px;height:57px;object-fit:cover;flex:none;border:1px solid #3a3222;background:#1b1a17;filter:sepia(.25)}
   .portrow .pr-img.nomark{display:flex;align-items:center;justify-content:center;color:var(--nbrass)}
   .portrow .pr-img.nomark svg{width:26px;height:26px}
+  /* a Life is a link to its page now (press.js, entryAttrs); the row keeps the look it had as a button */
+  a.portrow,a.cx-life,a.lk-p{text-decoration:none}
   .pr-t{display:flex;flex-direction:column;gap:2px;min-width:0}
   .pr-t b{font-weight:500;font-size:var(--fs-3,17px)}
   .pr-t small{font-family:var(--mono);font-size:var(--fs-0,12px);letter-spacing:.06em;color:var(--parchment-dim)}
-  .pr-t i{font-size:var(--fs-1,13px);line-height:1.45;color:var(--parchment-dim);margin-top:3px}
+  /* roman: the line is the house's (or the editor's note), set beside a Life's face — in italic it read as theirs */
+  .pr-t .pr-x{font-size:var(--fs-1,13px);line-height:1.45;color:var(--parchment-dim);margin-top:3px}
 
   /* an index of lessons, set like a chart's: name, dotted leader, count */
   .isle-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:0 36px;margin-top:22px}

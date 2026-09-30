@@ -86,7 +86,8 @@ After any edit under `content/`, the validator runs automatically and reports re
 
 The design system is enforced the same way, by `npm run check` (and so by CI before every deploy):
 
-- **The type rule.** Any rule in the site's styles, the entry pages' or the share cards' that sets Plex Mono in capitals, or a radius of 12px or more (a pill), fails. The one named exception is the Atlas chart's own lettering.
+- **The type rule.** Any rule in the site's styles, the entry pages' or the share cards' that sets Plex Mono in capitals, or a radius of 12px or more (a pill), fails; so does a value uppercased by the script (`${….toUpperCase()}`). `npm test` also reads the rendered page: mono text that is not data (no digit, not a source line) fails. The one named exception is the Atlas chart's own lettering.
+- **No inline fades.** An `opacity` in a `style=""` attribute in the shell, the engine or the entry pages fails: the contrast check reads stylesheets, and the two faintest texts on the site once hid there.
 - **Contrast, as the reader renders it.** Every reader rule that fades text (in `press.css` and `reading.css`) is read, nested fades are multiplied, and the faintest is held to 4.5:1 on every livery. Each livery's `accent` is held to 4.5:1 on its own cover. Raise an opacity or change a colour and the check measures the new one.
 
 **`/press-publish` is human-invoked only** (`disable-model-invocation: true`). Never route
@@ -153,7 +154,19 @@ Its sentence-length and punctuation targets were **measured off `content/`**, no
 
 `theme/press.css` is the design system: paper `#F2EDE1`, ink `#1E1C18`, EB Garamond for prose, IBM Plex Mono for apparatus.
 
-**The type rule** (stated at the top of `press.css`): EB Garamond sets everything a reader reads *or presses* — nav, buttons, filters, labels. Plex Mono is for data only (a year, a date, a count, a source line), in natural case, never as tracked capitals. Labels are Garamond capitals at 13px, .08em. Square corners, hairline rules, no shadows except on the books. Oxblood means a correction or a dispute, nothing else. Motion belongs to objects (a book turning, flying to the reader), never to entrances for show. The same rules hold on the entry pages in `build/pages.mjs` — they are the link other people receive. Two dark treatments exist and they are different things — `body.dusk` dims the house furniture, while `body.night` is the reading mode. **The books, plates, readers and Atlas keep their own printed liveries in night mode; only the walls dim.** That is a deliberate decision, not an oversight.
+**The type rule** (stated at the top of `press.css`): EB Garamond sets everything a reader reads *or presses* — nav, buttons, filters, labels. Plex Mono is for data only (a year, a date, a count, a source line), in natural case, never as tracked capitals. Labels are Garamond capitals at 13px, .08em. Square corners, hairline rules, no shadows except on the books. Oxblood means a correction or a dispute, nothing else. Motion belongs to objects (a book turning, flying to the reader), never to entrances for show. The same rules hold on the entry pages in `build/pages.mjs` — they are the link other people receive. Two dark treatments exist and they are different things — `body.dusk` dims the house furniture, while `body.night` is the reading mode. **Dusk is the house after the lamps are lit:** a warm wall from the house's ink (`#1C1A16`), never the Atlas's navy, so the Atlas stays its own room (ΔE ≥ 10 from the wall); every book carries a lit edge at 3:1 on the wall; portraits sit in a dim mount (`--mount`), never glaring paper. The switch is the word "Dusk", pressed or not; it is stored as `cp-theme`, and the entry pages honour it. `npm test` measures all of it at dusk. **The books, plates, readers and Atlas keep their own printed liveries in night mode; only the walls dim.** That is a deliberate decision, not an oversight.
+
+Three rules for the front door and the shelves, each held by a check:
+
+- **An entry opens from a link.** Every book, face and Life is `<a ${entryAttrs(how, id)}>`, pointing at its own page; `press.js` turns a plain click into the reader. `npm run check` fails on an entry opened from a `<button>`.
+- **The house's line is never set beside a face as if it were theirs.** A `keep` or `across` line shown next to a portrait is roman and, where it stands alone, credited through `Reading.credit` ("— The Commodore Press, on <name>"). `npm test` holds it.
+- **The first screen is the promise and the shelf.** The spines sit on the first screen at 1440×900 and 375×812, with no buttons above them, and the only count there is the corrections, linked to the record. `npm test` measures it in an exact-size frame.
+- **Books open everywhere.** Under a mouse a cover swings open; without one the first tap opens it and the second opens the book; from the front-door shelf the book flies to the reader. `npm test` holds it at both sizes.
+- **A spine title is stamped:** the livery's own ink, 17px at 600, at 7:1 or better on every spine as rendered, never cut off. `npm test` reads each one in light mode — the mode that once hid a page-black bug from a check run in dark.
+- **Quotes are typographic.** `build/typeset.mjs` curls every prose field, the page frame and Markdown at build time; `content/` stays as typed. `npm test` fails if a straight quote reaches any page.
+- **Reading comes first on a phone.** The reader's lede starts on the first screen at 375×812, prose runs the full width, and nothing scrolls sideways; the book stands small beside the title. `npm test` holds it.
+- **Search matches letters, not typography.** Curly and straight quotes are folded on both sides.
+- **Nothing floats over the text.** Offers like "You stopped here before" are lines in the flow, above where the reading starts.
 
 Each title carries a `livery` — `cover`, `spineC`, `ink`, `accent`, `motif`. `npm run new` picks an unused one automatically.
 

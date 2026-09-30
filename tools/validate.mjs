@@ -522,6 +522,48 @@ else dim.forEach(([file, v]) => err(file, `livery reads ${v.toFixed(2)}:1 where 
   }
 }
 
+/* ---------- an entry opens from a link a reader can keep ----------
+   Until 2026-09-29 every book and face in the library was a <button onclick="openReader(…)">:
+   144 of them on the front door, and not one link. Cmd-click, "open in new tab" and "copy
+   link" did nothing; a screen reader's list of links held 8 items for 65 entries; and the
+   entry pages, each with its own share card, were linked from nowhere a crawler could follow.
+   For a house whose method is "go to the source", that is the method broken in the wiring.
+   An entry is opened by <a ${entryAttrs(how, id)}> now — its own page's address, which the
+   library's one click handler (press.js) turns into the reader for a plain click. */
+for (const f of ["theme/press.js", "theme/atlas.js"]) {
+  const src = cssOf(f);
+  for (const m of src.matchAll(/<button\b[^>]*onclick="[^"]*\b(openReader|openLife)\(/g)) {
+    const line = src.slice(0, m.index).split("\n").length;
+    err(f, `line ${line} opens an entry from a <button> — use <a \${entryAttrs("press"|"lives"|"life", id)}>, so the entry has an address a reader can open in a new tab, copy and share`);
+  }
+}
+
+/* ---------- capitals are set by the stylesheet, not by the script ----------
+   The type rule's check reads text-transform in the stylesheets. The reader's book box printed
+   its author as "KIRSTIN DOWNEY · 2009" — Plex Mono in capitals — by calling .toUpperCase() on
+   the value, where the check could not see it. A label that wants capitals gets the house's
+   label style (Garamond, 13px, .08em, text-transform) and so stays inside the rule. */
+for (const f of ["theme/press.js", "theme/atlas.js", "build/pages.mjs"]) {
+  const src = cssOf(f);
+  for (const m of src.matchAll(/\$\{[^}]*\.toUpperCase\(\)\s*\}/g)) {
+    const line = src.slice(0, m.index).split("\n").length;
+    err(f, `line ${line} sets a whole value in capitals from the script (${m[0]}) — print it in its own case and give its element the label style, so the type rule can see it`);
+  }
+}
+
+/* ---------- no fades written inline ----------
+   The contrast check reads the stylesheets. On 2026-09-29 the two faintest pieces of text on
+   the site were both faded inline, where it could not see them: the footer's wordmark at .62
+   (2.74:1) and the colophon's correction dates at .6 (3.43:1). A quieter line takes a quieter
+   colour token in theme/press.css; an opacity in a style="" attribute fails here. */
+for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "theme/reading.js", "build/pages.mjs"]) {
+  const src = cssOf(f);
+  for (const m of src.matchAll(/style="[^"]*\bopacity\s*:/g)) {
+    const line = src.slice(0, m.index).split("\n").length;
+    err(f, `line ${line} fades text with an inline opacity, out of the contrast check's sight — give it a class in theme/press.css and a colour token (var(--ink-soft) reads 6.25:1 on paper)`);
+  }
+}
+
 /* ---------- report ---------- */
 const c = { r: "\x1b[31m", y: "\x1b[33m", g: "\x1b[32m", d: "\x1b[2m", x: "\x1b[0m" };
 if (warns.length) { console.log(`\n${c.y}${warns.length} warning(s)${c.x}`); warns.forEach(w => console.log(`  ${c.y}·${c.x} ${w}`)); }
