@@ -115,7 +115,7 @@
   .feat-nav button{width:30px;height:30px;border:1px solid var(--line);border-radius:2px;color:var(--parchment-dim);font-size:var(--fs-2,15px);transition:.15s}
   .feat-nav button:hover{color:var(--nbrass-b);border-color:var(--nbrass)}
   .feat-i{margin:4px 0 0;font-size:var(--fs-6,26px);line-height:1.12;font-style:italic;color:var(--nbrass-b)}
-  .feat-s{margin:0 0 4px;font-family:var(--mono);font-size:var(--fs-0,12px);letter-spacing:.04em;color:var(--parchment-dim)}
+  .feat-s{margin:0 0 4px;font-family:var(--serif);font-size:var(--fs-1,13px);line-height:1.45;color:var(--parchment-dim)}   /* a sentence, so Garamond: mono is for data */
   .feat-p{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;padding:9px 6px;border-top:1px solid var(--line);color:var(--parchment);border-radius:2px}
   .feat-p:hover,.feat-p:focus-visible{background:var(--panel-2)}
   .feat-p .s{width:8px;height:8px;border-radius:50%;flex:none;margin-top:7px}
@@ -327,7 +327,7 @@
   .const-plaque.on{display:flex}
   .const-plaque .pq-k{font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--nbrass)}
   .const-plaque i{font-size:var(--fs-3,17px);line-height:1.25;color:var(--parchment)}
-  .const-plaque .pq-n{font-family:var(--mono);font-size:var(--fs-0,12px);color:var(--parchment-dim)}
+  .const-plaque .pq-n{font-family:var(--serif);font-size:var(--fs-1,13px);color:var(--parchment-dim)}
   /* on a phone the plaque is a caption above the chart, never laid over an island; the zoom
      buttons move to the foot so the two never meet */
   @media (max-width:700px){
@@ -335,4 +335,14 @@
     .const-plaque{position:static;order:-1;max-width:none;border-width:0 0 1px;padding:10px 14px}
     .const-plaque.on{display:flex}
     .chart-tools{top:auto;bottom:10px}
+  }
+  /* A thumb is 44px. On a phone every control on the chart and in its cards reaches that: the
+     zoom and constellation arrows were 30–34px, the text links 27px, the people and the pills 39–40. */
+  @media (max-width:560px){
+    .chart-tools button,.feat-nav button{width:44px;height:44px}
+    .feat-link,.echo-map,.cx-isle{display:inline-flex;align-items:center;min-height:44px}
+    .echo-map{margin:-8px 0 6px}
+    .ic-go,.lk-p,.star-pill{min-height:44px}
+    .ic-go{display:inline-flex;align-items:center}
+    .lk-p{justify-content:center}
   }

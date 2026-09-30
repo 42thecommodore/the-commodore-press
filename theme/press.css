@@ -98,9 +98,15 @@
   body.night .navbtn[aria-current="true"]{color:var(--nbrass)}
   /* "Dusk" is a word where a ◐ was: between the phone layout and 640px the nav needs its padding back to stay on one row */
   @media (min-width:561px) and (max-width:700px){.navbtn{padding:8px 8px}}
-  /* the Dusk switch, when the lamps are lit, is marked the way the current wing is */
-  .navbtn[aria-pressed="true"]{color:var(--ink);text-decoration-color:currentColor}
-  body.night .navbtn[aria-pressed="true"]{color:var(--nbrass)}
+  /* Dusk is a switch, not a room. It used to be underlined when on, exactly as the current wing
+     is, so a reader in dusk saw two places they were "in". Now it stands apart behind a hairline,
+     is never underlined, and a small square lamp says whether it is lit: open when off, filled when on. */
+  #themeBtn{margin-left:10px;padding-left:16px;border-left:1px solid var(--rule);display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+  #themeBtn::before{content:"";width:7px;height:7px;border:1px solid currentColor;flex:none}
+  #themeBtn[aria-pressed="true"]{color:var(--ink)}
+  #themeBtn[aria-pressed="true"]::before{background:currentColor}
+  body.night #themeBtn{border-left-color:var(--line)}
+  body.night #themeBtn[aria-pressed="true"]{color:var(--nbrass)}
   .navbtn.solid{font-weight:600;color:var(--ink)}
   body.night .navbtn.solid{color:var(--nbrass)}
 
@@ -261,7 +267,7 @@
   .rbody .lede{font-size:clamp(20px,2.3vw,25px);line-height:1.45;margin:0 0 34px;max-width:44ch;opacity:.95}
   .rbody .copy{max-width:60ch;font-size:var(--fs-4);line-height:1.65;opacity:.92}
   .rbody .copy p{margin:0 0 20px}
-  .rbody .copy p:first-child::first-letter{float:left;font-size:var(--fs-9);line-height:.84;padding:5px 10px 0 0;font-weight:500}
+  .rbody .copy p:first-child::first-letter{float:left;font-size:var(--fs-9);line-height:.84;padding:5px 5px 0 0;font-weight:500}   /* 5px: at 10 the cap read as its own word ("B orn") */
   .rbody h4{font-family:var(--serif);font-size:var(--fs-4);font-weight:600;opacity:.95;margin:0 0 18px;letter-spacing:0}
   .sec{padding:52px 0 0;scroll-margin-top:80px}
   .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;max-width:64ch}
@@ -328,6 +334,7 @@
   .drawer .top h3{font-size:var(--fs-6);margin:7px 0 3px;line-height:1.03;font-weight:500}
   .drawer .top .role{font-size:var(--fs-1);color:var(--parchment-dim);line-height:1.4}
   .drawer .x{position:absolute;top:18px;right:22px;border:1px solid var(--line);color:var(--parchment-dim);width:32px;height:32px;border-radius:0;font-size:var(--fs-3);line-height:1}
+  @media (max-width:560px){.drawer .x{width:44px;height:44px;top:12px;right:12px}}
   .drawer .x:hover{color:var(--nbrass);border-color:var(--nbrass)}
   .drawer .bd{padding:22px 28px 34px;overflow:auto;flex:1;display:flex;flex-direction:column;gap:20px}
   .drawer .pull{font-family:var(--serif);font-style:italic;font-size:var(--fs-4);line-height:1.46;margin:0}
@@ -343,8 +350,9 @@
   .plate{border:1px solid #B9AF9B;background:#F7F3E9;padding:7px;box-shadow:4px 4px 0 rgba(30,28,24,.10)}
   .plate img{display:block;width:100%;height:auto}
 
+  /* the mat is paper in every livery and every mode, so its caption is set in the house ink, never the livery's */
   figure.plate{float:right;width:212px;margin:6px 0 22px 38px}
-  figure.plate figcaption{font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;opacity:.85;padding:8px 3px 2px;text-align:center}
+  figure.plate figcaption{color:#1E1C18;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;opacity:.85;padding:8px 3px 2px;text-align:center}
   /* an object plate says what it is in a full sentence, so it is set to be read, not glanced at */
   figure.plate figcaption.obj{font-family:var(--serif);font-size:var(--fs-1);font-style:italic;letter-spacing:0;text-transform:none;line-height:1.4;opacity:.8;max-width:260px;margin:0 auto}
   figure.plate.mark{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:4/5;opacity:.85;color:#5C5647}
@@ -393,7 +401,7 @@
      where the check could not see them. A quieter line takes a quieter colour, not an opacity. */
   .foot-name{color:var(--ink-soft)}
   .corr-d{font-family:var(--mono);font-size:var(--fs-0);color:var(--ink-soft)}
-  .foot a{text-decoration:none}.foot a:hover{color:var(--ink);text-decoration:underline 1px;text-underline-offset:4px}
+  .foot a{text-decoration:none;display:inline-block}.foot a:hover{color:var(--ink);text-decoration:underline 1px;text-underline-offset:4px}
   .foot .keys{font-size:var(--fs-1)}
   /* a phone has no keyboard to hint at, and a thumb needs 44px to land on a link */
   @media (hover:none){.foot .keys{display:none}}
@@ -442,7 +450,12 @@
   @media (max-width:560px){
     body{font-size:var(--fs-4)}
     .mast-in{height:auto;flex-direction:column;align-items:stretch;gap:0;padding:10px 0 4px}
-    .mark{padding-bottom:8px}
+    .mark{min-height:44px}
+    .navbtn{min-height:44px}
+    .log a{display:inline-block;padding:9px 0}
+    /* the reader's way back and its "find the book" link, at a thumb's size */
+    .rbar .back{min-height:44px}
+    .bookfind{padding:9px 0}
     .mark b{font-size:var(--fs-3)}
     .mark svg{width:18px;height:18px}
     .mast nav{margin-left:0;flex-wrap:nowrap;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;
@@ -631,7 +644,8 @@
 
   /* the colophon has its own page */
   [data-wing=colophon] .colophon{border-top:0;margin-top:14px;padding-top:30px}
-  [data-wing=colophon] .wing-head .side a{color:inherit;text-underline-offset:4px}
+  [data-wing=colophon] .wing-head .side a{color:inherit;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:32px}
+  @media (max-width:560px){[data-wing=colophon] .wing-head .side a{min-height:44px}}
 
   @media (max-width:560px){
     .wall{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 10px}
@@ -640,6 +654,8 @@
     .mast nav{flex-wrap:wrap;justify-content:flex-start;overflow:visible;-webkit-mask-image:none;mask-image:none;
       gap:2px 0;padding-bottom:8px}
     .navbtn{padding:6px 18px 6px 0}
+    /* the lamp and its hairline cost ~15px; the switch drops its left margin so all five still fit one row at 375 */
+    #themeBtn{margin-left:0;padding:6px 0 6px 8px;gap:5px}
     /* the 560px block above zeroes .mast-in's side padding, so the mark sat on the glass edge */
     .mast-in{padding-left:20px;padding-right:20px}
   }

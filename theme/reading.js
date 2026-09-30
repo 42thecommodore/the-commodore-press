@@ -170,6 +170,7 @@
       if (o.label) {
         var left = Math.ceil(o.mins * (1 - p));
         o.label.textContent = p >= 0.995 ? "Finished ✓" : p <= 0.01 ? o.mins + " min read" : p >= 0.85 ? "Almost done" : Math.max(1, left) + " min left";
+        o.label.classList.toggle("rs-w", !/\d/.test(o.label.textContent));   // "Almost done", "Finished": words, so Garamond — mono is for the minutes
         o.label.classList.toggle("done", p >= 0.995);
       }
     }
@@ -276,7 +277,6 @@
     doc.querySelectorAll("[data-rs]").forEach(function (b) {
       b.addEventListener("click", function () {
         var a = b.getAttribute("data-rs");
-        if (a === "copy") return copied(b, c.url);
         share({ url: c.url, title: c.title, sub: c.sub, text: c.text, theme: c.theme, from: b,
           quote: a === "line" ? c.keep : "", kind: a === "line" ? "line" : "entry" });
       });

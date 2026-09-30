@@ -395,7 +395,7 @@ const rulesOf = src => [...src.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
 const READER = /^(\.rbody|\.toc|\.rmeta|\.tl\b|\.facts|\.figs|\.reading|\.biobox|\.endnav|\.rbar|\.quoteblock|\.keepbox|\.corrbox|\.across|\.bookfind|figure\.plate|\.rs-)/;
 const faded = {};
 for (const { sel, body } of rulesOf(cssOf("theme/press.css") + cssOf("theme/reading.css"))) {
-  const o = body.match(/(?:^|;)\s*opacity:\s*([0-9.]+)/);
+  const o = [...body.matchAll(/(?:^|;)\s*opacity:\s*([0-9.]+)/g)].pop();   // the last declaration wins, as in the browser
   // text only: not a pseudo-element's rule, not a hover state (it only ever raises), not the progress bar
   if (!o || !READER.test(sel) || /::?(before|after)|:hover|rprog|backdrop/.test(sel)) continue;
   faded[sel] = Math.min(faded[sel] ?? 1, parseFloat(o[1]));
@@ -424,6 +424,42 @@ const dim = [];
 // one line for the whole shelf when the reader itself is too faint; one per livery when a livery is
 if (dim.length > 3) err("theme/press.css", `\`${WEAKEST}\` prints reader text at ${FLOOR} opacity, which reads under ${AA}:1 on ${dim.length} liveries (worst ${Math.min(...dim.map(d => d[1])).toFixed(2)}:1) — raise it; .8 clears every livery on the shelf today`);
 else dim.forEach(([file, v]) => err(file, `livery reads ${v.toFixed(2)}:1 where the reader is faintest (\`${WEAKEST}\`, ink at ${FLOOR} on the cover); needs ${AA}:1 — darken \`cover\` and \`spineC\` together`));
+
+/* ---------- text on a printed surface is measured on that surface ----------
+   The check above measures reader text as livery ink on the cover. A plate is not the cover:
+   it is a paper mat with its own fixed background. On 2026-09-29 the caption under every
+   portrait had no colour of its own, inherited the livery's ink — near-white on most covers —
+   and printed at 1.05:1 on the mat, while the livery check, measuring it against the cover,
+   passed it. So any rule that fixes a background in hex is a surface; every text rule inside it
+   must resolve a colour (its own, or the surface's), and that colour, faded by every opacity on
+   the way down, is held to AA on the surface — in each variant of the surface (a .mark plate
+   fades itself too). */
+const toks = c => c.split(/(?=[.#:[])/).filter(Boolean);
+const covers = (a, b) => toks(a).every(t => toks(b).includes(t));   // compound a applies wherever b does
+const cssRules = rulesOf(cssOf("theme/press.css") + cssOf("theme/reading.css"));
+const prop = (body, k) => [...body.matchAll(new RegExp(`(?:^|;)\\s*${k}:\\s*([^;]+)`, "g"))].pop()?.[1].trim();   // the last declaration wins, as in the browser
+const merged = rs => rs.reduce((m, { body }) => ({
+  bg: prop(body, "background(?:-color)?")?.match(/^#[0-9a-fA-F]{6}\b/)?.[0] ?? m.bg,
+  color: prop(body, "color")?.match(/^#[0-9a-fA-F]{6}$/)?.[0] ?? m.color,
+  op: prop(body, "opacity") ? parseFloat(prop(body, "opacity")) : m.op }), { op: 1 });
+for (const s of cssRules.filter(r => !r.sel.includes(" ") && /^[a-z]*\.[\w-]+$/.test(r.sel) && merged([r]).bg)) {
+  const cls = toks(s.sel).find(t => t.startsWith("."));
+  const around = cssRules.filter(r => !r.sel.includes(" ") && toks(r.sel).includes(cls));   // .plate, figure.plate, figure.plate.mark
+  const inside = cssRules.filter(r => r.sel.split(" ").length === 2 && toks(r.sel.split(" ")[0]).includes(cls)
+    && !/^(img|svg|picture|video)\b|::?(before|after)|:hover/.test(r.sel.split(" ")[1]));
+  for (const t of inside) {
+    const [outer, el] = t.sel.split(" ");
+    const txt = merged(inside.filter(r => r.sel.split(" ")[0] === outer && covers(r.sel.split(" ")[1], el)));
+    for (const ctx of [...new Map(around.filter(r => covers(outer, r.sel)).map(r => [r.sel, r])).values()]) {   // one per variant, not per @media copy
+      const surf = merged(around.filter(r => covers(r.sel, ctx.sel)));
+      if (!surf.bg) continue;
+      const color = txt.color || surf.color;
+      if (!color) { err("theme/press.css", `\`${t.sel}\` sets no colour, so inside \`${ctx.sel}\` it inherits the livery's ink — but it sits on the ${surf.bg} mat, not the cover; give it (or \`${s.sel}\`) a fixed dark colour`); continue; }
+      const a = +(txt.op * surf.op).toFixed(3), v = contrast(blend(color, surf.bg, a), surf.bg);
+      if (v < AA) err("theme/press.css", `\`${t.sel}\` inside \`${ctx.sel}\` prints ${color} at ${a} opacity on ${surf.bg}: ${v.toFixed(2)}:1, needs ${AA}:1 — darken the colour or raise the opacity`);
+    }
+  }
+}
 
 /* ---------- the newsletter: a form that posts somewhere real, and a named holder ----------
    The colophon tells readers who holds their address. A form with no named provider would

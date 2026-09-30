@@ -63,7 +63,7 @@ function initTheme(){
   const rt=document.documentElement.dataset?document.documentElement.dataset.theme:null;
   let dark; if(pref==="dark")dark=true; else if(pref==="light")dark=false;
   else if(rt==="dark")dark=true; else if(rt==="light")dark=false;
-  else dark=matchMedia("(prefers-color-scheme: dark)").matches;
+  else dark=false;   // everyone opens on paper; dusk is the reader's choice, never the device's (the colophon says the reading wings are set on paper)
   applyTheme(dark);
 }
 function toggleTheme(){
@@ -379,7 +379,7 @@ function readerHTML(kind,b){
         <nav class="toc">${toc.map(t=>`<a href="#" data-sec="${t[0]}" onclick="gotoSec('${t[0]}');return false;">${t[1]}</a>`).join("")}</nav>
       </div></div>
       <div class="rbody">
-        ${b.claim?`<p class="claim">${b.claim}</p>`:`<p class="claim">${b.group==="obscure"?"The obscure but pivotal":"The famous"} · ${b.place}</p>`}
+        ${b.claim?`<p class="claim">${b.claim}</p>`:`<p class="claim">${b.group==="obscure"?"The obscure but pivotal":"The famous"}</p>`}
         <h1>${title}</h1>
         <p class="sub">${sub}</p>
         ${plate}
@@ -389,7 +389,7 @@ function readerHTML(kind,b){
           <div class="rs-fin">End of entry</div>
           <h3>${title}</h3>
           <p>${END_LINE}</p>
-          <div class="rs-row"><button class="rs-b rs-main" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">Share this entry</button><button class="rs-b" type="button" onclick="copyEntry('${isPress?"t":"l"}','${b.id}',this)">Copy link</button><a class="rs-b" href="${isPress?"t":"l"}/${b.id}/">Open as its own page ↗</a></div>
+          <div class="rs-row"><button class="rs-b rs-main" type="button" onclick="shareEntry('${isPress?"t":"l"}','${b.id}',this)">Share this entry</button><a class="rs-b" href="${isPress?"t":"l"}/${b.id}/">Open as its own page ↗</a></div>
           ${readNextHTML(kind,b,next)}
         </section>
         <div class="endnav">
@@ -553,7 +553,6 @@ function entryMeta(k,id){
 }
 function shareEntry(k,id,btn){const m=entryMeta(k,id);if(m)Reading.share(Object.assign({kind:"entry",from:btn},m))}
 function shareLine(k,id,btn){const m=entryMeta(k,id);if(m)Reading.share(Object.assign({},m,{kind:"line",quote:m.keep,from:btn}))}
-function copyEntry(k,id,btn){const m=entryMeta(k,id);if(m)Reading.copied(btn,m.url)}
 Reading.quotes({root:document.getElementById("reader"),scroller:document.getElementById("reader"),
   within:".rbody .lede,.rbody .copy,.rbody .quoteblock,.rbody .keepbox",
   meta:()=>current?entryMeta(currentKind==="press"?"t":"l",current):null});

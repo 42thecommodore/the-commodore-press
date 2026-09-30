@@ -99,6 +99,13 @@ if (!fs.existsSync(dist("index.html"))) { console.error("\n  No dist/ — run `n
   report("Typography", [{ n: "no straight quote reaches a page a reader can open", ok: !seen.length, d: `${seen.length} — ${seen.slice(0, 3).join(" · ")}` }]);
 }
 
+/* ---------- no page lets the device choose dusk ---------- */
+{
+  const files = [dist("index.html"), ...["t", "l"].flatMap(k => fs.readdirSync(dist(k)).map(id => dist(k, id, "index.html")))];
+  const follow = files.filter(f => /prefers-color-scheme\s*:\s*dark/.test(fs.readFileSync(f, "utf8"))).map(f => path.relative(dist(), f));
+  report("Paper by default", [{ n: `no page follows the device's dark setting (${files.length} pages)`, ok: !follow.length, d: follow.slice(0, 5).join(", ") }]);
+}
+
 /* ---------- in the browser ---------- */
 const HARNESS = String.raw`
 <script>
@@ -112,6 +119,18 @@ window.__run = async function (tests) {
   window.requestAnimationFrame = cb => setTimeout(() => cb(performance.now()), 16);
   try { Object.defineProperty(navigator, "clipboard", { configurable: true, value: { writeText: v => { window.__copied = v; return Promise.resolve(); } } }); } catch (e) {}
   const esc = () => document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  // what a reader presses is at least 24px each way at a desk and 44px tall on a phone. Exempt: a
+  // link set inside a running sentence (WCAG's inline exception), the spines (a book is as wide as
+  // a book), and the skip link, which only appears on focus. Returns what falls short.
+  window.__targets = root => {
+    const minH = innerWidth < 600 ? 44 : 24;
+    return [...root.querySelectorAll("a, button, summary, input, select, [role=button]")].filter(e => {
+      if (!e.offsetParent || e.closest(".rk, .skip, .reader:not(.on)")) return false;
+      if (innerWidth < 600 && e.closest(".foot .keys")) return false;   // keyboard hints: a real phone hides them (hover:none); this frame cannot say it is one
+      const inSentence = /^inline/.test(getComputedStyle(e).display) && [...e.parentElement.childNodes].some(n => n.nodeType === 3 && n.textContent.trim().length > 1);
+      const b = e.getBoundingClientRect(); return b.width > 0 && !inSentence && (b.height < minH || b.width < 24);
+    }).map(e => { const b = e.getBoundingClientRect(); return (e.getAttribute("aria-label") || e.textContent).trim().replace(/\s+/g, " ").slice(0, 24) + " " + Math.round(b.width) + "×" + Math.round(b.height); });
+  };
   try { await tests(t, wait, esc); } catch (e) { t("the test ran to the end", false, e && e.stack || e); }
   const out = document.createElement("script"); out.type = "application/json"; out.id = "__results";
   out.textContent = JSON.stringify(R).replace(/</g, "\\u003c"); document.body.appendChild(out);
@@ -204,6 +223,10 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   await escSelection(t, wait, esc, document.querySelector(".essay p"), () => true);
   scrollTo(0, document.documentElement.scrollHeight); dispatchEvent(new Event("scroll")); await wait(400);
   t("reading to the end says Finished", document.getElementById("rleft").textContent === "Finished ✓", document.getElementById("rleft").textContent + " at scrollY " + scrollY + " of " + document.documentElement.scrollHeight + ", dialog open: " + !!document.querySelector("dialog[open]"));
+  t("…and says it in Garamond: a word is not data", !getComputedStyle(document.getElementById("rleft")).fontFamily.includes("Plex"), getComputedStyle(document.getElementById("rleft")).fontFamily);
+  // the end of an entry once offered five ways to pass it on; Copy link lives in the share sheet
+  { const b = [...document.querySelectorAll(".rs-end .rs-row button")].filter(e => e.offsetParent);
+    t("the end of an entry has one share button", b.length === 1 && /Share this entry/.test(b[0].textContent), b.map(e => e.textContent).join(", ")); }
   const mem = JSON.parse(localStorage.getItem("cp-read") || "{}");
   t("the browser remembers the entry was finished", Object.values(mem).some(v => v.d === 1), JSON.stringify(mem));
   // nothing open, nothing selected: Esc has nothing to do, and must not leave the site
@@ -211,6 +234,17 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   esc(); await wait(150);
   await staysPut(t, wait, "Esc with nothing open keeps the reader on the page", here);
 }), 300));
+</script>`;
+
+/* An entry page is the link other people receive, often on a phone: its targets are measured
+   at a desk and at 375px, the same rule as the library's. */
+const TARGETS = where => String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  await wait(300);
+  const s = __targets(document.body);
+  t("every target on ${where} is " + (innerWidth < 600 ? 44 : 24) + "px tall (" + innerWidth + "×" + innerHeight + ")", !s.length, s.slice(0, 6).join(" · "));
+}), 600));
 </script>`;
 
 const LIBRARY = (kind, id, credit, want) => String.raw`
@@ -244,6 +278,10 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   await escSelection(t, wait, esc, sheet.querySelector(".rbody .copy p"), () => current === ${JSON.stringify(id)});
   reader.scrollTop = reader.scrollHeight; reader.dispatchEvent(new Event("scroll")); await wait(400);
   t("reading to the end says Finished", document.getElementById("rleft").textContent === "Finished ✓", document.getElementById("rleft").textContent + " at scrollTop " + reader.scrollTop + " of " + reader.scrollHeight + ", dialog open: " + !!document.querySelector("dialog[open]"));
+  t("…and says it in Garamond: a word is not data", !getComputedStyle(document.getElementById("rleft")).fontFamily.includes("Plex"), getComputedStyle(document.getElementById("rleft")).fontFamily);
+  // the end of an entry once offered five ways to pass it on; Copy link lives in the share sheet
+  { const b = [...document.querySelectorAll(".rs-end .rs-row button")].filter(e => e.offsetParent);
+    t("the end of an entry has one share button", b.length === 1 && /Share this entry/.test(b[0].textContent), b.map(e => e.textContent).join(", ")); }
   const onSite = location.origin + location.pathname;
   esc(); await wait(1000);
   t("Esc in the reader closes the reader", current === null, "still reading " + current);
@@ -272,10 +310,22 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   if (localStorage.getItem("cp-theme") === "dark")
     t("a stored dusk opens at dusk, with the switch pressed", document.body.classList.contains("dusk") && document.getElementById("themeBtn").getAttribute("aria-pressed") === "true",
       "dusk: " + document.body.classList.contains("dusk") + ", pressed: " + document.getElementById("themeBtn").getAttribute("aria-pressed"));
+  // everyone opens on paper: the colophon says the reading wings are set on paper, and a dark device once overruled it
+  if (localStorage.getItem("cp-theme") === null)
+    t("a dark-mode device with no stored choice opens on paper", !document.body.classList.contains("dusk") && document.getElementById("themeBtn").getAttribute("aria-pressed") === "false", "dusk: " + document.body.classList.contains("dusk"));
   const rack = document.querySelector(".front .rack"), r = rack && rack.getBoundingClientRect();
   // 200px of spines is a shelf you can see; less is the top of something below the fold
   t("the first screen holds the shelf (" + size + ")", r && innerHeight - r.top >= 200, r ? "the spines start at " + Math.round(r.top) + "px of " + innerHeight : "no shelf on the front door");
   t("no sideways scroll (" + size + ")", document.documentElement.scrollWidth <= innerWidth, document.documentElement.scrollWidth + "px wide");
+  // the footer's links were 20px and the phone nav 40px, and nothing measured them
+  const minH = innerWidth < 600 ? 44 : 24, small = [document.querySelector("header"), document.querySelector(".wing.on"), document.querySelector("footer")].flatMap(__targets);
+  t("every target on the front door is " + minH + "px tall (" + size + ")", !small.length, small.slice(0, 6).join(" · "));
+  // Dusk is a switch, not a room: underlined when on, it read as a second place the reader was "in"
+  const tb = document.getElementById("themeBtn"), lit = document.body.classList.contains("dusk");
+  if (!lit) toggleTheme(); await wait(100);
+  t("the Dusk switch, when on, is lit, not underlined like the current wing", getComputedStyle(tb).textDecorationLine === "none" && getComputedStyle(tb, "::before").backgroundColor !== "rgba(0, 0, 0, 0)",
+    "underline: " + getComputedStyle(tb).textDecorationLine + ", lamp: " + getComputedStyle(tb, "::before").backgroundColor);
+  if (!lit) toggleTheme(); await wait(100);
   t("the top of the first screen has no buttons: the shelf is the one thing to do", !document.querySelector(".front-top button, .front-top a"),
     [...document.querySelectorAll(".front-top button, .front-top a")].map(e => e.textContent.trim()).join(", "));
   // spine titles, as rendered, in the light the page opens in: a CSS rule once outranked the
@@ -339,6 +389,9 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   const rd = document.getElementById("reader"), pw = [...document.querySelectorAll("#sheet .rbody .copy p")].map(p => p.getBoundingClientRect().width);
   t("the reader never scrolls sideways, and its prose runs the full width (" + size + ")", (rd.scrollWidth <= rd.clientWidth || getComputedStyle(rd).overflowX === "hidden") && Math.min(...pw) >= Math.min(rd.clientWidth - 60, 480),
     "scrolls " + rd.scrollWidth + " in " + rd.clientWidth + ", narrowest paragraph " + Math.round(Math.min(...pw)) + "px");
+  // the reader on a phone had a 19px "Share this line" and a 30px way back
+  const rSmall = __targets(document.getElementById("reader"));
+  t("every target in a title's reader is " + minH + "px tall (" + size + ")", !rSmall.length, rSmall.slice(0, 6).join(" · "));
   closeReader(); await wait(900);
   document.querySelectorAll("#flip .ghostwrap").forEach(g => g.remove());
   const keep = document.querySelector(".cap-keep");
@@ -357,6 +410,14 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
     const txt = document.querySelector(".wing.on").innerText, i = txt.search(/['"]/);
     if (i >= 0) straight.push(w + ": …" + txt.slice(Math.max(0, i - 30), i + 30).replace(/\s+/g, " ") + "…");
   }
+  // one name per room: the nav said "The Atlas" and the room "What They Taught Me", "Lives" and "Lives That Withstood Time"
+  const misnamed = [];
+  for (const b of document.querySelectorAll("#nav .navbtn[data-w]")) {
+    go(b.dataset.w, false); await wait(300);
+    const h = document.querySelector(".wing.on .wing-head h2");
+    if (!h || h.textContent.trim() !== b.textContent.trim()) misnamed.push(b.textContent.trim() + " → " + (h ? h.textContent.trim() : "no heading"));
+  }
+  t("every room is headed with its name in the nav", !misnamed.length, misnamed.join(" · "));
   go("home", false); await wait(300);
   t("no straight quote on any wing, as rendered", !straight.length, straight.join(" · "));
   // mono is for data: a year, a date, a count — or a source line. Words set in it (a label, a
@@ -366,12 +427,29 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
     if (!e.offsetParent || e.closest("svg, .facts")) return;
     const tx = [...e.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent).join("").trim();
     if (tx.length < 2 || !getComputedStyle(e).fontFamily.includes("Plex")) return;
-    if (!/\d/.test(tx) || (/[A-Z]{4,}/.test(tx) && tx === tx.toUpperCase())) worded.add(where + ": " + tx.slice(0, 32));
+    // a digit made a line count as data, so "4 people said this, in my notes" passed in mono: three
+    // words or more is a sentence whatever else it holds (source lines live in .facts, skipped above)
+    if (!/\d/.test(tx) || (tx.match(/[A-Za-z’']{2,}/g) || []).length >= 3 || (/[A-Z]{4,}/.test(tx) && tx === tx.toUpperCase())) worded.add(where + ": " + tx.slice(0, 32));
   });
   for (const w of ["home", "press", "lives", "atlas", "colophon"]) { go(w, false); await wait(500); scan(document.querySelector(".wing.on"), w); }
+  // the Atlas on a phone: zoom and constellation arrows at 30–34px, its text links at 27
+  go("atlas", false); await wait(900);
+  const aSmall = __targets(document.querySelector(".wing.on"));
+  t("every target on the Atlas is " + minH + "px tall (" + size + ")", !aSmall.length, aSmall.slice(0, 6).join(" · "));
+  go("colophon", false); await wait(700);
+  const cSmall = __targets(document.querySelector(".wing.on"));
+  t("every target in the colophon is " + minH + "px tall (" + size + ")", !cSmall.length, cSmall.slice(0, 6).join(" · "));
   atlasRoute("hard"); await wait(900); scan(document.getElementById("isleCard"), "island card");
   go("home", false); await wait(300);
-  openReader("lives", LIVES.find(l => l.bio).id); await wait(1000); scan(document.getElementById("sheet"), "reader"); closeReader(false); await wait(700);
+  openReader("lives", LIVES.find(l => l.bio).id); await wait(1000); scan(document.getElementById("sheet"), "reader");
+  // the head once said the place twice: "The famous · United States", then "Politics & Leadership · United States"
+  { const L = LIVES.find(l => l.bio), sh = document.getElementById("sheet"), lede = sh.querySelector(".rbody .lede");
+    const head = lede ? sh.innerText.split(lede.innerText)[0] : sh.innerText, n = head.split(L.place).length - 1;
+    t("a life's reader names its place once, above the lede", n === 1, n + "× \"" + L.place + "\"");
+  }
+  const lSmall = __targets(document.getElementById("reader"));
+  t("every target in a life's reader is " + minH + "px tall (" + size + ")", !lSmall.length, lSmall.slice(0, 6).join(" · "));
+  closeReader(false); await wait(700);
   t("mono carries data only: no words, no capitals", !worded.size, [...worded].slice(0, 5).join(" · "));
 }), 600));
 </script>`;
@@ -419,13 +497,17 @@ if (!CHROME) {
   // the front door, at a desk and on a phone: the two first screens a new reader meets
   for (const size of [[1440, 900], [375, 812]])
     report(`Front door · ${size.join("×")}`, drive(fs.readFileSync(dist("index.html"), "utf8"), FRONT, size,
-      size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>` : ""));
+      size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>`
+        // the desk run is a dark-mode device with no stored choice: it must still open on paper
+        : `<script>try{localStorage.removeItem("cp-theme")}catch(e){}var __mm=matchMedia.bind(window);window.matchMedia=function(q){return /prefers-color-scheme: ?dark/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__mm(q)}</script>`));
   // a life with a plate and a keep line, and a title: the two shapes an entry comes in
   for (const [k, kind, id] of [["l", "lives", "charles-darwin"], ["t", "press", "compounding-machines"]]) {
     const f = entryFacts(k, id);
     const seed = `<script>try{localStorage.setItem("cp-read",JSON.stringify({"${k}/${id}":{p:.4,d:0,t:1}}));localStorage.setItem("cp-theme","dark")}catch(e){}</script>`;
     report(`Entry page · ${k}/${id}`, drive(fs.readFileSync(dist(k, id, "index.html"), "utf8"), ENTRY(f.credit), null, seed));
     report(`Library reader · ${k}/${id}`, drive(fs.readFileSync(dist("index.html"), "utf8"), LIBRARY(kind, id, f.credit, f)));
+    for (const size of [[1280, 900], [375, 812]])
+      report(`Entry page targets · ${k}/${id} · ${size.join("×")}`, drive(fs.readFileSync(dist(k, id, "index.html"), "utf8"), TARGETS("the entry page"), size[0] < 600 ? size : null));
   }
 }
 

@@ -64,13 +64,14 @@ const hrefFor = (to, known) => {
 /* Dusk on the entry pages: the library's values (theme/press.css, body.dusk), and the reader's
    own choice first. The library's switch is stored as "cp-theme"; these pages used to follow the
    device alone, so a reader who chose day in the library opened a shared link at night. The
-   boot line runs before the first paint; with no stored choice, the device decides. */
+   boot line runs before the first paint; with no stored choice, the page opens on paper — the
+   device's dark setting used to decide, which made the colophon's "set on paper" untrue for
+   everyone whose phone was dark. */
 const DUSK_VARS = "--paper:#1C1A16;--rule:#3A352C;--ink:#EAE3D1;--ink-soft:#9C9582;--oxblood:#CE7B6E";
-const DUSK = (sel, body = DUSK_VARS) => `${sel === ":root" ? ":root" : ""}[data-theme=dark]${sel === ":root" ? "" : " " + sel}{${body}}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light])${sel === ":root" ? "" : " " + sel}{${body}}}`;
+const DUSK = (sel, body = DUSK_VARS) => `${sel === ":root" ? ":root" : ""}[data-theme=dark]${sel === ":root" ? "" : " " + sel}{${body}}`;
 const THEME_BOOT = `<script>try{var t=localStorage.getItem("cp-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>`;
 /* the same switch as the library's, in the page's footer */
-const DUSK_SWITCH = `<button type="button" class="dusk-sw" aria-pressed="false" onclick="var d=document.documentElement,on=!(d.dataset.theme==='dark'||(!d.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches));d.dataset.theme=on?'dark':'light';this.setAttribute('aria-pressed',on);try{localStorage.setItem('cp-theme',d.dataset.theme)}catch(e){}">Dusk</button><script>(function(b){var d=document.documentElement;b.setAttribute("aria-pressed",d.dataset.theme==="dark"||(!d.dataset.theme&&matchMedia("(prefers-color-scheme: dark)").matches))})(document.currentScript.previousElementSibling)</script>`;
+const DUSK_SWITCH = `<button type="button" class="dusk-sw" aria-pressed="false" onclick="var d=document.documentElement,on=d.dataset.theme!=='dark';d.dataset.theme=on?'dark':'light';this.setAttribute('aria-pressed',on);try{localStorage.setItem('cp-theme',d.dataset.theme)}catch(e){}">Dusk</button><script>(function(b){var d=document.documentElement;b.setAttribute("aria-pressed",d.dataset.theme==="dark")})(document.currentScript.previousElementSibling)</script>`;
 
 const CSS = `
 .dusk-sw{font:inherit;color:inherit;background:none;border:0;padding:0 2px;min-height:44px;cursor:pointer;text-decoration:underline 1px;text-underline-offset:3px}.dusk-sw[aria-pressed=true]{font-weight:600}
@@ -82,7 +83,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font:var(--fs-5)/1.62 var
 a{color:inherit}
 .top{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 20px;font:var(--fs-3)/1.2 var(--serif);
   border-bottom:1px solid var(--rule)}
-.top a{text-decoration:none}
+.top a{text-decoration:none;display:inline-block;padding:6px 0}   /* the crumbs and "All titles": 20px of text, 32px to press */
 .band{background:var(--cover);color:var(--cink);padding:56px 20px 48px}
 .band .in,.body{max-width:680px;margin:0 auto}
 .kick{line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--accent)}
@@ -112,7 +113,9 @@ ol.tl{padding-left:0;list-style:none}ol.tl li{margin:0 0 10px}ol.tl .y{font:var(
 .pn a{text-decoration:none;font-size:var(--fs-4);line-height:1.3}.pn a:last-child{text-align:right}
 .pn span{display:block;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);margin-bottom:2px}
 footer{border-top:1px solid var(--rule);padding:24px 20px;font:var(--fs-2)/1.6 var(--serif);color:var(--ink-soft);text-align:center}
-@media (max-width:560px){body{font-size:var(--fs-4)}.plate{float:none;width:130px;margin:0 0 20px}}
+@media (max-width:560px){body{font-size:var(--fs-4)}.plate{float:none;width:130px;margin:0 0 20px}
+  /* a thumb is 44px: the crumbs, the glance links, the reading list and the way on */
+  .top a{padding:13px 0}body .glance a{padding:11px 0}.row b a{display:inline-block;padding:10px 0}.pn a{min-height:44px}}
 `;
 
 /* The page body, in sections with a clear order of weight: the essay, then the evidence
@@ -122,21 +125,22 @@ footer{border-top:1px solid var(--rule);padding:24px 20px;font:var(--fs-2)/1.6 v
 const ENTRY_CSS = `
 .crumbs{display:flex;gap:8px;align-items:center;min-width:0;overflow:hidden;white-space:nowrap}
 .crumbs i{font-style:normal;opacity:.4}.crumbs span{opacity:.72;overflow:hidden;text-overflow:ellipsis}
-.glance{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--cink) 25%,transparent);
+.glance{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 22px;margin-top:26px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--cink) 25%,transparent);
   font-size:var(--fs-3);line-height:1.4}
-.glance a{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--cink) 40%,transparent)}.glance .warn{color:var(--accent);border-color:var(--accent)}
+/* underlined in text, not with a border, so the target can be tall without the rule drifting off the words */
+.glance a{display:inline-block;padding:4px 0;text-decoration:underline 1px color-mix(in srgb,var(--cink) 40%,transparent);text-underline-offset:4px}.glance .warn{color:var(--accent);text-decoration-color:var(--accent)}
 .layout{display:block}
 .rail{display:none}
 @media (min-width:1100px){
   .layout{display:grid;grid-template-columns:200px minmax(0,680px);gap:56px;justify-content:center;padding:0 20px}
   .layout .body{margin:0;padding-left:0;padding-right:0}
-  .rail{display:flex;flex-direction:column;gap:9px;position:sticky;top:76px;align-self:start;margin-top:44px;font:var(--fs-3)/1.35 var(--serif)}
-  .rail a{text-decoration:none;color:var(--ink-soft)}.rail a:hover{color:var(--ink)}
+  .rail{display:flex;flex-direction:column;gap:3px;position:sticky;top:76px;align-self:start;margin-top:44px;font:var(--fs-3)/1.35 var(--serif)}
+  .rail a{text-decoration:none;color:var(--ink-soft);padding:3px 0}   /* 29px to press; the gap gave up what the padding took, so the rhythm is unchanged */.rail a:hover{color:var(--ink)}
 }
 .lbl{display:block;line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);margin-bottom:8px}
 .keepq{margin:30px 0 36px;padding:24px 26px;background:color-mix(in srgb,var(--cover) 9%,var(--paper));border-left:4px solid var(--cover)}
 .keepq p{font-size:var(--fs-6);line-height:1.3;font-style:italic;margin:0 0 14px}
-.essay p:first-child::first-letter{float:left;font-size:3.4em;line-height:.85;padding:6px 8px 0 0;font-weight:500}
+.essay p:first-child::first-letter{float:left;font-size:3.4em;line-height:.85;padding:6px 5px 0 0;font-weight:500}
 .s{margin-top:52px}
 .s h2{display:flex;align-items:baseline;gap:12px;font:500 var(--fs-6)/1.2 var(--serif);letter-spacing:-.005em;text-transform:none;color:var(--ink);
   border-top:1px solid var(--rule);padding-top:18px;margin:0 0 18px}
@@ -237,7 +241,7 @@ function endBlock(url, name, title, text, nextCard) {
 <div class="rs-fin">End of entry</div>
 <h3>${name}</h3>
 <p>${END_LINE}</p>
-<div class="rs-row"><button class="rs-b rs-main rs-js-only" type="button" data-rs="share">Share this entry</button><button class="rs-b rs-js-only" type="button" data-rs="copy">Copy link</button><a class="rs-b rs-nojs" href="mailto:?subject=${enc(strip(title))}&amp;body=${enc(strip(text) + "\n\n" + url)}">Email</a><a class="rs-b rs-nojs" href="https://twitter.com/intent/tweet?text=${enc(clip(text, 200))}&amp;url=${enc(url)}" rel="noopener" target="_blank">X</a><a class="rs-b rs-nojs" href="https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}" rel="noopener" target="_blank">LinkedIn</a></div>
+<div class="rs-row"><button class="rs-b rs-main rs-js-only" type="button" data-rs="share">Share this entry</button><a class="rs-b rs-nojs" href="mailto:?subject=${enc(strip(title))}&amp;body=${enc(strip(text) + "\n\n" + url)}">Email</a><a class="rs-b rs-nojs" href="https://twitter.com/intent/tweet?text=${enc(clip(text, 200))}&amp;url=${enc(url)}" rel="noopener" target="_blank">X</a><a class="rs-b rs-nojs" href="https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}" rel="noopener" target="_blank">LinkedIn</a></div>
 ${nextCard}
 </section>`;
 }
