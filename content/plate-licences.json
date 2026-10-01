@@ -47,5 +47,17 @@
     "by": "Harris & Ewing",
     "credit": "the April 1936 photograph of Frances Perkins is by Harris &amp; Ewing, held by the Library of Congress, which states that it knows of no copyright restrictions on it",
     "checked": "2026-09-20"
+  },
+  "samuel-zemurray": {
+    "licence": "CC BY 4.0",
+    "by": "Los Angeles Times, via UCLA Library Special Collections",
+    "credit": "the photograph of Samuel Zemurray, taken on 10 January 1934 for the Los Angeles Times, is from the Los Angeles Times Photographic Collection at UCLA Library Special Collections, under CC BY 4.0",
+    "checked": "2026-09-30"
+  },
+  "edwin-land": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Bernard Gotfryd, Library of Congress (LC-DIG-gtfy-02238)",
+    "credit": "the photograph of Edwin Land presenting at Polaroid is by Bernard Gotfryd, held by the Library of Congress, which states that there are no known restrictions on its publication",
+    "checked": "2026-09-30"
   }
 }

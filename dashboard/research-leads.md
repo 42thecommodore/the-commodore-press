@@ -178,3 +178,31 @@ no date between them, and a reader can take the purchase for 1985. The sweep put
 February 1986. Confirm it against a source you have open, then decide whether the sentence
 needs the year — adding a date nobody has checked would be the same mistake in a smaller
 size.
+
+## Malcom McLean (Life, 44-malcom-mclean.json — stub, drafting paused 2026-09-29)
+
+**Opened and read raw (usable as sources):**
+- Waterman Steamship Corp. v. Commissioner, 430 F.2d 1185 (5th Cir. 1970), law.resource.org: 1954 ICC application withdrawn ("four or five year struggle"); management trust divesting Trucking; 20 Dec 1954 offer of $3,500,000 for Pan-Atlantic and Gulf Florida stock; $2,500,000 lent to Pan-Atlantic borrowed from Bethlehem Steel; closing 21 Jan 1955.
+- Levinson, *The Box*, Ch. 1 sample (assets.press.princeton.edu/chapters/s10724.pdf): 26 April 1956, fifty-eight aluminum truck bodies, Newark; Houston five days later; "an entrepreneur who knew nothing about ships".
+- Facing South, 1 Mar 1983 "For Peat's Sake" and 1 Mar 1986 "The Peat Wars": First Colony Farms, 372,000 acres, 1973; $400 an acre, "worth $1,200 or more" cleared; 1982 peat-mining plan, 15,000 acres of wetlands.
+- In re McLean Industries, 132 B.R. 267 (Bankr. S.D.N.Y. 1991), leagle.com: U.S. Lines, McLean Industries and First Colony Farms filed chapter 11 on 24 November 1986.
+- Commons: "Malcolm McLean at railing, Port Newark, 1957 (7312751706).jpg", CC BY-SA 2.0, "Maersk Line", photographer unnamed, date conflicts (1957 vs mid-1960s), Flickr original 404. Needs Luca's decision; no PD portrait found (LOC: 0 hits).
+
+**Leads, not sources:** NYT obituary 29 May 2001; Levinson pp. 44–47 (Waterman LBO $42M/$7M/$20M), Ch. 3–4 ($5.83 vs 15.8¢ origin), p. 188 (patent release); ICC MC-F-5976 (1957); Heiser, *Logistic Support* (Vietnam, Da Nang July 1967); 68 B.R. 690 / 70 B.R. 852 and NYT 25 Nov 1986 (USL size, Econships, jobs); Cudahy, *Box Boats* (Fordham open-access PDF behind Cloudflare — Luca can open it in a browser); McCown, *Giants of the Sea* (2020); Sea-Land sale to R.J. Reynolds 1969 ($530M vs $160M conflict).
+
+**Flag for 05-the-box:** its line that Tantlinger "persuaded McLean to give the patent away" rests on obituaries and Wikipedia. US 3,085,707 was assigned to Sea-Land, so Sea-Land held the power to release it. The release dates also conflict (1963 vs 1967). Run /press-factcheck on the-box before the Life links to it.
+
+## 2026-09-29 · Zemurray, Land, Onassis (Wing II stubs 45–47) — research incomplete
+
+Three researcher sweeps stopped at a session limit. Every fetch came back as a model digest, not raw text. Nothing below has been opened at primary level; none of it is a source yet.
+
+**Zemurray.** Time, "Bananas on High", 5 Feb 1934 (time.com/archive/6862950) and "United Fruit Obeys", 23 Jan 1933 (time.com/archive/6750534): read these verbatim first, for the share collapse ($105 → $10.25) and the boardroom line. "You're fired" has no source; cut it. Still to open: FRUS 1911–12 Honduras; Cullather, *Secret History* (archive.org CIA-Guatemala-Coup-Report); Tulane MARI; LaFeber, *Inevitable Revolutions*; Karnes, *Tropical Enterprise*. Figures that are unverified: $150 → $100,000 by 21; $31.5M Cuyamel price (whose share?); $300,000 to Tulane; the 1947 UN vote claim. Portrait: Commons "Sam_Zemurray,_1934.jpg", LA Times via UCLA, **CC BY 4.0**, so it needs a plate-licences entry and a colophon credit.
+
+**Land.** Opened (digest): Polaroid v. Kodak, 789 F.2d 1556 (law.resource.org); UPI 16 Jul 1991 ($873M + $52M interest = $925M paid); HBS Baker "The idea of instant photography" (the 1943 story is Land's own account from a 1965 speech; earliest record Dec 1943); Lemelson-MIT (polarizer 1929, Model 95 on sale 26 Nov 1948, "over 500" patents). Still to open: NSArchive EBB54 st03.pdf (Land to Dulles, 5 Nov 1954); CIA "Edwin Land's Cold War Intelligence Legacy" (2025); 1990 damages opinion (Mazzone); apartheid/PRWM sources; McElheny, *Insisting on the Impossible* (1998). The PDFs need pdftotext. No portrait licence checked.
+
+**Onassis.** Opened (digest): FRUS 1952–54 v. IX pt 1, docs 340–341 (Jiddah agreement, Aramco's alarm, Apr 1954); Harlaftis, "The Onassis Global Shipping Business, 1920s–1950s", *Business History Review* 88:2 (2014), abstract only; Time, 25 Oct 1968 (whaling fleet sold 1956 "at a profit of $8.5 million"; "perhaps 4,000,000 tons displacement"). Still to open: Harlaftis in full; United States v. Onassis, 125 F. Supp. 190 and 133 F. Supp. 327 (the $7M was probably a settlement, not a fine); the "Rivals of the Olympic Challenger" whaling paper; later FRUS docs on how Jiddah died; the biographies. Portrait: Commons "Aristoteles_Onassis,_Bestanddeelnr_921-8245.jpg", Nationaal Archief/Anefo, 1 Nov 1968, **CC0**. Look at it before making the plate.
+
+**Update 2026-09-30.** All three lives are written (content/lives/45–47) from sources that were read, and read again in full text where quoted. Still to open, as leads only:
+- Zemurray: FRUS for the Knox–Paredes convention (not in the 1911 Honduras chapter); Argueta, *Bananos y política* (1989); Bernays, *Biography of an Idea* (1965), for who hired him; the NYT obituary, 1 December 1961; acreage in Honduras (5,000 or 15,000 — unsettled).
+- Land: Morgan, "The World Is Watching", *Enterprise & Society* 7:3 (2006); the Boston Globe's 1977 story; a transcript of the American Physical Society incident (Dissent quotes Land calling the protesters liars — not printed); Time, 17 March 1980, raw, for the Polavision write-down ($68M?).
+- Onassis: Harlaftis, *Business History Review* 88:2 (2014), full text; the NYT of 22 December 1955; Foustanos (2006) p. 27 for the ship prices; any birth record; Monaco SBM stake (52% per Time, a third per Harlaftis); "Project Omega" (Wikipedia only).

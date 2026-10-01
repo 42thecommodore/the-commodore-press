@@ -1,0 +1,70 @@
+{
+  "id": "samuel-zemurray",
+  "keep": "He bet the roll twice, on a president and then on a company, and the men who cleared the plantations are the ones nobody wrote down.",
+  "n": "Samuel Zemurray",
+  "years": "1877–1961",
+  "place": "United States & Honduras",
+  "field": "Trade & Empire",
+  "group": "obscure",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "He started with the bananas nobody else would sell, fruit too ripe to ship any farther than the Mobile docks. Thirty-seven years later he was running the company that had sold them to him.",
+  "copy": [
+    "He was born in 1877 in the Russian Empire and reached the United States in 1891, fourteen and penniless. In 1895, in Mobile, Alabama, he found a trade the fruit companies were throwing away. Bananas that ripened on the voyage could not survive another train ride, so he bought them cheap and sold them fast in the towns along the line. Soon after he turned twenty-one he signed a contract with United Fruit to take its ripest fruit. By 1905 he was in New Orleans, where he acquired several companies, Cuyamel among them, and within five years he was buying land in Honduras.",
+    "Honduras is where the method changed. One cold December night in 1910 his yacht landed three revolutionaries at Biloxi, Mississippi, on their way south. Time, twenty-two years later, reported that he cooked dinner for Manuel Bonilla, left his coat on the general's shoulders, and said: \"Hell Manuel, I've shot the roll on you. I might as well shoot the coat too.\" Bonilla became president, and the government he installed gave Cuyamel land and tax concessions. In 1930 United Fruit bought Cuyamel for 300,000 of its own shares, then trading at $105. By June 1932 they were at $10¼. That summer he walked into the board meeting at No. 1 Federal Street, Boston, threw a handful of proxies in front of the president, Victor Cutter, and was made Managing Director in Charge of Operations before the directors adjourned. He cut the staff by a quarter.",
+    "The popular version of that meeting is Rich Cohen's: the chairman, Daniel Gould Wing, mocks his accent, and Zemurray answers \"You're fired!\" Time, writing six months after it, has the president and a different line: \"You've been ——ing up this business long enough. I'm going to straighten it out.\" The part both versions leave out is the plantations. Clearing them meant malaria and yellow fever for the men who did it. The banana workers of Honduras struck in May 1954, first at United Fruit, and the strike spread into other industries; the Library of Congress's country study counts nearly 30,000 out by the 21st. The strike ended in early July, labour leaders accused of ties to Guatemala were jailed, and the settlement met few of the original demands. He gave Tulane a million dollars."
+  ],
+  "facts": [
+    {
+      "b": "1891, aged 14",
+      "s": "His arrival, 'penniless': Steve Striffler, 'Samuel Zemurray', 64 Parishes (Louisiana Endowment for the Humanities), 2024. The Gale Encyclopedia of World Biography gives 1892; Time in 1934 gave 'the 1880's' at eleven, which his birth year rules out"
+    },
+    {
+      "b": "$200,000",
+      "s": "What Time called the price of the Honduran revolution, and the Biloxi dinner of December 1910: 'Business & Finance: United Fruit Obeys', Time, 23 January 1933. The State Department's own record of the revolution, FRUS 1911, chapter 'Honduras', documents Bonilla, Lee Christmas and the Hornet and never names him"
+    },
+    {
+      "b": "300,000 shares",
+      "s": "United Fruit's price for Cuyamel in 1930, share for share, 'slightly more than half' of them his; the stock at 105 then and a record low of 10¼ in June 1932: Time, 23 January 1933, as above"
+    },
+    {
+      "b": "25%",
+      "s": "The cut in personnel after he took charge in the summer of 1932, alongside a revaluation of the company's properties $50 million below the Boston figure: Time, 23 January 1933, as above"
+    },
+    {
+      "b": "≈30,000",
+      "s": "Strikers by 21 May 1954, first against United Fruit on the Caribbean coast, then Standard Fruit and other industries: Library of Congress Federal Research Division, 'Honduras: A Country Study', 'Aborted Reform, 1954–63'. Time's report of 24 May 1954 put it above 40,000"
+    },
+    {
+      "b": "$1,000,000",
+      "s": "His endowment of the Department of Middle American Research at Tulane, with the Gates collection: Time, 23 January 1933, as above. Tulane's own history dates the endowment to 1924 and gives no sum"
+    }
+  ],
+  "bio": {
+    "t": "The Fish That Ate the Whale: The Life and Times of America's Banana King",
+    "a": "Rich Cohen",
+    "y": "2012",
+    "why": "It is the famous one, so read it knowing its critics. Amy Newman Smith in the Jewish Review of Books found the workers 'close to invisible' in it; John Cline in the Los Angeles Review of Books, who found nothing inaccurate in it, noted how often Cohen imagines what Zemurray was thinking. Read it beside the two Time pieces of 1933 and 1934, which are shorter, the first written when, Time noted, he had never given an interview."
+  },
+  "contested": "The largest claim is Guatemala. Steve Striffler, writing for 64 Parishes, says Zemurray helped orchestrate the 1954 coup against Jacobo Árbenz, and Cohen puts him beside Edward Bernays and the CIA. The CIA's own history of the operation, Nicholas Cullather's 'Operation PBSUCCESS' (1994), names Bernays, the lobbyist Thomas Corcoran and United Fruit's officials, and does not name Zemurray. Gale's Encyclopedia of Latin American History has him retiring as the company's president in 1951; its Encyclopedia of World Biography has him chairing the executive committee and sitting on the board until 1957, which covers 1954. What he directed in 1954, as against what his company did, is not settled by any document this house has read. Cohen's second large claim, that he brought Guatemala, Honduras and Nicaragua to vote for the partition of Palestine in 1947, rests on Cohen; no record of the vote opened here names him.",
+  "across": [
+    {
+      "to": "press:why-firms-exist",
+      "label": "Why Firms Exist",
+      "txt": "— Coase's question worked out in bananas: United Fruit grew more than half its own fruit, and bought its rival rather than compete with him."
+    },
+    {
+      "to": "atlas:bet",
+      "label": "The Atlas · Bet on yourself",
+      "txt": "— the principle at its most literal, and with the bill attached. \"I've shot the roll on you\" was said to a man he was putting in a president's chair."
+    },
+    {
+      "to": "lives:aristotle-onassis",
+      "label": "Aristotle Onassis",
+      "txt": "— the other immigrant trader in this wing who went around a government rather than through it, and whose settlement with Washington came out smaller than the legend."
+    }
+  ]
+}

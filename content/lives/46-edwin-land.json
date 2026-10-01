@@ -1,0 +1,65 @@
+{
+  "id": "edwin-land",
+  "keep": "The camera story is the one he told himself; the U-2 letter and the passbook photographs are the ones other people had to find.",
+  "n": "Edwin Land",
+  "years": "1909–1991",
+  "place": "United States",
+  "field": "Invention & Industry",
+  "group": "famous",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "conic",
+  "lede": "He left Harvard twice and never took a degree. By 1954 he was telling the director of Central Intelligence which aeroplane to fly over the Soviet Union.",
+  "copy": [
+    "He entered Harvard in 1926 and left after one term to work on a sheet that would polarise light. The patent he filed with Joseph Friedman in April 1929 was granted in 1933. He went back to Harvard, and in 1932 left again, before graduating, to make the thing with George Wheelwright. Polaroid followed in 1937. The instant camera has a founding story, and it is Land's own, told in a lecture in 1965: \"my little daughter asked why she could not see at once the picture I had just taken of her.\" The written record starts in December 1943, when a colleague, Richard Kriebel, noted that Land had disclosed \"a novel self-developing film\" to him at home on the 10th. Land showed the process to the Optical Society of America on 21 February 1947. On 26 November 1948 the Model 95 went on sale at Jordan Marsh in Boston for $89.75, and all 56 cameras brought for the demonstration sold.",
+    "The other career is the less-known one. On 5 November 1954, chairing an intelligence panel for the Office of Defense Mobilization, he wrote to Allen Dulles urging the CIA to fly a high-altitude glider that Lockheed had proposed and the Air Force had turned down. He took the case to Eisenhower himself. It became the U-2. In the CIA's own later account, photographs from 24 of its flights showed the bomber gap to be a myth. In early 1958 he and James Killian met Eisenhower about a reconnaissance satellite, and afterwards Land went to CIA headquarters and told a surprised Richard Bissell that he would be running it. That was CORONA.",
+    "In 1970 two Black employees in Cambridge, Caroline Hunter, a bench chemist, and Ken Williams, a photographer, found that Polaroid's identity-card system was reaching South Africa, where black South Africans had to carry passbooks. Their fliers read \"Polaroid imprisons black people in sixty seconds.\" The company first said it did not sell the system to the government, then acknowledged that its film was used for passbook pictures, and announced an experiment in staying. Hunter was fired. In 1977 the Boston Globe found the distributor still selling to the government through a Johannesburg pharmacy, and Polaroid ended all sales in South Africa. The same year it launched Polavision, instant home movies; his biographer names the camcorder as a major factor in its failure, and the failure as part of why he gave up the chief executive's job in 1980, after forty-three years. He left the board in July 1982 with 533 US patents. The patents kept paying: Polaroid had sued Kodak in April 1976, and Kodak paid $925 million in July 1991, four months after he died."
+  ],
+  "facts": [
+    {
+      "b": "US 1,918,848",
+      "s": "'Polarizing refracting bodies', Edwin H. Land and Joseph S. Friedman, filed 26 April 1929, issued 18 July 1933: United States patent, as recorded by Google Patents. Baker Library, Harvard Business School, calls it the first of his patents"
+    },
+    {
+      "b": "$89.75 · 56",
+      "s": "The Model 95's price, and the cameras brought to the Jordan Marsh demonstration on 26 November 1948, all sold: Baker Library, Harvard Business School, 'Edwin H. Land & Polaroid', 'Impact of the New Medium'"
+    },
+    {
+      "b": "24 flights",
+      "s": "The U-2 missions whose photographs undid the bomber gap; the Air Force's rejection of the design; Land's meeting with Eisenhower and Killian in early 1958 and his visit to Bissell: Regis D. Heitchue, 'Edwin Land's Cold War Intelligence Legacy', Studies in Intelligence 69:1 (CIA, March 2025). The letter itself: Land to Allen W. Dulles, 5 November 1954, National Security Archive, Electronic Briefing Book 54, document 3"
+    },
+    {
+      "b": "43 years",
+      "s": "As Polaroid's chief executive, stepping down 'in part because of the commercial failure' of Polavision: Victor K. McElheny, 'Edwin Herbert Land', Biographical Memoirs, National Academy of Sciences"
+    },
+    {
+      "b": "533 patents",
+      "s": "US patents he held when he resigned as chairman and director on 27 July 1982: UPI, 27 July 1982. Heitchue gives the same count; McElheny writes 'more than 500'"
+    },
+    {
+      "b": "$925 million",
+      "s": "Kodak's payment: the $873 million award, reduced in January 1991 from the $909.5 million Judge A. David Mazzone set in October 1990, plus $52 million in post-judgment interest: UPI, 'Polaroid, Kodak settle patent suit', 16 July 1991. The suit was filed 26 April 1976: Polaroid Corp. v. Eastman Kodak Co., 789 F.2d 1556 (Fed. Cir. 1986)"
+    }
+  ],
+  "bio": {
+    "t": "Insisting on the Impossible: The Life of Edwin Land",
+    "a": "Victor K. McElheny",
+    "y": "1998",
+    "why": "It is built on more than twenty years of the author's interviews and on Polaroid's own archives. Read it knowing what McElheny discloses himself: he spent 1972 at Polaroid as a consultant on the SX-70, and from 1982 to 1991 was a part-time consultant to Land's Rowland Institute."
+  },
+  "contested": "Almost everything written about Land is written by people who worked with him or for him. His standard biographer consulted for Polaroid and for Land's own institute. The CIA's account of his intelligence work is by a former senior executive of the CIA's science directorate, and its caption dates Polavision to 1971, six years early. The founding story of the instant camera is his, told twenty-two years after the fact; the earliest records are two colleagues' memos from December 1943. The hardest question is South Africa, and it is argued from the other side. Dissent's 2020 account has Land, on stage at the American Physical Society, calling the protesters liars; this house has not found a transcript. Polaroid insisted the workers' movement had not influenced its decisions, and the 1977 withdrawal came after a Boston Globe reporter, not the company, found the distributor out.",
+  "across": [
+    {
+      "to": "press:compounding-machines",
+      "label": "Compounding Machines",
+      "txt": "— a company run as a research laboratory, whose founder also steered the CIA into the U-2 and CORONA."
+    },
+    {
+      "to": "atlas:story",
+      "label": "The Atlas · Story is leverage",
+      "txt": "— he staged the camera's debut before the Optical Society and a department store, and told its origin himself twenty-two years later."
+    }
+  ]
+}
