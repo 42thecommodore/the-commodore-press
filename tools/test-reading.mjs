@@ -173,6 +173,10 @@ async function quotePassage(t, wait, p, credit) {
   t("the quote starts and ends on whole words", i >= 0 && (i === 0 || !/[\w’']/.test(text[i - 1])) && !/[\w’']/.test(text[i + q.length] || " "), q);
   t("the passage link points into the entry's own page", /\/#:~:text=/.test(dl.querySelector("input").value), dl.querySelector("input").value);
   t("the quote is credited to the Press, on the entry", dl.querySelector(".rs-by").textContent === "— " + credit, dl.querySelector(".rs-by").textContent);
+  // Bluesky refuses a post over 300 characters and counts the link whole
+  const bs = dl.querySelector('a[href^="https://bsky.app/intent/compose"]');
+  const post = bs ? new URL(bs.href).searchParams.get("text") : "";
+  t("the Bluesky post fits in 300 characters, with the link and the credit", bs && [...post].length <= 300 && /https?:\/\/\S+$/.test(post) && post.includes(credit), post.length + ": " + post);
 }`;
 
 const ENTRY = (credit) => String.raw`
