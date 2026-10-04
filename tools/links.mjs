@@ -155,5 +155,14 @@ if (dead.length) {
   dead.forEach(u => console.log(`  ${c.r}✗${c.x} ${u} ${c.d}(${results[u].note || results[u].status})${c.x}${where(u)}`));
   console.log(`\n${c.d}  A dead reading link is a source no reader can open. Repoint it or remove it.${c.x}`);
 }
-if (!dead.length) console.log(`\n${c.g}✓ every link opens${c.x} ${c.d}— ${urls.length} checked${blocked.length ? `, ${blocked.length} unconfirmed` : ""}${c.x}`);
+/* Nothing opened is not "every link opens". On 2026-10-04 a run behind a network that refused
+   every host printed a green tick over 96 links, all 96 unconfirmed: the check had checked
+   nothing and said it had passed. When not one link opened, the network is the finding. */
+const opened = urls.length - dead.length - blocked.length;
+if (!opened) {
+  console.log(`\n${c.r}✗ not one link could be opened${c.x} ${c.d}— ${urls.length} tried, every one refused. That is this machine's network, not ${urls.length} dead pages:${c.x}`);
+  console.log(`${c.d}  run \`npm run links\` again where the internet is open. Nothing here was checked.${c.x}`);
+  process.exit(1);
+}
+if (!dead.length) console.log(`\n${c.g}✓ no dead links${c.x} ${c.d}— ${opened} of ${urls.length} opened${blocked.length ? `; ${blocked.length} refused the checker, open those by hand` : ""}${c.x}`);
 process.exit(dead.length ? 1 : 0);
