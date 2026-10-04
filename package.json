@@ -20,7 +20,7 @@
     "links": "node tools/links.mjs",
     "live": "node tools/live.mjs",
     "proofread": "node tools/proofread.mjs",
-    "test": "node tools/test-reading.mjs && node tools/test-atlas.mjs && node tools/test-seo.mjs"
+    "test": "node tools/test-reading.mjs && node tools/test-atlas.mjs && node tools/test-seo.mjs && node tools/test-links.mjs"
   },
   "engines": {
     "node": ">=18"
