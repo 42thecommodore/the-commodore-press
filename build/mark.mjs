@@ -9,7 +9,8 @@
 
      templates/shell.html, theme/press.js   {{MARK size=22 sw=1.2 pn aria}}  (filled by the build)
      theme/reading.css                      {{MARK_MASK}}                    (build and pages.mjs)
-     favicons                               favicon()                        (build and pages.mjs)
+     favicons                               favicon(), {{MARK_ICONS}}        (build and pages.mjs)
+     the home-screen and search icons       iconSvg() → tools/icons.mjs      (PNGs, committed)
      tools/og-card.mjs                      markInner()
 
    `npm run check` fails if the pennant's path turns up anywhere else. */
@@ -39,9 +40,29 @@ export function markSvg({ size = 0, sw = 1, pn = false, aria = false, opacity = 
 const uri = svg => "data:image/svg+xml," + svg.replace(/"/g, "'").replace(/</g, "%3C").replace(/>/g, "%3E").replace(/#/g, "%23");
 
 /* The favicon: paper seal, heavier stroke, one swell — it is drawn at 16px. */
-export function favicon() {
-  return uri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none" stroke="#1E1C18" stroke-width="1.6" stroke-linecap="round">` +
-    markInner(1.6, { sea: false, ink: "#1E1C18", r: 9.5 }).replace('<circle cx="11" cy="11" r="9.5" stroke-width="1.6"/>', '<circle cx="11" cy="11" r="9.5" stroke-width="1.6" fill="#F2EDE1"/>') + `</svg>`);
+export function faviconSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none" stroke="#1E1C18" stroke-width="1.6" stroke-linecap="round">` +
+    markInner(1.6, { sea: false, ink: "#1E1C18", r: 9.5 }).replace('<circle cx="11" cy="11" r="9.5" stroke-width="1.6"/>', '<circle cx="11" cy="11" r="9.5" stroke-width="1.6" fill="#F2EDE1"/>') + `</svg>`;
+}
+export function favicon() { return uri(faviconSvg()); }
+
+/* The icon a phone puts on its home screen, and the one a search result or a chat app shows
+   beside the link: the seal on a full square of paper, because iOS paints any transparency
+   black. The mark sits inside the middle 80%, the safe zone a maskable icon is cropped to. */
+export function iconSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 34 34"><rect x="-6" y="-6" width="34" height="34" fill="#F2EDE1"/>` +
+    `<g fill="none" stroke="#1E1C18" stroke-linecap="round">${markInner(1.1, { ink: "#1E1C18" })}</g></svg>`;
+}
+
+/* Every page's icon tags. Real files, not a data URI: a search engine fetches the favicon
+   by URL, and a home screen or a link preview wants a PNG. `site` is the absolute root. */
+export const ICON_FILES = ["favicon.svg", "apple-touch-icon.png", "icon-192.png", "icon-512.png", "site.webmanifest"];
+export function iconLinks(site) {
+  return `<link rel="icon" href="${site}/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${site}/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="${site}/apple-touch-icon.png">
+<link rel="manifest" href="${site}/site.webmanifest">
+<meta name="theme-color" content="#F2EDE1">`;
 }
 
 /* For a CSS mask: black on transparent; the element's own colour shows through. */
@@ -55,6 +76,7 @@ export function fillMark(s) {
   return s
     .replace(/{{MARK_MASK}}/g, markMask())
     .replace(/{{MARK_FAVICON}}/g, favicon())
+    .replace(/{{MARK_ICONS}}/g, iconLinks("{{SITE}}"))
     .replace(/{{MARK((?:\s+[\w.=]+)*)}}/g, (_, args) => {
       const o = {};
       for (const a of args.trim().split(/\s+/).filter(Boolean)) {

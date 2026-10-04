@@ -80,8 +80,8 @@
   // X counts a link as 23 characters; a long passage is shortened there, and only there,
   // with the ellipsis that marks the cut. Copy and email carry it whole.
   function clip(t, n) { t = clean(t); return t.length <= n ? t : t.slice(0, t.lastIndexOf(" ", n - 1)) + "…"; }
-  function tweetable(q, title) {
-    var tail = "” — " + credit(title), room = 250 - tail.length;
+  function tweetable(q, title, max) {
+    var tail = "” — " + credit(title), room = (max || 250) - tail.length;
     if (q.length > room) q = q.slice(0, q.lastIndexOf(" ", room - 1)) + " …";
     return "“" + q + tail;
   }
@@ -114,6 +114,10 @@
     var mail = "mailto:?subject=" + enc(full) + "&body=" + enc((q ? quoteText : said) + "\n\n" + url);
     var x = "https://twitter.com/intent/tweet?text=" + enc(q ? tweetable(q, title) : clip(said, 200)) + "&url=" + enc(url);
     var li = "https://www.linkedin.com/sharing/share-offsite/?url=" + enc(o.url);
+    // Bluesky takes one text field of 300 characters, link included, and counts the link in
+    // full: a passage link's fragment can run past a hundred, so a long one goes as the page.
+    var bu = url.length > 140 ? o.url : url, room = 299 - bu.length;
+    var bsky = "https://bsky.app/intent/compose?text=" + enc((q ? tweetable(q, title, room) : clip(said, room)) + " " + bu);
     d.innerHTML = '<div class="rs-in">' +
       '<div class="rs-head"><span class="rs-lbl">' + (q ? (o.kind === "line" ? "Share this line" : "Share this passage") : "Share this entry") + '</span>' +
       '<button class="rs-x" type="button" aria-label="Close">✕</button></div>' +
@@ -126,6 +130,7 @@
       '<div class="rs-acts">' + (q ? '<button class="rs-b" type="button" data-a="quote">Copy quote</button>' : "") +
       '<a class="rs-b" href="' + esc(mail) + '">Email</a>' +
       '<a class="rs-b" href="' + esc(x) + '" target="_blank" rel="noopener">X</a>' +
+      '<a class="rs-b" href="' + esc(bsky) + '" target="_blank" rel="noopener">Bluesky</a>' +
       '<a class="rs-b" href="' + esc(li) + '" target="_blank" rel="noopener">LinkedIn</a>' +
       (navigator.share ? '<button class="rs-b" type="button" data-a="more">More…</button>' : "") + '</div>' +
       (o.kind === "passage" ? '<p class="rs-note">The link opens the entry’s own page at this passage, in browsers that support it.</p>' : "") +
