@@ -206,3 +206,20 @@ Three researcher sweeps stopped at a session limit. Every fetch came back as a m
 - Zemurray: FRUS for the Knox–Paredes convention (not in the 1911 Honduras chapter); Argueta, *Bananos y política* (1989); Bernays, *Biography of an Idea* (1965), for who hired him; the NYT obituary, 1 December 1961; acreage in Honduras (5,000 or 15,000 — unsettled).
 - Land: Morgan, "The World Is Watching", *Enterprise & Society* 7:3 (2006); the Boston Globe's 1977 story; a transcript of the American Physical Society incident (Dissent quotes Land calling the protesters liars — not printed); Time, 17 March 1980, raw, for the Polavision write-down ($68M?).
 - Onassis: Harlaftis, *Business History Review* 88:2 (2014), full text; the NYT of 22 December 1955; Foustanos (2006) p. 27 for the ship prices; any birth record; Monaco SBM stake (52% per Time, a third per Harlaftis); "Project Omega" (Wikipedia only).
+
+---
+
+## Finding Longitude — still to open (2026-10-05)
+
+Found while researching the John Harrison life; correction 20 fixed what could be fixed
+from opened documents. These are leads, not sources:
+
+- "About four hours of a navigator's arithmetic per fix" for lunar distances (`copy[0]`).
+  Not seen in anything opened. Candidates: the Nautical Almanac's own preface (1767);
+  Dunn & Higgitt, *Finding Longitude* (2014).
+- Harrison's total receipts from all sources. Wikipedia's £23,065 adds up two ways; Siegel's
+  figures give about £22,750. Open Howse, "Britain's Board of Longitude: The Finances"
+  (Mariner's Mirror, 1998) — the RMG PDF is an image-only scan — or Andrewes (1996).
+- The Board of Longitude minutes for 1765 and 1773 in the Cambridge Digital Library.
+- Rebekah Higgitt, "There was no such thing as the Longitude Prize" (RMG blog, 2012): the
+  live page and two Wayback captures 404.
