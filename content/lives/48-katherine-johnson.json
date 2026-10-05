@@ -56,6 +56,11 @@
       "to": "lives:john-harrison",
       "label": "John Harrison",
       "txt": "— the Board would not trust one watch until someone else could build it again; Glenn would not trust the IBM until she had run its numbers."
+    },
+    {
+      "to": "lives:hedy-lamarr",
+      "label": "Hedy Lamarr",
+      "txt": "— the same rewriting from the other side: a real patent credited with inventions it never touched."
     }
   ]
 }
