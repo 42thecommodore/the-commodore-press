@@ -474,6 +474,9 @@ o.type = "application/json"; o.id = "__results"; o.textContent = JSON.stringify(
   }
   // the entries' bodies ship beside the page (build/build.mjs); the reader fetches them from there
   for (const f of fs.readdirSync(dist()).filter(f => /^library\.[0-9a-f]+\.js$/.test(f))) fs.copyFileSync(dist(f), path.join(tmp, f));
+  // and the typefaces, which the page now asks for from fonts/ beside it: without them every
+  // measurement here (spine titles, the first screen, targets) would be taken in a fallback face
+  if (fs.existsSync(dist("fonts"))) fs.cpSync(dist("fonts"), path.join(tmp, "fonts"), { recursive: true });
   let dom = "";
   try {
     dom = execFileSync(CHROME, ["--headless=new", "--disable-gpu", "--no-sandbox", `--window-size=${frame ? `${frame[0] + 40},${frame[1] + 160}` : "1280,900"}`,

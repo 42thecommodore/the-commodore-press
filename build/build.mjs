@@ -6,6 +6,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJSON } from "../tools/json.mjs";
 import { fillMark, faviconSvg, ICON_FILES } from "./mark.mjs";
+import { fontFaces, fontPreload, FONT_FILES } from "./fonts.mjs";
 import { motifSVG } from "./motif.mjs";
 import { writeEntryPages, writeAbout, writeLog, writeContents, EDITOR, minsOf } from "./pages.mjs";
 import crypto from "node:crypto";
@@ -175,6 +176,7 @@ const out = fill(typesetHTML(read("templates/shell.html")))   // the frame's own
   // the colophon promises no cookies and no analytics; once a sign-up exists it also says who holds the addresses
   .replace("<!--NEWSCOLOPHON-->", NEWS && NEWS.action ? ` If you subscribe to the newsletter, your address is held by ${NEWS.provider}, used only to send it; every issue carries its own unsubscribe link.` : "")
   .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the three wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
+  .replace("<!--FONTS-->", () => fontPreload("") + "\n<style>" + fontFaces("") + "</style>")
   .replace("<!--CSS-->", () => lean(read("theme/press.css")) + lean(read("theme/atlas.css")) + fillMark(lean(read("theme/reading.css"))))
   .replace("<!--DATA-->", () => DATA)
   // reading.js and atlas.js first: the engine calls both (atlas.js holds only declarations), and the entry pages run reading.js too
@@ -229,6 +231,11 @@ fs.writeFileSync(p("dist/robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE
 const CARD = p("assets/og.png");
 if (fs.existsSync(CARD)) fs.copyFileSync(CARD, p("dist/og.png"));
 else console.log("  no assets/og.png — run `npm run card` (shared links will show no image)");
+
+/* The typefaces, from this site rather than Google's (build/fonts.mjs says why). */
+fs.rmSync(p("dist/fonts"), { recursive: true, force: true });
+fs.mkdirSync(p("dist/fonts"), { recursive: true });
+for (const f of FONT_FILES) fs.copyFileSync(p("assets/fonts", f), p("dist/fonts", f));
 
 /* The icons a search result, a home screen and a link preview fetch by URL. favicon.svg and the
    manifest are written from build/mark.mjs here; the PNGs are rendered by `npm run card`

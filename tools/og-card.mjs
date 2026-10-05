@@ -33,6 +33,7 @@ import zlib from "node:zlib";
 import { plateOf, creditOf, lifeStamp } from "./cards.mjs";
 import { markInner } from "../build/mark.mjs";
 import { CHROME } from "./chrome.mjs";
+import { fontFaces } from "../build/fonts.mjs";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -57,27 +58,16 @@ const WINGS = ["The Press", "Lives", "The Atlas"];
 const SPINES = ["#7B3F2E", "#2F4A3C", "#1B2A4A"];
 const word = n => ["zero","one","two","three","four","five","six","seven"][n] || String(n);
 
-/* The house typefaces are the point of this card, and a browser that cannot reach Google
-   Fonts does not say so — it quietly renders the wordmark in Georgia and the card still
-   looks plausible. So the fonts are fetched here, where a failure is visible, and inlined
-   as data URIs; the render then needs no network at all. If the fetch fails we say so and
-   keep the committed card rather than shipping one in the wrong face. */
-const FONTS_CSS = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap";
-let fontFace = "";
-try {
-  // the UA decides whether Google serves woff2; without one it serves a truetype fallback
-  const css = await (await fetch(FONTS_CSS, { headers: { "User-Agent": "Mozilla/5.0 Chrome/120" } })).text();
-  const urls = [...new Set([...css.matchAll(/url\((https:[^)]+)\)/g)].map(m => m[1]))];
-  const bytes = Object.fromEntries(await Promise.all(urls.map(async u =>
-    [u, Buffer.from(await (await fetch(u)).arrayBuffer()).toString("base64")])));
-  fontFace = css.replace(/url\((https:[^)]+)\)/g, (_, u) => `url(data:font/woff2;base64,${bytes[u]})`);
-  const kb = (Object.values(bytes).reduce((n, b) => n + b.length, 0) / 1365).toFixed(0);
-  console.log(`\n  fonts: ${urls.length} file(s) inlined, ~${kb} KB`);
-} catch (e) {
-  console.error(`\n  Could not fetch the house typefaces (${e.message}).`);
-  console.error("  Refusing to render the card in a substitute face — the committed assets/og.png stands.\n");
-  process.exit(1);
-}
+/* The house typefaces are the point of this card, and a browser that cannot find them does
+   not say so — it quietly renders the wordmark in Georgia and the card still looks plausible.
+   So the faces are read from assets/fonts/ (the same files the site serves, build/fonts.mjs)
+   and inlined as data URIs; the render needs no network at all. Until 2026-10-05 they were
+   fetched from Google here, which made `npm run card` fail on any machine offline. */
+const fontFace = fontFaces("").replace(/url\(fonts\/([^)]+)\)/g, (_, f) => {
+  const file = p("assets/fonts", f);
+  if (!fs.existsSync(file)) { console.error(`\n  ${file} is missing — the card would print in a substitute face. Refusing.\n`); process.exit(1); }
+  return `url(data:font/woff2;base64,${fs.readFileSync(file).toString("base64")})`;
+});
 
 /* The press mark comes from build/mark.mjs, the one drawing of it. */
 const markSvg = (size, sw = 1.05, cls = "") => `<svg${cls ? ` class="${cls}"` : ""} width="${size}" height="${size}" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round">${markInner(sw)}</svg>`;
