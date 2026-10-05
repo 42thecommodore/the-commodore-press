@@ -50,7 +50,12 @@
     {
       "to": "press:finding-longitude",
       "label": "Finding Longitude",
-      "txt": "— the same problem two centuries earlier: where a vessel is, worked out by hand, about four hours of a navigator's arithmetic a fix."
+      "txt": "— the same problem two centuries earlier: whether a machine's answer about where a vessel is can be trusted, and who checks it."
+    },
+    {
+      "to": "lives:john-harrison",
+      "label": "John Harrison",
+      "txt": "— the Board would not trust one watch until someone else could build it again; Glenn would not trust the IBM until she had run its numbers."
     }
   ]
 }

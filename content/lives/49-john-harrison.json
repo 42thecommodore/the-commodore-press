@@ -1,0 +1,69 @@
+{
+  "id": "john-harrison",
+  "keep": "Nineteen years on the wrong machine is what told him which machine was right.",
+  "n": "John Harrison",
+  "years": "1693–1776",
+  "place": "England",
+  "field": "Clockmaking & Navigation",
+  "group": "obscure",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "A carpenter who taught himself clockmaking, he spent nineteen years on a sea clock that failed. It was the failure that told him to build a watch.",
+  "copy": [
+    "John Harrison was born at Foulby, near Wakefield, in 1693, and grew up in Barrow, across the Humber. He was a carpenter by trade and taught himself clockmaking. His first longcase clock, made in 1713 when he was twenty, was built almost entirely of wood. The faults of ordinary clocks were heat and friction, and he designed around both. The gridiron pendulum used alternate rods of brass and steel, so that each metal's expansion cancelled the other's. The turret clock he built at Brocklesby Park needed no oil at all. By the mid-1720s, working with his brother James, he was making longcase regulators accurate to a second a month. The Longitude Act of 1714 offered up to £20,000 for a way to find a ship's position that was \"tried and found Practicable and Useful at Sea\". A clock that good on land was the obvious place to start.",
+    "He brought his first sea clock to London in 1735. On 30 June 1737 the Commissioners of Longitude met for the first time and voted him £500 to build a better one. He began the third in 1740 and worked on it for nineteen years. It never reached the accuracy the Act required. What it gave him was two inventions, the bimetallic strip and the caged roller bearing, and the conviction that the answer was a different design altogether. In 1755 he asked the Board for money to make two watches, one of them small enough to be worn in the pocket. The watch that came of it is the one now called H4. His son William carried it to Jamaica in 1761 and to Barbados in 1764. On the second voyage it lost 39.2 seconds in 47 days, and in February 1765 the Board agreed unanimously that it had kept time within the Act's narrowest limit.",
+    "The popular version ends with a jealous Astronomer Royal cheating him of the prize, and the record is less tidy than that. The famous result from Jamaica, 5.1 seconds slow after 81 days, was Harrison's own claim. It held only after an allowance of 2.66 seconds a day for the watch's rate, which he had not declared before the ship sailed, and the Board called that trial inconclusive. Barbados was the trial that passed. A special Act of 1765 then paid him half the prize, £10,000, once he had taken the watch apart before a committee and explained it. The other half was to follow when other makers had shown they could build the same thing. It never came. The Board paid Larcum Kendall £450 to copy H4, and Cook took the copy round the world, calling it \"our never-failing guide, the watch\". In 1772 William went to the King, and in 1773 Parliament voted the old man £8,750 as a gift rather than as the prize. Harrison died on 24 March 1776."
+  ],
+  "bio": {
+    "t": "John Harrison and the Quest for Longitude",
+    "a": "Jonathan Betts",
+    "y": "2023",
+    "why": "Short, and written by the curator emeritus of horology at Royal Museums Greenwich, who has spent his career with the timekeepers themselves. Dava Sobel's Longitude is the better story and the one the archive historians dispute. For the documents, the 1966 biography by Humphrey Quill is what the legal scholarship cites."
+  },
+  "contested": "The argument is over whether the Board wronged him. Dava Sobel's Longitude (1995) says it did, and made Nevil Maskelyne the villain. Jonathan Siegel, writing in the Tulane Law Review in 2009 from the Board's minutes, calls the charge that it had closed minds \"notably out of keeping with the facts\": the Board funded Harrison for decades through missed deadlines, held its first meeting ever to hear him, and asked of a single handmade watch what any statute would ask of a method, that it be shown to work again in other hands. Siegel concedes the hard part. Harrison was right in theory about the rate of going, and the Board's later terms were loose and severe: it dismantled the watch before a committee, took his three sea clocks from his house in 1766, set a ten-month trial at Greenwich with no stated test of success, and required him to make the copies himself. The line most quoted in his favour, the King's \"By God, Harrison, I will see you righted\", has no contemporary record the house could find; it is said to have been spoken, and the versions disagree on the words. One modern test cuts the other way. Clock B, a regulator built to Harrison's late design, begun by Martin Burgess and completed by Charles Frodsham, was five-eighths of a second out after 100 days from January 2015: the accuracy he had claimed for it, \"to a second in 100 days\". Harrison never built it, so it tests the design and not the man, and the figures come from the firm that completed it.",
+  "across": [
+    {
+      "to": "press:finding-longitude",
+      "label": "Finding Longitude",
+      "txt": "— the prize he spent his life inside, and why a statute asks for a method rather than a masterpiece."
+    },
+    {
+      "to": "lives:katherine-johnson",
+      "label": "Katherine Johnson",
+      "txt": "— two centuries on, the same question of when to trust a machine's numbers, answered by checking them by hand."
+    }
+  ],
+  "facts": [
+    {
+      "b": "19 yrs",
+      "s": "Work on the third sea clock, 1740–59: Royal Museums Greenwich, 'Harrison's clocks: the longitude problem' (rmg.co.uk)"
+    },
+    {
+      "b": "£500",
+      "s": "The Commissioners' first award, 30 June 1737: Royal Museums Greenwich, 'Harrison's clocks: the longitude problem'"
+    },
+    {
+      "b": "39.2 sec",
+      "s": "H4's loss over 47 days on the 1764 Barbados voyage: National Maritime Museum, 'John Harrison and the Longitude problem' (2002), read in a mirror copy at pro.unibz.it after the original nmm.ac.uk address went dead"
+    },
+    {
+      "b": "2.66 sec/day",
+      "s": "The rate allowance behind the 5.1-second Jamaica result, declared after the voyage: Jonathan R. Siegel, 'Law and Longitude', Tulane Law Review 84 (2009), n. 93"
+    },
+    {
+      "b": "£10,000",
+      "s": "The half of the prize paid under the special Act of 1765, with the £2,500 already advanced counted in: Siegel, 'Law and Longitude' (2009), pp. 24 and 32–33"
+    },
+    {
+      "b": "£450",
+      "s": "What the Board paid Larcum Kendall to copy H4: Siegel, 'Law and Longitude' (2009), n. 139, citing Quill (1966)"
+    },
+    {
+      "b": "£8,750",
+      "s": "Parliament's 1773 grant, £1,250 short of the outstanding half: Siegel, 'Law and Longitude' (2009), p. 26"
+    }
+  ]
+}

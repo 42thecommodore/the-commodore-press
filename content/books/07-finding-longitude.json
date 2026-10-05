@@ -93,6 +93,11 @@
       "to": "lives:katherine-johnson",
       "label": "Katherine Johnson",
       "txt": "— the arithmetic two centuries on, done by hand at a desk in Virginia to check the machine that had replaced it."
+    },
+    {
+      "to": "lives:john-harrison",
+      "label": "John Harrison",
+      "txt": "— the man inside the prize: a self-taught carpenter, and the nineteen years on the clock that failed."
     }
   ],
   "reading": [
