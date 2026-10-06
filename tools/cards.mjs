@@ -15,9 +15,13 @@ export const plateOf = (ROOT, l) => {
    ask that changes be indicated, and every plate is cropped and toned — the colophon says
    so, and the card has to as well. */
 export function creditOf(l, plate, LIC) {
+  // A plate that is an object, not a likeness, says so on the card too: a shared card travels
+  // without the entry, and a face-sized picture under a name reads as that person.
+  const what = plate && l.plateOf ? l.plateOf : "";
   const lic = plate && LIC[l.id];
-  if (!lic) return "";
-  return /^CC /.test(lic.licence) ? `Photograph: ${lic.by}, ${lic.licence}; cropped and toned` : `Photograph: ${lic.by}`;
+  if (!lic) return what;
+  const by = /^CC /.test(lic.licence) ? `Photograph: ${lic.by}, ${lic.licence}; cropped and toned` : `Photograph: ${lic.by}`;
+  return what ? `${what} ${by}` : by;
 }
 
 /* The plate is hashed: a replaced portrait is a stale card even when every word is the same. */
