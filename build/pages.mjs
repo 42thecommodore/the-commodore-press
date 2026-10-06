@@ -340,7 +340,7 @@ ${FONTS(SITE, "../../")}
 <body style="--cover:${b.cover};--cink:${b.ink};--accent:${b.accent}">
 <nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">${wingName}</a><i>/</i><span>${name}</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">${mins} min read</span><button class="rs-go rs-js-only" type="button" data-rs="share">${SHARE_ICON}Share</button><a class="wl" href="../../#${isPress ? "press" : "lives"}">${wing} →</a></span><span class="rs-bar" id="rbar"></span></nav>
 <header class="band"><div class="in">
-  <div class="btxt"><div class="kick">${isPress ? `The Press · ${b.field}` : `Lives · ${b.years}`}</div>
+  <div class="btxt"><div class="kick">${isPress ? `The Press · ${b.field}` : `Lives · № ${b.no} · ${b.years}`}</div>
   <h1>${name}</h1>
   <p class="sub">${sub}</p>
   ${isPress && b.claim ? `<p class="claim">${b.claim}</p>` : ""}
@@ -737,7 +737,7 @@ ${FONTS(SITE, "../")}
 <p class="sub">${BOOKS.length + ADJACENT.length} titles and ${LIVES.length} lives. Every figure carries its source.</p></div></header>
 <main class="body">
 <h2 id="press">The Press · ideas</h2><ul class="list">${BOOKS.concat(ADJACENT).map(b => item(`../t/${b.id}/`, b.title, inline(strip(b.claim || b.sub || "")))).join("")}</ul>
-<h2 id="lives">Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `${l.field} · ${l.years}`)).join("")}</ul>
+<h2 id="lives">Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `№ ${l.no} · ${l.field} · ${l.years}`)).join("")}</ul>
 ${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
 </main>
 <footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>

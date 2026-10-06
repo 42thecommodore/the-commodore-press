@@ -1,0 +1,62 @@
+{
+  "id": "annie-turnbo-malone",
+  "no": 53,
+  "keep": "Her former agent is the famous name partly because the agent's papers survived; Malone's fortune is a number nobody can now check.",
+  "n": "Annie Turnbo Malone",
+  "years": "1869 or 1877 – 1957",
+  "place": "United States",
+  "field": "Beauty & Business",
+  "group": "obscure",
+  "cover": "#2B2420",
+  "spineC": "#1D1815",
+  "ink": "#F4EEE6",
+  "accent": "#D8B26A",
+  "motif": "dots",
+  "lede": "Madam C. J. Walker, usually called America's first self-made woman millionaire, started out selling Annie Malone's hair products. How rich Malone became, nobody can now count.",
+  "copy": [
+    "She was born in Metropolis, Illinois, the tenth of eleven children: in 1869, by the State Historical Society of Missouri's account, or in 1877, by A'Lelia Bundles's corrected one. She made hair preparations for Black women and in 1902 moved the business to St. Louis. She called the line Poro, and sold it the way she always would: not through druggists or storekeepers but, as a federal court put it in 1930, \"exclusively by women agents.\" The trade-mark was registered in 1907, and she defended it, against a \"Hay-Po\" in 1921 and a mouthwash called \"Molo\" in 1930. She won both. One of her agents, in St. Louis and then in Denver in 1905 and 1906, was Sarah Breedlove, who married Charles Joseph Walker and started her own company under his name.",
+    "In 1918 she opened Poro College in St. Louis. By the mid-1950s the State Historical Society counts thirty-two branches of the Poro school. She gave $25,000 to Howard University's medical school in the 1920s, which Gale's Contemporary Black Biography calls the largest gift the school had then had from an African American, and the St. Louis Colored Orphans Home was renamed for her in 1946.",
+    "In 1927 her husband filed for divorce and demanded half the business; the settlement was $200,000. In 1930 she moved the headquarters to Chicago. In the 1940s she disputed a large federal tax bill, and by 1951, Gale records, the government had seized control of the company. She died in Chicago on 10 May 1957. Her obituary in the Chicago Defender, as Bundles quotes it, said her wealth at its peak in the 1920s \"was estimated at $14 million.\" Bundles, who has gathered hundreds of articles on Malone and Poro from 1903 on, found the figure nowhere before her death and says it seems to be drawn from thin air. Poro's own records do not survive to settle it. Walker's do, and her estate, by her great-great-granddaughter's estimate, was $600,000 to $700,000."
+  ],
+  "facts": [
+    {
+      "b": "1869 · 1877",
+      "s": "Her birth year: 9 August 1869 in the State Historical Society of Missouri, 'Historic Missourians: Annie Malone' (Elizabeth E. Engel); 1877 in A'Lelia Bundles, 'The Facts about Madam C. J. Walker and Annie Malone', aleliabundles.com (2020), marked 'This is a correction'. The same Historical Society page gives St. Louis in 1902, Poro College in 1918, Chicago in 1930, thirty-two branches in the mid-1950s and the renaming of the home in 1946"
+    },
+    {
+      "b": "1907",
+      "s": "The registration of 'Poro', and sale 'exclusively by women agents': Malone v. Horowitz, 41 F.2d 414 (C.C.P.A. 1930), read in the Caselaw Access Project text. The 'Hay-Po' case: Hay v. Malone, 273 F. 363 (D.C. Cir. 1921). The 1906 often given is not a registration date"
+    },
+    {
+      "b": "$200,000",
+      "s": "The divorce settlement of 1927: State Historical Society of Missouri, as above"
+    },
+    {
+      "b": "$25,000",
+      "s": "Her gift to Howard University's medical school in the 1920s: Gale, Contemporary Black Biography, 'Malone, Annie Turnbo', as published on Encyclopedia.com, citing Gladys L. Porter (1966). Howard's own records were not opened. The 1951 seizure: same entry"
+    },
+    {
+      "b": "$14 million",
+      "s": "Her wealth at its peak, as her obituary put it: 'Annie T. Malone Rites at Bethel', Chicago Defender, 15 May 1957, as A'Lelia Bundles quotes it in 'The Facts about Madam C. J. Walker and Annie Malone'. The Defender itself was not opened"
+    },
+    {
+      "b": "$600,000 to $700,000",
+      "s": "Madam Walker's estate at her death in 1919, by A'Lelia Bundles's estimate: madamcjwalker.com, 'About Madam C. J. Walker', which also says Guinness lists her as the first self-made American woman millionaire and puts her personal assets and business together at 'well over $1,000,000'"
+    }
+  ],
+  "bio": {
+    "t": "The Facts about Madam C. J. Walker and Annie Malone",
+    "a": "A'Lelia Bundles",
+    "y": "2020",
+    "u": "https://aleliabundles.com/the-facts-about-madam-c-j-walker-and-annie-malone/",
+    "why": "This house found no full biography of Malone. The place to start is this article, by the researcher who has searched the press for her most thoroughly. Read it knowing who wrote it: Bundles is Madam Walker's great-great-granddaughter and biographer."
+  },
+  "contested": "The comparison is the dispute, and the historian Tyrone McKinley Freeman has called it 'the first millionaire sweepstakes'. Guinness lists Walker as the first self-made American woman millionaire; Bundles herself says the legacy matters more than whether she was 'the first', and puts Walker's personal wealth at $600,000 to $700,000 and the business together with it at well over a million. Shomari Wills's Black Fortunes (2018) repeats Malone's $14 million, and the State Historical Society of Missouri says she was a millionaire by the end of the First World War, without a figure or a source. The best evidence on both women comes from one researcher, who is Walker's descendant. Even Malone's birth year is open: the Historical Society and Gale say 1869, and Bundles, correcting herself, says 1877.",
+  "across": [
+    {
+      "to": "atlas:public",
+      "label": "The Atlas · Build in public",
+      "txt": "— the rival who advertised in the black press and kept every letter is the one history can count. Malone's books did not survive."
+    }
+  ]
+}

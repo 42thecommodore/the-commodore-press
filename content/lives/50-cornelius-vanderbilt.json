@@ -1,0 +1,53 @@
+{
+  "id": "cornelius-vanderbilt",
+  "no": 50,
+  "keep": "The title was the public's and the threat is a legend: what he actually wrote, to the press, was that he would sue, and then he sued.",
+  "n": "Cornelius Vanderbilt",
+  "years": "1794–1877",
+  "place": "United States",
+  "field": "Shipping & Railroads",
+  "group": "famous",
+  "cover": "#3B2A20",
+  "spineC": "#281C15",
+  "ink": "#F5EEE4",
+  "accent": "#DDBB7E",
+  "motif": "lines",
+  "lede": "He never held a naval rank. The public made him Commodore for the number of steamers he built, and the most quoted letter of his life is one his biographer says he never wrote.",
+  "copy": [
+    "He was born on Staten Island in 1794, and the first boat was a bargain, not a gift. As the family told it after his death, his mother would give him $100 for a periauger if he ploughed, harrowed and planted an eight-acre lot so stony it had never been ploughed, before his sixteenth birthday on 27 May 1810. Later Thomas Gibbons hired him to run a steamboat when its captain suddenly disappeared, for what both men thought would be a few days. It lasted nine years. Gibbons's boats ran against the Livingston–Fulton monopoly on New York waters, and on 2 March 1824 Chief Justice Marshall decided Gibbons v. Ogden for Gibbons. The decree names the Bellona, which Vanderbilt commanded. It does not name him.",
+    "Steamships made him rich, and the title came with them: he built so many that, in his obituary's words, the public christened him \"by acclamation the Commodore.\" In 1862 he offered the Union his largest ship, the Vanderbilt. The Navy turned it down until the Confederate ironclad Virginia frightened Lincoln's administration into taking it, and Congress, recording the gift as 5,000 tons and $800,000, voted him a gold medal. Then he moved from water to rail. In 1868, in the war over the Erie, he stood on the other side from Daniel Drew, Jay Gould and Jim Fisk. In March 1873 he offered Bishop Holland McTyeire not less than $500,000 for a university in Nashville. The buildings ran over and ate into the endowment, so he paid again; his letter of December 1875 counts \"an aggregate contribution\" of $692,831.46.",
+    "The line everyone quotes is his note to the men who bought his Nicaragua business and would not pay: \"Gentlemen, you have undertaken to cheat me. I won't sue you, for law is too slow. I'll ruin you.\" Its earliest printing this house has found is the New York Times obituary of 5 January 1877, more than twenty years after the quarrel, and neither it nor Croffut's 1886 life, which has \"I will ruin you\", names the men. T. J. Stiles, his biographer, says he never wrote it. He wrote to the press threatening to sue, and then he sued. The family is harder to read. In 1846 he had his wife, Sophia, put in an asylum; a son-in-law later testified that she suffered from \"nervous disorders\" and needed medical attention. He sent his epileptic son Cornelius Jeremiah to the California gold rush to give him a start, and he became a gambler there. Stiles lists \"an unfeeling brute who abused his family\" among the myths. His daughter Mary La Bau contested the will in November 1877, and lost. Of an estate Stiles estimates at $100 million, about 95 per cent went to one son, William."
+  ],
+  "facts": [
+    {
+      "b": "$100",
+      "s": "The bargain with his mother for his first boat, due before 27 May 1810: William A. Croffut, The Vanderbilts and the Story of Their Fortune (1886), read in the Internet Archive's scan; the same story in 'Commodore Vanderbilt's Life', New York Times, 5 January 1877. Both are family tradition set down more than sixty years later"
+    },
+    {
+      "b": "5,000 tons · $800,000",
+      "s": "The steamship Vanderbilt as Congress recited the gift, in the joint resolution awarding him a gold medal, Resolution No. 10, approved 28 January 1864: 13 Stat. 401–402. The Times obituary gives $900,000. The Navy's first refusal: T. J. Stiles, chapter notes for The First Tycoon, tjstiles.net"
+    },
+    {
+      "b": "$500,000 · $692,831.46",
+      "s": "His offer to Bishop H. N. McTyeire of 17 March 1873, 'not less in the aggregate than Five Hundred Thousand Dollars', and his letter of 2 December 1875 giving 'an aggregate contribution of $692,831 46': both printed in Dedication and Inauguration of the Vanderbilt University (Nashville, 1875). The university's own history now says $1 million"
+    },
+    {
+      "b": "$100 million · about 95%",
+      "s": "His estate and William Henry's share of it, and the will trial from November 1877: T. J. Stiles, 'Dynasty Wars: The Vanderbilt Will Trial', tjstiles.net. Stiles calls the estate an estimate"
+    }
+  ],
+  "bio": {
+    "t": "The First Tycoon: The Epic Life of Cornelius Vanderbilt",
+    "a": "T. J. Stiles",
+    "y": "2009",
+    "why": "The first life built on the archives rather than the anecdotes, and the one that takes apart the legends the others repeat, the 'ruin you' letter among them. Read it knowing Stiles is sympathetic to his subject; his own notes list the earlier biographies' errors at length."
+  },
+  "contested": "Stiles's Vanderbilt is a builder whose methods have been blackened by legend; the older view, from Charles Francis Adams Jr.'s 'A Chapter of Erie' (1869), admired the ability and feared what it did to the law. Adams has him absorbing a hundred thousand Erie shares and Drew carrying 'seven millions of his opponent's money' to Jersey City; Stiles counts 'Vanderbilt lost the Erie War' among the myths. Edward J. Renehan's Commodore (2007) claims, from private diaries it does not identify, that Vanderbilt had syphilis, was demented from 1868 and was steered by William; Stiles, who read thousands of his late letters and interviews, found 'not one item that corroborates' it. Even the money is soft: the university he founded credits him with a million dollars, and the letters it printed in 1875 count $692,831.46.",
+  "across": [
+    {
+      "to": "atlas:story",
+      "label": "The Atlas · Story is leverage",
+      "txt": "— his best-known sentence was printed the day after he died, and his biographer says he never wrote it. The legend did the work anyway."
+    }
+  ]
+}

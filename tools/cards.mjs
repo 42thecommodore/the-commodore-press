@@ -1,6 +1,7 @@
 /* What a life's share card prints about its plate, and the stamp that records it — shared by
    tools/og-card.mjs (which renders the card) and tools/validate.mjs (which warns when it is
    stale). One copy, so the card and the check cannot disagree about what is on the card. */
+import { typeset } from "../build/typeset.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
@@ -24,5 +25,12 @@ export function creditOf(l, plate, LIC) {
 export function lifeStamp(ROOT, l, LIC) {
   const plate = plateOf(ROOT, l);
   const h = plate ? createHash("sha1").update(fs.readFileSync(plate)).digest("hex").slice(0, 10) : "no-plate";
-  return [l.n, l.years, l.field, l.place, l.lede, l.cover, h, creditOf(l, plate, LIC)].join(" | ");
+  // curled here, so the card writer (which renders curled text) and the check (which reads
+  // content/ as typed) compute the same stamp
+  return [l.n, l.no, l.years, l.field, l.place, typeset(l.lede), l.cover, h, creditOf(l, plate, LIC), typeset(l.plateOf || ""), "curled"].join(" | ");
+}
+
+/* A title's card prints its name and claim; recorded curled, for the same reason as a life's. */
+export function titleStamp(t) {
+  return [typeset(t.title), typeset(t.claim || t.sub || ""), t.cover].join(" | ");
 }

@@ -115,7 +115,10 @@ const motif = MOTIFS[entries % MOTIFS.length];
 const TODO = t => `TODO — ${t}`;
 const dirFor = { book: "content/books", adjacent: "content/adjacent", life: "content/lives" }[kind];
 const existing = readAll(dirFor);
-const next = String(existing.length + 1).padStart(2, "0");
+// a life's prefix is its printed number, so the next one follows the highest, never the count
+const lastNo = Math.max(0, ...existing.map(f => parseInt(f, 10) || 0));
+const lifeNo = kind === "life" ? Math.max(existing.length, lastNo) + 1 : null;
+const next = String(lifeNo || existing.length + 1).padStart(2, "0");
 const id = slug(title);
 const file = path.join(ROOT, dirFor, `${next}-${id}.json`);
 if (fs.existsSync(file)) { console.error("already exists: " + file); process.exit(1); }
@@ -141,7 +144,7 @@ if (kind === "book" || kind === "adjacent") {
   };
 } else if (kind === "life") {
   body = {
-    id, keep: TODO("the one line to keep from this life"),
+    id, no: lifeNo, keep: TODO("the one line to keep from this life"),
     n: title, years: TODO("e.g. 1809–1865"), place: TODO("where"),
     field: flag("field", TODO("the field")), group: flag("group", TODO("shelf grouping")),
     ...livery, motif,

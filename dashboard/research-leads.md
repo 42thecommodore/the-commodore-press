@@ -206,3 +206,25 @@ Three researcher sweeps stopped at a session limit. Every fetch came back as a m
 - Zemurray: FRUS for the Knox–Paredes convention (not in the 1911 Honduras chapter); Argueta, *Bananos y política* (1989); Bernays, *Biography of an Idea* (1965), for who hired him; the NYT obituary, 1 December 1961; acreage in Honduras (5,000 or 15,000 — unsettled).
 - Land: Morgan, "The World Is Watching", *Enterprise & Society* 7:3 (2006); the Boston Globe's 1977 story; a transcript of the American Physical Society incident (Dissent quotes Land calling the protesters liars — not printed); Time, 17 March 1980, raw, for the Polavision write-down ($68M?).
 - Onassis: Harlaftis, *Business History Review* 88:2 (2014), full text; the NYT of 22 December 1955; Foustanos (2006) p. 27 for the ship prices; any birth record; Monaco SBM stake (52% per Time, a third per Harlaftis); "Project Omega" (Wikipedia only).
+
+---
+
+## Opened 2026-10-06 — the six new lives
+
+Each entry names these as unread where it leans on them. Open one, and the line that
+mentions it can be tightened or the figure promoted.
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Wedgwood | Neil McKendrick, "Josiah Wedgwood and Cost Accounting in the Industrial Revolution", *Economic History Review* 23:1 (1970), JSTOR 2594563 | The 1772 costing is read through G. A. Lee (1975). The "such Machines of the Men as cannot err" line needs its letter: McKendrick, "Josiah Wedgwood and Factory Discipline", *Historical Journal* (1961), or Farrer, *Letters of Josiah Wedgwood* (1903–06) |
+| Wedgwood | ODNB, or the Wedgwood Museum | The leg amputated (1768) and the Trent and Mersey Canal role, both left out for want of an opened source |
+| Tudor | Seaburg & Paterson, *The Ice King* (2003); Gavin Weightman, *The Frozen-Water Trade* (2003); Tudor's diaries, Baker Library | The full lives were not read; Bean's article is the place to start. The years in debtors' jail (1812–13 in secondary accounts) are not printed |
+| Tudor | Ralph Waldo Emerson to William Emerson (1847), *Letters* 3:383 | Read only as the Walden Woods Project prints it |
+| Vanderbilt | T. J. Stiles, *The First Tycoon* (2009) | Everything "Stiles says" is from his own site, not the book. Sophia's asylum is unnamed for that reason |
+| Vanderbilt | *New York Times*, 5 January 1877, at full resolution; the will itself | The obituary was read as page images, partly at low resolution |
+| Tata | Mircea Raianu, *Tata* (Harvard, 2021); R. M. Lala, *For the Love of India* (2004) | Raianu read only through LRB and Jacobin reviews; Lala's Tata career rests on Wikipedia and is not printed |
+| Smalls | NHHC's *Planter* (DANFS) page; the Statutes at Large for 30 May 1862 | His naval status ("first Black captain") is not printed; the act is read as the *Official Records* reprint it |
+| Smalls | Edward A. Miller Jr., *Gullah Statesman* (1995) | Recommended on its imprint and the House's citation, not read |
+| Malone | Trawick Ferguson, "The History of Poro College from 1902–1965" (Lindenwood dissertation) | Refused by Cloudflare. Would settle the tax years and amounts, and the 1951 seizure |
+| Malone | *Chicago Defender*, 15 May 1957; Tiffany M. Gill, *Beauty Shop Politics* (2010); Gladys L. Porter (1966) | The $14 million is quoted through Bundles; the Howard gift through Gale |
+

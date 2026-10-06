@@ -141,6 +141,8 @@ In `across`, point at the other entry by its `id` (the first line of its file):
 
 The number at the front of the filename is the order. Rename `05-the-box.json` to `03-the-box.json` and renumber the others to make room. Leave the `id` inside the file alone.
 
+**Lives are the exception.** A life's number is printed on the site — "№ 46" on its entry, its shelf and its share card, like an episode number — so lives are never reordered. The founding shelf is 1 to 26; each new life joins the end with the next number (`npm run new life` writes it), and the `no` inside the file must match the filename. `npm run check` stops you if the two disagree, so a rename can never quietly renumber anyone.
+
 ### 6. Add a person to the Atlas
 
 **The easy way: from your notes.** Keep taking notes in your "People 🫂" Google Doc the way you do now, with one `# Name` heading per person. Three optional lines under the heading make the sync almost mechanical:

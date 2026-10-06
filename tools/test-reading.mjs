@@ -22,7 +22,7 @@
  *   - every book and face is a link to its own page; a plain click opens the reader in place,
  *     a Cmd-click is left to the browser
  *   - the keep line on the Captain card is credited to the Press, never set beside the face alone
- *   - the reader's "№ … of N" counts the shelf the entry stands on
+ *   - the reader's "№ … of N" counts the shelf a title stands on; a life prints its own permanent №
  * and, without a browser, that every entry page's share link, end block and read-next link
  * are present and resolve.
  *
@@ -261,7 +261,9 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   t("no straight quote in the reader", rq < 0, rq < 0 ? "" : "…" + sheet.innerText.slice(Math.max(0, rq - 30), rq + 30) + "…");
   const shelfN = [...sheet.querySelectorAll(".rmeta div")].map(d => d.textContent).find(x => /№/.test(x)) || "";
   const shelfOf = ${JSON.stringify(kind)} === "press" ? (BOOKS.some(b => b.id === ${JSON.stringify(id)}) ? BOOKS : ADJACENT) : LIVES;
-  t("the reader counts the shelf the entry stands on", shelfN.endsWith("of " + shelfOf.length), shelfN + " — the shelf holds " + shelfOf.length);
+  // a title is counted on its shelf; a life carries its own permanent number instead (content/lives/*.json \`no\`)
+  if (${JSON.stringify(kind)} === "press") t("the reader counts the shelf the entry stands on", shelfN.endsWith("of " + shelfOf.length), shelfN + " — the shelf holds " + shelfOf.length);
+  else { const no = LIVES.find(b => b.id === ${JSON.stringify(id)}).no; t("the reader prints the life's own number", shelfN.endsWith("№ " + no), shelfN + " — the life is № " + no); }
   t("the reader and the entry page print the same minutes", +document.getElementById("rleft").dataset.mins === ${want.mins}, document.getElementById("rleft").dataset.mins + " vs ${want.mins}");
   t("the reader and the entry page recommend the same next read", sheet.querySelector(".rs-next .rs-nt").textContent.trim() === ${JSON.stringify(want.next)}, sheet.querySelector(".rs-next .rs-nt").textContent);
   sheet.querySelector(".rbar .rs-go").click(); await wait(150);

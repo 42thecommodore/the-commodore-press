@@ -1,0 +1,57 @@
+{
+  "id": "robert-smalls",
+  "no": 52,
+  "keep": "He took the boat with his own family aboard, and Congress shared out half her value; thirty-three years later he was arguing for the vote with his conviction thrown back at him.",
+  "n": "Robert Smalls",
+  "years": "1839–1915",
+  "place": "United States",
+  "field": "War & Politics",
+  "group": "obscure",
+  "cover": "#1F3F5B",
+  "spineC": "#152C40",
+  "ink": "#EDF3F8",
+  "accent": "#A9CFE6",
+  "motif": "lines",
+  "lede": "He was an enslaved pilot on a Confederate steamer. On 13 May 1862 he took her out of Charleston harbour with sixteen people aboard and handed her to the Union Navy, whose commander wrote that he was \"superior to any who has yet come into the lines.\"",
+  "copy": [
+    "He was born in Beaufort, South Carolina, in April 1839, and by the second year of the war he was the pilot of the Planter, an armed dispatch and transport steamer of the Confederate engineers at Charleston. At four in the morning of 13 May 1862, with her captain ashore, he took her from the wharf beside the headquarters under the Confederate flag and \"passed the successive forts, saluting as usual by blowing her steam whistle.\" Then he hauled the flags down and raised a white one, just before the Onward, the inside ship of the blockade, could fire. Samuel Du Pont, commanding the blockade, counted who was aboard the next day: \"8 men, 5 women, and 3 children.\" The House of Representatives' own history says his family and seventeen others. On deck were four guns that had been due at a new fort that morning, one of them a gun struck in the attack on Fort Sumter, and Smalls pointed it out himself. Du Pont kept him on as her pilot.",
+    "Congress passed a private act for him and his crew on 30 May 1862, to share out half the Planter's appraised value among them. The Navy put the boat and her guns at $9,168. Half was $4,584, and the leader's share was $1,500. After the war he went into politics in the state that had enslaved him. The House seated him for two terms from 1875, again in July 1882 after he contested the election, and again from 1884 to 1887. In November 1877 a South Carolina court convicted him of taking a $5,000 bribe as chairman of the state senate's printing committee, and Governor William Simpson pardoned him in April 1879.",
+    "The conviction followed him. At the 1895 constitutional convention, where he fought what he called \"this most infamous Suffrage Bill, which seeks to take away the right to vote from two-thirds of the qualified voters of the State\", delegates raised it against him. He answered that he had refused every compromise, and ended: \"My race needs no special defense, for the past history of them in this country proves them to be the equal of any people anywhere. All they need is an equal chance in the battle of life.\" Thirty-eight years after the Planter, Congress paid him for her again. A bill asking $20,000 was cut in committee, and President McKinley signed it on 5 June 1900 for $5,000."
+  ],
+  "facts": [
+    {
+      "b": "8 · 5 · 3",
+      "s": "Men, women and children aboard when the Planter left Charleston: Samuel F. Du Pont to Gideon Welles, Flagship Wabash, 14 May 1862, in Official Records of the Union and Confederate Navies, Series I, the South Atlantic Blockading Squadron volume for 1861–62, pp. 820–821, which also describe the hour, the absent captain and the forts, read in Cornell's scan on the Internet Archive. The House of Representatives' Historical Highlight on Smalls gives 'his family and 17 other slaves'"
+    },
+    {
+      "b": "$9,168 · $4,584 · $1,500",
+      "s": "The appraisal of the boat and her guns, the half to be shared, and 'Robert Smalls, leader of the party $1,500': Du Pont's apportionment of 19 August 1862 under 'An act for the benefit of Robert Small and others', approved 30 May 1862, both in the same volume, pp. 824–825. The record shows the apportionment, not the payment"
+    },
+    {
+      "b": "$5,000 bribe",
+      "s": "The charge, his conviction on 11 November 1877 and Governor Simpson's pardon of April 1879: History, Art & Archives, U.S. House of Representatives, 'SMALLS, Robert' (People/Detail/21764), which gives the pardon as 23 April in one place and 29 April in another"
+    },
+    {
+      "b": "$20,000 · $5,000",
+      "s": "The relief bill of 1900, cut by the Committee on War Claims and signed on 5 June 1900: History, Art & Archives, U.S. House of Representatives, as above"
+    },
+    {
+      "b": "two-thirds",
+      "s": "His own description of the Suffrage Bill, and the lines that close his speech: Journal of the Constitutional Convention of the State of South Carolina (1895), pp. 475–476, read in the Internet Archive's scan"
+    }
+  ],
+  "bio": {
+    "t": "Gullah Statesman: Robert Smalls from Slavery to Congress, 1839–1915",
+    "a": "Edward A. Miller Jr.",
+    "y": "1995",
+    "why": "The scholarly life, from the University of South Carolina Press, and one the House of Representatives' own historians cite. Cate Lineberry's Be Free or Die (2017) tells the escape at greater length."
+  },
+  "contested": "The count of who was aboard varies with the source, from Du Pont's sixteen the next day to 'his family and 17 other slaves' in the House's own history; the house prints Du Pont's because he wrote it within a day. His war record is largest in his own telling: he told the 1895 convention 'I fought in seventeen battles', where the House history says at least twelve engagements. The bribery case is argued both ways. Republican papers called the prosecution political, and the House history calls Simpson's pardon part of a larger deal with the federal district attorney; Smalls told the convention that 'I refused all offers of compromise' and that 'I received no advantage therefrom.' The common claim that he was the first Black captain of an American vessel is not settled by any document this house has opened; the House says he was appointed a pilot.",
+  "across": [
+    {
+      "to": "atlas:bet",
+      "label": "The Atlas · Bet on yourself",
+      "txt": "— the principle with no margin at all: his own family aboard, and a white flag to raise before the blockade fired."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 /* Commodore Press validator — enforces the house rules the site promises publicly.
    Run: npm run check   (exit 1 on any error; warnings never block a build) */
-import { lifeStamp } from "./cards.mjs";
+import { lifeStamp, titleStamp } from "./cards.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -79,9 +79,25 @@ for (const { file, data } of [...books, ...adjacent]) {
   if (Array.isArray(data.copy) && data.copy.length < 2) warn(file, "only one paragraph of copy — thin for a title");
 }
 for (const { file, data } of lives) {
-  need(file, data, ["id", "n", "years", "field", "cover", "lede", "copy", "keep"]);
+  need(file, data, ["id", "no", "n", "years", "field", "cover", "lede", "copy", "keep"]);
   if (!data.bio) warn(file, "no `bio` — the reader shows no 'find the book' link without one");
   else if (!data.bio.t || !data.bio.a) err(file, "`bio` needs both `t` (title) and `a` (author)");
+}
+
+/* ---------- a life's number is printed, so it is permanent ----------
+   Lives are numbered like episodes, № 1 to the newest, in the order they joined the shelf.
+   The filename prefix already fixed shelf order, and reordering the files would renumber
+   everyone without a word, breaking every "№ 12" a reader had seen or shared. So the number
+   is written into the file as `no` and must agree with the prefix: moving a file without
+   meaning to renumber now fails here. */
+const numbered = new Map();
+for (const { file, data } of lives) {
+  if (data.no == null) continue;
+  const pre = parseInt(path.basename(file).slice(0, path.basename(file).indexOf("-")), 10);
+  if (!Number.isInteger(data.no) || data.no < 1) err(file, `\`no\` is ${JSON.stringify(data.no)} — a life's number is a whole number from 1`);
+  else if (data.no !== pre) err(file, `\`no\` is ${data.no} but the file is numbered ${pre}. A life's number is printed and permanent: rename the file back, or, if renumbering is truly meant, change both and add a correction`);
+  if (numbered.has(data.no)) err(file, `\`no\` ${data.no} is already ${numbered.get(data.no)} — two lives cannot share a number`);
+  numbered.set(data.no, file);
 }
 
 /* ---------- house rule: `keep` is the one-line takeaway ---------- */
@@ -509,7 +525,7 @@ for (const s of cssRules.filter(r => !r.sel.includes(" ") && /^[a-z]*\.[\w-]+$/.
   const said = fs.existsSync(f) ? readJSON(f) : {};
   const stale = [], missing = [];
   for (const { data: t } of [...books, ...adjacent]) {
-    const now = [t.title, t.claim || t.sub || "", t.cover].join(" | ");
+    const now = titleStamp(t);
     if (!said[t.id]) missing.push(t.id); else if (said[t.id] !== now) stale.push(t.id);
   }
   // lives: the stamp tools/og-card.mjs writes, from the same function (tools/cards.mjs)
