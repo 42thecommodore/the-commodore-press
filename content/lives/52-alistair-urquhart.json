@@ -1,0 +1,61 @@
+{
+  "id": "alistair-urquhart",
+  "keep": "The record bears out the ship, the mine and the bomb. The distances grew in the telling.",
+  "n": "Alistair Urquhart",
+  "years": "1919–2016",
+  "place": "Scotland",
+  "field": "War & Captivity",
+  "group": "obscure",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "For half a century he told almost no one what had happened to him, not even his wife. When he published it at ninety, the ship and the mine held up against the record. The distances did not.",
+  "copy": [
+    "Alistair Urquhart was born at Newtonhill, Aberdeenshire, on 8 September 1919, the son of a teacher, and left school at fourteen to work for a plumbers' merchant. He was called up weeks after the war began, at twenty, into the Gordon Highlanders, the regiment his father had fought with on the Somme, and went out to the 2nd Battalion in Singapore. Singapore surrendered on 15 February 1942. The railway the Japanese army then drove from Thailand into Burma ran 415 kilometres and was joined in October 1943. More than 60,000 Allied prisoners were sent to build it, and more than 13,000 of them died. Of some 240,000 Asian labourers around 100,000 died, though nobody counted them well. A linocut made by a fellow prisoner records detachments of the 2nd Gordons marching up the line in May 1943. By his own account he worked at the cutting the prisoners called Hellfire Pass and came through cholera.",
+    "In September 1944 he was one of 900 British prisoners put into the hold of the Kachidoki Maru at Singapore, in a convoy bound for Japan. At 10.40 on the night of 12 September the American submarine Pampanito torpedoed her, and she went down in minutes. About 400 of the prisoners died. Japanese ships came out from Hainan the next morning for the survivors, who were landed at Yulin and sailed again for Japan, reaching Moji on 28 September. He was put to work in the coal mines at Ōmuta. He was there when the bomb fell on Nagasaki on 9 August 1945, and when he was freed he weighed five stone twelve. He reached Aberdeen that November, married in 1946, and said nothing. His wife died after 46 years of marriage without knowing any of it. He took up ballroom dancing, managed a firm in Dundee, and in 2010, at ninety, published The Forgotten Highlander. Of the film made from his railway he said: \"When I first saw The Bridge on the River Kwai, I very nearly put my television through the wall. It was a travesty.\" He died in Dundee on 7 October 2016, aged 97.",
+    "Where his story can be checked it holds: the ship, the submarine, the convoy, the mine. Where it cannot, it grew. In the account he wrote before the book, online by 2003, he built a raft from debris and floated on it for four nights and five days, with a Japanese officer in a dinghy nearby; by the time the book came out, its description had him five days alone. The Japanese record has the Kachidoki Maru's survivors picked up the morning after the sinking. In that early account his camp was about twelve miles from Nagasaki. The book's description says ten, a newspaper obituary said fifteen kilometres, and at 91 he told an interviewer a few miles. Ōmuta is about 61 kilometres from where the bomb went off. The blast that keeled the men over in his early account had knocked him off his feet by the obituaries. He told no one for fifty years, then told it many times, and the numbers are the part that moved."
+  ],
+  "bio": {
+    "t": "The Forgotten Highlander: One Man's Incredible Story of Survival During the War in the Far East",
+    "a": "Alistair Urquhart",
+    "y": "2010",
+    "why": "His own account, and the only one. The paperback of 2011 changes the subtitle to My Incredible Story; the American edition calls it An Incredible WWII Story of Survival in the Pacific. Read it as testimony, and keep the Thailand–Burma Railway Centre's history and the Imperial War Museums' account of the hellships open beside it."
+  },
+  "contested": "The argument is about memory, not about whether he was there. The house's own reading of the record is the strongest objection to the book, and it should be stated plainly. The Kachidoki Maru survivors were picked up on 13 September, landed at Yulin on Hainan, and sailed for Japan on the Kibitsu Maru on 16 September, so on those dates a man adrift for five days could not have made that ship. The prisoners from the convoy known to have spent three to six days in the water were Rakuyo Maru men, rescued by American submarines. The camps at Ōmuta are some 61 kilometres from Nagasaki. At 91 he said the thunder came two minutes after the flash; by the house's own arithmetic, sound takes about three minutes to cross 61 kilometres and under one minute to cross ten miles, so his own detail fits the far figure better than the near one. His count of 750 days on the railway, and his own figure of 761, sit awkwardly with a fellow prisoner's record of Gordons marching up the line in May 1943 and with his own line that he was sent back to Singapore before the railway was finished. None of this has been checked against the 2nd Battalion's nominal roll, which the National Archives holds as WO 361/2115 and has not digitised; until someone reads it, which camp he was in and when he reached the railway are open. Several obituaries are less independent than they look: the Scotsman's shares whole sentences with the BBC's 2010 piece, and both follow the book.",
+  "across": [
+    {
+      "to": "lives:vasily-arkhipov",
+      "label": "Vasily Arkhipov",
+      "txt": "— another life where the famous version and the best record part company, and the man in both is real."
+    }
+  ],
+  "plateOf": "British and Australian survivors of the Rakuyō Maru, sunk in the same convoy as his ship, taken aboard USS Pampanito on 15 September 1944. U.S. Navy photograph, Australian War Memorial P03651.005 — his convoy, not the man.",
+  "facts": [
+    {
+      "b": "60,000 / 13,000",
+      "s": "Allied prisoners sent to the Burma–Thailand railway, and those who died: Thailand–Burma Railway Centre, 'Brief History' (tbrconline.com, updated 31 October 2022)"
+    },
+    {
+      "b": "900 / ~400",
+      "s": "British prisoners aboard the Kachidoki Maru, and those lost when Pampanito sank her at 10.40 pm on 12 September 1944: Imperial War Museums, 'The Sinking of Prisoner of War Transport Ships in East Asia'"
+    },
+    {
+      "b": "13 Sep 1944",
+      "s": "Morning the Kachidoki Maru's survivors were picked up by Japanese ships from Hainan: POW Research Network Japan, Kachidoki Maru and Rakuyo Maru pages (powresearch.jp)"
+    },
+    {
+      "b": "61 km",
+      "s": "Ōmuta to the Nagasaki hypocentre area, great-circle distance worked out by the house from the coordinates of Ōmuta and Nagasaki Peace Park as Wikipedia gives them; the camps at Ōmuta are listed by POW Research Network Japan"
+    },
+    {
+      "b": "12 / 10 mi",
+      "s": "His camp's distance from Nagasaki in his own early account 'Survival' (far-eastern-heroes.org.uk), and in the publisher's description of the book as the Gordon Highlanders Museum prints it"
+    },
+    {
+      "b": "5 st 12 lb",
+      "s": "His weight when freed, in his own early account 'Survival' (far-eastern-heroes.org.uk)"
+    }
+  ]
+}
