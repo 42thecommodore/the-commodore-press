@@ -1,0 +1,67 @@
+{
+  "id": "katherine-johnson",
+  "no": 54,
+  "keep": "She did not beat the machine. She was the reason anyone believed it.",
+  "n": "Katherine Johnson",
+  "years": "1918–2020",
+  "place": "United States",
+  "field": "Mathematics & Spaceflight",
+  "group": "famous",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "Hired in 1953 to work the arithmetic engineers handed down, she became the first woman in her division to have her name on the report.",
+  "copy": [
+    "Katherine Johnson was born in White Sulphur Springs, West Virginia, in 1918. By thirteen she was at the high school on the campus of West Virginia State College, and at eighteen in the college itself. She graduated in 1937 in mathematics and French, with highest honours. Her teacher was W. W. Schieffelin Claytor, the third African American to earn a doctorate in mathematics. In 1939 the state quietly integrated its graduate schools, and the college's president picked her and two men to be the first Black students at West Virginia University. She left after the first session to start a family. In June 1953 she joined the National Advisory Committee for Aeronautics at Langley, in Virginia, as a computer in West Area Computing. A computer was a job title then: a woman who worked the engineers' numbers by hand. West Area was the segregated unit.",
+    "She stayed in West Area about two weeks. Dorothy Vaughan sent her to the Flight Research Division, and the temporary posting became permanent. For four years she analysed flight-test data, including an investigation into a crash caused by wake turbulence. Then the work turned to orbits. With Ted Skopinski she wrote NASA TN D-233, published in September 1960: how to aim a launch so that a satellite passes over a chosen point on the Earth. It was the first time a woman in the Flight Research Division had been credited as an author of a research report. She did the trajectory analysis for Alan Shepard's Freedom 7 in May 1961. Before John Glenn's orbital flight in February 1962, the orbit was computed on IBM machines. As part of the preflight checklist she ran the same equations by hand, on a desktop mechanical calculator. Her numbers matched. She wrote or co-wrote 26 reports and retired in 1986, after 33 years.",
+    "The popular version is the 2016 film Hidden Figures, and it moves her to wherever the drama is. On screen she runs half a mile to a Colored bathroom until her boss smashes the sign. Asked about it, she said: \"I just went on in the white one.\" The boss, Al Harrison, never existed; he is a composite. On screen she checks Glenn's numbers in seconds while he waits on the pad, then watches the launch from Mission Control. The director, Ted Melfi, said the check took three days. She watched the launch on a television at her desk in Virginia; the flight controllers were at Cape Canaveral. The machine was not wrong. Glenn had asked for her check before he would fly on its numbers. Asked to name her greatest contribution, she chose something no film has staged: the calculations that helped bring Apollo's Lunar Module back to the ship orbiting the Moon. Congress voted her a gold medal in November 2019. She died in February 2020, aged 101. The medal was presented on 18 September 2024."
+  ],
+  "facts": [
+    {
+      "b": "2 weeks",
+      "s": "Her time in West Area Computing before Dorothy Vaughan moved her to the Flight Research Division: Margot Lee Shetterly, 'Katherine Johnson Biography', NASA (22 November 2016)"
+    },
+    {
+      "b": "Sep 1960",
+      "s": "Publication of TN D-233, Skopinski and Johnson, 'Determination of Azimuth Angle at Burnout for Placing a Satellite Over a Selected Earth Position': NASA Technical Reports Server, record 19980227091"
+    },
+    {
+      "b": "26",
+      "s": "Research reports she wrote or co-wrote across her 33 years at Langley: Shetterly, 'Katherine Johnson Biography', NASA (2016)"
+    },
+    {
+      "b": "3 days",
+      "s": "How long the Glenn hand check took, against 25 seconds on screen: Ted Melfi, the film's director, to collectSPACE (5 January 2017)"
+    },
+    {
+      "b": "18 Sep 2024",
+      "s": "Gold medal presented, posthumously, in Emancipation Hall: collectSPACE (18 September 2024); authorised by Public Law 116-68, 8 November 2019"
+    }
+  ],
+  "bio": {
+    "t": "Hidden Figures: The American Dream and the Untold Story of the Black Women Mathematicians Who Helped Win the Space Race",
+    "a": "Margot Lee Shetterly",
+    "y": "2016",
+    "why": "It is the documentary history the film compressed. Shetterly worked from the Langley records and the women's own accounts, and her subject is the whole office, of which Johnson was one. Read it for Dorothy Vaughan and Mary Jackson as much as for her."
+  },
+  "contested": "Two things are argued, and neither is her mathematics. The first is the film. VICE News argued in 2017 that the bathroom and Mission Control scenes were invented to hand a white character the decent act; Melfi's answer was \"who cares who does the right thing, as long as the right thing is achieved?\" Shetterly's case runs wider than either. Her book is about the Black women mathematicians at Langley, and the 2019 Act that honoured Johnson speaks of the experiences of hundreds of women and strikes a fifth medal for all of them. The film narrowed that to three, and Johnson's fame narrowed it to one. The second is the record itself. Shetterly told collectSPACE she could never find a document dating the Glenn check; Johnson remembered it as weeks before the launch, and Shetterly found her account of it moved over the years. The book, as collectSPACE reports it, puts the check at a day and a half against the director's three days. Apollo is credited two ways: her own claim was the rendezvous calculations, while the 2015 Medal of Freedom citation credits her with the Apollo 11 trajectory to the Moon. This entry prints the narrower claim, because it is hers.",
+  "across": [
+    {
+      "to": "press:finding-longitude",
+      "label": "Finding Longitude",
+      "txt": "— the same problem two centuries earlier: whether a machine's answer about where a vessel is can be trusted, and who checks it."
+    },
+    {
+      "to": "lives:john-harrison",
+      "label": "John Harrison",
+      "txt": "— the Board would not trust one watch until someone else could build it again; Glenn would not trust the IBM until she had run its numbers."
+    },
+    {
+      "to": "lives:hedy-lamarr",
+      "label": "Hedy Lamarr",
+      "txt": "— the same rewriting from the other side: a real patent credited with inventions it never touched."
+    }
+  ]
+}

@@ -56,7 +56,9 @@ matters most is printing that version by accident.
 - **John Snow and the Broad Street pump**: the standard story is that removing the handle
   stopped the outbreak. Whitehead's own figures show deaths had already collapsed.
 - **Harrison and the longitude prize**: the popular version is a stitch-up. He was funded
-  for decades and received £23,065; the prize was never awarded to anyone.
+  for decades, and a special Act of 1765 paid him half the prize, £10,000; the other half was
+  never paid. (Correction 20: the house had itself repeated "never awarded to anyone" and a
+  Wikipedia total of £23,065.)
 
 For every entry ask: *what does the popular account say, and does this page repeat it?*
 If the page agrees with the popular account, that is not automatically wrong — but it is
@@ -69,7 +71,8 @@ Every figure the house has had to correct came from a remembered factoid.
 - **Railway mania**: a draft said ~6,000 miles authorised at the peak. It is ~9,500 across
   263 Acts.
 - **Harrison's payment**: a draft said he was paid the prize in 1773. He got £8,750 from
-  Parliament that year, £23,065 across all awards, and never the prize.
+  Parliament that year as a grant, not the prize. Correction 3 then carried a Wikipedia
+  total and "never awarded", both wrong or unsourced, until correction 20.
 
 Every `facts[]` entry needs `b` and `s`, and `npm run check` enforces that much. What it
 cannot check is whether `s` is a document someone opened. Read each one and ask: *did

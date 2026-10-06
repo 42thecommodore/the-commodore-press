@@ -62,6 +62,11 @@
       "to": "lives:florence-nightingale",
       "label": "Florence Nightingale",
       "txt": "— the first to turn a death count into a chart a government could not ignore."
+    },
+    {
+      "to": "lives:thomas-midgley-jr",
+      "label": "Thomas Midgley Jr.",
+      "txt": "— the engineer who put the lead into petrol in 1921, and why the alternatives were set aside."
     }
   ],
   "corrected": [

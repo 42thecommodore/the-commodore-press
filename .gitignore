@@ -6,3 +6,4 @@ dist/
 
 # private working files (the notes review): never pushed
 .private/
+.claude/settings.local.json

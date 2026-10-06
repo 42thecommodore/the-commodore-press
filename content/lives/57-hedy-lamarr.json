@@ -1,0 +1,57 @@
+{
+  "id": "hedy-lamarr",
+  "no": 57,
+  "keep": "Her patent was real. The line drawn from it to your phone is not.",
+  "n": "Hedy Lamarr",
+  "years": "1914–2000",
+  "place": "Austria · United States",
+  "field": "Film & Invention",
+  "group": "famous",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "conic",
+  "lede": "She had no training in engineering and a career sold on her face. The patent with her name on it is real. Most of what is now claimed for it is not.",
+  "copy": [
+    "Hedwig Kiesler was notorious before she was twenty. Gustav Machatý's Ecstasy, released in January 1933, made her name, and that year she married Fritz Mandl, an Austrian arms manufacturer. She left him in 1937 or 1938 (the accounts differ) and reached Hollywood under contract to Louis B. Mayer at MGM, as Hedy Lamarr. By her own later account, and George Antheil's, she had sat at Mandl's table while he talked weapons with his customers. In his 1945 memoir Antheil has her saying she knew a good deal about munitions and secret weapons. Nothing independent confirms it, and the 1966 memoir published under her name is no help; in 1970 she said of it, \"It's my title, but that's all that's mine.\" In January 1966, the year it appeared, she was arrested for shoplifting in Los Angeles.",
+    "Antheil was a composer whose Ballet Mécanique called for player pianos playing in step. By both their accounts the idea was hers: steer a torpedo by radio on a frequency that kept changing, in a pattern only the two ends knew. The synchronising was his, with matching perforated rolls like a piano's. Patent 2,292,387, \"Secret Communication System\", was filed on 10 June 1941 in the names of Hedy Kiesler Markey and George Antheil and granted on 11 August 1942. It is clockwork and pneumatic, not electronic. Its worked example uses eight channels, three of them sending decoys; 88, the rows on a piano roll, is the ceiling. The patent itself says the remote control of torpedoes \"is old and broadly does not constitute a part of our invention.\" Antheil took it to the Navy, which by his account found it \"too bulky to be incorporated in the average torpedo,\" and it was shelved. It expired in 1959. Neither of them earned anything from it.",
+    "The popular version says she invented the technology inside Wi-Fi, Bluetooth and GPS. Frequency hopping was on paper twenty years before her: an AT&T patent filed in 1920 hopped at random from punched tape. The physicist Tony Rothman traced the rest in 2019. Wi-Fi abandoned frequency hopping early. GPS has always used direct sequencing. Bluetooth hops because the rules for its band required it, and its inventor had not heard of her patent. The Navy's own frequency-hopping system, Sylvania's BLADES, installed on USS Mount McKinley in 1963, rests on patents that never mention hers. Spread spectrum in the field came through NOMAC, built by Robert Price and his colleague Green at Lincoln Laboratory, and it was Price, writing its history, who brought her patent into the engineers' record, after a lead from his sister. The honours came at the end: the Electronic Frontier Foundation's Pioneer Award in 1997, and the National Inventors Hall of Fame in 2014. She died on 19 January 2000."
+  ],
+  "bio": {
+    "t": "Hedy's Folly: The Life and Breakthrough Inventions of Hedy Lamarr, the Most Beautiful Woman in the World",
+    "a": "Richard Rhodes",
+    "y": "2011",
+    "why": "The fullest account of the patent and of Antheil, by a historian of technology. Read it with Tony Rothman's 'Random Paths to Frequency Hopping' (American Scientist, 2019), which corrects its claim that the patent was classified."
+  },
+  "contested": "What the patent led to is the argument. Tony Rothman, with Robert Price, takes the deflating side: frequency hopping had a long paper history before 1941, the engineers who built it did not know her patent, and \"any link to player pianos and torpedoes has yet to be demonstrated.\" He still grants that she and Antheil \"hold a patent for an important radio-transmission method that finds its way into several modern communications technologies, including Bluetooth.\" The generous side is Richard Rhodes's Hedy's Folly (2011), the Electronic Frontier Foundation, whose 1997 award called the patent \"the basis for the spread spectrum radio systems used in the products of over 40 companies\", and the Klimas, writing in the Naval Institute's Naval History (2019), who say the Navy used her idea in the 1962 Cuban blockade; they cite no document. Rhodes's claim that the patent was classified does not survive the record Rothman found: a letter from her patent attorneys of 3 October 1941 says \"the Patent Office has not issued a Secrecy Order.\" Who drafted it is open too; Rothman thinks it likely a Caltech engineer, Samuel Mackeown, wrote the patent itself. The war-bond figure is unsettled, from $7 million in a night to $25 million in all, and none of the accounts cites a record, so this entry prints neither. Even her birth year is given both as 1913 and as 1914; this entry follows the National Inventors Hall of Fame.",
+  "across": [
+    {
+      "to": "lives:katherine-johnson",
+      "label": "Katherine Johnson",
+      "txt": "— another woman whose real work the celebration rewrote: there a film invented the scenes, here the claims outgrew the patent."
+    }
+  ],
+  "facts": [
+    {
+      "b": "10 Jun 1941",
+      "s": "Filing date of US Patent 2,292,387, granted 11 August 1942: the patent itself, read on Google Patents"
+    },
+    {
+      "b": "8 of 88",
+      "s": "Channels in the patent's worked example, against the 88 a piano roll would permit: US Patent 2,292,387, read on Google Patents"
+    },
+    {
+      "b": "1920",
+      "s": "Filing of the AT&T frequency-hopping patent, US 1,598,673, granted 1926: Tony Rothman, 'Random Paths to Frequency Hopping', American Scientist 107 (2019)"
+    },
+    {
+      "b": "1959",
+      "s": "The patent's expiry, before any documented use: Joyce Bedi, 'A Movie Star, Some Player Pianos, and Torpedoes', Lemelson Center, Smithsonian Institution"
+    },
+    {
+      "b": "1963",
+      "s": "Sylvania's BLADES installed on USS Mount McKinley, on patents that do not cite hers: Rothman, 'Random Paths to Frequency Hopping' (2019)"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "thomas-midgley-jr",
+  "no": 56,
+  "keep": "The alternatives existed. What the lead offered was a patent.",
+  "n": "Thomas Midgley Jr.",
+  "years": "1889–1944",
+  "place": "United States",
+  "field": "Chemistry & Industry",
+  "group": "obscure",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "lede": "Trained as a mechanical engineer, he made his name in chemistry with two compounds, leaded petrol and Freon. The best-known stories about both are not what the record says.",
+  "copy": [
+    "Thomas Midgley Jr. was born in Beaver Falls, Pennsylvania, in 1889, and took a degree in mechanical engineering at Cornell in 1911. In 1916 he joined Charles Kettering's laboratory in Dayton, which wanted engines that did not knock. Knock set the limit on compression, and compression set the power a gallon could give. The team tried compound after compound. On the morning of 9 December 1921, tetraethyl lead, at two or three grams a gallon, silenced the knock in their test engine. It was not the only answer. Midgley had shown engineers in Indiana a 30 per cent ethanol blend that October, and in 1920 he had applied for a patent on alcohol blends himself. What the lead offered was ownership. Frank Howard, a patent attorney for Standard Oil, put it plainly to his chairman: \"any oil producer who had exclusive rights could absolutely dominate the entire motor fuel market.\" In January 1923, after a year of handling the compound, Midgley wrote that \"my lungs have been affected\" and went to Florida to recover. From there he told Kettering they could count on at least 20 per cent of the petrol sold in the country, \"at three cent gross to us from each gallon sold.\"",
+    "Making it killed the people who made it. Two men on the Dayton bottling line died in April 1924. At du Pont's Deepwater works in New Jersey, eight died between 1923 and 1925. In October 1924, at Standard Oil's Bayway refinery, five men died in a little over a week; the New York Times headline on 27 October read \"Odd Gas Kills One, Makes Four Insane.\" On 30 October Midgley met the press in New York. By the Times's account he poured the liquid over his hands and wiped it off with a handkerchief, and the Herald Tribune had him hold a bottle under his nose for more than a minute. The version told later, that he washed his hands in it, comes from the company's own historian. New York City banned the sale the same day. The Surgeon General called a conference in May 1925. For the next forty years the case that leaded petrol was safe was made by Ethyl's own medical director, Robert Kehoe.",
+    "Freon came next, and its popular story has the order wrong. Leaking refrigerators were killing people with methyl chloride, the story goes, so Kettering set Midgley to find a safe gas. In fact he, Albert Henne and Robert McNary were making fluorine refrigerants in 1928, and the Chicago deaths, at least fifteen of them, came in 1929; the Cleveland Clinic disaster often blamed on refrigerant that year was burning X-ray film. The discovery came first and the scandal after. He announced the compounds in Atlanta in April 1930. Kettering's memorial account has him breathing in a lungful and exhaling it over a candle to put it out. He was elected president of the American Chemical Society for 1944. Polio had taken the use of his legs in 1940, and he built himself a harness to get in and out of bed. He died in it on 2 November 1944, strangled. Time reported an accident. The death certificate, according to the historian Carmen Giunta, gives suicide."
+  ],
+  "bio": {
+    "t": "Thomas Midgley, Jr., and the Invention of Chlorofluorocarbon Refrigerants: It Ain't Necessarily So",
+    "a": "Carmen J. Giunta",
+    "y": "2006",
+    "u": "https://web.archive.org/web/20190413043223/http://acshist.scs.illinois.edu/bulletin_open_access/v31-2/v31-2%20p66-74.pdf",
+    "why": "There is no good biography. The one full-length life, by his grandson, Giunta calls amateurish. His nine pages take apart the Freon legends and say what the death certificate says. For the lead, read Bill Kovarik's 1993 dissertation, which is built from the newspapers and the company letters."
+  },
+  "contested": "The live argument is what they knew and when. Bill Kovarik's 1993 dissertation shows that by late 1922 Midgley had warning letters from chemists and physiologists at MIT, Harvard and Yale, and that a Public Health Service laboratory director had called the compound a serious menace to public health; Midgley told the Surgeon General that \"no actual experimental data has been taken.\" The company's historians, T. A. Boyd in the 1950s and Joseph Robert in 1983, held that only Bayway taught them the danger. On alternatives, Kovarik argues ethanol was a live fall-back that the industry patented in private and denied in public; Stuart Leslie, writing in 1980, called it a will-o'-the-wisp. The counts are uncertain: the five Bayway dead are agreed, but the number sickened is put at 32, 35 and 44 in three accounts, so this entry prints none. Two famous lines are weaker than they look. The candle comes only from the 1947 memoir, which Boyd said he ghost-wrote. And the line that Midgley had more impact on the atmosphere than any other single organism in Earth's history is J. R. McNeill's flourish, which this house knows only from a review of his book; the version on Wikipedia adds a word the review does not have. On his death, Time said accident and the certificate says suicide. Giunta reports, from a 1993 history, Henne's later remark that it was no accident.",
+  "across": [
+    {
+      "to": "lives:clair-patterson",
+      "label": "Clair Patterson",
+      "txt": "— the man who measured where Midgley's lead went, and spent his career against the case Ethyl's medical director had made for forty years."
+    }
+  ],
+  "facts": [
+    {
+      "b": "9 Dec 1921",
+      "s": "Tetraethyl lead first silences the knock in the Dayton test engine: Bill Kovarik, 'Charles F. Kettering and the 1921 discovery of tetraethyl lead', paper to the Society of Automotive Engineers, 1994"
+    },
+    {
+      "b": "3¢ a gallon",
+      "s": "Midgley's projected gross, on at least 20 per cent of US petrol: his letter to Kettering of 2 March 1923, quoted in Bill Kovarik, 'The Ethyl Controversy', PhD dissertation, University of Maryland (1993), p. 69"
+    },
+    {
+      "b": "2 / 8 / 5",
+      "s": "Workers killed at Dayton (April 1924), Deepwater (1923–25) and Bayway (October 1924): Kovarik, 'The Ethyl Controversy' (1993), pp. 67–77"
+    },
+    {
+      "b": "15+",
+      "s": "Chicago deaths from refrigerant gas by July 1929, after the fluorine work began in 1928: Carmen J. Giunta, 'Thomas Midgley, Jr., and the Invention of Chlorofluorocarbon Refrigerants: It Ain't Necessarily So', Bulletin for the History of Chemistry 31 (2006), quoting the New York Times, 2 July 1929"
+    },
+    {
+      "b": "2 Nov 1944",
+      "s": "His death, 'of accidental strangulation, by a self-devised harness': Time, 13 November 1944; the certificate's finding of suicide per Giunta (2006)"
+    }
+  ]
+}
