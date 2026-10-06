@@ -607,7 +607,7 @@
   .log td{padding:12px 12px 12px 0;border-bottom:1px solid var(--rule);vertical-align:baseline}
   .log .no{font-family:var(--mono);font-size:var(--fs-0);color:var(--oxblood);width:44px}
   .log .dt{font-family:var(--mono);font-size:var(--fs-0);color:var(--ink-soft);white-space:nowrap;width:96px}
-  .log a{font-size:var(--fs-4);text-decoration:none}
+  .log a{font-size:var(--fs-4);text-decoration:none;display:inline-block;padding:2px 0}  /* 25px at a desk whether or not the title wraps: the target test once passed only because they did */
   .log a:hover{text-decoration:underline;text-underline-offset:4px}
 
   @media (max-width:1000px){
