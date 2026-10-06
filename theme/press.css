@@ -452,7 +452,7 @@
     .mast-in{height:auto;flex-direction:column;align-items:stretch;gap:0;padding:10px 0 4px}
     .mark{min-height:44px}
     .navbtn{min-height:44px}
-    .log a{display:inline-block;padding:9px 0}
+    table.log a{padding:9px 0}
     /* the reader's way back and its "find the book" link, at a thumb's size */
     .rbar .back{min-height:44px}
     .bookfind{padding:9px 0}
@@ -604,10 +604,11 @@
   #coloFront p{margin:0 0 12px;font-size:var(--fs-3);line-height:1.55;color:var(--ink-mid);max-width:60ch}
   .log{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
   .log th{text-align:left;font-family:var(--serif);font-size:var(--fs-2);font-weight:400;color:var(--ink-soft);padding:0 12px 8px 0;border-bottom:1px solid var(--ink)}
-  .log td{padding:12px 12px 12px 0;border-bottom:1px solid var(--rule);vertical-align:baseline}
+  .log td{padding:10px 12px 10px 0;border-bottom:1px solid var(--rule);vertical-align:baseline}
   .log .no{font-family:var(--mono);font-size:var(--fs-0);color:var(--oxblood);width:44px}
   .log .dt{font-family:var(--mono);font-size:var(--fs-0);color:var(--ink-soft);white-space:nowrap;width:96px}
-  .log a{font-size:var(--fs-4);text-decoration:none;display:inline-block;padding:2px 0}  /* 25px at a desk whether or not the title wraps: the target test once passed only because they did */
+  /* 21px of text was 21px to press; 2px each way makes it 25, and the cell gives the 4px back so the rows keep their rhythm */
+  .log a{display:inline-block;padding:2px 0;font-size:var(--fs-4);text-decoration:none}
   .log a:hover{text-decoration:underline;text-underline-offset:4px}
 
   @media (max-width:1000px){

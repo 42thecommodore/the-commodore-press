@@ -45,8 +45,11 @@ The Commodore/
 │                               # share sheet, progress + minutes left, select-a-passage quoting,
 │                               # read-next card, reading memory (localStorage "cp-read" — the
 │                               # colophon names it; storing anything more changes that sentence)
-├── build/mark.mjs              # the press mark, drawn once; {{MARK …}} {{MARK_MASK}} {{MARK_FAVICON}} tokens
+├── build/mark.mjs              # the press mark, drawn once; {{MARK …}} {{MARK_MASK}} {{MARK_FAVICON}} {{MARK_ICONS}} tokens;
+│                               # iconSvg() → assets/icons/*.png via tools/icons.mjs (run by `npm run card`)
 │                               # (the check fails on a hand-drawn copy anywhere else)
+├── build/fonts.mjs             # the typefaces, served from the site (assets/fonts/, OFL): @font-face + preload for every page
+│                               # and the share cards. Nothing loads from another site — `npm test` fails if a page does
 ├── build/motif.mjs             # the pattern pressed into a cover, drawn once; the library gets it as {{MOTIF_FN}},
 │                               # the entry pages import it — both print the same board
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
@@ -102,16 +105,16 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run ready` | the owner's launch checklist: what is done, what is not, the next action. Changes nothing |
 | `npm run check` | the house rules — **exits 1 on any error** |
 | `npm run live` | waits until the live site serves `main`, then visits every page a reader can reach; **exits 1 on any problem**. `ship` runs it after pushing. `--now` checks without waiting |
-| `npm run links` | visits every link the site prints; **exits 1 on any dead one**. Off the fast gate because it needs the network — run it monthly, and after any reading-list edit |
+| `npm run links` | visits every outside link the site prints; **exits 1 on any dead one, and when not one link opened** (a refusing network is not a pass). Off the fast gate because it needs the network — run it monthly, and after any reading-list edit |
 | `npm run proofread` | reads the prose for what a grep can be sure of: placeholder text that would print, a repeated word, a space before a comma. Judgment stays with `/press-proofread` |
 | `npm run build` | content + theme → `dist/index.html` |
-| `npm test` | drives headless Chrome through the built site: share links, the quote credit rule, verbatim quoting, progress, read-next agreement, arrow keys, and that Esc closes only what is open and never leaves the page. **Exits 1 on any failure**; `ship` runs it after the build |
+| `npm test` | drives headless Chrome through the built site: share links, the quote credit rule, verbatim quoting, progress, read-next agreement, arrow keys, and that Esc closes only what is open and never leaves the page. Then reads every built page as a search engine and a link preview do (`tools/test-seo.mjs`: title, description ≤160, canonical in the sitemap, share tags, JSON-LD, icon files, and nothing loaded from another site). Then every link inside the site (`tools/test-links.mjs`): each href on every built page, each link the front door draws as it runs, and each `#t/…` / `#atlas/…` address followed through the router — an unknown hash falls back to the front door silently, so this is the only thing that catches one. **Exits 1 on any failure**; `ship` runs it after the build |
 | `npm run stats` | inventory and editorial backlog |
 | `npm run voice` | the house's own sentence and punctuation numbers, measured off `content/` |
 | `npm run new book\|life\|adjacent "Title"` | scaffold a house-shaped stub |
 | `npm run new log "Title"` | start a Log piece, as a draft |
 | `npm run plate -- <image> <life-id>` | make a duotone plate |
-| `npm run card` | re-render the share cards — the front door's and one per title — with headless Chrome. Look at them; the check warns when one is stale |
+| `npm run card` | re-render the share cards — the front door's and one per title — and the icons in `assets/icons/`, with headless Chrome. Look at them; the check warns when one is stale |
 | `npm run correct -- "Title." "Body."` | append a correction |
 | `npm run ship -- "what changed"` | the whole release, one command: refuses to run off `main`, then check → proofread → links → build → test → commit sources → push → **live** (waits for the deploy, visits every page). Ends in "live and verified". `--allow-branch` to ship a branch deliberately, `--skip-links --no-wait` when offline |
 

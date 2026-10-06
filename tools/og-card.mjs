@@ -17,6 +17,11 @@
  * the PNG. The spines beside it painted, because a background is not text. A card that
  * is quietly missing a line still looks like a card.
  *
+ * The cause, found 2026-10-04: y=544 is where the headless viewport ends. Chromium's
+ * viewport is 87px shorter than its window, and below it nothing paints. Re-rendered on
+ * Linux, every card lost its bottom 87px. The window is now 200px taller than the card
+ * and the PNG is cropped back to 630 (cropPng below).
+ *
  * OG_KEEP=1 keeps the generated HTML so it can be opened in a real browser when the
  * output looks wrong. */
 
@@ -24,9 +29,11 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import zlib from "node:zlib";
 import { plateOf, creditOf, lifeStamp } from "./cards.mjs";
 import { markInner } from "../build/mark.mjs";
 import { CHROME } from "./chrome.mjs";
+import { fontFaces } from "../build/fonts.mjs";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -51,27 +58,16 @@ const WINGS = ["The Press", "Lives", "The Atlas"];
 const SPINES = ["#7B3F2E", "#2F4A3C", "#1B2A4A"];
 const word = n => ["zero","one","two","three","four","five","six","seven"][n] || String(n);
 
-/* The house typefaces are the point of this card, and a browser that cannot reach Google
-   Fonts does not say so — it quietly renders the wordmark in Georgia and the card still
-   looks plausible. So the fonts are fetched here, where a failure is visible, and inlined
-   as data URIs; the render then needs no network at all. If the fetch fails we say so and
-   keep the committed card rather than shipping one in the wrong face. */
-const FONTS_CSS = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap";
-let fontFace = "";
-try {
-  // the UA decides whether Google serves woff2; without one it serves a truetype fallback
-  const css = await (await fetch(FONTS_CSS, { headers: { "User-Agent": "Mozilla/5.0 Chrome/120" } })).text();
-  const urls = [...new Set([...css.matchAll(/url\((https:[^)]+)\)/g)].map(m => m[1]))];
-  const bytes = Object.fromEntries(await Promise.all(urls.map(async u =>
-    [u, Buffer.from(await (await fetch(u)).arrayBuffer()).toString("base64")])));
-  fontFace = css.replace(/url\((https:[^)]+)\)/g, (_, u) => `url(data:font/woff2;base64,${bytes[u]})`);
-  const kb = (Object.values(bytes).reduce((n, b) => n + b.length, 0) / 1365).toFixed(0);
-  console.log(`\n  fonts: ${urls.length} file(s) inlined, ~${kb} KB`);
-} catch (e) {
-  console.error(`\n  Could not fetch the house typefaces (${e.message}).`);
-  console.error("  Refusing to render the card in a substitute face — the committed assets/og.png stands.\n");
-  process.exit(1);
-}
+/* The house typefaces are the point of this card, and a browser that cannot find them does
+   not say so — it quietly renders the wordmark in Georgia and the card still looks plausible.
+   So the faces are read from assets/fonts/ (the same files the site serves, build/fonts.mjs)
+   and inlined as data URIs; the render needs no network at all. Until 2026-10-05 they were
+   fetched from Google here, which made `npm run card` fail on any machine offline. */
+const fontFace = fontFaces("").replace(/url\(fonts\/([^)]+)\)/g, (_, f) => {
+  const file = p("assets/fonts", f);
+  if (!fs.existsSync(file)) { console.error(`\n  ${file} is missing — the card would print in a substitute face. Refusing.\n`); process.exit(1); }
+  return `url(data:font/woff2;base64,${fs.readFileSync(file).toString("base64")})`;
+});
 
 /* The press mark comes from build/mark.mjs, the one drawing of it. */
 const markSvg = (size, sw = 1.05, cls = "") => `<svg${cls ? ` class="${cls}"` : ""} width="${size}" height="${size}" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round">${markInner(sw)}</svg>`;
@@ -129,6 +125,34 @@ ${fontFace}</style>
 </body></html>`;
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "og-"));
+
+/* Cut a PNG down to its top `h` rows. Each row's filter refers only to the rows above it,
+   so the first h rows of the compressed stream stand on their own: inflate, keep them,
+   deflate, and write the new height into the header. No image library needed. */
+const PAD = 200;
+function cropPng(file, h) {
+  const b = fs.readFileSync(file);
+  const w = b.readUInt32BE(16), bpp = { 2: 3, 6: 4 }[b[25]];
+  if (b[24] !== 8 || !bpp || b[28] !== 0) throw new Error(`${file}: not an 8-bit RGB(A), non-interlaced PNG; cannot crop`);
+  const chunks = [], idat = [];
+  for (let i = 8; i < b.length;) {
+    const n = b.readUInt32BE(i), type = b.toString("ascii", i + 4, i + 8), data = b.subarray(i + 8, i + 8 + n);
+    if (type === "IDAT") idat.push(data); else chunks.push([type, data]);
+    i += 12 + n;
+  }
+  const raw = zlib.inflateSync(Buffer.concat(idat));
+  if (raw.length < h * (1 + w * bpp)) throw new Error(`${file}: shorter than ${h} rows`);
+  const crc = buf => { let c = ~0; for (const x of buf) { c ^= x; for (let k = 0; k < 8; k++) c = c & 1 ? (c >>> 1) ^ 0xEDB88320 : c >>> 1; } return ~c >>> 0; };
+  const chunk = (type, data) => { const t = Buffer.from(type, "ascii"), out = Buffer.alloc(12 + data.length);
+    out.writeUInt32BE(data.length, 0); t.copy(out, 4); data.copy(out, 8); out.writeUInt32BE(crc(Buffer.concat([t, data])), 8 + data.length); return out; };
+  const parts = [b.subarray(0, 8)];
+  for (const [type, data] of chunks) {
+    if (type === "IHDR") { const d = Buffer.from(data); d.writeUInt32BE(h, 4); parts.push(chunk("IHDR", d)); parts.push(chunk("IDAT", zlib.deflateSync(raw.subarray(0, h * (1 + w * bpp)), { level: 9 }))); }
+    else if (type !== "IEND") parts.push(chunk(type, data));
+  }
+  parts.push(chunk("IEND", Buffer.alloc(0)));
+  fs.writeFileSync(file, Buffer.concat(parts));
+}
 const render = (page, out) => {
 const src = path.join(tmp, path.basename(out, ".png") + ".html");
 fs.writeFileSync(src, page);
@@ -136,7 +160,12 @@ fs.mkdirSync(path.dirname(out), { recursive: true });
 
 execFileSync(CHROME, [
   "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-sandbox",
-  "--window-size=1200,630",
+  /* Taller than the card, then cropped back to 630. Headless Chromium's viewport is 87px
+     shorter than its window (141, Linux, measured 2026-10-04), and nothing below the
+     viewport is painted: every card rendered at 1200×630 came out with its bottom 87px
+     blank — the sea gone, the spine cut at 543, and before that the counts line at y=544.
+     The cards set their own size in px, so the extra height changes no layout. */
+  `--window-size=1200,${630 + PAD}`,
   /* --virtual-time-budget was here to let the webfonts arrive over the network. The fonts
      are inlined now, so it has nothing to wait for — and it was cutting the render short:
      the counts line was laid out at y=544 in a 630px page and still missing from the PNG,
@@ -145,6 +174,7 @@ execFileSync(CHROME, [
   `file://${src}`,
 ], { stdio: ["ignore", "ignore", "pipe"] });
 if (!fs.existsSync(out)) { console.error(`  Chrome wrote nothing for ${out}.`); process.exit(1); }
+cropPng(out, 630);
 };
 
 /* Does the card's text fit? A screenshot cannot say: text that runs into the footer or into

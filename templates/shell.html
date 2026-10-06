@@ -5,7 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Commodore Press — a working library, every claim sourced</title>
-<meta name="description" content="A working library in three wings: {{N_BOOKS}} ideas, {{N_LIVES}} lives, and {{N_PEOPLE}} people across {{N_PRINCIPLES}} principles. Every claim carries its source and the place it is still argued.">
+<!-- under 160 characters, so a search result prints it whole; the counts are filled by the build -->
+<meta name="description" content="A working library: {{N_BOOKS}} ideas, {{N_LIVES}} lives and {{N_PEOPLE}} people. Every claim carries its source and the place it is still argued.">
 <link rel="canonical" href="{{SITE}}/">
 <!--FEED-->
 
@@ -26,6 +27,7 @@
 <meta name="twitter:title" content="The Commodore Press">
 <meta name="twitter:description" content="Every claim carries its source — and the place it is still argued.">
 <meta name="twitter:image" content="{{SITE}}/og.png">
+<meta name="twitter:image:alt" content="The Commodore Press — a working library in three wings. {{W_BOOKS_CAP}} titles, {{N_LIVES}} lives, {{N_PEOPLE}} people.">
 
 <script type="application/ld+json">
 {
@@ -35,16 +37,14 @@
   "url": "{{SITE}}/",
   "description": "A working library in three wings: {{N_BOOKS}} titles, {{N_LIVES}} lives, and {{N_PEOPLE}} people in the Atlas across {{N_PRINCIPLES}} principles. Every claim carries its source and the place it is still argued.",
   "inLanguage": "en",
-  "publisher": { "@type": "Organization", "name": "The Commodore Press", "url": "{{SITE}}/" },
+  "publisher": { "@type": "Organization", "name": "The Commodore Press", "url": "{{SITE}}/", "logo": "{{SITE}}/icon-512.png" },
   "usageInfo": "{{SITE}}/#colophon",
   "creditText": "Built with AI assistance; the colophon says so, and prints every correction."
 }
 </script>
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="{{MARK_FAVICON}}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+{{MARK_ICONS}}
+<!--FONTS-->
 <style>
 <!--CSS-->
 </style>

@@ -61,7 +61,7 @@ if (door.status !== 200) problems.push(`front door: HTTP ${door.status}`);
 const lib = (door.text.match(/LIBRARY_FILE = "([^"]+)"/) || [])[1];
 if (!lib) problems.push("front door: names no file for the entries' text — books would not open");
 else { const l = await get(`${SITE}/${lib}`); if (l.status !== 200) problems.push(`${lib}: HTTP ${l.status} — books would not open`); }
-for (const p of ["contents/", "sitemap.xml", "og.png"]) {
+for (const p of ["contents/", "sitemap.xml", "og.png", "favicon.svg", "apple-touch-icon.png", "site.webmanifest", "fonts/eb-garamond-latin-400-normal.woff2"]) {
   const res = await fetch(bust(`${SITE}/${p}`), { method: "HEAD" }); if (res.status !== 200) problems.push(`${p}: HTTP ${res.status}`);
 }
 

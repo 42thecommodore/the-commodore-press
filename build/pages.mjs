@@ -12,22 +12,31 @@ import { typeset } from "./typeset.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { favicon, fillMark } from "./mark.mjs";
+import { iconLinks, fillMark } from "./mark.mjs";
+import { fontFaces, fontPreload } from "./fonts.mjs";
 import { motifSVG } from "./motif.mjs";
 
-/* The date an entry's file last changed, from git. The sitemap and each page's JSON-LD say
-   when a page was modified; stamping every page with the build date taught crawlers to
-   ignore the field. Null when git has no history (a shallow checkout): better no date than
-   a wrong one. The deploy workflow fetches full history for this reason. */
+/* When an entry's file last changed, and when it first appeared, from git. The sitemap and
+   each page's JSON-LD say when a page was modified (dateModified) and published
+   (datePublished); stamping every page with the build date taught crawlers to ignore the
+   field. Null when git cannot know: no history at all, or a shallow checkout, where the
+   oldest commit present looks like every file's first — better no date than a wrong one. The
+   deploy workflow fetches full history for this reason. `--follow` keeps a renumbered file's
+   first date: the shelf-order prefix changes, the entry does not. */
 export function entryDates(ROOT) {
   const out = {};
+  const git = args => execFileSync("git", args, { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+  let shallow = true;
+  try { shallow = git(["rev-parse", "--is-shallow-repository"]) !== "false"; } catch {}
   for (const d of ["content/books", "content/adjacent", "content/lives"]) {
     const dir = path.join(ROOT, d);
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir).filter(f => f.endsWith(".json"))) {
       const id = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")).id;
-      try { out[id] = execFileSync("git", ["log", "-1", "--format=%cs", "--", `${d}/${f}`], { cwd: ROOT, encoding: "utf8" }).trim() || null; }
-      catch { out[id] = null; }
+      let modified = null, published = null;
+      try { modified = git(["log", "-1", "--format=%cs", "--", `${d}/${f}`]) || null; } catch {}
+      if (!shallow) try { published = git(["log", "--follow", "--diff-filter=A", "--format=%cs", "--", `${d}/${f}`]).split("\n").pop() || null; } catch {}
+      out[id] = { modified, published };
     }
   }
   return out;
@@ -253,6 +262,12 @@ function page(kind, b, ctx) {
   const url = `${SITE}/${slug}/`;
   const name = isPress ? b.title : b.n;
   const sub = isPress ? b.sub : `${b.field} · ${b.place} · ${b.years}`;
+  /* The search result's headline. The name alone ("The Box") says nothing to someone searching
+     for the shipping container, so the subject goes beside it: the title's own subtitle, or a
+     life's years and field. The house's name follows when it fits in 65 characters before it;
+     the one entry whose subtitle is a sentence keeps its bare name. */
+  const topic = strip(isPress ? `${b.title}: ${b.sub}` : `${b.n} (${b.years}), ${b.field}`);
+  const docTitle = (topic.length <= 65 ? topic : strip(name)) + " — The Commodore Press";
   // A short lede makes a thin search snippet; top it up with the opening of the copy.
   const lead = isPress ? (b.claim || b.lede) : b.lede;
   const desc = clip(strip(lead).length < 110 ? `${strip(lead)} ${strip(b.copy[0])}` : lead, 158);
@@ -260,15 +275,20 @@ function page(kind, b, ctx) {
   // life with no card yet falls back to its bare plate, in the small square preview.
   const image = ctx.card ? `${SITE}/${ctx.card}` : plateFile ? `${SITE}/plates/${plateFile}` : `${SITE}/og.png`;
   const small = !ctx.card && !!plateFile;
+  // what the card says, for someone who cannot see it: a chat app or a screen reader reads this
+  const cardAlt = ctx.card ? `${strip(name)}: ${strip(isPress ? (b.claim || b.sub) : b.lede)} — a card from The Commodore Press`
+    : small ? (b.plateOf || "Portrait of " + b.n) : "The Commodore Press";
   const words = wordsOf(b), mins = minsOf(b);
-  const wingName = isPress ? "The Press" : "Lives", wingUrl = `${SITE}/contents/`;
+  // the middle crumb names a shelf, so it lands on that shelf of the contents, not its top
+  const wingName = isPress ? "The Press" : "Lives", wingUrl = `${SITE}/contents/#${isPress ? "press" : "lives"}`;
   const ld = [{
     "@context": "https://schema.org", "@type": "Article",
     headline: strip(name), description: desc, url, mainEntityOfPage: url, image, inLanguage: "en", wordCount: words,
+    ...(ctx.published ? { datePublished: ctx.published } : {}),
     ...(ctx.modified ? { dateModified: ctx.modified } : {}),
     about: isPress ? strip(b.field) : { "@type": "Person", name: strip(b.n), description: `${strip(b.field)}, ${strip(b.years)}` },
     author: { "@type": "Person", name: EDITOR, jobTitle: "Editor", ...(hasAbout ? { url: `${SITE}/about/` } : {}) },
-    publisher: { "@type": "Organization", name: "The Commodore Press", url: SITE + "/" },
+    publisher: { "@type": "Organization", name: "The Commodore Press", url: SITE + "/", logo: `${SITE}/icon-512.png` },
     isPartOf: { "@type": "WebSite", name: "The Commodore Press", url: SITE + "/" },
     ...(b.reading ? { citation: b.reading.map(r => ({ "@type": "CreativeWork", name: strip(r.t), url: r.u })) } : {}),
   }, {
@@ -295,7 +315,7 @@ function page(kind, b, ctx) {
 <meta charset="utf-8">
 ${THEME_BOOT}
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${attr(name)} — The Commodore Press</title>
+<title>${attr(docTitle)}</title>
 <meta name="description" content="${attr(desc)}">
 <link rel="canonical" href="${url}">
 <meta property="og:type" content="article">
@@ -304,7 +324,8 @@ ${THEME_BOOT}
 <meta property="og:description" content="${attr(desc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${image}">
-<meta property="og:image:alt" content="${attr(ctx.card ? name + " — The Commodore Press" : small ? (b.plateOf || "Portrait of " + b.n) : "The Commodore Press")}">
+<meta property="og:image:alt" content="${attr(cardAlt)}">
+<meta name="twitter:image:alt" content="${attr(cardAlt)}">
 <meta name="twitter:card" content="${small ? "summary" : "summary_large_image"}">
 ${!small ? `<meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">` : ""}
@@ -312,7 +333,7 @@ ${!small ? `<meta property="og:image:width" content="1200">
 <meta name="twitter:description" content="${attr(desc)}">
 <meta name="twitter:image" content="${image}">
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
-${FONTS}
+${FONTS(SITE, "../../")}
 <style>${CSS}${ENTRY_CSS}${READING_CSS}</style>
 <script>document.documentElement.classList.add("rs-js")</script>
 </head>
@@ -399,8 +420,8 @@ export function writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout, 
       const plateFile = kind === "lives" && !b.plateless ? plates[b.id] : null;
       const d = path.join(dist, dir, b.id);
       fs.mkdirSync(d, { recursive: true });
-      fs.writeFileSync(path.join(d, "index.html"), page(kind, b, { SITE, known, plateFile, wing, hasAbout, prev, next, NEWS, hasLog, card: kind === "press" ? (cards.has(b.id) ? `cards/${b.id}.png` : null) : (cards.has("l/" + b.id) ? `cards/l/${b.id}.png` : null), CORR, byRef, modified: DATES[b.id] }));
-      urls.push({ loc: `${SITE}/${dir}/${b.id}/`, lastmod: DATES[b.id] });
+      fs.writeFileSync(path.join(d, "index.html"), page(kind, b, { SITE, known, plateFile, wing, hasAbout, prev, next, NEWS, hasLog, card: kind === "press" ? (cards.has(b.id) ? `cards/${b.id}.png` : null) : (cards.has("l/" + b.id) ? `cards/l/${b.id}.png` : null), CORR, byRef, modified: DATES[b.id].modified, published: DATES[b.id].published }));
+      urls.push({ loc: `${SITE}/${dir}/${b.id}/`, lastmod: DATES[b.id].modified });
     });
   }
   return urls;
@@ -466,9 +487,9 @@ ${THEME_BOOT}
 <meta property="og:description" content="${attr(desc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${SITE}/og.png">
-<meta name="twitter:card" content="summary_large_image">
+${CARD_TAGS(SITE, title, desc)}
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
-${FONTS}
+${FONTS(SITE, "../")}
 <style>${CSS}.body ul{padding-left:1.1em}.body li{margin:0 0 8px}</style>
 </head>
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
@@ -498,10 +519,20 @@ const MONTHS = ["January","February","March","April","May","June","July","August
 const longDate = d => { const [y, m, day] = d.split("-").map(Number); return `${day} ${MONTHS[m - 1]} ${y}`; };
 const LOG_LIVERY = { cover: "#2A2F45", ink: "#F0EFEA", accent: "#D8A657" };
 const FEED_LINK = root => `<link rel="alternate" type="application/rss+xml" title="The Commodore Press — the Log" href="${root}feed.xml">`;
-const FONTS = `<link rel="icon" href="${favicon()}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">`;
+// the icons, then the typefaces from this site (build/fonts.mjs); `base` is the way back to the root
+const FONTS = (SITE, base) => `${iconLinks(SITE)}
+${fontPreload(base)}
+<style>${fontFaces(base)}</style>`;
+/* The tags every page that shares the house card carries beside og:image: its size, so a
+   preview can lay out before the image arrives, and the X equivalents of title and text. */
+const CARD_TAGS = (SITE, title, desc) => `<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Commodore Press — a working library in three wings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${attr(title)}">
+<meta name="twitter:description" content="${attr(desc)}">
+<meta name="twitter:image" content="${SITE}/og.png">`;
+const LOG_DESC = "The editor’s signed column at the Commodore Press: arguments with the library and the people in it, sourced like everything else.";
 const LOG_CSS = `.body blockquote{margin:24px 0;padding-left:18px;border-left:2px solid var(--rule);font-style:italic}
 .body ul,.body ol{padding-left:1.2em}.body li{margin:0 0 8px}
 .byline{line-height:1.5;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-top:22px;opacity:.85}
@@ -538,7 +569,7 @@ export function writeLog({ ROOT, SITE, pieces, BOOKS, ADJACENT, LIVES, PRINCIPLE
     const ld = { "@context": "https://schema.org", "@type": "BlogPosting", headline: strip(inline(x.meta.title)),
       description: strip(inline(x.meta.dek)), datePublished: x.meta.date, url, image: `${SITE}/og.png`,
       author: { "@type": "Person", name: EDITOR, jobTitle: "Editor" },
-      publisher: { "@type": "Organization", name: "The Commodore Press", url: SITE + "/" } };
+      publisher: { "@type": "Organization", name: "The Commodore Press", url: SITE + "/", logo: `${SITE}/icon-512.png` } };
     const d = path.join(out, x.slug);
     fs.mkdirSync(d, { recursive: true });
     fs.writeFileSync(path.join(d, "index.html"), `<!DOCTYPE html>
@@ -557,10 +588,10 @@ ${THEME_BOOT}
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${SITE}/og.png">
 <meta property="article:published_time" content="${x.meta.date}">
-<meta name="twitter:card" content="summary_large_image">
+${CARD_TAGS(SITE, inline(x.meta.title), inline(x.meta.dek))}
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
 ${FEED_LINK(root)}
-${FONTS}
+${FONTS(SITE, "../../")}
 <style>${CSS}${LOG_CSS}</style>
 </head>
 <body style="--cover:${LOG_LIVERY.cover};--cink:${LOG_LIVERY.ink};--accent:${LOG_LIVERY.accent}">
@@ -591,13 +622,22 @@ ${subscribe(root)}
 ${THEME_BOOT}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Log — The Commodore Press</title>
-<meta name="description" content="The editor's signed column at the Commodore Press: arguments with the library and the people in it, sourced like everything else.">
+<meta name="description" content="${LOG_DESC}">
 <link rel="canonical" href="${SITE}/log/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Commodore Press">
 <meta property="og:title" content="The Log — The Commodore Press">
+<meta property="og:description" content="${LOG_DESC}">
 <meta property="og:url" content="${SITE}/log/">
 <meta property="og:image" content="${SITE}/og.png">
+${CARD_TAGS(SITE, "The Log — The Commodore Press", LOG_DESC)}
+<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "Blog", name: "The Log — The Commodore Press",
+  url: `${SITE}/log/`, description: LOG_DESC, author: { "@type": "Person", name: EDITOR, jobTitle: "Editor" },
+  publisher: { "@type": "Organization", name: "The Commodore Press", url: SITE + "/", logo: `${SITE}/icon-512.png` },
+  blogPost: pieces.map(x => ({ "@type": "BlogPosting", headline: strip(inline(x.meta.title)), datePublished: x.meta.date, url: `${SITE}/log/${x.slug}/` })),
+}).replace(/</g, "\\u003c")}</script>
 ${FEED_LINK("../")}
-${FONTS}
+${FONTS(SITE, "../")}
 <style>${CSS}${LOG_CSS}</style>
 </head>
 <body style="--cover:${LOG_LIVERY.cover};--cink:${LOG_LIVERY.ink};--accent:${LOG_LIVERY.accent}">
@@ -657,6 +697,14 @@ export function writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG }) {
   const out = path.join(ROOT, "dist/contents");
   fs.rmSync(out, { recursive: true, force: true }); fs.mkdirSync(out, { recursive: true });
   const item = (href, t, s) => `<li><a href="${href}"><span class="t">${t}</span><span class="k">${s}</span></a></li>`;
+  const url = `${SITE}/contents/`;
+  const desc = `Every title and life in the Commodore Press: ${BOOKS.length + ADJACENT.length} ideas and ${LIVES.length} people, each with its sources and the place it is still argued.`;
+  // the contents as a list a search engine can read without following every link
+  const entries = BOOKS.concat(ADJACENT).map(b => [strip(b.title), `${SITE}/t/${b.id}/`]).concat(LIVES.map(l => [strip(l.n), `${SITE}/l/${l.id}/`]));
+  const ld = { "@context": "https://schema.org", "@type": "CollectionPage", name: "Contents — The Commodore Press", url, description: desc,
+    isPartOf: { "@type": "WebSite", name: "The Commodore Press", url: SITE + "/" },
+    mainEntity: { "@type": "ItemList", numberOfItems: entries.length,
+      itemListElement: entries.map(([name, u], i) => ({ "@type": "ListItem", position: i + 1, name, url: u })) } };
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -664,12 +712,23 @@ export function writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG }) {
 ${THEME_BOOT}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contents — The Commodore Press</title>
-<meta name="description" content="Every title and life in the Commodore Press: ${BOOKS.length} ideas and ${LIVES.length} people, each with its sources and the place it is still argued.">
-<link rel="canonical" href="${SITE}/contents/">
+<meta name="description" content="${attr(desc)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Commodore Press">
 <meta property="og:title" content="Contents — The Commodore Press">
-<meta property="og:url" content="${SITE}/contents/">
+<meta property="og:description" content="${attr(desc)}">
+<meta property="og:url" content="${url}">
 <meta property="og:image" content="${SITE}/og.png">
-${FONTS}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Commodore Press — a working library in three wings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contents — The Commodore Press">
+<meta name="twitter:description" content="${attr(desc)}">
+<meta name="twitter:image" content="${SITE}/og.png">
+<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
+${FONTS(SITE, "../")}
 <style>${CSS}${LOG_CSS}.body .list .t{font-size:var(--fs-6)}</style>
 </head>
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
@@ -677,8 +736,8 @@ ${FONTS}
 <header class="band"><div class="in"><div class="kick">Contents</div><h1>Everything on the shelves</h1>
 <p class="sub">${BOOKS.length + ADJACENT.length} titles and ${LIVES.length} lives. Every figure carries its source.</p></div></header>
 <main class="body">
-<h2>The Press · ideas</h2><ul class="list">${BOOKS.concat(ADJACENT).map(b => item(`../t/${b.id}/`, b.title, inline(strip(b.claim || b.sub || "")))).join("")}</ul>
-<h2>Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `${l.field} · ${l.years}`)).join("")}</ul>
+<h2 id="press">The Press · ideas</h2><ul class="list">${BOOKS.concat(ADJACENT).map(b => item(`../t/${b.id}/`, b.title, inline(strip(b.claim || b.sub || "")))).join("")}</ul>
+<h2 id="lives">Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `${l.field} · ${l.years}`)).join("")}</ul>
 ${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
 </main>
 <footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>

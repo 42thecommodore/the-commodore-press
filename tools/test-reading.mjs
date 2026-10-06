@@ -173,6 +173,10 @@ async function quotePassage(t, wait, p, credit) {
   t("the quote starts and ends on whole words", i >= 0 && (i === 0 || !/[\w’']/.test(text[i - 1])) && !/[\w’']/.test(text[i + q.length] || " "), q);
   t("the passage link points into the entry's own page", /\/#:~:text=/.test(dl.querySelector("input").value), dl.querySelector("input").value);
   t("the quote is credited to the Press, on the entry", dl.querySelector(".rs-by").textContent === "— " + credit, dl.querySelector(".rs-by").textContent);
+  // Bluesky refuses a post over 300 characters and counts the link whole
+  const bs = dl.querySelector('a[href^="https://bsky.app/intent/compose"]');
+  const post = bs ? new URL(bs.href).searchParams.get("text") : "";
+  t("the Bluesky post fits in 300 characters, with the link and the credit", bs && [...post].length <= 300 && /https?:\/\/\S+$/.test(post) && post.includes(credit), post.length + ": " + post);
 }`;
 
 const ENTRY = (credit) => String.raw`
@@ -470,6 +474,9 @@ o.type = "application/json"; o.id = "__results"; o.textContent = JSON.stringify(
   }
   // the entries' bodies ship beside the page (build/build.mjs); the reader fetches them from there
   for (const f of fs.readdirSync(dist()).filter(f => /^library\.[0-9a-f]+\.js$/.test(f))) fs.copyFileSync(dist(f), path.join(tmp, f));
+  // and the typefaces, which the page now asks for from fonts/ beside it: without them every
+  // measurement here (spine titles, the first screen, targets) would be taken in a fallback face
+  if (fs.existsSync(dist("fonts"))) fs.cpSync(dist("fonts"), path.join(tmp, "fonts"), { recursive: true });
   let dom = "";
   try {
     dom = execFileSync(CHROME, ["--headless=new", "--disable-gpu", "--no-sandbox", `--window-size=${frame ? `${frame[0] + 40},${frame[1] + 160}` : "1280,900"}`,
