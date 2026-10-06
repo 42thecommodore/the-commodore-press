@@ -1,0 +1,54 @@
+{
+  "id": "jamsetji-tata",
+  "no": 51,
+  "keep": "The hotel legend makes him a man turned away at a door; his own papers show a trader in cotton and opium who built whatever Bombay lacked.",
+  "n": "Jamsetji Tata",
+  "years": "1839–1904",
+  "place": "India",
+  "field": "Industry & Trade",
+  "group": "famous",
+  "cover": "#6A2C1C",
+  "spineC": "#4C1F13",
+  "ink": "#FBEDE3",
+  "accent": "#F0C27A",
+  "motif": "conic",
+  "lede": "He made his first money in cotton and opium. The story everyone tells about his hotel, that he built the Taj after Watson's turned him away, is in none of the three older lives of him.",
+  "copy": [
+    "He was born in 1839 to a family of Parsi priests from Navsari, in Gujarat, and went into his father's trading house in Bombay. In December 1859 the firm opened a branch in Hong Kong. F. R. Harris, who wrote the life in 1925 with the family's help, says they \"dealt mainly in cotton and opium, imports which yielded handsome profits.\" Cotton became the career. In 1874 he floated a spinning company with Rs 15 lakh of capital in 3,000 shares, and on 1 January 1877, the day Queen Victoria was proclaimed Empress of India, opened its mills at Nagpur and named them the Empress Mills.",
+    "In 1893 he went after the freight. The P. and O. charged 19 rupees a ton from Bombay to Japan; the Tata Line, run with the Japanese company Nippon Yusen Kaisha, charged 12, and he wrote to his sons that \"about two thousand chests of opium\" would help fill the ships. The P. and O. and its allies cut their rates, offered to carry cotton to Japan free, and gave rebates only to shippers who swore off the new line. Within a year the chartered steamers went back to England and the Tata Line \"was extinct\", having cost him well over a lakh. The research institute took longer. He offered property yielding Rs 1,25,000 a year, which the public capitalised and called thirty lakhs. Lord Curzon received the deputation on his second day as Viceroy, and his caution, Harris writes, \"produced a somewhat cold effect.\" The Indian Institute of Science was vested by order on 27 May 1909, five years after Tata died.",
+    "Harris tells a different story about the hotel. In Sir Stanley Reed's introduction to the book, someone remarked that Bombay had no good hotel, and Tata, \"chafing under the imputation\", built one; it opened in 1903 with about twenty guests. The tale of Watson's Hotel turning him away for his race is not in Harris, in D. E. Wacha's memoir of him, or in Saklatvala's 1970 life. The steel was his sons' to finish. In 1902 he walked through the Homestead and Duquesne mills of the Carnegie Steel Company. In Pittsburgh the engineer Julian Kennedy told him to pay first for an exhaustive survey of India's ore, and he went straight to New York and engaged Charles Page Perin to make it. He died on 19 May 1904, before a ton was made."
+  ],
+  "facts": [
+    {
+      "b": "Rs 15,00,000 · 3,000 shares",
+      "s": "The capital of the Central India Spinning, Weaving and Manufacturing Company, 1874, in shares of Rs 500: F. R. Harris, Jamsetji Nusserwanji Tata: A Chronicle of His Life (Oxford University Press, 1925), pp. 28–29, read in the Digital Library of India scan on the Internet Archive. The Hong Kong branch and its 'cotton and opium': p. 6. The Empress Mills: p. 30"
+    },
+    {
+      "b": "Rs 19 · Rs 12",
+      "s": "The P. and O.'s freight against the Tata Line's, per ton of 40 cubic feet, Bombay to Japan, 1893, and the rebate terms: Harris, p. 102. The 'two thousand chests of opium', from his letter-book of 1893–94: p. 101. The line 'extinct' at a cost of 'well over a lac of rupees': p. 105"
+    },
+    {
+      "b": "Rs 1,25,000 a year",
+      "s": "His actual offer for the institute, which 'people capitalized … and called 30 lacs': Harris, p. 127, note. Curzon's reply: p. 134. The vesting order of 27 May 1909: p. 152. The tour of Homestead and Duquesne in 1902, Julian Kennedy's advice and Perin's engagement: pp. 176–177"
+    }
+  ],
+  "bio": {
+    "t": "Jamsetji Nusserwanji Tata: A Chronicle of His Life",
+    "a": "F. R. Harris",
+    "y": "1925",
+    "why": "The only life built on his surviving letter-book, and free to read in scan. It is the family's book: Harris never met him, his son Sir Dorabji supplied the particulars, and the preface admits that 'most of his private letters were destroyed.' Read Mircea Raianu's Tata (2021), a history of the company from outside it, alongside."
+  },
+  "contested": "Nearly everything written about him comes from inside the house he founded. Harris wrote with his son's help, and much of what followed, as the London Review of Books observed, was written by the company's own senior executives. Mircea Raianu's Tata: The Global Corporation That Built Indian Capitalism (Harvard, 2021), read here only through its reviews in the London Review of Books and Jacobin, argues that the early fortune was commercial and the nationalist reputation was built later; Raianu calls the Watson's story a myth, noting that overt colour bars were rare in Bombay. The other legend is that a conversation on the ship to Chicago with Swami Vivekananda in 1893 inspired the institute. His letter to Vivekananda of 23 November 1898 recalls the voyage but calls the institute 'my scheme', already public, and asks for 'a fiery pamphlet' in its support; Harris has him weighing the gift 'for some ten years'.",
+  "across": [
+    {
+      "to": "lives:andrew-carnegie",
+      "label": "Andrew Carnegie",
+      "txt": "— in 1902 he walked through Homestead and Duquesne, looking for how India might make its own steel. His sons built it."
+    },
+    {
+      "to": "atlas:story",
+      "label": "The Atlas · Story is leverage",
+      "txt": "— the hotel built out of a snub is the story that travels; the one in his own biography is a remark at dinner and a man who took it personally."
+    }
+  ]
+}

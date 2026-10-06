@@ -207,7 +207,7 @@ function renderFront(){
    `<section class="band" aria-labelledby="bLives"><div class="wrap">
       ${bandHead("Wing II · Lives","bLives",`${LIVES.length} people. Pick a face.`,
         `The one book on each worth your time. {{W_FAMOUS_CAP}} famous, {{N_OBSCURE}} you have never heard of.`,"go('lives')","All lives →")}
-      <div class="wall">${LIVES.map(b=>`<a class="wface" ${entryAttrs("life",b.id)} aria-label="${b.n}, ${b.years}${fresh.has(b.id)?", new on the shelf":""}" title="${b.n} · ${b.years}">
+      <div class="wall">${LIVES.map(b=>`<a class="wface" ${entryAttrs("life",b.id)} aria-label="${b.n}, ${b.years}, number ${b.no}${fresh.has(b.id)?", new on the shelf":""}" title="№ ${b.no} · ${b.n} · ${b.years}">
           ${plateOrMark(b,"fp-img")}<span class="fn">${b.n}${fresh.has(b.id)?`<em class="nw">new</em>`:""}</span></a>`).join("")}</div>
     </div></section>
     <section class="band night" aria-labelledby="bAtlas"><div class="wrap">
@@ -277,7 +277,7 @@ function renderLivesShelf(anim){
   if(anim&&!reduce)shelf.querySelectorAll(".slot").forEach(s=>prev.set(s.dataset.id,s.getBoundingClientRect()));
   const list=LIVES.filter(b=>livesFilter==="all"||b.group===livesFilter);
   shelf.innerHTML=list.map((b,i)=>`<a class="slot" data-id="${b.id}" style="--i:${i}" ${entryAttrs("lives",b.id)} aria-label="Open ${b.n}">
-      ${lifeBook(b)}<div class="meta"><h3>${b.n}</h3><p>${b.years}</p></div></a>`).join("");
+      ${lifeBook(b)}<div class="meta"><h3>${b.n}</h3><p>№ ${b.no} · ${b.years}</p></div></a>`).join("");
   if(prev.size)slideFrom(shelf,prev);
   document.getElementById("livesCount").textContent=list.length+(list.length===1?" life":" lives");
   markRead();
@@ -373,13 +373,13 @@ function readerHTML(kind,b){
         <div class="rmeta">
           <div><b>${isPress?"Field":"Field"}</b><span>${isPress?b.field:b.field}</span></div>
           <div><b>${isPress?"Period":"Lived"}</b><span>${b.years}</span></div>
-          <div><b>${shelf===ADJACENT?"Adjacent":"Shelf"}</b><span>№ ${String(shelf.indexOf(b)+1).padStart(2,"0")} of ${shelf.length}</span></div>
+          <div><b>${isPress?(shelf===ADJACENT?"Adjacent":"Shelf"):"Life"}</b><span>${isPress?`№ ${String(shelf.indexOf(b)+1).padStart(2,"0")} of ${shelf.length}`:`№ ${b.no}`}</span></div>
           <div><b>Reading</b><span>${mins} min</span></div>
         </div>
         <nav class="toc">${toc.map(t=>`<a href="#" data-sec="${t[0]}" onclick="gotoSec('${t[0]}');return false;">${t[1]}</a>`).join("")}</nav>
       </div></div>
       <div class="rbody">
-        ${b.claim?`<p class="claim">${b.claim}</p>`:`<p class="claim">${b.group==="obscure"?"The obscure but pivotal":"The famous"}</p>`}
+        ${b.claim?`<p class="claim">${b.claim}</p>`:`<p class="claim">№ ${b.no} · ${b.group==="obscure"?"The obscure but pivotal":"The famous"}</p>`}
         <h1>${title}</h1>
         <p class="sub">${sub}</p>
         ${plate}
@@ -652,7 +652,7 @@ function buildIndex(){
   SIX=[];
   const push=(w,t,s,hay,act)=>SIX.push({w,t,s,hay:fold(t+" "+s+" "+hay),act});
   ALL.forEach(b=>push("The Press",b.title.replace(/&amp;/g,"&"),b.sub,[b.claim||"",b.lede||"",(b.copy||[]).join(" "),b.keep||""].join(" "),()=>{go("press");setTimeout(()=>openReader("press",b.id),320)}));
-  LIVES.forEach(b=>push("Lives",b.n,b.field+" · "+b.years,[b.lede,(b.copy||[]).join(" "),b.bio?b.bio.t+" "+b.bio.a:"",b.keep||""].join(" "),()=>{go("lives");setTimeout(()=>openReader("lives",b.id),320)}));
+  LIVES.forEach(b=>push("Lives",b.n,"№ "+b.no+" · "+b.field+" · "+b.years,[b.lede,(b.copy||[]).join(" "),b.bio?b.bio.t+" "+b.bio.a:"",b.keep||""].join(" "),()=>{go("lives");setTimeout(()=>openReader("lives",b.id),320)}));
   PEOPLE.forEach(p=>push("The Atlas",p.name,p.role||"",[p.take,(p.kept||[]).map(k=>typeof k==="string"?k:k.k).join(" ")].join(" "),()=>{go("atlas");setTimeout(()=>openDrawer(p),340)}));
   LOG.forEach(x=>push("The Log",x.title,x.date+" · "+x.dek,"",()=>{location.href="log/"+x.slug+"/"}));
   PRINCIPLES.forEach(pr=>push("The Atlas",pr.name,"lesson — "+pr.gloss,pr.members.map(m=>m.name).join(" "),()=>{go("atlas");setTimeout(()=>lightConst(pr.id),340)}));

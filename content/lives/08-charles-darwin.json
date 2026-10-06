@@ -1,5 +1,6 @@
 {
   "id": "charles-darwin",
+  "no": 8,
   "keep": "Spend twenty years looking for what would refute you. Then publish.",
   "n": "Charles Darwin",
   "years": "1809–1882",
@@ -34,6 +35,11 @@
       "to": "lives:leonardo",
       "label": "Leonardo da Vinci",
       "txt": "— the other notebook-keeper who trusted his eyes over the received text — and, unlike Darwin, never published."
+    },
+    {
+      "to": "lives:josiah-wedgwood",
+      "label": "Josiah Wedgwood",
+      "txt": "— his mother's father. The letter that talked his own father round to the Beagle came from the potter's son, his uncle Josiah."
     }
   ]
 }

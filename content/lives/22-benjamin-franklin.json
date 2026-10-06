@@ -1,5 +1,6 @@
 {
   "id": "benjamin-franklin",
+  "no": 22,
   "keep": "Retire from the shop as early as you can afford to — then spend the second half inventing institutions.",
   "n": "Benjamin Franklin",
   "years": "1706–1790",
@@ -34,6 +35,11 @@
       "to": "atlas:public",
       "label": "The Atlas · Build in public",
       "txt": "— the stove, the lightning rod and bifocals, none patented, on the stated principle that we should serve others freely with our inventions as we enjoy theirs."
+    },
+    {
+      "to": "lives:josiah-wedgwood",
+      "label": "Josiah Wedgwood",
+      "txt": "— in 1788, late in the turn from slaveholder to abolitionist, Franklin received a batch of Wedgwood's anti-slavery medallions from England."
     }
   ]
 }

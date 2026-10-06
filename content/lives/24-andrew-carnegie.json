@@ -1,5 +1,6 @@
 {
   "id": "andrew-carnegie",
+  "no": 24,
   "keep": "Watch the costs and the profits take care of themselves. Then remember Homestead before you admire.",
   "n": "Andrew Carnegie",
   "years": "1835–1919",
@@ -38,6 +39,11 @@
       "to": "lives:john-d-rockefeller",
       "label": "John D. Rockefeller",
       "txt": "— the other Gilded Age fortune, spent on the rival theory of giving."
+    },
+    {
+      "to": "lives:jamsetji-tata",
+      "label": "Jamsetji Tata",
+      "txt": "— in 1902, ten years after the lockout, Tata walked through Homestead and Duquesne, looking for how India might make its own steel."
     }
   ]
 }

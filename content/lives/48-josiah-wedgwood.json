@@ -1,0 +1,54 @@
+{
+  "id": "josiah-wedgwood",
+  "no": 48,
+  "keep": "The service for an empress was the advertisement; the ledger that kept the firm alive in 1772 only balanced once the head clerk was caught.",
+  "n": "Josiah Wedgwood",
+  "years": "1730–1795",
+  "place": "England",
+  "field": "Pottery & Industry",
+  "group": "famous",
+  "cover": "#2C4C7C",
+  "spineC": "#1F3659",
+  "ink": "#F1F4F9",
+  "accent": "#BFD0EA",
+  "motif": "rings",
+  "lede": "He is remembered for selling to a queen and an empress. The record that explains the firm is a costing he made in the slump of 1772, which balanced only after he found his head clerk hiding sales.",
+  "copy": [
+    "He was a Staffordshire potter who founded his own firm in 1759, and ten years later opened new works at Etruria, near Stoke; the V&A dates the vases thrown there on the first day to 1769. The famous story is the royal custom. In 1773 Catherine the Great ordered a dinner and dessert service from him, finished in 1774: 952 pieces, painted with 1,222 views of Britain that his partner, Thomas Bentley, chose, at a price of £2,290. The V&A's own record of it says he made little profit on the commission. It was an advertisement. What it bought was the fashionable reputation of everything else he made.",
+    "The slump of 1772 is the less famous story, and the one that explains the firm. That year he worked out the full cost of thirty-one of his products, most of them vases, under fourteen separate heads. The historian Neil McKendrick argued in 1970 that knowing those costs carried the business through the depression that set in later that year. The figures would not at first agree with the year's results. They did once he found that his head clerk had been dishonestly suppressing sales, and dismissed him.",
+    "In July 1787 the Committee for the Abolition of the Slave Trade commissioned a seal: a kneeling Black man in chains, asking \"Am I Not a Man and a Brother?\" His works turned it into a ceramic medallion, modelled, probably, by William Hackwood, his best modeller. A firm that lived by selling things did not sell these. They were handed out at abolitionist meetings, and in 1788 he sent a batch to Benjamin Franklin in America. His grandson was Charles Darwin, and the family's last service to him came from the potter's son. On 31 August 1831 Josiah Wedgwood II wrote to Darwin's doubtful father that the voyage would give Charles \"such an opportunity of seeing men and things as happens to few.\""
+  ],
+  "facts": [
+    {
+      "b": "952 pieces · 1,222 views · £2,290",
+      "s": "The Frog Service for Catherine the Great, ordered 1773 and finished 1774, the views chosen by Thomas Bentley, and 'Wedgwood made little profit on the commission': Victoria and Albert Museum, collection record O8065, 'Frog Service' dish. The record does not reconcile the pieces with the views; they are printed as it gives them"
+    },
+    {
+      "b": "31 products · 14 heads",
+      "s": "The unit costs he worked out in 1772, and the head clerk's 'dishonestly suppressed' sales: G. A. Lee, 'The Concept of Profit in British Accounting, 1760–1900', Business History Review 49:1 (1975), notes 15 and 17, reporting Neil McKendrick, 'Josiah Wedgwood and Cost Accounting in the Industrial Revolution', Economic History Review 23:1 (1970). McKendrick's article itself was not opened"
+    },
+    {
+      "b": "5 July 1787 · 1788",
+      "s": "The committee's seal, the medallion 'probably by William Hackwood', given away and 'not for sale', and the batch sent to Franklin: Victoria and Albert Museum, 'The Wedgwood anti-slavery medallion' (updated 1 May 2026)"
+    }
+  ],
+  "bio": {
+    "t": "The Radical Potter: Josiah Wedgwood and the Transformation of Britain",
+    "a": "Tristram Hunt",
+    "y": "2021",
+    "why": "The most recent full life, by a historian. Read it knowing its author's day job: Tristram Hunt directs the V&A, to which the V&A Wedgwood Collection, the firm's own archive, was given in 2014."
+  },
+  "contested": "Neil McKendrick's case, made in 1970, is that costing saved the firm in 1772, and it is why Wedgwood appears in histories of accounting at all. Richard Fleischman and Lee Parker, surveying 25 British firms between 1760 and 1850, found 'substantial evidence of a relatively mature cost management', which makes him one of many rather than the first. The medallion was his firm's work and the committee's design, and the V&A says the step from one to the other 'remains something of a mystery'; some unmarked medallions once credited to Wedgwood are not demonstrably his. The line most quoted about his factory, that he meant to make 'such Machines of the Men as cannot err', is printed in reviews of Hunt's book without the letter it came from, and this house has not found the letter.",
+  "across": [
+    {
+      "to": "lives:charles-darwin",
+      "label": "Charles Darwin",
+      "txt": "— the potter's grandson, sent round the world on the strength of a letter from the potter's son."
+    },
+    {
+      "to": "lives:benjamin-franklin",
+      "label": "Benjamin Franklin",
+      "txt": "— in 1788 Wedgwood sent him a batch of the medallions his works gave away at abolitionist meetings."
+    }
+  ]
+}

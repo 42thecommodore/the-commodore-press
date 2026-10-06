@@ -1,14 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "A life — content/lives/",
-  "description": "One file per life. The NN- filename prefix fixes shelf order.",
+  "description": "One file per life. The NN- filename prefix fixes shelf order, and for a life it is also the life's number (`no`), printed on the site: lives join the end of the shelf and are never renumbered.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "n", "years", "field", "cover", "lede", "copy", "keep"],
+  "required": ["id", "no", "n", "years", "field", "cover", "lede", "copy", "keep"],
   "properties": {
     "id": {
       "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "x-means": "slug",
       "description": "The permalink — and the portrait's filename: assets/plates/<id>.jpg. Renaming it breaks every `across` link pointing here and orphans the plate."
+    },
+    "no": {
+      "type": "integer", "minimum": 1, "x-means": ["number", "life number"],
+      "description": "The life's number, printed as \u2116 48 on the shelf, the entry and its share card: the founding shelf (1–26, in its own order) first, then each life in the order it joined, like an episode number. Permanent once printed. It must match the filename prefix (48- for 48), so reordering the files cannot silently renumber anyone. `npm run new life` writes the next one."
     },
     "keep": {
       "type": "string", "maxLength": 220, "x-means": "takeaway",

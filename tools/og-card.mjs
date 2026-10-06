@@ -30,8 +30,9 @@ import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import zlib from "node:zlib";
-import { plateOf, creditOf, lifeStamp } from "./cards.mjs";
+import { plateOf, creditOf, lifeStamp, titleStamp } from "./cards.mjs";
 import { markInner } from "../build/mark.mjs";
+import { typesetAll } from "../build/typeset.mjs";
 import { CHROME } from "./chrome.mjs";
 import { fontFaces } from "../build/fonts.mjs";
 import { fileURLToPath } from "node:url";
@@ -210,8 +211,10 @@ render(html, out);
 /* One card per title, in its own livery, so a shared title previews as itself rather than
    as the front door. The text the card prints is recorded in assets/cards/index.json;
    `npm run check` warns when a title's name, claim or cover has changed since. */
-const TITLES = [...fs.readdirSync(p("content/books")).sort().map(f => JSON.parse(fs.readFileSync(p("content/books", f), "utf8"))),
-                ...fs.readdirSync(p("content/adjacent")).sort().map(f => JSON.parse(fs.readFileSync(p("content/adjacent", f), "utf8")))];
+// Curled as the site curls them (build/typeset.mjs): a card is the first thing someone sees of
+// an entry, and it was the one surface still printing straight quotes and apostrophes.
+const TITLES = typesetAll([...fs.readdirSync(p("content/books")).sort().map(f => JSON.parse(fs.readFileSync(p("content/books", f), "utf8"))),
+                ...fs.readdirSync(p("content/adjacent")).sort().map(f => JSON.parse(fs.readFileSync(p("content/adjacent", f), "utf8")))]);
 const stamp = {};
 for (const t of TITLES) {
   const card = `<!doctype html><html><head><meta charset="utf-8"><style>${fontFace}</style><style>
@@ -231,7 +234,7 @@ for (const t of TITLES) {
 <div class="foot">${markSvg(30, 1.2)}Every claim carries its source — and the place it is still argued.</div>${sea(1166)}${pennant(t.accent)}</body></html>`;
   render(card, p("assets/cards", `${t.id}.png`));
   measure(card, t.id);
-  stamp[t.id] = [t.title, t.claim || t.sub || "", t.cover].join(" | ");
+  stamp[t.id] = titleStamp(t);
 }
 console.log(`  assets/cards/ — ${TITLES.length} title cards`);
 
@@ -249,7 +252,7 @@ console.log(`  assets/cards/ — ${TITLES.length} title cards`);
 
    A life with no plate is a text card: the empty frame with a small mark in it read as an
    image that failed to load, on eight cards in forty-three. */
-const LIVES = fs.readdirSync(p("content/lives")).sort().map(f => JSON.parse(fs.readFileSync(p("content/lives", f), "utf8")));
+const LIVES = typesetAll(fs.readdirSync(p("content/lives")).sort().map(f => JSON.parse(fs.readFileSync(p("content/lives", f), "utf8"))));
 const LIC = JSON.parse(fs.readFileSync(p("content/plate-licences.json"), "utf8"));
 for (const l of LIVES) {
   // Type steps down for a long name or a long lede. These are rules of thumb; the measure
@@ -275,10 +278,10 @@ for (const l of LIVES) {
   figure .frame{width:300px;height:375px;display:grid;place-items:center;border:1px solid color-mix(in srgb,currentColor 35%,transparent);padding:8px}
   figure img{width:100%;height:100%;object-fit:cover;display:block;border-radius:1px}
   figcaption{font-family:'EB Garamond',serif;font-size:17px;line-height:1.35;opacity:.85;text-align:center;max-width:300px;text-wrap:balance}
-</style></head><body><div class="txt"><div><div class="mono">The Commodore Press · Lives · ${l.years}</div><h1 data-fit=".foot">${l.n}</h1>
+</style></head><body><div class="txt"><div><div class="mono">The Commodore Press · Lives · № ${l.no} · ${l.years}</div><h1 data-fit=".foot">${l.n}</h1>
 <div class="sub" data-fit=".foot">${l.field} · ${l.place}</div><div class="lede" data-fit=".foot">${l.lede}</div></div>
 <div class="foot">${markSvg(28, 1.2)}Every claim carries its source — and the place it is still argued.</div></div>
-${sea(1166)}${pennant(l.accent, 60)}${plate ? `<figure data-fit=".sea"><div class="frame"><img src="data:image/jpeg;base64,${fs.readFileSync(plate).toString("base64")}" alt=""></div>${credit ? `<figcaption>${credit}</figcaption>` : ""}</figure>` : ""}</body></html>`;
+${sea(1166)}${pennant(l.accent, 60)}${plate ? `<figure data-fit=".sea"><div class="frame"><img src="data:image/jpeg;base64,${fs.readFileSync(plate).toString("base64")}" alt=""></div>${l.plateOf || credit ? `<figcaption>${[l.plateOf, credit].filter(Boolean).join(" ")}</figcaption>` : ""}</figure>` : ""}</body></html>`;
   render(card, p("assets/cards/l", `${l.id}.png`));
   measure(card, "l/" + l.id);
   stamp["l/" + l.id] = lifeStamp(ROOT, l, LIC);

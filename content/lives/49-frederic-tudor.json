@@ -1,0 +1,63 @@
+{
+  "id": "frederic-tudor",
+  "no": 49,
+  "keep": "He bet that the loss would be trifling. It took him twenty-seven years to land ice in Calcutta, and the silver cup for it went to his partner.",
+  "n": "Frederic Tudor",
+  "years": "1783–1864",
+  "place": "United States",
+  "field": "Ice & Shipping",
+  "group": "obscure",
+  "cover": "#1D3346",
+  "spineC": "#132332",
+  "ink": "#EEF4F8",
+  "accent": "#BFE4EE",
+  "motif": "grid",
+  "plateOf": "The Ice House, Calcutta: Frederick Fiebig's hand-coloured photograph, 1851, British Library. It stored the American ice. The trade, not the man.",
+  "lede": "His first cargo of ice, in 1806, lost about $4,500. Twenty-seven years later he landed ice in Calcutta, and the Governor-General's silver cup for it went to one of his partners.",
+  "copy": [
+    "In December 1805, at twenty-two, he wrote that if the plan to ship New England ice to the tropics succeeded, \"we realize immense fortunes. If we fail, which is next to an impossibility, the loss is trifling.\" He was not the first to carry ice by sea, and his own letter says so: it cites ice taken every year to St Eustatius, and a cargo sent from Norway to London. He was the first to make a trade of it in the tropics. The brig Favorite sailed for Martinique in February 1806 with Tudor aboard, and the venture lost about $4,500. Fifteen years on he was still at it. In February 1821 he wrote: \"from being as I thought a rich man I am almost a Bankrupt.\"",
+    "What made the trade pay was cutting and keeping. Nathaniel Wyeth, who kept a hotel at Fresh Pond in Cambridge, built a horse-drawn cutter in the winter of 1825–26 that scored the ice into a grid of even blocks; his patent of 1829 was assigned to Tudor in 1832. On 12 May 1833 the ship Tuscany sailed for Calcutta with 180 tons of ice, the hold lined with straw, hay and boards. She arrived on 10 September with about a hundred. Within three days the British in Calcutta had raised money for an icehouse to keep the supply coming. By 1855 Boston was shipping 146,000 tons of ice a year, in 363 cargoes. In the winter of 1846–47 Thoreau watched \"a hundred Irishmen, with Yankee overseers\" cut Walden Pond, and wrote that \"the pure Walden water is mingled with the sacred water of the Ganges.\"",
+    "The credit kept going to other people. Lord William Bentinck's silver-gilt cup, dated 22 November 1833, thanks \"Mr. Rogers of Boston\", one of the partners, for the first cargo of American ice to reach Calcutta; Susan Bean, reading his diary, found him deeply affronted. That year he was also $200,000 in debt from speculating in coffee. Wyeth's patent did not hold: in 1840 they sued a rival together, Justice Joseph Story dismissed the bill, and the report of the case calls the claim to cutting ice by any power but human \"the claim of an abstract principle, and void.\" Thoreau never names him; Emerson, writing to his brother, does. And the heap Thoreau watched go up, estimated at ten thousand tons, \"never got to market.\" It stood on the shore until September 1848, and the pond recovered the greater part."
+  ],
+  "facts": [
+    {
+      "b": "about $4,500",
+      "s": "The loss on the first cargo, the Favorite to Martinique, 1806: New York Tribune, 19 November 1858, as transcribed by the Hudson River Maritime Museum. His letters of 10 December 1805 and 5 February 1821: Bulletin of the Business Historical Society (Baker Library), September 1932, read in its text layer"
+    },
+    {
+      "b": "180 tons · about 100",
+      "s": "Tudor's diary for 12 May 1833, and the Tuscany's commander's account of arriving at Calcutta on 10 September 'with one hundred tons': both quoted by Susan S. Bean, 'Cold Mine', American Heritage 42:4 (July/August 1991)"
+    },
+    {
+      "b": "$200,000",
+      "s": "His debt from losses in coffee in 1833, from his diary, and the icehouse money raised in Calcutta 'within three days': Susan S. Bean, 'Cold Mine', as above"
+    },
+    {
+      "b": "146,000 tons · 363 cargoes",
+      "s": "Ice shipped from Boston in 1855, coastwise and foreign, by every shipper and not Tudor alone: New York Tribune, 19 November 1858, as above"
+    },
+    {
+      "b": "ten thousand tons",
+      "s": "The Walden heap of the winter of 1846–47, which 'never got to market' and was 'not quite melted till September 1848': Henry D. Thoreau, Walden (1854), 'The Pond in Winter', Project Gutenberg no. 205. Emerson's naming of Tudor, in a letter to William Emerson, was read as the Walden Woods Project prints it; the original was not opened"
+    },
+    {
+      "b": "1825–26 · 1829 · 1840",
+      "s": "Wyeth's first cutter, his patent of 18 March 1829 and its assignment to Tudor on 9 February 1832, and the dismissal of their bill: Wyeth v. Stone, 30 F. Cas. 723 (C.C.D. Mass. 1840), Story, J."
+    }
+  ],
+  "bio": {
+    "t": "Cold Mine",
+    "a": "Susan S. Bean",
+    "y": "1991",
+    "u": "https://www.americanheritage.com/cold-mine",
+    "why": "An article, not a book, and the place to start: Susan Bean, then preparing an exhibition at the Peabody Museum of Salem, went from a silver cup to Tudor's diaries at Harvard's Baker Library, and quotes them. The full lives, Carl Seaburg and Stanley Paterson's The Ice King (Massachusetts Historical Society, 2003) and Gavin Weightman's The Frozen-Water Trade (2003), were not read for this entry."
+  },
+  "contested": "How much of the trade was his is the open question. His own letter of 1805 says 'William & myself have formed a plan', and his brother William's share in the idea is argued. The tools that made it pay were Nathaniel Wyeth's, and so, by Susan Bean's account, was the packing of ice in sawdust, which other accounts give to Tudor. The British Library's caption to the Calcutta photograph says Tudor built the ice houses of Calcutta, Bombay and Madras; Bean has Calcutta's residents raising the money for theirs, and calls the Tuscany a ship where the Library's caption calls her a clipper. The one partner's account this house opened, a pamphlet of 1846 by his Havana partner Damon, is a quarrel over money and one-sided.",
+  "across": [
+    {
+      "to": "atlas:backup",
+      "label": "The Atlas · Get back up",
+      "txt": "— almost a bankrupt in 1821, $200,000 in debt in 1833, and landing ice in Calcutta the same year."
+    }
+  ]
+}
