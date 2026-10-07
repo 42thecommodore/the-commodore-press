@@ -12,19 +12,37 @@
   "ink": "#F2E2D0",
   "accent": "#D9A08A",
   "motif": "lines",
-  "lede": "The lynching of three grocers she knew turned a newspaper editor into a statistician.",
+  "lede": "She did not count the dead herself. She took the count her opponents' own press had made, and showed what it said.",
   "copy": [
-    "In 1892 three Memphis grocers were taken from a jail and shot. One of them, Thomas Moss, was a friend; their shop had been taking business from a white competitor, and no one seriously pretended otherwise. Wells was editing a newspaper and drew the obvious conclusion in print, which cost her the press — a mob destroyed the office while she was out of the city, and she did not return to the South for thirty years. What she did next is the part the standard account skips. She went and counted.",
-    "The defence of lynching rested on a single claim: that it answered the rape of white women. Wells tested it the way an epidemiologist would. She went through the reports in white newspapers — the accusers' own accounts, printed by the accusers' own press, so that no one could dismiss the source — and tabulated cause of death against alleged offence. Across 728 lynchings she found that only about a third of the dead had even been charged with rape, and said plainly that a portion of that third were innocent of the charge too. 'Southern Horrors' appeared in 1892 and 'A Red Record' in 1895, the second of them subtitled as tabulated statistics and running to 241 catalogued killings for 1892, 1893 and 1894.",
-    "She is filed under activism, and the filing loses the method. The pamphlets are arguments from data, built by someone who understood that a number is only as good as whoever will accept its source, and who therefore refused to use any source her opponents could deny. That is the same move John Snow made with a map of a pump and Nightingale made with the army's own returns, in the same half-century and against the same instinct to explain a death rate by the character of the dead. Wells was doing it while the people she was counting were still being killed, and while it was still possible she would join them."
+    "In 1892 three men who ran the People's Grocery outside Memphis, its president, its manager and its clerk, were taken from jail and lynched. A white grocer named Barrett kept a shop on the opposite corner and had threatened to clean them out. The wire services called the dead men toughs and desperadoes. Wells owned a share of the Memphis Free Speech, and on 21 May her paper printed an editorial on the lynchings that the white press read as an insult to white women. She was in New York on holiday. Her business manager had to leave town to escape a mob; she was warned that bodily harm awaited her if she came back; and, in her own words, creditors took possession of the office and sold the outfit.",
+    "The defence of lynching rested on one claim: that it answered the rape of white women. Wells tested it with the other side's numbers. The Chicago Tribune had compiled a count, 728 Black Americans lynched in eight years, and in 'Southern Horrors' (October 1892) she set it against the claim: only one-third of them had even been charged with rape, to say nothing of those in that third who were innocent. 'The Red Record' (1895) was subtitled 'Tabulated Statistics and Alleged Causes of Lynching', and said its method out loud: these were compilations made by white men, of reports sent out by white men in the South, so that out of their own mouths the murderers would be condemned. Its tables give 241 people lynched in 1892, 160 of them Black, and break each year down by the offence alleged.",
+    "She is filed under activism, and the filing loses the method. The pamphlets are arguments from data, built by someone who understood that a number is only as good as whoever will accept its source, and who therefore used the source her opponents could least deny. It is the move John Snow made with a map of a pump and Nightingale made with the army's own returns, in the same half-century and against the same instinct to explain a death rate by the character of the dead. Wells made it while the people she was counting were still being killed, and with a mob's threat already on record against her."
+  ],
+  "facts": [
+    {
+      "b": "728",
+      "s": "Black Americans lynched in the eight years to 1892, as compiled by the Chicago Tribune and cited by Wells: Ida B. Wells, Southern Horrors: Lynch Law in All Its Phases (New York, 1892), Project Gutenberg #14975"
+    },
+    {
+      "b": "one-third",
+      "s": "Share of those 728 who had been charged with rape, by Wells's account: Southern Horrors (1892), Project Gutenberg #14975"
+    },
+    {
+      "b": "241 / 160",
+      "s": "People lynched in the United States in 1892, and how many were Black: Ida B. Wells-Barnett, The Red Record (Chicago, 1895), Project Gutenberg #14977"
+    },
+    {
+      "b": "4,075 / 800",
+      "s": "Racial terror lynchings of African Americans in twelve Southern states, 1877–1950, documented by EJI, and how many more that is than the most comprehensive earlier study: Equal Justice Initiative, Lynching in America (eji.org), opened 6 October 2026"
+    }
   ],
   "bio": {
     "t": "Ida: A Sword Among Lions",
     "a": "Paula J. Giddings",
     "y": "2008",
-    "why": "The long scholarly life, built on the archive rather than on the 1970 posthumous autobiography. 'Crusade for Justice', the autobiography her daughter assembled, is the one usually assigned and it stops before the last stretch of her life because she did not finish it."
+    "why": "The long scholarly life, built on the archive rather than on the autobiography. 'Crusade for Justice', which she left unfinished and her daughter edited for publication in 1970, is her own account and worth reading beside it."
   },
-  "contested": "Whether the numbers are hers or the newspapers'. Wells built her tables out of reports in the white southern press, which is the source's strength and its ceiling: those papers recorded what they chose to record, described motives in their own terms, and missed killings nobody reported at all. Historians using the Tuskegee and Chicago Tribune compilations run into the same wall, and modern re-counts — the Equal Justice Initiative's among them — find lynchings absent from every contemporary tally, which means the true totals were higher and Wells's denominator was the one her opponents had supplied. The honest reading is that her ratio was a floor rather than a measurement. She said as much about the one-third herself, which is more than her critics did.",
+  "contested": "How far a count made from the newspapers can be trusted, including by her. Her figures are the Chicago Tribune's, which recorded what its correspondents reported and in the terms they reported it, and missed killings nobody wrote up. The Equal Justice Initiative's modern count documented 4,075 racial terror lynchings of African Americans in twelve Southern states between 1877 and 1950, at least 800 more than the most comprehensive earlier study had found. The total her opponents supplied was too low. Whether her one-third is too high, too low or about right cannot be settled from the Tribune's lists, because the alleged offence was whatever the lynchers and the local paper said it was. She knew that, and said so: some of the third charged with rape were innocent of it.",
   "across": [
     {
       "to": "lives:florence-nightingale",

@@ -243,3 +243,23 @@ mentions it can be tightened or the figure promoted.
 | Malone | Trawick Ferguson, "The History of Poro College from 1902–1965" (Lindenwood dissertation) | Refused by Cloudflare. Would settle the tax years and amounts, and the 1951 seizure |
 | Malone | *Chicago Defender*, 15 May 1957; Tiffany M. Gill, *Beauty Shop Politics* (2010); Gladys L. Porter (1966) | The $14 million is quoted through Bundles; the Howard gift through Gale |
 
+
+## Opened 2026-10-06: the six lives from PR 2 (№ 59–64)
+
+Each entry was cut back to what an opened document says. These would let a cut line come back, or a figure be promoted.
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Blumkin | A 1983 document giving the Nebraska Furniture Mart price (Omaha World-Herald; Berkshire 10-K) | The $55 million (J., 1998) and $60 million (retellings) are named in `contested`, not printed as fact |
+| Blumkin | Lowenstein (1995); Schroeder, *The Snowball* (2008) | The carpet prices ($3, $3.95, $7.95) and "across the street" appear only in retellings; the 1983 and 1992 letters say "huge discount" and "next door" |
+| Huerta | Mario T. García (ed.), *A Dolores Huerta Reader* (2008), title and year | The `bio` is not yet checked against a catalogue |
+| Huerta | Miriam Pawel, *The Union of Their Dreams* (2009); Frank Bardacke, *Trampling Out the Vintage* (2011) | The Chavez–Huerta disagreements; `contested` says the entry has not opened them |
+| Huerta | San Francisco Board of Supervisors record of the 1991 settlement | The $825,000 rests on the Examiner's 1997 list |
+| Wells | Wells, *Crusade for Justice* (1970); Giddings, *Ida* (2008) | Her friendship with Thomas Moss; the return to the South in 1921 — both cut |
+| Wells | *Chesapeake, Ohio & Southwestern R.R. v. Wells* (Tenn. 1887) | The train case, not yet in the entry |
+| McClintock | Comfort, *J. Hist. Biol.* 32 (1999) and *The Tangled Field* (2001), read directly | Everything of Comfort's is read through Qinyan Wu (2024), who quotes him with pages |
+| McClintock | Genetics Society of America, list of presidents | The year she served; the entry says only that she was elected in 1945 |
+| Lovelace | Stein, *Ada: A Life and a Legacy* (1985); Fuegi & Francis full text (IEEE Annals 25:4, 2003) | Both are characterised from their reception and an abstract |
+| Lovelace | Taylor's *Scientific Memoirs* vol. 3 (1843), page scan | Page span 666–731 cut until seen |
+| Ibn al-Haytham | Sabra's translation of the *Optics* (1989); al-Qifti; Ibn Abi Usaybi'a; al-Bayhaqi | The madness story and its rival accounts are read through MacTutor |
+| Ibn al-Haytham | A named historian's case against "first scientist" | The PR 2 draft attributed one to Thony Christie; the post was not found |

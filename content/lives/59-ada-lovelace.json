@@ -1,7 +1,7 @@
 {
   "id": "ada-lovelace",
   "no": 59,
-  "keep": "Everyone else saw a calculator. She saw that number was optional.",
+  "keep": "Babbage's engine was for numbers. She wrote that it need not be.",
   "n": "Ada Lovelace",
   "years": "1815–1852",
   "place": "England",
@@ -14,16 +14,26 @@
   "motif": "grid",
   "lede": "The fight over whether she wrote the first program has outlasted the machine it was written for.",
   "copy": [
-    "In 1842 an Italian engineer, Luigi Menabrea, published a French account of Charles Babbage's unbuilt Analytical Engine. Lovelace translated it. Then she appended seven notes, lettered A to G, running to about three times the length of the paper she was translating, and the whole thing appeared in October 1843 in Taylor's Scientific Memoirs, volume three, pages 666 to 731. Note G lays out a step-by-step table for computing Bernoulli numbers on a machine that did not exist and never would. That table is what the phrase 'first computer program' points at.",
-    "The claim has been contested by name for forty years, which is longer than she was alive. Babbage's own later account says he worked the Bernoulli case out himself to save her the trouble, and that she returned it having found an error in his working. She had been tutored in mathematics by correspondence with Augustus De Morgan. She died at thirty-six, of uterine cancer, having published nothing else.",
-    "The part worth keeping is in Note A, and it is rarely the part quoted. Everyone else in the room, Babbage included, was describing a calculator. Lovelace wrote that a machine operating on symbols by rule need not be confined to number — that if the relations between pitched sounds could be written in its notation, the engine could compose music (after Lovelace; the notes are paraphrased here, not quoted). She was describing general-purpose computation a century before there was anything to run it on, and she got there through the one question nobody else was asking: not what can this machine calculate, but what is calculation a special case of."
+    "In October 1842 an Italian engineer, Luigi Menabrea, published an account in French of Charles Babbage's unbuilt Analytical Engine, in the Bibliothèque Universelle de Genève. Lovelace translated it. Babbage asked why she had not written an original paper of her own; she said the thought had not occurred to her, and he suggested she add notes. She added seven, lettered A to G. Babbage remembered them as about three times the length of the memoir. In the text as transcribed they run to some 20,000 words against 8,400 of translation, nearer two and a half. The whole appeared in 1843 in Taylor's Scientific Memoirs. Note G sets out, step by step, how the engine would compute the Bernoulli numbers. That table is what the phrase 'first computer program' points at.",
+    "Babbage's own account is the first witness on authorship, and it is more generous than the argument that followed. They discussed the illustrations together and he suggested several, 'but the selection was entirely her own'. So was the algebra, except the Bernoulli numbers, which he offered to work out to save her the trouble. She sent his working back for an amendment, having found a grave mistake in it. She died in 1852, at thirty-six.",
+    "Menabrea's memoir is about calculation: the mechanical branch of mathematics, numerical tables, the machine as a better Pascal. In Note A Lovelace wrote that the engine 'might act upon other things besides number', and that if the relations of pitched sounds could be expressed in its notation, 'the engine might compose elaborate and scientific pieces of music of any degree of complexity or extent.' She was describing general-purpose computation a century before there was anything to run it on. She got there by asking not what the machine could calculate, but what calculation is a special case of."
+  ],
+  "facts": [
+    {
+      "b": "20,000 / 8,400 words",
+      "s": "Length of Lovelace's Notes A–G against her translation of Menabrea: word count of the Fourmilab transcription of the 1843 Sketch (fourmilab.ch/babbage/sketch.html), counted 6 October 2026; Babbage's own estimate, 'about three times the length of the original memoir', is in Passages from the Life of a Philosopher (1864), chapter 8"
+    },
+    {
+      "b": "seven",
+      "s": "Notes appended by Lovelace, lettered A to G: Sketch of the Analytical Engine with notes by the translator (1843), Fourmilab transcription"
+    }
   ],
   "bio": {
     "t": "Ada Lovelace: The Making of a Computer Scientist",
     "a": "Christopher Hollings, Ursula Martin and Adrian Rice",
     "y": "2018",
-    "why": "Built on Bodleian material — her childhood notebooks and the De Morgan correspondence course — and it engages the case against her instead of restating the legend. James Essinger's 'Ada's Algorithm' (2014) is the famous one and takes the first-programmer claim as settled."
+    "why": "Built on her mathematical papers in the Bodleian, and it engages the case against her instead of restating the legend."
   },
-  "contested": "Whether the Bernoulli algorithm is hers. Dorothy Stein's 'Ada: A Life and a Legacy' (1985) argues her mathematics was too thin for her to have originated it and that her reputation grew out of Babbage's own generous tribute; Bruce Collier and Allan Bromley, who reconstructed Babbage's machines in detail, largely agreed. John Fuegi and Jo Francis, in the IEEE Annals of the History of Computing (2003), read the surviving correspondence as giving Babbage a larger hand in the notes than the traditional account allows. Against them, Hollings, Martin and Rice worked through the Bodleian archive and found a mathematical grounding Stein had underrated. What nobody on either side disputes is Note A, which is the note that actually matters and the one least often cited. The letters that would settle the authorship question either were not kept or have not been found.",
+  "contested": "Whether the Bernoulli program is hers, and how much of the Notes. Dorothy Stein's 'Ada: A Life and a Legacy' (1985) is the sceptical life, the one later scholars have had to answer. Babbage's own account cuts both ways: he did the Bernoulli algebra himself, and she corrected it. John Fuegi and Jo Francis, in the IEEE Annals of the History of Computing (2003), read the making of the Notes as hers and credit them with the step from number-crunching to computing in the wider sense. Christopher Hollings, Ursula Martin and Adrian Rice (2018) went back to her mathematical papers in the Bodleian to test Stein's judgement of her ability. A table built by two people writing letters to each other is the kind of authorship the surviving letters can narrow and cannot close.",
   "across": []
 }

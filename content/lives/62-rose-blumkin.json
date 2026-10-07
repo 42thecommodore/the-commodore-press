@@ -1,7 +1,7 @@
 {
   "id": "rose-blumkin",
   "no": 62,
-  "keep": "At ninety-five they managed her out. At ninety-six she was competing with them.",
+  "keep": "Her own investor said she was wrong about the carpet. At ninety-six she opened next door anyway.",
   "n": "Rose Blumkin",
   "years": "1893–1998",
   "place": "Russia and Nebraska",
@@ -12,24 +12,50 @@
   "ink": "#F1EAD2",
   "accent": "#D8B24A",
   "motif": "grid",
-  "lede": "She never learned to read English. She could tell you the landed cost of every item on the floor.",
+  "lede": "She learned English from the words her daughter brought home from school and opened a furniture store with $500. The dealers she undersold took her to court, and the judge left with $1,400 of carpet.",
   "copy": [
-    "She was born near Minsk, left the Russian Empire in the years of the pogroms and the First World War, and arrived in Omaha with no money, no schooling and no English. In 1937 she started a furniture shop in a basement with $500. The operating rule was one line long — sell cheap and tell the truth — and underneath it was a real mechanism: buy in volume, take a thin margin, refuse to discount selectively, and carry the lowest price in the market on everything rather than on the items in the advertisement. Suppliers were pressured to cut her off, so she bought from retailers in other cities at their retail price and undersold them at home. Omaha's dealers took her to court for it under the fair-trade laws, which set a floor under resale prices. She had bought carpet at $3 a yard and was selling it at $3.95 while the plaintiffs sold it at $7.95. The case was dismissed, and the judge came in the next day and bought $1,400 of carpet from her.",
-    "In 1983 Warren Buffett bought most of the Nebraska Furniture Mart. He did not order an audit, count the inventory, or check the property records, and the contract ran to something over a page. The reported terms differ — $55.35 million for 80 per cent in some accounts, $60 million for 90 in others — and Berkshire's own 1983 letter is the document that would settle it, which this entry has not opened. What is not in dispute is that a single store in Omaha was by then the largest furniture retailer in the country, and that its owner was eighty-nine.",
-    "Then the part nobody puts on the motivational poster. She retired in 1989, at ninety-five, because her grandsons had begun managing around her. Three months of that was enough. She opened Mrs. B's Clearance and Factory Outlet across the street from the shop she had built, competed with it directly, and made it the third-largest furniture retailer in Omaha inside a few years. Buffett bought that business too, in 1992, and this time he took a non-compete agreement — from a woman of ninety-nine. She went back to work at the Mart and stayed until months before her death at 104. The lesson usually drawn from her is about thrift and hard work. The lesson actually on the record is about what it costs to condescend to the person who built the thing."
+    "She left Russia at twenty-three by talking her way past a border guard, with no formal schooling and no English. In Omaha she learned the language in the evenings from her older daughter, who brought home each day's words from school. In 1937, after years of selling used clothing, she opened the Nebraska Furniture Mart with $500. The method was price. Omaha's retailers pressured the furniture and carpet makers not to sell to her; she found the stock by other routes and cut prices anyway. When the money ran out early on, she sold the furniture and appliances from her own home to pay her creditors on time. The dealers took her to court under the Fair Trade laws. She won every case. At the end of one, having shown the court she could sell carpet at a profit far below the going price, she sold the judge $1,400 of it.",
+    "In 1983 Warren Buffett bought control. His own letters do not agree on how much. The 1983 letter says Berkshire bought 90 per cent and optioned 10 per cent to young family managers; the 1992 letter says the family sold 80. Neither gives a price. The deal was done, he wrote ten years later, without audited financial statements, a check of the real estate records or any warranties. By then the Mart sold over $100 million a year out of one 200,000-square-foot store, and no other home furnishings store in the country came close. She was eighty-nine. She stayed on as chairman and sold carpet on the floor seven days a week.",
+    "It is easy to tell the next part as a founder pushed out at ninety-five. Buffett's letter for 1989 tells it differently. She quit in May, after a disagreement with her family over the remodelling and running of the carpet department, and he sided with them: over three years the store's other departments had grown sales by 24 per cent while carpet fell 17. Then she opened a business of her own next door, in a building she had owned for years, and at ninety-six was selling carpet and furniture against the store she had founded. At the end of 1992 she sold the building and land to the Mart and kept her carpet business running inside it. At ninety-nine she signed the non-compete Buffett had not thought to ask for when she was eighty-nine. She died on 9 August 1998, aged 104."
+  ],
+  "facts": [
+    {
+      "b": "$500",
+      "s": "Savings with which she opened the Nebraska Furniture Mart in 1937: Berkshire Hathaway Chairman's Letter for 1983 (berkshirehathaway.com/letters/1983.html); repeated in the 1989 and 1993 letters"
+    },
+    {
+      "b": "$1,400",
+      "s": "Carpet she sold the judge at the end of one Fair Trade case: Berkshire Hathaway Chairman's Letter for 1983"
+    },
+    {
+      "b": "90% / 80%",
+      "s": "Share of the Mart Berkshire bought in 1983: the Chairman's Letter for 1983 says 90 per cent bought and 10 per cent optioned to family managers; the Chairman's Letter for 1992 says the family sold 80 per cent"
+    },
+    {
+      "b": "$100 million / 200,000 sq ft",
+      "s": "The Mart's annual sales and the size of its one store at the 1983 sale: Berkshire Hathaway Chairman's Letter for 1983"
+    },
+    {
+      "b": "+24% / −17%",
+      "s": "Sales growth over the three years to 1989 in the store's other departments, and in carpet: Berkshire Hathaway Chairman's Letter for 1989"
+    },
+    {
+      "b": "104",
+      "s": "Her age at her death on 9 August 1998: obituary in J. The Jewish News of Northern California, 28 August 1998 (jweekly.com/1998/08/28/mrs-b-cornhusker-state-s-best-known-jew-104)"
+    }
   ],
   "bio": {
     "t": "Buffett: The Making of an American Capitalist",
     "a": "Roger Lowenstein",
     "y": "1995",
-    "why": "There is no full biography of Blumkin, which is its own comment on whose lives get written. Lowenstein gives the Mart and the 1983 deal properly and from outside the family. Alice Schroeder's 'The Snowball' (2008) has more Blumkin detail and was written with Buffett's cooperation, which is exactly why it is the second read rather than the first."
+    "why": "Lowenstein gives the Mart and the 1983 deal from outside the family. Alice Schroeder's 'The Snowball' (2008) has more Blumkin detail and was written with Buffett's cooperation, which is exactly why it is the second read rather than the first. For her own story in Buffett's words, the Berkshire letters for 1983, 1989, 1992 and 1993 are free to read."
   },
-  "contested": "Whether the deal was a bargain or a rescue, and who got the better of whom. The admiring version says Buffett paid a full price for a great business on trust alone. The sceptical version notes that the valuation implied a low multiple of earnings for the dominant furniture retailer in its market, that no audit means no one tested the inventory or the receivables, and that Blumkin — who could not read the contract — had no banker across the table. Buffett has said repeatedly that he would rather wrestle a grizzly than compete with her, which is a compliment and also an admission about who understood the business. The counter-evidence is her own behaviour six years later: she left, built a competitor from nothing at ninety-six, and forced a second purchase. Somebody who had been taken advantage of in 1983 does not usually have that in reserve.",
+  "contested": "Why she left in 1989, and whether she was right. The only account this entry has opened is Buffett's 1989 letter, written by the man who owned most of the store she was arguing with. It credits her with more smart business decisions than any living American, notes that she personally outsold everyone on the floor, and still finds for the family on the numbers. Her side of the argument about the remodelling is not in anything opened here. The other open question is the price. Neither Berkshire letter gives one; the obituary in J. (28 August 1998) puts the deal at $55 million, and other retellings give $60 million for 90 per cent. The house prints neither as fact until a document from 1983 does.",
   "across": [
     {
       "to": "press:why-firms-exist",
       "label": "Why Firms Exist",
-      "txt": "— the boundary of a firm, tested by an owner who walked out of hers and rebuilt it across the street."
+      "txt": "— the boundary of a firm, tested by a founder who walked out of hers and opened next door."
     },
     {
       "to": "lives:john-d-rockefeller",
