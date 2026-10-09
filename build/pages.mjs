@@ -23,8 +23,11 @@ import { motifSVG } from "./motif.mjs";
    oldest commit present looks like every file's first — better no date than a wrong one. The
    deploy workflow fetches full history for this reason. `--follow` keeps a renumbered file's
    first date: the shelf-order prefix changes, the entry does not. */
+const DATE_CACHE = new Map();
 export function entryDates(ROOT) {
+  if (DATE_CACHE.has(ROOT)) return DATE_CACHE.get(ROOT);
   const out = {};
+  DATE_CACHE.set(ROOT, out);
   const git = args => execFileSync("git", args, { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
   let shallow = true;
   try { shallow = git(["rev-parse", "--is-shallow-repository"]) !== "false"; } catch {}
@@ -35,7 +38,16 @@ export function entryDates(ROOT) {
       const id = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")).id;
       let modified = null, published = null;
       try { modified = git(["log", "-1", "--format=%cs", "--", `${d}/${f}`]) || null; } catch {}
-      if (!shallow) try { published = git(["log", "--follow", "--diff-filter=A", "--format=%cs", "--", `${d}/${f}`]).split("\n").pop() || null; } catch {}
+      /* The day the entry first appeared, under any shelf number: renumbering renames the file,
+         and a rename made inside a merge commit is invisible to --follow (five lives renumbered
+         54-58 on 2026-10-06 lost their dates that way). So the stable part of the name — the slug
+         after the number — is also matched across full history, and the earliest day wins. */
+      if (!shallow) {
+        const days = [];
+        try { days.push(git(["log", "--follow", "--diff-filter=A", "--format=%cs", "--", `${d}/${f}`]).split("\n").pop()); } catch {}
+        try { days.push(git(["log", "--full-history", "--diff-filter=A", "--format=%cs", "--", `:(glob)${d}/[0-9]*-${f.replace(/^\d+-/, "")}`]).split("\n").pop()); } catch {}
+        published = days.filter(Boolean).sort()[0] || null;
+      }
       out[id] = { modified, published };
     }
   }
@@ -212,7 +224,7 @@ function body(kind, b, known, plateFile, CORR = [], share = "") {
   if (b.timeline) sec("s-timeline", "How it happened", `<ol class="tl">${b.timeline.map(t => `<li><span class="y">${t.y}</span>${t.t}</li>`).join("")}</ol>`);
   if (b.figures) sec("s-figures", "Who did the work", b.figures.map(f => `<div class="row"><b>${f.n}</b><span>${f.d}</span></div>`).join(""));
   if (b.contested) sec("s-contested", "Where it is contested", `<p>${b.contested}</p>`, "callout");
-  if (b.corrected && b.corrected.length) sec("s-corrected", "Corrected", `<p class="why">Corrections are appended, never patched. What was wrong, and what is true now:</p>` + b.corrected.map(k => [k, CORR[k - 1]]).filter(x => x[1]).map(([k, c]) => `<details class="corrd"><summary><b>№ ${k}</b> · ${c.d} · ${c.t}</summary><p>${c.b}</p></details>`).join(""), "callout corr");
+  if (b.corrected && b.corrected.length) sec("s-corrected", "Corrected", `<p class="why">Corrections are appended, never patched. What was wrong, and what is true now:</p>` + b.corrected.map(k => [k, CORR[k - 1]]).filter(x => x[1]).map(([k, c]) => `<details class="corrd" id="c-${k}"><summary><b>№ ${k}</b> · ${c.d} · ${c.t}</summary><p>${c.b}</p></details>`).join(""), "callout corr");
   if (b.changed) sec("s-changed", "What I changed my mind about", `<p>${b.changed}</p>`, "note");
   if (b.bio) sec("s-bio", b.bio.u ? "Where to start" : "The definitive biography", `<div class="row"><b><a href="${b.bio.u || `https://search.worldcat.org/search?q=${encodeURIComponent(strip(b.bio.t) + " " + b.bio.a)}`}" rel="noopener">${b.bio.t}</a></b><span>${b.bio.a} · ${b.bio.y}</span></div><p class="why">${b.bio.why}</p>`);
   if (b.reading) sec("s-reading", "Go to the source", b.reading.map(r => `<div class="row"><b><a href="${r.u}" rel="noopener">${r.t}</a></b><span>${r.a}</span>${r.why ? `<div class="why">${r.why}</div>` : ""}</div>`).join(""));
@@ -359,7 +371,7 @@ ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../../", "Follow the Press",
 </div>
 <script>${READING_JS.replace(/<\/script/gi, "<\\/script")}
 Reading.page(${JSON.stringify(conf).replace(/</g, "\\u003c")})</script>
-<footer>The Commodore Press · edited by ${hasAbout ? `<a href="../../about/">${EDITOR}</a>` : EDITOR} · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>
+<footer>The Commodore Press · edited by ${hasAbout ? `<a href="../../about/">${EDITOR}</a>` : EDITOR} · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a> · <a href="../../updates.xml">follow by RSS</a> · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `;
@@ -503,7 +515,7 @@ ${html}
 <a class="cta" href="../">Enter the library →</a>
 ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../", "Follow the Press", hasLog) : ""}
 </main>
-<footer>The Commodore Press · edited by ${EDITOR} · <a href="../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>
+<footer>The Commodore Press · edited by ${EDITOR} · <a href="../#colophon">colophon &amp; corrections</a> · <a href="../updates.xml">follow by RSS</a> · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `);
@@ -518,9 +530,13 @@ function longDateF(d) { const M = ["January","February","March","April","May","J
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const longDate = d => { const [y, m, day] = d.split("-").map(Number); return `${day} ${MONTHS[m - 1]} ${y}`; };
 const LOG_LIVERY = { cover: "#2A2F45", ink: "#F0EFEA", accent: "#D8A657" };
+/* The feed of new titles, lives and corrections (writeUpdates), named in every page's head so a
+   feed reader finds it from any page a reader has open. */
+export const UPDATES_LINK = SITE => `<link rel="alternate" type="application/rss+xml" title="The Commodore Press — new titles, lives and corrections" href="${SITE}/updates.xml">`;
 const FEED_LINK = root => `<link rel="alternate" type="application/rss+xml" title="The Commodore Press — the Log" href="${root}feed.xml">`;
 // the icons, then the typefaces from this site (build/fonts.mjs); `base` is the way back to the root
-const FONTS = (SITE, base) => `${iconLinks(SITE)}
+const FONTS = (SITE, base) => `${UPDATES_LINK(SITE)}
+${iconLinks(SITE)}
 ${fontPreload(base)}
 <style>${fontFaces(base)}</style>`;
 /* The tags every page that shares the house card carries beside og:image: its size, so a
@@ -651,7 +667,7 @@ ${FONTS(SITE, "../")}
 <ul class="list">${pieces.map(x => `<li><a href="${x.slug}/"><span class="d">${longDate(x.meta.date)}</span><span class="t">${inline(x.meta.title)}</span><span class="k">${inline(x.meta.dek)}</span></a></li>`).join("")}</ul>
 ${subscribe("../")}
 </main>
-<footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>
+<footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · <a href="../updates.xml">follow by RSS</a> · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `);
@@ -740,7 +756,7 @@ ${FONTS(SITE, "../")}
 <h2 id="lives">Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `№ ${l.no} · ${l.field} · ${l.years}`)).join("")}</ul>
 ${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
 </main>
-<footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · ${DUSK_SWITCH}</footer>
+<footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · <a href="../updates.xml">follow by RSS</a> · ${DUSK_SWITCH}</footer>
 </body>
 </html>
 `;
@@ -754,6 +770,7 @@ ${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.ma
 
 - [Contents](${SITE}/contents/): every title and life, one link each
 - [Colophon and corrections](${SITE}/#colophon): the house's promises and its numbered corrections
+- [New titles, lives and corrections](${SITE}/updates.xml): RSS, newest first
 ${LOG.length ? `- [The Log](${SITE}/log/): the editor's signed column ([feed](${SITE}/feed.xml))
 ` : ""}
 ## The Press
@@ -763,4 +780,104 @@ ${BOOKS.concat(ADJACENT).map(b => `- [${strip(b.title)}](${SITE}/t/${b.id}/): ${
 ${LIVES.map(l => `- [${strip(l.n)}](${SITE}/l/${l.id}/): ${strip(l.lede)}`).join("\n")}
 `);
   return `${SITE}/contents/`;
+}
+
+/* ---------- What is new: titles, lives and corrections, as RSS ----------
+   Until 2026-10-09 the only feed was the Log's, and the Log had published nothing, so there was
+   no way to follow the library at all. updates.xml carries every title and life, dated the day
+   its file entered the repository (entryDates), and every correction, dated the day it was
+   appended to content/corrections.json — the corrections are the colophon's promise, and a
+   reader who follows the house should hear of one as surely as of a new title. A correction
+   links to the entry it corrected, where it is printed in full (#c-<n>).
+
+   Dates come only from git, so a shallow clone cannot know them: the feed is then not written
+   at all, rather than written with the wrong days. CI fetches full history. */
+const CORR_CACHE = new Map();
+export function correctionDates(ROOT) {
+  if (CORR_CACHE.has(ROOT)) return CORR_CACHE.get(ROOT);
+  const git = args => execFileSync("git", args, { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"], maxBuffer: 64 << 20 }).trim();
+  let out = null;
+  try {
+    if (git(["rev-parse", "--is-shallow-repository"]) === "false") {
+      out = [];
+      // oldest first: the first commit in which the list reaches n entries is the day n was appended
+      for (const line of git(["log", "--reverse", "--format=%H %cs", "--", "content/corrections.json"]).split("\n").filter(Boolean)) {
+        const [sha, day] = line.split(" ");
+        let n = 0;
+        try { n = JSON.parse(git(["show", `${sha}:content/corrections.json`])).length; } catch { continue; }
+        while (out.length < n) out.push(day);
+      }
+    }
+  } catch { out = null; }
+  CORR_CACHE.set(ROOT, out);
+  return out;
+}
+
+export function writeUpdates({ ROOT, SITE, BOOKS, ADJACENT, LIVES, CORR }) {
+  const OUT = path.join(ROOT, "dist");
+  const file = path.join(OUT, "updates.xml");
+  fs.rmSync(file, { force: true });
+  const DATES = entryDates(ROOT), CDATES = correctionDates(ROOT);
+  if (!CDATES) {
+    console.log("  updates.xml not written — a shallow clone cannot date anything in it; run `git fetch --unshallow`");
+    return null;
+  }
+  /* An entry or correction git has not seen yet is being published now: `npm run ship` builds and
+     tests before it commits, so a new life is dated today, which is the day it goes out. */
+  const today = new Date().toISOString().slice(0, 10);
+  const published = id => (DATES[id] || {}).published || today;
+  const x = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const cdata = s => `<![CDATA[${String(s).replace(/]]>/g, "]]]]><![CDATA[>")}]]>`;
+  const rfc = d => new Date(d + "T12:00:00Z").toUTCString();
+  const card = f => fs.existsSync(path.join(OUT, f)) ? `<p><img src="${SITE}/${f}" alt="" width="600" height="315"></p>` : "";
+  const items = [];
+  for (const b of [...BOOKS, ...ADJACENT]) {
+    const u = `${SITE}/t/${b.id}/`;
+    items.push({ day: published(b.id), guid: u, link: u, title: `New title: ${strip(b.title)}`,
+      text: strip(b.claim || b.sub),
+      html: card(`cards/${b.id}.png`) + `<p><i>${b.sub}</i></p>` + (b.claim ? `<p>${b.claim}</p>` : "") + (b.lede ? `<p>${b.lede}</p>` : "") + `<p><a href="${u}">Read it on the Press</a></p>` });
+  }
+  for (const l of LIVES) {
+    const u = `${SITE}/l/${l.id}/`;
+    items.push({ day: published(l.id), guid: u, link: u, title: `New life: ${strip(l.n)} (${strip(l.years)})`,
+      text: strip(l.lede),
+      html: card(`cards/l/${l.id}.png`) + `<p><i>${l.field} · ${l.place} · ${l.years}</i></p><p>${l.lede}</p><p><a href="${u}">Read it on the Press</a></p>` });
+  }
+  // where each correction is printed: the first entry that lists it, else only the colophon's record
+  const printedOn = {};
+  for (const [dir, list] of [["t", [...BOOKS, ...ADJACENT]], ["l", LIVES]])
+    for (const b of list) for (const k of b.corrected || []) printedOn[k] ??= { u: `${SITE}/${dir}/${b.id}/#c-${k}`, name: strip(b.title || b.n) };
+  CORR.forEach((c, i) => {
+    const k = i + 1, at = printedOn[k], u = at ? at.u : `${SITE}/#corrections`;
+    items.push({ day: CDATES[i] || today, guid: `${SITE}/corrections/${k}`, correction: true, link: u,
+      title: `Correction № ${k}: ${strip(c.t).replace(/\.$/, "")}`, text: strip(c.b),
+      // the record's own date leads: git dates the item, but the oldest corrections predate the
+      // repository and the colophon prints them as "Aug 2026"; the reader sees both, never a clash
+      html: `<p><b>№ ${k}</b> · ${c.d}</p><p>${c.b}</p><p>${at ?`Printed on <a href="${u}">${at.name}</a>, and in` : "In"} the <a href="${SITE}/#corrections">colophon’s record of corrections</a>, which is appended to and never patched.</p>` });
+  });
+  // newest first; on one day, corrections before entries, then by title
+  items.sort((a, b) => b.day.localeCompare(a.day) || (b.correction ? 1 : 0) - (a.correction ? 1 : 0) || a.title.localeCompare(b.title));
+  fs.writeFileSync(file, `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>The Commodore Press — new titles, lives and corrections</title>
+<link>${SITE}/</link>
+<atom:link href="${SITE}/updates.xml" rel="self" type="application/rss+xml"/>
+<description>What is new on the shelves of a working library, and every correction to what was already there. Every claim carries its source and the place it is still argued.</description>
+<language>en</language>
+<image><url>${SITE}/icon-512.png</url><title>The Commodore Press — new titles, lives and corrections</title><link>${SITE}/</link></image>
+<lastBuildDate>${rfc(items[0].day)}</lastBuildDate>
+${items.map(it => `<item>
+<title>${x(it.title)}</title>
+<link>${x(it.link)}</link>
+<guid isPermaLink="${it.correction ? "false" : "true"}">${x(it.guid)}</guid>
+<pubDate>${rfc(it.day)}</pubDate>
+<dc:creator>${x(EDITOR)}</dc:creator>
+<description>${x(it.text)}</description>
+<content:encoded>${cdata(it.html)}</content:encoded>
+</item>`).join("\n")}
+</channel>
+</rss>
+`);
+  return { items: items.length, newest: items[0].day };
 }

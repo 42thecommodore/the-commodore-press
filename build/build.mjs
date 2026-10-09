@@ -8,7 +8,7 @@ import { readJSON } from "../tools/json.mjs";
 import { fillMark, faviconSvg, ICON_FILES } from "./mark.mjs";
 import { fontFaces, fontPreload, FONT_FILES } from "./fonts.mjs";
 import { motifSVG } from "./motif.mjs";
-import { writeEntryPages, writeAbout, writeLog, writeContents, EDITOR, minsOf } from "./pages.mjs";
+import { writeEntryPages, writeAbout, writeLog, writeContents, writeUpdates, UPDATES_LINK, EDITOR, minsOf } from "./pages.mjs";
 import crypto from "node:crypto";
 import { execSync } from "node:child_process";
 import { publishedLog } from "./log.mjs";
@@ -172,7 +172,7 @@ const out = fill(typesetHTML(read("templates/shell.html")))   // the frame's own
   .replace("<!--EDITOR-->", ABOUT_URL ? `<a href="about/">${EDITOR}, editor</a>` : EDITOR)
   // the Log appears in the library only once it has a published piece
   .replace("<!--LOGLINK-->", LOG.length ? `<div><a href="log/">The Log</a></div>` : "")
-  .replace("<!--FEED-->", LOG.length ? `<link rel="alternate" type="application/rss+xml" title="The Commodore Press — the Log" href="{{SITE}}/feed.xml">`.replace("{{SITE}}", SITE) : "")
+  .replace("<!--FEED-->", () => UPDATES_LINK(SITE) + (LOG.length ? `\n<link rel="alternate" type="application/rss+xml" title="The Commodore Press — the Log" href="${SITE}/feed.xml">` : ""))
   // the colophon promises no cookies and no analytics; once a sign-up exists it also says who holds the addresses
   .replace("<!--NEWSCOLOPHON-->", NEWS && NEWS.action ? ` If you subscribe to the newsletter, your address is held by ${NEWS.provider}, used only to send it; every issue carries its own unsubscribe link.` : "")
   .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the three wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
@@ -261,6 +261,8 @@ for (const f of ICON_FILES.filter(f => f.endsWith(".png"))) {
 const ENTRY_URLS = writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout: !!ABOUT_URL, NEWS, hasLog: LOG.length > 0, CORR: CORRECTIONS });
 const LOG_URLS = writeLog({ ROOT, SITE, pieces: LOG, BOOKS, ADJACENT, LIVES, PRINCIPLES, hasAbout: !!ABOUT_URL, NEWS }).urls;
 const CONTENTS_URL = writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG });
+// after the entry pages, which copy the share cards the feed's items show
+const UPDATES = writeUpdates({ ROOT, SITE, BOOKS, ADJACENT, LIVES, CORR: CORRECTIONS });
 // lastmod only where it is known: entry pages carry their file's git date, the rest none
 const U = x => typeof x === "string" ? { loc: x } : x;
 fs.writeFileSync(p("dist/sitemap.xml"),
@@ -277,6 +279,7 @@ const kb = n => (n / 1024).toFixed(0) + " KB";
 console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}, and ${LIBRARY_FILE} — ${kb(Buffer.byteLength(LIBRARY))}, fetched when a book or search is opened`);
 console.log(`  ${BOOKS.length} books · ${ADJACENT.length} adjacent · ${LIVES.length} lives`);
 console.log(`  ${ENTRY_URLS.length} entry pages in dist/t/ and dist/l/, a contents page, llms.txt`);
+if (UPDATES) console.log(`  updates.xml — ${UPDATES.items} items, the newest ${UPDATES.newest}`);
 console.log(LOG.length ? `  the Log: ${LOG.length} published piece(s), feed.xml` : `  the Log: nothing published yet — held back`);
 console.log(ABOUT_URL ? `  about page at dist/about/` : `  about page held back — content/about.md still says TODO`);
 console.log(`  ${PEOPLE.length} people · ${PRINCIPLES.length} principles · ${SOURCES.length} sources · ${Object.keys(PLATES).length} plates · ${CORRECTIONS.length} corrections`);
