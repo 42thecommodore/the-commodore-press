@@ -1,0 +1,29 @@
+{
+  "id": "frederick-douglass",
+  "no": 62,
+  "keep": "TODO — the one line to keep from this life",
+  "n": "Frederick Douglass",
+  "years": "TODO — e.g. 1809–1865",
+  "place": "TODO — where",
+  "field": "Writing & Abolition",
+  "group": "TODO — shelf grouping",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "TODO — the opening line",
+  "copy": [
+    "TODO — paragraph 1 — the situation",
+    "TODO — paragraph 2 — what they actually did",
+    "TODO — paragraph 3 — the cost, or the part usually left out"
+  ],
+  "bio": {
+    "t": "TODO — the best biography",
+    "a": "TODO — its author",
+    "y": "TODO — year",
+    "why": "TODO — why this one and not the famous one"
+  },
+  "contested": "TODO — what is disputed about this life",
+  "across": []
+}

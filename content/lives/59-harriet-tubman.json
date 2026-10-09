@@ -1,0 +1,29 @@
+{
+  "id": "harriet-tubman",
+  "no": 59,
+  "keep": "TODO — the one line to keep from this life",
+  "n": "Harriet Tubman",
+  "years": "TODO — e.g. 1809–1865",
+  "place": "TODO — where",
+  "field": "War & Freedom",
+  "group": "TODO — shelf grouping",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "TODO — the opening line",
+  "copy": [
+    "TODO — paragraph 1 — the situation",
+    "TODO — paragraph 2 — what they actually did",
+    "TODO — paragraph 3 — the cost, or the part usually left out"
+  ],
+  "bio": {
+    "t": "TODO — the best biography",
+    "a": "TODO — its author",
+    "y": "TODO — year",
+    "why": "TODO — why this one and not the famous one"
+  },
+  "contested": "TODO — what is disputed about this life",
+  "across": []
+}

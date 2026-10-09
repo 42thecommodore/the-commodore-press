@@ -1,0 +1,29 @@
+{
+  "id": "jesse-owens",
+  "no": 61,
+  "keep": "TODO — the one line to keep from this life",
+  "n": "Jesse Owens",
+  "years": "TODO — e.g. 1809–1865",
+  "place": "TODO — where",
+  "field": "Sport",
+  "group": "TODO — shelf grouping",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "conic",
+  "lede": "TODO — the opening line",
+  "copy": [
+    "TODO — paragraph 1 — the situation",
+    "TODO — paragraph 2 — what they actually did",
+    "TODO — paragraph 3 — the cost, or the part usually left out"
+  ],
+  "bio": {
+    "t": "TODO — the best biography",
+    "a": "TODO — its author",
+    "y": "TODO — year",
+    "why": "TODO — why this one and not the famous one"
+  },
+  "contested": "TODO — what is disputed about this life",
+  "across": []
+}
