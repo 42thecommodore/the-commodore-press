@@ -3,7 +3,7 @@
   "no": 60,
   "keep": "Twelve dots made a code. Six made a script, because six fit under one finger.",
   "n": "Louis Braille",
-  "years": "1809''�1852",
+  "years": "1809''�1852",
   "place": "France",
   "field": "Reading & Invention",
   "group": "famous",
@@ -12,42 +12,43 @@
   "ink": "#F1F3E2",
   "accent": "#D6E39C",
   "motif": "dots",
-  "lede": "He lost his sight to a tool from his father'''s bench at three, and learned to read from letters he could barely feel. By twenty he had replaced them with six dots, taken from a soldier'''s code and cut down to the size of a fingertip.",
+  "lede": "He lost his sight to a tool from his father's bench at three, and learned to read from letters he could barely feel. By twenty he had replaced them with six dots, taken from a soldier's code and cut down to the size of a fingertip.",
   "copy": [
-    "Louis Braille was born at Coupvray on 4 January 1809, the youngest of four children of a harness-maker. At three he hurt one eye with a sharp tool in his father'''s workshop, and the other failed after it. At ten he was taken to the Royal Institute for Blind Youth in Paris. Its books were Valentin Haüy'''s: ordinary letters pressed up in relief, legible to a fingertip slowly when they were legible at all. The pupils could read them. They could not write them, because writing them took a printing press.",
+    "Louis Braille was born at Coupvray on 4 January 1809, the youngest of four children of a harness-maker. At three he hurt one eye with a sharp tool in his father's workshop. The infection spread to both, and by five he was blind. At ten he was taken to the Royal Institute for Blind Youth in Paris. Its books were Valentin Haüy's: ordinary letters pressed up in relief, legible to a fingertip slowly when they were legible at all. The pupils could read them. They could not write them, because writing them took a printing press.",
     "The idea came from a soldier. Charles Barbier, a retired artillery captain, had worked out a writing in raised dots and sent its instructions and tools to the school in 1821. His cell was two columns of six dots, twelve in all. It spelled sounds, not letters, had no punctuation and no numbers, and was too tall for one fingertip. Braille, then twelve, tried it with the other pupils and spent the next years cutting it down. He halved the cell to six dots, three rows of two, and spelled words as they are written. Six dots give 64 patterns, counting the blank, which became the space between words. He had the essentials by about 1825 and published them in 1829, in a book that credited Barbier on its first page as the man whose method had given him the idea. He wrote music in it too.",
-    "The school did not keep it. In May 1840 the director who had published his system, Pignier, was forced out, and his successor, Pierre-Armand Dufau, banned the code. The pupils went on using it in secret. The story usually told has Dufau burning the braille library. The American Foundation for the Blind'''s account has him burning 73 books in Haüy'''s raised letters, the old system, while he brought in a raised-letter type of his own choosing. His assistant, Joseph Guadet, changed his mind, and on 22 February 1844, at the opening of the school'''s new building, Guadet had braille written and read in front of the guests. Braille was already ill with consumption. He died on 6 January 1852, two days past his forty-third birthday, and France made his code official in 1854. In 1952 his body was moved to the Panthéon, all but his hands, which stayed in the cemetery at Coupvray."
+    "The school did not keep it. In May 1840 the director who had published his system, Pignier, was forced out, and his successor, Pierre-Armand Dufau, banned the code. The pupils went on using it in secret. The story usually told has Dufau burning the braille library. The American Foundation for the Blind's account has him burning 73 books in Haüy's raised letters, the old system, while he brought in a raised-letter type of his own choosing. His assistant, Joseph Guadet, changed his mind, and on 22 February 1844, at the opening of the school's new building, Guadet had braille written and read in front of the guests. Braille was already ill with tuberculosis. He died at the school on 6 January 1852, two days past his forty-third birthday. The school made his code official in 1854. In 1952 his body was moved to the Panthéon, all but his hands, which stayed in the cemetery at Coupvray."
   ],
   "bio": {
     "t": "Louis Braille: A Touch of Genius",
     "a": "C. Michael Mellor",
     "y": "2006",
-    "why": "Built on thirty-one of his letters never translated before, and reviewed in the Braille Monitor as more fact and less sentiment than most accounts. Publishers Weekly found it boosterish, which is fair; read Pamela Lorimer'''s 1996 Birmingham thesis beside it for how the code itself was made."
+    "why": "Built on thirty-one of his letters never translated before, and reviewed in the Braille Monitor as more fact and less sentiment than most accounts. Publishers Weekly found it boosterish, which is fair; read Pamela Lorimer's 1996 Birmingham thesis beside it for how the code itself was made."
   },
-  "contested": "Three things are argued. The first is when Barbier reached the school. The Musée Louis Braille at Coupvray has him sending instructions and tools in 1821; Pamela Lorimer'''s 1996 Birmingham thesis, following Pierre Henri, has him visiting in 1823, the year the Académie des Sciences tested his code; Paula Kimbrough'''s history in the Braille Monitor (2005) has a demonstration Pignier arranged, with no year. The second is the fire. Kimbrough writes that Dufau burned every book in the new code, took the slates and styli, and had pupils slapped and starved for using it. The American Foundation for the Blind says the 73 books burned were in Haüy'''s letters, and Lorimer and the Coupvray museum describe a ban and no fire at all. The bonfire of braille books is the most repeated version and the least sourced. The third is credit. Pignier wrote in 1859, as Lorimer translates him, that to modify in this way was not to perfect but to invent. Braille had already given Barbier the credit in print, thirty years earlier, and Barbier never opposed the code that replaced his.",
+  "contested": "Three things are argued. The first is when Barbier reached the school. The Musée Louis Braille at Coupvray has him sending instructions and tools in 1821; Pamela Lorimer's 1996 Birmingham thesis, following Pierre Henri, has him visiting in 1823, the year the Académie des Sciences tested his code; Paula Kimbrough's history in the Braille Monitor (2005) has a demonstration Pignier arranged, with no year. The second is the fire. Kimbrough writes that Dufau burned every book in the new code, took the slates and styli, and had pupils slapped and starved for using it. The American Foundation for the Blind says the 73 books burned were in Haüy's letters, and Lorimer and the Coupvray museum describe a ban and no fire at all. The bonfire of braille books is the most repeated version and the least sourced. The third is credit. Pignier wrote in 1859, as Lorimer translates him, that to modify in this way was not to perfect but to invent. Braille had already given Barbier the credit in print, thirty years earlier, and Barbier never opposed the code that replaced his.",
   "across": [
     {
       "to": "press:movable-type",
       "label": "Movable Type",
-      "txt": "''� the other way of putting words where a reader could reach them. Haüy'''s books needed a press; Braille'''s could be written by hand."
+      "txt": "''� the other way of putting words where a reader could reach them. Haüy's books needed a press; Braille's could be written by hand."
     }
   ],
   "facts": [
     {
-      "b": "12 '�� 6",
-      "s": "Dots in Barbier'''s cell and in Braille'''s: Pamela Lorimer, '''A Critical Evaluation of the Historical Development of the Tactile Modes of Reading''', PhD thesis, University of Birmingham, 1996, sections 3''�4 (duxburysystems.org); Musée Louis Braille, '''Barbier l'''intuitif'''"
+      "b": "12 '�� 6",
+      "s": "Dots in Barbier's cell and in Braille's: Pamela Lorimer, 'A Critical Evaluation of the Historical Development of the Tactile Modes of Reading', PhD thesis, University of Birmingham, 1996, sections 3''�4 (duxburysystems.org); Musée Louis Braille, 'Barbier l'intuitif'"
     },
     {
       "b": "64 / 4,096",
-      "s": "Patterns a six-dot cell allows with the blank counted, against twelve dots''' 4,096, of which Barbier used 36: Lorimer, University of Birmingham thesis, 1996, section 4"
+      "s": "Patterns a six-dot cell allows with the blank counted, against twelve dots' 4,096, of which Barbier used 36: Lorimer, University of Birmingham thesis, 1996, section 4"
     },
     {
       "b": "73",
-      "s": "Books in Haüy'''s raised letters Dufau had burned by Braille'''s return to Paris in late 1843: American Foundation for the Blind, '''Recognition of the Braille Code''' (afb.org)"
+      "s": "Books in Haüy's raised letters Dufau had burned by Braille's return to Paris in late 1843: American Foundation for the Blind, 'Recognition of the Braille Code' (afb.org)"
     },
     {
       "b": "1854",
-      "s": "Year France officially adopted braille: American Foundation for the Blind, chronology after G. L. Scholl in Holbrook and Koenig, eds., Foundations of Education (2000)"
+      "s": "Year the school in Paris officially adopted braille, two years after his death: Encyclopaedia Britannica, 'Braille' (updated 30 September 2026). The American Foundation for the Blind's chronology, after G. L. Scholl (2000), has France adopting it that year"
     }
-  ]
+  ],
+  "plateOf": "Henri Thiriat's engraving for La Nature, 1887, made thirty-five years after his death."
 }
