@@ -30,6 +30,11 @@
       "to": "lives:churchill",
       "label": "Winston Churchill",
       "txt": "— the other wartime leader whose words did structural work; two minutes against a career of them."
+    },
+    {
+      "to": "lives:frederick-douglass",
+      "label": "Frederick Douglass",
+      "txt": "— who came to the White House in August 1863 to ask for equal pay for Black soldiers, and who sat for more photographs than Lincoln did: 160 to 126, by Stauffer and Trodd's count."
     }
   ]
 }
