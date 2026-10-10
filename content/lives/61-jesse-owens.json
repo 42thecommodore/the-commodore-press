@@ -1,29 +1,54 @@
 {
   "id": "jesse-owens",
   "no": 61,
-  "keep": "TODO — the one line to keep from this life",
+  "keep": "The snub he named came from Washington, not Berlin.",
   "n": "Jesse Owens",
-  "years": "TODO — e.g. 1809–1865",
-  "place": "TODO — where",
+  "years": "1913–1980",
+  "place": "United States",
   "field": "Sport",
-  "group": "TODO — shelf grouping",
+  "group": "famous",
   "cover": "#264653",
   "spineC": "#17323D",
   "ink": "#EAF1F4",
   "accent": "#A8CBD6",
   "motif": "conic",
-  "lede": "TODO — the opening line",
+  "lede": "In Berlin he won four gold medals in seven days. At home he was sent up to his own reception by a side door, and he had already been barred from amateur athletics for refusing to run one more race.",
   "copy": [
-    "TODO — paragraph 1 — the situation",
-    "TODO — paragraph 2 — what they actually did",
-    "TODO — paragraph 3 — the cost, or the part usually left out"
+    "James Cleveland Owens was born at Oakville, Alabama, on 12 September 1913, the last of ten children of sharecroppers. The family moved to Cleveland when he was nine. A teacher there heard \"J.C.\" and wrote down Jesse. On 25 May 1935, at the Big Ten championships on Ferry Field in Ann Arbor, he competed for 45 minutes. At 3.15 he tied the world record for 100 yards, 9.4; three of the six timers had 9.3. At 3.25 he long-jumped once, 8.13 metres, a world record that stood for twenty-five years. At 3.35 he ran 220 yards in 20.3, and at 4.00 the low hurdles over the same distance in 22.6. Three world records broken and one tied, in three-quarters of an hour.",
+    "In Berlin he won the 100 metres on 3 August in 10.3, with a following wind. He won the long jump the next day with an Olympic record of 8.06, and the 200 metres on the 5th in 20.7, the fastest anyone had run it, though records on a bend were not yet recognised. On the 9th he led off the American relay, which set a world record of 39.8. He and Ralph Metcalfe had been put into it in place of Marty Glickman and Sam Stoller, the two Jewish sprinters in the relay squad, who never ran in an Olympics. The story that Hitler refused his hand runs the wrong way. On the first day Hitler congratulated a few German and Finnish winners and left; the president of the IOC told him to congratulate every champion or none, and he chose none, before Owens had won anything. In the long jump Owens fouled his first two qualifying jumps and made the final on his third. He later credited Luz Long, the German who took silver, with helping him fix his run-up, and Long jumped into the sandpit to congratulate him. Long was killed in Sicily in July 1943.",
+    "He came home to a ticker-tape parade in New York and was taken up to his own reception at the Waldorf Astoria by a side entrance. He had refused to run in a meet in Sweden straight after the Games, and the Amateur Athletic Union suspended him; his amateur career was over. The White House invited only the white Olympians. A month after the Games he told a crowd that it was not Hitler who had snubbed him but the president, who had not even sent a telegram. He raced against horses for money, and a dry-cleaning business in Cleveland went broke. In 1976 he was given the Presidential Medal of Freedom. He died of lung cancer in Tucson on 31 March 1980, aged 66. The relatives of the Black athletes of 1936 were received at the White House in 2016, eighty years after the invitation that never came."
   ],
   "bio": {
-    "t": "TODO — the best biography",
-    "a": "TODO — its author",
-    "y": "TODO — year",
-    "why": "TODO — why this one and not the famous one"
+    "t": "Jesse Owens: An American Life",
+    "a": "William J. Baker",
+    "y": "1986",
+    "why": "A full-length life by a historian, with thirty-six pages of bibliography, published six years after his death. Read it before the retellings, his own included."
   },
-  "contested": "TODO — what is disputed about this life",
-  "across": []
+  "contested": "Three things, and one count. The long-jump story is Owens's own. He told it for years: Long advised him in qualifying to put down a mark in front of the take-off board, and jumped safely from behind it. The results compiled by Olympedia record two fouls and a qualifying third jump, and nothing about who said what between them. The BBC's 2024 reporting with both families adds that the letter Long is said to have sent Owens from north Africa is almost certainly untrue, since Long never served there. The relay change has never been settled. Olympedia sets out the explanations given since: that the coach, Lawson Robertson, did not want to offend the Nazis, that he had heard the Germans were hiding fast runners, and that Owens himself asked for Glickman and Stoller to run. It treats all of them as rumour. The count at Ann Arbor depends on the unit: three records broken and one tied in yards, as the Los Angeles Times totted them up in 1985, and more when the metric distances the yard times also beat are added, which is how retellings reach six. Britannica's biography calls his 100 metres final an Olympic record. The results show the final wind-assisted, and the record only equalled in a first-round heat the day before.",
+  "across": [
+    {
+      "to": "atlas:story",
+      "label": "The Atlas · Story is leverage",
+      "txt": "— the Long story was his, told for decades; the results record two fouls and a third jump."
+    }
+  ],
+  "plateOf": "Acme News Photos, 12 July 1936, three weeks before Berlin.",
+  "facts": [
+    {
+      "b": "9.4 · 8.13 m · 20.3 · 22.6",
+      "s": "His marks at Ann Arbor on 25 May 1935, by the clock from 3.15 to 4.00 pm, and the three timers who had 9.3: Earl Gustkey, Los Angeles Times, 25 May 1985, after Track & Field News; the metric long jump: Encyclopaedia Britannica, 'Jesse Owens'"
+    },
+    {
+      "b": "10.3w · 8.06 · 20.7 · 39.8",
+      "s": "His four winning marks in Berlin, 3, 4, 5 and 9 August 1936, with the wind and record notes: Olympedia, results for the 100 m, long jump, 200 m and 4 × 100 m relay, 1936; olympics.com results"
+    },
+    {
+      "b": "7.64",
+      "s": "His qualifying long jump, on the third attempt after two fouls, against a qualifying mark of 7.15: Olympedia, Long Jump, Men, 1936"
+    },
+    {
+      "b": "66",
+      "s": "His age at death, of lung cancer, on 31 March 1980: Los Angeles Times, 25 May 1985; place and date, Tucson: Encyclopaedia Britannica, 'Jesse Owens'"
+    }
+  ]
 }
