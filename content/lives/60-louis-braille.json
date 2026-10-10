@@ -3,7 +3,7 @@
   "no": 60,
   "keep": "Twelve dots made a code. Six made a script, because six fit under one finger.",
   "n": "Louis Braille",
-  "years": "1809''�1852",
+  "years": "1809–1852",
   "place": "France",
   "field": "Reading & Invention",
   "group": "famous",
@@ -29,13 +29,13 @@
     {
       "to": "press:movable-type",
       "label": "Movable Type",
-      "txt": "''� the other way of putting words where a reader could reach them. Haüy's books needed a press; Braille's could be written by hand."
+      "txt": "— the other way of putting words where a reader could reach them. Haüy's books needed a press; Braille's could be written by hand."
     }
   ],
   "facts": [
     {
-      "b": "12 '�� 6",
-      "s": "Dots in Barbier's cell and in Braille's: Pamela Lorimer, 'A Critical Evaluation of the Historical Development of the Tactile Modes of Reading', PhD thesis, University of Birmingham, 1996, sections 3''�4 (duxburysystems.org); Musée Louis Braille, 'Barbier l'intuitif'"
+      "b": "12 → 6",
+      "s": "Dots in Barbier's cell and in Braille's: Pamela Lorimer, 'A Critical Evaluation of the Historical Development of the Tactile Modes of Reading', PhD thesis, University of Birmingham, 1996, sections 3–4 (duxburysystems.org); Musée Louis Braille, 'Barbier l'intuitif'"
     },
     {
       "b": "64 / 4,096",
