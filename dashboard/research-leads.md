@@ -243,3 +243,15 @@ mentions it can be tightened or the figure promoted.
 | Malone | Trawick Ferguson, "The History of Poro College from 1902–1965" (Lindenwood dissertation) | Refused by Cloudflare. Would settle the tax years and amounts, and the 1951 seizure |
 | Malone | *Chicago Defender*, 15 May 1957; Tiffany M. Gill, *Beauty Shop Politics* (2010); Gladys L. Porter (1966) | The $14 million is quoted through Bundles; the Howard gift through Gale |
 
+
+---
+
+## 2026-10-10 — six lives, № 59–64: what was named but not opened
+
+- `harriet-tubman`: the 'never ran my train off the track' line, attributed to an 1896 suffrage meeting; no newspaper of the time found. Not printed.
+- `harriet-tubman`: the Boston Commonwealth issue carrying her 30 June 1863 letter; read only as reprinted in Bradford (1869).
+- `louis-braille`: Edgard Guilbeau, Histoire de l'Institution Nationale des Jeunes Aveugles (1907), p. 72, on what Dufau destroyed; Zina Weygand (2009), p. 289.
+- `jesse-owens`: a primary for the October 1936 'snub' speech (Kansas City; St. Joseph News-Press, 16 October 1936; Time, 'Owens for Landon'). Printed as reported speech only.
+- `frederick-douglass`: the deed of manumission itself (5 or 12 December 1846; LOC Douglass Papers, reel 1); loc.gov timed out from here.
+- `chester-carlson`: the Fortune letter of 1968, said to be in Owen, Copies in Seconds, p. 260; Kornei's 1938 notebook and the Contribution File, NYPL MssCol 472.
+- `lyndon-b-johnson`: Dale Baum and James L. Hailey, 'Lyndon Johnson's Victory in the 1948 Texas Senate Race: A Reappraisal', Political Science Quarterly 109:4 (1994); David Broder's review of Means of Ascent (Washington Post, 1990), known only as the Texas Observer quoted it.

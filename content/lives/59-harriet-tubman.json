@@ -1,0 +1,63 @@
+{
+  "id": "harriet-tubman",
+  "no": 59,
+  "keep": "She said fifty or sixty people, in eight or nine trips. The nineteen and the three hundred were other people's arithmetic.",
+  "n": "Harriet Tubman",
+  "years": "c. 1822–1913",
+  "place": "United States",
+  "field": "Freedom & War",
+  "group": "famous",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "Her owner's advertisement of October 1849 described her as about twenty-seven, about five feet high, and worth $100 if caught outside Maryland. Over the next eleven years she went back into Maryland about thirteen times.",
+  "copy": [
+    "She was born Araminta Ross in Dorchester County, Maryland, probably early in 1822, one of nine children of Ben and Rit Ross, both enslaved. In her teens she stood in a store doorway to block an overseer chasing another slave. He threw a two-pound weight from the counter and it struck her head. A profile printed in 1863 says it left her \"subject to a sort of stupor or lethargy at times\". About 1844 she married John Tubman, a free man, and some time in the 1840s she took her mother's name, Harriet. In September 1849, about to be sold, she ran with two of her brothers, and they turned back. Their owner, Eliza Brodess, advertised on 3 October: $100 each if they were taken out of the state, $50 inside it. \"Minty, aged about 27 years, is of a chestnut color, fine looking, and about 5 feet high.\" She left again, alone, and reached Philadelphia.",
+    "Over the next eleven years she went back about thirteen times and brought out about seventy people, most of them family and friends, the last seven in December 1860. She gave directions to about seventy more, who went on their own. Those are Kate Clifford Larson's counts, from the documents. They are smaller than the legend because the legend was never hers. In 1858 and 1859 she told people she had brought out fifty or sixty in eight or nine trips. Her first biographer, Sarah Bradford, wrote in 1869 that she had gone \"nineteen times, according to the reckoning of her friends\", and that \"by the computation of others\" the total was \"somewhere near three hundred\". The $40,000 on her head was invented too, in 1867; the only reward on record is the advertisement. In the war she served the Union in South Carolina as a scout and a nurse. On 1 and 2 June 1863 she went up the Combahee River with Colonel James Montgomery, some three hundred soldiers and three gunboats. In a letter she dictated at Beaufort four weeks later, she put the haul in the planters' own terms: \"seven hundred and fifty-six head of their most valuable live stock\". The same letter asks for a bloomer. She had fallen running for the boat with two pigs for a sick woman, and torn her dress to shreds.",
+    "The government that used her would not pay her for it. In 1890 she was granted $8 a month as the widow of Nelson Davis, who had served in the 8th United States Colored Infantry. A House bill of 1899 proposed $25 a month for her own service as a nurse. The Senate's committee found \"no valid reasons why this claimant should receive a pension of $25 per month as a nurse\", and Congress raised her widow's pension to $20 instead. The committee put her age at about 75, and described her as \"physically broken down, and poor.\" She had bought a house in Auburn, New York, from William Seward in 1859. She died there on 10 March 1913, and was buried with military honours."
+  ],
+  "bio": {
+    "t": "Bound for the Promised Land: Harriet Tubman, Portrait of an American Hero",
+    "a": "Kate Clifford Larson",
+    "y": "2004",
+    "why": "The first biography built on the documents rather than on Bradford: court and land records, the runaway advertisement, the family's genealogy. It is the source of the counts this entry uses, and of the house's reason to distrust the famous ones."
+  },
+  "contested": "Two arguments, and a quotation. The first is the count. Larson has about thirteen trips and about seventy people brought out, and about seventy more she instructed; a National Park Service article of 2017 gives the same seventy but fifty to sixty instructed. Milton Sernett, in Harriet Tubman: Myth, Memory, and History (2007), puts the documented number closer to seventy and says an exact count is impossible. Bradford's three hundred was her own estimate, and Bradford never said Tubman gave it to her. The second is the Combahee raid, which she is often said to have led. Montgomery commanded. She scouted, piloted and recruited, and her own letter credits the raid to \"the lead of the brave Colonel Montgomery\". Sernett calls the claim that she \"commanded a raid\" \"wishful thinking\"; the Park Service, following Edda Fields-Black's Combee (2024), says she helped organise the liberation by getting people onto the boats. The famous line about never running her train off the track is attributed to a suffrage meeting in 1896. This house has not found it in a newspaper of the time, and does not print it.",
+  "across": [
+    {
+      "to": "lives:frederick-douglass",
+      "label": "Frederick Douglass",
+      "txt": "— who wrote to her in 1868: \"I have wrought in the day—you in the night.\""
+    },
+    {
+      "to": "lives:robert-smalls",
+      "label": "Robert Smalls",
+      "txt": "— the same coast in the same war: he took the Planter out of Charleston in May 1862; she went up the Combahee in June 1863."
+    }
+  ],
+  "plateOf": "Carte de visite, Auburn, New York, 1868 or 1869.",
+  "facts": [
+    {
+      "b": "$100 / $50",
+      "s": "Reward for each of the three if taken outside Maryland, and inside it: Eliza Ann Brodess's advertisement, Cambridge Democrat, 3 October 1849, as transcribed by the National Park Service, 'Lost in Disguise' (nps.gov)"
+    },
+    {
+      "b": "~13 / ~70 / ~70",
+      "s": "Trips into Maryland, people she brought out, and people she instructed who went on their own: Kate Clifford Larson, 'Harriet Tubman Myths and Facts' (harriettubmanbiography.com); the National Park Service's biography (nps.gov/people/harriet-tubman.htm) gives the same"
+    },
+    {
+      "b": "19 / ~300",
+      "s": "Bradford's figures, from 'the reckoning of her friends' and 'the computation of others': Sarah H. Bradford, Scenes in the Life of Harriet Tubman (Auburn, 1869), Project Gutenberg 57821"
+    },
+    {
+      "b": "756",
+      "s": "People brought away up the Combahee, by her count: her letter dictated at Beaufort, 30 June 1863, for the Boston Commonwealth, as reprinted in Bradford (1869)"
+    },
+    {
+      "b": "$8 → $20",
+      "s": "Her widow's pension a month, and the rise Congress granted in February 1899 in place of the House bill's $25: Senate Report 1619, 7 February 1899 (National Archives, DocsTeach); Center for Legislative Archives, 'Claim of Harriet Tubman'"
+    }
+  ]
+}
