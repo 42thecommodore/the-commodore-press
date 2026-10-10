@@ -53,6 +53,11 @@
       "to": "lives:mlk",
       "label": "Martin Luther King Jr.",
       "txt": "— the campaign he inherited had been given its evidence base forty years earlier, by someone rarely credited for it."
+    },
+    {
+      "to": "lives:madam-c-j-walker",
+      "label": "Madam C. J. Walker",
+      "txt": "— in the same years, against the same thing: Walker asked her agents to protest lynching in 1917, and joined a delegation to the White House against the War Department’s segregation."
     }
   ]
 }

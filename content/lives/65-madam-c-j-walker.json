@@ -1,0 +1,79 @@
+{
+  "id": "madam-c-j-walker",
+  "no": 65,
+  "keep": "She said in writing that she was no millionaire. What she built was a second trade for thousands of women.",
+  "n": "Madam C. J. Walker",
+  "years": "1867–1919",
+  "place": "Louisiana, Indianapolis and New York",
+  "field": "Beauty & Business",
+  "group": "famous",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "She was orphaned as a child, widowed at twenty and taking in washing in St. Louis when her hair began to fall out. She built a company on the remedy, and in 1918 she wrote to her lawyer to deny that it had made her a millionaire.",
+  "copy": [
+    "Sarah Breedlove was born in Delta, Louisiana, on 23 December 1867. She was orphaned in childhood, married at fourteen, and a widow at twenty with a daughter, A'Lelia. In St. Louis she worked as a laundress and studied at public night schools. In the 1890s she began losing her hair at the temples. She noticed other Black women had the same trouble. Her brothers were barbers in the city, and they were her way into the trade. In 1905 and 1906 she sold Annie Turnbo's Poro products, first in St. Louis and then in Denver. Then she married Charles J. Walker, a newspaperman, took the name Madam C. J. Walker, and sold her own.",
+    "The product was a sulphur ointment and a hot comb. The business was people. In 1908 she opened an office in Pittsburgh and founded Lelia College, which sold a $25 correspondence course in her method. In 1910 she moved to Indianapolis, and in September 1911 she incorporated with herself as the only stockholder. The factory never had more than 15 employees. The selling was done by several thousand agents, who were taught to teach hygiene as well as sell Hair Grower and Glossine. In 1916 she organised them: 25 cents a month in dues bought a $50 payment at death, and local chapters won prizes for charity work. At the National Negro Business League in 1912, snubbed by Booker T. Washington, she took the floor anyway and told the room she had promoted herself out of the washtub.",
+    "She is usually printed as America's first self-made woman millionaire. She denied it herself, in a letter to her lawyer Freeman Ransom on 4 March 1918. When the federal estate tax was settled in 1922, the estate was valued at $509,864, scaled down from a first claim of $616,774. Real estate made up $247,424 of it, and carried $120,000 of mortgages. Much of that was Villa Lewaro, the house on the Hudson she built with the Black architect Vertner Tandy for $350,000. It strained her to the limit; the gold-leaf piano and the pipe organ took years to pay off. The rest of the money went out. In 1917 she urged her agents to protest lynching, and she joined a delegation to the White House against the War Department's segregation. Her will left over $100,000 to charities, $10,000 of it for a school in Africa that did not yet exist. She died on 25 May 1919, aged 51."
+  ],
+  "facts": [
+    {
+      "b": "$25",
+      "s": "Price of the Lelia College correspondence course, Pittsburgh, 1908: Indiana Historical Society, 'Madam C.J. Walker', essay prepared by IHS staff (indianahistory.org/wp-content/uploads/Madam-Walker-Essay.pdf)"
+    },
+    {
+      "b": "15 employees / several thousand agents",
+      "s": "Most staff in the Indianapolis factory, and the agents selling across the country, 1911–1919: Indiana Historical Society, 'Madam C.J. Walker' essay"
+    },
+    {
+      "b": "25 cents / $50",
+      "s": "Monthly dues in the agents' benevolent association of 1916, and the payment due to a member's beneficiaries at her death: Indiana Historical Society, 'Madam C.J. Walker' essay"
+    },
+    {
+      "b": "$509,864 / $616,774",
+      "s": "Her estate as valued for federal estate tax in 1922, and the first claim it was scaled down from: Indiana Historical Society, 'Madam C.J. Walker' essay"
+    },
+    {
+      "b": "$247,424 / $120,000",
+      "s": "Real estate in the estate, and the mortgages it was subject to: Indiana Historical Society, 'Madam C.J. Walker' essay"
+    },
+    {
+      "b": "$350,000",
+      "s": "Total cost of Villa Lewaro, with its Italian garden and pool: Indiana Historical Society, 'Madam C.J. Walker' essay"
+    },
+    {
+      "b": "$100,000 / $10,000",
+      "s": "Her will's specific bequests to charities, and the share for an industrial and mission school she hoped to found in Africa: Indiana Historical Society, finding aid to the Madam C. J. Walker Papers, 1910–1980 (indianahistory.org/wp-content/uploads/madam-cj-walker-papers-1910-1980.pdf)"
+    },
+    {
+      "b": "$486,762",
+      "s": "The company's gross receipts for 1919, the year she died, from its annual reports and tax records: A'Lelia Bundles, 'The Facts about Madam C. J. Walker and Annie Malone' (aleliabundles.com, February 2020)"
+    }
+  ],
+  "bio": {
+    "t": "On Her Own Ground: The Life and Times of Madam C. J. Walker",
+    "a": "A'Lelia Bundles",
+    "y": "2001",
+    "why": "The only full life built on the company's own letters and ledgers, which the family kept. Bundles is Walker's great-great-granddaughter, and that is both why the records are hers and why the second read should be the Indiana Historical Society's own essay and finding aid to the Walker Papers, which are free and say plainly what the estate came to."
+  },
+  "contested": "What she was worth, and so whether the famous line is wrong or only premature. The case for the million is Bundles's. In 2001 she put Walker's personal wealth at $600,000 to $700,000; she writes that a business historian then pointed out she had left out the company, which, valued on its 1918 to 1920 receipts, would have sold for between $1 million and $2 million in 1919 dollars. The tax return valued the estate at $509,864 with the company stock inside it, and Walker denied the title while she was alive. Both can be true: a company is worth what a buyer pays, and nobody bought it. The records do not agree with each other either. The Historical Society's essay gives her 1917 income from all sources as $276,000; Bundles gives $275,937.88 as the company's gross for 1918. Whether Walker took the Poro formula from Annie Turnbo Malone is the older quarrel. Bundles answers that sulphur ointments for the scalp had been around for centuries and neither woman invented one, and she is the descendant of one side.",
+  "across": [
+    {
+      "to": "lives:annie-turnbo-malone",
+      "label": "Annie Turnbo Malone",
+      "txt": "— the employer she started under and the rival she is always weighed against; the records that survive are Walker's, which is half the argument."
+    },
+    {
+      "to": "lives:ida-b-wells",
+      "label": "Ida B. Wells",
+      "txt": "— in the same years, against lynching: one with a newspaper and the counted dead, the other with an agents' union and a chequebook."
+    },
+    {
+      "to": "atlas:connect",
+      "label": "The Atlas · We don't heal alone",
+      "txt": "— the factory had fifteen people in it. The business was several thousand women, each paid to teach the next."
+    }
+  ]
+}

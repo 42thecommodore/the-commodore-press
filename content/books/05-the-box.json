@@ -104,6 +104,11 @@
       "to": "lives:aristotle-onassis",
       "label": "Aristotle Onassis",
       "txt": "— the decade before the box, when the fight at sea was over whose flag a ship flew rather than what shape its cargo took."
+    },
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— the same move forty years earlier, on a chassis: twelve hours and twenty-eight minutes of labour cut to one hour thirty-three."
     }
   ],
   "reading": [

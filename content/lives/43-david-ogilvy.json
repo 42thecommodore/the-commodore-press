@@ -54,6 +54,11 @@
       "to": "atlas:story",
       "label": "The Atlas · Story is leverage",
       "txt": "— the objection from inside the trade. The man quoted for the sizzle left papers that are mostly market research."
+    },
+    {
+      "to": "lives:p-t-barnum",
+      "label": "P. T. Barnum",
+      "txt": "— the showman's version of the trade: no surveys, only the crowd talking and the receipts counted after."
     }
   ]
 }

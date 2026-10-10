@@ -263,3 +263,25 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Lovelace | Taylor's *Scientific Memoirs* vol. 3 (1843), page scan | Page span 666–731 cut until seen |
 | Ibn al-Haytham | Sabra's translation of the *Optics* (1989); al-Qifti; Ibn Abi Usaybi'a; al-Bayhaqi | The madness story and its rival accounts are read through MacTutor |
 | Ibn al-Haytham | A named historian's case against "first scientist" | The PR 2 draft attributed one to Thony Christie; the post was not found |
+
+
+## Opened 2026-10-09: Walker, Barnum, Ford (№ 65–67), and Hill held back
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Walker | A'Lelia Bundles, *On Her Own Ground* (2001) | Recommended as the life built on the company papers; read only through Bundles's own 2020 post and the IHS essay |
+| Walker | The NAACP's 1919 records of her $5,000 anti-lynching pledge; the Shillady letter of 10 May 1919 | Search snippets and Wikipedia only; not printed |
+| Walker | 1917 vs 1918 receipts | IHS gives $276,000 as 1917 income from all sources; Bundles gives $275,937.88 as 1918 gross. Named in `contested`, not resolved |
+| Walker | Laundress wage; the scalp illness | "$1 a day" is Wikipedia's; the IHS says only that she was losing her hair at the temples |
+| Barnum | Benjamin Reiss, *The Showman and the Slave* (2001) | `contested` says the entry has not opened it. Heth's age at the autopsy (about 80) and her enslavers' names are not printed for that reason |
+| Barnum | A. H. Saxon, *P. T. Barnum: The Legend and the Man* (1989); Neil Harris, *Humbug* (1973) | Recommended on the Lost Museum bibliography and the publisher's description, not read |
+| Barnum | American Museum attendance (30, 38 and 41 million all circulate) | None opened; none printed |
+| Barnum | Mayor of Bridgeport, 1875 | Connecticut History, read only as a summary; not printed |
+| Ford | Library of Congress record for cph.3c11278 (Hartsook, 1919) | Behind a bot check; the plate uses the 1928 *Literary Digest* photograph instead. Luca can open it himself, as with Ogilvy |
+| Ford | The 370 per cent turnover figure (50,448 hired against 13,623, 1913) | Search snippets only; the entry prints The Henry Ford's 380 per cent |
+| Ford | Grand Cross of the German Eagle, 1938; Dodge v. Ford's $19.3 million | Not opened; neither printed |
+| Ford | Steven Watts, *The People's Tycoon* (2005) | Title and year from library catalogues; not read |
+| Hill | Hidy, Hidy, Scott and Hofsommer, *The Great Northern Railway: A History* (1988) | Would settle the St. Paul & Pacific grant acreage (3,272,691 in snippets), the 1878 price, and whether the main line west of Minnesota had any federal grant |
+| Hill | Ramsey County History, Spring 1990 (rchs.com PDF) | The 1894 ARU strike and its arbitration; the PDF would not read |
+| Hill | NPS Glacier administrative history, ch. 1 | John F. Stevens at Marias Pass, December 1889 |
+| Hill | *Northern Securities Co. v. United States*, 193 U.S. 197 (1904), full text | The 5–4 count rests on MNHS alone |

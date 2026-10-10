@@ -1,0 +1,74 @@
+{
+  "id": "henry-ford",
+  "no": 67,
+  "keep": "He made the car cheap by cutting minutes, and paid for the minutes with a wage that came with an inspector.",
+  "n": "Henry Ford",
+  "years": "1863–1947",
+  "place": "Michigan",
+  "field": "Invention & Industry",
+  "group": "famous",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "The backers of his first company wanted cars built to order at the highest price each would fetch. He quit in March 1902, resolved never again to work under orders, and built the car they would not: one model, at a price that kept falling.",
+  "copy": [
+    "His first company, the Detroit Automobile Company, was formed by a group Ford described as men of a speculative turn of mind. For three years it sold very few cars, each made to order for the most it could get. He resigned in March 1902, rented a one-storey brick shed at 81 Park Place, and spent a year finding out what business really was. In 1909 he announced that the company would build one model only, the Model T, and remarked that a customer could have it painted any colour he wanted so long as it was black. The line is usually read as the policy from the first day. It was not. The early Model Ts came in several colours, according to The Henry Ford, the museum in Dearborn that holds the company's records. Black-only began in 1914, because black paint was cheap and durable and one colour kept the line simple. Colours came back on the cars of 1926 and 1927.",
+    "The method was to cut minutes. Around 1 April 1913 the Highland Park plant tried a moving line on the flywheel magneto; the idea, Ford wrote, came in a general way from the overhead trolleys the Chicago packers used to dress beef. Then the chassis. It took twelve hours and twenty-eight minutes of labour at a standing frame, five hours fifty when it was hauled by rope and windlass down a 250-foot line, and one hour thirty-three once the line was raised to working height early in 1914. The touring car's price followed, by his own table: $950 in 1909–10, $600 in 1912–13, $360 in 1916–17, a year of 785,432 cars. Workers disliked the line so much that by late 1913 turnover ran at 380 per cent. Keeping a force of 14,000, Ford wrote, had meant hiring about 53,000 a year. In January 1914 he answered with the $5 day, against a previous $2.34 for nine hours. He called it profit-sharing, and it came on conditions. It went to employees of six months' standing: married men taking good care of their families, single men over twenty-two of proved thrifty habits, and the young and the women only if they were the sole support of a relative. The Sociological Department sent investigators to check. At first 60 per cent qualified. In 1915 the company had to hire only 6,508 men.",
+    "The same years made the other Ford. From 1920 his weekly, The Dearborn Independent, ran a series of articles against Jews, reprinted as pamphlets under the title The International Jew. They gave currency to the Protocols, a forgery. On 30 June 1927 he signed a retraction that had been drafted in advance in talks with Louis Marshall of the American Jewish Committee. In it Ford said he was deeply mortified, and that the paper had been left to men he had put in charge and relied on implicitly. Inside the plants, order was kept by the Service Department under Harry Bennett. On 7 March 1932, 3,000 to 5,000 unemployed workers marched on the River Rouge plant with demands that included the right to organise. Dearborn police and Ford Servicemen turned fire hoses on them; after Bennett was hurt, hundreds of shots were fired into the crowd. Four people were killed and a fifth died later. No one was ever charged. Five years later Servicemen beat Walter Reuther and other union men who had come to Gate 4 with leaflets and a city permit. Ford recognised the union in 1941."
+  ],
+  "bio": {
+    "t": "The People's Tycoon: Henry Ford and the American Century",
+    "a": "Steven Watts",
+    "y": "2005",
+    "why": "The one life that keeps the five-dollar day and The Dearborn Independent in the same book and does not let either excuse the other. Ford's own My Life and Work (1922) is free on Project Gutenberg and is the source for most of the numbers here; it was written in collaboration with Samuel Crowther, which is worth remembering whenever it sounds most like a sermon."
+  },
+  "contested": "Whether the $5 day was justice or a cure for turnover. Ford's book claims both in two pages. It calls the plan an act of social justice; it then says there was no charity in it, that it was meant to put the business on a lasting foundation, and it prints the hiring figures that show what it fixed. The conditions are the stronger evidence. A wage that married men earned only by taking good care of their families, and that investigators came to the house to confirm, was a wage with a moral test, and Ford conceded in 1922 that a certain amount of paternalism did develop. The sources do not agree on the hours either: Ford's book says the 1914 week fell to forty-eight hours; The Henry Ford's own set says forty. On the Independent, the retraction is the only document here in Ford's name, and it blames the men he put in charge. Marshall's note, printed with it, shows the conditions for the apology were set before Ford signed; it does not show what Ford read, and nothing this entry has opened does.",
+  "across": [
+    {
+      "to": "press:the-box",
+      "label": "The Box",
+      "txt": "— the same move in another trade: take the minutes out of the handling, and the price of everything downstream falls."
+    },
+    {
+      "to": "lives:john-d-rockefeller",
+      "label": "John D. Rockefeller",
+      "txt": "— the other fortune made by cutting a unit cost below anyone's reach, and the other name whose methods stain its monuments."
+    }
+  ],
+  "facts": [
+    {
+      "b": "12 h 28 min / 5 h 50 min / 1 h 33 min",
+      "s": "Labour time per Model T chassis at a stationary stand, on the first rope-drawn line, and on the raised line of early 1914; chassis only, not a finished car: Henry Ford with Samuel Crowther, My Life and Work (1922), Project Gutenberg #7213"
+    },
+    {
+      "b": "250 feet",
+      "s": "Length of the first experimental chassis line at Highland Park: Ford, My Life and Work (1922)"
+    },
+    {
+      "b": "$950 / $600 / $360 · 785,432 cars",
+      "s": "Touring-car price for 1909–10, 1912–13 and 1916–17, and cars sold in 1916–17, from the company table Ford prints: Ford, My Life and Work (1922)"
+    },
+    {
+      "b": "380%",
+      "s": "Labour turnover at Ford by late 1913: The Henry Ford, 'Henry Ford: Sociological Department', expert set compiled 2013 (thehenryford.org/collections/explore/sets/detail/henry-ford-sociological-department)"
+    },
+    {
+      "b": "14,000 / 53,000 / 6,508",
+      "s": "Ford's workforce in 1914, the hiring rate he says it had taken to hold it, and the men hired in 1915: Ford, My Life and Work (1922)"
+    },
+    {
+      "b": "$5 / $2.34",
+      "s": "The 1914 day for eight hours, against the previous rate for a nine-hour day: The Henry Ford, 'Henry Ford: Sociological Department' expert set"
+    },
+    {
+      "b": "60%",
+      "s": "Share of workers who qualified for the profit-sharing when it began (78 per cent at six months, 87 at a year): Ford, My Life and Work (1922)"
+    },
+    {
+      "b": "3,000–5,000 / 4 killed, 1 later",
+      "s": "Marchers in the Ford Hunger March of 7 March 1932, and the dead: Walter P. Reuther Library, Wayne State University, 'Hunger March' (reuther.wayne.edu/node/7291)"
+    }
+  ]
+}

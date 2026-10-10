@@ -40,6 +40,11 @@
       "to": "lives:andrew-carnegie",
       "label": "Andrew Carnegie",
       "txt": "— the same decade, the same scale of fortune, and the opposite temperament spending it."
+    },
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— a unit cost cut a minute at a time, and a second fortune with a stain on it that the philanthropy does not lift."
     }
   ]
 }
