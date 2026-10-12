@@ -371,6 +371,13 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   t("search finds “" + word + "” typed with a straight apostrophe", found.includes(src.title || src.n), found.slice(0, 4).join(", ") || "nothing");
   const tally = document.getElementById("tally"), nums = (tally.textContent.match(/\d+/g) || []);
   t("the front door's one count is the corrections, and it opens them", nums.length === 1 && +nums[0] === CORRECTIONS.length && tally.querySelector("a[href='#corrections']"), tally.textContent.trim());
+  // What this is: a first visitor met three nav words with no gloss, and on a phone nothing said whose
+  // library it was. The key under the shelf names each part in one plain line and opens it.
+  const key = document.getElementById("key"), keyRows = key ? [...key.querySelectorAll("li a")] : [];
+  const keyHas = h => keyRows.some(a => a.getAttribute("href") === h && a.querySelector("b") && (a.querySelector("span")?.textContent.trim().length || 0) > 20);
+  t("the front door says what this is, and names each part in a line that opens it", key && /working library/i.test(key.querySelector(".key-h")?.textContent || "") && ["#press", "#lives", "#atlas", "#corrections"].every(keyHas),
+    keyRows.map(a => a.getAttribute("href")).join(", ") || "no key on the front door");
+  t("…and it sits under the shelf, not above it", key && document.getElementById("frontShelf").compareDocumentPosition(key) & Node.DOCUMENT_POSITION_FOLLOWING);
   const books = [...document.querySelectorAll(".front .rack a.rk")], faces = [...document.querySelectorAll(".wall a.wface")];
   t("every book on the front door links its own page", books.length === BOOKS.length && books.every((a, i) => a.getAttribute("href") === "t/" + BOOKS[i].id + "/"), books.length + " links for " + BOOKS.length + " books");
   t("every face on the front door links its own page", faces.length === LIVES.length && faces.every((a, i) => a.getAttribute("href") === "l/" + LIVES[i].id + "/"), faces.length + " links for " + LIVES.length + " lives");
