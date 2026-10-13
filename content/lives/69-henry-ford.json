@@ -35,6 +35,11 @@
       "to": "lives:samuel-colt",
       "label": "Samuel Colt",
       "txt": "— the armoury at Hartford, where Hounshell's history of mass production begins, and where the argument over interchangeable parts starts."
+    },
+    {
+      "to": "lives:henry-j-kaiser",
+      "label": "Henry J. Kaiser",
+      "txt": "— who built ships on the line during the war, and then failed in Ford's own industry."
     }
   ],
   "plateOf": "About 1919.",
