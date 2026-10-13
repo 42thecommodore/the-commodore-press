@@ -12,7 +12,7 @@
   "ink": "#F0EFEA",
   "accent": "#C9B98E",
   "motif": "conic",
-  "lede": "The story goes that a French newspaper mistook his brother's death for his, called him the merchant of death, and that he wrote the prizes to clear his name. Nobody has ever produced the newspaper.",
+  "lede": "The story goes that a French newspaper mistook his brother's death for his, called him the merchant of death, and that he wrote the prizes to clear his name. No one has produced a copy of the article.",
   "copy": [
     "Alfred Nobel was born in Stockholm on 21 October 1833, and his trade was making nitroglycerine safe enough to sell. In 1863 he patented a blasting cap to set it off. In 1864 an explosion at the family's works at Heleneborg killed five people, among them his younger brother Emil, who was twenty. Making nitroglycerine was banned inside the Stockholm city limits. In the spring of 1866 shipments of it blew up in transit and in storage. His answer, patented in Sweden in 1867, was to soak the oil into an earth called kieselguhr and sell it as dynamite. By his death he held 355 patents, with factories and laboratories in some 90 places in more than 20 countries.",
     "Dynamite cut tunnels, but it was not the whole business. In 1887 he patented ballistite, a smokeless powder. The French state monopoly turned it down and Italy bought it, and a campaign in France accused him of industrial espionage. He left for San Remo in 1891. In 1894 he bought Bofors in western Sweden, with an iron mill and a weapons factory. A year earlier, on his sixtieth birthday, he had listed among his plans \"patents for the soundless discharging of a gun\" and \"thinking about purchasing the Swedish mill Bofors\". On 27 November 1895, at the Swedish-Norwegian Club in Paris, he signed his third and last will.",
@@ -22,9 +22,9 @@
     "t": "Nobel: The Enigmatic Alfred and His Prizes",
     "a": "Ingrid Carlberg",
     "y": "2023",
-    "why": "Recent, and built from archives in several countries. The year is the English edition's; the Swedish original came first. Read its account of 1888 before trusting the obituary story anywhere else."
+    "why": "Recent, and, by the Swedish Academy's account of it, built from archives in several countries. The year is the English edition's; the Swedish original came first. Read its account of 1888 before trusting the obituary story anywhere else."
   },
-  "contested": "The obituary, the influence and two smaller things. Every telling of the obituary relies on the same two quotations, as Colin Schultz wrote in Smithsonian in 2013, and no copy of the article has been produced. The Foundation's own histories of his life, four of them opened for this entry, never mention it. Yet a member of its staff, Annika Pontikis, told Legacy.com that Nobel did see his obituary in advance. A short notice in Le Figaro of 15 April 1888, reporting a Mr Nobel dead at Cannes and corrected the next day, is said to exist; this house has the claim only from a Stack Exchange answer and has not seen the page. The second is Bertha von Suttner, the peace campaigner. The Foundation's chairman said in 1996 that his friendship with her was \"probably\" what mattered most to the peace prize; its earlier biographer, Nils Ringertz, wrote \"no doubt\". Neither cites a letter, and the often-quoted one about a machine of mass destruction has not been found in any Nobel source. Smaller: the Foundation's opening address of 1996 counts five dead at Heleneborg, where its other pages say several, and the date of 3 September 1864 is repeated widely but was not in anything opened here. The will's own English changed in 2018, when the Foundation replaced the old translation's \"mankind\" with \"humankind\"; the Norwegian Nobel Institute still prints the old one.",
+  "contested": "The obituary, the influence and two smaller things. Every telling of the obituary relies on the same two quotations, as Colin Schultz wrote in Smithsonian in 2013, and no copy of the article has been produced. The Foundation's own histories of his life, four of them opened for this entry, never mention it. Yet a member of its staff, Annika Pontikis, told Legacy.com, as Smithsonian reported, that Nobel did see his obituary in advance. A short notice in Le Figaro of 15 April 1888, reporting a Mr Nobel dead at Cannes and corrected the next day, is said to exist; this house has the claim only from a Stack Exchange answer and has not seen the page. The second is Bertha von Suttner, the peace campaigner. The Foundation's chairman said in 1996 that his friendship with her was \"probably\" what mattered most to the peace prize; Nils Ringertz, in the Foundation's own account of his life, wrote \"no doubt\". Neither cites a letter, and the often-quoted one about a machine of mass destruction has not been found in any Nobel source. Smaller: the Foundation's opening address of 1996 counts five dead at Heleneborg, where its other pages say several, and the date of 3 September 1864 is repeated widely but was in no Nobel source opened here. The will's own English changed in 2018, when the Foundation replaced the old translation's \"mankind\" with \"humankind\"; the Norwegian Nobel Institute still prints the old one.",
   "across": [
     {
       "to": "lives:fritz-haber",
@@ -32,7 +32,7 @@
       "txt": "— another chemist whose work cut both ways. Dynamite cut tunnels, and Nobel bought a weapons works."
     }
   ],
-  "plateOf": "Photograph by Gösta Florman, before 1896, from the Royal Library, Stockholm.",
+  "plateOf": "Photograph by Gösta Florman, before 1896, from the Royal Library, via Sweden's image bank.",
   "facts": [
     {
       "b": "5",
