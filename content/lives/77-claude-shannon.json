@@ -1,0 +1,57 @@
+{
+  "id": "claude-shannon",
+  "no": 77,
+  "keep": "He did not name the bit. He made it a unit, measured with it, and then went back to juggling.",
+  "n": "Claude Shannon",
+  "years": "1916–2001",
+  "place": "United States",
+  "field": "Mathematics & Engineering",
+  "group": "famous",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "He is usually credited with inventing the bit. His own paper of 1948 gives the word to John Tukey; what Shannon did was make it a unit, and measure with it.",
+  "copy": [
+    "Claude Shannon was born in Petoskey, Michigan, on 30 April 1916, and grew up in Gaylord. He took degrees in mathematics and electrical engineering at Michigan in 1936, and read there a paper by Hartley that he later called \"an influence in my life.\" At MIT he wrote a master's thesis on switching in 1937, which the psychologist Howard Gardner would call \"possibly the most important, and also the most famous, master's thesis of the century.\" The doctorate was harder. To pass the language requirement he hired tutors in French and Spanish, worked through stacks of flash cards, and took the German exam twice. He took both degrees in 1940, and from 1941 to 1972 he was at Bell Laboratories.",
+    "During the war he worked out a theory of information, he said, \"at home, not office hours, so to speak.\" In 1945 he wrote a classified report on cryptography which, Whitfield Diffie says, contains all of his 1949 paper on secrecy systems and much of the 1948 one. \"A Mathematical Theory of Communication\" appeared in the Bell System Technical Journal in July and October 1948. Its problem is \"reproducing at one point either exactly or approximately a message selected at another point.\" Meaning was set aside: \"These semantic aspects of communication are irrelevant to the engineering problem.\" The paper measured information in binary digits, \"or more briefly bits, a word suggested by J. W. Tukey,\" and put the redundancy of ordinary English at roughly 50 per cent.",
+    "Then he played, seriously. At Bell he was remembered riding the halls on a unicycle while juggling three balls, and in the 1970s he proved a juggling theorem. Edward Thorp came to him because he needed a member of the National Academy to submit a paper on blackjack, and Shannon was the only mathematics member at MIT. Shannon retitled the paper, pointed Thorp to J. L. Kelly's paper of 1956 on how much to bet, and from November 1960 to June 1961 built with him, in his basement, a roulette computer the size of a pack of cigarettes, with twelve transistors. In Las Vegas they bet ten-cent chips. The wires to the speaker kept breaking, and \"we never continued the project.\" He lost to Mikhail Botvinnik in 42 moves in 1965, and died in Medford, Massachusetts, on 24 February 2001, after a long illness with Alzheimer's disease. He was 84."
+  ],
+  "bio": {
+    "t": "A Mind at Play: How Claude Shannon Invented the Information Age",
+    "a": "Jimmy Soni and Rob Goodman",
+    "y": "2017",
+    "why": "The only full-length life, written with his family's and friends' help. Its marketing has him outfox the casinos, which Thorp's own account does not support, and its subtitle makes a claim Shannon never made for himself. Read the 1948 paper beside it: the first pages need no mathematics."
+  },
+  "contested": "Which came first, and what the legend adds. Whitfield Diffie, introducing the 1945 report in 2015, writes that the usual order, information theory first and cryptography after, is \"quite the reverse\": the report is \"at the root of both the 1948 and 1949 papers.\" Shannon told Robert Price in 1982 the opposite, that information theory came first and cryptography was \"a way of legitimatizing it all\". Both are primary voices. The word bit is credited by his own paper to Tukey, whose memo of January 1947 this house has not opened; the New York Times obituary said, correctly hedged, that the 1948 paper \"may contain the first published occurrence\" of it. The roulette computer did not beat Las Vegas, whatever the biography's publisher says; Thorp's own paper says the hardware trouble stopped serious betting. The box that switches itself off, often called his invention, is credited elsewhere to Marvin Minsky, and Shannon built versions of it. Gardner's praise is usually quoted without its \"possibly\". And the figures for his investing, about 28 per cent a year against Warren Buffett's 27, come from books this house has not been able to open, so they are not printed here.",
+  "across": [
+    {
+      "to": "lives:edward-thorp",
+      "label": "Edward O. Thorp",
+      "txt": "— who brought him a blackjack paper to submit, and left with a partner for the roulette computer and Kelly's rule for sizing bets."
+    }
+  ],
+  "facts": [
+    {
+      "b": "~50%",
+      "s": "The redundancy of ordinary English over about eight letters: Claude Shannon, 'A Mathematical Theory of Communication', Bell System Technical Journal 27 (1948), Bell Labs reprint"
+    },
+    {
+      "b": "1941–1972",
+      "s": "His years at Bell Laboratories: MIT News Office obituary, 27 February 2001"
+    },
+    {
+      "b": "12 transistors · $1,500",
+      "s": "The final roulette computer, and what the regulation wheel from Reno cost them: Edward O. Thorp, 'The Invention of the First Wearable Computer', International Symposium on Wearable Computers (1998)"
+    },
+    {
+      "b": "~44%",
+      "s": "The expected gain on the best single number in the laboratory: Thorp (1998)"
+    },
+    {
+      "b": "42 moves",
+      "s": "His game against the world champion Mikhail Botvinnik, Russia, 1965: MIT News Office obituary, 27 February 2001"
+    }
+  ]
+}

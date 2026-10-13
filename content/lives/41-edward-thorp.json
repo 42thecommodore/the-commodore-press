@@ -55,6 +55,11 @@
       "to": "lives:hetty-green",
       "label": "Hetty Green",
       "txt": "— who put the sizing question her own way in 1905: \"safe and low is better than risky and high.\""
+    },
+    {
+      "to": "lives:claude-shannon",
+      "label": "Claude Shannon",
+      "txt": "— who submitted the blackjack paper, retitled it, and built the roulette computer with him in his basement."
     }
   ],
   "corrected": [

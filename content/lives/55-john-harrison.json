@@ -35,6 +35,11 @@
       "to": "lives:katherine-johnson",
       "label": "Katherine Johnson",
       "txt": "— two centuries on, the same question of when to trust a machine's numbers, answered by checking them by hand."
+    },
+    {
+      "to": "lives:alfred-lee-loomis",
+      "label": "Alfred Lee Loomis",
+      "txt": "— the banker who bought the finest clocks of 1930 and turned exact time into radio navigation."
     }
   ],
   "facts": [

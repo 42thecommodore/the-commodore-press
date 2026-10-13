@@ -1,0 +1,63 @@
+{
+  "id": "charles-kettering",
+  "no": 75,
+  "keep": "He told the hearing how the knock was beaten. The men who died beating it were not in his history.",
+  "n": "Charles Kettering",
+  "years": "1876–1958",
+  "place": "United States",
+  "field": "Engineering & Invention",
+  "group": "obscure",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "In May 1925 he opened the Surgeon General's conference on leaded petrol with a history of the engine. Seven men had died making the additive at Dayton and Bayway. He did not mention them.",
+  "copy": [
+    "Charles Kettering was born on a farm near Loudonville, Ohio, on 29 August 1876. His eyes were so poor that he left Ohio State in his second year, and when he went back his classmates read the assignments aloud to him. He graduated at twenty-eight. On 1 July 1904 National Cash Register took him onto its inventions staff at $50 a week, when engineering graduates elsewhere were paid 17 or 18 cents an hour. There he put a motor on the cash register, small but with high turning power for its size, and an overrunning clutch. In July 1909 his new firm, the Dayton Engineering Laboratories Company, named so its initials spelled Delco, took an order from Cadillac for 8,000 ignition sets. That autumn he left the register company.",
+    "The motor and the clutch went into the self-starter. A Cadillac fitted with one was delivered to the company on 17 February 1911, and on 12 April he broke his ankle in a test car. It was not the first starter patented: Clyde J. Coleman held what Kettering's biographer T. A. Boyd calls a \"paper patent\", and Edward Deeds licensed it for Delco. Delco was sold to Durant's United Motors in 1916, for nine million dollars by Deeds's recollection, and from 1920 Kettering ran research for General Motors. Its first big project, an air-cooled engine with copper fins, went into Chevrolets at the end of 1922 and was given up the next summer, at a cost Boyd puts at many millions. A body then took two weeks or more to paint. He told the paint makers it ought to take an hour, and a lacquer made with du Pont was in use by the autumn of 1923. In 1935 GM's Electro-Motive finished its first full-power diesel locomotive.",
+    "Tetraethyl lead silenced knock in his laboratory on 9 December 1921. Two men died on the Dayton bottling line in April 1924, five at Standard Oil's Bayway works that October, and eight at du Pont's Deepwater plant between 1923 and 1925. When Bayway broke, his colleague McEvoy wrote to Sloan that Kettering \"is very upset and worried, and neither he nor I can understand how Standard allowed this matter to obtain such broad publicity.\" At the conference he spoke first, as president of the Ethyl Gasoline Corporation. He conceded that alcohols stopped knock too, and said that \"almost as a last resort we started to study the properties of lead.\" The line about lead as \"this apparent gift of God\" was not his but Frank Howard's, for the same company; the labour delegate Grace Burnham answered that it was no gift of God \"when those 11 men were killed or those 149 were poisoned.\" In 1952, in court, he said of the workers, as Bill Kovarik quotes the record: \"They did not realize what they were working with.\" Boyd had worked on the lead himself. His biography of 1957 does not mention one death."
+  ],
+  "bio": {
+    "t": "Boss Kettering",
+    "a": "Stuart W. Leslie",
+    "y": "1983",
+    "why": "A historian's life from a university press, written independently of General Motors. T. A. Boyd's Professional Amateur (1957) is the authorised one, rich in Kettering's own words and silent on every death from the lead; read it for what he said, not for a verdict on it."
+  },
+  "contested": "What he knew, what the alternatives were, and some of the stories. Bill Kovarik, in his dissertation of 1993 and a paper of 1994, argues that Kettering's team knew alcohol and benzene blends stopped knock, and patented other answers, while the public line was that there was none; Kettering's own words in 1925 concede the alcohols. Stuart Leslie, as Kovarik reads him, has ethanol briefly considered and dismissed, and Kovarik contests that reading; Boyd and the Ethyl Corporation's own historian, Joseph C. Robert, give the company's case. Whether Bayway taught them anything new is argued too: Sloan wrote on 11 November 1924, as Kovarik quotes him, that it showed nothing \"that we did not know four or five months ago\". The starter's origin story, Byron Carter killed by a flying crank on Belle Isle in 1910, first appears with Carter's name in Boyd's book of 1957. A history of the Carter company at cartercar.org cites his death certificate: pneumonia, April 1908. A different Carter broke his jaw on a Cadillac crank there in 1907, and lived; this house has not opened the certificate or the newspaper. The copper-cooled engine's numbers disagree: Boyd has about 3,000 cars delivered; the figure of 759 built, usually traced to Alfred Sloan's memoir, is one this house has not read. The patent count is printed as both 140 and 185. And \"a problem well stated is a problem half solved\" is not in Boyd; John Dewey called it \"a familiar and significant saying\" in 1938. The Sloan-Kettering Institute was founded by Sloan in 1945. Kettering advised it and gave to it.",
+  "across": [
+    {
+      "to": "lives:thomas-midgley-jr",
+      "label": "Thomas Midgley Jr.",
+      "txt": "— the engineer who found the lead in Kettering's laboratory, and wrote to him as \"My dear Boss\"."
+    },
+    {
+      "to": "lives:clair-patterson",
+      "label": "Clair Patterson",
+      "txt": "— who measured where the lead went, against forty years of the case made from a laboratory with Kettering's name on it."
+    }
+  ],
+  "plateOf": "Harris & Ewing, 12 August 1936. Library of Congress.",
+  "facts": [
+    {
+      "b": "$50 a week",
+      "s": "His starting pay at National Cash Register, 1 July 1904, against 17 or 18 cents an hour for graduates elsewhere: T. A. Boyd, Professional Amateur: The Biography of Charles Franklin Kettering (1957), archive.org"
+    },
+    {
+      "b": "8,000",
+      "s": "Ignition sets Cadillac ordered from Delco in July 1909: Boyd, Professional Amateur (1957)"
+    },
+    {
+      "b": "5% · 95%",
+      "s": "The share of petrol's energy he said cars used in 1925, and the share 'thrown away': Public Health Bulletin No. 158, proceedings of the conference of 20 May 1925 (toxicdocs.org)"
+    },
+    {
+      "b": "2 · 5 · 8",
+      "s": "Deaths making tetraethyl lead at Dayton (April 1924), Bayway (October 1924) and Deepwater (1923–1925): Bill Kovarik, 'Charles F. Kettering and the 1921 discovery of tetraethyl lead', Society of Automotive Engineers paper (1994)"
+    },
+    {
+      "b": "11 · 149",
+      "s": "Killed and poisoned, by the labour delegate Grace Burnham's count at the 1925 conference: Public Health Bulletin No. 158, p. 108"
+    }
+  ]
+}

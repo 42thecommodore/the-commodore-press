@@ -1,0 +1,58 @@
+{
+  "id": "samuel-insull",
+  "no": 78,
+  "keep": "He asked to be regulated as a monopoly, then built a pyramid of companies on top of the ones that were. The 30 francs in his pocket were not the whole story.",
+  "n": "Samuel Insull",
+  "years": "1859–1938",
+  "place": "England · United States",
+  "field": "Industry & Finance",
+  "group": "obscure",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "He died in a Paris Métro station with 30 francs in his pocket, and the story became that he died a pauper. The same dispatch said he was living on a pension of $18,000 a year.",
+  "copy": [
+    "Samuel Insull was born in London on 11 November 1859. In 1879 he became secretary to Edison's London agent, and in 1881 he crossed to New York as Thomas Edison's private secretary. He ran the Edison works at Schenectady from 1886, and was a vice-president of General Electric when, on 1 July 1892, he moved to Chicago to run the Chicago Edison Company. There he bet on size. Offered a 1,000-kilowatt turbine, he insisted that General Electric build them of not less than 5,000, and the first at Fisk Street started on 2 October 1903. He sold the load factor with his own numbers. One Chicago block of 189 customers, he told a dinner in Boston in 1910, used its plant 5.5 per cent of the time counted customer by customer, and 19 per cent counted at the transformer. The method, he said, was Arthur Wright's, of Brighton: \"Mr. Wright first taught us how to sell electricity.\"",
+    "In June 1898, as president of the National Electric Light Association, he asked for what most businessmen feared: monopoly, and public control of it. The best service at the lowest price, he said, came only from \"exclusive control of a given territory being placed in the hands of one undertaking,\" with charges \"based on cost plus a reasonable profit.\" Then he built upward. Commonwealth Edison was formed in 1907, Public Service of Northern Illinois in 1911 out of 39 small utilities, and Middle West Utilities in 1912. At the top went two investment companies, Insull Utility Investments in December 1928 and Corporation Securities in October 1929. The Civic Opera House opened on 4 November 1929. In the spring of 1930 he borrowed heavily from New York banks to buy out Cyrus Eaton's holdings, and in April 1932 the companies went into receivership.",
+    "The public held $2,647,000,000 of Insull securities in 1932. Measured to 1946, by Taylor's study in the Business History Review, they lost $638 million, 24.1 per cent, almost all of it in the investment trusts and holding companies; the banks \"sustained relatively little loss.\" Indicted in Chicago in October 1932, he was in Greece, whose courts refused to send him back. In March 1934 the State Department asked Turkey to arrest him \"in view of the imminent ratification of the extradition treaty\"; Turkey handed him over in April, two months before the treaty came into force. He was acquitted of mail fraud in November 1934, after the jury had deliberated two hours and twelve minutes, and of embezzlement in 1935, and the bankruptcy case ended when the judge directed a verdict. The Public Utility Holding Company Act became law on 26 August 1935. He died at the ticket barrier of the Place de la Concorde station on 16 July 1938."
+  ],
+  "bio": {
+    "t": "Insull",
+    "a": "Forrest McDonald",
+    "y": "1962",
+    "why": "The only life written from the full Insull papers, and openly a rehabilitation. Read it with Taylor's study of the investors' losses in the Business History Review (1962), and with Insull's own speeches, collected in 1915, which say what he wanted in his own words."
+  },
+  "contested": "Villain or scapegoat, and how much was lost. Forrest McDonald's biography of 1962 set out, in Kirkus's words, to show him \"in a much better light\"; McDonald argued that without the investment trusts of 1928 and 1929 there would have been no collapse. Cudahy and Henderson, in the Energy Law Journal (2005), point out that he was cleared in court while Congress legislated as if he were guilty. The losses depend on the date: popular accounts give $800 million, a guess from about 1932, while Taylor measured to 1946 and noted that \"if the very low 1932 market values were used exclusively, the Insull investors would not have lost, but gained.\" Whether his regulation was reform or capture is argued too: in 1926 he gave about $160,000 to the Senate campaign of Frank L. Smith, chairman of the Illinois commission that regulated his companies, by McDonald's count as Cudahy and Henderson cite it. The 30 francs became 84 cents in the Associated Press's own conversion, and later eight francs and a stolen wallet, which no report of 1938 that this house has read supports. His pension is $18,000 in that report and $21,000 elsewhere. He was not acquitted by three juries: the third case ended on a directed verdict. And the investor-loss figures here are Taylor's as quoted by Cudahy and Henderson; Taylor's article itself is behind a paywall this house did not get past.",
+  "across": [
+    {
+      "to": "lives:thomas-edison",
+      "label": "Thomas Edison",
+      "txt": "— whose private secretary he was from 1881, and whose works at Schenectady he ran before Chicago."
+    }
+  ],
+  "plateOf": "William L. Koehne Studio, Chicago, 1920.",
+  "facts": [
+    {
+      "b": "5.5% · 19%",
+      "s": "The load factor of one Chicago block of 189 customers, counted by each customer's peak and at the transformer: Samuel Insull, address in Boston, 25 February 1910, in Central-Station Electric Service, ed. W. E. Keily (1915), archive.org"
+    },
+    {
+      "b": "5,000 kW",
+      "s": "The smallest turbine he would accept for Fisk Street, whose first unit started on 2 October 1903: Insull, Central-Station Electric Service (1915)"
+    },
+    {
+      "b": "39",
+      "s": "Small utilities absorbed by the Public Service Company of Northern Illinois in 1911: Loyola University Chicago Archives, finding aid to the Samuel Insull Papers"
+    },
+    {
+      "b": "$2,647m · 24.1%",
+      "s": "Insull securities held by the public in 1932, and the share lost when measured to 1946: Taylor, Business History Review 36 (1962), as quoted by Cudahy and Henderson, 'From Insull to Enron', Energy Law Journal 26 (2005)"
+    },
+    {
+      "b": "30 francs",
+      "s": "What he had in his pocket when he died, '84 cents' in the dispatch's own conversion: Associated Press, Evening Star (Washington), 17 July 1938, p. A-2"
+    }
+  ]
+}

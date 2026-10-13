@@ -89,5 +89,17 @@
     "by": "Hollinger & Rockey, Library of Congress (cph.3a42973)",
     "credit": "the 1897 photograph of Hetty Green is by Hollinger &amp; Rockey, held by the Library of Congress, which states that there are no known restrictions on its publication",
     "checked": "2026-10-13"
+  },
+  "ivar-kreuger": {
+    "licence": "CC BY 4.0",
+    "by": "Georges Chevalier, Archives de la Planète (musée Albert-Kahn)",
+    "credit": "the autochrome of Ivar Kreuger, taken on 8 March 1930 by Georges Chevalier, is from the musée Albert-Kahn, Département des Hauts-de-Seine (A74890), under CC BY 4.0",
+    "checked": "2026-10-13"
+  },
+  "charles-kettering": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Harris & Ewing, Library of Congress (LCCN 2016878371)",
+    "credit": "the 1936 photograph of Charles Kettering is by Harris &amp; Ewing, held by the Library of Congress, which states that there are no known restrictions on its publication",
+    "checked": "2026-10-13"
   }
 }
