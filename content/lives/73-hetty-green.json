@@ -3,7 +3,7 @@
   "no": 73,
   "keep": "She said there was no secret: buy cheap, sell dear, be persistent. The papers preferred a witch.",
   "n": "Hetty Green",
-  "years": "1834–1916",
+  "years": "1834 or 1835 – 1916",
   "place": "United States",
   "field": "Finance",
   "group": "obscure",
@@ -14,22 +14,22 @@
   "motif": "lines",
   "lede": "The papers called her the Witch of Wall Street. In 1905 she told an interviewer that Wall Street was no place for a woman, and that she never bought industrials.",
   "copy": [
-    "Hetty Howland Robinson was born in 1834. When her father died in 1865 she inherited nearly a million dollars, and the income of trusts worth several million more. \"My father left seven or eight millions,\" she said forty years later, \"of which one million came to me.\" Her aunt Sylvia Ann Howland left an estate of about two million, half of it in trust, and Hetty went to court to claim it. The mathematician Benjamin Peirce testified that the chance of the signatures in dispute matching as closely as they did was one in \"two thousand six hundred and sixty-six millions of millions of millions\". The Federal Judicial Center believes it the first federal case to hear statistical evidence. The court never ruled on forgery; it dismissed her claim in 1868 on other grounds.",
-    "She bought what nobody wanted. \"Railroads and real estate,\" she told The National Magazine in 1905. \"When I see a good thing going cheap because nobody wants it, I buy a lot of it and tuck it away. Then when the time comes they have to hunt me up and pay me a good price for my holdings.\" She held city mortgages, once those on twenty-eight churches, and kept clear of stocks. \"Government bonds are good,\" she said, \"though they do not pay very high interest. Still, for a woman, safe and low is better than risky and high.\" In the panic of 1907 she lent New York City over a million dollars against short-term revenue bonds, and, her son said, $6,000,000 in Texas alone.",
+    "When her father died in 1865, Hetty Robinson inherited nearly a million dollars, and the income of trusts worth several million more. \"My father left seven or eight millions,\" she said forty years later, \"of which one million came to me.\" Her aunt Sylvia Ann Howland left an estate of about two million, half of it in trust, and Hetty went to court to claim it. The mathematician Benjamin Peirce testified that the chance of the signatures in dispute matching as closely as they did was one in \"two thousand six hundred and sixty-six millions of millions of millions\". The Federal Judicial Center believes it the first federal case to hear statistical evidence. The court never ruled on forgery; it dismissed her claim in 1868 on other grounds.",
+    "She bought what nobody wanted. \"Railroads and real estate,\" she told The National Magazine in 1905, as it printed her. \"When I see a good thing going cheap because nobody wants it. I buy a lot of it and tuck it away. Then when the time comes they have to hunt me up and pay me a good price for my holdings.\" She held city mortgages, once those on twenty-eight churches, and said she did not much believe in stocks. \"Government bonds are good,\" she said, \"though they do not pay very high interest. Still, for a woman, safe and low is better than risky and high.\" In the panic of 1907 she lent New York City over a million dollars against short-term revenue bonds, and, her son said, $6,000,000 in Texas alone.",
     "The papers wanted a miser. The nickname came, by one account, from the black mourning veil she wore, and they made much of the bag she carried everywhere. \"I am a Quaker,\" she said. \"I believe in simplicity. It's that, you know, that makes me what folks call 'mean.'\" In 1899 the San Francisco Call hinted that her son Ned had lost a leg because she would not pay to have it treated, and the story has followed her since. Her son said reporters \"invented little things\", and that the famous bag held \"nothing more than her luncheon or some toilet articles\". She died on 3 July 1916 after a series of strokes. The New York Times called her \"generally believed to be the world's richest woman\", and put the fortune at $100,000,000, a banker's guess made offhand. Her own estimate, in 1905, was shorter: \"Rich people are always worth less than report has it.\""
   ],
   "bio": {
     "t": "Hetty: The Genius and Madness of America's First Female Tycoon",
     "a": "Charles Slack",
     "y": "2004",
-    "why": "It takes her business seriously, and its author has said on the record that the story of her son's leg is not true. Janet Wallach's The Richest Woman in America (2012) is the other recent life. Read her own words in The National Magazine of September 1905 before either."
+    "why": "Its author has said on the record that the story of her son's leg is not true. Janet Wallach's The Richest Woman in America (2012) is the other recent life. Read her interview in The National Magazine of September 1905, as the magazine printed it, before either."
   },
-  "contested": "The leg, the money and the forgery. The story that she let her son's leg go untreated to save money began in the press; the Library of Congress traces it to the San Francisco Call in 1899 and counts it among the sensational stories of her. Charles Slack, her biographer, told Fortune in 2024 that it \"really isn't true\": \"She loved her son, and she tried a number of remedies over the years.\" He also says she distrusted doctors, which is how the story could start. Her fortune is a guess. The Times's $100 million was one banker's; Fortune and others print up to $200 million, which is not in the Times. The million dollars to New York City in 1907 is \"over a million\" in the Library of Congress's account, and a more exact $1.1 million elsewhere, which this house has not traced to a document. The forgery was never decided: Justice Nathan Clifford threw out her suit under a Massachusetts rule on testimony and declined to rule on the signatures, so the statistics proved nothing in law. And a story repeated in record books, that she died of apoplexy in a row over skimmed milk, is not in the Times's account, which describes strokes from April onward.",
+  "contested": "The leg, the money and the forgery. The story that she let her son's leg go untreated to save money began in the press; the Library of Congress traces it to the San Francisco Call in 1899 and counts it among the sensational stories of her. Charles Slack, her biographer, told Fortune in 2024 that the story is not true: \"She loved her son, and she tried a number of remedies over the years.\" Fortune adds that she distrusted doctors. Her fortune is a guess. The Times's $100 million was one banker's; Fortune and others print up to $200 million, which is not in the Times. The million dollars to New York City in 1907 is \"over a million\" in the Library of Congress's account, and a more exact $1.1 million elsewhere, which this house has not traced to a document. The forgery was never decided: Justice Nathan Clifford threw out her suit under a Massachusetts rule on testimony and declined to rule on the signatures, so the statistics proved nothing in law. And a story repeated in record books, that she died of apoplexy in a row over skimmed milk, is not in the Times's account, which describes strokes from April onward.",
   "across": [
     {
       "to": "lives:edward-thorp",
       "label": "Edward O. Thorp",
-      "txt": "— the same rule in plainer words, a lifetime earlier: \"safe and low is better than risky and high.\""
+      "txt": "— the other investor here who thought hardest about how much to risk: \"for a woman, safe and low is better than risky and high.\""
     }
   ],
   "plateOf": "Hollinger & Rockey, 1897. Library of Congress, cph.3a42973.",
@@ -51,8 +51,8 @@
       "s": "The estimate of her fortune at her death, put 'offhand' by a banker who knew her: New York Times, 4 July 1916"
     },
     {
-      "b": "$3,000,000",
-      "s": "Her annual income as William Jennings Bryan estimated it in Congress: New York Times, 4 July 1916"
+      "b": "$3,000,000+",
+      "s": "Her annual income, which William Jennings Bryan told Congress 'could scarcely be less than' this: New York Times, 4 July 1916"
     }
   ]
 }
