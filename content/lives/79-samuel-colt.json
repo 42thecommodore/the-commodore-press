@@ -1,0 +1,62 @@
+{
+  "id": "samuel-colt",
+  "no": 79,
+  "keep": "The slogan is from 1952 and the sea story was already hedged in 1863. The 468,000 revolvers are not in dispute.",
+  "n": "Samuel Colt",
+  "years": "1814–1862",
+  "place": "United States",
+  "field": "Invention & Industry",
+  "group": "famous",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "The line most quoted about him, \"God made man, Sam Colt made them equal,\" has no source from his lifetime that this house has found. The earliest dated version is from 1952, offered as an old Texas saying.",
+  "copy": [
+    "Samuel Colt is said to have carved the first wooden model of his revolver at sea, as a boy. The engineers who wrote his obituary in 1863 already put it as \"he is supposed to have produced\" it. The model survives, at the Wadsworth Atheneum in Hartford, beside the revolvers that came before his and that he collected: a flintlock patented by Collier in 1820–21, and a revolving rifle by the Millers of Rochester. To pay for his experiments he toured Canada and the United States for three years as \"Dr. Coult of New York, London and Calcutta,\" charging 25 cents admission. US patent 138, later known as X9430, was issued on 25 February 1836. His first factory, at Paterson, New Jersey, closed in September 1842 for poor sales.",
+    "Texas kept the gun alive. The Texas Navy ordered 180 of the Paterson revolvers in August 1839, and in 1844, by the Handbook of Texas's count, Hays and fourteen rangers carrying them routed nearly eighty Comanche warriors at Walker's Creek. In November 1846 Captain Samuel Walker, then of the United States Mounted Riflemen, opened negotiations with Colt for 1,000 improved revolvers. The buyer was the United States government, not the Rangers. The gun weighed four pounds nine ounces, and it was made at the factory of Eli Whitney Jr. Walker was killed at Huamantla on 9 October 1847.",
+    "Then Colt built his own. Land at Hartford was bought from 1851, the first armoury buildings, designed by Colt, H. A. G. Pomeroy and Elisha Root, were completed in 1855, and by 1857 the factory turned out 150 finished firearms a day. A factory in London, at Thames Bank, Pimlico, was \"not successful as a commercial speculation,\" his obituary said, and he lost a large sum on it. By his death, ten improved models had been introduced and some 468,000 made. The New York Times reported that he died at nine o'clock on 10 January 1862, \"of an acute attack upon the brain,\" aged 47. His widow, Elizabeth, took a controlling interest, with Root as president, and kept tight control of the factory for most of the forty-three years she outlived him. In 1864 the armoury burned. It was uninsured, and the damage came to about $2 million."
+  ],
+  "bio": {
+    "t": "Revolver: Sam Colt and the Six-Shooter That Changed America",
+    "a": "Jim Rasenberger",
+    "y": "2020",
+    "why": "The most recent full life, and by Publishers Weekly's account one that treats the shipboard model as the \"central creation myth\" and covers the paid press, his brother John's murder case and the sales before the Civil War. William Hosley's Colt: The Making of an American Legend (1996), published with the Wadsworth Atheneum, is stronger on Elizabeth Colt and Hartford."
+  },
+  "contested": "The parts, the design, the fortune and the fire. David Hounshell's From the American System to Mass Production (1984) argues, as Grace's Guide summarises it, that Colt's revolvers were not made with interchangeable parts: major components were stamped with serial numbers and refitted by hand after hardening. J. W. Roe, in English and American Tool Builders (1916), wrote the opposite, and the Smithsonian's Eric Hintz credits Root's armoury with interchangeable parts on a mass scale; this house has not opened Hounshell's book. Critics claimed the rotating cylinder came from a pistol British soldiers carried in India, by Publishers Weekly's account of Rasenberger, and Collier's earlier revolver sits in his own collection. His fortune is printed as $15 million by Smithsonian magazine, with no source; the Connecticut Women's Hall of Fame says Elizabeth inherited several million, and the engineers' obituary valued the factory alone at nearly $5,000,000 before the war. The Hall of Fame blames the 1864 fire on Confederate sympathisers; the National Park Service says its cause was never identified. Accounts of Walker's Creek give the Comanche as seventy or nearly eighty. His sales to Southern states on the eve of the war and his gifts to officials are told in the biographies, which this house has not read in full, so no figures are printed here.",
+  "across": [
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— the other end of the story: Hounshell's history runs from the armoury system at Hartford to Ford's moving line."
+    }
+  ],
+  "plateOf": "Engraving by John Chester Buttre, about 1855.",
+  "facts": [
+    {
+      "b": "US X9430",
+      "s": "'Improvement in fire-arms', 25 February 1836, first issued as US patent 138: Google Patents USX9430; Connecticut Humanities, 'The Revolving Gun'"
+    },
+    {
+      "b": "180",
+      "s": "Paterson revolvers ordered for the Texas Navy in August 1839: Richard C. Rattenbury, 'Colt Revolvers', Handbook of Texas Online"
+    },
+    {
+      "b": "1,000",
+      "s": "Improved revolvers Walker negotiated for in November 1846, for the United States government: Rattenbury, 'Colt Revolvers', Handbook of Texas Online"
+    },
+    {
+      "b": "150 a day",
+      "s": "Finished firearms made at the Hartford armoury by 1857: National Park Service, Coltsville National Historical Park, 'East Armory Complex'"
+    },
+    {
+      "b": "~468,000",
+      "s": "Revolvers made by his death, in ten improved models: Rattenbury, 'Colt Revolvers', Handbook of Texas Online"
+    },
+    {
+      "b": "~$2 million",
+      "s": "Damage in the uninsured armoury fire of 1864: National Park Service, 'East Armory Complex'"
+    }
+  ]
+}

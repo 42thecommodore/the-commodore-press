@@ -30,6 +30,11 @@
       "to": "lives:thomas-edison",
       "label": "Thomas Edison",
       "txt": "— his boyhood hero, met in 1896. Ford opened his museum on the fiftieth anniversary of Edison's lamp."
+    },
+    {
+      "to": "lives:samuel-colt",
+      "label": "Samuel Colt",
+      "txt": "— the armoury at Hartford, where Hounshell's history of mass production begins, and where the argument over interchangeable parts starts."
     }
   ],
   "plateOf": "About 1919.",
