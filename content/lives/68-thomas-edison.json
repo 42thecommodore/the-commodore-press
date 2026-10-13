@@ -1,0 +1,62 @@
+{
+  "id": "thomas-edison",
+  "no": 68,
+  "keep": "He did not invent the bulb. He invented the reason to buy one, and lost the fight over the current it ran on.",
+  "n": "Thomas Edison",
+  "years": "1847–1931",
+  "place": "United States",
+  "field": "Invention & Industry",
+  "group": "famous",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "Experimenters had been making electric lamps for forty years when he started on his in 1878. What he built was everything around it: the dynamo, the cables, the meter, the fuse, and a station on Pearl Street.",
+  "copy": [
+    "Thomas Edison was born at Milan, Ohio, in 1847, the last of seven children, and grew up in Port Huron, Michigan. He had little schooling; his mother taught him, and his father's library did the rest. He went deaf from about the age of twelve, and the cause is still argued. In 1876 he built something new at Menlo Park, New Jersey: a laboratory and machine shop standing on their own, for nothing but inventing. Out of it, inside three years, came a better telephone transmitter, the phonograph, and the electric light.",
+    "He took up the lamp in September 1878. Others had made carbon glow in closed glass; his own patent says so. The problem was resistance. Edison aimed for about 100 ohms, so that lamps could hang in parallel and each be switched on and off alone, and so that the copper in the streets could be thin. On 21 and 22 October 1879 a filament of carbonised cotton thread held in a vacuum, and US patent 223,898 claimed a carbon filament of high resistance. Then he designed the rest, on the model of gas: dynamos, buried conductors, meters, fixtures, the screw socket, the fuse. On 4 September 1882 the station at 257 Pearl Street, in lower Manhattan, began supplying a district of a quarter of a square mile. Its six dynamos could light 7,200 lamps. On the first day it lit about 400, for fewer than 90 customers.",
+    "He would not build alternating current. He believed high voltage in public streets was dangerous, and he had his money in direct current. He electrocuted animals in his laboratory to show that AC was the deadlier, his company branded Westinghouse's system the executioner's current, and the Edison lighting interests, though not Edison himself, helped get the Westinghouse dynamo used to kill William Kemmler in 1889. By the time his company made him build AC in 1891 it was too late, and in 1892 it merged into General Electric and he left the business. He sank more than $2 million of his own money into milling iron ore in New Jersey and lost it. He did not kill Topsy the elephant at Coney Island in 1903; his name was on the film. He died on 18 October 1931 with 1,093 US patents."
+  ],
+  "bio": {
+    "t": "Edison: A Life of Invention",
+    "a": "Paul Israel",
+    "y": "1998",
+    "why": "Built on the Thomas A. Edison Papers at Rutgers, which call it the authoritative biography, and it treats Menlo Park as a team. Edmund Morris's Edison (2019) is the better read and the weaker guide: it runs backwards through his life, and the Papers' own reviewer found that clumsy."
+  },
+  "contested": "Priority, method, and what he said. On the lamp, the Science Museum Group credits Joseph Swan with a technically and commercially viable lamp with a carbonised thread filament, shown in public in October 1880. When Edison's company sued him in Britain the two merged instead of going to trial, and the lamps sold there were almost entirely of Swan's design. William Ashworth of the Linda Hall Library goes further, that Swan's work came first and the Edison patents would not have survived a suit. Daniel Weeks, reviewing for the Edison Papers, has Swan imitating Edison. On method, Nikola Tesla, who had worked for him, told the New York Times the day after he died that \"just a little theory and calculation would have saved him 90 per cent of the labor\", and in the same piece called his work \"little short of a miracle\" (the house has read it in a transcription, not the Times's page). The Papers' claim that he invented the industrial research laboratory is the Papers' own, and the motion-picture camera he worked on with William Dickson from 1888 is, by their account, a co-invention for which he took sole credit. The famous ratio is his, in two versions: Quote Investigator finds two per cent inspiration in print in 1898, and one per cent from 1901. The first day at Pearl Street is counted as about 85 customers by one line of the IEEE's own page and fewer than 90 by another.",
+  "across": [
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— who met his boyhood hero at a convention of Edison's lighting companies in 1896. One of Pearl Street's dynamos now stands in Ford's museum."
+    }
+  ],
+  "plateOf": "With the tinfoil phonograph, about 1878. Brady-Handy Collection, Library of Congress.",
+  "facts": [
+    {
+      "b": "40 years",
+      "s": "How long experimenters had been trying to make incandescent lamps when he began in September 1878: Thomas A. Edison Papers, Rutgers, 'Electric Lamp'"
+    },
+    {
+      "b": "US 223,898",
+      "s": "'Electric Lamp', filed 4 November 1879, issued 27 January 1880, claiming a carbon filament of high resistance: United States patent, as recorded by Google Patents"
+    },
+    {
+      "b": "7,200 · ~400 · <90",
+      "s": "Lamps Pearl Street's six dynamos could light, lamps it lit on 4 September 1882, and customers that day: IEEE Milestone 114, 'Pearl Street Station, 1882' (ethw.org)"
+    },
+    {
+      "b": "$500,000+",
+      "s": "Cost of the first district, station and distribution together; customers paid nothing until early 1883: Thomas A. Edison Papers, vol. 7, headnote 'Pearl Street Central Station'"
+    },
+    {
+      "b": "$2 million+",
+      "s": "His own money lost on iron-ore milling in northern New Jersey, 1887–98: Thomas A. Edison Papers, 'Ore Milling'"
+    },
+    {
+      "b": "1,093",
+      "s": "US patents he had received when he died on 18 October 1931: Thomas A. Edison Papers, Rutgers, biography"
+    }
+  ]
+}
