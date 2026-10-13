@@ -50,6 +50,11 @@
       "to": "atlas:bet",
       "label": "The Atlas · Bet on yourself",
       "txt": "— and the objection to it. Knowing you are right tells you to bet, not how much: stake more than the edge and ordinary bad luck takes you out while you are still right."
+    },
+    {
+      "to": "lives:hetty-green",
+      "label": "Hetty Green",
+      "txt": "— the first time a mathematician's odds were heard in a federal court, in 1868, over her aunt's signature."
     }
   ],
   "corrected": [

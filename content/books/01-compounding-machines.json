@@ -110,6 +110,11 @@
       "to": "lives:edwin-land",
       "label": "Edwin Land",
       "txt": "— the founder who ran his company as a laboratory, and on the side steered the CIA into the U-2 and CORONA."
+    },
+    {
+      "to": "lives:thomas-edison",
+      "label": "Thomas Edison",
+      "txt": "— Menlo Park, 1876: the first of the invention factories, with two experimenters, three machinists and a promise about every ten days."
     }
   ],
   "reading": [

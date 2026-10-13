@@ -1,0 +1,62 @@
+{
+  "id": "jakob-fugger",
+  "no": 76,
+  "keep": "The richest man who ever lived is a title, not a sum. The sum is a firm's books, with an emperor's debts inside them.",
+  "n": "Jakob Fugger",
+  "years": "1459–1525",
+  "place": "Augsburg, Venice and Tyrol",
+  "field": "Banking & Mining",
+  "group": "famous",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "conic",
+  "lede": "He was the youngest son, meant for the church, and held a benefice before he held a trade. Fifty years after he left it, he wrote to remind an emperor that he could not have gained the crown without him.",
+  "copy": [
+    "Jakob Fugger was born in Augsburg on 6 March 1459, the youngest son of a family in the Augsburg cloth trade. He was meant for the church and was given a benefice early, at the collegiate foundation of Herrieden in Franconia. The death of his brother Peter in Nuremberg in 1473 changed that. Ehrenberg says he was fourteen when he became a merchant, and learned the business in Venice, in the Germans' trading house, the Fondaco dei Tedeschi. The method was lending to princes against metal. From 1485 the firm made large loans to Archduke Sigmund of Tyrol, secured on his silver and copper. From 1494 it went into Hungarian mining around Neusohl with Johann Thurzo of Kraków, and in 1497 Fugger's niece Anna married Thurzo's son Georg.",
+    "In 1519 Charles of Habsburg and Francis I of France bid for the votes of the electors who would choose the next emperor. Ehrenberg's figures: over 860,000 florins in all, of which the Fugger lent 543,000, the Welser 143,000, and the Genoese and Florentines together 165,000. Charles was elected on 28 June 1519. Four years later repayment had stalled, and a letter from Fugger reached him at Valladolid on 24 April 1523. In H. M. Lucas's translation it reads: \"It is well known that Your Imperial Majesty could not have gained the Roman Crown save with mine aid.\" The same firm handled the church's money. When Tetzel sold the St Peter's indulgence, a Fugger agent travelled with him and held a key to the chest. In 1515 the theologian Johann Eck argued at Bologna, with Fugger's support, that five per cent interest was lawful; the disputation did not carry. On 23 August 1521 Fugger signed the deed for the Fuggerei, a quarter of houses for needy Catholics of Augsburg who worked for a living. The rent was one Rhenish guilder a year and three prayers a day for the family. It still is: €0.88, the foundation's own conversion, for about 150 residents.",
+    "The usual line on him is the title of Greg Steinmetz's book, The Richest Man Who Ever Lived. The number underneath it is not a man's fortune. It is the firm's balance at 31 December 1527, two years after his death: 2,021,202 florins, against 196,791 in 1511, a profit of 927 per cent in seventeen years. The capital belonged to a company whose partners since 1510 had included his nephews. Part of it was what the Habsburgs owed, and they paid slowly: in 1530, 112,200 of the 415,000 florins charged on Tyrol were still outstanding. In the Peasants' War of 1525, the Neue Deutsche Biographie says, the firm hardly hesitated to fund the counter-attacks of the Swabian League. He died childless in the Fugger house in Augsburg on 30 December 1525."
+  ],
+  "bio": {
+    "t": "The Richest Man Who Ever Lived: The Life and Times of Jacob Fugger",
+    "a": "Greg Steinmetz",
+    "y": "2015",
+    "why": "The only modern life in English, and the book that put the claim in its title, so it should be read with the claim in mind. The standard life is Götz von Pölnitz's Jakob Fugger (1949), from the family archive, in German; Pölnitz also wrote the Neue Deutsche Biographie entry, so the two German sources here are one voice. Ehrenberg's Capital and Finance in the Age of the Renaissance is free on archive.org and has the balance sheets."
+  },
+  "contested": "Whether 'richest ever' means anything. Steinmetz reaches it by setting the fortune against Europe's output in the 1520s; Nathan Delaney, reviewing the book for Europe Now in 2017, found the question of little interest given the limitations of early modern data. Even the famous letter varies by translator: the review quotes Steinmetz's version, that without Fugger the emperor might not have acquired the crown, which is milder than Lucas's could not have gained it. The figure is also a firm's book value with royal debts in it, and the Habsburgs were still in arrears in 1530. The sources disagree on the election itself: Ehrenberg gives over 860,000 florins, 543,000 of them Fugger's; Pölnitz in the NDB gives over 850,000 ducats, raised mainly from Fugger's own funds, a different total in a different coin. They disagree on Venice too. Ehrenberg and the foundation put him at the Fondaco at fourteen; Pölnitz says his stays in Venice and Rome become visible only in 1478. On his reputation the defences are his own historians'. Ehrenberg writes that there is no ground to transfer the indignation over indulgences to the Fugger; Pölnitz says he freed serfs more generously than the neighbouring nobility, in the same entry that records the money for the Swabian League. Neither is a neutral witness, and the miners of Tyrol and Neusohl left no account this entry has found.",
+  "across": [
+    {
+      "to": "press:money-is-a-ledger",
+      "label": "Money Is a Ledger",
+      "txt": "— a fortune that was mostly an emperor's promise to pay, written in a firm's books."
+    },
+    {
+      "to": "lives:john-d-rockefeller",
+      "label": "John D. Rockefeller",
+      "txt": "— the other banker-industrialist whose monuments outlived the methods: the Fuggerei still charges 1521's rent."
+    }
+  ],
+  "facts": [
+    {
+      "b": "860,000 / 543,000 / 143,000 / 165,000 florins",
+      "s": "The 1519 election loan in all, and the shares of the Fugger, the Welser, and the Genoese and Florentines: Richard Ehrenberg, Capital and Finance in the Age of the Renaissance, tr. H. M. Lucas (Harcourt, Brace), archive.org capitalandfinanc037633mbp"
+    },
+    {
+      "b": "1 guilder / €0.88 / ~150 residents",
+      "s": "The Fuggerei's yearly rent as founded, its present base rent, and residents today: Jenny Gesley, '500-Year Anniversary of the Fuggerei', In Custodia Legis, Law Library of Congress, 23 August 2021; Fugger foundation, fugger.de/en/fuggerei"
+    },
+    {
+      "b": "2,021,202 / 196,791 florins · 927%",
+      "s": "The firm's balance at 31 December 1527 and in 1511, and the profit over seventeen years: Ehrenberg, Capital and Finance in the Age of the Renaissance"
+    },
+    {
+      "b": "112,200 / 415,000 florins",
+      "s": "Still owed in 1530 on the sum charged on Tyrol: Ehrenberg, Capital and Finance in the Age of the Renaissance"
+    },
+    {
+      "b": "2 million gulden",
+      "s": "The firm's value 'cautiously' estimated some time after his death, 1.8 million of it earned in his last seventeen years: Götz Freiherr von Pölnitz, 'Fugger, Jakob der Reiche', Neue Deutsche Biographie 5 (1961), deutsche-biographie.de"
+    }
+  ]
+}

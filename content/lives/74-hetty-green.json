@@ -1,0 +1,66 @@
+{
+  "id": "hetty-green",
+  "no": 74,
+  "keep": "The court never ruled the signature forged, and the oldest account opened never says she cost her son his leg.",
+  "n": "Hetty Green",
+  "years": "1834–1916",
+  "place": "New Bedford and New York",
+  "field": "Finance & Banking",
+  "group": "famous",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "Harvard's leading mathematician told a federal court that the odds against her aunt's signature were 2,666 millions of millions of millions to one. Popular history says the court found it forged. It never ruled.",
+  "copy": [
+    "Hetty Robinson's family made its money in New Bedford whaling. When her father died in 1865 she inherited nearly a million dollars, and the income from trusts worth several million more. Her aunt Sylvia Ann Howland died the same year and left about two million, half of it in trust for her. Hetty sued in federal court. She produced an earlier will that left her everything, with an addendum in her own hand, bearing her aunt's signature, that revoked any will made later. The executor said the signature was traced. His experts included the Harvard mathematician Benjamin Peirce, who testified that an exact match would occur by chance once in two thousand six hundred and sixty-six millions of millions of millions of times. It is thought to be the first federal case to hear statistical evidence. It was not decided on it. In 1868 Justice Nathan Clifford dismissed the suit because Massachusetts law barred her from testifying about her own agreement with the dead, and without her the agreement could not be proved. On the signature, the court said it was not inclined to decide.",
+    "She ran her own money from 1885. That year John J. Cisco & Son failed on Wall Street with her as its largest creditor and her husband, Edward Green, as its largest debtor; he had lost his own fortune speculating, and they lived apart from then on. Her method, as the 1962 American Heritage portrait gives it, was to get in at the bottom and out at the top. That meant cash in a panic. In 1907 she lent the City of New York $1.1 million at the worst of it, by the count Fortune repeats from her first biographers. She lived with her children in working-class flats in Brooklyn and Hoboken and kept no fixed address, to stay clear of taxes. She died on 3 July 1916 and left an estate valued at $100 million to $200 million.",
+    "The story everyone tells is that her son Ned lost his leg because she would not pay a doctor. The oldest version this entry has opened, an unsigned American Heritage portrait from April 1962, tells it as a sequence. At fourteen Ned dislocated his kneecap sledding, and she nursed him herself. Two years later, still in pain, they went to a New York physician dressed as beggars. When he recognised her and asked to be paid, she never went back. Three years after that the leg was amputated. The article does not say one caused the other, and its next sentence says that in her way she did all she could for him. Later retellings change the accident to a dog cart and the doctor to a free clinic. She sent Ned to Chicago to run her property there. He passed her $40,000 a month in rents, and she paid him $3 a day, cut from $6 when she learned he was spending some of it on himself."
+  ],
+  "bio": {
+    "t": "Hetty: The Genius and Madness of America's First Female Tycoon",
+    "a": "Charles Slack",
+    "y": "2004",
+    "why": "Slack goes through the legends one at a time and disputes several of the miserly ones, which is the right instinct for this life. Every telling, his included, leans on Sparkes and Moore's The Witch of Wall Street (1930), the first full-length life, whose quotations nobody has been able to check against a document; read it last, and as a source of stories rather than of facts."
+  },
+  "contested": "Whether she was a miser or an investor who held cash on purpose. Fortune's Will Daniel argues the second, and quotes Slack that she lent New York money more than once when it ran low; the Gilded Age press, which named her the Witch of Wall Street, argued the first. The sums are soft. Fortune gives $1.1 million in 1907 and a $4.5 million loan months earlier, both from Sparkes and Moore's 1930 book; no city record of either has been opened here. The two accounts this entry read of 1885 do not agree: American Heritage says she had to cover some of Edward's debts, and the EBSCO entry says she withdrew her holdings and refused to. On Ned's leg, the 1962 account is the oldest opened, it is unsigned, and it names no source. And the Howland case leaves the larger question open by design: the jury never deliberated, so whether the addendum was traced is a matter of the experts' testimony, not of any finding.",
+  "across": [
+    {
+      "to": "lives:edward-thorp",
+      "label": "Edward Thorp",
+      "txt": "— a mathematician's odds in a courtroom, a century before one took them to the casino and then to Wall Street."
+    },
+    {
+      "to": "lives:rose-blumkin",
+      "label": "Rose Blumkin",
+      "txt": "— another woman who beat a trade of men on price, paid every creditor on time, and was taken to court for it."
+    }
+  ],
+  "facts": [
+    {
+      "b": "nearly $1 million / several million",
+      "s": "Her inheritance on her father's death in 1865, and the trusts whose income she gained: Federal Judicial Center, 'Robinson v. Mandell (1868)', Circuit Court Opinions exhibit (fjc.gov)"
+    },
+    {
+      "b": "about $2 million",
+      "s": "Sylvia Ann Howland's estate, half placed in trust for her niece: Federal Judicial Center, 'Robinson v. Mandell (1868)'"
+    },
+    {
+      "b": "1 in 2,666 × 10²¹",
+      "s": "Benjamin Peirce's odds against an exact chance match of the signature, as he put them, 'two thousand six hundred and sixty-six millions of millions of millions': Federal Judicial Center, 'Robinson v. Mandell (1868)' (which spells him Pierce)"
+    },
+    {
+      "b": "$1.1 million",
+      "s": "Her loan to the City of New York at the peak of the 1907 panic: Will Daniel, 'How the richest woman in the world… helped bail out New York City during the panic of 1907', Fortune, 11 February 2025, citing Sparkes and Moore, The Witch of Wall Street (1930). No 1907 document opened"
+    },
+    {
+      "b": "$100–200 million",
+      "s": "The estate she left her children in 1916: EBSCO Research Starters, 'Hetty Green' (ebsco.com/research-starters/history/hetty-green)"
+    },
+    {
+      "b": "$40,000 / $3 / $6",
+      "s": "Monthly Chicago rents Ned passed to her, and his daily allowance before and after she cut it: 'Faces From the Past—VI', American Heritage 13:3, April 1962 (americanheritage.com/node/51538)"
+    }
+  ]
+}

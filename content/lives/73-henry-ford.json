@@ -35,6 +35,11 @@
       "to": "lives:john-d-rockefeller",
       "label": "John D. Rockefeller",
       "txt": "— the other fortune made by cutting a unit cost below anyone's reach, and the other name whose methods stain its monuments."
+    },
+    {
+      "to": "lives:thomas-edison",
+      "label": "Thomas Edison",
+      "txt": "— the lamp sold as a system: station, wires and meter. Ford's system was the line."
     }
   ],
   "facts": [

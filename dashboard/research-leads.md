@@ -297,3 +297,19 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Hill | Ramsey County History, Spring 1990 (rchs.com PDF) | The 1894 ARU strike and its arbitration; the PDF would not read |
 | Hill | NPS Glacier administrative history, ch. 1 | John F. Stevens at Marias Pass, December 1889 |
 | Hill | *Northern Securities Co. v. United States*, 193 U.S. 197 (1904), full text | The 5–4 count rests on MNHS alone |
+
+## Opened 2026-10-12: Hetty Green, Thomas Edison, Jakob Fugger (№ 74–76)
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Green | Paul Meier and Sandy Zabell, 'Benjamin Peirce and the Howland Will', JASA 75 (1980) | The 42 genuine signatures and 30 downstrokes; refused (403). The entry prints only the FJC's account of Peirce's odds |
+| Green | A New York City comptroller's record, or a 1907 newspaper, for her loan to the city | $1.1 million rests on Fortune (2025) citing Sparkes and Moore (1930); the $4.5 million earlier loan likewise |
+| Green | Charles Slack, *Hetty* (2004), the chapter on Ned | The free clinic, the dog cart and the gangrene; the entry prints only the 1962 American Heritage sequence |
+| Green | New York Times obituary, 4 July 1916; the Guinness listing | The 'Worth $100,000,000' headline and the miser entry are read only through Wikipedia |
+| Edison | Paul Israel, *Edison: A Life of Invention* (1998); Mark Essig, *Edison and the Electric Chair* (2003); Richard Moran, *Executioner's Current* (2002) | Recommended or named, not read |
+| Edison | Quote Investigator, 'I Have Gotten a Lot of Results!' (2012), full text | Would not load here; the entry rests on Dyer and Martin's 1910 text, which has no 'ten thousand' and no 'I have not failed' |
+| Edison | The Swan–Edison merger of 1883 | Wikipedia only, with a failed-verification tag; not printed |
+| Fugger | Greg Steinmetz, *The Richest Man Who Ever Lived* (2015), p. xiv and the 2 per cent calculation | Read only through Nathan Delaney's review in Europe Now (2017) |
+| Fugger | Götz von Pölnitz, *Jakob Fugger* (1949; vol. II 1951 or 1952) | The archive-based standard; read only through his NDB article |
+| Fugger | The German text of the 1523 letter (von Greiff, 1868, p. 49) | Quoted in H. M. Lucas's English translation of Ehrenberg; Steinmetz's wording differs |
+| Fugger | Miners' conditions in Tyrol and Neusohl | Nothing opened; `contested` says so |

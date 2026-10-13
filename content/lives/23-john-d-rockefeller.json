@@ -45,6 +45,11 @@
       "to": "lives:henry-ford",
       "label": "Henry Ford",
       "txt": "— a unit cost cut a minute at a time, and a second fortune with a stain on it that the philanthropy does not lift."
+    },
+    {
+      "to": "lives:jakob-fugger",
+      "label": "Jakob Fugger",
+      "txt": "— four centuries earlier, the other fortune named the largest ever, and the other founder whose charity still bears his name."
     }
   ]
 }

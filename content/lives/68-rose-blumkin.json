@@ -61,6 +61,11 @@
       "to": "lives:john-d-rockefeller",
       "label": "John D. Rockefeller",
       "txt": "— the same discipline from the other end of the scale: know your unit cost better than anyone, and price where they cannot follow."
+    },
+    {
+      "to": "lives:hetty-green",
+      "label": "Hetty Green",
+      "txt": "— the other woman the press found easiest to describe by her thrift, and hardest to describe by her returns."
     }
   ]
 }
