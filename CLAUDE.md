@@ -55,7 +55,8 @@ The Commodore/
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
 ├── build/build.mjs             # assembles everything into dist/index.html; each entry's body (essay, timeline,
 │                               # facts, dispute, reading list…) goes to dist/library.<hash>.js, loaded on first open
-├── build/pages.mjs             # one crawlable page per entry: dist/t/<id>/, dist/l/<id>/ — plus about/, log/, feed.xml
+├── build/pages.mjs             # one crawlable page per entry: dist/t/<id>/, dist/l/<id>/ — plus about/, log/, feed.xml (the Log),
+│                               # and updates.xml: every title, life and correction, dated from git, newest first
 ├── build/log.mjs               # reads content/log/ — shared by build, check, links and proofread
 ├── tools/                      # validate, new, plate, correct, stats, serve, json (friendly parse errors)
 ├── schemas/                    # what every content field means — editor hover help AND the check's field list
@@ -108,7 +109,7 @@ around that by running the deploy steps yourself when the user has not asked to 
 | `npm run links` | visits every outside link the site prints; **exits 1 on any dead one, and when not one link opened** (a refusing network is not a pass). Off the fast gate because it needs the network — run it monthly, and after any reading-list edit |
 | `npm run proofread` | reads the prose for what a grep can be sure of: placeholder text that would print, a repeated word, a space before a comma. Judgment stays with `/press-proofread` |
 | `npm run build` | content + theme → `dist/index.html` |
-| `npm test` | drives headless Chrome through the built site: share links, the quote credit rule, verbatim quoting, progress, read-next agreement, arrow keys, and that Esc closes only what is open and never leaves the page. Then reads every built page as a search engine and a link preview do (`tools/test-seo.mjs`: title, description ≤160, canonical in the sitemap, share tags, JSON-LD, icon files, and nothing loaded from another site). Then every link inside the site (`tools/test-links.mjs`): each href on every built page, each link the front door draws as it runs, and each `#t/…` / `#atlas/…` address followed through the router — an unknown hash falls back to the front door silently, so this is the only thing that catches one. **Exits 1 on any failure**; `ship` runs it after the build |
+| `npm test` | drives headless Chrome through the built site: share links, the quote credit rule, verbatim quoting, progress, read-next agreement, arrow keys, and that Esc closes only what is open and never leaves the page. Then reads every built page as a search engine and a link preview do (`tools/test-seo.mjs`: title, description ≤160, canonical in the sitemap, share tags, JSON-LD, icon files, and nothing loaded from another site; and `updates.xml` parses as XML and carries every title, life and correction once, each link landing on its anchor). Then every link inside the site (`tools/test-links.mjs`): each href on every built page, each link the front door draws as it runs, and each `#t/…` / `#atlas/…` address followed through the router — an unknown hash falls back to the front door silently, so this is the only thing that catches one. **Exits 1 on any failure**; `ship` runs it after the build |
 | `npm run stats` | inventory and editorial backlog |
 | `npm run voice` | the house's own sentence and punctuation numbers, measured off `content/` |
 | `npm run new book\|life\|adjacent "Title"` | scaffold a house-shaped stub |
@@ -165,6 +166,7 @@ Three rules for the front door and the shelves, each held by a check:
 - **An entry opens from a link.** Every book, face and Life is `<a ${entryAttrs(how, id)}>`, pointing at its own page; `press.js` turns a plain click into the reader. `npm run check` fails on an entry opened from a `<button>`.
 - **The house's line is never set beside a face as if it were theirs.** A `keep` or `across` line shown next to a portrait is roman and, where it stands alone, credited through `Reading.credit` ("— The Commodore Press, on <name>"). `npm test` holds it.
 - **The first screen is the promise and the shelf.** The spines sit on the first screen at 1440×900 and 375×812, with no buttons above them, and the only count there is the corrections, linked to the record. `npm test` measures it in an exact-size frame.
+- **The front door says what this is.** Under the shelf, never above it, a key names each part (the Press, Lives, the Atlas, the Log once it publishes, Corrections) in one plain line that opens it. Counts in it come from the build. `npm test` holds it.
 - **Books open everywhere.** Under a mouse a cover swings open; without one the first tap opens it and the second opens the book; from the front-door shelf the book flies to the reader. `npm test` holds it at both sizes.
 - **A spine title is stamped:** the livery's own ink, 17px at 600, at 7:1 or better on every spine as rendered, never cut off. `npm test` reads each one in light mode — the mode that once hid a page-black bug from a check run in dark.
 - **Quotes are typographic.** `build/typeset.mjs` curls every prose field, the page frame and Markdown at build time; `content/` stays as typed. `npm test` fails if a straight quote reaches any page.

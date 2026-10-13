@@ -1,0 +1,69 @@
+{
+  "id": "chester-carlson",
+  "no": 63,
+  "keep": "One man had the idea. Battelle and Haloid made it work, and his patent had run out before it sold.",
+  "n": "Chester Carlson",
+  "years": "1906–1968",
+  "place": "United States",
+  "field": "Invention & Industry",
+  "group": "obscure",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "He spent his days in patent departments and his nights studying law, and he had writer's cramp. More than twenty companies turned down the copying process he invented, and by the time the machine sold, his patent had run out.",
+  "copy": [
+    "Chester Carlson was born in Seattle on 8 February 1906, to a family that was poor and ill, and by high school he was working several jobs to keep it. He took a degree in physics at Caltech in 1930, went to Bell Labs, and ended up in patent work, first in Bell's patent department and then at P. R. Mallory in New York. He studied law at night, and developed writer's cramp. At the New York Public Library he read about the Hungarian physicist Pál Selényi's experiments with electrostatic images. His idea was to make the charged image with light instead. He filed his first application on 18 October 1937.",
+    "He hired Otto Kornei, a refugee physicist, and rented a room in Astoria, Queens. On 22 October 1938 Kornei printed \"10-22-38 ASTORIA\" in India ink on a glass microscope slide. They charged a sulfur-coated zinc plate by rubbing it with a handkerchief, laid the slide on it under a bright lamp for a few seconds, dusted it with lycopodium powder, and pressed wax paper onto the image. Then, Carlson recalled, they went out to lunch. Kornei was unimpressed and left for a job in Cleveland. From 1939 to 1944 Carlson was turned down by more than twenty companies, IBM, General Electric, Eastman Kodak and RCA among them, and by the National Inventors Council. He later called it \"an enthusiastic lack of interest\". In October 1944 Battelle Memorial Institute took the work on for 60 per cent of any royalties, and found what made it practical: a form of selenium for the plate, a new developer, a corona wire to charge it. Haloid, a small company that had earned $101,000 in 1946, took a licence from 1 January 1947. The $2,500 Carlson was paid was the first money the invention ever earned him.",
+    "His own word was electrophotography. Battelle asked a classics professor at Ohio State for something better and got xerography, dry writing. The first machine, the Model A of 1949, needed dozens of hand operations to make one copy. Haloid spent $12.5 million developing the 914, more than its total earnings from 1950 to 1959. It was shown in the autumn of 1959, and the first one shipped in March 1960. The company had hoped to place 5,000 in three years, and had shipped 10,000 by the end of 1962. By then Carlson's basic patent had run out. Royalties and Haloid stock made him rich anyway, and he gave about $100 million away, much of it without his name on it. \"I prefer anonymity,\" he once said. He died of a heart attack on 19 September 1968, aged 62."
+  ],
+  "bio": {
+    "t": "Copies in Seconds: How a Lone Inventor and an Unknown Company Created the Biggest Communication Breakthrough Since Gutenberg—Chester Carlson and the Birth of Xerox",
+    "a": "David Owen",
+    "y": "2005",
+    "why": "The only full-length life, and it carries both halves of the story: the man who had the idea alone, and the physicists, engineers and executives at Battelle and Haloid who made it a machine. The subtitle argues with its own book, which is the right argument to have. The year given is the paperback's, the edition this house has seen."
+  },
+  "contested": "Three arguments, and two numbers. The first is priority. Pál Selényi of Tungsram in Budapest filed a United States patent for producing images with a charged surface in March 1935, with Hungarian priority from 1934, and it was granted in January 1939. Xerox's own history names Selényi as where Carlson started; the Heinz Nixdorf MuseumsForum in Paderborn says plainly that Carlson built on his work, and notes that nobody knows whether he read only the articles or the patents too. Carlson's change was to make the charge image with light, by photoconduction, which is the part that worked. The second is the lone inventor, which is Xerox's own framing (\"Carlson was quite alone in his work\") and the subtitle of Owen's book. The 1983 landmark booklet of the American Society of Mechanical Engineers, written with Battelle and Xerox, calls it three stories, and credits Battelle's staff with the selenium plate and the developer that made the process practical. The third is Kornei, who made the first image with his own hands. The sources cannot agree whether he was a physicist or an engineer, Austrian or German, or whether the room was above a bar or behind a beauty parlour. The numbers: Xerox and the Smithsonian's National Museum of American History put his giving at about $100 million; the figure of $150 million that circulates as his giving is, in Xerox's booklet, what he would have earned had he kept it all. The letter to Fortune in which he is said to have called its estimate of his wealth too high by $150 million is printed in Owen's book; this house has not seen it.",
+  "across": [
+    {
+      "to": "lives:edwin-land",
+      "label": "Edwin Land",
+      "txt": "— the other imaging company built on one man's patents. Kodak turned Carlson down; Polaroid spent fifteen years suing it."
+    }
+  ],
+  "facts": [
+    {
+      "b": "US 2,297,691",
+      "s": "'Electrophotography', Chester F. Carlson, filed 4 April 1939, issued 6 October 1942: United States patent, as recorded by Google Patents; Xerox, 'The Story of Xerography'"
+    },
+    {
+      "b": "20+",
+      "s": "Companies that turned him down, 1939–44, and the National Inventors Council besides: Xerox, 'The Story of Xerography'; National Museum of American History, object record nmah_1029106"
+    },
+    {
+      "b": "60%",
+      "s": "Battelle's share of any royalties for developing the process, under the October 1944 agreement: Xerox, 'The Story of Xerography'; the date, ASME, 'Xerography' landmark booklet (1983)"
+    },
+    {
+      "b": "$101,000 · $2,500",
+      "s": "Haloid's earnings in 1946, and Carlson's share of the 1947 licence fee, the first money the invention paid him: Xerox, 'The Story of Xerography'; RIT Archives, Chester F. Carlson papers finding aid (RITArc-0016)"
+    },
+    {
+      "b": "$12.5 million",
+      "s": "Haloid's spending to develop the 914, more than its total earnings from 1950 through 1959: ASME, 'Xerography' landmark booklet (1983)"
+    },
+    {
+      "b": "5,000 · 10,000",
+      "s": "The 914s Haloid hoped to place in three years, and the number shipped by the end of 1962: Xerox, 'The Story of Xerography'"
+    },
+    {
+      "b": "Oct 1959",
+      "s": "When a seventeen-year term from the 1942 grant of US 2,297,691 ran out, five months before the first 914 shipped: worked out by the house; Simon & Schuster's description of Owen's book says the original patent had expired by the time the 914 was manufactured"
+    },
+    {
+      "b": "~$100 million",
+      "s": "What he gave away before he died: Xerox, 'The Story of Xerography'; the National Museum of American History has 'nearly $100 million'"
+    }
+  ]
+}

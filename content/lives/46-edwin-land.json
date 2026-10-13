@@ -61,6 +61,11 @@
       "to": "atlas:story",
       "label": "The Atlas · Story is leverage",
       "txt": "— he staged the camera's debut before the Optical Society and a department store, and told its origin himself twenty-two years later."
+    },
+    {
+      "to": "lives:chester-carlson",
+      "label": "Chester Carlson",
+      "txt": "— the other imaging company built on one man's patents, which Kodak, among twenty others, turned down."
     }
   ]
 }

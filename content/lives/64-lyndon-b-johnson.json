@@ -1,0 +1,70 @@
+{
+  "id": "lyndon-b-johnson",
+  "no": 64,
+  "keep": "The 87 votes and the Voting Rights Act are the same career. Caro's books exist to keep both in view.",
+  "n": "Lyndon B. Johnson",
+  "years": "1908–1973",
+  "place": "United States",
+  "field": "Politics & Power",
+  "group": "famous",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "He reached the Senate by 87 votes, on an amended return from one precinct in south Texas, reported days after the polls closed. Seventeen years later he signed the Voting Rights Act.",
+  "copy": [
+    "Lyndon Baines Johnson was born near Stonewall, in the Texas Hill Country, on 27 August 1908. For one year he taught at a segregated Mexican-American school in Cotulla, and ran it. In 1965 he told Congress about those children: \"They knew even in their youth the pain of prejudice. They never seemed to know why people disliked them. But they knew it was so, because I saw it in their eyes.\" He lost a special election for the Senate in 1941 by 1,311 votes. In the Democratic runoff of 28 August 1948 he faced Coke Stevenson, a former governor. Days after the vote, an amended return came in from Box 13 in Jim Wells County, a stronghold of George Parr. It added 202 votes for Johnson and one for Stevenson. The final count was 494,191 to 494,104. In 1977 the election judge of Box 13, Luis Salas, told the Associated Press that he had lied when he testified in 1948: \"Johnson did not win the election; It was stolen for him.\"",
+    "He became the Senate's majority leader in January 1955 and carried the Civil Rights Act of 1957, the first in 82 years. As president, after Kennedy's death, he went much further. The Senate broke the filibuster on the Civil Rights Act of 1964 by 71 votes to 29 on 10 June, the first cloture ever voted on a civil rights bill, and he signed it on 2 July. He signed Medicare and Medicaid on 30 July 1965, at the Truman Library in Independence, and gave Harry Truman the second pen. He signed the Voting Rights Act on 6 August. Before it, 6.7 per cent of Black Mississippians of voting age were registered; by the spring of 1968, 44 per cent were. The share of Americans below the official poverty line fell from 19.0 per cent in 1964 to 12.1 per cent in 1969.",
+    "On 7 August 1964 the Senate passed the Gulf of Tonkin Resolution by 88 votes to 2, and the House without a vote against. The commander of the Maddox had already cabled that the reported contacts and torpedoes of the second attack appeared doubtful, and the administration did not share that doubt with Congress. In the summer of 1964 there were about 12,000 American military advisers in South Vietnam. By 1968 there were more than 530,000 troops. On 31 March 1968 he told the country: \"I shall not seek, and I will not accept, the nomination of my party for another term as your President.\" He died of a heart attack at his ranch on 22 January 1973. His library says that the day before, he had learned that peace was at hand in Vietnam."
+  ],
+  "bio": {
+    "t": "Master of the Senate",
+    "a": "Robert A. Caro",
+    "y": "2002",
+    "why": "The third of Caro's four volumes, and the one where the means and the ends meet: twelve years in the Senate, ending in the first civil rights act since Reconstruction. It won the Pulitzer Prize for Biography in 2003. Then go back to The Path to Power (1982) and Means of Ascent (1990) for how he got there, and on to The Passage of Power (2012). Read Robert Dallek's Lone Star Rising (1991) beside them for a less severe reading of the same man."
+  },
+  "contested": "The house came to Johnson through Robert Caro, so Caro's critics come first. Means of Ascent (1990) was attacked for its portrait of Coke Stevenson. The Texas Observer that year reported David Broder's complaint that Caro could not see that politicians are \"a mixture of noble and ignoble traits, not classifiable as skunks or saints\", and noted that the book leaves out Stevenson's part in the Homer Rainey academic-freedom affair at the University of Texas. Caro answered that he was \"certainly not trying to portray Coke Stevenson as a good governor\". The evidence for fraud in Box 13 is old and strong, but its witnesses do not agree. Salas said in 1977 that \"No one was dead. They just didn't vote\"; the Dallas Morning News in 1998 reported dead voters on the list. Even the added votes are printed three ways, 202 to 1, 201 to 2 and 200 to 2. The named academic check on whether fraud alone decided the race is Dale Baum and James Hailey's reappraisal in Political Science Quarterly (1994), which this house has not read. Lewis Gould's entry in the Handbook of Texas calls it one of the most controversial elections in American history and does not rule on it. Robert Dallek's two volumes (1991, 1998) weigh the methods against the laws more kindly than Caro does. The line about losing the South for a generation has no source from the time; Bill Moyers's own version is that Johnson said he had just delivered the South to the Republican party for a long time to come. How much of the fall in poverty the programmes caused, rather than the boom, is argued still, and the official line counts cash income only, so Medicare and Medicaid do not show in it.",
+  "across": [
+    {
+      "to": "lives:robert-moses",
+      "label": "Robert Moses",
+      "txt": "— Caro's other subject, and in his own words the same one: \"the force that is political power.\""
+    }
+  ],
+  "plateOf": "National Archives, 518140, a portrait made between 1961 and 1986; the record gives no closer date and no photographer.",
+  "facts": [
+    {
+      "b": "494,191 / 494,104",
+      "s": "The 1948 runoff count, Johnson to Stevenson, a margin of 87: Eldon S. Branda, 'Stevenson, Coke Robert', Handbook of Texas (Texas State Historical Association)"
+    },
+    {
+      "b": "+202 / +1",
+      "s": "Votes the amended Box 13 return added for Johnson and for Stevenson: James W. Mangan, Associated Press, 31 July 1977, reprinted 31 March 2023; Sam Attlesey, Dallas Morning News, 23 August 1998"
+    },
+    {
+      "b": "1,311",
+      "s": "His margin of defeat in the 1941 special election for the Senate: LBJ Presidential Library, 'Lyndon B. Johnson' biography"
+    },
+    {
+      "b": "71–29",
+      "s": "The cloture vote of 10 June 1964 on the Civil Rights Act, the first on a civil rights bill since the rule was adopted in 1917: US Senate Historical Office, 'Civil Rights Act of 1964'"
+    },
+    {
+      "b": "6.7% → 44.0%",
+      "s": "Voting-age Black Mississippians registered before the Voting Rights Act, and by spring 1968: US Commission on Civil Rights, Civil Rights Digest 2:2 (Spring 1969), table from the Commission's Political Participation (1968) and the Attorney General's Annual Report for fiscal 1968"
+    },
+    {
+      "b": "19.0% → 12.1%",
+      "s": "Americans below the official poverty line, 1964 and 1969: US Census Bureau, Historical Poverty Tables, Table 2 (Current Population Survey)"
+    },
+    {
+      "b": "88–2",
+      "s": "The Senate vote on the Gulf of Tonkin Resolution, 7 August 1964; the House passed it unanimously: US Senate Historical Office, 'Chairman Fulbright and the Tonkin Gulf Resolution' (2023)"
+    },
+    {
+      "b": "~12,000 → 530,000+",
+      "s": "American military advisers in South Vietnam in summer 1964, and troops there by 1968: US Senate Historical Office, 'Chairman Fulbright and the Tonkin Gulf Resolution' (2023)"
+    }
+  ]
+}

@@ -141,6 +141,18 @@
   .tally{margin:14px 0 0;font-size:var(--fs-3);line-height:1.45;color:var(--ink-soft)}
   .tally a{text-decoration:none;display:inline-block;padding:8px 0}
   .tally a:hover{color:var(--ink);text-decoration:underline 1px;text-underline-offset:4px}
+  /* What this is: one plain line per part, under the shelf (renderFront). A list of rows, not
+     cards: hairlines, Garamond, the whole row the link. */
+  .key{margin:34px 0 0;border-top:1px solid var(--rule);padding-top:18px;max-width:880px}
+  .key-h{margin:0 0 10px;font-size:var(--fs-4);line-height:1.5;color:var(--ink-soft)}
+  .key-h b{color:var(--ink);font-weight:600}
+  .key ul{list-style:none;margin:0;padding:0}
+  .key li{border-bottom:1px solid var(--rule)}
+  .key li:last-child{border-bottom:0}
+  .key a{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:baseline;padding:11px 0;min-height:44px;box-sizing:border-box;text-decoration:none;color:var(--ink-soft);font-size:var(--fs-3);line-height:1.45}
+  .key a b{color:var(--ink);font-weight:600}
+  .key a:hover span{color:var(--ink);text-decoration:underline 1px;text-underline-offset:4px}
+  @media (max-width:640px){.key a{grid-template-columns:1fr;gap:2px}}
   .tally b{font-size:var(--fs-5);font-weight:500;color:var(--oxblood);margin-right:2px;font-variant-numeric:lining-nums}
   /* an entry is a link to its own page now (press.js, entryAttrs): it keeps the look it had as a button */
   /* not a.rk: a spine takes its livery's ink from .rk{color:var(--ink)}, and color:inherit here

@@ -52,6 +52,11 @@
       "to": "atlas:bet",
       "label": "The Atlas · Bet on yourself",
       "txt": "— the principle with no margin at all: his own family aboard, and a white flag to raise before the blockade fired."
+    },
+    {
+      "to": "lives:harriet-tubman",
+      "label": "Harriet Tubman",
+      "txt": "— the same coast in the same war: a year after the Planter, she went up the Combahee with Montgomery's gunboats."
     }
   ]
 }

@@ -1,0 +1,63 @@
+{
+  "id": "frederick-douglass",
+  "no": 62,
+  "keep": "He made himself the most documented American of his century, and his own books are what stand in front of him.",
+  "n": "Frederick Douglass",
+  "years": "1818–1895",
+  "place": "United States",
+  "field": "Writing & Abolition",
+  "group": "famous",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "He never knew his birthday. It was in his owner's ledger all along, in a table headed \"My Black People\". By the end of his life he had sat for more photographs than any other American of his century, by the one count anyone has made.",
+  "copy": [
+    "Frederick Augustus Washington Bailey was born on Aaron Anthony's Holme Hill Farm in Talbot County, Maryland, in February 1818. His mother was Harriet Bailey. His father, he wrote, was a white man, and it was whispered that he was his master. In his first book he said he had \"no accurate knowledge of my age\". Sent to Baltimore as a boy, he was taught the alphabet by Sophia Auld until her husband, Hugh, stopped it, saying that reading would unfit him to be a slave. \"From that moment,\" he wrote, \"I understood the pathway from slavery to freedom.\" As a young man he was hired out for a year to a farmer named Covey, to be broken. He fought him instead, for nearly two hours, and in the six months after Covey never struck him again. \"This battle with Mr. Covey was the turning-point in my career as a slave.\"",
+    "How he escaped he refused to print. His Narrative, published in May 1845, says only that on 3 September 1838 he \"left my chains\" and reached New York. Nearly forty years later, by his own count, he told it: a free sailor's papers borrowed from a friend, though they \"called for a man much darker than myself\", a red shirt, a tarpaulin hat, and a black cravat tied in sailor fashion. Neither account gives the part the National Park Service now credits to Anna Murray, the free woman who followed him to New York and married him there: she sewed the sailor's uniform and borrowed the papers. In 1846, while he was lecturing in Britain, Anna Richardson of Newcastle wrote to Hugh Auld, who had bought him from his brother for $100. Auld answered on 6 October that he would \"Take 150 ₤ Sterling for the manumassion of my slave Frederick Bailey, alias, Douglass\", and the papers were filed in Baltimore that December. At Rochester on 5 July 1852 he asked his audience, \"What, to the American slave, is your 4th of July?\" and told them that \"it is not light that is needed, but fire\". On 10 August 1863, with two of his sons in the 54th and 55th Massachusetts, he went to the White House to ask Lincoln for equal pay and equal promotion for Black soldiers.",
+    "His own books are the best source on him and the reason he is hard to see. His biographer David Blight puts it plainly: \"the subject himself is in the way.\" Anna, who could not read or write and bore all five of his children, is barely in them. He was confirmed as marshal for the District of Columbia on 17 March 1877, and in his last decades he sat for the camera whenever he could. John Stauffer and Zoe Trodd count 160 distinct photographs of him, against 155 of Custer and 126 of Lincoln. It is often said he never smiled in one, to refuse the caricature of the contented slave. On 1 November 1894 a cabinet card by Headley & Reed caught him smiling slightly. He spent the morning of 20 February 1895 at the National Council of Women in Washington, and died at Cedar Hill that evening."
+  ],
+  "bio": {
+    "t": "Frederick Douglass: Prophet of Freedom",
+    "a": "David W. Blight",
+    "y": "2018",
+    "why": "It opens the last third of his life from the Walter O. Evans collection, which few historians had seen, and won the Pulitzer Prize for History in 2019. Blight reads the three autobiographies as the work of a man who leaves a great deal unsaid, which is the right way to read them."
+  },
+  "contested": "The photographs, the smile, and the dates. The count of 160 is Stauffer and Trodd's, made for Picturing Frederick Douglass (2015) by distinct pose rather than print, and Stauffer told NPR that year that four more had turned up since. The superlative holds only for Americans whose pictures have been counted: the authors say Grant is a contender no one has tallied, with Harold Holzer's estimate at 150, and that Victoria, Princess Alexandra and Gladstone each sat far more often. On the smile, Stauffer himself says Douglass \"tended to\" confront the camera and that he did not want to be shown as a happy slave; \"never\" is the popular version, and the New Bedford Whaling Museum's 1894 card is the exception it holds. The dates disagree in small ways that matter to a house like this one: the National Park Service's chronology has the first Lincoln meeting in July 1863 and his confirmation as marshal on 18 March 1877, while the Frederick Douglass Papers editors give 10 August 1863 and the Evening Star of 17 March 1877 reports the confirmation that day. The purchase of his freedom was argued at the time. Some of his abolitionist friends, Henry C. Wright among them, objected that paying for him conceded the slaveholder's right to sell him. And Blight writes that those who now claim him for one party do so \"quite ahistorically\", by lifting a single strand of his thought out of the rest.",
+  "across": [
+    {
+      "to": "lives:harriet-tubman",
+      "label": "Harriet Tubman",
+      "txt": "— to whom he wrote in 1868 that he had worked in the day and she in the night."
+    },
+    {
+      "to": "lives:abraham-lincoln",
+      "label": "Abraham Lincoln",
+      "txt": "— whom he went to see in August 1863 about pay for Black soldiers, and whom he out-sat before the camera, 160 poses to 126, by Stauffer and Trodd's count."
+    }
+  ],
+  "plateOf": "George K. Warren, about 1879; held by the National Archives (558770), as Wikimedia Commons records it.",
+  "facts": [
+    {
+      "b": "Feb 1818",
+      "s": "His birth, as entered in Aaron Anthony's ledger, 'Frederick Augustus son of Harriott Feby 1818': the Frederick Douglass Papers digital edition of the Narrative (Yale University Press), chapter I, editors' annotation, citing Ledger B, Dodge Collection, Maryland State Archives"
+    },
+    {
+      "b": "$100",
+      "s": "Thomas Auld's sale of his rights in Douglass to his brother Hugh, 25 October 1845: National Park Service, Frederick Douglass National Historic Site, 'Chronology of the Life of Frederick Douglass'"
+    },
+    {
+      "b": "£150 ($711.66)",
+      "s": "The price of his manumission: Hugh Auld to Anna Richardson, 6 October 1846, Gilder Lehrman Collection GLC07484.04, as transcribed by the Gilder Lehrman Institute; the dollar figure, the National Park Service chronology"
+    },
+    {
+      "b": "160 / 155 / 126",
+      "s": "Distinct photographs of Douglass, Custer and Lincoln: John Stauffer and Zoe Trodd, Picturing Frederick Douglass (Liveright, 2015), excerpt published by Longreads, 10 November 2015"
+    },
+    {
+      "b": "1 Nov 1894",
+      "s": "The cabinet card by Headley & Reed in which he is 'smiling slightly': New Bedford Whaling Museum, object 1996.21.54"
+    }
+  ]
+}

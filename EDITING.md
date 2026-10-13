@@ -230,6 +230,8 @@ That's it. A sign-up box appears under every entry, on the About page and on eve
 
 Sending each new Log piece automatically means pointing the service's RSS-to-email feature at `…/feed.xml`. At Buttondown that is a paid feature; otherwise, paste each piece into an issue by hand.
 
+**Following the library itself** needs nothing from you. Every build writes `…/updates.xml`, an RSS feed of every new title, every new life and every correction, newest first. It is linked as "follow by RSS" in the footers and named in every page's head, so a feed reader finds it from any page. A title or life is dated the day its file was first committed (today, if you are shipping it now), and a correction the day it was appended. A correction links to the entry it corrected, where it is printed in full. Point a newsletter service's RSS-to-email at this feed instead of `feed.xml` if you would rather send subscribers the library than the Log. If a build ever says `updates.xml not written`, the copy has no full history: run `git fetch --unshallow`.
+
 ### 11. Use your own domain
 
 Buy the domain, point it at GitHub Pages (GitHub's "Managing a custom domain" page has the DNS records), then in the repository on GitHub: *Settings → Secrets and variables → Actions → Variables → New variable*, name `SITE_URL`, value `https://yourdomain.com`. The next publish moves every link, share card, sitemap entry and feed item to the new address. This is also the one change that gives the Press its own name and icon in Google's results: Google shows one site name and one favicon per *host*, and a site in a folder of `42thecommodore.github.io` borrows whatever that host's home page shows, or nothing.
@@ -258,7 +260,7 @@ Do two things. Fix the entry, and print the correction:
 npm run correct -- "Short title." "What was wrong, what is right, and how you know."
 ```
 
-Never quietly edit the mistake away. Corrections are appended, never patched — it is one of the five promises the site makes.
+Never quietly edit the mistake away. Corrections are appended, never patched — it is one of the five promises the site makes. Everyone following `updates.xml` is sent the correction the next time you publish, linked to the entry it is printed on.
 
 ### 15. Pick the Captain of the day
 
