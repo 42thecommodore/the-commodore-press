@@ -1,0 +1,51 @@
+{
+  "id": "barbara-mcclintock",
+  "no": 78,
+  "keep": "She was never ignored. What nobody followed was the part she cared most about.",
+  "n": "Barbara McClintock",
+  "years": "1902–1992",
+  "place": "United States",
+  "field": "Genetics",
+  "group": "famous",
+  "cover": "#3A2E10",
+  "spineC": "#281F0A",
+  "ink": "#F4EBCF",
+  "accent": "#E0B84E",
+  "motif": "dots",
+  "lede": "She found that genes move. The more interesting argument is about what happened next.",
+  "copy": [
+    "Working on maize at Cold Spring Harbor through the 1940s, she traced the broken and re-coloured kernels back to something the chromosome theory did not allow. In the summer of 1944 she found two elements she named Dissociator and Activator, and in early 1948 she found that both could move. From wherever they landed they switched other genes on and off. She got there from the pattern in the kernels: the colour of a maize ear is a record of what happened in each cell's ancestry, and she could read one. Transposition is now standard biology. The regulatory half of what she described was the part she cared most about.",
+    "She had been a recognised figure in genetics since the early 1930s. In 1944 she became the third woman elected to the National Academy of Sciences, and in 1945 she was elected the first woman president of the Genetics Society of America. In 1983 she took the Nobel Prize in Physiology or Medicine, unshared. Of the fourteen women who have won that prize, she is the only one who did not share it.",
+    "The famous version says she presented her work in 1951, was met with stony silence, withdrew from publishing, and waited thirty years for biology to catch up. Nathaniel Comfort went through her notebooks and correspondence and found a different shape. Geneticists, he argues, had accepted that elements could move by the late 1940s, and by 1951 Royal Alexander Brink and Robert Nilan had confirmed it. She was never marginal in her field. What the 1951 audience could not follow, by their own later account, was the control theory: the larger claim that these elements were part of a system regulating development. The misunderstanding was specific and technical, and it is a duller story than martyrdom. It is also the one with evidence behind it."
+  ],
+  "facts": [
+    {
+      "b": "1/1",
+      "s": "Her share of the 1983 Nobel Prize in Physiology or Medicine, and the only undivided share among the fourteen women laureates in that category to the 2026 prize: Nobel Foundation, nobelprize.org laureate facts and api.nobelprize.org/2.1, checked 6 October 2026"
+    },
+    {
+      "b": "third",
+      "s": "Her place among women elected to the National Academy of Sciences, 1944: National Library of Medicine, Profiles in Science, 'Barbara McClintock: Biographical Overview'"
+    }
+  ],
+  "bio": {
+    "t": "The Tangled Field: Barbara McClintock's Search for the Patterns of Genetic Control",
+    "a": "Nathaniel C. Comfort",
+    "y": "2001",
+    "why": "The book that went to the notebooks and took the myth apart. Evelyn Fox Keller's 'A Feeling for the Organism' is the famous one, is better written, and is largely where the neglected-genius story comes from — read it second, knowing that."
+  },
+  "contested": "Whether Comfort overcorrected. Evelyn Fox Keller's 'A Feeling for the Organism' (1983) gave a generation the image of a woman whose way of knowing was met with stony silence by a field that wanted molecules and numbers. Comfort's answer, in 1999, was that the reception of controlling elements is a poor model for gendered discrimination in science. Qinyan Wu, writing in History and Philosophy of the Life Sciences in 2024, accepts that the issue was control rather than movement, and argues that Comfort goes too far: the rapid dismissal of her control argument by two prominent male geneticists in 1961 resembles the gendered bias Margaret Rossiter documented across the period. So the live question is not whether she was ignored. It is whether the resistance to her larger claim was ordinary scientific friction, or friction that bore harder on the only woman in the room.",
+  "across": [
+    {
+      "to": "press:being-wrong",
+      "label": "Being Wrong",
+      "txt": "— a case where the correction of the record needed correcting in turn, and the second pass was less flattering to everyone."
+    },
+    {
+      "to": "lives:marie-curie",
+      "label": "Marie Curie",
+      "txt": "— the other woman the prizes were eventually forced to acknowledge, and a useful control on how much of the pattern is bias and how much is hindsight."
+    }
+  ],
+  "plateOf": "Barbara McClintock with her Lasker Award and an ear of maize, 1981. Photograph by Bernard Gotfryd, Library of Congress."
+}

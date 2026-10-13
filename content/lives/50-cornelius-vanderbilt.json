@@ -48,6 +48,11 @@
       "to": "atlas:story",
       "label": "The Atlas · Story is leverage",
       "txt": "— his best-known sentence was printed the day after he died, and his biographer says he never wrote it. The legend did the work anyway."
+    },
+    {
+      "to": "lives:james-j-hill",
+      "label": "James J. Hill",
+      "txt": "— the next railroad fortune west, bought as a bankrupt road at cents on the dollar and run on the same arithmetic of cost."
     }
   ]
 }

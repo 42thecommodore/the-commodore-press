@@ -1,0 +1,46 @@
+{
+  "id": "ibn-al-haytham",
+  "no": 75,
+  "keep": "He promised to criticise his premises before he drew a conclusion, and then built the instruments to do it.",
+  "n": "Ibn al-Haytham",
+  "years": "c. 965–c. 1040",
+  "place": "Basra and Cairo",
+  "field": "Optics & Method",
+  "group": "obscure",
+  "cover": "#123A46",
+  "spineC": "#0B2730",
+  "ink": "#EFE4C9",
+  "accent": "#7FC4D4",
+  "motif": "conic",
+  "lede": "He told a caliph he could regulate the Nile, went up the river, and saw that he could not. The book he wrote afterwards settled how the eye sees.",
+  "copy": [
+    "The Kitab al-Manazir, his seven books on optics, argued that light is reflected from an object into the eye. It opens with a statement of method: the inquiry will begin from principles and premises, criticise them, take care in drawing conclusions, and seek the truth rather than be swayed by opinion. Book I says the account of light will rest on experimental evidence rather than abstract theory, and notes that sunlight, firelight and light from a mirror are all the same thing. Book IV gives the laws of reflection and describes a copper instrument for measuring reflections from plane, spherical, cylindrical and conical mirrors, convex and concave. He got the eye itself wrong. Without the idea of a lens he could not explain how it focuses.",
+    "He was in Cairo because of the Nile. The Fatimid caliph al-Hakim, who came to the throne in 996 at the age of eleven and died in 1021, heard of his proposal to regulate the river's flow with large works and put him at the head of an engineering team. The further up the river they travelled, the plainer it was that the scheme would not work. He came back and said so.",
+    "What happened next depends on whom you read. The version most often repeated comes chiefly from the biographer al-Qifti: given an administrative post by a ruler he could not trust, Ibn al-Haytham pretended to be mad, was confined to his house until al-Hakim died, did his scientific work there, and afterwards lived near the Azhar mosque copying texts for money. A different report has him flee Egypt for Syria after the failure and spend the rest of his life there. The madness story is the better story, and being the better story is a large part of why it survived."
+  ],
+  "facts": [
+    {
+      "b": "seven",
+      "s": "Books in the Kitab al-Manazir: MacTutor History of Mathematics, 'Abu Ali al-Hasan ibn al-Haytham', University of St Andrews (mathshistory.st-andrews.ac.uk/Biographies/Al-Haytham)"
+    },
+    {
+      "b": "eleven",
+      "s": "Al-Hakim's age on becoming caliph in 996: MacTutor History of Mathematics, 'Abu Ali al-Hasan ibn al-Haytham'"
+    }
+  ],
+  "bio": {
+    "t": "Pathfinders: The Golden Age of Arabic Science",
+    "a": "Jim Al-Khalili",
+    "y": "2010",
+    "why": "The accessible English treatment. Bradley Steffens's 'Ibn al-Haytham: First Scientist' makes the strong claim in its title. A. I. Sabra and Roshdi Rashed produced the scholarly editions of his work, and they are editions rather than biography."
+  },
+  "contested": "Whether he invented the scientific method. Bradley Steffens's biography states the claim in its title, 'Ibn al-Haytham: First Scientist', and the popular literature repeats it. The strongest qualification comes from the histories of mathematics rather than from his detractors. St Andrews' MacTutor history, which credits him with the first mention of the camera obscura and a complete formulation of the laws of reflection, still calls his Optics the next major contribution to the field after Ptolemy, and says its influence never equalled Ptolemy's. Experiment used to decide between theories is real and is his. What a single originator of 'the method' would require is a tradition that took the method up, and the argument is over how much of that tradition he can be said to have started.",
+  "across": [
+    {
+      "to": "press:silicon-and-light",
+      "label": "Silicon and Light",
+      "txt": "— the intromission argument is the first entry in the long account of what light is and how it is made to work."
+    }
+  ],
+  "plateOf": "No likeness of him survives. This is the title-page engraving of the Opticae thesaurus, the Latin edition of his Optics printed in 1572, showing Archimedes' mirrors setting Roman ships alight at Syracuse: the book, not the man. Bavarian State Library."
+}

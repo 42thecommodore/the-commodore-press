@@ -1,0 +1,70 @@
+{
+  "id": "james-j-hill",
+  "no": 83,
+  "keep": "He said his was the one Pacific line that took no subsidy. His own estimate of what he was buying put a third of its value in a land grant from Congress.",
+  "n": "James J. Hill",
+  "years": "1838–1916",
+  "place": "Ontario and St. Paul",
+  "field": "Shipping & Railroads",
+  "group": "obscure",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "An arrow cost him the sight of an eye at nine, and his father's death ended his schooling at fourteen. He built the only line to the Pacific that, he wrote, had never taken a subsidy, out of a bankrupt railroad whose biggest asset was a grant of land from Congress.",
+  "copy": [
+    "James Jerome Hill was born in southern Ontario on 16 September 1838. At nine a bow and arrow took the sight of his right eye, as serious an obstacle to his father's plan to make him a doctor as his father's death. His father died when he was fourteen, and the schooling stopped. In 1856, at seventeen, he was a clerk on the St. Paul levee, and he spent the next twenty years in freight and steamboats on the Mississippi and the Red River, partly with Norman Kittson. In Minnesota the St. Paul & Pacific Railroad had been built on bonds sold to Dutch investors; by the time it went bankrupt, his authorised biographer writes, they had netted their owners less than forty dollars per thousand of face value.",
+    "On 1 September 1877 Hill wrote out what the wreck was worth. Buying the Dutch committee's bonds, at prices from 80 cents to 11 cents on the dollar, would cost $4,330,180. With foreclosure and the track still to lay to St. Vincent, the whole came to $5,540,180. Against that he set a property worth $19,402,923: the railroad at $12.2 million, and a land grant of 2,634,482 acres, valued at the government's minimum of $2.50 an acre, at $6,586,205. George Stephen took two-fifths of the venture, and Donald Smith, Kittson and Hill a fifth each. The road became the Great Northern and reached Puget Sound in 1893, the year of the panic. Hill could write afterwards that it was the only Pacific line paying a dividend, while three of the other five were being reorganised. In 1901 he joined Morgan and Harriman in Northern Securities, capitalised at $400 million. The Supreme Court broke it up in March 1904, five to four.",
+    "In the same letter he wrote that \"every other Pacific line except our own received enormous sums of money or lands or both as subsidies\". That is the line that survives him, as the railroad built without public aid. His own testimony says otherwise: Congress granted lands to the State of Minnesota, he said, as Pyle prints it, and those lands were sold to retire bonds, about eleven or twelve millions of them. The labour record is plainer. In 1894, after the panic, the Great Northern cut wages and its men struck under Eugene Debs's American Railway Union. Arbitration went their way, and Hill accepted most of their demands. In a letter to J. S. Kennedy in New York he wrote that the newspapers had reported a great victory for the men, \"and this we have been careful not to contradict.\" He died in his house on Summit Avenue on 29 May 1916, with a fortune estimated at $63 million."
+  ],
+  "bio": {
+    "t": "James J. Hill: Empire Builder of the Northwest",
+    "a": "Michael P. Malone",
+    "y": "1996",
+    "why": "The short modern scholarly life, and the place to start. Albro Martin's longer James J. Hill and the Opening of the Northwest (1976) is the other one. Pyle's two volumes of 1917 were written for the family and read like it, but they print Hill's letters and his 1877 estimate in full, and nearly every number in this entry comes from them; they are free on archive.org."
+  },
+  "contested": "Whether the Great Northern was built without public aid. The claim is Hill's, and his authorised biographer repeats it; the Plains Humanities encyclopedia, in Keith Poole's entry, calls it the only transcontinental built without public subsidies and the only one not to go bankrupt in the 1890s, then notes that Hill received a Minnesota land grant and sold homesteads from it at $2.50 to $5.00 an acre. The case for Hill is that the grant was the old company's, bought with its defaulted bonds, and that its proceeds went to retire debt rather than to shareholders, which is the point of his own testimony. The objection is his own 1877 arithmetic, in which the grant was a third of what he was buying. Whether any federal grant ran west of Minnesota is not settled by anything this entry has opened. The price is open too: MNopedia says roughly $5 million and other retellings $5.5 million; Hill's estimate of $5,540,180 may be where both come from, but what was finally paid is not in the documents read here. On 1904, Pyle calls a five to four vote almost equivalent to not proven, which is a family biographer's reading of a Supreme Court decision. On 1894 the Minnesota Historical Society calls the strike a notable victory for Debs; Hill's letter implies the company gave less than the papers said, and the arbitrators' award has not been opened.",
+  "across": [
+    {
+      "to": "lives:cornelius-vanderbilt",
+      "label": "Cornelius Vanderbilt",
+      "txt": "— the other railroad fortune from a man who began on the water; Vanderbilt bought lines that were running, Hill bought one that had stopped."
+    },
+    {
+      "to": "atlas:bet",
+      "label": "The Atlas · Bet on yourself",
+      "txt": "— four partners paying cents on the dollar for a bankrupt road, on one man's arithmetic about what the land was worth."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$4,330,180 / $5,540,180",
+      "s": "Hill's cost to buy the Dutch committee's bonds, and to buy, foreclose and complete the road: his estimate of 1 September 1877, printed as Appendix III of Joseph Gilpin Pyle, The Life of James J. Hill (1917), vol. 2, archive.org lifeofjamesjhill02pylerich"
+    },
+    {
+      "b": "$19,402,923 · $12,216,718",
+      "s": "His total valuation of the St. Paul & Pacific, and of the railroad alone: Hill's estimate of 1877, Pyle (1917), vol. 2, Appendix III"
+    },
+    {
+      "b": "2,634,482 acres · $2.50 · $6,586,205",
+      "s": "The land grant he counted in, the government minimum price per acre he used, and its value: Hill's estimate of 1877, Pyle (1917), vol. 2, Appendix III"
+    },
+    {
+      "b": "$40 per $1,000",
+      "s": "What the St. Paul & Pacific's bonds had netted their Dutch owners: Pyle (1917), vol. 1"
+    },
+    {
+      "b": "$11–12 million",
+      "s": "Bonds retired from the sale of the lands Congress granted to Minnesota, in Hill's own testimony: Pyle (1917), vol. 2"
+    },
+    {
+      "b": "$400 million / 5–4",
+      "s": "Northern Securities' capital in 1901, and the Supreme Court's vote against it in March 1904: Minnesota Historical Society, James J. Hill House, 'James J. Hill' (mnhs.org/hillhouse)"
+    },
+    {
+      "b": "$63 million",
+      "s": "His personal fortune at his death, estimated, with over $200 million in related assets: Minnesota Historical Society, James J. Hill House, 'James J. Hill'"
+    }
+  ]
+}

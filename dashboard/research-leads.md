@@ -269,3 +269,61 @@ mentions it can be tightened or the figure promoted.
 - `isambard-kingdom-brunel`: G. A. Sekon (1895) and Peter Kay (1991) for the atmospheric railway's cost, read only through Joseph Brennan.
 - `alexander-graham-bell`: the notebook page of 10 March 1876 itself (LoC magbell.25300101, image only); Gray's caveat date; the patent PDF for the claims' exact wording.
 - `hetty-green`: the San Francisco Call, 26 March 1899; the 1907 New York City loan in a document.
+
+## Opened 2026-10-06: the six lives from PR 2 (renumbered № 65–70 on 2026-10-12)
+
+Each entry was cut back to what an opened document says. These would let a cut line come back, or a figure be promoted.
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Blumkin | A 1983 document giving the Nebraska Furniture Mart price (Omaha World-Herald; Berkshire 10-K) | The $55 million (J., 1998) and $60 million (retellings) are named in `contested`, not printed as fact |
+| Blumkin | Lowenstein (1995); Schroeder, *The Snowball* (2008) | The carpet prices ($3, $3.95, $7.95) and "across the street" appear only in retellings; the 1983 and 1992 letters say "huge discount" and "next door" |
+| Huerta | Mario T. García (ed.), *A Dolores Huerta Reader* (2008), title and year | The `bio` is not yet checked against a catalogue |
+| Huerta | Miriam Pawel, *The Union of Their Dreams* (2009); Frank Bardacke, *Trampling Out the Vintage* (2011) | The Chavez–Huerta disagreements; `contested` says the entry has not opened them |
+| Huerta | San Francisco Board of Supervisors record of the 1991 settlement | The $825,000 rests on the Examiner's 1997 list |
+| Wells | Wells, *Crusade for Justice* (1970); Giddings, *Ida* (2008) | Her friendship with Thomas Moss; the return to the South in 1921 — both cut |
+| Wells | *Chesapeake, Ohio & Southwestern R.R. v. Wells* (Tenn. 1887) | The train case, not yet in the entry |
+| McClintock | Comfort, *J. Hist. Biol.* 32 (1999) and *The Tangled Field* (2001), read directly | Everything of Comfort's is read through Qinyan Wu (2024), who quotes him with pages |
+| McClintock | Genetics Society of America, list of presidents | The year she served; the entry says only that she was elected in 1945 |
+| Lovelace | Stein, *Ada: A Life and a Legacy* (1985); Fuegi & Francis full text (IEEE Annals 25:4, 2003) | Both are characterised from their reception and an abstract |
+| Lovelace | Taylor's *Scientific Memoirs* vol. 3 (1843), page scan | Page span 666–731 cut until seen |
+| Ibn al-Haytham | Sabra's translation of the *Optics* (1989); al-Qifti; Ibn Abi Usaybi'a; al-Bayhaqi | The madness story and its rival accounts are read through MacTutor |
+| Ibn al-Haytham | A named historian's case against "first scientist" | The PR 2 draft attributed one to Thony Christie; the post was not found |
+
+
+## Opened 2026-10-09: Walker, Barnum, Ford (renumbered № 71–73), and Hill held back
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Walker | A'Lelia Bundles, *On Her Own Ground* (2001) | Recommended as the life built on the company papers; read only through Bundles's own 2020 post and the IHS essay |
+| Walker | The NAACP's 1919 records of her $5,000 anti-lynching pledge; the Shillady letter of 10 May 1919 | Search snippets and Wikipedia only; not printed |
+| Walker | 1917 vs 1918 receipts | IHS gives $276,000 as 1917 income from all sources; Bundles gives $275,937.88 as 1918 gross. Named in `contested`, not resolved |
+| Walker | Laundress wage; the scalp illness | "$1 a day" is Wikipedia's; the IHS says only that she was losing her hair at the temples |
+| Barnum | Benjamin Reiss, *The Showman and the Slave* (2001) | `contested` says the entry has not opened it. Heth's age at the autopsy (about 80) and her enslavers' names are not printed for that reason |
+| Barnum | A. H. Saxon, *P. T. Barnum: The Legend and the Man* (1989); Neil Harris, *Humbug* (1973) | Recommended on the Lost Museum bibliography and the publisher's description, not read |
+| Barnum | American Museum attendance (30, 38 and 41 million all circulate) | None opened; none printed |
+| Barnum | Mayor of Bridgeport, 1875 | Connecticut History, read only as a summary; not printed |
+| Ford | Library of Congress record for cph.3c11278 (Hartsook, 1919) | Behind a bot check; the plate uses the 1928 *Literary Digest* photograph instead. Luca can open it himself, as with Ogilvy |
+| Ford | The 370 per cent turnover figure (50,448 hired against 13,623, 1913) | Search snippets only; the entry prints The Henry Ford's 380 per cent |
+| Ford | Grand Cross of the German Eagle, 1938; Dodge v. Ford's $19.3 million | Not opened; neither printed |
+| Ford | Steven Watts, *The People's Tycoon* (2005) | Title and year from library catalogues; not read |
+| Hill | Hidy, Hidy, Scott and Hofsommer, *The Great Northern Railway: A History* (1988) | Written 2026-10-12 from Pyle's appendices instead (2,634,482 acres unsold in Hill's 1877 estimate; 3,645,682 including lands to accrue). Hidy would still settle the price finally paid and whether any federal grant ran west of Minnesota |
+| Hill | Ramsey County History, Spring 1990 (rchs.com PDF) | The 1894 ARU strike and its arbitration; the PDF would not read |
+| Hill | NPS Glacier administrative history, ch. 1 | John F. Stevens at Marias Pass, December 1889 |
+| Hill | *Northern Securities Co. v. United States*, 193 U.S. 197 (1904), full text | The 5–4 count rests on MNHS alone |
+
+## Opened 2026-10-12: Hetty Green, Thomas Edison, Jakob Fugger (№ 74–76)
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Green | Paul Meier and Sandy Zabell, 'Benjamin Peirce and the Howland Will', JASA 75 (1980) | The 42 genuine signatures and 30 downstrokes; refused (403). The entry prints only the FJC's account of Peirce's odds |
+| Green | A New York City comptroller's record, or a 1907 newspaper, for her loan to the city | $1.1 million rests on Fortune (2025) citing Sparkes and Moore (1930); the $4.5 million earlier loan likewise |
+| Green | Charles Slack, *Hetty* (2004), the chapter on Ned | The free clinic, the dog cart and the gangrene; the entry prints only the 1962 American Heritage sequence |
+| Green | New York Times obituary, 4 July 1916; the Guinness listing | The 'Worth $100,000,000' headline and the miser entry are read only through Wikipedia |
+| Edison | Paul Israel, *Edison: A Life of Invention* (1998); Mark Essig, *Edison and the Electric Chair* (2003); Richard Moran, *Executioner's Current* (2002) | Recommended or named, not read |
+| Edison | Quote Investigator, 'I Have Gotten a Lot of Results!' (2012), full text | Would not load here; the entry rests on Dyer and Martin's 1910 text, which has no 'ten thousand' and no 'I have not failed' |
+| Edison | The Swan–Edison merger of 1883 | Wikipedia only, with a failed-verification tag; not printed |
+| Fugger | Greg Steinmetz, *The Richest Man Who Ever Lived* (2015), p. xiv and the 2 per cent calculation | Read only through Nathan Delaney's review in Europe Now (2017) |
+| Fugger | Götz von Pölnitz, *Jakob Fugger* (1949; vol. II 1951 or 1952) | The archive-based standard; read only through his NDB article |
+| Fugger | The German text of the 1523 letter (von Greiff, 1868, p. 49) | Quoted in H. M. Lucas's English translation of Ehrenberg; Steinmetz's wording differs |
+| Fugger | Miners' conditions in Tyrol and Neusohl | Nothing opened; `contested` says so |
