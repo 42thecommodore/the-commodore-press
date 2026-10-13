@@ -293,7 +293,7 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Ford | The 370 per cent turnover figure (50,448 hired against 13,623, 1913) | Search snippets only; the entry prints The Henry Ford's 380 per cent |
 | Ford | Grand Cross of the German Eagle, 1938; Dodge v. Ford's $19.3 million | Not opened; neither printed |
 | Ford | Steven Watts, *The People's Tycoon* (2005) | Title and year from library catalogues; not read |
-| Hill | Hidy, Hidy, Scott and Hofsommer, *The Great Northern Railway: A History* (1988) | Would settle the St. Paul & Pacific grant acreage (3,272,691 in snippets), the 1878 price, and whether the main line west of Minnesota had any federal grant |
+| Hill | Hidy, Hidy, Scott and Hofsommer, *The Great Northern Railway: A History* (1988) | Written 2026-10-12 from Pyle's appendices instead (2,634,482 acres unsold in Hill's 1877 estimate; 3,645,682 including lands to accrue). Hidy would still settle the price finally paid and whether any federal grant ran west of Minnesota |
 | Hill | Ramsey County History, Spring 1990 (rchs.com PDF) | The 1894 ARU strike and its arbitration; the PDF would not read |
 | Hill | NPS Glacier administrative history, ch. 1 | John F. Stevens at Marias Pass, December 1889 |
 | Hill | *Northern Securities Co. v. United States*, 193 U.S. 197 (1904), full text | The 5–4 count rests on MNHS alone |
