@@ -30,6 +30,11 @@
       "to": "lives:henry-ford",
       "label": "Henry Ford",
       "txt": "— who met his boyhood hero at a convention of Edison's lighting companies in 1896. One of Pearl Street's dynamos now stands in Ford's museum."
+    },
+    {
+      "to": "lives:alexander-graham-bell",
+      "label": "Alexander Graham Bell",
+      "txt": "— whose instrument Edison worked on too, making a carbon transmitter for it at Menlo Park."
     }
   ],
   "plateOf": "With the tinfoil phonograph, about 1878. Brady-Handy Collection, Library of Congress.",
