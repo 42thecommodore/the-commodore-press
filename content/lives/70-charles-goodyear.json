@@ -1,0 +1,58 @@
+{
+  "id": "charles-goodyear",
+  "no": 70,
+  "keep": "Goodyear called it application. Parton called it an accident, and the accident is the version everyone kept.",
+  "n": "Charles Goodyear",
+  "years": "1800–1860",
+  "place": "United States",
+  "field": "Chemistry & Invention",
+  "group": "obscure",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "lede": "He spent ten years in and out of debtors' prisons, melted his first pound of rubber while confined to the jail limits, and refused to call his discovery an accident. Everyone since has called it one.",
+  "copy": [
+    "Charles Goodyear's family hardware firm failed around 1830 owing thirty thousand dollars, and for ten years after, in his own words, he \"was repeatedly imprisoned for debt\". He took up India rubber in 1834, while confined to the limits of a jail. Rubber then was a fashion with a flaw: his own compound decomposed in a batch of mail-bags. In 1838, at Woburn, Massachusetts, he bought Nathaniel Hayward's claim for mixing sulphur into it, patented in February 1839. The claim, Goodyear wrote, \"was for the use of sulphur, and not for the heating or vulcanizing process, subsequently discovered by the writer.\"",
+    "That winter, at Woburn, a specimen of the sulphur compound, \"being carelessly brought in contact with a hot stove, charred like leather\". At its edge was a border \"not charred, but perfectly cured\". He would not call it luck. The discovery, he wrote, was not \"what is commonly termed accident\" but \"the result of the closest application and observation\". It took him five more years, most of them broke. On 21 April 1840 he wrote from the debtors' prison in Boston that it was \"perhaps as good a resting place as any this side the grave.\" US patent 3,633, of 15 June 1844, mixed twenty-five parts of rubber with five of sulphur and seven of white lead, heated close to 270 degrees. In London, Thomas Hancock had been handed a few bits of the American rubber in the autumn of 1842. His own British patent passed the great seal on 21 November 1843.",
+    "The patent was worth more to his licensees than to him. In Goodyear v. Day, in 1852, Daniel Webster argued for the companies licensed under it, the proofs ran to about 4,000 printed pages, and the court held that no one had made the thing before him. James Parton reported in 1867 that the licensees paid Webster $25,000, and doubted that Goodyear ever cleared as much from his patents. At the Paris Exposition of 1855 he was in Clichy, the debtors' prison, when his son brought him the Legion of Honour. He died at the Fifth Avenue Hotel in New York in 1860, on his way to his daughter's funeral, \"leaving to a wife and six children only an inheritance of debt.\" The Goodyear Tire & Rubber Company was founded in Akron in 1898 by Frank Seiberling, who borrowed his name."
+  ],
+  "bio": {
+    "t": "Noble Obsession: Charles Goodyear, Thomas Hancock, and the Race to Unlock the Greatest Industrial Secret of the Nineteenth Century",
+    "a": "Charles Slack",
+    "y": "2002",
+    "why": "It tells the story as a race with Thomas Hancock, which is what it was. Read Goodyear's own Gum-Elastic and Its Varieties (1853) for the stove in his words, and James Parton's chapter of 1867 to see where the accident came from."
+  },
+  "contested": "Who got there first, and the numbers that grew. Thomas Hancock's Personal Narrative (1857) never names Goodyear. He says he made no analysis of the American samples and worked \"entirely and solely\" on his own, and he also concedes that they \"showed me for the first time that the desirable change ... had been attained\". His British patent was sealed seven months before Goodyear's American one. It was his associate Brockedon, by Hancock's account, who proposed the word vulcanisation. The stove grew in the retelling: Goodyear's careless contact became, in Parton, \"a violent gesture\" in mid-argument, and later a spill in the kitchen. Wikipedia credits Goodyear with US patent 1,090 of 1839; Finkelstein and Rovetti's history for Connecticut Humanities shows it was Hayward's sulphur patent, which Goodyear bought. Cai Guise-Richardson argued in Technology and Culture (2010) that vulcanisation as a single invention was partly a construction of the patent fights; this house has not read the paper. The numbers: no source counts his imprisonments (Parton says he was \"seldom out of jail a whole year from 1835 to 1841\"); American Heritage puts Webster's fee at $15,000 against Parton's $25,000; and the $200,000 of debt at his death that circulates is in neither Parton nor Bradford Peirce's life of 1866, which say only that he died insolvent.",
+  "across": [
+    {
+      "to": "lives:chester-carlson",
+      "label": "Chester Carlson",
+      "txt": "— another inventor who kept going on credit, and whose patent made more for others than for him."
+    }
+  ],
+  "plateOf": "Southworth & Hawes, Boston, undated; Goodyear died in 1860.",
+  "facts": [
+    {
+      "b": "$30,000",
+      "s": "What the family firm, A. Goodyear and Sons, still owed after its failure: James Parton, 'Charles Goodyear', Famous Americans of Recent Times (1867), Project Gutenberg 12771"
+    },
+    {
+      "b": "25 : 5 : 7 · 270°",
+      "s": "Parts of rubber, sulphur and white lead, and the best heat in Fahrenheit: US patent 3,633, 15 June 1844, as recorded by Google Patents"
+    },
+    {
+      "b": "21 Nov 1843",
+      "s": "When Hancock's British patent passed the great seal; enrolled 21 May 1844: Thomas Hancock, Personal Narrative of the Origin and Progress of the Caoutchouc or India-Rubber Manufacture in England (1857), archive.org"
+    },
+    {
+      "b": "~4,000 pages",
+      "s": "The printed proofs in Goodyear v. Day, decided 28 September 1852: 10 F. Cas. 678, Circuit Court, District of New Jersey (law.resource.org)"
+    },
+    {
+      "b": "$25,000",
+      "s": "Webster's fee, paid by the licensed shoe companies, not by Goodyear: Parton (1867); Bradford K. Peirce, Trials of an Inventor (1866), archive.org"
+    }
+  ]
+}

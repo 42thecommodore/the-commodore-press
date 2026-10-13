@@ -35,6 +35,11 @@
       "to": "lives:robert-goddard",
       "label": "Robert Goddard",
       "txt": "— another inventor the experts waved off, and a newspaper that took forty-nine years to say so."
+    },
+    {
+      "to": "lives:charles-goodyear",
+      "label": "Charles Goodyear",
+      "txt": "— a century earlier, another inventor whose patent made more for others than for him."
     }
   ],
   "facts": [
