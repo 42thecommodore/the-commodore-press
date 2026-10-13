@@ -1,0 +1,61 @@
+{
+  "id": "henry-singleton",
+  "no": 78,
+  "keep": "He used his stock as money when it was dear and bought it back when it was cheap. The famous ninety per cent is a retelling; Fortune counted eighty-five.",
+  "n": "Henry Singleton",
+  "years": "1916–1999",
+  "place": "Texas and Los Angeles",
+  "field": "Industry & Capital",
+  "group": "obscure",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "He rarely gave interviews, kept away from Wall Street and played chess without looking at the board. The usual figure for his buybacks is ninety per cent of Teledyne's shares. Fortune, counting while he was still buying, made it eighty-five.",
+  "copy": [
+    "Henry Singleton was born in 1916 in Haslet, Texas, on a ranch where his father raised cotton and cattle. He went to the Naval Academy, transferred to MIT, and took bachelor's, master's and doctoral degrees there in electrical engineering. He ran the electronics business at Litton Industries until 1960, and left that year to found Teledyne. Arthur Rock, the venture capitalist, provided the first money and sat on the board for thirty-three years.",
+    "The method was to treat the company's own stock as a currency. In the 1960s Teledyne's shares were expensive, and it used them to buy 125 or so companies, which were left to their own managers as long as they sent cash to Los Angeles. In the 1970s the price fell and antitrust regulators began to look hard at conglomerates. Singleton stopped buying companies and started buying Teledyne. The first repurchase, in 1972, was at $8 a share, adjusted for splits; the last, in May 1984, was at $200. By then Teledyne had bought back 85 per cent of its shares for about $2.7 billion, and holders who stayed had gained more than 3,000 per cent. At the time the practice was highly unusual and drew criticism. He headed the company until 1986 and stayed chairman until 1991.",
+    "The number usually printed is larger. William Thorndike's The Outsiders (2012) has Teledyne retiring about ninety per cent of its stock, and that is the figure that circulates. Carol Loomis's Fortune count, made while Singleton was still buying, is 85. The record has a second half the book-length praise tends to leave short. Teledyne's spending on research and development was low, and criticised for it. In the late 1980s and early 1990s the company paid more than $100 million in fines to settle charges that it had inflated bills to the Pentagon, falsified tests of components and exported material for Iraqi bombs. Singleton died in 1999, aged 82, still holding 7.2 per cent of the stock."
+  ],
+  "bio": {
+    "t": "The Outsiders: Eight Unconventional CEOs and Their Radically Rational Blueprint for Success",
+    "a": "William N. Thorndike",
+    "y": "2012",
+    "why": "There is no full biography. Thorndike's chapter is the account most readers will meet, and it is the source of the ninety per cent, so read it beside Loomis's Fortune piece. George A. Roberts's Distant Force (2007) is a memoir by his Naval Academy roommate and successor at Teledyne, and reads like one."
+  },
+  "contested": "How much of the record is his. The buyback count is soft: Fortune says 85 per cent, Thorndike about ninety, and counts reprinted elsewhere mix split-adjusted and unadjusted shares; a Teledyne share register for 1971 and 1984 would settle it, and none has been opened here. The return is soft in the same way. Arthur Rock told the Times that by his own calculation the stock rose 25 per cent a year over Singleton's tenure; that is a director's arithmetic, not an audit. Fortune's Loomis added the caution that Teledyne's result hardly serves as a testimonial to buybacks in general. The praise most often quoted, a line from Warren Buffett ranking Singleton's record first in American business, circulates without a document; this entry has not found it in the Berkshire letters it searched and does not print it. On the other side, the Times records criticism of his low research spending and the procurement fines, but names no critic.",
+  "across": [
+    {
+      "to": "lives:edwin-land",
+      "label": "Edwin Land",
+      "txt": "— the other engineer-founder of the same years, who spent on research where Singleton saved, and built one company where Singleton bought a hundred."
+    }
+  ],
+  "facts": [
+    {
+      "b": "125 or so",
+      "s": "Companies Teledyne bought with its own stock in the 1960s: Andrew Pollack, 'Henry E. Singleton, a Founder of Teledyne, Is Dead at 82', New York Times, 3 September 1999 (read via the Internet Archive)"
+    },
+    {
+      "b": "85% · $2.7 billion · $8 / $200",
+      "s": "Share of Teledyne's stock repurchased, its cost, and the first (1972, split-adjusted) and last (May 1984) prices: Carol Loomis, 'Beating the market by buying back stock', Fortune (reprinted online 21 November 2012)"
+    },
+    {
+      "b": "3,000%",
+      "s": "Gain for holders since the buybacks began in 1972: Loomis, Fortune"
+    },
+    {
+      "b": "$100 million",
+      "s": "Fines paid to settle procurement charges in the late 1980s and early 1990s: Pollack, New York Times, 3 September 1999"
+    },
+    {
+      "b": "7.2% · $750 million",
+      "s": "His stake when he retired as a director in 1997, and Forbes's estimate of his wealth: Pollack, New York Times, 3 September 1999"
+    },
+    {
+      "b": "25% a year",
+      "s": "Teledyne's average annual stock gain over his 25 years as chief executive, by Arthur Rock's own calculation: Pollack, New York Times, 3 September 1999"
+    }
+  ]
+}
