@@ -1,0 +1,63 @@
+{
+  "id": "alexander-graham-bell",
+  "no": 72,
+  "keep": "He called himself a teacher of the deaf. The schools he wanted would have had no deaf teachers and no sign.",
+  "n": "Alexander Graham Bell",
+  "years": "1847–1922",
+  "place": "Scotland · United States",
+  "field": "Invention & Deaf Education",
+  "group": "famous",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "The first sentence sent by telephone is usually quoted two words short. In the Library of Congress's reading of his notebook, it ends \"I want to see you\".",
+  "copy": [
+    "Alexander Graham Bell was born in Edinburgh on 3 March 1847. His family moved to Canada in 1870, and a year later he went to Boston to teach deaf children to speak with his father's system of Visible Speech. In April 1872 he met Gardiner Hubbard, and from November 1873 he tutored Hubbard's daughter Mabel, who had lost her hearing to scarlet fever at five. In the spring of 1875 her father told him to choose between Mabel and his work on sending speech by electricity. He married her on 11 July 1877. Until his death, the Dictionary of Canadian Biography says, he saw himself above all as a teacher of the deaf.",
+    "His application for a patent went in on 14 February 1876. Elisha Gray, his best-known rival, had filed a caveat for a telephone of his own. US patent 174,465, granted on 7 March, is titled \"Improvement in Telegraphy\" and never uses the word telephone. It claims a way of sending speech by electrical undulations shaped like the vibrations of the air. On 10 March he spoke through the instrument to Thomas Watson in the next room. Watson's notes, which his memoirs followed, left out the words \"to see\". He was neither the first nor the only one to try, from Philipp Reis to Antonio Meucci. He was the first to turn speech into a current and back into speech that could be understood. The Bell companies defended the patent in more than 600 cases.",
+    "The prize that paid for his laboratory came in 1880: the French government's Volta Prize, 50,000 francs. From his share of the laboratory's sound-recording patents, sold in 1887, he founded the Volta Bureau, \"for the increase and diffusion of knowledge relating to the Deaf\". In November 1883 he read a paper to the National Academy of Sciences, \"Upon the Formation of a Deaf Variety of the Human Race\". It opens on the breeding of domestic animals. He weighed a law against the intermarriage of deaf people and judged it of doubtful use. What he pressed instead was the end of separate schools, of sign language and of deaf teachers: \"Segregation really lies at the root of the whole matter.\" By 1900, the Dictionary says, 40 per cent of deaf students were taught without sign language. Twenty years later, 80 per cent were. He died near Baddeck, Nova Scotia, on 2 August 1922."
+  ],
+  "bio": {
+    "t": "Bell: Alexander Graham Bell and the Conquest of Solitude",
+    "a": "Robert V. Bruce",
+    "y": "1973",
+    "why": "By Bruce's own account the first written from the family's papers, and still, the Dictionary of Canadian Biography says, the most authoritative. Avoid James Mackay's life of 1997: by Bruce's account, 285 of its 297 pages copied his, and its American publisher took it out of print."
+  },
+  "contested": "Who got there first, and how to read the paper of 1883. Seth Shulman's The Telephone Gambit (2008) argues that Bell \"stole the key idea behind the invention of the telephone\": a page of his notebook from March 1876 sketches a liquid transmitter close to the one in Gray's caveat, and the patent examiner, Zenas Wilber, later swore affidavits that were used against Bell. Ralph Meyer and Edwin Grosvenor, reviewing Shulman for American Heritage, answer that Wilber's affidavit was drawn up with lawyers for the Pan-Electric company, which was trying to take the patent, and that the liquid transmitter \"simply didn't matter\", since Bell's working instruments used induction (which instrument carried the sentence of 10 March is the point in dispute); Grosvenor has written a life of Bell, and is not a neutral party. On Meucci, the House of Representatives' resolution of 11 June 2002 says that \"his work in the invention of the telephone should be acknowledged\", which is less than the speeches made for it on the floor, where members called him its true inventor. On the deaf, the Dictionary of Canadian Biography calls the paper's title \"poorly chosen\", says the press took it out of context, and notes that Bell opposed segregated boarding schools and grew uneasy about \"eugenic cranks\". The paper itself frames deaf intermarriage as \"the evil\" and deaf teachers as \"another element favorable to the formation of a deaf race\", to be avoided. Both are on the record.",
+  "across": [
+    {
+      "to": "lives:louis-braille",
+      "label": "Louis Braille",
+      "txt": "— the other side of the argument over how disabled children should learn: Braille gave the blind a script of their own, and Bell wanted the deaf taught away from theirs."
+    },
+    {
+      "to": "lives:thomas-edison",
+      "label": "Thomas Edison",
+      "txt": "— who worked on the telephone too, and made a carbon transmitter for it at Menlo Park."
+    }
+  ],
+  "plateOf": "Moffett Studio, between about 1914 and 1919. Library and Archives Canada, C-017335.",
+  "facts": [
+    {
+      "b": "US 174,465",
+      "s": "'Improvement in Telegraphy', filed 14 February 1876, granted 7 March 1876: United States patent, as recorded by Google Patents"
+    },
+    {
+      "b": "600+",
+      "s": "Patent cases the Bell companies defended: Lawrence Surtees, 'Bell, Alexander Graham', Dictionary of Canadian Biography, vol. 15"
+    },
+    {
+      "b": "50,000 francs",
+      "s": "The Volta Prize of 1880, which paid for his laboratory: National Park Service, 'Volta Laboratory and Bureau Building'"
+    },
+    {
+      "b": "<9% · >65%",
+      "s": "Deaf pupils taught to speak in American schools, and in foreign ones, in 1882, by his own count: Alexander Graham Bell, 'Upon the Formation of a Deaf Variety of the Human Race', National Academy of Sciences, 13 November 1883 (National Library of Medicine)"
+    },
+    {
+      "b": "40% → 80%",
+      "s": "Deaf students taught without sign language by 1900, and two decades later: Surtees, Dictionary of Canadian Biography"
+    }
+  ]
+}

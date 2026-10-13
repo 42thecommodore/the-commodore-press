@@ -50,6 +50,11 @@
       "to": "atlas:bet",
       "label": "The Atlas · Bet on yourself",
       "txt": "— and the objection to it. Knowing you are right tells you to bet, not how much: stake more than the edge and ordinary bad luck takes you out while you are still right."
+    },
+    {
+      "to": "lives:hetty-green",
+      "label": "Hetty Green",
+      "txt": "— who put the sizing question her own way in 1905: \"safe and low is better than risky and high.\""
     }
   ],
   "corrected": [

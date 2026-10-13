@@ -1,0 +1,57 @@
+{
+  "id": "kelly-johnson",
+  "no": 67,
+  "keep": "He sold a plane on its altitude. The men who bought it wrote down that the altitude would run out.",
+  "n": "Kelly Johnson",
+  "years": "1910–1990",
+  "place": "United States",
+  "field": "Aircraft & Engineering",
+  "group": "obscure",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "He failed the Air Corps eye test. Lockheed took him on to draw tools for $83 a month. Twenty years later the Air Force turned down his spy plane, and the CIA bought twenty.",
+  "copy": [
+    "Clarence Johnson was born at Ishpeming, Michigan, on 27 February 1910, the seventh of nine children of poor Swedish immigrants. A schoolyard fight and a song made him Kelly. He took a degree in aeronautical engineering at Michigan in 1932 and a master's in 1933, failed the Air Corps eye examination, and joined Lockheed in 1933. In June 1943 the Army asked Lockheed for a jet fighter. Johnson put his team in a rented circus tent beside a plastics plant whose smell came through the canvas, and one of them, Irv Culver, took to answering the phone as the Skonk Works, after the still in Al Capp's Li'l Abner. They had 150 days for the XP-80, and built it in 143. In 1960, Ben Rich wrote, Capp's publisher objected, so the name became Skunk Works and a trademark.",
+    "In March 1954 he offered the Air Force a reconnaissance plane: the fuselage of the F-104 fighter, a sailplane's long wing, skis and a dolly in place of landing gear, stressed for 2.5 g where fighters were built for 5.33. It would fly above 70,000 feet. The civilians at the Pentagon liked it and the generals did not; Curtis LeMay said that if he wanted high photographs he would put cameras in his B-36 bombers. On 7 June the Air Force turned it down. The drawing reached Edwin Land's intelligence panel. On 5 November Land wrote to Allen Dulles that \"the Lockheed super glider will fly at 70,000 feet, well out of reach of present Russian interception\". The CIA contracted early in 1955 for twenty aircraft at $22.5 million, and Lockheed delivered them for $18,977,597, its profit included.",
+    "Land's memo had set a limit in the same pages: \"The opportunity for safe overflight may last only a few years, because the Russians will develop radars and interceptors or guided missile defenses for the 70,000 foot region.\" On 1 May 1960 a missile battery near Sverdlovsk fired three SA-2s. They crippled the U-2 flown by Gary Powers and destroyed a Soviet fighter sent up to catch him. The destruct charge had been designed to wreck only the camera, and ten days later the Soviets put its equipment on show. Johnson's answer was already being built: the A-12 and then the SR-71, in titanium, to cruise at Mach 3.2. He retired in 1975, and died on 21 December 1990."
+  ],
+  "bio": {
+    "t": "Kelly: More Than My Share of It All",
+    "a": "Clarence L. Johnson and Maggie Smith",
+    "y": "1985",
+    "why": "His own account, written with Maggie Smith. Read it beside the CIA's declassified history of the U-2 by Gregory Pedlow and Donald Welzenbach, whose figures are lower than Lockheed's stories, and Peter Garrison's 'Head Skunk' (Air & Space, 2010), which asks who did the designing."
+  },
+  "contested": "Credit, mostly, and the numbers that grew around it. John Benson, Lockheed's head of propulsion in his time, told Peter Garrison that \"after Kelly started the Skunk Works, he didn't do the designs himself, he just had considerable input as to the aircraft's design features. So he got the credit.\" Garrison adds that the P-38 could hardly have happened without Hall Hibbard, that the C-130 sits on lists of his aircraft though he did not design it and disliked it, and that the Blackbird was a team effort of which Ben Rich names a dozen engineers. Garrison also measures the Skunk Works against Dassault's Mirage IV team and Hawker's P.1127 team, both small, and calls it unique only beside a bloated American industry. The insider's numbers run high. Rich has the XP-80 37 days ahead of schedule, where Lockheed and Garrison have seven; Rich has Johnson handing back $2 million on the U-2 and building six extra planes, where the CIA's own history has twenty delivered for $18,977,597 with $1.9 million of profit; Rich has fourteen missiles fired at Powers, the CIA three. Even Land's choice is neater in the telling than in the record: the CIA's history says no date can be put on the panel's decision to back the design, and \"there may never have been a formal decision as such\".",
+  "across": [
+    {
+      "to": "lives:edwin-land",
+      "label": "Edwin Land",
+      "txt": "— who took up the design the Air Force had rejected and wrote to Dulles that it would fly \"well out of reach\"."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$83",
+      "s": "His monthly pay as a tool designer when Lockheed hired him in 1933: Ben R. Rich, 'Clarence Leonard (Kelly) Johnson', Biographical Memoirs 67, National Academy of Sciences (1995)"
+    },
+    {
+      "b": "143 of 150 days",
+      "s": "Time taken to design and build the XP-80, against the time allowed: Lockheed Martin, 'Skunk Works Origin Story'; Peter Garrison, 'Head Skunk', Air & Space (March 2010)"
+    },
+    {
+      "b": "2.5 g · 70,000 ft",
+      "s": "The CL-282's design load, against 5.33 g for fighters, and its altitude: Gregory W. Pedlow and Donald E. Welzenbach, The Central Intelligence Agency and Overhead Reconnaissance, chapter 1 (CIA, 1992; released 2013, National Security Archive, Electronic Briefing Book 434)"
+    },
+    {
+      "b": "$22.5M → $18,977,597",
+      "s": "The CIA's contract for twenty U-2s, and what Lockheed delivered them for, profit included: Jeffrey T. Richelson, National Security Archive, Electronic Briefing Book 434 (2013), from the CIA history"
+    },
+    {
+      "b": "3",
+      "s": "SA-2 missiles fired at Powers's U-2 on 1 May 1960: Pedlow and Welzenbach, chapter 4 (CIA, 1992; National Security Archive, 2013)"
+    }
+  ]
+}

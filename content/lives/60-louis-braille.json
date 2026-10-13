@@ -30,6 +30,11 @@
       "to": "press:movable-type",
       "label": "Movable Type",
       "txt": "— the other way of putting words where a reader could reach them. Haüy's books needed a press; Braille's could be written by hand."
+    },
+    {
+      "to": "lives:alexander-graham-bell",
+      "label": "Alexander Graham Bell",
+      "txt": "— who wanted the deaf taught to speak, and taught away from sign; Braille gave the blind a script of their own."
     }
   ],
   "facts": [

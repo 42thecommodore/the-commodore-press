@@ -30,6 +30,16 @@
       "to": "lives:edwin-land",
       "label": "Edwin Land",
       "txt": "— the other imaging company built on one man's patents. Kodak turned Carlson down; Polaroid spent fifteen years suing it."
+    },
+    {
+      "to": "lives:robert-goddard",
+      "label": "Robert Goddard",
+      "txt": "— another inventor the experts waved off, and a newspaper that took forty-nine years to say so."
+    },
+    {
+      "to": "lives:charles-goodyear",
+      "label": "Charles Goodyear",
+      "txt": "— a century earlier, another inventor who spent years with nothing from one idea, and died in debt."
     }
   ],
   "facts": [
