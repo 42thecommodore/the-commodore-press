@@ -40,6 +40,11 @@
       "to": "lives:henry-j-kaiser",
       "label": "Henry J. Kaiser",
       "txt": "— who built ships on the line during the war, and then failed in Ford's own industry."
+    },
+    {
+      "to": "lives:soichiro-honda",
+      "label": "Soichiro Honda",
+      "txt": "— whose mass machine was a small motorcycle; the Super Cub series passed 100 million in 2017."
     }
   ],
   "plateOf": "About 1919.",
