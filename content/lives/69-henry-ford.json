@@ -1,0 +1,62 @@
+{
+  "id": "henry-ford",
+  "no": 69,
+  "keep": "He mass-produced the Model T. Then he mass-produced The International Jew.",
+  "n": "Henry Ford",
+  "years": "1863–1947",
+  "place": "United States",
+  "field": "Industry",
+  "group": "famous",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "He said a customer could have any colour so long as it was black, and dated the remark to 1909. Model Ts came in colours until 1914 and again after 1925.",
+  "copy": [
+    "Henry Ford did not invent the car or the assembly line, and in his own book he says where the line came from: \"the overhead trolley that the Chicago packers use in dressing beef.\" Ford Motor Company first tried it about 1 April 1913, on the flywheel magneto, and cut each one from about twenty minutes to thirteen. Then the chassis. Built standing still, the best they had managed was twelve hours and twenty-eight minutes of labour. Dragged by a rope and windlass down a line 250 feet long, it took five hours fifty. On a raised line early in 1914, with the work split finer, it took an hour and thirty-three. Ford built more than 15 million Model Ts between 1908 and 1927, and the price fell from $850 to as little as $260.",
+    "Men left as fast as they were hired. By late 1913 labour turnover was 380 per cent: by Ford's own count, keeping 14,000 men meant hiring about 53,000 a year. In 1914 the company announced five dollars for an eight-hour day, against $2.34 for nine. It was, in Ford's words, \"a kind of profit-sharing plan\", paid \"on conditions\". Married men had to be \"living with and taking good care of their families\"; single men over twenty-two had to be \"of proved thrifty habits\". \"The man and his home had to come up to certain standards of cleanliness and citizenship,\" he wrote, and the Social Department had about fifty investigators. \"Nothing paternal was intended!\" he added, though \"a certain amount of paternalism did develop\".",
+    "In 1918 he bought a weekly, The Dearborn Independent, and on 22 May 1920 it began a series called \"The International Jew: The World's Problem\". Ford dealers were made to distribute it. The historian Pamela Nadell puts the paper's circulation at 72,000 in 1919, before the series, and at 700,000 by the middle of the 1920s. The series was bound into four volumes and translated into more than a dozen languages. In 1923, as the US Holocaust Memorial Museum quotes the Chicago Tribune, Hitler said: \"We look on Heinrich Ford as the leader of the growing Fascisti movement in America.\" A libel suit by the lawyer Aaron Sapiro ended in 1927 with an apology drafted by the lawyer Louis Marshall, which never admitted that Ford had written or directed any of it. In 1938 Germany gave him the Grand Cross of the German Eagle. On 7 March 1932 shots were fired into a march of unemployed workers at the gates of his Rouge plant. Five people died, and no one was ever charged."
+  ],
+  "bio": {
+    "t": "The People's Tycoon: Henry Ford and the American Century",
+    "a": "Steven Watts",
+    "y": "2005",
+    "why": "The life The Henry Ford's own research guides recommend. Read Ford's My Life and Work, written with Samuel Crowther, for his own numbers, and Victoria Saker Woeste's Henry Ford's War on Jews (2012) for the trial."
+  },
+  "contested": "The numbers, the wage and the apology. The famous ninety-three minutes is Ford's own figure, from My Life and Work, and it is labour time per chassis in 1914, not a car leaving the line every ninety-three minutes, as The Henry Ford's own guide now puts it; nor did the line start with the car, but with a magneto. The five-dollar day is still argued. The Henry Ford sets it beside the turnover; Ford's own book calls it an act of social justice and mentions turnover only as something that stopped bothering the company. Daniel Raff, in the Journal of Economic History (1988), finds efficiency-wage explanations implausible and calls reducing turnover \"an unlikely central motive\"; he reads it as rent-sharing under the threat of collective action, and notes that the state's labour department lost its manuscript records for the period in a fire in 1951. Stephen Meyer's study of it (1981) is subtitled Labor Management and Social Control. On the Independent, Victoria Saker Woeste argues that the 1927 apology was a public-relations manoeuvre that cost him little, and the circulation is not settled: 700,000 is Nadell's figure in a podcast, and the American Jewish Archives says 900,000 by 1926; neither is an audited number. Who fired at the Hunger March is not settled either: the Reuther Library's account names Dearborn police and Ford's Service men at the gates and says no one was ever charged. And \"history is bunk\" was, in the Chicago Tribune's 1916 interview, \"History is more or less bunk\"; an article in the Proceedings of the Massachusetts Historical Society, which this house has read only in excerpt, found no proof that he ever said the shorter line, and in 1929 Ford opened a museum of history.",
+  "across": [
+    {
+      "to": "lives:thomas-edison",
+      "label": "Thomas Edison",
+      "txt": "— his boyhood hero, met in 1896. Ford opened his museum on the fiftieth anniversary of Edison's lamp."
+    }
+  ],
+  "plateOf": "About 1919.",
+  "facts": [
+    {
+      "b": "1914–1925",
+      "s": "The years the Model T came only in black; it was sold in colours before and after: Ford Motor Company, 'The Model T', Ford From the Road (2021)"
+    },
+    {
+      "b": "12 h 28 m → 1 h 33 m",
+      "s": "Labour time to assemble a Model T chassis, standing still and then on the raised moving line of early 1914: Henry Ford with Samuel Crowther, My Life and Work, Project Gutenberg 7213"
+    },
+    {
+      "b": "15 million · $850 → $260",
+      "s": "Model Ts built 1908–1927, and the fall in price: The Henry Ford, K-12 research guide, 'Assembly Line' (2026)"
+    },
+    {
+      "b": "380% · $2.34 → $5",
+      "s": "Labour turnover in late 1913, and the day's pay before and after January 1914: The Henry Ford, 'Assembly Line'; 53,000 hires to hold 14,000 jobs: My Life and Work"
+    },
+    {
+      "b": "72,000 → 700,000",
+      "s": "The Dearborn Independent's circulation in 1919 and by the mid-1920s, as Pamela Nadell gives it: Association for Jewish Studies podcast, episode 16 (transcript)"
+    },
+    {
+      "b": "5",
+      "s": "Dead after the Ford Hunger March of 7 March 1932, four on the day and one later; no one was charged: Walter P. Reuther Library, Wayne State University, 'Ford Hunger March'"
+    }
+  ]
+}

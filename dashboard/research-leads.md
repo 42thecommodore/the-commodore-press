@@ -256,6 +256,20 @@ mentions it can be tightened or the figure promoted.
 - `chester-carlson`: the Fortune letter of 1968, said to be in Owen, Copies in Seconds, p. 260; Kornei's 1938 notebook and the Contribution File, NYPL MssCol 472.
 - `lyndon-b-johnson`: Dale Baum and James L. Hailey, 'Lyndon Johnson's Victory in the 1948 Texas Senate Race: A Reappraisal', Political Science Quarterly 109:4 (1994); David Broder's review of Means of Ascent (Washington Post, 1990), known only as the Texas Observer quoted it.
 
+---
+
+## 2026-10-13 — nine Founders lives, № 65–73: what was named but not opened
+
+- `robert-goddard`: the Times correction of 17 July 1969 on the Times's own page (read only as transcribed); Frank H. Winter, 'Did the Germans Learn from Goddard?', IAC 2014 (abstract only); the 1960 settlement's split between Esther Goddard and the Guggenheim Foundation.
+- `alfred-nobel`: Le Figaro, 15 and 16 April 1888 (Gallica ark:/12148/bpt6k280366k and bpt6k280367z) for the reported Cannes notice; Tekniska museet for the date 3 September 1864; Fant (1991) p. 327 for the 94% share.
+- `kelly-johnson`: chapter 2 of the CIA's U-2 history (too large for the fetcher) for the first-flight date; the credit line of the CIA's A-12 book for the c. 1975 portrait, which would settle whether it can be used.
+- `thomas-edison`: the Rosanoff (Harper's, 1932) and Dyer & Martin (1910) printings of the genius ratio; the original 223,898 patent PDF.
+- `henry-ford`: the Chicago Tribune of May 1916 ('more or less bunk') and of 1923 (Hitler on Ford); the 30 June 1927 statement to Sapiro; an audited circulation for the Dearborn Independent.
+- `charles-goodyear`: Cai Guise-Richardson, 'Redefining Vulcanization', Technology and Culture 51:2 (2010); Slack pp. 234–5 for the debt at death.
+- `isambard-kingdom-brunel`: G. A. Sekon (1895) and Peter Kay (1991) for the atmospheric railway's cost, read only through Joseph Brennan.
+- `alexander-graham-bell`: the notebook page of 10 March 1876 itself (LoC magbell.25300101, image only); Gray's caveat date; the patent PDF for the claims' exact wording.
+- `hetty-green`: the San Francisco Call, 26 March 1899; the 1907 New York City loan in a document.
+
 ## Opened 2026-10-06: the six lives from PR 2 (renumbered № 65–70 on 2026-10-12)
 
 Each entry was cut back to what an opened document says. These would let a cut line come back, or a figure be promoted.

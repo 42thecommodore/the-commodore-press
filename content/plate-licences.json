@@ -83,5 +83,17 @@
     "by": "Benjamin F. Powelson, Library of Congress (LC-DIG-ppmsca-54230)",
     "credit": "the carte de visite of Harriet Tubman, made in Auburn, New York, in 1868 or 1869, is by Benjamin F. Powelson, held by the Library of Congress, which states that there are no known restrictions on its publication",
     "checked": "2026-10-09"
+  },
+  "henry-ford": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Fred Hartsook, National Photo Company collection, Library of Congress",
+    "credit": "the photograph of Henry Ford, about 1919, is by Fred Hartsook, from the National Photo Company collection at the Library of Congress, which states that there are no known copyright restrictions on its use",
+    "checked": "2026-10-13"
+  },
+  "hetty-green": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Hollinger & Rockey, Library of Congress (cph.3a42973)",
+    "credit": "the 1897 photograph of Hetty Green is by Hollinger &amp; Rockey, held by the Library of Congress, which states that there are no known restrictions on its publication",
+    "checked": "2026-10-13"
   }
 }
