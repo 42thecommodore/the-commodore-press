@@ -40,6 +40,11 @@
       "to": "lives:norman-borlaug",
       "label": "Norman Borlaug",
       "txt": "— the nitrogen was Haber's; the yields were Borlaug's. Neither half feeds anyone alone."
+    },
+    {
+      "to": "lives:alfred-nobel",
+      "label": "Alfred Nobel",
+      "txt": "— an earlier chemist whose explosive cut tunnels and whose fortune bought a weapons works, then paid for prizes, peace among them."
     }
   ]
 }

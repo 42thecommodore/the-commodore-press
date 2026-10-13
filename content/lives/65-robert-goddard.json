@@ -1,0 +1,62 @@
+{
+  "id": "robert-goddard",
+  "no": 65,
+  "keep": "The Times had the physics wrong and his paper in front of it. It took forty-nine years and a moon shot to say so.",
+  "n": "Robert Goddard",
+  "years": "1882–1945",
+  "place": "United States",
+  "field": "Rocketry",
+  "group": "famous",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "In January 1920 the New York Times told him a rocket needs something to push against, and that he seemed to lack the knowledge ladled out daily in high schools. Six years later his rocket flew for two and a half seconds, into a cabbage patch.",
+  "copy": [
+    "Robert Goddard taught physics at Clark College in Worcester, Massachusetts. At Princeton in 1912–13 he had worked out a theory: a rocket, built efficiently enough, could carry instruments past the twenty miles a sounding balloon could reach. In 1914 he took out two patents, one for a rocket in stages, one with a version fed from tanks of liquid fuel. At Clark he fired powder rockets inside a vacuum and found the exhaust about as fast as in air. A rocket needs nothing to push against. The Smithsonian advanced him $5,000 and in 1919 published his paper, \"A Method of Reaching Extreme Altitudes\". Near the end he worked out how much flash powder a rocket would need to land on the dark face of a new moon and be seen through a telescope: 2.67 pounds, to be just visible. He called it \"not of obvious scientific importance.\"",
+    "The newspapers read only the moon. The Times, on 13 January 1920, granted that his rocket was \"a practicable, and therefore promising, device\" for the upper air. Beyond the air, it said, a rocket would need \"something better than a vacuum against which to react\", and Goddard \"only seems to lack the knowledge ladled out daily in high schools.\" The paper on its desk had already answered it, with the vacuum tests. He turned to liquid fuel. On 16 March 1926, on his aunt Effie Ward's farm at Auburn, a rocket burning gasoline and liquid oxygen sat roaring on its frame for some seconds, then rose. It climbed 41 feet, flew for 2.5 seconds and came down 184 feet away, in a cabbage patch. He wrote the next day that it \"looked almost magical as it rose\". Charles Lindbergh brought him the Guggenheims' money, and from 1930 he flew larger rockets from a tower near Roswell, New Mexico.",
+    "After 1920 he trusted few people, and it cost him. Asked to share his results with Caltech, he wrote to its president that he could not \"turn over the results of many years of investigation, still incomplete, for use as a student's thesis.\" Theodore von Kármán said later that Goddard \"believed in secrecy\", and that \"the trouble with secrecy is that one can easily go in the wrong direction and never know it.\" He died of cancer on 10 August 1945. His widow, Esther, secured 131 of his 214 patents after his death, and in 1960 the government paid $1 million for the rights to more than 200 of them. On 17 July 1969, with Apollo 11 on its way to the moon, the Times printed a correction. It ended: \"The Times regrets the error.\""
+  ],
+  "bio": {
+    "t": "Rocket Man: Robert H. Goddard and the Birth of the Space Age",
+    "a": "David A. Clary",
+    "y": "2003",
+    "why": "The first life not written under Esther Goddard's eye. Milton Lehman's This High Man (1963) was, and she edited the three volumes of his papers to leave out what put him in a bad light. Clark University's own archive cites Clary as the account that gets the 1926 rocket right."
+  },
+  "contested": "Three arguments and two numbers. The first is the Germans. The belief that the V-2 was built from Goddard's work has lasted since 1945, and NASA's own pages disagree with each other: one says his work \"largely anticipated\" the V-2's design, another that his secrecy kept the Germans from learning much and the likeness was \"mostly coincidence\". Frank H. Winter of the National Air and Space Museum examined the question in a 2014 paper whose abstract notes that the belief, \"or misconception as the case may be\", appears in NASA's own publications; this house has read the abstract, not his conclusion. The second is the ridicule. Roger Launius and Jonathan Coopersmith write that he retreated into isolation in Roswell because he could not withstand it. The 1920 coverage ran to hundreds of articles, though, some of them hailing him. And the Times editorial itself conceded that his rocket \"may reach the moon\". The phrase \"a severe strain on credulity\", which NASA and the AIAA give as its title, is not in the Times's own digitised text. The third is the correction, which this house has read only as transcribed by two websites, not on the Times's page. The numbers: Clark University's archive has the 1926 flight at 2.5 seconds, while a NASA Earth Observatory page says 4.2. Clark's own news office says Esther's settlement paid her $400,000 over twenty years, against the $1 million the Centennial of Flight Commission and the AIAA report; the difference may be her share of a joint claim with the Guggenheim Foundation, and nothing this house has opened settles it.",
+  "across": [
+    {
+      "to": "lives:chester-carlson",
+      "label": "Chester Carlson",
+      "txt": "— another inventor the experts waved off: twenty companies turned down Carlson, and the Times told Goddard he lacked high-school physics."
+    }
+  ],
+  "plateOf": "NASA image GPN-2002-000131. The photographer and the date are not recorded.",
+  "facts": [
+    {
+      "b": "US 1,102,653 · 1,103,503",
+      "s": "His two patents of July 1914, the stage rocket and the multiple-charge rocket with a liquid-fuel variant: United States patents, as recorded by Google Patents"
+    },
+    {
+      "b": "$5,000 · 2.67 lb",
+      "s": "The Hodgkins Fund grant the Smithsonian advanced him, and the flash powder needed to be seen on the new moon: Robert H. Goddard, 'A Method of Reaching Extreme Altitudes', Smithsonian Miscellaneous Collections 71:2 (1919), Smithsonian repository"
+    },
+    {
+      "b": "41 ft · 2.5 s · 184 ft",
+      "s": "Height, time aloft and distance of the flight at Auburn, 16 March 1926: Clark University Archives, Robert and Esther Goddard Collection, 'March 16, 1926' (commons.clarku.edu)"
+    },
+    {
+      "b": "131 of 214",
+      "s": "The patents Esther Goddard secured after his death, of his total: Roger Launius and Jonathan Coopersmith, Aerospace America (AIAA), 2026; Clark University, 2026"
+    },
+    {
+      "b": "$1 million",
+      "s": "What the government paid in 1960 for the rights to more than 200 of his patents: US Centennial of Flight Commission, 'Robert H. Goddard'; Aerospace America (AIAA), 2026"
+    },
+    {
+      "b": "49 years",
+      "s": "From the editorial of 13 January 1920 to the correction of 17 July 1969: the editorial, New York Times archive (nytimes.com); the correction as transcribed by Mike Gruntman (astronauticsnow.com), counted by the house"
+    }
+  ]
+}
