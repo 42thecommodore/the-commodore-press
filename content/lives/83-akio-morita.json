@@ -1,0 +1,62 @@
+{
+  "id": "akio-morita",
+  "no": 83,
+  "keep": "Ibuka built the things; Morita priced them, named them and bet on them. The Walkman sold 3,000 in its first month.",
+  "n": "Akio Morita",
+  "years": "1921–1999",
+  "place": "Japan",
+  "field": "Industry",
+  "group": "famous",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "He is often remembered as the founder of Sony and the father of the Walkman. In Japan Masaru Ibuka is counted the main founder, the Walkman was Ibuka's request, and until 1971 Morita was the junior partner.",
+  "copy": [
+    "Akio Morita was born in Nagoya on 26 January 1921, the eldest son of a family that had made sake for fourteen generations, and was raised to take it over; his brother Kazuaki took it on instead. He studied physics at Osaka Imperial University and joined the Navy under a programme that let him do research rather than fight. In 1945, a navy lieutenant, he met Masaru Ibuka, thirteen years older, at a wartime research committee. Tokyo Tsushin Kogyo was founded on 7 May 1946 with ¥190,000 in capital and just over twenty people. Ibuka's founding prospectus, in Sony's translation, asked for \"an ideal factory that stresses a spirit of freedom and open-mindedness.\" In 1950 it made Japan's first tape recorder.",
+    "Ibuka found, in New York in 1952, that Western Electric would license the transistor; Bell Labs warned that its only consumer use would be hearing aids. The licence cost $25,000, the trade ministry at first refused to allow it, and Morita signed provisionally in August 1953. The TR-55 of 1955 was Japan's first transistor radio, not the world's. The TR-63 of March 1957, sold abroad at $39.95, was then the world's smallest. Morita turned down an order from Bulova for 100,000 radios to be sold under Bulova's name, and wrote that \"It was the best decision I ever made\"; Sony's own history adds that Tokyo told him to accept, and that the factories could not have made 100,000 anyway. The company became Sony in 1958. In June 1961 two million shares were sold in America as depositary receipts at $17.50, in an hour; the listing on the New York Stock Exchange came in September 1970. In June 1963 he moved his family to New York.",
+    "He became president only in 1971, and chairman in 1976. The Betamax went on sale in 1975, Sony credits him with the phrase \"time-shifting,\" and on 17 January 1984 the Supreme Court found for Sony, five to four. Sony began selling VHS in 1988. The Walkman began with Ibuka, who asked Norio Ohga for a player, and was built in Kozo Ohsone's department. Morita set the price at ¥33,000 and the first run at 30,000, and backed the name against objections. It went on sale on 1 July 1979 and sold 3,000 in its first month; by 2019 more than 400 million Walkmans of every format had been sold. In 1989 Sony paid $3.4 billion for Columbia Pictures, a purchase driven largely by Morita, and in late 1994 it announced a $3.2 billion loss on Hollywood. On 30 November 1993 he had a cerebral haemorrhage during his morning tennis game. He died on 3 October 1999, aged 78."
+  ],
+  "bio": {
+    "t": "Sony: The Private Life",
+    "a": "John Nathan",
+    "y": "1999",
+    "why": "Written with free access to Sony's executives, and the one book that records the doubts his own memoir leaves out. Made in Japan (1986), with Edwin M. Reingold and Mitsuko Shimomura, is the famous one, and the source of the stories he told about himself, the shirts with big pockets and the watch company among them."
+  },
+  "contested": "Who he was, and two of his bets. John Nathan's Sony: The Private Life (1999) quotes his son Hideo: he \"had to act as the most international-understanding businessman in Japan,\" and \"It was never real.\" Nobuyuki Idei told Nathan that Morita \"was a living inferiority complex.\" Mike Mansfield said the opposite, that he did more for Japan in business than anyone else. On the Betamax, Andrew Pollack's obituary in the New York Times called it possibly his worst decision, because Sony did not readily license the format; Sony's own history blames JVC's licensing deals and the films available on VHS. On Columbia, the same obituary says Sony overpaid, and that Morita and Ohga exercised little oversight. The Japan That Can Say No (1989) carried his name beside Shintaro Ishihara's; the strident chapters were Ishihara's, and Morita refused to authorise an English edition. The story that Sony salesmen wore shirts with oversized pockets to fit the TR-63 is his own and is not in Sony's account of the radio. The Walkman is often credited to the engineer Nobutoshi Kihara; Sony's history names Ohsone's department and Shizuo Takashino. Andreas Pavel's earlier patent for a portable stereo was settled privately; the reported sums have not been read here, so none is printed.",
+  "across": [
+    {
+      "to": "lives:soichiro-honda",
+      "label": "Soichiro Honda",
+      "txt": "— another postwar founder who succeeded first in America, in a partnership of an engineer and a salesman, as Ibuka and Morita were."
+    },
+    {
+      "to": "lives:edwin-land",
+      "label": "Edwin Land",
+      "txt": "— who also held that the public could not ask for what it had not seen: \"The public does not know what is possible, but we do,\" Morita wrote."
+    }
+  ],
+  "facts": [
+    {
+      "b": "¥190,000 · 20",
+      "s": "Capital and staff of Tokyo Tsushin Kogyo at its founding, 7 May 1946: Sony, corporate history, chapter 1"
+    },
+    {
+      "b": "$25,000",
+      "s": "Western Electric's fee for the transistor licence, nine million yen: Sony, corporate history, chapter 1"
+    },
+    {
+      "b": "$17.50 · 2 million",
+      "s": "The price of each American depositary receipt in June 1961, and the shares sold: Sony, corporate history, chapter 1"
+    },
+    {
+      "b": "¥33,000 · 3,000",
+      "s": "The Walkman's price, and the units sold in its first month, July 1979: Sony, corporate history, chapter 2"
+    },
+    {
+      "b": "$3.4bn · $3.2bn",
+      "s": "What Sony paid for Columbia Pictures in 1989, and the loss on Hollywood it announced in late 1994: Andrew Pollack, New York Times obituary, 4 October 1999, entered in the Congressional Record, 19 November 1999"
+    }
+  ]
+}

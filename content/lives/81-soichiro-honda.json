@@ -30,6 +30,11 @@
       "to": "lives:henry-ford",
       "label": "Henry Ford",
       "txt": "— the other machine of a century built by the million: the Model T, as the Super Cub was Honda's."
+    },
+    {
+      "to": "lives:akio-morita",
+      "label": "Akio Morita",
+      "txt": "— the salesman in Sony's partnership, as Fujisawa was in Honda's; both firms succeeded first in America."
     }
   ],
   "plateOf": "Asahi Shimbun, 1954, from Asahigraph, New Year 1955.",
