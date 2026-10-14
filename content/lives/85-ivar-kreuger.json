@@ -1,0 +1,63 @@
+{
+  "id": "ivar-kreuger",
+  "no": 85,
+  "keep": "The bonds at the climax of his fraud stood for a deal he never made. The auditors traced the rest back to 1917.",
+  "n": "Ivar Kreuger",
+  "years": "1880–1932",
+  "place": "Sweden",
+  "field": "Finance",
+  "group": "obscure",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "The Italian bonds the auditors called the climax of his fraud stood for a deal he never made. His talks with Italy broke off in 1930; after his death the auditors found £21 million of its government bonds, fabricated.",
+  "copy": [
+    "Ivar Kreuger was born in Kalmar on 2 March 1880, studied mechanical engineering in Stockholm, and spent seven years building abroad: in the United States, Mexico, Toronto and South Africa, where he also ran a restaurant. In 1908 he and Paul Toll founded Kreuger & Toll to build in reinforced concrete, then a new technique. On 4 November 1910 the firm signed to build the stadium for the Stockholm Olympics, estimated at 508,450 kronor; it went up in granite and brick. In 1913 he merged a group of match factories, in 1917 he formed Svenska Tändsticks AB, and in 1923 International Match Corporation in the United States. Kreuger & Toll came to involve more than four hundred subsidiaries in as many as 99 countries.",
+    "His trade was loans for monopolies. Between 1925 and 1930 the group lent nearly 1.3 billion kronor to sixteen states, in loans running from $1 million to Danzig to $125 million to Germany, agreed in October 1929 and carried through after the crash. Every borrower but one granted a match monopoly in return. The exception was the largest early loan: France took $75 million in 1927 and gave no monopoly, after talks on one came to nothing. Where he did get them, state price controls held profits down, and some ran at a loss. The money came from investors. In 1929 Americans bought $50 million of Kreuger & Toll debentures, secured on collateral with a par value over $60 million. The collateral was substituted, and what replaced it was later worth, by Max Winkler's testimony to the Senate, at least 20 cents on the dollar.",
+    "On 12 March 1932, in Paris, after the Swedish central bank's investigators had questioned him about the Italian bonds among other things, he killed himself. Price, Waterhouse & Co. began work eleven days later and filed 57 reports. The final report, of 28 November 1932, dated the manipulation of the accounts to 1917 at the latest. From 1918 to March 1932 the group reported earnings of 1,179 million kronor. It had earned 151 million. It paid outside holders 668 million in dividends and interest, and Kreuger withdrew a net 432 million for himself. The auditors found nothing to support \"the view that Kreuger possessed business ability so extraordinary as to warrant the grant to him of the freedom from control or disclosure of his actions which he enjoyed.\" What he had really earned came to about 1½ per cent on the capital."
+  ],
+  "bio": {
+    "t": "The Match King: Ivar Kreuger, the Financial Genius Behind a Century of Wall Street Scandals",
+    "a": "Frank Partnoy",
+    "y": "2009",
+    "why": "A modern life in English built from the financial instruments and the American record. It is sympathetic, and its claim that he shaped the Securities Acts is an argument, not a finding. Read the Svenskt biografiskt lexikon's article beside it, and the Price Waterhouse report, printed in full in the Senate hearings of January 1933."
+  },
+  "contested": "Whether he was a fraud from the start, whether he killed himself, and how much he changed American law. Price Waterhouse put the manipulation back to at least 1917, on a large scale from 1923 and 1924. Frank Partnoy's The Match King (2009), as Reason's review reports it, reads him as a real industrialist who overreached and then hid his losses. The Svenskt biografiskt lexikon, in an article by Jan Glete, Björn Gäfvert and Anders Hiller, sits between: he paid dividends partly out of capital, and probably expected later profits to make the reported ones true. That he was murdered has been argued in B. Heed and S. Stolpe's Ivar Kreuger mördad? (1955), by his brother Torsten among others, and by the journalist Jan Gillberg, who points out that no autopsy was done although the family asked for one. The lexikon notes that the literature defending him, which claimed the group was solvent, was partly Torsten's effort to clear his own name after his own fraud conviction. Partnoy, and Flesher and Flesher in The Accounting Review (1986), argue that the collapse shaped the Securities Act of 1933; this house has not read the Fleshers' paper. The Senate heard the Kreuger case in January 1933, as part of its hearings on stock exchange practices, about four months before the Act. Two things often printed are not here. The $142 million usually given for the Italian bonds is not in the auditors' report, which says £21 million nominal. And the lines quoted from his last note are left out, because the house has not seen the note.",
+  "across": [
+    {
+      "to": "press:money-is-a-ledger",
+      "label": "Money Is a Ledger",
+      "txt": "— different auditors for closely linked companies, and documents forged when they asked for proof."
+    },
+    {
+      "to": "press:defense-of-bubbles",
+      "label": "In Defense of Bubbles",
+      "txt": "— the match company and the Boliden mines his capital funded outlived him; the earnings he reported did not."
+    }
+  ],
+  "plateOf": "8 March 1930.",
+  "facts": [
+    {
+      "b": "16 states · 1.3bn kronor",
+      "s": "The states the Kreuger group lent to in 1925–1930, and the total, net of discounts, every borrower but France granting a match monopoly: Jan Glete, Björn Gäfvert and Anders Hiller, 'Ivar Kreuger', Svenskt biografiskt lexikon, vol. 21"
+    },
+    {
+      "b": "£21,000,000",
+      "s": "Nominal value of the Italian government bonds he fabricated: Price, Waterhouse & Co., final report, 28 November 1932, printed in US Senate, Stock Exchange Practices, Part 4 (Kreuger and Toll), January 1933, p. 1263"
+    },
+    {
+      "b": "1,179m → 151m kronor",
+      "s": "The group's reported earnings, 1918 to March 1932, against what it actually earned: Price, Waterhouse & Co., final report, in Stock Exchange Practices, Part 4"
+    },
+    {
+      "b": "$175.5m → $27.8m",
+      "s": "What International Match raised from its stock and debentures, and its net assets left on 31 March 1932: Sandra Kramer and Gary John Previts, International Journal of Accounting 50 (2015)"
+    },
+    {
+      "b": "508,450 kronor",
+      "s": "The estimated cost in Kreuger & Toll's contract for the Stockholm Olympic Stadium, signed 4 November 1910: The Fifth Olympiad, official report of the 1912 Games (1913)"
+    }
+  ]
+}

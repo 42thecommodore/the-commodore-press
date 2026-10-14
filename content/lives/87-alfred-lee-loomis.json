@@ -1,0 +1,68 @@
+{
+  "id": "alfred-lee-loomis",
+  "no": 87,
+  "keep": "He paid for physics out of a banking fortune, then helped found the war's radar laboratory. How he kept the fortune in 1929 is still a family story.",
+  "n": "Alfred Lee Loomis",
+  "years": "1887–1975",
+  "place": "United States",
+  "field": "Finance & Physics",
+  "group": "obscure",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "conic",
+  "lede": "He is remembered as the banker who sold everything before the crash of 1929. The story rests on family memory; the memoir by Luis Alvarez, who worked beside him, does not mention it.",
+  "copy": [
+    "Alfred Lee Loomis was born in New York on 4 November 1887, a cousin of Henry Stimson. He graduated cum laude from Harvard Law School in 1912 and was a member of Winthrop and Stimson by 1915. In the First World War he ran experimental research on exterior ballistics at Aberdeen, and shared a patent with three others for a chronograph that timed shells. Afterwards he and his brother-in-law Landon Thorne, in equal shares, ran Bonbright and Co., which put together and financed many of the largest public utilities in the country. In 1940, by Alvarez's account, he was still the major stockholder of Commonwealth and Southern, a utility holding company.",
+    "He spent his fortune on a laboratory. It began in his garage at Tuxedo Park and moved into a stone mansion with a tower. Between 1927 and 1937 it published 66 papers, 21 of them on ultrasonics. He ordered three Shortt clocks, at two hundred and forty pounds each, and in the Depression he was the \"anonymous friend\" who paid authors' page charges at the Physical Review. With E. Newton Harvey and Garret Hobart he recorded brain waves from inside a screened cage, and distinguished five states of sleep. In 1939 and 1940 he lobbied the Rockefeller Foundation for Ernest Lawrence's great cyclotron, over lunch in his penthouse; on 3 April 1940 the trustees granted $1,150,000.",
+    "Before the British brought the cavity magnetron to America in 1940, his laboratory had built one of the two microwave radar sets then existing in the United States. He chaired the National Defense Research Committee's Microwave Committee, which took responsibility for setting up the Radiation Laboratory at MIT; the laboratory at Tuxedo Park was abandoned that November. In October 1940 he proposed to his committee the system that became LORAN, and about $400,000 of equipment was ordered that December. What worked in the end was rebuilt by the Rad Lab's own navigation group, using what the British had learned with Gee. He took up the blind-landing radar Alvarez proposed and ordered ten sets with the committee's money. He received the Medal for Merit in 1948 and died on 11 August 1975."
+  ],
+  "bio": {
+    "t": "Tuxedo Park: A Wall Street Tycoon and the Secret Palace of Science That Changed the Course of World War II",
+    "a": "Jennet Conant",
+    "y": "2002",
+    "why": "The only full-length life, written from family papers, and the source of most of what is argued about him. Read it beside Luis Alvarez's memoir for the National Academy of Sciences (1980), which says he \"may well be remembered as the last of the great amateurs of science\" and was written by a man who worked with him."
+  },
+  "contested": "The money, the credit and his first marriage. That he and Thorne sold out and bought gold before the crash rests, in everything this house has opened, on family memory: in the PBS film based on Conant's book, his granddaughter repeats what her father told her, and Conant says he made \"apparently $30 to $40 million more\" in the Depression. Alvarez is silent on the crash, and no filing, letter or newspaper of 1929 has been seen. On LORAN, Alvarez wrote that it was invented by Loomis; the Rad Lab's own history of 1948 says the first, committee-run project was \"foredoomed to failure\" and credits its navigation group and the British. On radar, Lawrence told Fortune in 1946, as Alvarez quotes him, that without Loomis it \"would have been retarded greatly\"; David Zimmerman, an adviser to the same film, sets any private fortune against the government's billions. Alvarez remembered the cyclotron grant as $2.5 million; the Rockefeller Foundation's own decision was $1,150,000. That Einstein and Heisenberg came to Tuxedo Park rests on Alvarez's memory of a guest book, and he never visited the laboratory himself. His rank in the war is given as major by Alvarez and as captain elsewhere. Alvarez says he divorced Ellen and married Manette Seeldrayers Hobart; the film dates it 1945 and calls her the wife of his protégé. Conant says in the film that he \"used his influence to have the doctor sign the papers\" to have Ellen committed; this house has seen no document for it.",
+  "across": [
+    {
+      "to": "lives:john-harrison",
+      "label": "John Harrison",
+      "txt": "— two centuries earlier, the same bet that finding your place means keeping exact time; Alvarez traces LORAN's master-and-slave stations to Loomis's clocks."
+    },
+    {
+      "to": "press:finding-longitude",
+      "label": "Finding Longitude",
+      "txt": "— the problem taken up again in 1940, with radio in place of a chronometer."
+    },
+    {
+      "to": "lives:vannevar-bush",
+      "label": "Vannevar Bush",
+      "txt": "— who chaired the NDRC under which Loomis's microwave committee worked."
+    }
+  ],
+  "plateOf": "Popular Science Monthly, August 1928.",
+  "facts": [
+    {
+      "b": "66 · 21",
+      "s": "Papers published by his Tuxedo Park laboratory, 1927–1937, and how many on ultrasonics: Luis W. Alvarez, 'Alfred Lee Loomis', Biographical Memoirs, National Academy of Sciences, vol. 51 (1980)"
+    },
+    {
+      "b": "£240",
+      "s": "The price of each Shortt clock, of which he ordered three: Alvarez, Biographical Memoirs (1980), quoting William Seabrook"
+    },
+    {
+      "b": "$1,150,000",
+      "s": "The Rockefeller Foundation's grant for Lawrence's 184-inch cyclotron, 3 April 1940: Shizue Hinokawa, Rockefeller Archive Center research report (2011)"
+    },
+    {
+      "b": "~$400,000",
+      "s": "Equipment ordered in December 1940 for the navigation system he proposed that October: Loran: Long Range Navigation, MIT Radiation Laboratory Series, vol. 4 (1948), ch. 2"
+    },
+    {
+      "b": "2",
+      "s": "Microwave radar sets in the United States before the British mission of 1940, one of them his laboratory's: Alvarez, Biographical Memoirs (1980)"
+    }
+  ]
+}

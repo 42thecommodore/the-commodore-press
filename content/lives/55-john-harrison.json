@@ -35,6 +35,11 @@
       "to": "lives:katherine-johnson",
       "label": "Katherine Johnson",
       "txt": "— two centuries on, the same question of when to trust a machine's numbers, answered by checking them by hand."
+    },
+    {
+      "to": "lives:alfred-lee-loomis",
+      "label": "Alfred Lee Loomis",
+      "txt": "— the banker who ordered three Shortt clocks, and in 1940 proposed the radio navigation system that became LORAN."
     }
   ],
   "facts": [

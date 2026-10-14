@@ -76,6 +76,11 @@
       "to": "lives:henry-singleton",
       "label": "Henry Singleton",
       "txt": "— the engineer who went the other way: little research, a hundred companies bought with stock, then the stock bought back."
+    },
+    {
+      "to": "lives:akio-morita",
+      "label": "Akio Morita",
+      "txt": "— who wrote that the public does not know what is possible."
     }
   ]
 }

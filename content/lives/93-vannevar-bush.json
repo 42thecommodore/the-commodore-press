@@ -1,0 +1,63 @@
+{
+  "id": "vannevar-bush",
+  "no": 93,
+  "keep": "He built the way a government pays scientists to work on its problems, and conceded it was a grab. The memex was a desk, not a web.",
+  "n": "Vannevar Bush",
+  "years": "1890–1974",
+  "place": "United States",
+  "field": "Engineering & Science Policy",
+  "group": "obscure",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "\"As We May Think\" is sometimes said to have predicted the web. The machine it describes is a desk of microfilm with no network: to share a trail, you photograph it and hand your friend the film.",
+  "copy": [
+    "Vannevar Bush was born in Everett, Massachusetts, on 11 March 1890. At Tufts he patented a surveying machine built from two bicycle wheels and a pendulum, and in 1916 he took a doctorate in engineering from MIT and Harvard jointly, in a single year. In the First World War he built a magnetic detector for submarines, which was never used effectively because of faulty administrative coordination. He enlisted his Tufts roommate Laurence K. Marshall to run the business side of his radio ventures, and one of their companies took the name Raytheon in 1925. Its first success was the S tube, a gaseous rectifier invented by C. G. Smith, which let a radio run off the household current. At MIT he completed a differential analyzer in 1931 that could solve sixth-order differential equations; the Rockefeller Differential Analyzer, shown in 1941, had 2,000 tubes and 200 miles of wire and weighed 100 tons. In 1936 he began developing a machine to search microfilm, the Rapid Selector. His application for a patent was rejected.",
+    "In 1938 he accepted the presidency of the Carnegie Institution. In 1940 he put to Roosevelt a plan for a committee of scientists to work on weapons: in Wiesner's memoir of him, four short paragraphs, and \"at the end of ten minutes\" an \"OK-FDR\". Roosevelt appointed him chairman on 15 June, and an order of 27 June created the National Defense Research Committee. On 28 June 1941 an executive order created the Office of Scientific Research and Development, empowered to contract with universities and industry. By the end of 1945 it held 2,515 contracts, and between 1940 and 1946 it obligated $536,083,967.48. Its own spending on atomic energy was about $13 million. On Bush's recommendation, the Army took the bomb over. Thirty years later he took up the charge that the committee had been a grab, by which a small company of scientists and engineers, acting outside established channels, \"got hold of the authority and money,\" and wrote, as Jerome Wiesner quotes him: \"That, in fact, is exactly what it was.\"",
+    "In July 1945 he published two documents. \"As We May Think\", in The Atlantic, imagined the memex, \"a sort of mechanized private file and library\" built into a desk, whose essential feature was the trail tying one item to another: \"The human mind does not work that way. It operates by association.\" Science, the Endless Frontier, sent to Truman on 5 July, proposed a National Research Foundation whose members the President would select, costing about $10 million at first and rising to about $50 million a year, and called basic research \"the pacemaker of technological progress.\" In August 1947 Truman refused to sign the first bill, because such a foundation \"would be divorced from control by the people.\" The National Science Foundation was created in May 1950, and its first appropriation was $225,000. In 1954 he testified for Oppenheimer that \"this man is being tried because he had strong opinions and expressed them, which I think is an entirely un-American procedure.\" He died on 28 June 1974."
+  ],
+  "bio": {
+    "t": "Endless Frontier: Vannevar Bush, Engineer of the American Century",
+    "a": "G. Pascal Zachary",
+    "y": "1997",
+    "why": "A full scholarly life, with about eighty pages of notes. Pieces of the Action (1970), Bush's own episodic memoir, is the better-known book, and the source of his own versions of the stories."
+  },
+  "contested": "The model, the money and the man. Bush wrote that basic research is \"the pacemaker of technological progress\", and the report is blamed for what came to be called the linear model of innovation. Donald Stokes's Pasteur's Quadrant (1997) attacks that model, and Benoît Godin (2006) is reported to argue that the model was never documented in Bush; this house has read neither. The strongest objection on the record came from Truman, whose refusal in 1947 objected to a foundation run by part-time private citizens, employed by institutions that could receive its grants. Senator Harley Kilgore pressed for federal control and applied research, and the National Science Foundation credits the name to Kilgore; Daniel Kleinman's Politics on the Endless Frontier (1995) is the critical account, not opened here. At the Oppenheimer hearing, the board's counsel, Roger Robb, showed that the separate paragraph Bush cited came from a New York Times reprint that had broken General Nichols's paragraph into four; Bush answered that the paragraphing was secondary. The differential analyzer was a team's work, by Hazen, Gage, Stewart, Gould, Caldwell and others; the memoir calls such machines \"not direct ancestors of today's digital computers\". Wiesner gives the approval of the committee as four paragraphs and ten minutes. And Claude Shannon ran his differential analyzer, but MIT's record lists Frank L. Hitchcock as the advisor of his thesis, which the thesis itself would confirm.",
+  "across": [
+    {
+      "to": "lives:claude-shannon",
+      "label": "Claude Shannon",
+      "txt": "— who ran his differential analyzer at MIT, and whom he advised, from the Carnegie Institution, to spend a summer on genetics at Cold Spring Harbor."
+    },
+    {
+      "to": "lives:alfred-lee-loomis",
+      "label": "Alfred Lee Loomis",
+      "txt": "— who chaired the microwave committee of Bush's NDRC, which took responsibility for establishing the radar laboratory at MIT."
+    }
+  ],
+  "plateOf": "Office for Emergency Management, between 1940 and 1944. Library of Congress.",
+  "facts": [
+    {
+      "b": "$536,083,967.48",
+      "s": "What the NDRC and OSRD obligated, fiscal 1940–41 to 1945–46: Irvin Stewart, Organizing Scientific Research for War (1948), pp. 322–23"
+    },
+    {
+      "b": "2,515",
+      "s": "What OSRD's contracts numbered on 31 December 1945: Stewart (1948)"
+    },
+    {
+      "b": "~$13 million",
+      "s": "OSRD's own spending on atomic energy: Stewart (1948)"
+    },
+    {
+      "b": "$10m → $50m · $225,000",
+      "s": "What his report proposed for the foundation, at first and after about five years, against the National Science Foundation's first appropriation: Science, the Endless Frontier (1945); National Science Foundation, history timeline"
+    },
+    {
+      "b": "14.1 → 0.6",
+      "s": "Army deaths from disease per thousand, in the First World War and the Second, as the report gives them: Science, the Endless Frontier (1945)"
+    }
+  ]
+}
