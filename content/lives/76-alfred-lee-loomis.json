@@ -35,6 +35,11 @@
       "to": "press:finding-longitude",
       "label": "Finding Longitude",
       "txt": "— the problem taken up again in 1940, with radio in place of a chronometer."
+    },
+    {
+      "to": "lives:vannevar-bush",
+      "label": "Vannevar Bush",
+      "txt": "— who chaired the NDRC under which Loomis's microwave committee worked."
     }
   ],
   "plateOf": "Popular Science Monthly, August 1928.",
