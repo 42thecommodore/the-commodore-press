@@ -328,7 +328,24 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Fugger | The German text of the 1523 letter (von Greiff, 1868, p. 49) | Quoted in H. M. Lucas's English translation of Ehrenberg; Steinmetz's wording differs |
 | Fugger | Miners' conditions in Tyrol and Neusohl | Nothing opened; `contested` says so |
 
-## 2026-10-14 — eight lives, № 85–92: what was named but not opened
+---
+
+## 2026-10-14 — ten Founders lives, № 85–94: what was named but not opened
+
+- `ivar-kreuger`: Flesher & Flesher, 'Ivar Kreuger's contribution to U.S. financial reporting', The Accounting Review 61:3 (1986); Joel Seligman, The Transformation of Wall Street; NYT 13 March 1932 for the last note; Libris for Ångström (1990).
+- `charles-kettering`: Sloan, My Years with General Motors, ch. 'The Copper-Cooled Engine' (759 built?); Byron J. Carter's Michigan death record (April 1908) and the Detroit Free Press, 22 April 1907; Leslie, Boss Kettering, p. 155; the 1952 US v. du Pont trial record, p. 3565.
+- `alfred-lee-loomis`: any 1929 document of the sale before the crash; Fortune, March 1946; Bowen, Radar Days (1987) for the Wardman Park evening; Jennet Conant, Tuxedo Park (2002), notes, for the cash exit and the $50m estimate; Loomis's Commonwealth & Southern holdings, 1929–34, for whether "got out before the crash" survives the record.
+- `claude-shannon`: Gardner, The Mind's New Science (1985), p. 144; Tukey's memo of 9 January 1947; Poundstone, Fortune's Formula, p. 307, for the investing figures; 'The Bandwagon' (1956) itself.
+- `samuel-insull`: the body of Taylor, Business History Review 36 (1962), JSTOR 10.2307/3111455; the Paris press of 16–20 July 1938 on Gallica; Seligman for the 600,000 shareholders.
+- `samuel-colt`: Hounshell, From the American System to Mass Production (1984), the Colt chapter; the Walker contract and its price; a WorldCat record for Rasenberger's Revolver (year).
+- `henry-j-kaiser`: Frederic C. Lane, Ships for Victory (1951), for yard costs and who paid for the yards; the Board of Investigation's report (GPO, 1947); Balogh's review of Adams, BHR 72:2 (1998).
+- `soichiro-honda`: Andrew Mair, 'Learning from Honda'; the BCG report of 1975 itself.
+- `vannevar-bush`: Pieces of the Action (1970), which archive.org refused; the NDRC memo at the FDR Library; Godin (2006) and Kleinman (1995); Shannon's 1940 thesis title page for his advisor.
+- `akio-morita`: Made in Japan (1986) for the shirt pockets and Bulova; the full opinion in Sony v. Universal (1984); the Pavel settlement; a US public-domain basis for the 1972 São Paulo photograph.
+
+---
+
+## 2026-10-14 — seven lives, № 95–101: what was named but not opened
 
 | Life | Document | Why it matters |
 |---|---|---|
@@ -345,8 +362,6 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Chanel | Mazzeo, *The Secret of Chanel No. 5* (2010) | The 70/20/10 split and the 2% royalty are printed via Wikipedia; the 1947 cash terms are not printed |
 | Chanel | Vaughan, *Sleeping with the Enemy* (2011): the F-7124 file reference, Abwehr or SD | Printed via Wikipedia and AP |
 | Chanel | Vogue, 1 October 1926 | The Ford comparison, printed via Wikipedia |
-| Loomis | Jennet Conant, *Tuxedo Park* (2002), notes | The cash exit, the $50m estimate, the affair, the guest list |
-| Loomis | Loomis's Commonwealth & Southern holdings, 1929–34 | Whether "got out before the crash" survives the record |
 | Dyson | *Against the Odds* (1997) | The sawmill-or-spray-booth origin, the Kirk-Dyson exit, the four-or-five-year span |
 | Dyson | Dyson v MGN (2023) judgment; Malmesbury jobs figure | Both in `contested` as reported only |
 | Munger | Buffett, 'The Superinvestors of Graham-and-Doddsville', *Hermes*, Fall 1984 | Wheeler, Munger returns (19.8% / 13.7% / Dow 5.0%); not printed |

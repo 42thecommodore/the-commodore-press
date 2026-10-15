@@ -271,7 +271,7 @@ for (const l of LIVES) {
   .mono{font-family:'EB Garamond',serif;font-size:18px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:${l.accent}}
   h1{font-size:${plate ? (long ? 80 : 98) : (long ? 92 : 108)}px;line-height:1;font-weight:500;letter-spacing:-.015em;margin-top:22px;text-wrap:balance}
   .sub{font-size:30px;font-style:italic;opacity:.88;margin-top:12px}
-  .lede{font-size:${plate ? (ledeLen > 150 ? 30 : 33) : 37}px;line-height:1.3;margin-top:22px}
+  .lede{font-size:${plate ? (ledeLen > 150 ? 30 : 33) : (ledeLen > 250 ? 33 : 37)}px;line-height:1.3;margin-top:22px}
   .foot{position:absolute;left:72px;bottom:92px;font-family:'EB Garamond',serif;font-size:22px;opacity:.8;display:flex;align-items:center;gap:14px;z-index:1}
   .sea{position:absolute;left:0;bottom:-6px;color:${l.accent};opacity:.55}
   .pennant{position:absolute;right:34px;top:60px}

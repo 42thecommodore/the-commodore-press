@@ -62,6 +62,11 @@
       "to": "lives:thomas-midgley-jr",
       "label": "Thomas Midgley Jr.",
       "txt": "— the engineer who put the lead into petrol in 1921, and why the alternatives were set aside."
+    },
+    {
+      "to": "lives:charles-kettering",
+      "label": "Charles Kettering",
+      "txt": "— whose laboratory found the additive, and whose name was on the laboratory that defended it."
     }
   ],
   "corrected": [

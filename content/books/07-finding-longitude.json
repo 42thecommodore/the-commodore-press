@@ -107,6 +107,11 @@
       "to": "lives:john-harrison",
       "label": "John Harrison",
       "txt": "— the man inside the prize: a self-taught carpenter, and the nineteen years on the clock that failed."
+    },
+    {
+      "to": "lives:alfred-lee-loomis",
+      "label": "Alfred Lee Loomis",
+      "txt": "— the problem taken up again in 1940, with radio in place of a chronometer."
     }
   ],
   "reading": [

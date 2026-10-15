@@ -50,6 +50,11 @@
       "to": "lives:alfred-lee-loomis",
       "label": "Alfred Lee Loomis",
       "txt": "— the banker who went the other way, from the market to a laboratory of his own."
+    },
+    {
+      "to": "lives:claude-shannon",
+      "label": "Claude Shannon",
+      "txt": "— who submitted the blackjack paper, retitled it, and built the roulette computer with him in his basement."
     }
   ],
   "corrected": [

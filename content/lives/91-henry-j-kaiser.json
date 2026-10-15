@@ -1,0 +1,61 @@
+{
+  "id": "henry-j-kaiser",
+  "no": 91,
+  "keep": "He had never built a ship, and his yards built 1,490. The four-day ship was a contest; the 1,490 were not.",
+  "n": "Henry J. Kaiser",
+  "years": "1882–1967",
+  "place": "United States",
+  "field": "Industry",
+  "group": "obscure",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "lede": "He had never built a ship. Between 1941 and 1945 his yards built 1,490, which the National Park Service counts as 27 per cent of everything the Maritime Commission had built.",
+  "copy": [
+    "Henry J. Kaiser was born on 9 May 1882 at Sprout Brook, near Canajoharie, New York, to German immigrants, and left school young. From 1912 he paved roads in Washington and British Columbia. In 1921 he moved his headquarters to Oakland, and in 1927 he took on a highway in Cuba of 200 miles and 500 bridges. The dam most tied to his name was not his idea. Six Companies, which won Hoover Dam on 11 March 1931 with a bid of $48,890,995, began with Harry Morrison; Bechtel brought Kaiser in, Felix Kahn named it, and Frank Crowe prepared the bid and built the dam. Kaiser chaired its executive committee. He went on to Bonneville, Grand Coulee and Shasta, and built the Permanente cement plant in seven months to supply Shasta.",
+    "The health plan began in the desert, with someone else. In 1933 Sidney Garfield built a hospital near Desert Center for workers on the Colorado River Aqueduct, where Kaiser was one of the contractors. Kaiser's insurer, Industrial Indemnity Exchange, sent Harold Hatch, and paid a fixed amount per worker per day; the workers paid five cents a day for care unrelated to the job. At Grand Coulee the plan covered over 6,500 workers and their families. Roosevelt released Garfield from Army Reserve duty at Kaiser's request. The plan opened to the public on 21 July 1945 and passed 300,000 members within ten years.",
+    "The first Richmond yard was begun in December 1940. The four Richmond yards built more than 747 vessels, and the town grew from 20,000 people to over 100,000 in three years. Women and minorities, the Park Service notes, faced unequal pay and were shunted into \"auxiliary\" unions. In a competition among the yards in November 1942, the Robert E. Peary's keel was laid at one minute past midnight on the 8th, and 250,000 parts were assembled in four days and fifteen and a half hours. By 1944 a standard Liberty ship took a little over two weeks. On 16 January 1943 the tanker Schenectady, built by the Kaiser Company, broke in two at its outfitting dock in Portland. A government loan financed his steel plant at Fontana, and in 1947 he asked the Reconstruction Finance Corporation to write off $34,510,000 of its debt. He died in Honolulu on 24 August 1967."
+  ],
+  "bio": {
+    "t": "Henry J. Kaiser: Builder in the Modern American West",
+    "a": "Mark S. Foster",
+    "y": "1989",
+    "why": "The first full life, from Kaiser's own papers and interviews; its reviewer in the Journal of San Diego History thought it unlikely \"that any future biographer will produce a better book.\" Stephen B. Adams's Mr. Kaiser Goes to Washington (1997) states another thesis in its title; this house has read no review of it."
+  },
+  "contested": "How much was his, and how much was the government's. Stephen Adams's Mr. Kaiser Goes to Washington: The Rise of a Government Entrepreneur (1997) states in its title that his rise ran through government; this house has read only its title and summaries. Mark Foster (1989) ranks him \"among the first rank of American business leaders\", and his reviewer Felice Bonadio, who calls him the best promoter of his own ventures, says one might quibble with placing him beside Rockefeller, Ford and Carnegie. The Park Service says Kaiser ships cost a quarter of the average of other yards; it gives no source, and the Maritime Commission's own history, Frederic Lane's Ships for Victory (1951), which would settle it, has not been opened here, so the figure is not printed. The cracking ships were not his alone: a board of investigation found fractures in 970 of 4,694 welded merchant ships, from steel that turned brittle in the cold and from bad welds, and the Schenectady was a tanker, not a Liberty ship. The Peary's time is printed as fifteen hours and 16, 26, 29 or 30 minutes; it sailed ten days after launch. The flying boat later called the Spruce Goose was first his idea, designated HK-1, and he brought in Hughes; it was built of birch, and by the time it flew, once, on 2 November 1947, he was no longer involved. He left school at thirteen by the Bancroft Library's account, at eleven by PBS's. And the 750,000 cars his company built is the figure in the Bancroft Library's finding aid, whose chronology reads like company biography.",
+  "across": [
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— the line applied to ships, and then failure in Ford's own industry."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1,490 · 27%",
+      "s": "Ships built by the Kaiser yards, and their share of the Maritime Commission's construction: National Park Service, Rosie the Riveter WWII Home Front, 'Richmond Shipyard No. 3'; the count also in Mark S. Foster, as quoted by Felice Bonadio, Journal of San Diego History 37:4 (1991)"
+    },
+    {
+      "b": "$48,890,995",
+      "s": "Six Companies' winning bid for Hoover Dam, 11 March 1931: PBS American Experience, 'Hoover Dam' timeline"
+    },
+    {
+      "b": "5¢ a day",
+      "s": "What aqueduct workers prepaid for care unrelated to the job, Desert Center, 1933: Kaiser Permanente's own history (an interested source)"
+    },
+    {
+      "b": "4 d 15½ h",
+      "s": "Keel to assembled hull for the Robert E. Peary, November 1942, in a competition among the yards: usmm.org, citing MAST Magazine (October 1944)"
+    },
+    {
+      "b": "970 of 4,694",
+      "s": "Welded merchant ships of the war programme that sustained fractures, by the Board of Investigation's final report (1946): TWI, case history of the Schenectady"
+    },
+    {
+      "b": "$34,510,000",
+      "s": "The Fontana debt he asked the Reconstruction Finance Corporation to write off, 8 September 1947: Harry S. Truman Library, photograph record 99-623"
+    }
+  ]
+}
