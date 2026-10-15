@@ -94,9 +94,9 @@ addEventListener("load", () => setTimeout(async () => {
   try {
     for (const [w] of WINGS) { go(w, false); await wait(500); grab("the " + w + " wing"); }
     await loadLibrary();
-    for (const [kind, list] of [["press", ALL], ["lives", LIVES]]) for (const b of list) {
-      openReader(kind, b.id, { push: false }); await wait(250);
-      grab("the reader, " + (kind === "press" ? "t/" : "l/") + b.id);
+    for (const b of LIVES) {
+      openReader("lives", b.id, { push: false }); await wait(250);
+      grab("the reader, l/" + b.id);
       // a link inside the reader to one of its own sections must name a section that is there
       document.querySelectorAll("#reader a[href^='#']").forEach(a => {
         const id = a.getAttribute("href").slice(1);
@@ -110,6 +110,9 @@ addEventListener("load", () => setTimeout(async () => {
     out.links.forEach(([h]) => { const i = h.indexOf("#"); if (i >= 0 && !h.slice(0, i).replace(/^\.\//, "")) hashes.add(h.slice(i + 1)); });
     for (const h of hashes) {
       if (!h || h === "main") continue;
+      // the Press is retired (2026-10-14): route() sends these off to the title's own page, which
+      // would end this probe, and nothing in the house should still be linking to them
+      if (h === "press" || h.startsWith("t/")) { out.routes.push([h, false, "a link to the retired Press's place in the library — link t/<id>/ itself"]); continue; }
       if (current) closeReader(false);
       history.replaceState(null, "", "#" + h); route(false); await wait(450);
       let ok, got = "the " + wing + " wing" + (current ? ", reader " + current : "");

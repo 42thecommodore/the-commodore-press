@@ -284,6 +284,11 @@ for (const { file, data } of [...books, ...adjacent, ...lives]) {
     const table = { press: pressIds, lives: lifeIds, atlas: prIds }[wing];
     if (!table) err(file, `across[${i}] points at unknown wing "${wing}"`);
     else if (key && !table.has(key)) err(file, `across[${i}] points at "${a.to}", which does not exist`);
+    /* The Press was retired on 2026-10-14 and 36 links from Lives to its titles came out with it.
+       Its pages stay, but the library no longer sends a reader there: a Life reads across to
+       another Life or to the Atlas. */
+    else if (wing === "press" && file.includes("/lives/"))
+      err(file, `across[${i}] points at "${a.to}", a title of the Press, which is retired — read across to a Life (lives:<id>) or a lesson in the Atlas (atlas:<id>) instead`);
   });
 }
 
@@ -299,7 +304,8 @@ for (const { file, data } of [...books, ...adjacent, ...lives]) {
   const entries = [...books, ...adjacent, ...lives];
   const out = new Map(entries.map(e => [entryOf(e), new Set((e.data.across || []).map(a => a.to))]));
   const oneWay = [];
-  for (const e of entries) {
+  // the retired Press's pages keep the links they were published with; only Lives are asked to return them
+  for (const e of lives) {
     for (const a of e.data.across || []) {
       if (!a.to || a.to.startsWith("atlas")) continue;
       const back = out.get(a.to);
@@ -511,10 +517,11 @@ for (const s of cssRules.filter(r => !r.sel.includes(" ") && /^[a-z]*\.[\w-]+$/.
    because it needs Chrome. tools/og-card.mjs records what it printed in og.counts.json. */
 {
   const said = fs.existsSync(p("assets/og.counts.json")) ? readJSON(p("assets/og.counts.json")) : null;
-  const now = { titles: books.length, lives: lives.length, people: people.length };
+  // the retired Press is not counted on the card (2026-10-14); a card still naming titles is stale
+  const now = { lives: lives.length, people: people.length };
   if (!said) warn("assets/og.png", "no record of what the share card says — run `npm run card` once");
-  else if (["titles", "lives", "people"].some(k => said[k] !== now[k]))
-    warn("assets/og.png", `the share card says ${said.titles} titles · ${said.lives} lives · ${said.people} people; the shelves hold ${now.titles} · ${now.lives} · ${now.people}. Run \`npm run card\` and look at it`);
+  else if ("titles" in said || ["lives", "people"].some(k => said[k] !== now[k]))
+    warn("assets/og.png", `the share card says ${"titles" in said ? said.titles + " titles · " : ""}${said.lives} lives · ${said.people} people; the library holds ${now.lives} lives · ${now.people} people. Run \`npm run card\` and look at it`);
 }
 
 /* ---------- each title's share card must still say what the title says ----------
@@ -620,5 +627,5 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
 const c = { r: "\x1b[31m", y: "\x1b[33m", g: "\x1b[32m", d: "\x1b[2m", x: "\x1b[0m" };
 if (warns.length) { console.log(`\n${c.y}${warns.length} warning(s)${c.x}`); warns.forEach(w => console.log(`  ${c.y}·${c.x} ${w}`)); }
 if (errors.length) { console.log(`\n${c.r}${errors.length} error(s)${c.x}`); errors.forEach(e => console.log(`  ${c.r}✗${c.x} ${e}`)); }
-if (!errors.length) console.log(`\n${c.g}✓ house rules hold${c.x} ${c.d}— ${books.length} titles, ${lives.length} lives, ${people.length} people, ${corrections.length} corrections, ${loadLog(ROOT).filter(x => x.published).length} Log piece(s)${c.x}`);
+if (!errors.length) console.log(`\n${c.g}✓ house rules hold${c.x} ${c.d}— ${lives.length} lives, ${books.length + adjacent.length} retired titles, ${people.length} people, ${corrections.length} corrections, ${loadLog(ROOT).filter(x => x.published).length} Log piece(s)${c.x}`);
 process.exit(errors.length ? 1 : 0);

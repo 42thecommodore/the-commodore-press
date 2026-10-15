@@ -37,16 +37,6 @@
   "contested": "Whether Kelly is the right rule to bet by is genuinely argued in the literature rather than settled, and the argument is not about the arithmetic — it is about whether maximising the long-run growth rate is what an investor with a finite life and real obligations should want. Full Kelly is violent: the drawdowns it accepts on the way to that growth are larger than most people can hold, which is why practitioners commonly bet a fraction of it. Thorp's own FAQ points to 'The Kelly Capital Growth Investment Criterion' (2010) as where the academic development sits. This house has not opened it, and does not adjudicate the question here.",
   "across": [
     {
-      "to": "press:defense-of-bubbles",
-      "label": "In Defense of Bubbles",
-      "txt": "— the same market seen from above: what it takes to be right about a price, and what being right early costs."
-    },
-    {
-      "to": "press:being-wrong",
-      "label": "Being Wrong Productively",
-      "txt": "— the rule made expensive. Kelly only works if the edge you state in advance is the edge you actually have."
-    },
-    {
       "to": "atlas:bet",
       "label": "The Atlas · Bet on yourself",
       "txt": "— and the objection to it. Knowing you are right tells you to bet, not how much: stake more than the edge and ordinary bad luck takes you out while you are still right."
@@ -55,6 +45,11 @@
       "to": "lives:hetty-green",
       "label": "Hetty Green",
       "txt": "— who put the sizing question her own way in 1905: \"safe and low is better than risky and high.\""
+    },
+    {
+      "to": "lives:alfred-lee-loomis",
+      "label": "Alfred Lee Loomis",
+      "txt": "— the banker who went the other way, from the market to a laboratory of his own."
     }
   ],
   "corrected": [

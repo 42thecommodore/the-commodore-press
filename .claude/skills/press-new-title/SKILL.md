@@ -7,6 +7,8 @@ allowed-tools: Bash(npm run new:*) Bash(npm run check) Bash(npm run stats) WebSe
 
 # Commissioning a title
 
+> **The Press was retired on 2026-10-14.** Nothing new is shelved in Wing I; its pages are kept, marked retired. If asked for a new title, say so, and offer a Life (`/press-new-life`) or an Atlas note (`/press-note`) instead. The rest of this skill is kept for fact-checking or correcting a retired title.
+
 A title in Wing I is an argument with its receipts attached. The standard is not "interesting" — it is *sourced, contested, and useful*.
 
 ## 1. Scaffold

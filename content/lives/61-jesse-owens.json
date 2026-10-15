@@ -30,6 +30,11 @@
       "to": "atlas:story",
       "label": "The Atlas · Story is leverage",
       "txt": "— the Long story was his, told for decades; the results record two fouls and a third jump."
+    },
+    {
+      "to": "lives:kobe-bryant",
+      "label": "Kobe Bryant",
+      "txt": "— the athlete the sport paid from the age of eighteen; Owens was barred from it for refusing one more unpaid race."
     }
   ],
   "plateOf": "Acme News Photos, 12 July 1936, three weeks before Berlin.",

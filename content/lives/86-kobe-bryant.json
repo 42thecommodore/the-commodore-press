@@ -1,0 +1,62 @@
+{
+  "id": "kobe-bryant",
+  "no": 86,
+  "keep": "The practice stories are second-hand and the sports-drink fortune is an estimate. The box scores are the part of the legend anyone can check.",
+  "n": "Kobe Bryant",
+  "years": "1978–2020",
+  "place": "Italy and Los Angeles",
+  "field": "Sport",
+  "group": "famous",
+  "cover": "#3A1F5C",
+  "spineC": "#281542",
+  "ink": "#F6F0FA",
+  "accent": "#F2C14E",
+  "motif": "conic",
+  "lede": "He skipped college, was drafted by a team that did not keep him, and played twenty seasons for the one that did. The famous line about his sports-drink bet folds two deals and an estimate into one.",
+  "copy": [
+    "Kobe Bryant was born in 1978, the son of Joe Bryant, who had played in the NBA and then went to play in Italy. The family moved to Rieti when Kobe was six. He grew up in the towns his father's clubs played in: Rieti, Reggio Calabria, Pistoia, Reggio Emilia. He came back to finish at Lower Merion High School, outside Philadelphia, and went straight from there to the 1996 draft. Charlotte took him thirteenth and sent him to the Los Angeles Lakers. He played his first game on 3 November 1996, aged eighteen years and seventy-two days.",
+    "He stayed with that team for twenty seasons. The Lakers won the title in 2000, 2001 and 2002, with Shaquille O'Neal at centre. The two fell out, O'Neal was traded to Miami in 2004, and the Lakers won again in 2009 and 2010 with Bryant as Finals MVP. On 22 January 2006 he scored 81 points against Toronto, on 46 shots and 20 free throws. On 12 April 2013 he tore his Achilles tendon late in a close game with Golden State, then took the two free throws and made both. In his last game, on 13 April 2016, he scored 60 against Utah. It took him 50 shots.",
+    "The reputation was practice, and most of the practice stories are second-hand. The best known, the four-in-the-morning workout before an Olympic game, comes from an anonymous post by a man who said he was a Team USA trainer. The money story is told the same way. In 2014 he began putting money into BodyArmor, a sports drink; ESPN reported in 2018 that he had put in roughly $6 million over time for about 10 per cent. When Coca-Cola bought a minority stake that year, unnamed sources told ESPN his share was worth about $200 million. That is the number that circulates, usually attached to the wrong deal. Coca-Cola bought the rest of the company in 2021, and what his estate took from that was reported from unnamed sources and never confirmed.",
+    "In July 2003 he was charged in Eagle, Colorado, with felony sexual assault. The case was dismissed on 1 September 2004, when the woman who had accused him said she would not testify. That day his lawyer released a statement in which he apologised to her directly and said he believed the encounter was consensual, while recognising that she did not. A civil suit was settled in 2005 on terms never made public. On 26 January 2020 the helicopter carrying him, his daughter Gianna and seven others flew into cloud over Calabasas and crashed. The National Transportation Safety Board put it down to the pilot's decision to keep flying by sight into weather that called for instruments. All nine died."
+  ],
+  "bio": {
+    "t": "Showboat: The Life of Kobe Bryant",
+    "a": "Roland Lazenby",
+    "y": "2016",
+    "why": "The only full biography, published the year he retired and before his death. Kirkus called it likely the best for some time and wondered whether a life still so new needed six hundred pages. His own The Mamba Mentality (2018) is about how he played, not how he lived."
+  },
+  "contested": "Most of what is argued about him cannot be settled from the record. The Eagle case was never tried and the civil settlement is sealed, so the house prints what was charged, what was dismissed and what he said, and nothing about what happened; anyone who says more is going past the documents. The practice legend rests largely on stories told after the fact, the best known of them by an anonymous poster whose claim to have trained Team USA nobody has confirmed. The BodyArmor figures are estimates throughout: ESPN's $6 million was paid over time, its ten per cent appears elsewhere as more than ten, and the $200 million came from unnamed sources valuing a minority sale. The split with O'Neal is told by each man as the other's fault, and by the people around them as the front office's. Of the crash there is no serious dissent: the NTSB found against the pilot and against the operator's oversight of its own safety processes.",
+  "across": [
+    {
+      "to": "lives:jesse-owens",
+      "label": "Jesse Owens",
+      "txt": "— four gold medals in Berlin, then barred from amateur athletics for refusing to run one more race. Bryant was paid to play from the age of eighteen."
+    }
+  ],
+  "facts": [
+    {
+      "b": "18 years, 72 days",
+      "s": "Age at his first NBA game, 3 November 1996, from his birth date (23 August 1978): Basketball-Reference, Kobe Bryant player page"
+    },
+    {
+      "b": "81 · 28 of 46 · 18 of 20",
+      "s": "Points, field goals and free throws against Toronto, 22 January 2006: Basketball-Reference box score, Raptors at Lakers"
+    },
+    {
+      "b": "60 · 22 of 50",
+      "s": "Points and field goals in his last game, against Utah, 13 April 2016: Basketball-Reference box score, Jazz at Lakers"
+    },
+    {
+      "b": "33,643 · 1,346",
+      "s": "Career regular-season points and games: Basketball-Reference, Kobe Bryant player page"
+    },
+    {
+      "b": "$6 million · 10% · $200 million",
+      "s": "What he put into BodyArmor from 2014, roughly and over time, the stake it bought, and its estimated value after Coca-Cola's minority purchase, from unnamed sources: Darren Rovell, ESPN, 15 August 2018"
+    },
+    {
+      "b": "9",
+      "s": "Dead in the crash at Calabasas, 26 January 2020, and the probable cause: National Transportation Safety Board, press release NR20210209, 9 February 2021"
+    }
+  ]
+}

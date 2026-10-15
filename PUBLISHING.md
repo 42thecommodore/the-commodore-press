@@ -51,10 +51,11 @@ If a change would break one of these, it does not get made. It gets raised.
 
 Length is not the constraint; attention is. Each wing has a different test.
 
-**The Press — an idea.** It earns a place when the house can say something a reader could
-disagree with, and when the popular version of it is wrong in a way that can be shown. An
-entry that agrees with the received account throughout is usually an entry that has not
-been researched yet. The best titles here quietly fix a factoid.
+**The Press — an idea. Retired 2026-10-14; nothing new is shelved here.** Its titles keep
+their pages, marked retired, and stay held to every rule on this page — a correction to one
+is still appended. The standard it was held to, for the record: it earned a place when the
+house could say something a reader could disagree with, and when the popular version was
+wrong in a way that could be shown.
 
 **Lives — a person.** A life earns a place when there is something specific the popular
 version gets wrong, or when the person is genuinely unknown and should not be. Being
@@ -144,7 +145,7 @@ because the work looks ready.
 
 ## 5. How this standard changes
 
-It is supposed to. The site has already dropped two wings, added `facts` to a second wing,
+It is supposed to. The site has already dropped three wings (the third, the Press, retired with its pages kept), added `facts` to a second wing,
 and reversed its own position on how kept lines are sourced. What it must not do is change
 quietly, because a standard nobody can see moving is indistinguishable from one nobody is
 keeping.

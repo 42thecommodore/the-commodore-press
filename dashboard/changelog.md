@@ -9,6 +9,7 @@ things that would otherwise quietly drift.
 
 | Date | What changed | Why |
 |---|---|---|
+| 2026-10-14 | The Press (Wing I, 22 titles + 2 adjacent) retired. Off the front door, the nav, search, the library's reader and the counts; its pages stay at `t/<id>/`, each saying it is retired, and the contents page lists them last. Lives lost 36 `press:` links, and `npm run check` now fails on a new one. The front door's first screen is the Lives' faces, the Atlas the band right after. | Luca's decision: prioritise Lives and the Atlas. Pages kept so no shared link dies and no correction printed on a title disappears. Measured before: faces at 1,851px, Atlas at 3,286px (1440×900); after: 513px and 2,217px. |
 | 2026-09-01 | The site was split from one hand-edited 636 KB file into `content/` + a build. | Every part became separately updatable, and the house rules became machine-checkable. |
 | 2026-09-01 | Two rules moved from CLAUDE.md into hooks: `dist/` is unwritable by hand, and `corrections.json` can only be appended to. | An instruction is followed most of the time. The colophon's promise to readers needs better than that. |
 | 2026-09-01 | `/press-publish` set to `disable-model-invocation: true`. | Publishing is irreversible and outward-facing. It should require a person asking for it. |

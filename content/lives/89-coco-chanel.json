@@ -1,0 +1,55 @@
+{
+  "id": "coco-chanel",
+  "no": 89,
+  "keep": "She sold her name for a tenth of the perfume and spent twenty years trying to take back the rest, once with the occupier's laws.",
+  "n": "Coco Chanel",
+  "years": "1883–1971",
+  "place": "France and Switzerland",
+  "field": "Fashion & Business",
+  "group": "famous",
+  "plateOf": "Caricature of Chanel as a milliner by Sem (Georges Goursat), from Le Grand Monde à l'Envers, 1919: a drawing, not a photograph.",
+  "cover": "#1B1B1B",
+  "spineC": "#0F0F0F",
+  "ink": "#F5F1E8",
+  "accent": "#D8C3A0",
+  "motif": "rings",
+  "lede": "She was born in a poorhouse hospital, grew up in a convent orphanage, and later told people two aunts had raised her. The black dress she is said to have invented was already in the shops.",
+  "copy": [
+    "Gabrielle Chanel was born in 1883 in a charity hospital in Saumur. Her mother died when she was about eleven. Her father left the children with the nuns at Aubazine, where she learned to sew. As a young woman she sang in a café at Moulins, which is one of the explanations offered for the name Coco. Étienne Balsan was her first lover. An Englishman, Arthur Capel, put up the money for her first shops. She opened as a milliner at 21 rue Cambon in 1910, then in Deauville in 1913 and Biarritz in 1915. The clothes were cut from jersey, a fabric she bought, by the Metropolitan Museum's account, mainly because it was cheap. She had repaid Capel by 1916.",
+    "In 1921 she launched a perfume made by Ernest Beaux and called it No. 5. In 1924 she licensed her name for it to a new company owned 70 per cent by the Wertheimer brothers, 20 per cent by their partner Théophile Bader, and 10 per cent by her. She spent the next twenty years trying to get it back. In May 1941, with Paris occupied, she wrote that the business was still the property of Jews and had been abandoned by its owners: an attempt to have the Aryanisation laws hand it to her. The Wertheimers had already put control in the hands of a French industrialist, Félix Amiot, and it failed. In 1947 they settled with her, on terms that included 2 per cent of No. 5's sales worldwide. In 1954 she reopened the couture house she had closed at the outbreak of war, with Pierre Wertheimer's money.",
+    "She spent the Occupation at the Ritz with Hans Günther von Dincklage, a German diplomat who worked for German intelligence. A French police file lists her under the pseudonym Westminster with the agent reference F 7124. A note in the French archives from November 1944 records a source in Madrid calling her Dincklage's mistress and agent in 1942 and 1943. In 1943 or 1944 she took part in a German plan, Modellhut, to carry a peace overture to Churchill. It collapsed when the friend she had brought as courier, Vera Bate Lombardi, denounced her at the British embassy in Madrid. After the Liberation she was questioned and released, and she moved to Switzerland.",
+    "The little black dress was not hers to invent. She showed a collection made mostly of black dresses in 1919, when Poiret, Lanvin and Fortuny were all working in black, and an all-black dress had been news in New York society pages since 1906. What she did was make it plain enough to copy. American Vogue, printing one of her black dresses in 1926, compared it to the Ford: the same model, for anyone."
+  ],
+  "bio": {
+    "t": "Coco Chanel: The Legend and the Life",
+    "a": "Justine Picardie",
+    "y": "2010",
+    "why": "The life as a whole, and the book Founders read for its second Chanel episode. For the war read Hal Vaughan's Sleeping with the Enemy (2011), which made the archive case, and Rhonda Garelick's Mademoiselle (2014), which weighs it."
+  },
+  "contested": "Whether she was a German agent or a woman the Germans registered as one. Hal Vaughan's Sleeping with the Enemy (2011) set out the French files, the agent number and Modellhut, and his publisher called her more than a sympathiser and collaborator. The objection at full strength comes from Serge Klarsfeld, who has spent his life documenting French collaboration with the deportations, and who said in effect that a spy number does not show she was personally involved; and from the archivist Frédéric Queguineur, who told the Associated Press in 2016 that nobody knows whether she was aware of it. The 1941 letter about the Wertheimers does not depend on anyone's reading of the files, and it is the plainest evidence of what she was willing to do. Vaughan also took seriously her claim that Churchill had her freed in 1944; no document has been shown for it. The house of Chanel says she cannot be called antisemitic and points to her Jewish friends; Vaughan cites French intelligence calling her a vicious antisemite. Whether the files name the Abwehr or the SD differs between accounts of Vaughan's own book. Smaller and still open: where the name Coco came from (her father, by her account; a café song, by the most repeated one), and the full terms of the 1947 settlement, which are reported two ways.",
+  "across": [
+    {
+      "to": "lives:estee-lauder",
+      "label": "Estée Lauder",
+      "txt": "— the other founder who rewrote her own childhood, and the one who kept her company in the family."
+    }
+  ],
+  "facts": [
+    {
+      "b": "70% · 20% · 10%",
+      "s": "Shares in the company formed in 1924 to make and sell No. 5 — the Wertheimers, Bader, Chanel: Wikipedia, 'Chanel No. 5', citing Tilar J. Mazzeo, The Secret of Chanel No. 5 (2010); the contract itself not seen"
+    },
+    {
+      "b": "2%",
+      "s": "Her royalty on worldwide sales of No. 5 under the 1947 settlement: Wikipedia, 'Coco Chanel', citing Mazzeo (2010); the other terms are reported differently and are not printed here"
+    },
+    {
+      "b": "F 7124",
+      "s": "Her agent reference and pseudonym in a Paris police file: as quoted in Wikipedia, 'Coco Chanel', from Hal Vaughan, Sleeping with the Enemy (2011); the November 1944 Madrid note: Associated Press, as carried by Armenpress, 17 March 2016"
+    },
+    {
+      "b": "1919 · 1906",
+      "s": "Her collection of mostly black dresses, and the New York Times report 'Society Women Wear Black' of 23 November 1906: FIDM Museum, 'The Little Black Dress'"
+    }
+  ]
+}

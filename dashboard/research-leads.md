@@ -327,3 +327,29 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Fugger | Götz von Pölnitz, *Jakob Fugger* (1949; vol. II 1951 or 1952) | The archive-based standard; read only through his NDB article |
 | Fugger | The German text of the 1523 letter (von Greiff, 1868, p. 49) | Quoted in H. M. Lucas's English translation of Ehrenberg; Steinmetz's wording differs |
 | Fugger | Miners' conditions in Tyrol and Neusohl | Nothing opened; `contested` says so |
+
+## 2026-10-14 — eight lives, № 85–92: what was named but not opened
+
+| Life | Document | Why it matters |
+|---|---|---|
+| Geffen | Tom King, *The Operator* (2000), pp. 192, 282, 296–97 | Who wrote the substitute UCLA letter; the cancer misdiagnosis timeline, held out of the entry |
+| Geffen | MCA's 1990 proxy, or the 1990 NYT/LA Times reports of the sale | What the $550m of MCA stock became when Matsushita bought MCA |
+| Geffen | Billboard or LA Times, 1983, on the Neil Young suit; Henley interviews (1993, 2017) | The $3.3m claim; Henley's objection, recorded in `contested` as a lead |
+| Bryant | NTSB report AAR-21-01 (PDF would not decode) | The probable-cause paragraph verbatim; the entry rests on the press release |
+| Bryant | Coca-Cola's 2021 BodyArmor release; WSJ on the estate's share | The ~$400m estate figure, deliberately not printed |
+| Gagosian | First Department decision, Perelman v. Gagosian, Dec 2014 | The second dismissal; the entry rests on Hyperallergic and the East Hampton Star |
+| Gagosian | NY Attorney General, 2016 sales-tax settlement; Cowles v. Gagosian (2013) | Neither printed |
+| Lauder | FamilySearch, NYC births, Josephine Esther Mentzer, 1 July 1908 | The birth year, now 1908 by the company page and Wikipedia's report of the record |
+| Lauder | Lee Israel, *Beyond the Magic* (1985); her memoir *Estée* (1985) | The Schotz and Youth-Dew disputes, attributed in `contested` |
+| Lauder | Plate decision, 2026-10-14: LOC 94500466 (LC-USZ62-109674) is filed as a *World Journal Tribune* staff photo; the editor ruled it covered by the Library's no-known-restrictions statement for the NYWT&S collection's staff photographs, and the colophon credit says so in those words | Closed by decision, not by a document |
+| Chanel | Mazzeo, *The Secret of Chanel No. 5* (2010) | The 70/20/10 split and the 2% royalty are printed via Wikipedia; the 1947 cash terms are not printed |
+| Chanel | Vaughan, *Sleeping with the Enemy* (2011): the F-7124 file reference, Abwehr or SD | Printed via Wikipedia and AP |
+| Chanel | Vogue, 1 October 1926 | The Ford comparison, printed via Wikipedia |
+| Loomis | Jennet Conant, *Tuxedo Park* (2002), notes | The cash exit, the $50m estimate, the affair, the guest list |
+| Loomis | Loomis's Commonwealth & Southern holdings, 1929–34 | Whether "got out before the crash" survives the record |
+| Dyson | *Against the Odds* (1997) | The sawmill-or-spray-booth origin, the Kirk-Dyson exit, the four-or-five-year span |
+| Dyson | Dyson v MGN (2023) judgment; Malmesbury jobs figure | Both in `contested` as reported only |
+| Munger | Buffett, 'The Superinvestors of Graham-and-Doddsville', *Hermes*, Fall 1984 | Wheeler, Munger returns (19.8% / 13.7% / Dow 5.0%); not printed |
+| Munger | SEC file HO-784 (Blue Chip Stamps, 1974–76) | The reported $115,000; not printed |
+| Munger | Janet Lowe, *Damn Right!* (2000) | Harvard admission, Teddy, the eye: printed from Wikipedia's account |
+| Munger | UCSB housing office, 2026; McFadden's resignation letter | Munger Hall's status and the windowless objection |

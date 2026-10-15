@@ -50,13 +50,14 @@ if (!CHROME) {
 /* Counts come from the corpus, never from memory — same rule as the prose. */
 const count = d => fs.existsSync(p("content", d)) ? fs.readdirSync(p("content", d)).filter(f => f.endsWith(".json")).length : 0;
 const people = JSON.parse(fs.readFileSync(p("content/atlas/people.json"), "utf8")).length;
-const N = { titles: count("books"), lives: count("lives"), people };
+// the retired Press (2026-10-14) is not counted: the card names the library as it stands
+const N = { lives: count("lives"), people };
 
 /* One spine per wing, in shelf order, taken from the front door's own liveries.
    The card said "five wings" for the length of a whole PR after the wings came down,
    because this string was typed and the counts beside it were not. Both are derived now. */
-const WINGS = ["The Press", "Lives", "The Atlas"];
-const SPINES = ["#7B3F2E", "#2F4A3C", "#1B2A4A"];
+const WINGS = ["Lives", "The Atlas"];
+const SPINES = ["#2F4A3C", "#1B2A4A"];
 const word = n => ["zero","one","two","three","four","five","six","seven"][n] || String(n);
 
 /* The house typefaces are the point of this card, and a browser that cannot find them does
@@ -119,8 +120,8 @@ ${fontFace}</style>
     <div class="promise">Every claim carries its source &mdash; <em>and the place it is still argued.</em></div>
   </div>
   <div class="foot">
-    <div class="counts">${N.titles} titles &middot; ${N.lives} lives &middot; ${N.people} people</div>
-    <div class="spines">${SPINES.map((c, i) => `<i style="background:${c};height:${[86, 112, 70][i]}px"></i>`).join("")}</div>
+    <div class="counts">${N.lives} lives &middot; ${N.people} people</div>
+    <div class="spines">${SPINES.map((c, i) => `<i style="background:${c};height:${[112, 70][i]}px"></i>`).join("")}</div>
   </div>
   ${sea(1200)}
 </body></html>`;
@@ -293,7 +294,7 @@ if (process.env.OG_KEEP) console.log(`  OG_KEEP — source html kept in ${tmp}`)
 else fs.rmSync(tmp, { recursive: true, force: true });
 const kb = (fs.statSync(out).size / 1024).toFixed(0);
 console.log(`\n  assets/og.png — 1200x630, ${kb} KB`);
-console.log(`  ${N.titles} titles · ${N.lives} lives · ${N.people} people`);
+console.log(`  ${N.lives} lives · ${N.people} people`);
 /* What the card says, recorded beside it, so `npm run check` can tell when the shelves
    have moved and the card has not. It said 21 titles and 32 lives for a week after the
    shelves reached 22 and 43, on every link anyone shared. */

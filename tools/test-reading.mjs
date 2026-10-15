@@ -16,13 +16,15 @@
  *   - the library and the entry page agree on the minutes and on what to read next
  *   - the front door's arrow keys leave a focused control alone
  *   - Esc closes only what is open — the share sheet, then the reader, and a selected
- *     passage is let go before anything closes — and never takes the reader off the page
- *   - the front door's first screen holds the shelf, at 1440×900 and at 375×812, and its one
- *     count is the corrections, opening the record it counts
- *   - every book and face is a link to its own page; a plain click opens the reader in place,
- *     a Cmd-click is left to the browser
+ *     passage is let go before anything closes — and never takes the reader off the page;
+ *     on the Atlas it shuts the drawer, then a lit lesson
+ *   - the front door's first screen holds the Lives' faces, at 1440×900 and at 375×812, the
+ *     Atlas follows them, and its one count is the corrections, opening the record it counts
+ *   - every face is a link to its own page; a plain click opens the reader in place,
+ *     a Cmd-click is left to the browser; nothing on the front door leads to a retired title
  *   - the keep line on the Captain card is credited to the Press, never set beside the face alone
- *   - the reader's "№ … of N" counts the shelf a title stands on; a life prints its own permanent №
+ *   - a life's reader prints its own permanent №
+ *   - every retired title's page says, above its text, that the Press is retired
  * and, without a browser, that every entry page's share link, end block and read-next link
  * are present and resolve.
  *
@@ -97,6 +99,14 @@ if (!fs.existsSync(dist("index.html"))) { console.error("\n  No dist/ — run `n
     for (const kind of ["press", "lives"]) for (const [id, b] of Object.entries(data[kind] || {})) check(b, "", `${kind}/${id}`);
   }
   report("Typography", [{ n: "no straight quote reaches a page a reader can open", ok: !seen.length, d: `${seen.length} — ${seen.slice(0, 3).join(" · ")}` }]);
+}
+
+/* ---------- a retired title says so ----------
+   The Press was retired on 2026-10-14 and its pages kept, so a link anyone holds still opens.
+   A page that kept quiet about it would read as a live part of the library. */
+{
+  const ids = fs.readdirSync(dist("t")), quiet = ids.filter(id => !/<p class="retired">[^<]*retired/.test(fs.readFileSync(dist("t", id, "index.html"), "utf8")));
+  report("Retired titles", [{ n: `every retired title's page says the Press is retired (${ids.length} pages)`, ok: ids.length > 0 && !quiet.length, d: quiet.slice(0, 5).join(", ") }]);
 }
 
 /* ---------- no page lets the device choose dusk ---------- */
@@ -260,10 +270,8 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   const rq = sheet.innerText.search(/['"]/);
   t("no straight quote in the reader", rq < 0, rq < 0 ? "" : "…" + sheet.innerText.slice(Math.max(0, rq - 30), rq + 30) + "…");
   const shelfN = [...sheet.querySelectorAll(".rmeta div")].map(d => d.textContent).find(x => /№/.test(x)) || "";
-  const shelfOf = ${JSON.stringify(kind)} === "press" ? (BOOKS.some(b => b.id === ${JSON.stringify(id)}) ? BOOKS : ADJACENT) : LIVES;
-  // a title is counted on its shelf; a life carries its own permanent number instead (content/lives/*.json \`no\`)
-  if (${JSON.stringify(kind)} === "press") t("the reader counts the shelf the entry stands on", shelfN.endsWith("of " + shelfOf.length), shelfN + " — the shelf holds " + shelfOf.length);
-  else { const no = LIVES.find(b => b.id === ${JSON.stringify(id)}).no; t("the reader prints the life's own number", shelfN.endsWith("№ " + no), shelfN + " — the life is № " + no); }
+  // a life carries its own permanent number (content/lives/*.json \`no\`)
+  { const no = LIVES.find(b => b.id === ${JSON.stringify(id)}).no; t("the reader prints the life's own number", shelfN.endsWith("№ " + no), shelfN + " — the life is № " + no); }
   t("the reader and the entry page print the same minutes", +document.getElementById("rleft").dataset.mins === ${want.mins}, document.getElementById("rleft").dataset.mins + " vs ${want.mins}");
   t("the reader and the entry page recommend the same next read", sheet.querySelector(".rs-next .rs-nt").textContent.trim() === ${JSON.stringify(want.next)}, sheet.querySelector(".rs-next .rs-nt").textContent);
   sheet.querySelector(".rbar .rs-go").click(); await wait(150);
@@ -293,7 +301,7 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   t("Esc in the reader closes the reader", current === null, "still reading " + current);
   await wait(3000);
   t("…and keeps the reader on the site", location.origin + location.pathname === onSite, "address is now " + location.href);
-  const slot = document.querySelector((${JSON.stringify(kind)} === "press" ? "#shelf" : "#livesShelf") + " .slot[data-id=" + ${JSON.stringify(JSON.stringify(id))} + "]");
+  const slot = document.querySelector("#livesShelf .slot[data-id=" + ${JSON.stringify(JSON.stringify(id))} + "]");
   t("a finished entry is marked Read on its shelf", slot && slot.classList.contains("read"));
   go("home"); await wait(500);
   t("the front door keeps the bare address, the one a reader shares", location.hash === "", "address ends " + location.hash);
@@ -301,7 +309,17 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
   nb.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true })); await wait(500);
   t("on the front door, arrows leave a focused button alone", wing === "home", "went to " + wing);
   nb.blur(); document.body.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true })); await wait(600);
-  t("on the front door, arrows with nothing focused open the Press shelf", wing === "press", "went to " + wing);
+  t("on the front door, arrows with nothing focused open the Lives shelf", wing === "lives", "went to " + wing);
+  // Esc closes what is open on every wing, not only the reader: the Atlas drawer, a lesson lit
+  // on the chart — one per press, and never leaves the page
+  go("atlas"); await wait(800);
+  selectIsle(PRINCIPLES[0].id); openDrawer(PEOPLE[0]); await wait(300);
+  esc(); await wait(150);
+  t("on the Atlas, Esc closes the drawer first and leaves the lesson lit", !document.getElementById("drawer").classList.contains("on") && isleSel === PRINCIPLES[0].id, "drawer on: " + document.getElementById("drawer").classList.contains("on") + ", lesson: " + isleSel);
+  esc(); await wait(150);
+  t("…and the next Esc lets go of the lesson", isleSel === null, "still lit: " + isleSel);
+  esc(); await wait(150);
+  t("…and one more, with nothing open, stays on the Atlas", wing === "atlas", "went to " + wing);
 }), 600));
 </script>`;
 
@@ -319,9 +337,16 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   // everyone opens on paper: the colophon says the reading wings are set on paper, and a dark device once overruled it
   if (localStorage.getItem("cp-theme") === null)
     t("a dark-mode device with no stored choice opens on paper", !document.body.classList.contains("dusk") && document.getElementById("themeBtn").getAttribute("aria-pressed") === "false", "dusk: " + document.body.classList.contains("dusk"));
-  const rack = document.querySelector(".front .rack"), r = rack && rack.getBoundingClientRect();
-  // 200px of spines is a shelf you can see; less is the top of something below the fold
-  t("the first screen holds the shelf (" + size + ")", r && innerHeight - r.top >= 200, r ? "the spines start at " + Math.round(r.top) + "px of " + innerHeight : "no shelf on the front door");
+  const wall = document.querySelector(".front .wall"), r = wall && wall.getBoundingClientRect();
+  // 200px of faces is a shelf you can see; less is the top of something below the fold. Until
+  // 2026-10-14 the first screen was the Press's spines, and the faces began 1,851px down.
+  t("the first screen holds the faces (" + size + ")", r && innerHeight - r.top >= 200, r ? "the faces start at " + Math.round(r.top) + "px of " + innerHeight : "no faces on the front door");
+  // the Atlas is the next room down, before the Captain, the Log and the colophon (it began 3,286px down)
+  const order = ["#key", "#bAtlas", "#bridge", ".band.colo"].map(q => document.querySelector(q));
+  t("the Atlas follows the faces, before anything else (" + size + ")", order.every(Boolean) && order.every((e, i) => !i || order[i - 1].compareDocumentPosition(e) & Node.DOCUMENT_POSITION_FOLLOWING),
+    order.map((e, i) => (e ? "" : "missing ") + ["key", "Atlas", "Captain", "colophon"][i]).join(" → "));
+  t("nothing on the front door leads to a retired title", !document.querySelector('.wing.on a[href^="t/"], .wing.on a[href="#press"], #nav a[href="#press"], footer a[href="#press"]'),
+    [...document.querySelectorAll('a[href^="t/"], a[href="#press"]')].map(a => a.getAttribute("href")).slice(0, 4).join(", "));
   t("no sideways scroll (" + size + ")", document.documentElement.scrollWidth <= innerWidth, document.documentElement.scrollWidth + "px wide");
   // the footer's links were 20px and the phone nav 40px, and nothing measured them
   const minH = innerWidth < 600 ? 44 : 24, small = [document.querySelector("header"), document.querySelector(".wing.on"), document.querySelector("footer")].flatMap(__targets);
@@ -334,29 +359,24 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   if (!lit) toggleTheme(); await wait(100);
   t("the top of the first screen has no buttons: the shelf is the one thing to do", !document.querySelector(".front-top button, .front-top a"),
     [...document.querySelectorAll(".front-top button, .front-top a")].map(e => e.textContent.trim()).join(", "));
-  // spine titles, as rendered, in the light the page opens in: a CSS rule once outranked the
-  // livery's ink and printed every title in page-black on a dark spine, and a check run in dark
-  // mode (where page-black is light) passed it
-  applyTheme(false); await wait(300);
   const lum = c => c.match(/[\d.]+/g).slice(0, 3).map(Number).map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }).reduce((s, v, i) => s + v * [.2126, .7152, .0722][i], 0);
   const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + .05) / (y + .05); };
-  const dim = [...document.querySelectorAll(".front .rk")].map(a => [a.getAttribute("aria-label"), ratio(getComputedStyle(a.querySelector(".rk-sp > span")).color, getComputedStyle(a.querySelector(".rk-sp")).backgroundColor)]).filter(x => x[1] < 7);
-  t("every spine title reads at 7:1 or better on its spine", !dim.length, dim.slice(0, 4).map(x => x[0] + " " + x[1].toFixed(2) + ":1").join(" · "));
-  const cut = [...document.querySelectorAll(".front .rk-sp > span")].filter(e => e.scrollHeight > e.clientHeight + 1).map(e => e.textContent);
-  t("no spine title is cut off", !cut.length, cut.join(" · "));
-  // dusk, measured: the books keep a lit edge on the wall, portraits sit in a dim mount, the
-  // Atlas stays a different room, and the switch says what it is
+  // dusk, measured: portraits sit in a dim mount, the Atlas stays a different room, and the
+  // switch says what it is
   applyTheme(true); await wait(300);
-  const wall = getComputedStyle(document.body).backgroundColor;
+  const wallC = getComputedStyle(document.body).backgroundColor;
   const lab = c => { const [r, g, b] = c.match(/[\d.]+/g).slice(0, 3).map(Number).map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; });
     const f = x => x > .008856 ? Math.cbrt(x) : 7.787 * x + 16 / 116, X = f((r * .4124 + g * .3576 + b * .1805) / .95047), Y = f(r * .2126 + g * .7152 + b * .0722), Z = f((r * .0193 + g * .1192 + b * .9505) / 1.08883);
     return [116 * Y - 16, 500 * (X - Y), 200 * (Y - Z)]; };
   const dE = (a, b) => Math.hypot(...lab(a).map((v, i) => v - lab(b)[i]));
-  const sunk = [...document.querySelectorAll(".front .rk-sp")].filter(sp => { const c = getComputedStyle(sp); return parseFloat(c.outlineWidth) < 1 || c.outlineStyle === "none" || ratio(c.outlineColor, wall) < 3; });
-  t("at dusk every book has a lit edge at 3:1 on the wall", !sunk.length, sunk.length + " spines sink into the wall");
-  const mounts = [...document.querySelectorAll(".wall .fp-img")].map(m => ratio(getComputedStyle(m).backgroundColor, wall)), glare = mounts.filter(v => v > 2);
+  // the books now stand on the Lives shelf alone: each keeps a lit edge on the dusk wall
+  go("lives", false); await wait(400);
+  const sunk = [...document.querySelectorAll("#livesShelf .book .cover")].filter(c => { const st = getComputedStyle(c); return parseFloat(st.outlineWidth) < 1 || st.outlineStyle === "none" || ratio(st.outlineColor, wallC) < 3; });
+  t("at dusk every book on the Lives shelf has a lit edge at 3:1 on the wall", !sunk.length, sunk.length + " books sink into the wall");
+  go("home", false); await wait(300);
+  const mounts = [...document.querySelectorAll(".wall .fp-img")].map(m => ratio(getComputedStyle(m).backgroundColor, wallC)), glare = mounts.filter(v => v > 2);
   t("at dusk the portraits sit in a dim mount, not glaring paper", mounts.length && !glare.length, glare.length + " mounts over 2:1, brightest " + Math.max(...mounts).toFixed(2));
-  const sea = dE(getComputedStyle(document.querySelector(".band.night")).backgroundColor, wall);
+  const sea = dE(getComputedStyle(document.querySelector(".band.night")).backgroundColor, wallC);
   t("at dusk the Atlas is still its own room", sea >= 10, "ΔE " + sea.toFixed(1) + " from the wall");
   const sw = document.getElementById("themeBtn");
   t("the switch is named Dusk and says whether it is on", sw.textContent.trim() === "Dusk" && sw.getAttribute("aria-pressed") === "true", sw.textContent + " / " + sw.getAttribute("aria-pressed"));
@@ -364,38 +384,30 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   t("…and off by day", sw.getAttribute("aria-pressed") === "false");
   // search, typed as a reader types: a straight apostrophe must find a curled one
   await loadLibrary(); SIX = null;
-  const src = ALL.concat(LIVES).find(e => /\w’\w/.test(e.lede || "")), word = src && src.lede.match(/[A-Za-z]+’[A-Za-z]+/)[0];
+  const src = LIVES.find(e => /\w’\w/.test(e.lede || "")), word = src && src.lede.match(/[A-Za-z]+’[A-Za-z]+/)[0];
   openSearch(); await wait(200); runSearch(word.replace("’", "'"));
   const found = [...document.querySelectorAll("#sresults .sres b")].map(x => x.textContent);
   closeSearch();
-  t("search finds “" + word + "” typed with a straight apostrophe", found.includes(src.title || src.n), found.slice(0, 4).join(", ") || "nothing");
+  t("search finds “" + word + "” typed with a straight apostrophe", found.includes(src.n), found.slice(0, 4).join(", ") || "nothing");
   const tally = document.getElementById("tally"), nums = (tally.textContent.match(/\d+/g) || []);
   t("the front door's one count is the corrections, and it opens them", nums.length === 1 && +nums[0] === CORRECTIONS.length && tally.querySelector("a[href='#corrections']"), tally.textContent.trim());
   // What this is: a first visitor met three nav words with no gloss, and on a phone nothing said whose
   // library it was. The key under the shelf names each part in one plain line and opens it.
   const key = document.getElementById("key"), keyRows = key ? [...key.querySelectorAll("li a")] : [];
   const keyHas = h => keyRows.some(a => a.getAttribute("href") === h && a.querySelector("b") && (a.querySelector("span")?.textContent.trim().length || 0) > 20);
-  t("the front door says what this is, and names each part in a line that opens it", key && /working library/i.test(key.querySelector(".key-h")?.textContent || "") && ["#press", "#lives", "#atlas", "#corrections"].every(keyHas),
+  t("the front door says what this is, and names each part in a line that opens it", key && /working library/i.test(key.querySelector(".key-h")?.textContent || "") && ["#lives", "#atlas", "#corrections"].every(keyHas),
     keyRows.map(a => a.getAttribute("href")).join(", ") || "no key on the front door");
   t("…and it sits under the shelf, not above it", key && document.getElementById("frontShelf").compareDocumentPosition(key) & Node.DOCUMENT_POSITION_FOLLOWING);
-  const books = [...document.querySelectorAll(".front .rack a.rk")], faces = [...document.querySelectorAll(".wall a.wface")];
-  t("every book on the front door links its own page", books.length === BOOKS.length && books.every((a, i) => a.getAttribute("href") === "t/" + BOOKS[i].id + "/"), books.length + " links for " + BOOKS.length + " books");
+  const faces = [...document.querySelectorAll(".wall a.wface")];
   t("every face on the front door links its own page", faces.length === LIVES.length && faces.every((a, i) => a.getAttribute("href") === "l/" + LIVES[i].id + "/"), faces.length + " links for " + LIVES.length + " lives");
   t("nothing on the page opens an entry from a button", !document.querySelector('button[onclick*="openReader"],button[onclick*="openLife"]'));
   let left = null; addEventListener("click", e => { left = !e.defaultPrevented; e.preventDefault(); }, { once: true });
-  books[1].dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, metaKey: true })); await wait(200);
-  t("a Cmd-click on a book is left to the browser", left === true && current === null, "prevented: " + !left + ", reader: " + current);
+  faces[1].dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, metaKey: true })); await wait(200);
+  t("a Cmd-click on a face is left to the browser", left === true && current === null, "prevented: " + !left + ", reader: " + current);
   const here = location.pathname;
   await loadLibrary();
-  // without a mouse the first tap opens the cover in place, the second opens the book
-  if (matchMedia("(hover:none),(max-width:760px)").matches) {
-    books[1].click(); await wait(400);
-    t("a first tap opens the book's cover on the shelf (" + size + ")", books[1].classList.contains("open") && current === null && getComputedStyle(books[1].querySelector(".rk-cv")).visibility === "visible", "open: " + books[1].classList.contains("open") + ", reader: " + current);
-  }
-  books[1].click(); await wait(60);
-  t("opening a book from the front-door shelf flies it to the reader (" + size + ")", !!document.querySelector("#flip .ghostwrap"));
-  await wait(1200);
-  t("a plain click on a book opens the reader in place", current === BOOKS[1].id && location.pathname === here, "reader: " + current + ", at " + location.href);
+  faces[1].click(); await wait(1600);
+  t("a plain click on a face opens the reader in place", current === LIVES[1].id && location.pathname === here, "reader: " + current + ", at " + location.href);
   // reading comes first: the entry's opening lines start on the first screen, at a desk and on a phone
   const lede = document.querySelector("#sheet .rbody .lede"), lt = lede && Math.round(lede.getBoundingClientRect().top);
   t("the reader's first lines are on the first screen (" + size + ")", lede && lt < innerHeight * .6, "the lede starts at " + lt + "px of " + innerHeight);
@@ -404,7 +416,7 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
     "scrolls " + rd.scrollWidth + " in " + rd.clientWidth + ", narrowest paragraph " + Math.round(Math.min(...pw)) + "px");
   // the reader on a phone had a 19px "Share this line" and a 30px way back
   const rSmall = __targets(document.getElementById("reader"));
-  t("every target in a title's reader is " + minH + "px tall (" + size + ")", !rSmall.length, rSmall.slice(0, 6).join(" · "));
+  t("every target in the reader opened from the front door is " + minH + "px tall (" + size + ")", !rSmall.length, rSmall.slice(0, 6).join(" · "));
   closeReader(); await wait(900);
   document.querySelectorAll("#flip .ghostwrap").forEach(g => g.remove());
   const keep = document.querySelector(".cap-keep");
@@ -418,7 +430,7 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   t("…and the Life's line is set in roman", lives.every(a => getComputedStyle(a.querySelector(".fl-txt")).fontStyle !== "italic"));
   // the engine writes prose too (press.js, atlas.js): read every wing as a reader sees it
   const straight = [];
-  for (const w of ["home", "press", "lives", "atlas", "colophon"]) {
+  for (const w of ["home", "lives", "atlas", "colophon"]) {
     go(w, false); await wait(500);
     const txt = document.querySelector(".wing.on").innerText, i = txt.search(/['"]/);
     if (i >= 0) straight.push(w + ": …" + txt.slice(Math.max(0, i - 30), i + 30).replace(/\s+/g, " ") + "…");
@@ -444,7 +456,7 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
     // words or more is a sentence whatever else it holds (source lines live in .facts, skipped above)
     if (!/\d/.test(tx) || (tx.match(/[A-Za-z’']{2,}/g) || []).length >= 3 || (/[A-Z]{4,}/.test(tx) && tx === tx.toUpperCase())) worded.add(where + ": " + tx.slice(0, 32));
   });
-  for (const w of ["home", "press", "lives", "atlas", "colophon"]) { go(w, false); await wait(500); scan(document.querySelector(".wing.on"), w); }
+  for (const w of ["home", "lives", "atlas", "colophon"]) { go(w, false); await wait(500); scan(document.querySelector(".wing.on"), w); }
   // the Atlas on a phone: zoom and constellation arrows at 30–34px, its text links at 27
   go("atlas", false); await wait(900);
   const aSmall = __targets(document.querySelector(".wing.on"));
@@ -516,12 +528,13 @@ if (!CHROME) {
       size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>`
         // the desk run is a dark-mode device with no stored choice: it must still open on paper
         : `<script>try{localStorage.removeItem("cp-theme")}catch(e){}var __mm=matchMedia.bind(window);window.matchMedia=function(q){return /prefers-color-scheme: ?dark/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__mm(q)}</script>`));
-  // a life with a plate and a keep line, and a title: the two shapes an entry comes in
+  // a life with a plate and a keep line, and a retired title: the two shapes an entry page comes in.
+  // Only the life opens in the library's reader; the Press's titles are read on their own pages.
   for (const [k, kind, id] of [["l", "lives", "charles-darwin"], ["t", "press", "compounding-machines"]]) {
     const f = entryFacts(k, id);
     const seed = `<script>try{localStorage.setItem("cp-read",JSON.stringify({"${k}/${id}":{p:.4,d:0,t:1}}));localStorage.setItem("cp-theme","dark")}catch(e){}</script>`;
     report(`Entry page · ${k}/${id}`, drive(fs.readFileSync(dist(k, id, "index.html"), "utf8"), ENTRY(f.credit), null, seed));
-    report(`Library reader · ${k}/${id}`, drive(fs.readFileSync(dist("index.html"), "utf8"), LIBRARY(kind, id, f.credit, f)));
+    if (kind === "lives") report(`Library reader · ${k}/${id}`, drive(fs.readFileSync(dist("index.html"), "utf8"), LIBRARY(kind, id, f.credit, f)));
     for (const size of [[1280, 900], [375, 812]])
       report(`Entry page targets · ${k}/${id} · ${size.join("×")}`, drive(fs.readFileSync(dist(k, id, "index.html"), "utf8"), TARGETS("the entry page"), size[0] < 600 ? size : null));
   }

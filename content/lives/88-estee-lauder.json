@@ -1,0 +1,62 @@
+{
+  "id": "estee-lauder",
+  "no": 88,
+  "keep": "The founding story was a product too, and she sold it the way she sold the cream. Her company and her obituary still disagree on the year she was born.",
+  "n": "Estée Lauder",
+  "years": "1908–2004",
+  "place": "Queens and New York",
+  "field": "Beauty & Business",
+  "group": "famous",
+  "cover": "#1E3A6E",
+  "spineC": "#142850",
+  "ink": "#EEF3FB",
+  "accent": "#BFD3F2",
+  "motif": "lines",
+  "lede": "She grew up above a hardware store in Queens and let the press believe she was a European of good family. She never gave her birth date. Her company now prints 1908; when she died, its spokeswoman said she was 97.",
+  "copy": [
+    "Josephine Esther Mentzer grew up in Corona, Queens, in the rooms above her father's hardware store. Her uncle, John Schotz, was a chemist. He mixed skin creams in a makeshift laboratory in a stable behind the family house, and she sold them. In 1946 she and her husband, Joseph Lauder, founded a company to sell creams of their own. He made them, first in the kitchen and later at a plant on Long Island. She sold them.",
+    "The first large order came from Saks Fifth Avenue, for $800 of cosmetics. The account Nancy Koehn of Harvard put together, from the memories of the Saks buyer, of Leonard Lauder and of Estée herself, has it following a charity luncheon at the Waldorf-Astoria, where she gave away more than eighty lipsticks as favours. Giving the product away was the method, from the first counter on. In 1953 she brought out Youth-Dew, a bath oil that was worn as a perfume. Aramis, for men, followed in 1964 and Clinique in 1968. The family took the company public in 1995. Thirty years on it still holds about 84 per cent of the votes, and in the year to June 2025 the company sold $14.3 billion of cosmetics and fragrance.",
+    "The founding story was edited as it was told. She let interviewers take her for a woman of genteel European birth. She was a New Yorker from Queens. She never published her birth date: when she died in April 2004 a company spokeswoman gave her age as 97, which makes it 1906, and the company's own page for her now says 1908. Even the first order moves. The company dates it to 1947; Time, in its 1998 profile, put the Saks counter in 1948. The one independent check on any of it is Lee Israel's unauthorised biography of 1985, which Lauder answered with a memoir of her own the same year. Israel later pleaded guilty in a case over forged literary letters. In 2003, the last full year of Lauder's life, her company sold $4.74 billion."
+  ],
+  "bio": {
+    "t": "Estée Lauder: Beyond the Magic: An Unauthorized Biography",
+    "a": "Lee Israel",
+    "y": "1985",
+    "why": "The only account not written by Lauder, her son or her company, and the one that tested her story against the record. Read it knowing its author later forged letters for sale; her own Estée: A Success Story (1985) is the version she wanted told."
+  },
+  "contested": "Almost everything about her early life comes from her, her son Leonard or the company, and each has a stake in the story. The birth year is 1908 by the company's page and, as Wikipedia reports it, a New York City birth record, 1906 by the age her company gave when she died. The Saks order is 1947 by the company and 1948 by Time, and the luncheon behind it rests on recollection, not on an invoice anyone has printed. Israel, as Publishers Weekly summarised her, charged that Lauder never paid the uncle whose cream the company was built on, and that she concealed her Jewishness; those are an unauthorised biographer's charges, from a writer later convicted of forgery, and the house prints them as hers. Who made Youth-Dew is argued too: Lauder credited her uncle, and the cosmetics historian behind Cosmetics and Skin says most authorities name the perfumer Ernest Shiftan. The Lauders divorced in 1939 and remarried in 1942 or 1943, depending on whose account. What would settle most of this is the company's own early records, and nobody outside it has read them.",
+  "across": [
+    {
+      "to": "lives:coco-chanel",
+      "label": "Coco Chanel",
+      "txt": "— the other founder who wrote her own childhood, and lost the perfume that carried her name for the price of 10 per cent."
+    },
+    {
+      "to": "lives:annie-turnbo-malone",
+      "label": "Annie Turnbo Malone",
+      "txt": "— an earlier fortune made from creams mixed at home and sold by hand, for customers the department stores did not serve."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$800 · more than 80",
+      "s": "The first Saks order, and the lipsticks given away at the Waldorf-Astoria luncheon before it, from the recollections of Robert Fiske, Leonard Lauder and Estée Lauder: Nancy F. Koehn, 'Building a Powerful Prestige Brand', HBS Working Knowledge, 29 October 2000"
+    },
+    {
+      "b": "84%",
+      "s": "Voting power held by Lauder family members, as of 13 August 2025: The Estée Lauder Companies, Form 10-K for the year ended 30 June 2025 (SEC)"
+    },
+    {
+      "b": "$14.3 billion",
+      "s": "Net sales for the year ended 30 June 2025 ($14,326 million): The Estée Lauder Companies, Form 10-K, fiscal 2025 (SEC)"
+    },
+    {
+      "b": "97 · $4.74 billion",
+      "s": "Her age as a company spokeswoman gave it, and the company's revenue for 2003: Associated Press obituary, as carried by the Deseret News, 26 April 2004"
+    },
+    {
+      "b": "1908 · 1947",
+      "s": "Her birth year and the year of the first Saks order, as the company gives them: The Estée Lauder Companies, 'Our Founder' (read October 2026)"
+    }
+  ]
+}

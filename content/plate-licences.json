@@ -95,5 +95,35 @@
     "by": "Hollinger & Rockey, Library of Congress (cph.3a42973)",
     "credit": "the 1897 photograph of Hetty Green is by Hollinger &amp; Rockey, held by the Library of Congress, which states that there are no known restrictions on its publication",
     "checked": "2026-10-13"
+  },
+  "david-geffen": {
+    "licence": "CC BY 4.0",
+    "by": "Tony Barnard, Los Angeles Times",
+    "credit": "the 1973 photograph of David Geffen under the Roxy marquee is by Tony Barnard for the Los Angeles Times, from the Los Angeles Times Photographic Collection at UCLA Library Special Collections, under CC BY 4.0",
+    "checked": "2026-10-14"
+  },
+  "kobe-bryant": {
+    "licence": "CC BY-SA 2.0",
+    "by": "Keith Allison",
+    "credit": "the Kobe Bryant photograph was taken at the Lakers’ game in Washington on 3 December 2014 by Keith Allison under CC BY-SA 2.0",
+    "checked": "2026-10-14"
+  },
+  "james-dyson": {
+    "licence": "CC BY 2.0",
+    "by": "Nobuyuki Hayashi",
+    "credit": "the James Dyson photograph was taken on 29 August 2011 by Nobuyuki Hayashi under CC BY 2.0",
+    "checked": "2026-10-14"
+  },
+  "charlie-munger": {
+    "licence": "CC BY 2.0",
+    "by": "Nick Webb",
+    "credit": "the 2010 photograph of Charlie Munger is by Nick Webb under CC BY 2.0",
+    "checked": "2026-10-14"
+  },
+  "estee-lauder": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Bill Sauro, World Journal Tribune",
+    "credit": "the 1966 photograph of Estée Lauder at a cosmetics counter is by Bill Sauro, a World Journal Tribune staff photograph held by the Library of Congress in its New York World-Telegram &amp; Sun collection, for whose staff photographs the Library states that there are no known restrictions on publication",
+    "checked": "2026-10-14"
   }
 }

@@ -1,0 +1,61 @@
+{
+  "id": "james-dyson",
+  "no": 91,
+  "keep": "He did not invent the cyclone; Sanyo had drawn one for a household cleaner the year before he began. He made the 5,127th version work, and that was the invention.",
+  "n": "James Dyson",
+  "years": "b. 1947",
+  "place": "Norfolk, Wiltshire and Singapore",
+  "field": "Invention & Industry",
+  "group": "famous",
+  "cover": "#403A1E",
+  "spineC": "#2C2814",
+  "ink": "#F5F2E4",
+  "accent": "#F2D04A",
+  "motif": "rings",
+  "lede": "His father died when he was nine, and his first company made wheelbarrows. The cyclone he is said to have invented was patented in 1886. What he did was build 5,127 versions of a vacuum cleaner, and 5,126 of them failed.",
+  "copy": [
+    "James Dyson's father, Alec, taught Classics at Gresham's School in Norfolk and kept teaching through his illness. He died when James was nine. The boy stayed at the school until 1965, then went to art school and on to the Royal College of Art, where he moved into furniture and interior design. At Rotork Marine in the early 1970s he worked on the Sea Truck, a fast landing craft. In 1974 he started a company with his sister and her husband to make the Ballbarrow, a wheelbarrow that ran on a ball instead of a wheel. He ran it until 1979.",
+    "The cyclone was not his idea. The first patent on a cyclone separator went to O. M. Morse in 1886, and by the middle of the twentieth century the method was standard in industry. Sanyo published a design for a household cleaner with a double cyclone in February 1977. Dyson began work in 1978. What the High Court credited him with, in 2009, was pioneering the cyclone in the home: making one that worked and that people bought. By his own count he built 5,127 prototypes, and 5,126 failed. The first to reach a shop was the G-Force, made under licence by Apex in Japan in 1986. In Britain he sued Hoover for copying him, won in 2000, and settled the damages in 2002 for £4 million. In 2025 his company sold £6.13 billion of machines and spent more than £400 million on research.",
+    "He backed Leave in the 2016 referendum. His company had already moved its manufacturing from Malmesbury to Malaysia in 2002, and in January 2019 it said it would move its head office to Singapore, a decision its chief executive said had nothing to do with Brexit or tax. Later that year he gave up an electric car he had paid for himself. In 2021 a Malaysian supplier, ATA IMS, was accused of using forced labour, and Dyson ended the contract. Twenty-four former workers from Nepal and Bangladesh sued Dyson in London. In February 2026, with a trial set for April 2027, the case was settled; Dyson denied all liability, and the terms were not disclosed. In May 2026 the Sunday Times put him and his family at £12 billion, down £8.8 billion in a year."
+  ],
+  "bio": {
+    "t": "Against the Odds: An Autobiography",
+    "a": "James Dyson",
+    "y": "1997",
+    "why": "There is no independent biography; both books are his. This one, written with Giles Coren, covers the Ballbarrow, the prototypes and the early lawsuits closest to the time, and it is the one Founders has read four times. Invention: A Life (2021) brings the story up to the car and Singapore."
+  },
+  "contested": "How much of the invention is his. The court record is the fairest statement: in Dyson v Samsung (2009) the High Court set out the prior art, Morse's patent of 1886 and Sanyo's double cyclone of 1977, and still said the domestic use was pioneered by Dyson. Both sides quote the same judgment. The time it took is told differently: the prototypes are usually given four or five years, while Fast Company in 2007 said the whole development took him fifteen. Why the factories left Malmesbury is his account against a council's, as reported, and nobody here has read either document. The charge of hypocrisy over Brexit was put most sharply by the Mirror in 2022; he sued for libel and was reported to have lost on damages, and the judgment has not been opened for this entry. The forced-labour claims were never tried. They settled with liability denied, so the house prints what was alleged, what Dyson did about the supplier, and that the case ended, and nothing more.",
+  "across": [
+    {
+      "to": "lives:chester-carlson",
+      "label": "Chester Carlson",
+      "txt": "— turned down by more than twenty companies before a small one took a licence; Dyson's first licensee was in Japan, and both men's patents were older than their sales."
+    }
+  ],
+  "facts": [
+    {
+      "b": "5,127 · 5,126",
+      "s": "Prototypes of his vacuum, and failures among them, by his own count: Chuck Salter, 'Failure Doesn't Suck', Fast Company, 1 May 2007"
+    },
+    {
+      "b": "1886 · February 1977",
+      "s": "Morse's first cyclone-separator patent, and Sanyo's published double-cyclone household cleaner: Dyson Appliances v Samsung, [2009] EWHC 55 (Pat), paragraphs 5 and 121"
+    },
+    {
+      "b": "£4 million",
+      "s": "The settlement Hoover paid, plus costs and interest, before the High Court assessed damages: Managing IP, 1 November 2002"
+    },
+    {
+      "b": "£6.13 billion · £400 million",
+      "s": "Revenue for 2025, and research and development spending (more than): Dyson, '2025 Results', press release, 26 March 2026"
+    },
+    {
+      "b": "24 · April 2027",
+      "s": "Claimants in the forced-labour suit, and the trial date it settled before: Leigh Day, 'Dhan Kumar Limbu and others v Dyson Technology Limited', 26 February 2026"
+    },
+    {
+      "b": "£12 billion · £8.8 billion",
+      "s": "His family's estimated wealth on the 2026 Sunday Times Rich List, and the fall from 2025: Retail Gazette, 15 May 2026, reporting the list"
+    }
+  ]
+}

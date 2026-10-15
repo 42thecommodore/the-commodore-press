@@ -1,0 +1,71 @@
+{
+  "id": "larry-gagosian",
+  "no": 87,
+  "keep": "He began in resale because he had no artists, and never left it: the same few paintings, sold among the same few rich men, with a commission each time.",
+  "n": "Larry Gagosian",
+  "years": "b. 1945",
+  "place": "Los Angeles and New York",
+  "field": "Art & Dealing",
+  "group": "obscure",
+  "cover": "#2E3236",
+  "spineC": "#1F2225",
+  "ink": "#F2F1EE",
+  "accent": "#D9CBB0",
+  "motif": "grid",
+  "lede": "He took six years over an English degree, parked cars in Westwood and sold framed posters of kittens. The art world has him starting in the William Morris mailroom. He answered phones there, and even his leaving is disputed: he has said he was fired, and Michael Ovitz says he quit.",
+  "copy": [
+    "Larry Gagosian grew up in the San Fernando Valley, in an Armenian American family that never went to museums. His father, a municipal accountant who retrained as a stockbroker, gambled and drank. He studied English at UCLA, dropped out twice and took six years to graduate. In 1969 he pleaded guilty to two felony counts of forgery, for using someone else's credit card, and was given a suspended sentence and probation. Through a cousin he became an assistant at the William Morris Agency, answering phones and reading scripts for ninety dollars a week. Parking cars in Westwood paid better. At the edge of the lot a man was selling posters. Gagosian copied the business: same supplier, a cheap frame, and a two-dollar poster sold for fifteen.",
+    "Prints and photographs followed, then a gallery. In the mid-1970s he cold-called the photographer Ralph Gibson to offer him a show, and Gibson introduced him to Leo Castelli, the New York dealer of Johns, Stella and Lichtenstein. Castelli sold living artists' new work. Gagosian had no artists, so he went into resale, and Castelli could tell him where the paintings were because he had sold most of them. Gagosian made upward of a hundred cold calls a day. He opened in Chelsea in 1985, looked collectors up in the phone book, bought from them and sold to S. I. Newhouse, who paid $11 million for Mondrian's Victory Boogie Woogie. When Castelli died in 1999 Gagosian took on many of his artists and clients. By 2023 he had nineteen galleries, more than a hundred artists and more than a billion dollars a year in revenue, and he owned all of it himself.",
+    "The method has a cost, and the lawsuits are about it. In 2004 he and his gallery paid $4 million to settle a federal claim over taxes on a 1990 deal, in which a shell company bought 62 paintings for $32 million and sold 58 of them for $20 million. In 2012 Ronald Perelman sued him over a Jeff Koons sculpture, alleging he had manipulated prices; the claims were dismissed in 2014. He made poaching artists from the small dealers who found them a normal part of the trade. On Cy Twombly's new canvases he took about thirty per cent. Above all he kept a small club of very rich collectors trading among themselves, through him. David Geffen sold Steve Cohen a Pollock for $50 million in 2003, and three years later, at Gagosian's asking, a de Kooning for $140 million. In 2020 Gagosian arranged for Geffen to buy a Giacometti from Cohen for $147 million."
+  ],
+  "bio": {
+    "t": "How Larry Gagosian Reshaped the Art World",
+    "a": "Patrick Radden Keefe",
+    "y": "2023",
+    "u": "https://www.newyorker.com/magazine/2023/07/31/larry-gagosian-profile",
+    "why": "There is no biography. Keefe's New Yorker profile is the fullest account, reported with Gagosian's cooperation and his critics', and it is the one Founders read for its episode on him. Michael Shnayerson's Boom (2019) sets him among the other mega-dealers."
+  },
+  "contested": "Whether he is a dealer or a broker who happens to show art. The small dealers' case was put to Keefe by Ellie Rines of 56 Henry: she finds the artist with something brewing, and the mega-gallery takes the artist once the work sells. Aaron Richard Golub, a lawyer who has sued him several times, says Gagosian exploits the insecurity of the richest man in the room. Gagosian answers that he scorns dealers who burnish their ethics on his hide, and points to the museum-quality historical shows he staged when he had no artists to show. The record of his own beginnings is soft. He has suggested he was fired by William Morris, and Ovitz, who supervised him, says he quit; the poster he bought for two dollars in Keefe's account cost about one in a conversation he gave in 2018. The revenue is as Keefe reports it; the business is private and publishes no accounts. Perelman lost his suit. A former roommate says he walked out of restaurants without paying, which he denies.",
+  "across": [
+    {
+      "to": "lives:david-geffen",
+      "label": "David Geffen",
+      "txt": "— his best customer, who says he paid for most of his giving by selling paintings, many of them through Gagosian, and whose William Morris mailroom was real."
+    },
+    {
+      "to": "lives:p-t-barnum",
+      "label": "P. T. Barnum",
+      "txt": "— the other showman on the shelf: Barnum made the crowd argue, Gagosian makes the richest man in the room want what he cannot have."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$90 a week · $2 / $15",
+      "s": "His pay as an assistant at William Morris, and the cost and selling price of a framed poster in Westwood: Patrick Radden Keefe, 'How Larry Gagosian Reshaped the Art World', The New Yorker, 24 July 2023"
+    },
+    {
+      "b": "19 · 100+ · $1 billion",
+      "s": "Galleries bearing his name, artists represented, and annual revenue (more than): Keefe, The New Yorker, 24 July 2023"
+    },
+    {
+      "b": "$11 million",
+      "s": "Newhouse's price for Mondrian's Victory Boogie Woogie, bought from the Tremaines through Gagosian: Keefe, The New Yorker, 24 July 2023"
+    },
+    {
+      "b": "30%",
+      "s": "His commission on Cy Twombly's new paintings, about: Keefe, The New Yorker, 24 July 2023"
+    },
+    {
+      "b": "$50 million · $140 million · $147 million",
+      "s": "The Pollock (2003) and de Kooning's Woman III (2006) sold by Geffen to Steve Cohen, and the Giacometti sold by Cohen to Geffen (2020): Keefe, The New Yorker, 24 July 2023"
+    },
+    {
+      "b": "$4 million · 62 for $32 million · 58 for $20 million",
+      "s": "The settlement paid by Gagosian and his gallery, and the 1990 shell-company deal behind the federal tax claim: Martha Lufkin, The Art Newspaper, 1 December 2004"
+    },
+    {
+      "b": "$1",
+      "s": "What a poster cost him, by his own figure: his 2018 conversation with Glenn Fuhrman, as transcribed in A Letter a Day, no. 189, 4 June 2024"
+    }
+  ]
+}

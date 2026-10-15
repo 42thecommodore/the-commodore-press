@@ -1,0 +1,70 @@
+{
+  "id": "david-geffen",
+  "no": 85,
+  "keep": "He kept the mailroom job by getting to the mail first. The career ran on the same rule: be in the room before the letter arrives.",
+  "n": "David Geffen",
+  "years": "b. 1943",
+  "place": "Brooklyn and Los Angeles",
+  "field": "Music & Film",
+  "group": "famous",
+  "cover": "#22182A",
+  "spineC": "#160F1C",
+  "ink": "#F3EEF4",
+  "accent": "#D7B98A",
+  "motif": "dots",
+  "lede": "He dropped out of college, wrote a UCLA degree onto his application, and then came in early for six months to catch the letter that would expose him. The retelling calls it a forged diploma. By his own account it was a swapped letter.",
+  "copy": [
+    "David Geffen was born in Brooklyn in 1943 to Jewish immigrants. His mother ran a corset shop. He dropped out of college, and in 1964 he talked his way into the mailroom of the William Morris Agency, having claimed on his application a degree from UCLA. The agency wrote to check. He came in early every day for six months and went through the mail before anyone else. When the letter from UCLA came, saying it had never heard of him, he took it out and put in a letter saying he had graduated.",
+    "From the agency he went into music. He founded Asylum Records in the early 1970s and sold it to Warner Communications for $7 million. In 1980 he started Geffen Records, and in 1990 he sold it to MCA for stock that Fortune put at $550 million. In 1994 he founded DreamWorks with Steven Spielberg and Jeffrey Katzenberg. Much of the money has gone to buildings that carry his name. In 2002 he gave UCLA's medical school $200 million with no conditions attached, then the largest gift the University of California had received; the figure usually repeated is half that. In 2015 he gave $100 million to rename the concert hall at Lincoln Center. The giving was paid for in paintings. He bought through Larry Gagosian and sold through him, and told The New Yorker in 2023: “Most of the money I’ve given away, which is well over a billion dollars, I financed by selling paintings that I owned.”",
+    "He fell out with a long list of the people he made money with, and a documentary he took part in counted the Eagles, Laura Nyro and the Clintons among them. In 1983 Geffen Records sued Neil Young for making records it called uncharacteristic of him; Young countersued, and Geffen apologised. In 2002 Michael Ovitz told Vanity Fair that his fall in Hollywood had been arranged by what he called a gay mafia, with Geffen at its head. Geffen called the idea insane. When Tom King of the Wall Street Journal wrote his life, Geffen gave him access, then regretted it and compared him to Kitty Kelley. In March 2020, with most of the country shut indoors, he posted a sunset from his yacht in the Grenadines, saying he was isolated there avoiding the virus. After the reaction he made the account private. Forbes puts his fortune at $9.7 billion."
+  ],
+  "bio": {
+    "t": "The Operator: David Geffen Builds, Buys, and Sells the New Hollywood",
+    "a": "Tom King",
+    "y": "2000",
+    "why": "The one full life, by a Wall Street Journal reporter who had Geffen's cooperation until Geffen withdrew it. Susan Lacy's American Masters film, Inventing David Geffen (2012), is better company and less independent: Geffen is its lead witness."
+  },
+  "contested": "The origin story is his own, and the details move. Fortune, interviewing him in 2013, has him writing the substitute letter himself and watching the mail for six months; Richard Pachter's review of King's biography has him getting his brother, a lawyer, to produce it, and a Gale reference work makes the wait four months. The 1990 sale is printed as $540, $545 and $550 million, all of it MCA stock, and what that stock was worth when Matsushita bought MCA later that year is reported at $670 million and more without a filing anyone here has read. The Neil Young suit is said to have sought $3.3 million, on the strength of one web article. Don Henley's charge that Geffen held artists to contracts and then lost interest in them after the sale is the strongest objection to the generous version of this life; it is told in interviews this entry has not opened, and is recorded as a lead, not printed. Ovitz's conspiracy has never been shown to be more than his account of his own fall.",
+  "across": [
+    {
+      "to": "lives:larry-gagosian",
+      "label": "Larry Gagosian",
+      "txt": "— his dealer, who brokered the Pollock and the de Kooning Geffen sold to Steve Cohen, and who started at William Morris too, though not in the mailroom the legend gives him."
+    },
+    {
+      "to": "lives:lucille-ball",
+      "label": "Lucille Ball",
+      "txt": "— who owned the film her show was shot on and kept selling it; Geffen's fortune was the same idea applied to records."
+    }
+  ],
+  "facts": [
+    {
+      "b": "six months",
+      "s": "How long he came in early to intercept the agency's mail: 'The miseducation of David Geffen', Fortune, 25 July 2013, and his own account in David A. Kaplan, 'David Geffen unplugged', Fortune, 25 July 2013"
+    },
+    {
+      "b": "$7 million",
+      "s": "The sale of Asylum Records to Warner Communications: Contemporary Musicians (Gale), entry for David Geffen, via Encyclopedia.com"
+    },
+    {
+      "b": "$550 million",
+      "s": "The value of the MCA stock paid for Geffen Records in 1990: Fortune, introduction to 'David Geffen unplugged', 25 July 2013"
+    },
+    {
+      "b": "$200 million",
+      "s": "His unrestricted gift to the UCLA School of Medicine, the largest to the University of California at the time: Daily Bruin, 7 May 2002"
+    },
+    {
+      "b": "$100 million",
+      "s": "His gift to Lincoln Center for the concert hall renamed David Geffen Hall: Lincoln Center announcement as reported by ABC7 New York, 4 March 2015"
+    },
+    {
+      "b": "$9.7 billion",
+      "s": "Forbes's estimate of his net worth: Forbes, profile of David Geffen, read 14 October 2026"
+    },
+    {
+      "b": "well over a billion dollars",
+      "s": "What he had given away, by his own account, financed mostly by selling paintings: Geffen to Patrick Radden Keefe, 'How Larry Gagosian Reshaped the Art World', The New Yorker, 24 July 2023"
+    }
+  ]
+}

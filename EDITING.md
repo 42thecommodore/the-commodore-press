@@ -135,7 +135,7 @@ In `across`, point at the other entry by its `id` (the first line of its file):
 { "to": "press:being-wrong", "label": "Being Wrong Productively", "txt": "— why naive falsification fails." }
 ```
 
-`press:` for titles, `lives:` for lives, `atlas:` plus a principle id. Then add the link back on the other entry — except for `atlas:` links, which the principles do not carry back. The check fails if a link points at something that does not exist.
+`lives:` for lives, `atlas:` plus a principle id. (`press:` named a title of the Press, which is retired; the check refuses a new one from a Life.) Then add the link back on the other entry — except for `atlas:` links, which the principles do not carry back. The check fails if a link points at something that does not exist.
 
 ### 5. Change shelf order
 
@@ -181,10 +181,10 @@ Ask Claude for `/press-note` when you have just watched something — it writes 
 ### 7. Add a new title or life
 
 ```bash
-npm run new book "The Title"
+npm run new life "Their Name"
 ```
 
-Or `life "Their Name"` or `adjacent "…"`. It writes a file with an unused cover and every field marked `TODO`. The check refuses to pass until each one is answered. For a life, make the portrait from a public-domain image:
+(The Press is retired, so `new book` and `new adjacent` are for the record only — nothing new is shelved there.) It writes a file with an unused cover and every field marked `TODO`. The check refuses to pass until each one is answered. For a life, make the portrait from a public-domain image:
 
 ```bash
 npm run plate -- ~/Downloads/portrait.jpg their-name

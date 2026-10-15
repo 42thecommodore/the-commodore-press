@@ -42,7 +42,7 @@
   }
   body.dusk header.mast{background:rgba(28,26,22,.92)}
   /* a book at dusk catches the lamp: a hairline of light round the spine and the cover */
-  body.dusk .rk-sp,body.dusk .book .cover,body.dusk .book .spine{outline:1px solid var(--edge);outline-offset:0}
+  body.dusk .book .cover,body.dusk .book .spine{outline:1px solid var(--edge);outline-offset:0}
   body.dusk .card{box-shadow:0 2px 10px rgba(0,0,0,.35)}
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -155,9 +155,7 @@
   @media (max-width:640px){.key a{grid-template-columns:1fr;gap:2px}}
   .tally b{font-size:var(--fs-5);font-weight:500;color:var(--oxblood);margin-right:2px;font-variant-numeric:lining-nums}
   /* an entry is a link to its own page now (press.js, entryAttrs): it keeps the look it had as a button */
-  /* not a.rk: a spine takes its livery's ink from .rk{color:var(--ink)}, and color:inherit here
-     outranked it — the titles printed in page-black on dark spines (tests/test-reading.mjs now reads them) */
-  a.slot,a.rk,a.wface,a.card,a.cap-plate,a.sp-go,.endnav a{text-decoration:none}
+  a.slot,a.wface,a.cap-plate,a.sp-go,.endnav a{text-decoration:none}
   a.slot,a.wface,a.cap-plate,a.sp-go,.endnav a{color:inherit}
 
   .colophon{padding:56px 0 20px;display:grid;grid-template-columns:190px 1fr;gap:40px;border-top:1px solid var(--rule);margin-top:56px}
@@ -519,49 +517,6 @@
   .band-h h2{margin:0;font-size:clamp(30px,3.8vw,44px);font-weight:500;letter-spacing:-.02em;line-height:1.06}
   .band-h p{margin:0;font-size:var(--fs-3);line-height:1.5;color:var(--ink-soft)}
 
-  /* Wing I: the titles as spines in their own liveries, which they keep at night */
-  .rack{display:flex;align-items:flex-end;gap:4px;padding:20px 4px 0;border-bottom:3px solid var(--ink)}
-  .rack::-webkit-scrollbar{display:none}
-  /* Each spine is a closed book. With a mouse over it the front cover swings open from the
-     spine, like a book taken half off the shelf; only transforms move, so nothing reflows.
-     The last five open to the left, to stay on the shelf. */
-  .rk{position:relative;flex:1 1 0;min-width:24px;max-width:54px;height:280px;padding:0;perspective:1100px;color:var(--ink)}
-  /* a spine rises a little under the mouse, as a book does when a finger hooks its top */
-  .rk-sp{transition:transform .3s var(--ease)}
-  .rk:hover .rk-sp,.rk:focus-visible .rk-sp{transform:translateY(-8px)}
-  .rk-sp{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:10px 0 9px;
-    background:var(--cv);border-radius:1px 2px 2px 1px;box-shadow:inset -3px 0 0 rgba(0,0,0,.18),inset 2px 0 0 rgba(255,255,255,.08)}
-  .rk-sp>i{width:70%;height:2px;background:var(--ac)}
-  /* a spine title is stamped, not written: 15px regular Garamond is all hairlines once it is light
-     on a saturated cloth, and read as a smudge. 17px at 600, in the livery's own ink, which
-     tools/test-reading.mjs holds at 7:1 on every spine as rendered. */
-  .rk-sp>span{writing-mode:vertical-rl;font-size:var(--fs-3);font-weight:600;letter-spacing:.01em;line-height:1;white-space:nowrap;overflow:hidden;max-height:214px}
-  .rk svg{color:var(--ac);flex:none}
-  .rk-cv{position:absolute;top:0;left:100%;width:190px;height:100%;z-index:4;display:flex;flex-direction:column;align-items:flex-start;gap:10px;
-    padding:30px 20px 18px;box-sizing:border-box;text-align:left;background:var(--cv);border-radius:0 3px 3px 0;
-    box-shadow:inset 3px 0 8px rgba(0,0,0,.3),10px 14px 30px -12px rgba(0,0,0,.55);
-    transform-origin:left center;transform:rotateY(-92deg);visibility:hidden;pointer-events:none;
-    transition:transform .16s ease-in,visibility 0s .16s}
-  .rk.end .rk-cv{left:auto;right:100%;border-radius:3px 0 0 3px;transform-origin:right center;transform:rotateY(92deg)}
-  .rk-cv b{font-size:var(--fs-5);font-weight:500;line-height:1.1}
-  .rk-cv>i{width:28px;height:2px;background:var(--ac)}
-  .rk-cv em{font-size:var(--fs-2);line-height:1.35}
-  .rk-cv small{margin-top:auto;font-family:var(--mono);font-size:var(--fs-0);opacity:.8}
-  @media (hover:hover){
-    .rk:hover,.rk:focus-visible{z-index:5}
-    .rk:hover .rk-cv,.rk:focus-visible .rk-cv{transform:none;visibility:visible;transition:transform .34s cubic-bezier(.2,.75,.25,1) .1s,visibility 0s .1s}
-  }
-  /* without a mouse (a phone, a narrow window) the first tap opens the cover in place and the
-     second opens the book: press.js adds .open. The covers used to stay shut below 760px, so a
-     phone reader never saw a book open at all. */
-  .rk.open{z-index:5}
-  .rk.open .rk-sp{transform:translateY(-8px)}
-  .rk.open .rk-cv{transform:none;visibility:visible;transition:transform .34s cubic-bezier(.2,.75,.25,1),visibility 0s}
-  @media (prefers-reduced-motion:reduce){.rk-cv,.rk:hover .rk-cv,.rk.open .rk-cv{transition:none}.rk:hover .rk-sp,.rk.open .rk-sp{transform:none}}
-  /* below 760px the spines stop shrinking and the shelf scrolls on its own */
-  @media (max-width:760px){.rack{overflow-x:auto;scrollbar-width:none}.rk{flex:0 0 34px}
-    .rk-cv{width:168px;padding:24px 16px 14px}.rk-cv b{font-size:var(--fs-4)}}
-
   .fn .nw{display:block;font-style:normal;font-size:var(--fs-1);color:var(--ink-soft)}
 
   /* Wing III: kept dark, like the wing itself — an island to a principle, a town to a person */
@@ -641,7 +596,6 @@
     .cap-side{grid-column:1/-1}
     .band{padding:44px 0 52px}
     .band-h{flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:26px}
-    .rack{margin-right:-20px;padding-right:20px}
     .log .dt{display:none}
   }
 
@@ -662,6 +616,12 @@
 
   @media (max-width:560px){
     .wall{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 10px}
+    /* On the front door a phone gets the faces as three rows that scroll sideways, as the
+       Press's spines did, so the Atlas is still a short scroll below them; the whole wall,
+       four to a row, is the Lives wing's own page. */
+    .front .wall{grid-template-columns:none;grid-template-rows:repeat(3,auto);grid-auto-flow:column;grid-auto-columns:72px;
+      overflow-x:auto;scrollbar-width:none;margin-right:-20px;padding-right:20px}
+    .front .wall::-webkit-scrollbar{display:none}
     /* The nav used to scroll sideways with a fade, which hid Search and night reading off
        the right edge of every phone. Two short rows keep them all in reach. */
     .mast nav{flex-wrap:wrap;justify-content:flex-start;overflow:visible;-webkit-mask-image:none;mask-image:none;

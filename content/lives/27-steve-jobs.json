@@ -50,12 +50,5 @@
     9,
     11
   ],
-  "contested": "Which book you read decides which man you get. Isaacson had Jobs's cooperation and wrote the version everyone now quotes; Tim Cook has said publicly that it made him out to be a greedy egomaniac and did him a disservice, and Jony Ive and Eddy Cue have said much the same. The obvious answer to that objection is that all three worked for him. Malcolm Gladwell's 'Creation Myth' makes the sharper point about PARC: the failure worth studying is Xerox's inability to ship what its own researchers had built, not Apple's visit.",
-  "across": [
-    {
-      "to": "press:compounding-machines",
-      "label": "Compounding Machines",
-      "txt": "— Xerox invented the personal computer and shipped almost none of it. This is the man who shipped it."
-    }
-  ]
+  "contested": "Which book you read decides which man you get. Isaacson had Jobs's cooperation and wrote the version everyone now quotes; Tim Cook has said publicly that it made him out to be a greedy egomaniac and did him a disservice, and Jony Ive and Eddy Cue have said much the same. The obvious answer to that objection is that all three worked for him. Malcolm Gladwell's 'Creation Myth' makes the sharper point about PARC: the failure worth studying is Xerox's inability to ship what its own researchers had built, not Apple's visit."
 }

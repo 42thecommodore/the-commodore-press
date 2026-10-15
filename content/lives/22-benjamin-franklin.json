@@ -27,11 +27,6 @@
   "contested": "Isaacson writes to his house template — the ingenious, pragmatic outsider — and historians find him lighter on Franklin's decades as a slaveholder who turned abolitionist only late. The Autobiography, the foundation of the legend, is self-presentation by a master of it; treat it as an artifact to interpret, not a record to trust.",
   "across": [
     {
-      "to": "press:republic-of-letters",
-      "label": "The Republic of Letters",
-      "txt": "— Franklin was the network's American terminus, and worked it like a printer works a market."
-    },
-    {
       "to": "atlas:public",
       "label": "The Atlas · Build in public",
       "txt": "— the stove, the lightning rod and bifocals, none patented, on the stated principle that we should serve others freely with our inventions as we enjoy theirs."
@@ -40,6 +35,11 @@
       "to": "lives:josiah-wedgwood",
       "label": "Josiah Wedgwood",
       "txt": "— in 1788, late in the turn from slaveholder to abolitionist, Franklin received a batch of Wedgwood's anti-slavery medallions from England."
+    },
+    {
+      "to": "lives:charlie-munger",
+      "label": "Charlie Munger",
+      "txt": "— whose collected talks were published as Poor Charlie's Almanack, after Poor Richard's."
     }
   ]
 }

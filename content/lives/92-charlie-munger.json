@@ -1,0 +1,62 @@
+{
+  "id": "charlie-munger",
+  "no": 92,
+  "keep": "He owned no Berkshire stock when he told Buffett to stop buying cheap, bad businesses. Buffett took decades to follow the advice, and then called him the architect.",
+  "n": "Charlie Munger",
+  "years": "1924–2023",
+  "place": "Omaha and Los Angeles",
+  "field": "Law & Investing",
+  "group": "famous",
+  "cover": "#3A3020",
+  "spineC": "#282114",
+  "ink": "#F6F0E2",
+  "accent": "#E8C987",
+  "motif": "grid",
+  "lede": "He left college for the war without a degree, and Harvard Law School took him anyway. In 1965 he owned no Berkshire stock and had no money with Buffett, and he told him that buying it had been a dumb decision. Then he told him how to fix it.",
+  "copy": [
+    "Charles Munger was born in Omaha in 1924, and as a boy he worked at Buffett & Son, the Buffett family's grocery. He left the University of Michigan in 1943 for the Army Air Corps, which sent him to Caltech to study meteorology. He had no degree when he applied to Harvard Law School. It took him, and he graduated in 1948. He practised law in Los Angeles. In the 1950s his first marriage ended and his son Teddy died of leukaemia at nine. In 1962 he helped found the law firm that became Munger, Tolles & Olson, and in the same year he decided, as Buffett later put it, that he should take up managing money.",
+    "Buffett met him in 1959, when Munger was 35. In 1965 Buffett bought control of Berkshire Hathaway, and Munger told him it was a dumb decision. Since it was done, he said, Buffett should never buy another company like it, and should add wonderful businesses bought at fair prices instead of fair businesses bought at wonderful ones. That meant abandoning what Buffett had learned from Benjamin Graham, which worked only at small scale. In 1972 Blue Chip Stamps bought See's Candies for $25 million. See's had about $8 million of net tangible assets and earned about $2 million a year after tax. The price was more than three times what the assets were worth on paper. Munger became Buffett's partner in running Berkshire and its vice-chairman, and stayed until he died on 28 November 2023, thirty-three days short of a hundred. Buffett called him the architect of the present Berkshire, and himself the general contractor.",
+    "Two of his best-known lines are not quite his. The rule about wonderful companies at fair prices is printed as Buffett's sentence, in his letter for 1989, followed by the credit: Charlie understood this early; I was a slow learner. Thirty-four years later Buffett put the same advice in Munger's mouth, as something said in 1965. And the line on Bitcoin most often credited to Munger, rat poison squared, was Buffett's, in 2018. Munger's, five years earlier, was plain rat poison. His last large gift became an argument of its own. He pledged $200 million toward a dormitory at the University of California, Santa Barbara, built to his own plan, and in 2023, after years of objections to the design, the university asked for proposals for a new project on the site."
+  ],
+  "bio": {
+    "t": "Damn Right! Behind the Scenes with Berkshire Hathaway Billionaire Charlie Munger",
+    "a": "Janet Lowe",
+    "y": "2000",
+    "why": "The only biography, written while he was alive and with his family's help. For his own words read Poor Charlie's Almanack, edited by Peter Kaufman (2005; abridged by Stripe Press in 2023), and Buffett's 2023 letter for the partner's account."
+  },
+  "contested": "How much of Berkshire is his. Buffett's own account gives him the turn from cheap businesses to good ones, and in the 2023 letter the whole design. The 1989 letter is the plainest evidence either way, since it credits Munger and still prints the sentence as Buffett's; the case that See's itself, rather than Munger, taught Buffett the lesson is made often and has not been found here in a source anyone could check. His partnership's record is usually given from Buffett's 1984 essay The Superinvestors of Graham-and-Doddsville as 19.8 per cent a year from 1962 to 1975 against the Dow's 5.0, with losses of about a third in each of 1973 and 1974; reproductions of the table give the limited partners 13.7 per cent, and the essay itself has not been opened for this entry, so none of those figures is printed above. An SEC inquiry into Blue Chip Stamps and the Wesco purchase ran from 1974 to 1976 and is reported to have ended in a payment of $115,000; no document from it has been read here. Of the dormitory, the objection that most of its bedrooms had no windows, and the resignation of the university's consulting architect over it, are widely reported and recorded as leads. The line that the big money is not in the buying or selling but in the waiting has no transcript behind it.",
+  "across": [
+    {
+      "to": "lives:benjamin-franklin",
+      "label": "Benjamin Franklin",
+      "txt": "— the printer whose almanac gave Munger's collected talks their title."
+    },
+    {
+      "to": "lives:henry-singleton",
+      "label": "Henry Singleton",
+      "txt": "— another allocator of capital in the same decades, whose method was buying back his own stock rather than other people's businesses."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1959 · 35 · 1965 · 33 days",
+      "s": "When Buffett met him and his age then, the year of his advice on Berkshire, and how short of a hundred he died: Warren Buffett, letter to Berkshire Hathaway shareholders for 2023 (February 2024)"
+    },
+    {
+      "b": "$25 million · $8 million · $2 million",
+      "s": "What Blue Chip Stamps paid for See's early in 1972, See's net tangible assets then, and its after-tax earnings: Warren Buffett, Chairman's Letter for 1983"
+    },
+    {
+      "b": "28 November 2023",
+      "s": "His death at a California hospital: Berkshire Hathaway, news release, 28 November 2023 (filed with the SEC as Exhibit 99.1)"
+    },
+    {
+      "b": "2013 · 2018",
+      "s": "Munger's \"rat poison\" and Buffett's \"rat poison squared\", each said to Liz Claman: Quote Investigator, 'Bitcoin Is Rat Poison Squared', 11 February 2021"
+    },
+    {
+      "b": "$200 million",
+      "s": "His pledge toward the Munger Hall dormitory, and the university's call for a new project on the site: 'The Death Knell for Dormzilla', Santa Barbara Independent, 27 July 2023"
+    }
+  ]
+}

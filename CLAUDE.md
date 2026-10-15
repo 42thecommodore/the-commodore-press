@@ -2,9 +2,9 @@
 
 ## What this is
 
-A working library published as one web page and a page per entry, in three wings: the Press (titles), Lives, and the Atlas. It is a publishing house, not a blog — the thing being sold is that **every claim carries its source and the place it is still argued.**
+A working library published as one web page and a page per entry, in two wings: Lives and the Atlas. It is a publishing house, not a blog — the thing being sold is that **every claim carries its source and the place it is still argued.**
 
-All three wings are about people. The Press is the ideas people spent their lives inside, Lives is the people themselves, the Atlas is the people the house listens to now. A fourth and fifth wing — the Field Manuals and the Slipway — were removed in September 2026 because they stated positions with nobody standing behind them, which is the one thing this house has no way to source.
+Both wings are about people. Lives is the people themselves, the Atlas is the people the house listens to now. Two more wings — the Field Manuals and the Slipway — were removed in September 2026 because they stated positions with nobody standing behind them, which is the one thing this house has no way to source. A third, **the Press** (Wing I, the titles: the ideas people spent their lives inside), was **retired on 14 October 2026** so the library could put Lives and the Atlas first. Its pages are still built at `t/<id>/`, each saying it is retired, so no shared link dies and no correction printed on one disappears; it is off the front door, the nav, search, the library's reader and every count. Shelve nothing new there, and a Life may not link to it (`npm run check` fails on a `press:` link from a Life).
 
 Read that sentence again before changing anything. It is the product.
 
@@ -27,8 +27,8 @@ Breaking any of these breaks the only reason to trust the rest. If a change woul
 ```
 The Commodore/
 ├── content/              # SOURCE OF TRUTH — one JSON file per entry
-│   ├── books/NN-slug.json      Wing I · titles     (NN fixes shelf order)
-│   ├── adjacent/NN-slug.json   Wing I · adjacent shelf
+│   ├── books/NN-slug.json      the retired Press · titles  (pages only, marked retired; nothing new)
+│   ├── adjacent/NN-slug.json   the retired Press · adjacent shelf
 │   ├── lives/NN-slug.json      Wing II · lives     (id must match its plate; NN is the life's printed number, `no`)
 │   ├── atlas/                  Wing III · domains, domain-colors, principles, people, sources
 │   ├── log/YYYY-MM-DD-slug.md  the Log · the editor's signed column, Markdown, draft until status: published
@@ -165,10 +165,9 @@ Three rules for the front door and the shelves, each held by a check:
 
 - **An entry opens from a link.** Every book, face and Life is `<a ${entryAttrs(how, id)}>`, pointing at its own page; `press.js` turns a plain click into the reader. `npm run check` fails on an entry opened from a `<button>`.
 - **The house's line is never set beside a face as if it were theirs.** A `keep` or `across` line shown next to a portrait is roman and, where it stands alone, credited through `Reading.credit` ("— The Commodore Press, on <name>"). `npm test` holds it.
-- **The first screen is the promise and the shelf.** The spines sit on the first screen at 1440×900 and 375×812, with no buttons above them, and the only count there is the corrections, linked to the record. `npm test` measures it in an exact-size frame.
-- **The front door says what this is.** Under the shelf, never above it, a key names each part (the Press, Lives, the Atlas, the Log once it publishes, Corrections) in one plain line that opens it. Counts in it come from the build. `npm test` holds it.
-- **Books open everywhere.** Under a mouse a cover swings open; without one the first tap opens it and the second opens the book; from the front-door shelf the book flies to the reader. `npm test` holds it at both sizes.
-- **A spine title is stamped:** the livery's own ink, 17px at 600, at 7:1 or better on every spine as rendered, never cut off. `npm test` reads each one in light mode — the mode that once hid a page-black bug from a check run in dark.
+- **The first screen is the promise and the shelf.** The Lives' faces sit on the first screen at 1440×900 and 375×812 (on a phone, three rows that scroll sideways), with no buttons above them, and the only count there is the corrections, linked to the record. `npm test` measures it in an exact-size frame.
+- **The front door says what this is.** Under the shelf, never above it, a key names each part (Lives, the Atlas, the Log once it publishes, Corrections) in one plain line that opens it. Counts in it come from the build. `npm test` holds it.
+- **The Atlas comes next.** Straight after the key, before the Captain, the Log and the colophon. `npm test` holds the order at both sizes, and that nothing on the front door links a retired title.
 - **Quotes are typographic.** `build/typeset.mjs` curls every prose field, the page frame and Markdown at build time; `content/` stays as typed. `npm test` fails if a straight quote reaches any page.
 - **Reading comes first on a phone.** The reader's lede starts on the first screen at 375×812, prose runs the full width, and nothing scrolls sideways; the book stands small beside the title. `npm test` holds it.
 - **Search matches letters, not typography.** Curly and straight quotes are folded on both sides.

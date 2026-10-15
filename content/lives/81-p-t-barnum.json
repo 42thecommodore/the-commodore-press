@@ -69,6 +69,11 @@
       "to": "atlas:story",
       "label": "The Atlas · Story is leverage",
       "txt": "— at its most profitable and at its worst, in the same year: the Heth handbills and the dissection both sold out."
+    },
+    {
+      "to": "lives:larry-gagosian",
+      "label": "Larry Gagosian",
+      "txt": "— a dealer who learned the same trade from the other end: not the crowd that pays at the door, but the dozen men who bid against each other."
     }
   ]
 }

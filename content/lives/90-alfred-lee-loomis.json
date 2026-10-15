@@ -1,0 +1,70 @@
+{
+  "id": "alfred-lee-loomis",
+  "no": 90,
+  "keep": "He is remembered for getting out before the crash. Seven months before it he helped found a billion-dollar utility company, and eleven years later he was its major stockholder.",
+  "n": "Alfred Lee Loomis",
+  "years": "1887–1975",
+  "place": "New York and Tuxedo Park",
+  "field": "Finance & Physics",
+  "group": "obscure",
+  "cover": "#2D1F14",
+  "spineC": "#1E140C",
+  "ink": "#F6EFE4",
+  "accent": "#E3B873",
+  "motif": "lines",
+  "lede": "He was a lawyer and a banker with no doctorate, and he ran one of the best physics laboratories in America out of a house in Tuxedo Park. The story says he saw the crash coming and got out. Seven months before it, he helped found one of the largest utility companies in the country.",
+  "copy": [
+    "Alfred Lee Loomis entered Yale in 1905 and graduated cum laude from Harvard Law School in 1912. He went into the firm of his cousin Henry Stimson, and by 1915 he was a member. In the First World War the Army put him in charge of experimental research on exterior ballistics at Aberdeen Proving Ground, with the rank of major. The Aberdeen Chronograph came out of it, patented in 1921. After the war he went into business with his sister's husband, Landon Thorne. At Bonbright and Company Thorne was president and Loomis vice-president, and the firm put together and financed many of the largest public utilities in the country.",
+    "He spent the money on science. He built a laboratory, first in a garage and then in the old Spencer Trask house at Tuxedo Park, and paid for the work himself. With Harvey and Garret Hobart he recorded the brain's electrical activity through the night, and in Science in 1935 and 1937 they described sleep in five states. His work on precision clocks, published in 1931, held the idea of a master station and two slaves that later ran Loran. In September 1940 the British Tizard Mission brought the cavity magnetron to America. Loomis chaired the National Defense Research Committee's microwave committee, and the magnetron was shown at the Washington hotel where he kept an apartment. He closed Tuxedo Park that November. The Radiation Laboratory at MIT grew out of his committee, from 30 physicists to almost 3,900 people by late 1945, and industry built $1.5 billion of radar from its designs. Loran, the long-range navigation system, was his own invention.",
+    "The crash story is told too cleanly. Jennet Conant, his biographer, says he and Thorne quietly moved into cash before 1929, and estimates that he made about $50 million between 1929 and 1934. But in May 1929 the two of them were among the founders of Commonwealth & Southern, a utility holding company with $1.14 billion of assets, and by 1940 Loomis was its major stockholder. The private life rests on Conant too. She reports a long secret affair with Manette Hobart, the young wife of his own laboratory assistant and co-author. On 4 April 1945 he divorced Ellen, his wife of more than thirty years, and married Manette the same day in Nevada. The reaction stung him, and he withdrew from public life. He died in 1975."
+  ],
+  "bio": {
+    "t": "Tuxedo Park: A Wall Street Tycoon and the Secret Palace of Science That Changed the Course of World War II",
+    "a": "Jennet Conant",
+    "y": "2002",
+    "why": "The only full life, and the source of everything dramatic in the popular version. Read it knowing two things: Timothy Ferris, reviewing it warmly, found its physics shaky and its notes thin; and Conant is the granddaughter of James B. Conant, Loomis's wartime colleague. Luis Alvarez's memoir for the National Academy of Sciences (1980) is the friend's account, exact on the science and silent on the money and the marriage."
+  },
+  "contested": "Three things, and one source carries most of them. The exit from the market is cash in Conant's telling and in Forbes's, gold in other retellings, and 1928 in some and 1929 in others; Alvarez, who knew him for thirty years, does not mention it at all, and the founding of Commonwealth & Southern in the same year sits awkwardly beside a man said to have sold everything. Conant's $50 million is an estimate with no base given: gross, net or the size of the funds. The guest list at Tower House (Einstein, Bohr, Heisenberg) comes from Alvarez's memory of a guest book he never saw and from Conant; no visitors' book or letter has been printed. On radar, Alvarez says Loomis founded and guided the Radiation Laboratory, and the counter-claims belong to the British who brought the magnetron and to Vannevar Bush's committee structure; no historian has been found disputing his part in print. The line that radar won the war while the bomb only ended it is said by MIT's own history to have been something Rad Lab people liked to say. It has no author.",
+  "across": [
+    {
+      "to": "lives:edward-thorp",
+      "label": "Edward Thorp",
+      "txt": "— the other scientist who took a laboratory habit to the market, and kept the habit."
+    },
+    {
+      "to": "lives:henry-singleton",
+      "label": "Henry Singleton",
+      "txt": "— an MIT engineer who went the other way, from the laboratory to capital, and was as private about it."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1905 · 1912 · 1915",
+      "s": "Entry to Yale, Harvard Law degree and partnership at Winthrop and Stimson: Luis W. Alvarez, 'Alfred Lee Loomis, 1887–1975', Biographical Memoirs of the National Academy of Sciences, vol. 51 (1980)"
+    },
+    {
+      "b": "five",
+      "s": "States of sleep found in the Tuxedo Park recordings: Alvarez, NAS Biographical Memoirs (1980), and Loomis, Harvey and Hobart in Science 81 (1935) and 85 (1937), as listed in its bibliography"
+    },
+    {
+      "b": "30 · almost 3,900",
+      "s": "Rad Lab staff at its start and by late 1945: American Institute of Physics, catalogue record for the MIT Radiation Laboratory records"
+    },
+    {
+      "b": "$1.5 billion",
+      "s": "Radar built by industry from Rad Lab designs: MIT Lincoln Laboratory, 'The Rad Lab', history page"
+    },
+    {
+      "b": "$1.14 billion",
+      "s": "Assets of Commonwealth & Southern, organised May 1929 with Thorne and Loomis of Bonbright among its founders: 'Business: Unpyramiding', TIME, 20 January 1930"
+    },
+    {
+      "b": "$50 million",
+      "s": "Conant's estimate of what he made between 1929 and 1934: Jennet Conant, interview on C-SPAN Booknotes, 9 June 2002"
+    },
+    {
+      "b": "4 April 1945",
+      "s": "His divorce and remarriage the same day: Timothy Ferris, 'The Gentleman Scientist', New York Review of Books, 27 March 2003"
+    }
+  ]
+}

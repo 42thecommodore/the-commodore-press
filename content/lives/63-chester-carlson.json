@@ -40,6 +40,11 @@
       "to": "lives:charles-goodyear",
       "label": "Charles Goodyear",
       "txt": "— a century earlier, another inventor who spent years with nothing from one idea, and died in debt."
+    },
+    {
+      "to": "lives:james-dyson",
+      "label": "James Dyson",
+      "txt": "— another inventor turned away at home, whose first licence was taken abroad; he counted 5,127 prototypes before one worked."
     }
   ],
   "facts": [

@@ -42,19 +42,14 @@
   "contested": "Who actually insisted on film is argued, and this house cannot settle it from what it has read. The Library of Congress records that the show was shot on film and that this is why the reruns were possible; it does not apportion the decision, and the credit is variously given to Arnaz, to Ball, to the producer Jess Oppenheimer and to the cinematographer. The entry therefore claims the decision mattered, which is documented, and not that any one person made it, which is not. Her later running of Desilu, frequently described as a first for a woman at that scale, is also not sourced here — the row is in dashboard/research-leads.md.",
   "across": [
     {
-      "to": "press:why-firms-exist",
-      "label": "Why Firms Exist",
-      "txt": "— Coase's question with a camera in it: they made the thing themselves rather than letting the network own it, and the boundary of the firm is where the negatives sat."
-    },
-    {
-      "to": "press:compounding-machines",
-      "label": "Compounding Machines",
-      "txt": "— a small organisation that produced far past its size, because it owned a library that kept earning after the work stopped."
-    },
-    {
       "to": "lives:david-ogilvy",
       "label": "David Ogilvy",
       "txt": "— the same misreading from the other end of the business: remembered for the surface, and the archive says otherwise."
+    },
+    {
+      "to": "lives:david-geffen",
+      "label": "David Geffen",
+      "txt": "— the same lesson in records: own the recording, not the performance, and sell it again."
     }
   ]
 }

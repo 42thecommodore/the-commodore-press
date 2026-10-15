@@ -51,7 +51,9 @@ const LOG        = publishedLog(ROOT);   // the editor's column, published piece
 /* The wings, named once. A typed "five wings" outlived the wings themselves in four
    places — the meta description, the front-door standfirst, package.json and the social
    card — because nothing counted them. */
-const WINGS = ["The Press", "Lives", "The Atlas"];
+// The Press (Wing I, the titles) was retired on 2026-10-14: its pages are still built, marked
+// retired, but it is no longer a wing of the library.
+const WINGS = ["Lives", "The Atlas"];
 const licenced = (re) => Object.keys(PLATELIC)
   .filter(k => k[0] !== "_" && (!re || re.test(PLATELIC[k].licence)));
 
@@ -89,11 +91,10 @@ const split = list => {
   }
   return [cards, bodies];
 };
-const [BOOK_CARDS, BOOK_BODIES] = split(BOOKS);
-const [ADJ_CARDS, ADJ_BODIES] = split(ADJACENT);
+// the retired Press is read on its own pages (t/<id>/), so the library carries Lives only
 const [LIFE_CARDS, LIFE_BODIES] = split(LIVES);
-const LIBRARY = safe(`/* GENERATED — do not edit. The bodies of every entry, from content/. */
-window.__library(${JSON.stringify({ press: { ...BOOK_BODIES, ...ADJ_BODIES }, lives: LIFE_BODIES })});
+const LIBRARY = safe(`/* GENERATED — do not edit. The bodies of every life, from content/. */
+window.__library(${JSON.stringify({ lives: LIFE_BODIES })});
 `);
 // the name changes when the text does, so a reader's browser never keeps a stale copy
 const LIBRARY_FILE = `library.${crypto.createHash("sha1").update(LIBRARY).digest("hex").slice(0, 10)}.js`;
@@ -108,9 +109,6 @@ const DATA = safe([
   "/* GENERATED — do not edit here. Sources live in content/ and assets/plates/. */",
   K("PLATES", PLATES),
   K("LIBRARY_FILE", LIBRARY_FILE),
-  K("BOOKS", BOOK_CARDS),
-  K("ADJACENT", ADJ_CARDS),
-  "const ALL = BOOKS.concat(ADJACENT);",
   K("LIVES", LIFE_CARDS),
   K("DOMAINS", DOMAINS),
   K("DCOLOR", DCOLOR),
@@ -175,7 +173,7 @@ const out = fill(typesetHTML(read("templates/shell.html")))   // the frame's own
   .replace("<!--FEED-->", () => UPDATES_LINK(SITE) + (LOG.length ? `\n<link rel="alternate" type="application/rss+xml" title="The Commodore Press — the Log" href="${SITE}/feed.xml">` : ""))
   // the colophon promises no cookies and no analytics; once a sign-up exists it also says who holds the addresses
   .replace("<!--NEWSCOLOPHON-->", NEWS && NEWS.action ? ` If you subscribe to the newsletter, your address is held by ${NEWS.provider}, used only to send it; every issue carries its own unsubscribe link.` : "")
-  .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the three wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
+  .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
   .replace("<!--FONTS-->", () => fontPreload("") + "\n<style>" + fontFaces("") + "</style>")
   .replace("<!--CSS-->", () => lean(read("theme/press.css")) + lean(read("theme/atlas.css")) + fillMark(lean(read("theme/reading.css"))))
   .replace("<!--DATA-->", () => DATA)
@@ -277,7 +275,7 @@ if (fs.existsSync(ROOTFILES)) for (const f of fs.readdirSync(ROOTFILES).filter(f
 
 const kb = n => (n / 1024).toFixed(0) + " KB";
 console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}, and ${LIBRARY_FILE} — ${kb(Buffer.byteLength(LIBRARY))}, fetched when a book or search is opened`);
-console.log(`  ${BOOKS.length} books · ${ADJACENT.length} adjacent · ${LIVES.length} lives`);
+console.log(`  ${LIVES.length} lives · ${BOOKS.length + ADJACENT.length} retired titles, on their own pages only`);
 console.log(`  ${ENTRY_URLS.length} entry pages in dist/t/ and dist/l/, a contents page, llms.txt`);
 if (UPDATES) console.log(`  updates.xml — ${UPDATES.items} items, the newest ${UPDATES.newest}`);
 console.log(LOG.length ? `  the Log: ${LOG.length} published piece(s), feed.xml` : `  the Log: nothing published yet — held back`);

@@ -144,6 +144,7 @@ footer{border-top:1px solid var(--rule);padding:24px 20px;font:var(--fs-2)/1.6 v
    corrections are what this press sells, so they are set apart rather than buried among
    same-weight headings. Returns the html and the section list for the side rail. */
 const ENTRY_CSS = `
+.retired{margin:18px 0 0;max-width:40em;font-size:var(--fs-3);line-height:1.5}
 .crumbs{display:flex;gap:8px;align-items:center;min-width:0;overflow:hidden;white-space:nowrap}
 .crumbs i{font-style:normal;opacity:.4}.crumbs span{opacity:.72;overflow:hidden;text-overflow:ellipsis}
 .glance{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 22px;margin-top:26px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--cink) 25%,transparent);
@@ -241,6 +242,10 @@ const THEME = ["reading.css", "reading.js"].map(f => new URL(`../theme/${f}`, im
 const [READING_CSS, READING_JS] = THEME.map(u => fillMark(fs.readFileSync(u, "utf8")));
 const SHARE_ICON = `<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 4l3-3 3 3M2 7v4h8V7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
 const END_LINE = "The link opens its own page: the whole entry, with its sources, its disputes and any corrections.";
+/* The Press — Wing I, the titles — was retired on 2026-10-14. Its pages stay, so no link anyone
+   holds goes dead and no correction printed on one disappears; each says plainly that it is no
+   longer part of the library. The colophon (templates/shell.html) says the same. */
+const RETIRED_LINE = "The Press was retired from the library on 14 October 2026. This title stays at its address, with its sources, its disputes and any corrections, for anyone who holds the link. Nothing in it was withdrawn as wrong.";
 /* Reading time. The one count: build/build.mjs stores it on each card as b.mins for the
    library's reader, so the reader and the entry page always print the same minutes. */
 function wordsOf(b) {
@@ -350,11 +355,12 @@ ${FONTS(SITE, "../../")}
 <script>document.documentElement.classList.add("rs-js")</script>
 </head>
 <body style="--cover:${b.cover};--cink:${b.ink};--accent:${b.accent}">
-<nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">${wingName}</a><i>/</i><span>${name}</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">${mins} min read</span><button class="rs-go rs-js-only" type="button" data-rs="share">${SHARE_ICON}Share</button><a class="wl" href="../../#${isPress ? "press" : "lives"}">${wing} →</a></span><span class="rs-bar" id="rbar"></span></nav>
+<nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">${wingName}</a><i>/</i><span>${name}</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">${mins} min read</span><button class="rs-go rs-js-only" type="button" data-rs="share">${SHARE_ICON}Share</button><a class="wl" href="../../${isPress ? "" : "#lives"}">${wing} →</a></span><span class="rs-bar" id="rbar"></span></nav>
 <header class="band"><div class="in">
-  <div class="btxt"><div class="kick">${isPress ? `The Press · ${b.field}` : `Lives · № ${b.no} · ${b.years}`}</div>
+  <div class="btxt"><div class="kick">${isPress ? `The Press, retired · ${b.field}` : `Lives · № ${b.no} · ${b.years}`}</div>
   <h1>${name}</h1>
   <p class="sub">${sub}</p>
+  ${isPress ? `<p class="retired">${RETIRED_LINE}</p>` : ""}
   ${isPress && b.claim ? `<p class="claim">${b.claim}</p>` : ""}
   <div class="glance">${glance}</div></div>
   ${coverHTML(b, isPress, plateFile)}
@@ -364,7 +370,7 @@ ${FONTS(SITE, "../../")}
 <main class="body">
 ${main}
 ${endBlock(url, name, `${strip(name)} — The Commodore Press`, shareText, readNext(b, next, kind, ctx.byRef, known))}
-<a class="cta" href="../../#${slug}">Open in the library →</a>
+${isPress ? "" : `<a class="cta" href="../../#${slug}">Open in the library →</a>`}
 <nav class="pn">${[[prev, "←"], [next, "→"]].map(([e, arrow]) => `<a href="../${e.id}/"><span>${arrow === "←" ? "← Previous" : "Next →"}</span>${isPress ? e.title : e.n}</a>`).join("")}</nav>
 ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../../", "Follow the Press", hasLog) : ""}
 </main>
@@ -425,7 +431,7 @@ export function writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout, 
   BOOKS.concat(ADJACENT).forEach(b => { byRef["press:" + b.id] = b; });
   LIVES.forEach(l => { byRef["lives:" + l.id] = l; });
   const urls = [];
-  for (const [kind, list, dir, wing] of [["press", BOOKS.concat(ADJACENT), "t", "All titles"], ["lives", LIVES, "l", "All lives"]]) {
+  for (const [kind, list, dir, wing] of [["press", BOOKS.concat(ADJACENT), "t", "The library"], ["lives", LIVES, "l", "All lives"]]) {
     fs.rmSync(path.join(dist, dir), { recursive: true, force: true });
     list.forEach((b, i) => {
       const prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
@@ -543,7 +549,7 @@ ${fontPreload(base)}
    preview can lay out before the image arrives, and the X equivalents of title and text. */
 const CARD_TAGS = (SITE, title, desc) => `<meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Commodore Press — a working library in three wings">
+<meta property="og:image:alt" content="The Commodore Press — a working library of people">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${attr(title)}">
 <meta name="twitter:description" content="${attr(desc)}">
@@ -714,9 +720,9 @@ export function writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG }) {
   fs.rmSync(out, { recursive: true, force: true }); fs.mkdirSync(out, { recursive: true });
   const item = (href, t, s) => `<li><a href="${href}"><span class="t">${t}</span><span class="k">${s}</span></a></li>`;
   const url = `${SITE}/contents/`;
-  const desc = `Every title and life in the Commodore Press: ${BOOKS.length + ADJACENT.length} ideas and ${LIVES.length} people, each with its sources and the place it is still argued.`;
+  const desc = `Every life in the Commodore Press — ${LIVES.length} people, each sourced and argued in the open — and the ${BOOKS.length + ADJACENT.length} retired titles of the Press.`;
   // the contents as a list a search engine can read without following every link
-  const entries = BOOKS.concat(ADJACENT).map(b => [strip(b.title), `${SITE}/t/${b.id}/`]).concat(LIVES.map(l => [strip(l.n), `${SITE}/l/${l.id}/`]));
+  const entries = LIVES.map(l => [strip(l.n), `${SITE}/l/${l.id}/`]).concat(BOOKS.concat(ADJACENT).map(b => [strip(b.title), `${SITE}/t/${b.id}/`]));
   const ld = { "@context": "https://schema.org", "@type": "CollectionPage", name: "Contents — The Commodore Press", url, description: desc,
     isPartOf: { "@type": "WebSite", name: "The Commodore Press", url: SITE + "/" },
     mainEntity: { "@type": "ItemList", numberOfItems: entries.length,
@@ -738,7 +744,7 @@ ${THEME_BOOT}
 <meta property="og:image" content="${SITE}/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Commodore Press — a working library in three wings">
+<meta property="og:image:alt" content="The Commodore Press — a working library of people">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contents — The Commodore Press">
 <meta name="twitter:description" content="${attr(desc)}">
@@ -750,11 +756,11 @@ ${FONTS(SITE, "../")}
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
 <nav class="top"><a href="../">The Commodore Press</a><a href="../">The library →</a></nav>
 <header class="band"><div class="in"><div class="kick">Contents</div><h1>Everything on the shelves</h1>
-<p class="sub">${BOOKS.length + ADJACENT.length} titles and ${LIVES.length} lives. Every figure carries its source.</p></div></header>
+<p class="sub">${LIVES.length} lives, and the retired titles of the Press. Every figure carries its source.</p></div></header>
 <main class="body">
-<h2 id="press">The Press · ideas</h2><ul class="list">${BOOKS.concat(ADJACENT).map(b => item(`../t/${b.id}/`, b.title, inline(strip(b.claim || b.sub || "")))).join("")}</ul>
 <h2 id="lives">Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `№ ${l.no} · ${l.field} · ${l.years}`)).join("")}</ul>
 ${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
+<h2 id="press">The Press · retired</h2><p>The Press was retired from the library on 14 October 2026. Its titles stay at their addresses, with their sources, their disputes and any corrections, for anyone who holds a link. Nothing in them was withdrawn as wrong.</p><ul class="list">${BOOKS.concat(ADJACENT).map(b => item(`../t/${b.id}/`, b.title, inline(strip(b.claim || b.sub || "")))).join("")}</ul>
 </main>
 <footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · <a href="../updates.xml">follow by RSS</a> · ${DUSK_SWITCH}</footer>
 </body>
@@ -766,18 +772,18 @@ ${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.ma
      people's behalf. The proposal is informal; the cost is one small file. */
   fs.writeFileSync(path.join(ROOT, "dist/llms.txt"), `# The Commodore Press
 
-> A working library in three wings — ideas, lives, and the people the editor listens to now. Every figure carries a named source; disputes are printed, not hidden; corrections are appended, never patched.
+> A working library of people, in two wings — lives, and the people the editor listens to now. Every figure carries a named source; disputes are printed, not hidden; corrections are appended, never patched.
 
-- [Contents](${SITE}/contents/): every title and life, one link each
+- [Contents](${SITE}/contents/): every life, and the retired titles, one link each
 - [Colophon and corrections](${SITE}/#colophon): the house's promises and its numbered corrections
 - [New titles, lives and corrections](${SITE}/updates.xml): RSS, newest first
 ${LOG.length ? `- [The Log](${SITE}/log/): the editor's signed column ([feed](${SITE}/feed.xml))
 ` : ""}
-## The Press
-${BOOKS.concat(ADJACENT).map(b => `- [${strip(b.title)}](${SITE}/t/${b.id}/): ${strip(b.claim || b.sub || "")}`).join("\n")}
-
 ## Lives
 ${LIVES.map(l => `- [${strip(l.n)}](${SITE}/l/${l.id}/): ${strip(l.lede)}`).join("\n")}
+
+## The Press (retired 14 October 2026; the pages stay)
+${BOOKS.concat(ADJACENT).map(b => `- [${strip(b.title)}](${SITE}/t/${b.id}/): ${strip(b.claim || b.sub || "")}`).join("\n")}
 `);
   return `${SITE}/contents/`;
 }

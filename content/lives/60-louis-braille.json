@@ -27,11 +27,6 @@
   "contested": "Three things are argued. The first is when Barbier reached the school. The Musée Louis Braille at Coupvray has him sending instructions and tools in 1821; Pamela Lorimer's 1996 Birmingham thesis, following Pierre Henri, has him visiting in 1823, the year the Académie des Sciences tested his code; Paula Kimbrough's history in the Braille Monitor (2005) has a demonstration Pignier arranged, with no year. The second is the fire. Kimbrough writes that Dufau burned every book in the new code, took the slates and styli, and had pupils slapped and starved for using it. The American Foundation for the Blind says the 73 books burned were in Haüy's letters, and Lorimer and the Coupvray museum describe a ban and no fire at all. The bonfire of braille books is the most repeated version and the least sourced. The third is credit. Pignier wrote in 1859, as Lorimer translates him, that to modify in this way was not to perfect but to invent. Braille had already given Barbier the credit in print, thirty years earlier, and Barbier never opposed the code that replaced his.",
   "across": [
     {
-      "to": "press:movable-type",
-      "label": "Movable Type",
-      "txt": "— the other way of putting words where a reader could reach them. Haüy's books needed a press; Braille's could be written by hand."
-    },
-    {
       "to": "lives:alexander-graham-bell",
       "label": "Alexander Graham Bell",
       "txt": "— who wanted the deaf taught to speak, and taught away from sign; Braille gave the blind a script of their own."
