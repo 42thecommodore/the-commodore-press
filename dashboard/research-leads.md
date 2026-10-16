@@ -368,3 +368,14 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Munger | SEC file HO-784 (Blue Chip Stamps, 1974–76) | The reported $115,000; not printed |
 | Munger | Janet Lowe, *Damn Right!* (2000) | Harvard admission, Teddy, the eye: printed from Wikipedia's account |
 | Munger | UCSB housing office, 2026; McFadden's resignation letter | Munger Hall's status and the windowless objection |
+| Gillette | Russell B. Adams Jr., *King C. Gillette* (1978), pp. 16–19 | Painter's throwaway advice; not quoted, attributed in `contested` |
+| Gillette | Adams; NYT obituary, 11 July 1932; Los Angeles probate | The 1910 share sale to Joyce and his estate after the crash; not printed |
+| Gillette | Gillette company timeline via Adams | 3.5 million razors and 32 million blades for the army, 1917–18; not printed |
+| Tesla | W. Bernard Carlson, *Tesla* (2013), Westinghouse chapters and endnotes; Westinghouse annual report, 1897 | The $2.50/hp royalty, the ~$216,600 buyout, the torn-contract story; in `contested` only |
+| Tesla | Seifer, *Wizard*; Cheney, *Man Out of Time* | Morgan's $150,000 and the 1917 scrapping of the tower; not printed |
+| Szilard | *Leo Szilard: His Version of the Facts* (Weart and Szilard, 1978); Lanouette pp. 198–202 | Who drafted which version of the 1939 letter; the dates of the July visits |
+| Szilard | Espacenet GB630726; Wellerstein, nuclearsecrecy.com | The patent's 1949 publication and the Admiralty assignment (printed from atomicarchive) |
+| Szilard | Groves's 1942 draft internment letter (NARA RG 77) | In `contested` only |
+| Seacole | Nightingale to Sir Harry Verney, 5 August 1870, Wellcome Ms 9004/60 | Her view of Seacole; no wording printed |
+| Seacole | Jane Robinson, *Mary Seacole* (2004), pp. 157–180; *The Times*, July 1857 | Bankruptcy dates, the Seacole Fund festival crowd and takings; not printed |
+| Seacole | Plate decision, 2026-10-15: Challen, c. 1869, NPG 6856, via Commons {{PD-Art}}. The NPG's 2009 claim over its photograph does not stand under *THJ v Sheridan* [2023] EWCA Civ 1354; painter died 1881. Used as plain public domain | Closed by decision |

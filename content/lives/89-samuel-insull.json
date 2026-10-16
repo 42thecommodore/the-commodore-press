@@ -30,6 +30,11 @@
       "to": "lives:thomas-edison",
       "label": "Thomas Edison",
       "txt": "— whose private secretary he was from 1881, and who put him in charge of the new works at Schenectady before Chicago."
+    },
+    {
+      "to": "lives:nikola-tesla",
+      "label": "Nikola Tesla",
+      "txt": "— who joined the Edison company in New York in 1884, while Insull was Edison's secretary, and left within a year over a promise of $50,000."
     }
   ],
   "plateOf": "William L. Koehne Studio, Chicago.",

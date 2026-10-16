@@ -1,0 +1,54 @@
+{
+  "id": "mary-seacole",
+  "no": 105,
+  "keep": "She is remembered as Nightingale's rival nurse. Her own book makes her something rarer: a trader who paid her own way to a war and nursed the men her store fed.",
+  "n": "Mary Seacole",
+  "years": "1805–1881",
+  "place": "Jamaica, Panama and the Crimea",
+  "field": "Medicine & Enterprise",
+  "group": "famous",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "The War Office refused her, Nightingale's nurses refused her, and the Crimean Fund would not pay her passage. So she went at her own cost, as a merchant, and built a hotel two miles from Balaclava.",
+  "copy": [
+    "Mary Seacole was born in Kingston, Jamaica. Her father was a soldier of an old Scottish family. Her mother kept a boarding house and was, in her daughter's word, a doctress, in high repute with the officers stationed at Kingston and their wives. Seacole learned the trade from her. She nursed through the cholera that reached Jamaica in 1850, then followed her brother to the Isthmus of Panama, where he kept a store and hotel at Cruces, and treated cholera there too. She went home to nurse through yellow fever in 1853. In London in the autumn of 1854, just after the Alma, she tried to join the war. She applied at the War Office, to the Secretary at War and to one of Nightingale's companions, and was turned away each time. The managers of the Crimean Fund would not give her a passage. Standing in the street afterwards, she asked herself whether \"American prejudices against colour had some root here.\"",
+    "She wrote that she would go \"upon my own responsibility and at my own cost,\" and she went as a trader. With Mr. Day, a distant connection of her late husband, she set up the firm of Seacole and Day, which the camp wits called Day and Martin. On the way out, at Scutari, Nightingale asked her what she wanted, and found her a bed for the night. At Spring Hill, about two miles from Balaclava, the partners built the British Hotel: a long iron room with counters and shelves and a store above, on at least an acre, which cost £800. It sold meals and supplies to officers and men. She also went out to the lines with medicines and food. The Times correspondent W. H. Russell saw her at the assault on the Redan, at the Tchernaya and at the fall of Sebastopol, \"laden, not with plunder, good old soul! but with wine, bandages, and food for the wounded or the prisoners.\"",
+    "Peace ruined her. The shelves were full of stock nobody would buy, the firm failed in England and was dissolved, and in her own phrase she \"returned bankrupt in fortune.\" Her memoir, Wonderful Adventures of Mrs. Seacole in Many Lands, came out in 1857 with a preface by Russell. Its word for what she had been is not nurse. Russell called her the first to have \"redeemed the name of 'sutler'\", a camp trader, and praised her for nursing England's sick as well. The book has her refused by Nightingale's people and given a bed by Nightingale. The rivalry between the two women is not in it."
+  ],
+  "bio": {
+    "t": "Wonderful Adventures of Mrs. Seacole in Many Lands",
+    "a": "Mary Seacole",
+    "y": "1857",
+    "why": "Her own book, and still the main source for her life; every biography argues from it. It is short, funny and sharp about America, and free at Project Gutenberg. For the case that her legend has outrun it, read Lynn McDonald's Mary Seacole: The Making of the Myth (2014); for the search for her in the archives, Helen Rappaport's In Search of Mary Seacole (2022)."
+  },
+  "contested": "Whether she was a nurse at all, in the sense the word came to have. Lynn McDonald, writing for the Nightingale Society and in Mary Seacole: The Making of the Myth, argues that she ran what was in effect an officers' club in 1855 and 1856, did not pioneer nursing and did not work under fire as her admirers claim; the Society was among those who objected to the statue of Seacole unveiled at St Thomas' Hospital in 2016. The strongest answer is the earliest one: Russell, who was there, vouched for her nursing in print in 1857, and her book prints testimonials from officers dated 1856, among them one thanking her for remedies she gave the sick of the Army Works Corps and Land Transport Corps. Nightingale's own view is in a private letter of 1870 to her brother-in-law, Sir Harry Verney, held at the Wellcome Library; it is quoted in several different wordings, and as its text has not been opened here none of them is printed. The money raised for her by the Seacole Fund festival at the Royal Surrey Gardens in July 1857 is reported anywhere from £57 to nothing at all, because the company running the gardens went bankrupt; the crowd is put at 40,000 or 80,000. Her birth year, 1805, is the one usually given; her book says only that she and the century were young together.",
+  "across": [
+    {
+      "to": "lives:florence-nightingale",
+      "label": "Florence Nightingale",
+      "txt": "— whose companions turned her away, and who herself gave her a bed at Scutari."
+    },
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— who was working out how cholera spread in the same years she was treating it in Jamaica and on the Isthmus."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1850 · 1853",
+      "s": "Cholera in Jamaica, and the yellow fever she nursed through on her return: Mary Seacole, Wonderful Adventures of Mrs. Seacole in Many Lands (1857), chapters II and VII (Project Gutenberg 23031)"
+    },
+    {
+      "b": "two miles · an acre · £800",
+      "s": "Spring Hill's distance from Balaclava, and the size and cost of the British Hotel: Wonderful Adventures, chapters XI and XII"
+    },
+    {
+      "b": "autumn of 1854",
+      "s": "Her arrival in London, just after the battle of the Alma, and her applications to the War Office and the Crimean Fund: Wonderful Adventures, chapter VIII"
+    }
+  ]
+}

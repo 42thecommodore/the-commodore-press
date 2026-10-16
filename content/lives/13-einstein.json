@@ -40,6 +40,11 @@
       "to": "lives:isaac-newton",
       "label": "Isaac Newton",
       "txt": "— the gravity his general theory replaced, which bridges and spacecraft still run on."
+    },
+    {
+      "to": "lives:leo-szilard",
+      "label": "Leo Szilard",
+      "txt": "— his friend and co-patentee, who drafted the 1939 letter to Roosevelt that Einstein signed."
     }
   ]
 }

@@ -1,0 +1,66 @@
+{
+  "id": "leo-szilard",
+  "no": 104,
+  "keep": "The letter that started the bomb carries Einstein's name and Szilard's draft. Six years later Szilard's petition against using it never reached the President at all.",
+  "n": "Leo Szilard",
+  "years": "1898–1964",
+  "place": "Budapest, Berlin, London and Chicago",
+  "field": "Physics",
+  "group": "obscure",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "The most famous letter of the atomic age is called the Einstein letter. Einstein signed it. Szilard thought of sending it, went to Long Island to get the signature, and drafted it.",
+  "copy": [
+    "Leo Szilard was born Leo Spitz in Budapest on 11 February 1898. He left Hungary for Berlin in 1919, took his doctorate there in 1922 and became a close friend of Einstein. The two of them patented a refrigerator together, filed in 1927 and granted in 1930. When Hitler took power in 1933, Szilard left for London. On 12 September that year, by the usual account while he waited at a red light, he saw how a nuclear chain reaction might work: an element that, struck by one neutron, gave off two, and those two four. He filed a British patent on it on 28 June 1934. In 1936 he assigned it to the Admiralty, so that it would stay secret.",
+    "When the news came from Germany that the uranium atom could be split, Szilard, by then at Columbia, set up experiments with Enrico Fermi at once to see whether it gave off the spare neutrons a chain needed. He also tried to get his colleagues to stop publishing their work on it. In July 1939 he went with Eugene Wigner, and then with Edward Teller, to the house on Long Island where Einstein was spending the summer. The letter to Roosevelt is dated 2 August 1939, at Nassau Point, Peconic. Szilard drafted it and Einstein signed it, and Alexander Sachs carried it to the President in October. At Chicago Szilard was chief physicist of the Metallurgical Laboratory. He bought the graphite and uranium for the first reactor, and worked with the suppliers to get an impurity, boron, out of the graphite. The pile went critical on 2 December 1942. He and Fermi held its patent together.",
+    "Then he tried to stop the bomb being used. On 17 July 1945 he sent a petition to President Truman, signed by himself and 69 others at the Chicago laboratory. It asked that the United States not use atomic bombs on Japan unless the terms of surrender had been made public and Japan had refused them. General Leslie Groves opposed it, and it never reached the President. Thirteen days earlier Groves had written to Churchill's science adviser, Lord Cherwell, who had employed Szilard at Oxford, asking what they had discussed in 1943: \"Frankly, Dr. Szilard has not, in our opinion, evidenced wholehearted cooperation in the maintenance of security.\" Cherwell replied that he was sorry to hear Szilard had been indiscreet. Szilard resigned from the laboratory on 1 June 1946, moved into biology and helped to found the Salk Institute. He died in his sleep on 30 May 1964."
+  ],
+  "bio": {
+    "t": "Genius in the Shadows: A Biography of Leo Szilard, the Man Behind the Bomb",
+    "a": "William Lanouette with Bela Silard",
+    "y": "1992",
+    "why": "The one full biography, written with his brother's help and from his papers. For his own account read Leo Szilard: His Version of the Facts, edited by Spencer Weart and Gertrud Weiss Szilard (1978); for the documents of 1945, Gene Dannen's transcriptions from the National Archives at dannen.com."
+  },
+  "contested": "How much of the letter is his words, and how much Einstein's. The Atomic Heritage Foundation says plainly that Szilard drafted it and Einstein signed. Walter Isaacson's account, and Lanouette's as summarised by others, has Einstein dictating a German version to Teller on the second visit, and Szilard working two English drafts from it, of about 25 and 45 lines; Einstein signed both and Sachs took the longer. That would make the letter a joint text in Szilard's hand, and the dates of the visits differ between tellings, 12 or 16 July for the first. Szilard's own account, in His Version of the Facts, has not been opened here. The red light is his story, and so is the crossing: Southampton Row is the usual corner, but where it was has never been fixed. The petition's count also varies, from 'over 50' in the Energy Department's history to 68 at the Atomic Heritage Foundation; the 70 names above are from the copy in the National Archives. The historian Alex Wellerstein has pointed out that parts of the 1934 patent were wrong in their physics. And the story that Groves drafted an order in 1942 for Szilard to be interned as an enemy alien, which the Secretary of War refused to sign, is told in the reviews of Lanouette and has not been read in a document.",
+  "across": [
+    {
+      "to": "lives:einstein",
+      "label": "Albert Einstein",
+      "txt": "— his friend and co-patentee, whose name went on the 1939 letter Szilard drafted."
+    },
+    {
+      "to": "lives:vannevar-bush",
+      "label": "Vannevar Bush",
+      "txt": "— on whose recommendation the Army took the bomb over, and with it the general Szilard spent the war arguing with."
+    }
+  ],
+  "facts": [
+    {
+      "b": "11 February 1898 · 1919 · 1922 · 1 June 1946",
+      "s": "His birth as Leo Spitz, his move to Berlin, his doctorate and his resignation from the Met Lab: Atomic Heritage Foundation, 'Leo Szilard', profile, ahf.nuclearmuseum.org"
+    },
+    {
+      "b": "12 September 1933 · 1936 · 30 May 1964",
+      "s": "The chain-reaction idea at a London red light, the patent's assignment to the Admiralty, and his death: atomicarchive.com, 'Leo Szilard (1898–1964)', biography"
+    },
+    {
+      "b": "US 1,781,541 · 16 December 1927 · 11 November 1930",
+      "s": "Einstein and Szilard's refrigeration patent, filed and granted: Google Patents, US1781541A"
+    },
+    {
+      "b": "GB 630,726 · 28 June 1934",
+      "s": "His British patent on a neutron chain reaction, and its filing date: Google Patents, GB630726A"
+    },
+    {
+      "b": "2 August 1939 · October 1939 · 2 December 1942",
+      "s": "The letter's date and its delivery by Sachs, and Chicago Pile-1 going critical: Atomic Heritage Foundation, 'Leo Szilard'; the letter itself, atomicarchive.com"
+    },
+    {
+      "b": "17 July 1945 · 69 co-signers · 4 July 1945",
+      "s": "The petition and its signers, and Groves's letter to Lord Cherwell: U.S. National Archives, Record Group 77, Manhattan Engineer District, transcribed by Gene Dannen, dannen.com"
+    }
+  ]
+}

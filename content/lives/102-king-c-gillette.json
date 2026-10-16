@@ -1,0 +1,66 @@
+{
+  "id": "king-c-gillette",
+  "no": 102,
+  "keep": "The model named after him, cheap razor and dear blades, is the one his company refused for as long as it held the patent.",
+  "n": "King C. Gillette",
+  "years": "1855–1932",
+  "place": "United States",
+  "field": "Business & Invention",
+  "group": "obscure",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "His name is on a business model: give away the razor and sell the blades. For the seventeen years his patent ran, his company did nothing of the kind. The razor and a dozen blades cost $5, and every dozen after that cost $1.",
+  "copy": [
+    "King Camp Gillette was a travelling salesman for a company that made bottle caps. \"It was in 1895, in my fortieth year, that I first thought of the razor,\" he wrote in the company's own magazine in 1918. The idea was a blade so thin and cheap that it could be thrown away instead of stropped and honed. A company was formed in 1901, and the engineer William Nickerson worked out how to cut the blades from strip steel instead of forging and grinding them. The patent was filed on 3 December 1901 and issued on 15 November 1904. In 1903 the company sold 51 razors and fourteen dozen blades.",
+    "Its first offer, in 1903, was a razor and twenty blades for $5. A month later it was twelve blades for $5. By the middle of 1904 the terms were fixed, and they held for the life of the patent: $5 for the razor with twelve blades, and $1 for every further dozen. The company did not cut the razor's price to win the blade trade. When Sears began selling it at $3.79 late in 1913, that was a discount by a retailer. In 1921, the year the patent ran out, the company did two things at once. It brought out a new razor, patented in 1920, at the old $5. And it repackaged the old razor as the Brownie, at $1. Sales of razor sets went from 2,090,616 in 1920 to 4,248,069 in 1921.",
+    "The part usually left out is what he wanted the world to look like. In 1894, before the razor, he published The Human Drift, a plan to house most of the country in a single city, Metropolis. It would hold \"upward of a hundred million rooms\", and he expected sixty million of the country's seventy million people to live in it. In World Corporation, in 1910, he put it beside Niagara Falls. He did not run the razor company for long. The Gale encyclopedia entry on him has him retire from active work in 1913 and keep the title of president until 1931. He died in Los Angeles in 1932, the year after he gave it up."
+  ],
+  "bio": {
+    "t": "King C. Gillette: The Man and His Wonderful Shaving Device",
+    "a": "Russell B. Adams Jr.",
+    "y": "1978",
+    "why": "The only full biography, written with the company's cooperation and so kind to it. Read it beside Randal Picker's article 'The Razors-and-Blades Myth(s)' (University of Chicago Law Review, 2011), which goes through the price lists year by year and finds the opposite of the story."
+  },
+  "contested": "Whose idea the throwaway blade was, and what Gillette was by the end. The usual account has William Painter, inventor of the crown bottle cap and Gillette's employer, telling him to invent something people use once and throw away; it comes from Adams's biography, which has not been opened here, and the wording varies from telling to telling, so it is printed above only as Gillette's own date for the razor. Picker's case is about the firm, not the man: he shows the company holding the razor at $5 until 1921, and allows that the cheap-razor strategy did arrive once the patent lapsed, so the myth is about its origin, not its existence. Adams and the company timeline drawn from him say Gillette sold most of his shares to the investor John Joyce in 1910 and died with his fortune much reduced by the crash; neither figure has been read in a document, and none is printed. Nor are the 3.5 million razors and 32 million blades the company is said to have sold the army in the First World War, a figure no source opened here gives.",
+  "across": [
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— who did what Gillette is credited with, cutting the machine's price year after year, from $850 to as little as $260."
+    },
+    {
+      "to": "lives:samuel-colt",
+      "label": "Samuel Colt",
+      "txt": "— another maker whose best-known line was attached to his name long after the fact."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1895 · 3 December 1901 · 15 November 1904 · 17 years",
+      "s": "His own date for the idea (Gillette Blade, February 1918, as quoted), the patent's filing and issue, and its term: Randal C. Picker, 'The Razors-and-Blades Myth(s)', 78 University of Chicago Law Review 225 (2011), pp. 227, 230 n. 12, 239"
+    },
+    {
+      "b": "51 razors · fourteen dozen blades",
+      "s": "Sales in 1903: Picker (2011), p. 238, citing McKibben"
+    },
+    {
+      "b": "$5 · twenty blades · twelve blades · $1 a dozen",
+      "s": "The 1903 offers and the terms fixed by mid-1904, held for the life of the patent: Picker (2011), pp. 234–238"
+    },
+    {
+      "b": "$3.79",
+      "s": "Sears's price for the razor from late 1913: Picker (2011), p. 243"
+    },
+    {
+      "b": "$5 · $1 · 2,090,616 · 4,248,069",
+      "s": "The 1921 new razor and the Brownie, and razor sets sold in 1920 and 1921 from the company's 1921 annual report: Picker (2011), pp. 244–248"
+    },
+    {
+      "b": "sixty million · seventy million · a hundred million rooms",
+      "s": "Metropolis: King C. Gillette, The Human Drift (1894), pp. 89–91; its site by Niagara Falls in World Corporation (1910), pp. 232–233 (archive.org scans)"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "nikola-tesla",
+  "no": 103,
+  "keep": "The man the legend calls robbed wrote, at sixty-three, that he knew of no living inventor as fortunate as himself.",
+  "n": "Nikola Tesla",
+  "years": "1856–1943",
+  "place": "Croatia and New York",
+  "field": "Engineering",
+  "group": "famous",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "Everyone knows that Edison promised him $50,000 and then called it a joke. Tesla's own account gives the promise to the Manager, and calls meeting Edison a memorable event in his life.",
+  "copy": [
+    "Nikola Tesla was born in 1856 in Smiljan, a village in what is now Croatia. He studied at the Polytechnic School in Graz, where a professor ran a Gramme dynamo as a motor and its brushes sparked. Tesla spent the rest of his time there trying to build a motor without them, and failed. In 1880 he went to Prague at his father's wish. He broke down working on the new telephone exchange in Budapest. In Paris he worked for the French Edison company, which sent him to Strasbourg in 1883 to rescue a lighting plant that had blown out a wall in front of the old Emperor. In 1884 he landed in New York.",
+    "By his own account he won Edison's confidence within weeks, by repairing both lighting dynamos of the steamer Oregon overnight. For nearly a year he worked from 10.30 in the morning until five the next morning, and designed twenty-four types of standard machine. Then he resigned. Investors gave him an arc-light company under his name and wanted nothing to do with his alternating current. In 1886 he was left with a stock certificate of hypothetical value, in his words. The Tesla Electric Company followed in April 1887, and the motors it built ran as he had imagined them. Early in 1888 Westinghouse took them up for manufacture. At Niagara Falls Westinghouse won the powerhouse contract, for alternating current, in 1893. Its first power reached Buffalo at midnight on 16 November 1896.",
+    "The best-known story about him is the $50,000. Tesla told it himself, in the Electrical Experimenter in 1919, and he gave the promise to \"the Manager\", whom he never names. Of Edison the same pages say: \"The meeting with Edison was a memorable event in my life.\" They refuse the other half of the legend too. Of J. P. Morgan, who backed the wireless tower on Long Island, Tesla wrote that he \"carried out his generous promise to the letter.\" He added that he knew of no living inventor \"as fortunate as myself\" in the use made of his improvements. He spent his last ten years in rooms 3327 and 3328 of the Hotel New Yorker, and died there on 7 January 1943. In June the Supreme Court, ruling on Marconi's radio patent, found that a Tesla patent applied for in 1897 had anticipated Marconi's four tuned circuits."
+  ],
+  "bio": {
+    "t": "Tesla: Inventor of the Electrical Age",
+    "a": "W. Bernard Carlson",
+    "y": "2013",
+    "why": "A historian of technology reading the patents and the business papers, not the legend. For Tesla's own version read My Inventions, first printed in the Electrical Experimenter in 1919 and on Wikisource; most of what is told about him either comes from it or contradicts it."
+  },
+  "contested": "Who wronged him, and how much. The popular story has Edison cheating him and Westinghouse taking the royalties he tore up to save the company. Tesla's 1919 account blames an unnamed manager and praises Edison, and Charles Batchellor, whom the same pages call manager of the works, is the usual guess; it is a guess, since Tesla names nobody. The torn contract is told by PBS and many others without a document, and the dates given for the royalty release run from 1890 to 1897; the royalty of $2.50 a horsepower and the lump sum of about $216,600 that ended it are reported from Westinghouse's records by Carlson and Margaret Cheney, neither of which has been opened here, so neither figure is printed above. Morgan's $150,000 for the tower and its sale for scrap in 1917 are leads of the same kind. And the 1943 decision did not make him the inventor of radio. It struck down Marconi's broad claims, and its priority argument turned on John Stone Stone as much as on Tesla.",
+  "across": [
+    {
+      "to": "lives:thomas-edison",
+      "label": "Thomas Edison",
+      "txt": "— the employer he is said to have been cheated by, and whose meeting he called a memorable event in his life."
+    },
+    {
+      "to": "lives:samuel-insull",
+      "label": "Samuel Insull",
+      "txt": "— Edison's private secretary from 1881, in the same company Tesla joined in New York in 1884 and left within a year."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$50,000 · twenty-four types · nearly a year",
+      "s": "The promise he gave to \"the Manager\", the machines he designed and how long he worked those hours: Nikola Tesla, My Inventions, part IV, Electrical Experimenter, 1919 (Wikisource transcription)"
+    },
+    {
+      "b": "16 November 1896",
+      "s": "First power from Niagara reaching Buffalo, and the 1893 Westinghouse contract: PBS, Tesla: Master of Lightning, 'Harnessing Niagara'"
+    },
+    {
+      "b": "3327 and 3328 · 1933–1943 · 7 January 1943",
+      "s": "His rooms at the Hotel New Yorker, the years he lived there and the date on the hotel's plaque: Bill Glovin, 'Nikola Tesla Slept Here', IEEE Spectrum, 30 October 2014"
+    },
+    {
+      "b": "No. 645,576 · 2 September 1897 · 1943",
+      "s": "The Tesla patent the Court found anticipated Marconi's four-circuit tuning, and its application date: Marconi Wireless Telegraph Co. of America v. United States, 320 U.S. 1 (1943)"
+    }
+  ]
+}

@@ -43,6 +43,11 @@
       "to": "lives:florence-nightingale",
       "label": "Florence Nightingale",
       "txt": "— the same year, 1854, and the same weapon: a count that made the authorities look at the water and the drains."
+    },
+    {
+      "to": "lives:mary-seacole",
+      "label": "Mary Seacole",
+      "txt": "— who was treating cholera in Jamaica and on the Isthmus of Panama in the years he was working out how it spread."
     }
   ]
 }

@@ -30,6 +30,11 @@
       "to": "lives:henry-ford",
       "label": "Henry Ford",
       "txt": "— the other end of the story: Hounshell's history runs from the armoury system to Ford's mass production."
+    },
+    {
+      "to": "lives:king-c-gillette",
+      "label": "King C. Gillette",
+      "txt": "— another maker whose best-known line, cheap razors and dear blades, was attached to him long after the fact."
     }
   ],
   "plateOf": "Engraving by John Chester Buttre, about 1855.",
