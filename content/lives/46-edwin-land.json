@@ -76,6 +76,11 @@
       "to": "lives:akio-morita",
       "label": "Akio Morita",
       "txt": "— who wrote that the public does not know what is possible."
+    },
+    {
+      "to": "lives:steve-jobs",
+      "label": "Steve Jobs",
+      "txt": "— another founder whose best-known story is his own: ten minutes at Xerox PARC, told to an interviewer sixteen years later."
     }
   ]
 }

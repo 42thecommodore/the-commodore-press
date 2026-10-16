@@ -2,6 +2,13 @@
   "id": "ibn-al-haytham",
   "no": 75,
   "keep": "He promised to criticise his premises before he drew a conclusion, and then built the instruments to do it.",
+  "across": [
+    {
+      "to": "lives:isaac-newton",
+      "label": "Isaac Newton",
+      "txt": "— the shelf’s next account of light, which showed white light to be a mixture of colours, by a man who kept one foot in the medieval world."
+    }
+  ],
   "n": "Ibn al-Haytham",
   "years": "c. 965–c. 1040",
   "place": "Basra and Cairo",

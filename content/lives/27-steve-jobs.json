@@ -2,6 +2,13 @@
   "id": "steve-jobs",
   "no": 27,
   "keep": "The eye that knew in ten minutes which thing mattered was the same one that refused his daughter for years.",
+  "across": [
+    {
+      "to": "lives:edwin-land",
+      "label": "Edwin Land",
+      "txt": "— another founder whose best-known story is the one he told himself, and whose company’s harder record other people had to find."
+    }
+  ],
   "n": "Steve Jobs",
   "years": "1955–2011",
   "place": "United States",

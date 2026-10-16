@@ -2,6 +2,18 @@
   "id": "isaac-newton",
   "no": 6,
   "keep": "Progress does not require tidy people. The revolution was made with one foot in the medieval world.",
+  "across": [
+    {
+      "to": "lives:ibn-al-haytham",
+      "label": "Ibn al-Haytham",
+      "txt": "— the shelf’s other book on light, which promised to rest its account on experiment rather than abstract theory."
+    },
+    {
+      "to": "lives:einstein",
+      "label": "Albert Einstein",
+      "txt": "— whose general relativity reimagined gravity as the curving of space and time, and still left Newton’s mechanics under every bridge."
+    }
+  ],
   "n": "Isaac Newton",
   "years": "1643–1727",
   "place": "England",
