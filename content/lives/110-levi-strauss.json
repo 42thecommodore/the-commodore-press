@@ -1,0 +1,63 @@
+{
+  "id": "levi-strauss",
+  "no": 110,
+  "keep": "The jeans carry the name of the wholesaler who paid about $68 to patent them. The idea was a Reno tailor's, and the patent says so.",
+  "n": "Levi Strauss",
+  "years": "1829–1902",
+  "place": "Bavaria, New York and San Francisco",
+  "field": "Business & Clothing",
+  "group": "famous",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "lede": "He did not invent riveted jeans, and the patent never said he did. It names Jacob Davis, a tailor in Reno, who offered Strauss half the rights if his firm would pay about $68 to file it.",
+  "copy": [
+    "Levi Strauss was born in Buttenheim, in Bavaria, on 26 February 1829, and went to New York around 1847, where his brothers had a dry-goods business, J. Strauss Brother and Company. He learned the trade there. In March 1853 he reached San Francisco and set up as a wholesaler of dry goods. He never kept a store of his own. He gave part of his first profits, in 1854, to an orphanage.",
+    "One of his customers was a tailor in Reno, Jacob Davis, who bought cloth from him. Davis put metal rivets at the points of strain on work trousers, the pocket corners and the base of the fly, and could not make them fast enough. \"The secratt of them pants is the rivits that I put in those pockots,\" he wrote to Strauss's firm, in his own spelling. He charged $3 a pair for duck and $2.50 for blue denim, and his neighbours were starting to copy him. If the firm would take out the patent in his name, he wrote, at a cost of about $68, he would give it half the right to sell the trousers. The application was filed on 9 August 1872. Patent No. 139,121, dated 20 May 1873, is for \"a metal rivet or eyelet at each edge of the pocket-opening\", and it names \"Jacob W. Davis, of Reno, Nevada, assignor to himself and Levi Strauss & Company\". Davis moved to San Francisco to run the making of them. The company counts 20 May 1873 as the birthday of blue jeans, though it called them waist overalls until 1960.",
+    "Strauss himself is mostly missing from the record. The company's papers and most of what documented him burned in the San Francisco earthquake and fire of 1906, four years after he died. What survives is the giving: Berkeley scholarships from 1897, and gifts in the company's name after the Chicago fire of 1871 and the Charleston earthquake of 1886. Even the story that he cut the first jeans from brown tent canvas and dyed it blue is denied by the company's own historian. The duck and the tents were Davis's. He made wagon covers and tents from cloth he bought from Strauss, and he stayed to supervise the factory until he died, in 1908."
+  ],
+  "bio": {
+    "t": "Levi Strauss: The Man Who Gave Blue Jeans to the World",
+    "a": "Lynn Downey",
+    "y": "2016",
+    "why": "The only full biography, by the company's own former historian, with the archive behind her and the 1906 fire in front of her. The rivet patent is free to read at Google Patents, and Davis's letter is in Lapham's Quarterly."
+  },
+  "contested": "How much of the jean is his. The company's own history pages still say that Strauss and Davis together created the first jeans, and count the patent as theirs jointly; the patent names Davis as inventor and the firm as joint assignee, and Davis's letter makes the proposal and names the price. Nobody found here disputes the patent text itself. His emigration is dated 1847 in some of the company's pages and 1848 in others, including Lynn Downey's own short history. The value of his estate is given as $6 million in some accounts and as about $30 million in others, citing Downey; no probate record or obituary of 1902 has been opened here, so neither is printed. The 501 lot number is said to date from 1890, and where the word denim comes from, Nîmes or elsewhere, is itself doubted in the company's history. The house has no portrait of him; see the colophon.",
+  "across": [
+    {
+      "to": "lives:charles-goodyear",
+      "label": "Charles Goodyear",
+      "txt": "— whose name went on a tyre company he never knew of, as Strauss's went on another man's invention."
+    },
+    {
+      "to": "lives:coco-chanel",
+      "label": "Coco Chanel",
+      "txt": "— whose little black dress, like his jeans, was a garment already in the shops before the name went on it."
+    }
+  ],
+  "plateless": "No portrait of him with a known photographer, date or publication has been found. The ones in circulation trace to a fashion blog, a stock-certificate dealer and an undated upload, and the company's own prints carry no licence.",
+  "facts": [
+    {
+      "b": "26 February 1829 · around 1847 · March 1853 · 1854 · 1897 · 1871 · 1886 · 1906",
+      "s": "His birth, emigration and arrival in San Francisco, his first gifts, the Berkeley scholarships, the disaster gifts, and the loss of the records: Tracey Panek, 'What 9-Year-Olds Want to Know About Levi Strauss', Levi Strauss & Co., 25 February 2016"
+    },
+    {
+      "b": "$3 · $2.50 · about $68",
+      "s": "Davis's prices and his proposal: Jacob Davis to Levi Strauss & Co., 1872, printed in Lapham's Quarterly"
+    },
+    {
+      "b": "No. 139,121 · 9 August 1872 · 20 May 1873",
+      "s": "The patent, its filing and its date: U.S. Patent 139,121, 'Improvement in Fastening Pocket-Openings', Google Patents"
+    },
+    {
+      "b": "1960",
+      "s": "'Waist overalls' until 1960, and 20 May 1873 as the company's birthday for jeans: Levi Strauss & Co., 'The History of Denim', 4 July 2019"
+    },
+    {
+      "b": "1908",
+      "s": "Davis's tents and wagon covers, his move to San Francisco and his supervision of the factory until his death: Levi Strauss & Co., 'Jacob Davis: His Life and Contributions'; the canvas story denied in Lynn Downey, 'A Short History of Denim', Levi Strauss & Co., 2014"
+    }
+  ]
+}

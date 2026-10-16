@@ -1,0 +1,70 @@
+{
+  "id": "glenn-curtiss",
+  "no": 109,
+  "keep": "The test that put Langley ahead of the Wrights was run by the man the Wrights had just beaten in court, on a machine he had rebuilt, and its longest hop with Langley's engine lasted five seconds.",
+  "n": "Glenn Curtiss",
+  "years": "1878–1930",
+  "place": "Hammondsport, New York",
+  "field": "Aviation & Engines",
+  "group": "obscure",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "He lost the great patent case to the Wright brothers in January 1914. Two months later the Smithsonian hired him to fly the machine it said had beaten them.",
+  "copy": [
+    "Glenn Curtiss raced bicycles in Hammondsport, in western New York, and then built engines for motorcycles. On 23 January 1907, at the Florida Speed Carnival on Ormond Beach, he rode a motorcycle with a V-8 of his own at 136 miles an hour, a record that stood until 1930, and the newspapers called him the fastest man on Earth. Alexander Graham Bell's Aerial Experiment Association took him on for his engines. On 4 July 1908 he flew its June Bug across Pleasant Valley for 5,090 feet, the first flight in America announced in advance and watched by the public, and won the first leg of the Scientific American trophy, for a kilometre in a straight line.",
+    "The Wrights sued him for infringing their patent. In 1913 a federal judge found for them, and on 13 January 1914 the appeals court agreed that they 'may fairly be considered pioneers in the practical art of flying with heavier-than-air machines'. In March the Smithsonian's Secretary, Charles Walcott, gave Curtiss a $2,000 contract to fly Samuel Langley's Aerodrome, which had collapsed on launching in December 1903, nine days before Kitty Hawk. The Smithsonian's man at Hammondsport was Albert Zahm, Curtiss's expert witness in the patent case. Curtiss rebuilt the machine, with floats, new controls, a new rudder and changed wings. On 28 May and 2 June 1914 it rose off Lake Keuka several times, the longest for about five seconds on Langley's engine. The Smithsonian then said repeatedly that Langley's machine of 1903 had been capable of flight, and labelled it the first man-carrying aeroplane in the history of the world capable of sustained free flight. In 1928 Orville Wright sent the Kitty Hawk Flyer to the Science Museum in London in protest: \"I regret more than anyone else that this course is necessary.\"",
+    "In 1942 the Smithsonian's Secretary, Charles Abbot, published the list of what Curtiss had changed and conceded that the Institution should not have said the 1914 trials proved what it claimed. Orville accepted the paper on 8 October 1942, and the Flyer came home on 17 December 1948, after his death. The Wright story remembers him for the fight, and not for what he built. During the First World War Curtiss and six other companies delivered 6,070 of the JN series, the Jenny, to the Air Service, and Curtiss built 4,895 of them; more than nine in ten American pilots of that war learned to fly on one. He built the first successful seaplane in America and the Navy's first aircraft, and trained its first two pilots. He died in Buffalo on 23 July 1930, two weeks after an operation for appendicitis."
+  ],
+  "bio": {
+    "t": "Unlocking the Sky",
+    "a": "Seth Shulman",
+    "y": "2002",
+    "why": "The case for Curtiss as the inventor who made the aeroplane practical, and openly on his side against the Wrights. Read it with Charles Abbot's 1942 paper, 'The 1914 Tests of the Langley \"Aerodrome\"', in which the Smithsonian sets out, item by item, what was changed."
+  },
+  "contested": "How much of the Langley affair was his doing. Abbot's 1942 paper puts the plainest case against him: the trials came two months after the appeals court called him an infringer, Curtiss 'stood to gain pecuniarily' if Langley's machine could be shown capable of flight before the Wrights', and the Smithsonian's observer was his own expert witness. Shulman, on the other side, has him hounded by the Wrights' patent and making the improvements, ailerons and seaplanes among them, that the Wrights' design did not. The courts themselves hedged: the 1913 opinion says 'even if the patentees were not strictly pioneers'. Which engine flew in 1914 is disputed between the Smithsonian's own pages, Langley's original or a Curtiss engine substituted for later trials; the five seconds above are the Langley engine's. Abbot's paper concedes that the 1914 trials proved nothing about 1903, but does not say Langley's machine could never have flown. The patent pool of 1917, which ended the litigation, the royalties under it, and the fortune he made developing Hialeah, Miami Springs and Opa-locka in Florida have not been read in a document here and are not printed. His motorcycle record is often given as 136.36 miles an hour; the Smithsonian gives 136.",
+  "across": [
+    {
+      "to": "lives:alexander-graham-bell",
+      "label": "Alexander Graham Bell",
+      "txt": "— whose Aerial Experiment Association built the June Bug that Curtiss flew in 1908."
+    },
+    {
+      "to": "lives:robert-goddard",
+      "label": "Robert Goddard",
+      "txt": "— whose rocket paper the Smithsonian published in 1919, while it still claimed Langley's machine could fly."
+    }
+  ],
+  "facts": [
+    {
+      "b": "23 January 1907 · 136 miles an hour · 1930",
+      "s": "The Ormond Beach record and how long it stood; his firsts in seaplanes and for the Navy: National Air and Space Museum, 'Glenn Curtiss Motorcycle'"
+    },
+    {
+      "b": "4 July 1908 · 5,090 feet · one kilometre",
+      "s": "The June Bug flight and the trophy's terms: National Air and Space Museum, Scientific American Trophy, object A19730589000"
+    },
+    {
+      "b": "13 January 1914",
+      "s": "The appeals court's decision for the Wrights: Wright Co. v. Herring-Curtiss Co., 211 F. 654 (2d Cir. 1914), affirming 204 F. 597 (W.D.N.Y. 1913)"
+    },
+    {
+      "b": "$2,000 · 1928 · 17 December 1948",
+      "s": "The Smithsonian contract, the Flyer's exile and return, and Orville's letter: National Air and Space Museum, 'What Happened to the Original Wright Flyer'"
+    },
+    {
+      "b": "March 1914 · 28 May and 2 June 1914 · about five seconds · 8 October 1942",
+      "s": "The contract, the trials, the label, and Orville's acceptance: C. G. Abbot, 'The 1914 Tests of the Langley \"Aerodrome\"', Smithsonian Institution, 1942 (reproduced by the National Park Service)"
+    },
+    {
+      "b": "6,070 · 4,895 · more than ninety per cent",
+      "s": "JN-series deliveries in the First World War and pilots trained on them: National Air and Space Museum, Curtiss JN-4D Jenny, object A19190006000"
+    },
+    {
+      "b": "23 July 1930 · two weeks",
+      "s": "His death in Buffalo after the operation: International News Service dispatch, Hammondsport, 24 July 1930 (earlyaviators.com transcription)"
+    }
+  ]
+}

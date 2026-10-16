@@ -74,6 +74,16 @@
       "to": "lives:larry-gagosian",
       "label": "Larry Gagosian",
       "txt": "— a dealer who learned the same trade from the other end: not the crowd that pays at the door, but the dozen men who bid against each other."
+    },
+    {
+      "to": "lives:mark-twain",
+      "label": "Mark Twain",
+      "txt": "— another American whose best-known line turns out to be someone else's."
+    },
+    {
+      "to": "lives:william-randolph-hearst",
+      "label": "William Randolph Hearst",
+      "txt": "— whose best-known line, like Barnum's, was printed by someone else after the fact."
     }
   ]
 }

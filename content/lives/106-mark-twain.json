@@ -1,0 +1,66 @@
+{
+  "id": "mark-twain",
+  "no": 106,
+  "keep": "His joke about the report of his death was made while he was paying off a bankruptcy, and its second sentence, the one nobody quotes, was about the money.",
+  "n": "Mark Twain",
+  "years": "1835–1910",
+  "place": "Hannibal, Hartford and the world",
+  "field": "Literature & Publishing",
+  "group": "famous",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "conic",
+  "lede": "Two of his best-known lines are not his. He never said the coldest winter he spent was a summer in San Francisco. And what he said about his death was plainer than the quotation: the report of it was an exaggeration.",
+  "copy": [
+    "Samuel Clemens was apprenticed as a typesetter on the Hannibal Gazette in 1847. On 9 April 1859 he was licensed to pilot steamboats between St. Louis and New Orleans. In 1861 he joined the Hannibal Home Guard, a band of volunteers with Confederate sympathies, and left it after two weeks. He went west, wrote for newspapers in Nevada and California, and on 18 November 1865 the New York Saturday Press printed his story of Jim Smiley and his jumping frog.",
+    "He was a publisher too. His own firm, Charles L. Webster and Company, signed Ulysses Grant's memoirs, and sold more than 300,000 sets of the two volumes. The first royalty cheque to Grant's widow, Julia, drawn on 27 February 1886, was for $200,000, and his biographer Albert Bigelow Paine puts her total at between $420,000 and $450,000. Twain spent his own money on the Paige typesetting machine: about $170,000 by his own estimate. He stopped in February 1891, unable to raise the $250,000 to buy Paige out. On 18 April 1894 Webster and Company failed. Henry H. Rogers of Standard Oil took his affairs in hand and told him to give up the machine. In August 1895 he set off on a lecture tour around the world, published the book of it, Following the Equator, in 1897, and in 1898 paid his creditors in full.",
+    "Neither of his famous lines survives the documents. He did complain about a cold summer, in a letter from Hartford to Lucius Fairchild on 28 April 1880, but it was about Paris: \"Paris the cold, Paris the drizzly, Paris the rainy, Paris the Damnable.\" Even then the joke was not his. He credited it to the actor James Quin, a hundred years before. Quote Investigator finds no evidence that he ever said it of San Francisco, and the earliest printing that pins it on him there is from 1963. The other line comes from London in 1897, where his cousin James Ross Clemens was ill, and the report of Twain's illness grew out of his. On 2 June the New York Journal printed his answer on its front page: \"The report of my death was an exaggeration. The report of my poverty is harder to deal with.\" Within days other papers had made it greatly exaggerated, and by 1912 Paine had it grossly."
+  ],
+  "bio": {
+    "t": "Mark Twain: A Biography",
+    "a": "Albert Bigelow Paine",
+    "y": "1912",
+    "why": "Written by his friend and authorised biographer, with his papers to hand and free online. It has errors, his pilot's licence among them, and it gives the death line in a form Twain did not use; read it with the Mark Twain Project's chronology and letters at marktwainproject.org, which correct it."
+  },
+  "contested": "How much the typesetter cost him, and how much the Grant memoirs paid. The Mark Twain Project records his own estimate of about $170,000 for the Paige machine; Paine puts it nearer $190,000, and the $300,000 often printed has not been found in any document opened here. The firm's liabilities when it failed, which Paine gives as fully $200,000, including $60,000 of his wife's money, are not the same as his own debt, which a notebook entry Paine quotes puts at $94,000; which figure 'his bankruptcy' means depends on the writer. The share of the Grant profits paid to Julia Grant is given as 70 or 75 per cent, and no contract has been opened here. Ron Powers, in Mark Twain: A Life (2005), tells the 1897 episode with the cousin falling ill at Twain's London house, which a letter of 31 May 1897 is said to contradict; neither has been opened. And Quote Investigator gives Twain's own recollection, in the North American Review in 1906, as 'the report is greatly exaggerated', so it may be that he adopted the newspapers' version himself.",
+  "across": [
+    {
+      "to": "lives:william-randolph-hearst",
+      "label": "William Randolph Hearst",
+      "txt": "— whose New York Journal printed the note on the report of his death in 1897."
+    },
+    {
+      "to": "lives:p-t-barnum",
+      "label": "P. T. Barnum",
+      "txt": "— another American whose best-known line turns out to be someone else's."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1847 · 9 April 1859 · two weeks · 18 November 1865 · August 1895 · 1897 · 1898",
+      "s": "The Gazette apprenticeship, the pilot's licence, the Home Guard, the frog, the world tour, Following the Equator and the creditors paid: Mark Twain Project, 'Chronology', Autobiography of Mark Twain, vol. 3"
+    },
+    {
+      "b": "more than 300,000 · $200,000 · 27 February 1886 · $420,000–$450,000 · 18 April 1894",
+      "s": "The Grant sets sold, the first cheque to Julia Grant, her total and the failure of Webster and Company: Albert Bigelow Paine, Mark Twain: A Biography (1912), Project Gutenberg 2988"
+    },
+    {
+      "b": "about $170,000 · February 1891 · $250,000",
+      "s": "His investment in the Paige machine, when he stopped, and the buyout he could not raise: Mark Twain Project, explanatory note to 'The Machine Episode'"
+    },
+    {
+      "b": "28 April 1880",
+      "s": "The Paris letter to Lucius Fairchild: Mark Twain Project, letter UCCL 01794"
+    },
+    {
+      "b": "1963",
+      "s": "The earliest printing tying the cold summer to Twain and San Francisco: Quote Investigator, 'The Coldest Winter I Ever Spent Was a Summer in San Francisco', 30 November 2011"
+    },
+    {
+      "b": "2 June 1897",
+      "s": "'Mark Twain Amused', Frank Marshall White, New York Journal, 2 June 1897, p. 1 (Library of Congress, Chronicling America); its later versions: Quote Investigator, 7 June 2024"
+    }
+  ]
+}

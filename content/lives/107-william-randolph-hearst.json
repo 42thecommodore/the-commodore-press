@@ -1,0 +1,62 @@
+{
+  "id": "william-randolph-hearst",
+  "no": 107,
+  "keep": "His most famous line was printed by his own correspondent, as praise, about a cable nobody has ever produced.",
+  "n": "William Randolph Hearst",
+  "years": "1863–1951",
+  "place": "San Francisco and New York",
+  "field": "Newspapers",
+  "group": "famous",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "He is remembered for one sentence: you furnish the pictures and I'll furnish the war. It was first printed in 1901, by a man who worked for him, as a compliment.",
+  "copy": [
+    "William Randolph Hearst bought the New York Journal to break into the New York market, and he spent the next years in open war with Joseph Pulitzer's World. The two papers stood on the same downtown block, Newspaper Row. They fought for exclusives and circulation, poached each other's staff and spied on each other's offices. From 1895 Hearst's papers called for an end to Spanish rule in Cuba. When Congress authorised force in April 1898, he had rockets fired from the roof of the Journal's building. He went to the war himself, on a steamer refitted with darkrooms, printing presses, medical supplies, ice and his own chefs.",
+    "The line comes from James Creelman's book On the Great Highway, published in 1901. Creelman wrote that before the Maine blew up, the Journal sent the artist Frederic Remington to Cuba, \"instructed to remain there until the war began.\" Remington cabled: \"Everything is quiet. There is no trouble here. There will be no war. I wish to return.\" Hearst replied: \"Please remain. You furnish the pictures, and I'll furnish the war.\" Creelman meant it as praise. He went on to describe the gilded arms of Spain hanging in Hearst's office, and a lump of melted silver from a Spanish flagship that served as his paperweight. Creelman was in Europe at the time, reporting for the Journal. The cables have never been found. Remington and the writer Richard Harding Davis had agreed to go to Cuba for a month, and Remington left after about a week, in January 1897. Davis wrote that he left because he had \"all the material he needs for sketches and for illustrating my stories.\" Hearst denied the exchange in 1907.",
+    "The newsboys paid for the war coverage. To meet its cost, the Journal and the World raised the price the newsboys paid from 50 to 60 cents a hundred papers, and kept it after the war ended. On 19 July 1899 the newsboys formed a union and struck. More than 400 of them met the delivery trucks at Columbus Circle and tore up the papers. \"Ain't that ten cents worth as much to us as it is to Hearst and Pulitzer who are millionaires?\" asked one of their leaders, Kid Blink. Hearst said nothing in public. In the second week the publishers offered to buy back unsold papers but kept the price, and on 2 August the boys went back with their union broken. By 1937 Hearst's empire was close to bankruptcy, and his art collection was split, half kept and half handed to his companies to be sold."
+  ],
+  "bio": {
+    "t": "The Chief: The Life of William Randolph Hearst",
+    "a": "David Nasaw",
+    "y": "2000",
+    "why": "The standard modern life, long and fair to him without excusing him. For the war line, read W. Joseph Campbell's 'You Furnish the Legend, I'll Furnish the Quote' (American Journalism Review, December 2001), which takes Creelman's story apart point by point."
+  },
+  "contested": "Whether the exchange happened at all. W. Joseph Campbell argues it almost certainly did not: Creelman was not in Cuba, the cables would not have passed the Spanish censors in Havana, the Journal was then reporting that Spain had practically lost the island rather than calling for American intervention, Remington's papers say nothing of it, and Remington went home well before any war. The strongest case the other way is Ken Lawrence's, at the History News Network in 2019: with no telegram either way, he argues, historians must weigh second-hand reports, and he points to Charles Michelson's memoir of 1944 and to Jimmy Breslin, who wrote in 1983 that he had seen copies of the cables; Lawrence concedes that Michelson stops short of saying it happened and that Breslin's copies carry the wrong date and the name of a secretary Hearst hired in the 1920s. Hearst's own denial of 1907 is known here only through Campbell, who also cites a son's memoir in which Hearst told him he never sent such a cable. The circulation figures usually given for the Journal in 1898, and the count of 28 newspapers he is said to have owned in 1935, have not been read in a document and are not printed. Nor is the obituary estimate, repeated by the Los Angeles County Museum of Art, that he alone made up a quarter of the world's art market in the 1920s and '30s.",
+  "across": [
+    {
+      "to": "lives:mark-twain",
+      "label": "Mark Twain",
+      "txt": "— whose note on the report of his death, the source of his own most misquoted line, ran in Hearst's New York Journal in 1897."
+    },
+    {
+      "to": "lives:p-t-barnum",
+      "label": "P. T. Barnum",
+      "txt": "— another showman whose best-known line was put in his mouth by someone else."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1895 · April 1898",
+      "s": "His papers' campaign over Cuba, the rockets on the Journal's roof and the refitted steamer: Kirstin Butler, 'When the Newsies Took on William Randolph Hearst', PBS American Experience, 8 September 2021"
+    },
+    {
+      "b": "1901 · pp. 177–178",
+      "s": "The Remington cables as Creelman printed them: James Creelman, On the Great Highway (Boston: Lothrop, 1901), archive.org scan"
+    },
+    {
+      "b": "a month · about a week · January 1897 · 1907",
+      "s": "Remington's and Davis's terms, how long Remington stayed and when he left, Davis's letter, Creelman in Europe, and Hearst's denial: W. Joseph Campbell, 'You Furnish the Legend, I'll Furnish the Quote', American Journalism Review, December 2001"
+    },
+    {
+      "b": "50 to 60 cents · 19 July 1899 · more than 400 · 2 August",
+      "s": "The newsboys' price, union, strike and settlement: Butler, PBS American Experience, 2021"
+    },
+    {
+      "b": "1937 · half",
+      "s": "The near-bankruptcy and the division of his collections: Los Angeles County Museum of Art, 'Hearst the Collector'"
+    }
+  ]
+}

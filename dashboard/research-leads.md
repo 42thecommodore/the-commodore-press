@@ -379,3 +379,16 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Seacole | Nightingale to Sir Harry Verney, 5 August 1870, Wellcome Ms 9004/60 | Her view of Seacole; no wording printed |
 | Seacole | Jane Robinson, *Mary Seacole* (2004), pp. 157–180; *The Times*, July 1857 | Bankruptcy dates, the Seacole Fund festival crowd and takings; not printed |
 | Seacole | Plate decision, 2026-10-15: Challen, c. 1869, NPG 6856, via Commons {{PD-Art}}. The NPG's 2009 claim over its photograph does not stand under *THJ v Sheridan* [2023] EWCA Civ 1354; painter died 1881. Used as plain public domain | Closed by decision |
+| Twain | Twain's 1906 North American Review recollection; the 31 May 1897 note; Powers, *Mark Twain: A Life* (2005) | Whether he later adopted "greatly exaggerated"; the cousin's illness; in `contested` only |
+| Twain | A primary for the Grant royalty rate (70% or 75%) | Not printed |
+| Hearst | Nasaw, *The Chief* (2000); Campbell, *Yellow Journalism* (2001), note on the 1907 denial; Hearst Jr., *The Hearsts* (1991) | The denial's venue; Journal circulation; 28 papers in 1935; San Simeon; *Citizen Kane*; not printed |
+| Hearst | Michelson, *The Ghost Talks* (1944); Breslin, NY Daily News, 20 Feb 1983 | Lawrence's evidence, as Lawrence reports it |
+| Gould | Klein, *The Life and Legend of Jay Gould* (1986); Adams, *Chapters of Erie* (1886); House Gold Panic report (1870) | Track mileage, the Erie War's dates; not printed |
+| Gould | *In re Gould's Estate*, 156 N.Y. 423 (1898); NY Herald, 8 Jan 1895 | $72m / $80m estate figures; printed only as EBSCO's "more than $70 million" |
+| Gould | The Advocate (Topeka), 28 Oct 1891, p. 1 (Chronicling America, blocked) | The quotation is printed via Quote Investigator's transcription |
+| Curtiss | Manufacturers Aircraft Association agreement, 1917; Florida land records; NHHC H-gram on the NC-4 | Not printed |
+| Strauss | SF Call, 27 Sept 1902 (obituary, estate); Downey (2016) on 1847/1848 and the estate | Estate $6m / $30m; not printed |
+| Strauss | Plate decision, 2026-10-15: no portrait with a recorded photographer, date or publication; Bancroft Library, Elise Stern Haas Family Photograph Collection, may hold one | Plateless; colophon says why |
+| Frick | Burgoyne, *Homestead* (1893); Chronicling America, July 1892, for his words after the shooting | Printed via PBS, flagged in `contested` |
+| Frick | Standiford, *Meet You in Hell* (2005), notes; any 1919 source for the "hell" reply | Not printed |
+| Frick | Plate decision, 2026-10-15: North American Review, vol. 211 (1920), with George Harvey's 'Henry Clay Frick' at p. 145; archive.org OCR confirms the article; PD-US by publication | Closed by decision |

@@ -1,0 +1,70 @@
+{
+  "id": "henry-clay-frick",
+  "no": 111,
+  "keep": "He is the name on two disasters. One dam was another man's purchase and repair, and the other strike ran on Carnegie's instructions; what was his own was refusing to give an inch on either.",
+  "n": "Henry Clay Frick",
+  "years": "1849–1919",
+  "place": "Pittsburgh and New York",
+  "field": "Steel & Coke",
+  "group": "famous",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "conic",
+  "lede": "He is the villain of Johnstown and of Homestead. The dam above Johnstown was bought and patched by another man. At Homestead, Carnegie left the instructions and sailed for Scotland.",
+  "copy": [
+    "Henry Clay Frick kept the books at his grandfather's distillery, A. Overholt and Company, before he went into coke, the coal-based fuel that blast furnaces burn. He founded his coke company in 1871, came through the Panic of 1873, and raised money to expand by brokering the sale of a local railroad to the Baltimore and Ohio for $50,000. In 1882 he reorganised it as the H. C. Frick Coke Company, with two million dollars in assets and 40,000 shares. Andrew Carnegie needed the coke, and Frick needed money to grow. They joined forces in 1881, and Carnegie was soon the majority stockholder. Frick had lost control of his own company. In 1889 Carnegie gave him the reorganisation of Carnegie Brothers, and he built the consolidation that became the Carnegie Steel Company.",
+    "He was a founding member of the South Fork Fishing and Hunting Club, perhaps its most famous member after Carnegie. The club was Benjamin Ruff's idea. Ruff bought the dam above Johnstown and its lake for $2,000 in 1879 and was the club's first president, and the club spent $17,000 rebuilding the dam. The repairs filled a breach with rock, mud, brush, hay and horse manure. The discharge pipes, gone before the club bought the dam, were never replaced, and the crest was cut down two or three feet. Ruff died in 1887. On 31 May 1889 the dam failed. A list printed fourteen months later counted 2,209 dead, and the Park Service puts the real toll probably well over 3,000. The club was never held legally responsible. The only suits that succeeded were against the Pennsylvania Railroad.",
+    "At Homestead in 1892 Carnegie and Frick meant to break the union, and Carnegie left detailed instructions with Frick before sailing for his summer in Scotland. Frick fenced the works and hired 300 Pinkertons. When they tried to land, seven workers and three Pinkertons were killed. On 11 July Carnegie cabled from Scotland: \"Am with you to end[,] whether works run this year, next or never.\" On 23 July the anarchist Alexander Berkman shot Frick in his office and stabbed him with a sharpened file. Frick stopped a deputy from shooting Berkman, and PBS gives his words as: \"I do not think I will die, but whether I do or not, the Company will pursue the same policy, and it will win.\" In December 1899, after a quarrel with Carnegie, he resigned from the board. Carnegie tried to force him to sell his stock below its value, Frick sued, and they settled. The two men never met again. Frick retired to New York in 1905 with the paintings that became the Frick Collection. When he died in 1919, Berkman said he had been \"deported by God. I'm glad he left the country before me.\""
+  ],
+  "bio": {
+    "t": "Henry Clay Frick: An Intimate Portrait",
+    "a": "Martha Frick Symington Sanger",
+    "y": "1998",
+    "why": "By his great-granddaughter, from the family's papers, and so the most inside account and the most open to the charge of being kind. It is the source the National Park Service cites for Frick as co-owner of the dam. Read it beside Les Standiford's Meet You in Hell (2005), on Frick and Carnegie, which is lively and thinly footnoted."
+  },
+  "contested": "How much of either disaster is his. The National Park Service records the split on the dam itself: Sanger, his great-granddaughter, makes Frick and Ruff co-owners, while other sources make Ruff the owner outright. It also records that cutting the crest down two or three feet cut the spillway's power to stop water topping the dam by twenty to thirty per cent, and that recent research says the cut was made mainly to get fill to seal leaks. No named historian has been found here arguing that Frick personally directed the repairs, and the Park Service's page on him does not say he did. At Homestead the Pennsylvania marker counts seven workers and three Pinkertons dead; other counts run to ten or eleven, depending on who is counted as having died of wounds later. The Park Service and PBS disagree on where Berkman's bullet hit, the neck or the shoulder. Frick's words after the shooting are printed by PBS without a citation; a newspaper of July 1892 would settle them, and none has been opened here. And his best-known line, telling the dying Carnegie he would see him in hell, has no source from 1919. Its earliest telling found in print is Standiford's 2005 book, which introduces it with 'so the story goes', and it is not printed above.",
+  "across": [
+    {
+      "to": "lives:andrew-carnegie",
+      "label": "Andrew Carnegie",
+      "txt": "— the partner who left the Homestead instructions with him, took his company and fought him for his stock."
+    },
+    {
+      "to": "lives:jay-gould",
+      "label": "Jay Gould",
+      "txt": "— the other villain of the age, whose most quoted line about labour was reported by an enemy who had not heard it."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1871 · $50,000 · 1882 · two million dollars · 40,000 shares · 1889",
+      "s": "His coke company, the railroad sale to the B&O, the 1882 reorganisation, and the Carnegie Brothers reorganisation: National Park Service, Johnstown Flood National Memorial, 'Henry Clay Frick (1849–1919)', quoting the Historic Structures Report"
+    },
+    {
+      "b": "1881",
+      "s": "Carnegie joining forces with Frick and becoming majority stockholder; the 1899 quarrel, the threatened forced sale and the settlement: PBS American Experience, 'Carnegie: A Tough Partner'"
+    },
+    {
+      "b": "$2,000 · 1879 · $17,000",
+      "s": "Ruff's purchase of the dam and lake, and the club's spending on rebuilding it: National Park Service, 'South Fork Fishing and Hunting Club'"
+    },
+    {
+      "b": "two or three feet · twenty to thirty per cent · 1887",
+      "s": "The lowering of the crest, its effect on the spillway, the pipes not replaced and Ruff's death: National Park Service, 'Benjamin Franklin Ruff', quoting the Historic Structure Report: The South Fork Dam (Unrau, 1980)"
+    },
+    {
+      "b": "2,209 · well over 3,000",
+      "s": "The death toll in the list printed fourteen months after the flood, and the Park Service's estimate; the club never held legally responsible: National Park Service, Johnstown Flood National Memorial, 'Frequently Asked Questions'"
+    },
+    {
+      "b": "300 · seven workers · three Pinkertons",
+      "s": "The Pinkertons sent to Homestead and the dead, Carnegie's instructions and his 11 July cable: ExplorePAhistory.com, Homestead Strike historical marker, 'Behind the Marker'"
+    },
+    {
+      "b": "23 July 1892",
+      "s": "Berkman's attack, Frick's words and Berkman's 1919 remark: PBS American Experience, 'Henry Clay Frick (1849–1919)'"
+    }
+  ]
+}

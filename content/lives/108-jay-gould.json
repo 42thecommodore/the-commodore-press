@@ -1,0 +1,62 @@
+{
+  "id": "jay-gould",
+  "no": 108,
+  "keep": "The line that made him the most hated of them said farmers, came from an enemy who had not heard it, and only learned to say working class from a poem of 1938.",
+  "n": "Jay Gould",
+  "years": "1836–1892",
+  "place": "New York",
+  "field": "Railroads & Finance",
+  "group": "famous",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "His most famous sentence, that he could hire half the working class to kill the other half, is the reason he heads every list of robber barons. Its first printing, in 1891, says farmers, and comes from a political enemy who had not heard it.",
+  "copy": [
+    "Jay Gould was a farmer's son from Roxbury, New York. By twenty-one he had saved about $5,000, and in 1856 he published a history of his home county and went into business with Zadock Pratt, in a tannery near Lehigh, Pennsylvania, for which Pratt put up most of the money. He traded government bonds and gold and put the profits into railroad stock. In the autumn of 1867 he and James Fisk were elected to the board of the Erie Railroad, where Daniel Drew was treasurer. When Cornelius Vanderbilt tried to take the Erie, they beat him off by flooding the market with new Erie stock, and fled across the river to New Jersey. The press called them the Erie Ring.",
+    "In 1869, as president of the Erie, he tried with Fisk to corner gold. His argument, as the House investigation recorded it, was that gold had to go to $145 to move the autumn crops abroad. On 23 September President Grant let the Treasury Secretary, George Boutwell, sell $4 million in gold, in a market of about $15 million. The next day, Black Friday, gold opened at $145, spiked to $160 and collapsed to $133, and the stock market fell 20 per cent. Gould then turned to building and buying. He made an estimated $10 million selling Union Pacific stock, and came to control about half the railroad mileage of the Southwest, through the Missouri Pacific and the Texas and Pacific. He bought the American Union Telegraph Company in 1879 and merged it into Western Union in 1881. By 1888 he controlled virtually all of New York's elevated railways. From 1879 to 1883 he also owned the New York World.",
+    "The sentence everyone knows was first printed on 28 October 1891, in The Advocate of Topeka, in a letter from John Livingston, president of the New York State Farmers' Alliance. Livingston called it \"the other characteristic remark of the same gentleman\": that he \"could hire one-half the farmers to shoot the other half to death.\" A Kansas paper had him say it in the first person three weeks later. The working class came in 1938, in a poem by Delmore Schwartz. The date 1886, and the strikes of the Knights of Labor against his Missouri Pacific, were attached by a newspaper columnist in 1964. Gould died of tuberculosis in 1892, with an estate estimated at more than $70 million. The New York Herald wrote that his wealth \"had been purchased at too high a price.\""
+  ],
+  "bio": {
+    "t": "The Life and Legend of Jay Gould",
+    "a": "Maury Klein",
+    "y": "1986",
+    "why": "The standard biography, fully annotated, and the book that made the case for Gould as a builder rather than a wrecker. For the case against, read Charles Francis Adams Jr. and Henry Adams, Chapters of Erie (1886), written by his contemporaries and enemies."
+  },
+  "contested": "Whether he built more than he wrecked. The Adams brothers' Chapters of Erie and Matthew Josephson's The Robber Barons (1934) made him the type of the speculator who looted railroads; Maury Klein argues he was one of the two or three most important figures in the American economy of the late nineteenth century, a builder of the western and southwestern systems whom the press made into a villain. On the quotation, Quote Investigator finds 'some evidence' that he said something like it, in the 1891 letter, but notes that it came from a bitter opponent who did not hear the words, and that the wording kept changing: farmers became people and then the working class, and shoot became kill, destroy and fight. How much track he controlled is given as more than 10,000 miles by the Texas State Library and as more than 16,000 elsewhere; neither figure is Klein's, and none is printed above. His estate is put at $72 million and, by a New York appraiser in 1895, at $80 million in personal property alone; the probate record has not been opened here. His part in the Great Southwest Strike of 1886, which the Knights of Labor lost, is argued over in its own right, chiefly over how much blame its organiser, Martin Irons, deserved.",
+  "across": [
+    {
+      "to": "lives:cornelius-vanderbilt",
+      "label": "Cornelius Vanderbilt",
+      "txt": "— who tried to take the Erie from him, and was beaten off by a flood of new Erie stock."
+    },
+    {
+      "to": "lives:henry-clay-frick",
+      "label": "Henry Clay Frick",
+      "txt": "— the other villain of the age, whose best-known line was also first printed long after, by someone who was not there."
+    }
+  ],
+  "facts": [
+    {
+      "b": "about $5,000 · 1856 · 1879 · 1881 · 1888 · 1879–1883 · $10 million · about half",
+      "s": "His savings at twenty-one, the tannery with Pratt, Western Union, the elevated railways, the World, the Union Pacific sale and his share of the Southwest's mileage: Mark S. Joy, 'Jay Gould', EBSCO Research Starters, 2024"
+    },
+    {
+      "b": "1867",
+      "s": "The Erie board, the stock flooded against Vanderbilt and the flight to New Jersey: Texas State Library and Archives Commission, 'Jay Gould', exhibit on Texas railroads"
+    },
+    {
+      "b": "$145 · $4 million · $15 million · $160 · $133 · 20 per cent",
+      "s": "The gold corner of September 1869 and the crash, from the House investigation and The Gold Ring: Thomas Morgan and James Narron, 'Crisis Chronicles: The Gold Panic of 1869', Liberty Street Economics, Federal Reserve Bank of New York, 15 January 2016"
+    },
+    {
+      "b": "28 October 1891 · 1938 · 1964",
+      "s": "The earliest printing of the quotation and how its wording changed: Quote Investigator, 'I Can Hire One-Half of the Working Class to Kill the Other Half', 29 October 2017"
+    },
+    {
+      "b": "more than $70 million",
+      "s": "His estate, and the Herald's verdict: Joy, EBSCO Research Starters, 2024"
+    }
+  ]
+}

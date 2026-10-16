@@ -35,6 +35,11 @@
       "to": "lives:thomas-edison",
       "label": "Thomas Edison",
       "txt": "— who worked on the telephone too, and made a carbon transmitter for it at Menlo Park."
+    },
+    {
+      "to": "lives:glenn-curtiss",
+      "label": "Glenn Curtiss",
+      "txt": "— the motorcycle-engine builder whose flight in Bell's June Bug, in 1908, was the first in America announced in advance."
     }
   ],
   "plateOf": "Moffett Studio, between about 1914 and 1919. Library and Archives Canada, C-017335.",
