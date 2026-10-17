@@ -35,6 +35,11 @@
       "to": "lives:samuel-insull",
       "label": "Samuel Insull",
       "txt": "— Edison's private secretary from 1881, in the same company Tesla joined in New York in 1884 and left within a year."
+    },
+    {
+      "to": "lives:george-westinghouse",
+      "label": "George Westinghouse",
+      "txt": "— who bought his motor patents in 1888, when his own alternating current had been lighting Buffalo for nineteen months."
     }
   ],
   "facts": [

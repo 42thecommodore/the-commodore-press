@@ -45,6 +45,11 @@
       "to": "lives:nikola-tesla",
       "label": "Nikola Tesla",
       "txt": "— who worked for him for nearly a year, and blamed the broken $50,000 promise on the manager, not on him."
+    },
+    {
+      "to": "lives:george-westinghouse",
+      "label": "George Westinghouse",
+      "txt": "— who underbid his companies by more than half for the lighting of the Chicago fair, with a lamp made to get round his patent."
     }
   ],
   "plateOf": "With the tinfoil phonograph, about 1878. Brady-Handy Collection, Library of Congress.",

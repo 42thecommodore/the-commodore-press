@@ -63,6 +63,11 @@
       "to": "lives:mary-seacole",
       "label": "Mary Seacole",
       "txt": "— turned away by her companions in London, given a bed by Nightingale herself at Scutari."
+    },
+    {
+      "to": "lives:ida-b-wells",
+      "label": "Ida B. Wells",
+      "txt": "— the same instrument a generation later: her opponents’ own count, set against their explanation of the deaths."
     }
   ]
 }

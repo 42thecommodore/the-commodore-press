@@ -30,6 +30,16 @@
       "to": "lives:gandhi",
       "label": "Mohandas K. Gandhi",
       "txt": "— where the method came from."
+    },
+    {
+      "to": "lives:ida-b-wells",
+      "label": "Ida B. Wells",
+      "txt": "— the case against lynching, built decades before Montgomery from the count her opponents’ own press had made."
+    },
+    {
+      "to": "lives:dolores-huerta",
+      "label": "Dolores Huerta",
+      "txt": "— an organiser of the same years, co-founder of the farm workers’ union, whose answer to a room that said it could not be done is still chanted."
     }
   ]
 }

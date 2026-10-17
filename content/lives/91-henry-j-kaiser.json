@@ -30,6 +30,11 @@
       "to": "lives:henry-ford",
       "label": "Henry Ford",
       "txt": "— the line applied to ships, and then failure in Ford's own industry."
+    },
+    {
+      "to": "lives:walter-chrysler",
+      "label": "Walter Chrysler",
+      "txt": "— the railroad mechanic who did break into the car industry, in 1924, under his own name."
     }
   ],
   "facts": [

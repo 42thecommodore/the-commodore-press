@@ -35,6 +35,16 @@
       "to": "lives:vannevar-bush",
       "label": "Vannevar Bush",
       "txt": "— who chaired the NDRC under which Loomis's microwave committee worked."
+    },
+    {
+      "to": "lives:edward-thorp",
+      "label": "Edward Thorp",
+      "txt": "— the mathematician who went the other way, from the casino tables to the market, carrying one idea about how much to bet."
+    },
+    {
+      "to": "lives:henry-singleton",
+      "label": "Henry Singleton",
+      "txt": "— an engineer who took the other road with a fortune: no laboratory of his own, and a company’s stock spent as currency, then bought back."
     }
   ],
   "plateOf": "Popular Science Monthly, August 1928.",

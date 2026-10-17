@@ -1,0 +1,62 @@
+{
+  "id": "walter-chrysler",
+  "no": 113,
+  "keep": "The tallest building in the world carried a car company's name and not a cent of its money. He paid for it, and said it was for his sons.",
+  "n": "Walter Chrysler",
+  "years": "1875–1940",
+  "place": "Kansas, Detroit and New York",
+  "field": "Automobiles",
+  "group": "famous",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "The skyscraper with his name on it was not his company's. He paid for it himself, and told the story in his autobiography as something to leave his sons to be responsible for.",
+  "copy": [
+    "Walter Chrysler grew up in Ellis, Kansas, where his father drove locomotives for the Union Pacific and the railroad kept its repair shops. His father wanted one son at college and refused to sign his apprentice papers. Chrysler took a job sweeping the floor of the machine shop instead, and the master mechanic noticed him. He spent his twenties as a roving railroad mechanic. In 1908, working for the Chicago Great Western at Oelwein, Iowa, on $350 a month, he saw a Locomobile at the Chicago automobile show, ivory white with red cushions, and spent four days looking at it. It cost $5,000. He had $700, and borrowed the other $4,300 from a banker friend, Ralph Van Vechten, with a railroad official, William Causley, co-signing. It is often said that he never drove it. The Walter P. Chrysler Museum's account is that he spent three months taking it apart in his barn, and when he finally took it out he drove into a neighbour's garden, nearly ran over a cow in town, and by the end of the day had learned to drive.",
+    "In 1911 the American Locomotive Company offered him $12,000 a year to stay. Charles Nash offered him $6,000 to run the works at Buick, and he took the cut. In 1916 Billy Durant made him president of Buick at $500,000 a year for three years, of which $120,000 was cash and $380,000 was General Motors stock. Early in 1920 he sold his stock back to Durant for $10 million and left. He took over the management of the Maxwell Motor Company and in 1924 brought out a car under his own name, with four-wheel hydraulic brakes and a high-compression engine. More than $50 million of them were sold in the first year. Maxwell became the Chrysler Corporation in 1925, bought Dodge Brothers in 1928, and by 1935, when he stepped up to chairman, was second in the industry by volume.",
+    "The building began as William H. Reynolds's: a tower of 67 storeys and 808 feet, designed by William Van Alen. Chrysler took the project over in October 1928, and the city's landmarks report of 1978 records that no corporate funds were used in financing or building it. Downtown, H. Craig Severance was building 40 Wall Street to be the tallest in the world, and thinking the Chrysler Building would stop at 925 feet, he added a 50-foot flagpole to reach 927. Van Alen's 185-foot spire was delivered in five sections, assembled secretly inside at the 65th floor, and in November 1929 hoisted by a derrick up through a fire tower in the middle of the building and riveted in place, in about 90 minutes. The building opened on 27 May 1930 and lost its title to the Empire State Building two years later. Chrysler died on 18 August 1940."
+  ],
+  "bio": {
+    "t": "Life of an American Workman",
+    "a": "Walter P. Chrysler with Boyden Sparkes",
+    "y": "1937",
+    "why": "His own account, written with a journalist and first serialised in the Saturday Evening Post, and the source every later life draws on; not opened for this entry, which leans on the Chrysler museum's history built from it. Vincent Curcio's Chrysler: The Life and Times of an Automotive Genius (2000) is the modern biography."
+  },
+  "contested": "Why he built the tower, and how much it cost his architect. The landmarks report itself, having cited his autobiography on his sons, adds that he could not have been unaware the building would be a personal symbol and an image for his corporation. William Van Alen is reported to have had no written contract, to have asked six per cent of the cost, and to have sued Chrysler for it and won; the figures in that story come from Neal Bascomb's Higher (2003) and from blogs, none opened here, and none is printed. The Locomobile story is told two ways even by careful sources: the Gale encyclopedia entry has him not driving it about town and taking it apart several times, the museum has three months in the barn and then a day of driving; his autobiography, which would settle it, has not been opened. The $500,000 Buick salary was mostly stock, so whether he 'earned half a million' depends on what the stock was worth. The Dodge purchase is usually given as $170 million; neither the price nor how it was paid has been read in a document of 1928, and it is not printed. The museum dates his move to Buick to January 1912 after a visit in the autumn of 1911, the landmarks report to 1912, and another encyclopedia to 1910.",
+  "across": [
+    {
+      "to": "lives:henry-j-kaiser",
+      "label": "Henry J. Kaiser",
+      "txt": "— who tried after the war to break into the industry Chrysler had broken into in 1924, and failed."
+    },
+    {
+      "to": "lives:soichiro-honda",
+      "label": "Soichiro Honda",
+      "txt": "— another mechanic who learned the trade in the shop and put his own name on the car."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$350 a month · $5,000 · $700 · $4,300 · three months",
+      "s": "The Locomobile, its price, his savings, the loan and the months in the barn: Walter P. Chrysler Museum, 'Chapter One – Walter P. Chrysler' (2009), quoting Life of an American Workman"
+    },
+    {
+      "b": "$12,000 · $6,000 · $500,000 · $120,000 · $380,000 · $10 million",
+      "s": "His pay at ALCO and Buick, the Durant salary and its cash and stock, and the 1920 sale: Walter P. Chrysler Museum (2009)"
+    },
+    {
+      "b": "more than $50 million · 1925 · 1928 · 1935",
+      "s": "The first year's sales of the Chrysler car, the corporation, Dodge, and second place in the industry: New York City Landmarks Preservation Commission, Chrysler Building designation report (LP-0992), 12 September 1978"
+    },
+    {
+      "b": "67 storeys · 808 feet · October 1928 · 925 · 50 feet · 927 · 185 feet · five sections · 65th floor · about 90 minutes · 27 May 1930",
+      "s": "The Reynolds Building, the takeover, the race with 40 Wall Street, the spire and the opening: Landmarks Preservation Commission, LP-0992 (1978)"
+    },
+    {
+      "b": "18 August 1940",
+      "s": "His death: Kansas Historical Society, Kansapedia, 'Walter P. Chrysler'"
+    }
+  ]
+}

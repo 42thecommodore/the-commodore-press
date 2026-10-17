@@ -1,0 +1,70 @@
+{
+  "id": "henry-flagler",
+  "no": 114,
+  "keep": "The line is Flagler's, by Rockefeller's own account: a friendship founded on business beats a business founded on friendship. He spent what it made on a railroad to the sea.",
+  "n": "Henry Flagler",
+  "years": "1830–1913",
+  "place": "Cleveland and Florida",
+  "field": "Oil, Railroads & Hotels",
+  "group": "famous",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "The famous line about the Standard Oil partnership is usually given to Rockefeller. Rockefeller gave it to Flagler: a friendship founded on business, Flagler used to say, was a good deal better than a business founded on friendship.",
+  "copy": [
+    "Henry Flagler was a commission merchant in Cleveland when John D. Rockefeller, needing help in the oil business, asked him to give up his commission trade and come in as a partner. For years their desks were in the same room. They lived a few rods apart on Euclid Avenue and walked to the office together, home to lunch, back, and home again at night, planning as they went. \"Mr. Flagler drew practically all our contracts,\" Rockefeller wrote in 1909. On 10 January 1870 the articles of the Standard Oil Company were signed with a capital of $1,000,000; Flagler's is the second of the five names.",
+    "Later he turned to Florida, and spent, by his biographers' estimate, about $50 million on it, on hotels, towns and a railroad down the coast. Two-fifths of it went on the last stretch, the Key West Extension, laid over the open water and the islands of the Keys. On 18 October 1906 a hurricane caught the work crews, who had been moved from their tent camps onto barges and houseboats for safety. The surge swept over the boats. More than forty men were rescued by a steamer, and 135 died. At 10.43 in the morning of 22 January 1912 the first train reached Key West, with Flagler, aged eighty-two, in his private car.",
+    "His money also changed Florida's law. On 25 April 1901 Florida approved a law making incurable insanity of four years' standing grounds for divorce. In August 1901 Flagler, whose second wife had been held insane, was granted his divorce under it. In the 1905 debate on repealing the law, Senator Bailey said on the floor that $100,000 had been spent to pass it; the Senate voted 23 to 2 for repeal. In November 1908 labour agents who had recruited men for the Key West work were tried in New York on a charge of conspiring to hold them in peonage, and the judge stopped testimony about conditions in the camps until a conspiracy had been shown. Flagler died at Palm Beach on 20 May 1913. Rockefeller did not come to the funeral."
+  ],
+  "bio": {
+    "t": "Flagler: Rockefeller Partner and Florida Baron",
+    "a": "Edward N. Akin",
+    "y": "1988",
+    "why": "A historian's life, from the papers, of both halves of him, the oil and the state. For the partnership in Rockefeller's own words read his Random Reminiscences of Men and Events (1909), free at Project Gutenberg; for the railroad, Les Standiford's Last Train to Paradise (2002)."
+  },
+  "contested": "What the railroad cost, in money and in men. The $50 million usually attached to the Key West Extension is, in the Keys historian Jerry Wilkinson's account, the biographers' estimate of everything Flagler spent in Florida, of which the extension took two-fifths; a newspaper piece of December 1908, which reads like the company's own publicity, put the line at about $30 million. How many men died building it has no sourced total here: the 1906 hurricane killed 135 by the National Oceanic and Atmospheric Administration's count and 130 by Wilkinson's. Christopher Bowman and Kate Forde, writing in the Washington Post in 2018, argued that the work ran on peonage and that the company shaped the record; the 1908 trial was of the agents, not of Flagler, the company moved to have it dismissed, and the only report of its outcome found here is the friendly one. The bribery behind the 1901 divorce law was alleged on the floor of the Senate and reported as 'said to' by the papers, and the figure is printed above as an allegation. That he lost heavily in salt at Saginaw before the oil, often given as $50,000 and more, has not been read in a document here. Nor has any contemporary use of 'Flagler's Folly'.",
+  "across": [
+    {
+      "to": "lives:john-d-rockefeller",
+      "label": "John D. Rockefeller",
+      "txt": "— his partner, who wrote down the line about friendship and business and credited it to Flagler."
+    },
+    {
+      "to": "lives:james-j-hill",
+      "label": "James J. Hill",
+      "txt": "— who built his own railroad across the north-west as Flagler built his down the Florida coast."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1909",
+      "s": "The partnership, the shared office, the walks and the contracts: John D. Rockefeller, Random Reminiscences of Men and Events (1909), Project Gutenberg 17090"
+    },
+    {
+      "b": "10 January 1870 · $1,000,000 · five",
+      "s": "The articles of the Standard Oil Company and their signatories: Ida M. Tarbell, The History of the Standard Oil Company (1904), Appendix 2, Project Gutenberg 60692"
+    },
+    {
+      "b": "about $50 million · two-fifths · 22 January 1912 · 20 May 1913",
+      "s": "His Florida spending and the extension's share, the arrival at Key West, his death and the funeral: Jerry Wilkinson, 'Henry Flagler', History of the Florida Keys, keyshistory.org"
+    },
+    {
+      "b": "18 October 1906 · more than forty · 135",
+      "s": "The hurricane, the rescued and the dead: NOAA Atlantic Oceanographic and Meteorological Laboratory, '110th Anniversary of the Florida Keys Hurricane', 17 October 2016"
+    },
+    {
+      "b": "25 April 1901 · four years · August 1901",
+      "s": "The divorce law and the decree: Savannah Tribune, 22 April 1905; Wilmington Semi-Weekly Messenger, 18 June 1901; Associated Press report from Miami, Kalispell Bee, 14 August 1901 (Library of Congress, Chronicling America)"
+    },
+    {
+      "b": "$100,000 · 23 to 2",
+      "s": "Senator Bailey's allegation and the Senate vote to repeal: Walla Walla Evening Statesman, 24 April 1905; Birmingham Age-Herald, 21 April 1905 (Chronicling America)"
+    },
+    {
+      "b": "November 1908",
+      "s": "The peonage trial of the labour agents before Judge Hough: Bemidji Pioneer, 11 November 1908; Birmingham Age-Herald, 13 November 1908 (Chronicling America)"
+    }
+  ]
+}

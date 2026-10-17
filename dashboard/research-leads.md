@@ -392,3 +392,12 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Frick | Burgoyne, *Homestead* (1893); Chronicling America, July 1892, for his words after the shooting | Printed via PBS, flagged in `contested` |
 | Frick | Standiford, *Meet You in Hell* (2005), notes; any 1919 source for the "hell" reply | Not printed |
 | Frick | Plate decision, 2026-10-15: North American Review, vol. 211 (1920), with George Harvey's 'Henry Clay Frick' at p. 145; archive.org OCR confirms the article; PD-US by publication | Closed by decision |
+| Westinghouse | Tesla–Westinghouse contracts and the 1897 settlement; Seifer, *Wizard*; Skrabec, *Gentle Genius* (2007) | The torn royalty contract and buyout figures; in `contested` only |
+| Westinghouse | Source for "361 patents" and "60 companies" | Not printed; Prout's "some 400" printed instead |
+| Chrysler | *Life of an American Workman* (1937), Locomobile and Buick chapters, p. 197 | Printed via the Walter P. Chrysler Museum's history and the LPC report |
+| Chrysler | Bascomb, *Higher* (2003); Van Alen v. Chrysler court record | The architect's fee suit; not printed |
+| Chrysler | NYT, May–July 1928, or Moody's, on the Dodge price | The $170 million; not printed |
+| Flagler | Akin (1988) on Saginaw; 'Flagler before Florida' (1946, teachingcleveland.org PDF) | The salt losses; not printed |
+| Flagler | Laws of Florida, 1901 and 1905; House passage of the repeal | The repeal's final date; Senate vote printed |
+| Flagler | House Report 1287 (1908); outcome of the peonage trial | In `contested` only |
+| Flagler | A sourced total of deaths on the Key West Extension | Only the 1906 hurricane's printed |

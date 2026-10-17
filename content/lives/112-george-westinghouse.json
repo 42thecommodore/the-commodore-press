@@ -1,0 +1,70 @@
+{
+  "id": "george-westinghouse",
+  "no": 112,
+  "keep": "He did not invent the motor that made his name, and his own biographer says so. He invented the brake, built the current, and bought the motor.",
+  "n": "George Westinghouse",
+  "years": "1846–1914",
+  "place": "Pittsburgh",
+  "field": "Engineering & Manufacturing",
+  "group": "famous",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "In the story of the war of the currents he is Tesla's backer. His alternating current was lighting Buffalo seventeen months before Tesla's motor patents were issued, and his own biographer says he contributed little to the motor itself.",
+  "copy": [
+    "George Westinghouse took out his first patent for a railway air brake on 13 April 1869, at twenty-two and a half, while he was still living in Schenectady. The brake made his fortune, and his name with the railroads. In forty-eight years, by his biographer Henry Prout's count, he took out some 400 patents, a patent every month and a half of his working life, thirty-eight of them on natural gas alone. On 1 June 1881 he gave the men at his Air Brake Works in Pittsburgh a Saturday half-holiday, after seeing it in England. Prout calls him the pioneer of it in the Pittsburgh district, and declines to claim more.",
+    "Alternating current came to him from Europe. Through Guido Pantaleoni, the son of an Italian friend, he took up the American rights to the Gaulard and Gibbs transformer, and paid for William Stanley to build an experimental plant at Great Barrington, in Massachusetts. It began working on 16 March 1886, the first alternating-current transformer installation in the United States. The first commercial plant went into operation at Buffalo on 30 November 1886. Nikola Tesla's motor patents were issued on 1 May 1888, and on 7 July Westinghouse bought the exclusive rights. Prout is blunt: \"The reader should not get the impression that Westinghouse contributed much as an engineer or as an inventor to the induction motor. He did not.\" What he gave, Prout wrote, was \"imagination, courage, and force of character.\" In 1892 he took the lighting of the Chicago World's Fair at $5.25 a light, against bids of $13.98 to $18.51 from the General Electric companies. Barred from Edison's one-piece lamp, he made a two-piece stopper lamp instead, 250,000 of them in a few months, and his company lost money on the contract.",
+    "The panic of 1907 put three of his companies into receivership. The Electric Company owed $43,000,000, and with its stock its liabilities passed $70,000,000. When it was reorganised, the committee of its own workers was asked to raise $395,650 in subscriptions to the new stock, and brought in $611,250 from about five thousand of them. The company came out of receivership on 5 December 1908, but control of it had passed out of his hands, and within four years he had no official place in it at all. He died on 12 March 1914, of heart disease, leaving, his first biographer complained, no diaries and no files of personal correspondence."
+  ],
+  "bio": {
+    "t": "A Life of George Westinghouse",
+    "a": "Henry G. Prout",
+    "y": "1921",
+    "why": "Written for the American Society of Mechanical Engineers by an engineer who knew the companies from inside, and so sympathetic, but candid on what Westinghouse did not do. It is free on archive.org. Francis Leupp's George Westinghouse: His Life and Achievements (1918) is the livelier companion."
+  },
+  "contested": "How much of the current, and of the money, was his. The popular story credits Tesla with the system and Westinghouse with the cheque; Prout gives him the system and Tesla the motor, and records that Oliver Shallenberger, a Westinghouse engineer, and Galileo Ferraris in Italy reached similar ideas in 1888, while holding Tesla the earlier inventor of the motor. The best-known story about the two men, that Tesla tore up his royalty contract to save Westinghouse's company, appears in neither of the two early biographies; Margaret Cheney is reported to have called it unfortunately without documentation, and the buyout figures attached to it are not printed here. Prout also reports, as hearsay, that the Chicago fair saved its organisers about $1,000,000, and it is not printed. Who invented the air brake was argued in court in his lifetime, and the circuit court found for him on the first form of it in 1875. The figure of 361 patents and of sixty companies founded, often given, has not been found in either biography.",
+  "across": [
+    {
+      "to": "lives:nikola-tesla",
+      "label": "Nikola Tesla",
+      "txt": "— whose motor patents he bought in 1888, nineteen months after his own alternating current was lighting Buffalo."
+    },
+    {
+      "to": "lives:thomas-edison",
+      "label": "Thomas Edison",
+      "txt": "— whose one-piece lamp he was barred from at the Chicago fair, and whose companies he underbid by more than half."
+    }
+  ],
+  "facts": [
+    {
+      "b": "13 April 1869 · some 400 · forty-eight years · thirty-eight · 1 June 1881",
+      "s": "His first brake patent, his patents in all and in natural gas, and the half-holiday: Henry G. Prout, A Life of George Westinghouse (1921), pp. 11–13, 62, 295 (archive.org)"
+    },
+    {
+      "b": "16 March 1886 · 30 November 1886 · 1 May 1888 · 7 July",
+      "s": "Great Barrington, Buffalo, Tesla's patents and the assignment: Prout (1921), pp. 102–123"
+    },
+    {
+      "b": "$5.25 · $5.49 · $13.98 to $18.51",
+      "s": "The Chicago lighting bids of 1892: Francis E. Leupp, George Westinghouse: His Life and Achievements (1918), pp. 163–164 (archive.org)"
+    },
+    {
+      "b": "250,000",
+      "s": "Stopper lamps made for the fair, and the loss on the contract: Prout (1921), pp. 134–137"
+    },
+    {
+      "b": "$43,000,000 · $70,000,000 · fourteen months",
+      "s": "The Electric Company's debt and liabilities in the 1907 receivership: Prout (1921), pp. 279–280"
+    },
+    {
+      "b": "$395,650 · $611,250 · about five thousand · 5 December 1908",
+      "s": "The workers' subscription to the reorganisation, and the end of the receivership: Leupp (1918), pp. 214–215"
+    },
+    {
+      "b": "12 March 1914",
+      "s": "His death: Prout (1921), p. 20"
+    }
+  ]
+}
