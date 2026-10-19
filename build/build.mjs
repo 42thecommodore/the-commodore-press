@@ -8,6 +8,7 @@ import { readJSON } from "../tools/json.mjs";
 import { fillMark, faviconSvg, ICON_FILES } from "./mark.mjs";
 import { fontFaces, fontPreload, FONT_FILES } from "./fonts.mjs";
 import { motifSVG } from "./motif.mjs";
+import { LABEL_CSS } from "./label.mjs";
 import { writeEntryPages, writeAbout, writeLog, writeContents, writeUpdates, UPDATES_LINK, EDITOR, minsOf } from "./pages.mjs";
 import crypto from "node:crypto";
 import { execSync } from "node:child_process";
@@ -175,7 +176,7 @@ const out = fill(typesetHTML(read("templates/shell.html")))   // the frame's own
   .replace("<!--NEWSCOLOPHON-->", NEWS && NEWS.action ? ` If you subscribe to the newsletter, your address is held by ${NEWS.provider}, used only to send it; every issue carries its own unsubscribe link.` : "")
   .replace("<!--LOGCOLOPHON-->", LOG.length ? ` Beside the wings sits <a href="log/">the Log</a>, the editor's signed column: opinion, dated and under a name, held to the same rules on sources, quotation and corrections as everything else here.` : "")
   .replace("<!--FONTS-->", () => fontPreload("") + "\n<style>" + fontFaces("") + "</style>")
-  .replace("<!--CSS-->", () => lean(read("theme/press.css")) + lean(read("theme/atlas.css")) + fillMark(lean(read("theme/reading.css"))))
+  .replace("<!--CSS-->", () => LABEL_CSS + lean(read("theme/press.css")) + lean(read("theme/atlas.css")) + fillMark(lean(read("theme/reading.css"))))
   .replace("<!--DATA-->", () => DATA)
   // reading.js and atlas.js first: the engine calls both (atlas.js holds only declarations), and the entry pages run reading.js too
   .replace("<!--ENGINE-->", () => safe(lean(read("theme/reading.js"))) + "\n" + safe(fill(lean(read("theme/atlas.js")))) + "\n" + safe(fill(lean(read("theme/press.js")))));

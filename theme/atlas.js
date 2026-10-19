@@ -309,7 +309,7 @@ function renderChart() {
     <g class="bars">${bars}</g>
   </svg>
   <div class="chart-tools"><button type="button" onclick="chartZoomBtn(1.6)" aria-label="Zoom in">+</button><button type="button" onclick="chartZoomBtn(1/1.6)" aria-label="Zoom out">−</button><button type="button" onclick="chartReset()" aria-label="Show the whole chart">⊙</button><span id="chartZoom" aria-hidden="true"></span></div>
-  <div class="chart-hint" id="chartHint">${narrow ? "pinch to zoom · tap anyone" : "drag to move · pinch or ⌘-scroll to zoom · point at anyone"}</div>
+  <div class="chart-hint lbl" id="chartHint">${narrow ? "pinch to zoom · tap anyone" : "drag to move · pinch or ⌘-scroll to zoom · point at anyone"}</div>
   <div class="chart-tip" id="chartTip" role="status" hidden></div>
   <div class="const-plaque" id="constPlaque" aria-hidden="true"></div>
   <svg class="wake" id="chartWake" aria-hidden="true"><path d=""/></svg>
@@ -520,20 +520,20 @@ function chartTip(e) {
     const p = PEOPLE.find(x => x.id === el.dataset.p);
     if (hoverPerson !== p) { hoverPerson = p; showRoute(p); }
     const echoes = (typeof ECHOES === "undefined" ? [] : ECHOES).filter(x => x.notes.some(n => n.who === p.name)).length;
-    html = `<span class="tt-k" style="color:${p.color}">${DOM_BY_ID[p.domain].label}</span><b>${p.name}</b>${p.role ? `<small>${p.role}</small>` : ""}
+    html = `<span class="tt-k lbl" style="color:${p.color}">${DOM_BY_ID[p.domain].label}</span><b>${p.name}</b>${p.role ? `<small>${p.role}</small>` : ""}
       <span class="tt-m">${p.p.length} ${p.p.length === 1 ? "lesson" : "lessons"} · ${notesOf(p)} ${notesOf(p) === 1 ? "note" : "notes"}${echoes ? ` · ${echoes} shared ${echoes === 1 ? "idea" : "ideas"}` : ""}</span>
       <i>${p.take}</i><em>The dashed line runs through their lessons. Click for their notes.</em>`;
   } else {
     if (hoverPerson) { hoverPerson = null; if (!selectedPerson) showRoute(null); }
     if (el.classList.contains("oldport")) {
       const pt = PORTS.find(x => x.life.id === el.dataset.l);
-      html = `<span class="tt-k">From the Lives shelf</span><b>${pt.life.n}</b><small>${pt.life.years}</small><i>${pt.txt}</i><em>Click to open their Life.</em>`;
+      html = `<span class="tt-k lbl">From the Lives shelf</span><b>${pt.life.n}</b><small>${pt.life.years}</small><i>${pt.txt}</i><em>Click to open their Life.</em>`;
     } else if (el.classList.contains("lane")) {
       const a = P_BY_ID[el.dataset.a], b = P_BY_ID[el.dataset.b], s = shared(a, b);
-      html = `<span class="tt-k">A lane</span><b>${a.name} <span class="tt-x">and</span> ${b.name}</b><span class="tt-m">${s.length} ${s.length === 1 ? "person taught" : "people taught"} me both</span><i>${s.map(p => p.name).join(", ")}</i>`;
+      html = `<span class="tt-k lbl">A lane</span><b>${a.name} <span class="tt-x">and</span> ${b.name}</b><span class="tt-m">${s.length} ${s.length === 1 ? "person taught" : "people taught"} me both</span><i>${s.map(p => p.name).join(", ")}</i>`;
     } else {
       const pr = P_BY_ID[el.dataset.i], ln = PRINCIPLES.filter(o => o !== pr && shared(pr, o).length).length;
-      html = `<span class="tt-k">A lesson</span><b>${pr.name}</b><i>${pr.gloss}</i><span class="tt-m">${pr.members.length} people · lanes to ${ln} other ${ln === 1 ? "island" : "islands"}${pr.ports.length ? ` · ${pr.ports.length} from the Lives shelf` : ""}</span><em>Click to see who taught it.</em>`;
+      html = `<span class="tt-k lbl">A lesson</span><b>${pr.name}</b><i>${pr.gloss}</i><span class="tt-m">${pr.members.length} people · lanes to ${ln} other ${ln === 1 ? "island" : "islands"}${pr.ports.length ? ` · ${pr.ports.length} from the Lives shelf` : ""}</span><em>Click to see who taught it.</em>`;
     }
   }
   tip.innerHTML = html; tip.hidden = false;
@@ -686,7 +686,7 @@ function drawConst(e) {
 function plaque(e) {
   const el = document.getElementById("constPlaque"); if (!el) return;
   el.classList.toggle("on", !!e);
-  if (e) el.innerHTML = `<span class="pq-k">✦ Constellation</span><i>${e.idea}</i><span class="pq-n">${e.notes.length} people, joined in white</span>`;
+  if (e) el.innerHTML = `<span class="pq-k lbl">✦ Constellation</span><i>${e.idea}</i><span class="pq-n">${e.notes.length} people, joined in white</span>`;
 }
 function isleCard() {
   const el = document.getElementById("isleCard"); if (!el) return;
@@ -743,7 +743,7 @@ function renderCrossing() {
   const items = [];
   PORTS.forEach((pt, i) => {
     const prev = PORTS[i - 1];
-    if (prev && pt.year - prev.year >= 60) items.push(`<li class="cx-gap"><span>${(pt.year - prev.year).toLocaleString("en-US")} years of open water</span></li>`);
+    if (prev && pt.year - prev.year >= 60) items.push(`<li class="cx-gap"><span class="lbl">${(pt.year - prev.year).toLocaleString("en-US")} years of open water</span></li>`);
     const now_ = pt.pr.members;
     items.push(`<li class="cx-port" data-y="${pt.year}" style="--k:${i % 2}">
       <span class="cx-dot" aria-hidden="true"></span>
@@ -754,7 +754,7 @@ function renderCrossing() {
         <div class="cx-now"><span class="lbl q">Who taught it to me now</span><div class="const-stars">${now_.slice(0, 5).map(personPill).join("")}${now_.length > 5 ? `<button class="star-pill more" onclick="selectIsle('${pt.pr.id}',true)">+${now_.length - 5} more</button>` : ""}</div></div>
       </div></li>`);
   });
-  if (PORTS.length) items.push(`<li class="cx-gap"><span>${(now - PORTS[PORTS.length - 1].year).toLocaleString("en-US")} years to now</span></li>`);
+  if (PORTS.length) items.push(`<li class="cx-gap"><span class="lbl">${(now - PORTS[PORTS.length - 1].year).toLocaleString("en-US")} years to now</span></li>`);
   items.push(`<li class="cx-port cx-harbour" data-y="${now}" style="--k:0">
       <span class="cx-dot" aria-hidden="true"></span>
       <div class="cx-card"><div class="cx-top"><span class="cx-isle">The harbour</span><span class="cx-yr">${now}</span></div>
@@ -941,7 +941,7 @@ function renderAtlas() {
   atlasDerive();
   const first = PORTS[0];
   document.getElementById("atlasSide").innerHTML = `${PEOPLE.length} people · ${PRINCIPLES.length} lessons<br>${PORTS.length} Lives from the shelf${first ? `, the earliest ${fmtYear(first.year)}` : ""}`;
-  document.getElementById("isleStrip").innerHTML = `<div class="ix-h">Index of lessons</div>` + PRINCIPLES.slice().sort((a, b) => b.members.length - a.members.length)
+  document.getElementById("isleStrip").innerHTML = `<div class="ix-h lbl">Index of lessons</div>` + PRINCIPLES.slice().sort((a, b) => b.members.length - a.members.length)
     .map(pr => `<button data-i="${pr.id}" aria-pressed="false" onclick="selectIsle('${pr.id}')">${pr.name}<span>${countLine(pr)}</span></button>`).join("");
   renderChart(); isleCard(); renderLinks(); renderCrossing(); renderHarbour();
   /* the chart is first drawn while its wing is hidden, at no width; redraw and re-measure

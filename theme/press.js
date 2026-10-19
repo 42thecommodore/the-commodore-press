@@ -277,7 +277,7 @@ function readNextHTML(kind,b,next){
     if(t){n={kind:w,b:t,why:a.txt};break}}
   if(!n)n={kind,b:next,why:""};
   return `<a class="rs-next" ${entryAttrs(n.kind,n.b.id)}>
-    <span class="rs-nk">${n.why?"Read next":"Next on the shelf"}</span><span class="rs-nt">${n.b.n}</span>
+    <span class="rs-nk lbl">${n.why?"Read next":"Next on the shelf"}</span><span class="rs-nt">${n.b.n}</span>
     ${n.why?`<span class="rs-nd">${n.why.replace(/^\s*[—–-]\s*/,"")}</span>`:""}
     <span class="rs-nm"><span>Lives · ${n.b.mins} min</span><b>Read →</b></span></a>`;
 }
@@ -313,8 +313,8 @@ function readerHTML(kind,b){
   const plate = (PLATES[b.id]
     ? (b.plateOf
       ? `<figure class="plate"><img src="${PLATES[b.id]}" alt="${b.plateOf.replace(/"/g,"&quot;")}"><figcaption class="obj">${b.plateOf}</figcaption></figure>`
-      : `<figure class="plate"><img src="${PLATES[b.id]}" alt="Portrait of ${b.n}"><figcaption>Plate · ${b.n}</figcaption></figure>`)
-    : `<figure class="plate mark">{{MARK size=84 sw=0.8 pn aria opacity=0.7}}<figcaption>No plate — see colophon</figcaption></figure>`);
+      : `<figure class="plate"><img src="${PLATES[b.id]}" alt="Portrait of ${b.n}"><figcaption class="lbl">Plate · ${b.n}</figcaption></figure>`)
+    : `<figure class="plate mark">{{MARK size=84 sw=0.8 pn aria opacity=0.7}}<figcaption class="lbl">No plate — see colophon</figcaption></figure>`);
   return `<div class="wrap">
     <div class="rbar">
       <button class="back" onclick="closeReader()"><span class="arw">←</span> All lives</button>
@@ -325,10 +325,10 @@ function readerHTML(kind,b){
       <div><div class="rail">
         <div class="rbook">${lifeBook(b)}</div>
         <div class="rmeta">
-          <div><b>Field</b><span>${b.field}</span></div>
-          <div><b>Lived</b><span>${b.years}</span></div>
-          <div><b>Life</b><span>№ ${b.no}</span></div>
-          <div><b>Reading</b><span>${mins} min</span></div>
+          <div><b class="lbl">Field</b><span>${b.field}</span></div>
+          <div><b class="lbl">Lived</b><span>${b.years}</span></div>
+          <div><b class="lbl">Life</b><span>№ ${b.no}</span></div>
+          <div><b class="lbl">Reading</b><span>${mins} min</span></div>
         </div>
         <nav class="toc">${toc.map(t=>`<a href="#" data-sec="${t[0]}" onclick="gotoSec('${t[0]}');return false;">${t[1]}</a>`).join("")}</nav>
       </div></div>
@@ -340,15 +340,15 @@ function readerHTML(kind,b){
         <p class="lede">${b.lede}</p>
         ${S.join("")}
         <section class="rs-end" id="rend" aria-label="Share this entry">
-          <div class="rs-fin">End of entry</div>
+          <div class="rs-fin lbl">End of entry</div>
           <h3>${title}</h3>
           <p>${END_LINE}</p>
           <div class="rs-row"><button class="rs-b rs-main" type="button" onclick="shareEntry('l','${b.id}',this)">Share this entry</button><a class="rs-b" href="l/${b.id}/">Open as its own page ↗</a></div>
           ${readNextHTML(kind,b,next)}
         </section>
         <div class="endnav">
-          <a ${entryAttrs(kind,prev.id)}><small>← Previous</small><em>${prev.n}</em></a>
-          <a ${entryAttrs(kind,next.id)}><small>Next →</small><em>${next.n}</em></a>
+          <a ${entryAttrs(kind,prev.id)}><small class="lbl">← Previous</small><em>${prev.n}</em></a>
+          <a ${entryAttrs(kind,next.id)}><small class="lbl">Next →</small><em>${next.n}</em></a>
         </div>
       </div>
     </div></div>`;
@@ -617,7 +617,7 @@ function runSearch(q){
   sHits=SIX.filter(e=>terms.every(t=>e.hay.includes(t)));
   const exact=sHits.filter(e=>fold(e.t).includes(q));
   sHits=[...exact,...sHits.filter(e=>!exact.includes(e))].slice(0,24);
-  box.innerHTML=sHits.length?sHits.map((e,i)=>`<button class="sres${i===0?" sel":""}" onclick="pickResult(${i})"><span class="w">${e.w}</span><b>${e.t}</b><span>${e.s}</span></button>`).join("")
+  box.innerHTML=sHits.length?sHits.map((e,i)=>`<button class="sres${i===0?" sel":""}" onclick="pickResult(${i})"><span class="w lbl">${e.w}</span><b>${e.t}</b><span>${e.s}</span></button>`).join("")
     :`<div class="snone">Nothing in the library matches &ldquo;${q.replace(/[<>&]/g,"")}&rdquo;.</div>`;
 }
 function pickResult(i){const e=sHits[i];if(!e)return;closeSearch();e.act()}

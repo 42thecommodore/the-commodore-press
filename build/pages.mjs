@@ -15,6 +15,7 @@ import { execFileSync } from "node:child_process";
 import { iconLinks, fillMark } from "./mark.mjs";
 import { fontFaces, fontPreload } from "./fonts.mjs";
 import { motifSVG } from "./motif.mjs";
+import { LABEL_CSS } from "./label.mjs";
 
 /* When an entry's file last changed, and when it first appeared, from git. The sitemap and
    each page's JSON-LD say when a page was modified (dateModified) and published
@@ -67,9 +68,9 @@ const clip = (s, n) => { s = strip(s); return s.length <= n ? s : s.slice(0, s.l
    box points at the feed — the one way to follow the Press that needs no service. */
 export function signupHTML(NEWS, root, heading = "Follow the Press", hasFeed = true) {
   const feed = `<a href="${root}feed.xml">RSS feed</a>`;
-  if (!NEWS || !NEWS.action) return `<div class="sub-box"><b>${heading}</b>New Log pieces arrive in the ${feed}, in full.</div>`;
+  if (!NEWS || !NEWS.action) return `<div class="sub-box"><b class="lbl">${heading}</b>New Log pieces arrive in the ${feed}, in full.</div>`;
   return `<form class="sub-box" action="${attr(NEWS.action)}" method="post" target="_blank">
-<b>${heading}</b><p>${inline(NEWS.pitch || "New pieces by email.")}</p>
+<b class="lbl">${heading}</b><p>${inline(NEWS.pitch || "New pieces by email.")}</p>
 <div class="sub-row"><input type="email" name="${attr(NEWS.field || "email")}" required placeholder="you@example.com" aria-label="Email address"><button type="submit">Subscribe</button></div>
 <small>Addresses are held by ${attr(NEWS.provider)}, and used for nothing else.${hasFeed ? ` Or follow the ${feed}.` : ""}</small></form>`;
 }
@@ -95,6 +96,8 @@ const THEME_BOOT = `<script>try{var t=localStorage.getItem("cp-theme");if(t==="d
 const DUSK_SWITCH = `<button type="button" class="dusk-sw" aria-pressed="false" onclick="var d=document.documentElement,on=d.dataset.theme!=='dark';d.dataset.theme=on?'dark':'light';this.setAttribute('aria-pressed',on);try{localStorage.setItem('cp-theme',d.dataset.theme)}catch(e){}">Dusk</button><script>(function(b){var d=document.documentElement;b.setAttribute("aria-pressed",d.dataset.theme==="dark")})(document.currentScript.previousElementSibling)</script>`;
 
 const CSS = `
+${LABEL_CSS}
+.lbl{color:var(--ink-soft)}
 .dusk-sw{font:inherit;color:inherit;background:none;border:0;padding:0 2px;min-height:44px;cursor:pointer;text-decoration:underline 1px;text-underline-offset:3px}.dusk-sw[aria-pressed=true]{font-weight:600}
 :root{--fs-0:12px;--fs-1:13px;--fs-2:15px;--fs-3:17px;--fs-4:19px;--fs-5:21px;--fs-6:26px;--fs-7:34px;--fs-8:44px;--fs-9:64px;--paper:#F2EDE1;--rule:#D3C9B2;--ink:#1E1C18;--ink-soft:#5C5647;--oxblood:#8A2B25;
   --serif:"EB Garamond","Iowan Old Style",Palatino,Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
@@ -107,7 +110,7 @@ a{color:inherit}
 .top a{text-decoration:none;display:inline-block;padding:6px 0}   /* the crumbs and "All titles": 20px of text, 32px to press */
 .band{background:var(--cover);color:var(--cink);padding:56px 20px 48px}
 .band .in,.body{max-width:680px;margin:0 auto}
-.kick{line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--accent)}
+.kick{color:var(--accent)}
 h1{font-weight:500;font-size:clamp(38px,7vw,58px);line-height:1.05;margin:14px 0 10px;letter-spacing:-.02em}
 .sub{font-style:italic;font-size:var(--fs-5);opacity:.9;margin:0}
 .claim{font-size:var(--fs-5);line-height:1.4;margin:26px 0 0;padding-left:16px;border-left:2px solid var(--accent)}
@@ -115,8 +118,7 @@ h1{font-weight:500;font-size:clamp(38px,7vw,58px);line-height:1.05;margin:14px 0
 .plate img{width:100%;display:block;border-radius:2px}
 .body{padding:36px 20px 64px}
 .lede{font-size:var(--fs-5);line-height:1.45}
-h2{line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);
-  margin:44px 0 14px;padding-top:14px;border-top:1px solid var(--rule)}
+h2{margin:44px 0 14px;padding-top:14px;border-top:1px solid var(--rule)}
 .row{margin:0 0 14px}.row b{display:block;font-weight:600}
 .row span,.why{color:var(--ink-soft);font-size:var(--fs-4)}
 .fact b{font:500 var(--fs-6)/1.2 var(--serif);font-variant-numeric:lining-nums}
@@ -125,14 +127,14 @@ ol.tl{padding-left:0;list-style:none}ol.tl li{margin:0 0 10px}ol.tl .y{font:var(
 .cta{display:inline-block;margin-top:48px;padding:12px 20px;border:1px solid var(--ink);font:600 var(--fs-4)/1 var(--serif);text-decoration:none}
 .cta:hover{background:var(--ink);color:var(--paper)}
 .sub-box{display:block;margin-top:48px;padding:20px;border:1px solid var(--rule);font-size:var(--fs-4)}
-.sub-box b{font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:500;display:block;margin-bottom:6px}
+.sub-box b{display:block;margin-bottom:6px;color:inherit}
 .sub-box p{margin:0 0 12px}.sub-box small{display:block;margin-top:10px;font-size:var(--fs-2);line-height:1.5;color:var(--ink-soft)}
 .sub-row{display:flex;gap:8px;flex-wrap:wrap}.sub-row input{flex:1 1 200px;min-width:0;padding:10px 12px;font:var(--fs-3) var(--serif);
   background:transparent;color:var(--ink);border:1px solid var(--ink-soft);border-radius:0}
 .sub-row button{padding:10px 18px;font:600 var(--fs-3) var(--serif);background:var(--ink);color:var(--paper);border:0;cursor:pointer}
 .pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;padding-top:18px;border-top:1px solid var(--rule)}
 .pn a{text-decoration:none;font-size:var(--fs-4);line-height:1.3}.pn a:last-child{text-align:right}
-.pn span{display:block;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);margin-bottom:2px}
+.pn span{display:block;margin-bottom:2px}
 footer{border-top:1px solid var(--rule);padding:24px 20px;font:var(--fs-2)/1.6 var(--serif);color:var(--ink-soft);text-align:center}
 @media (max-width:560px){body{font-size:var(--fs-4)}.plate{float:none;width:130px;margin:0 0 20px}
   /* a thumb is 44px: the crumbs, the glance links, the reading list and the way on */
@@ -159,12 +161,12 @@ const ENTRY_CSS = `
   .rail{display:flex;flex-direction:column;gap:3px;position:sticky;top:76px;align-self:start;margin-top:44px;font:var(--fs-3)/1.35 var(--serif)}
   .rail a{text-decoration:none;color:var(--ink-soft);padding:3px 0}   /* 29px to press; the gap gave up what the padding took, so the rhythm is unchanged */.rail a:hover{color:var(--ink)}
 }
-.lbl{display:block;line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+.keepq .lbl,.rail .lbl{display:block;margin-bottom:8px}
 .keepq{margin:30px 0 36px;padding:24px 26px;background:color-mix(in srgb,var(--cover) 9%,var(--paper));border-left:4px solid var(--cover)}
 .keepq p{font-size:var(--fs-6);line-height:1.3;font-style:italic;margin:0 0 14px}
-.essay p:first-child::first-letter{float:left;font-size:3.4em;line-height:.85;padding:6px 5px 0 0;font-weight:500}
+.essay p:first-child::first-letter{float:left;font-size:var(--fs-9);line-height:.85;padding:6px 5px 0 0;font-weight:500}
 .s{margin-top:52px}
-.s h2{display:flex;align-items:baseline;gap:12px;font:500 var(--fs-6)/1.2 var(--serif);letter-spacing:-.005em;text-transform:none;color:var(--ink);
+.s h2{display:flex;align-items:baseline;gap:12px;font:500 var(--fs-6)/1.2 var(--serif);letter-spacing:-.005em;color:var(--ink);
   border-top:1px solid var(--rule);padding-top:18px;margin:0 0 18px}
 .s h2 .n{font:var(--fs-0) var(--mono);color:var(--ink-soft)}
 .facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
@@ -210,7 +212,7 @@ body{--rs-bg:var(--paper);--rs-ink:var(--ink)}
 .keepq .rs-lineshare{margin-top:0}
 .corrd{border-top:1px solid color-mix(in srgb,var(--oxblood) 30%,transparent);padding:12px 0}
 .corrd summary{cursor:pointer;font-size:var(--fs-4);line-height:1.4}.corrd p{font-size:var(--fs-3);line-height:1.6;margin:10px 0 0}
-@media (max-width:560px){.top.entry .wl{display:none}.top.entry .tr{gap:12px}.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:var(--fs-2)}.keepq p{font-size:var(--fs-5)}.s h2{font-size:var(--fs-6)}}
+@media (max-width:560px){.top.entry .wl{display:none}.top.entry .tr{gap:12px}.crumbs span,.crumbs i:last-of-type{display:none}.top{font-size:var(--fs-2)}.keepq p{font-size:var(--fs-5)}.s h2{font-size:var(--fs-6)}.essay p:first-child::first-letter{font-size:var(--fs-8)}}
 ${DUSK(".keepq", "background:color-mix(in srgb,var(--cover) 30%,var(--paper))")}
 `;
 
@@ -260,11 +262,11 @@ function readNext(b, next, kind, byRef, known) {
   for (const a of b.across || []) { const t = byRef[a.to]; if (t) { n = { kind: a.to.split(":")[0], b: t, why: a.txt, href: hrefFor(a.to, known) }; break; } }
   if (!n) n = { kind, b: next, why: "", href: `../${next.id}/` };
   const name = n.kind === "press" ? n.b.title : n.b.n;
-  return `<a class="rs-next" href="${n.href}"><span class="rs-nk">${n.why ? "Read next" : "Next on the shelf"}</span><span class="rs-nt">${name}</span>${n.why ? `<span class="rs-nd">${n.why.replace(/^\s*[—–-]\s*/, "")}</span>` : ""}<span class="rs-nm"><span>${n.kind === "press" ? "The Press" : "Lives"} · ${minsOf(n.b)} min</span><b>Read →</b></span></a>`;
+  return `<a class="rs-next" href="${n.href}"><span class="rs-nk lbl">${n.why ? "Read next" : "Next on the shelf"}</span><span class="rs-nt">${name}</span>${n.why ? `<span class="rs-nd">${n.why.replace(/^\s*[—–-]\s*/, "")}</span>` : ""}<span class="rs-nm"><span>${n.kind === "press" ? "The Press" : "Lives"} · ${minsOf(n.b)} min</span><b>Read →</b></span></a>`;
 }
 function endBlock(url, name, title, text, nextCard) {
   return `<section class="rs-end" id="rend" aria-label="Share this entry">
-<div class="rs-fin">End of entry</div>
+<div class="rs-fin lbl">End of entry</div>
 <h3>${name}</h3>
 <p>${END_LINE}</p>
 <div class="rs-row"><button class="rs-b rs-main rs-js-only" type="button" data-rs="share">Share this entry</button><a class="rs-b rs-nojs" href="mailto:?subject=${enc(strip(title))}&amp;body=${enc(strip(text) + "\n\n" + url)}">Email</a><a class="rs-b rs-nojs" href="https://twitter.com/intent/tweet?text=${enc(clip(text, 200))}&amp;url=${enc(url)}" rel="noopener" target="_blank">X</a><a class="rs-b rs-nojs" href="https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}" rel="noopener" target="_blank">LinkedIn</a></div>
@@ -357,7 +359,7 @@ ${FONTS(SITE, "../../")}
 <body style="--cover:${b.cover};--cink:${b.ink};--accent:${b.accent}">
 <nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/">${wingName}</a><i>/</i><span>${name}</span></span><span class="tr"><span class="rs-left rs-js-only" id="rleft">${mins} min read</span><button class="rs-go rs-js-only" type="button" data-rs="share">${SHARE_ICON}Share</button><a class="wl" href="../../${isPress ? "" : "#lives"}">${wing} →</a></span><span class="rs-bar" id="rbar"></span></nav>
 <header class="band"><div class="in">
-  <div class="btxt"><div class="kick">${isPress ? `The Press, retired · ${b.field}` : `Lives · № ${b.no} · ${b.years}`}</div>
+  <div class="btxt"><div class="kick lbl">${isPress ? `The Press, retired · ${b.field}` : `Lives · № ${b.no} · ${b.years}`}</div>
   <h1>${name}</h1>
   <p class="sub">${sub}</p>
   ${isPress ? `<p class="retired">${RETIRED_LINE}</p>` : ""}
@@ -371,7 +373,7 @@ ${FONTS(SITE, "../../")}
 ${main}
 ${endBlock(url, name, `${strip(name)} — The Commodore Press`, shareText, readNext(b, next, kind, ctx.byRef, known))}
 ${isPress ? "" : `<a class="cta" href="../../#${slug}">Open in the library →</a>`}
-<nav class="pn">${[[prev, "←"], [next, "→"]].map(([e, arrow]) => `<a href="../${e.id}/"><span>${arrow === "←" ? "← Previous" : "Next →"}</span>${isPress ? e.title : e.n}</a>`).join("")}</nav>
+<nav class="pn">${[[prev, "←"], [next, "→"]].map(([e, arrow]) => `<a href="../${e.id}/"><span class="lbl">${arrow === "←" ? "← Previous" : "Next →"}</span>${isPress ? e.title : e.n}</a>`).join("")}</nav>
 ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../../", "Follow the Press", hasLog) : ""}
 </main>
 </div>
@@ -463,7 +465,7 @@ export function markdown(src, link) {
     const b = block.trim();
     const lines = b.split("\n");
     if (b.startsWith("# ")) title = b.slice(2).trim();
-    else if (b.startsWith("## ")) html.push(`<h2>${inline(b.slice(3).trim(), link)}</h2>`);
+    else if (b.startsWith("## ")) html.push(`<h2 class="lbl">${inline(b.slice(3).trim(), link)}</h2>`);
     else if (lines.every(l => l.startsWith(">")))
       html.push(`<blockquote><p>${inline(lines.map(l => l.replace(/^>\s?/, "")).join(" "), link)}</p></blockquote>`);
     else if (/^- /.test(b) && lines.every(l => /^- |^\s/.test(l))) html.push(`<ul>${listOf(b, /^- /)}</ul>`);
@@ -513,7 +515,7 @@ ${FONTS(SITE, "../")}
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
 <nav class="top"><a href="../">The Commodore Press</a><a href="../">The library →</a></nav>
 <header class="band"><div class="in">
-  <div class="kick">The house · edited by ${EDITOR}</div>
+  <div class="kick lbl">The house · edited by ${EDITOR}</div>
   <h1>${inline(title)}</h1>
 </div></header>
 <main class="body">
@@ -557,7 +559,7 @@ const CARD_TAGS = (SITE, title, desc) => `<meta property="og:image:width" conten
 const LOG_DESC = "The editor’s signed column at the Commodore Press: arguments with the library and the people in it, sourced like everything else.";
 const LOG_CSS = `.body blockquote{margin:24px 0;padding-left:18px;border-left:2px solid var(--rule);font-style:italic}
 .body ul,.body ol{padding-left:1.2em}.body li{margin:0 0 8px}
-.byline{line-height:1.5;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-top:22px;opacity:.85}
+.byline{line-height:1.5;color:inherit;margin-top:22px;opacity:.85}
 .body .list{list-style:none;padding:0;margin:0}.list li{padding:22px 0;border-bottom:1px solid var(--rule)}
 .list a{text-decoration:none}.list .d{font:var(--fs-0) var(--mono);color:var(--ink-soft)}
 .list .t{display:block;font-size:var(--fs-6);line-height:1.2;margin:6px 0}.list .k{color:var(--ink-soft);font-size:var(--fs-4)}
@@ -619,14 +621,14 @@ ${FONTS(SITE, "../../")}
 <body style="--cover:${LOG_LIVERY.cover};--cink:${LOG_LIVERY.ink};--accent:${LOG_LIVERY.accent}">
 <nav class="top"><a href="${root}">The Commodore Press</a><a href="../">The Log →</a></nav>
 <header class="band"><div class="in">
-  <div class="kick">The Log · ${longDate(x.meta.date)}</div>
+  <div class="kick lbl">The Log · ${longDate(x.meta.date)}</div>
   <h1>${inline(x.meta.title)}</h1>
   <p class="sub">${inline(x.meta.dek)}</p>
-  <div class="byline">Signed · ${editor(root)}, editor</div>
+  <div class="byline lbl">Signed · ${editor(root)}, editor</div>
 </div></header>
 <main class="body">
 ${html}
-${across.length ? `<h2>Reads across to</h2>${across.map(a => `<p><a href="${a.href}">${a.label}</a> <span class="why">· ${a.wing}</span></p>`).join("")}` : ""}
+${across.length ? `<h2 class="lbl">Reads across to</h2>${across.map(a => `<p><a href="${a.href}">${a.label}</a> <span class="why">· ${a.wing}</span></p>`).join("")}` : ""}
 ${subscribe(root)}
 </main>
 <footer>The Log is the editor’s signed column. Figures carry their sources here too, and corrections are appended in the <a href="${root}#colophon">colophon</a>. · ${DUSK_SWITCH}</footer>
@@ -665,7 +667,7 @@ ${FONTS(SITE, "../")}
 <body style="--cover:${LOG_LIVERY.cover};--cink:${LOG_LIVERY.ink};--accent:${LOG_LIVERY.accent}">
 <nav class="top"><a href="../">The Commodore Press</a><a href="../">The library →</a></nav>
 <header class="band"><div class="in">
-  <div class="kick">The editor's column · signed</div>
+  <div class="kick lbl">The editor's column · signed</div>
   <h1>The Log</h1>
   <p class="sub">Arguments with the library and the people in it, by ${editor("../")}. Sourced like everything else.</p>
 </div></header>
@@ -755,12 +757,12 @@ ${FONTS(SITE, "../")}
 </head>
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
 <nav class="top"><a href="../">The Commodore Press</a><a href="../">The library →</a></nav>
-<header class="band"><div class="in"><div class="kick">Contents</div><h1>Everything on the shelves</h1>
+<header class="band"><div class="in"><div class="kick lbl">Contents</div><h1>Everything on the shelves</h1>
 <p class="sub">${LIVES.length} lives, and the retired titles of the Press. Every figure carries its source.</p></div></header>
 <main class="body">
-<h2 id="lives">Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `№ ${l.no} · ${l.field} · ${l.years}`)).join("")}</ul>
-${LOG.length ? `<h2>The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
-<h2 id="press">The Press · retired</h2><p>The Press was retired from the library on 14 October 2026. Its titles stay at their addresses, with their sources, their disputes and any corrections, for anyone who holds a link. Nothing in them was withdrawn as wrong.</p><ul class="list">${BOOKS.concat(ADJACENT).map(b => item(`../t/${b.id}/`, b.title, inline(strip(b.claim || b.sub || "")))).join("")}</ul>
+<h2 class="lbl" id="lives">Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `№ ${l.no} · ${l.field} · ${l.years}`)).join("")}</ul>
+${LOG.length ? `<h2 class="lbl">The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
+<h2 class="lbl" id="press">The Press · retired</h2><p>The Press was retired from the library on 14 October 2026. Its titles stay at their addresses, with their sources, their disputes and any corrections, for anyone who holds a link. Nothing in them was withdrawn as wrong.</p><ul class="list">${BOOKS.concat(ADJACENT).map(b => item(`../t/${b.id}/`, b.title, inline(strip(b.claim || b.sub || "")))).join("")}</ul>
 </main>
 <footer>The Commodore Press · <a href="../#colophon">colophon &amp; corrections</a> · <a href="../updates.xml">follow by RSS</a> · ${DUSK_SWITCH}</footer>
 </body>

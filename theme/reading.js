@@ -119,12 +119,12 @@
     var bu = url.length > 140 ? o.url : url, room = 299 - bu.length;
     var bsky = "https://bsky.app/intent/compose?text=" + enc((q ? tweetable(q, title, room) : clip(said, room)) + " " + bu);
     d.innerHTML = '<div class="rs-in">' +
-      '<div class="rs-head"><span class="rs-lbl">' + (q ? (o.kind === "line" ? "Share this line" : "Share this passage") : "Share this entry") + '</span>' +
+      '<div class="rs-head"><span class="rs-lbl lbl">' + (q ? (o.kind === "line" ? "Share this line" : "Share this passage") : "Share this entry") + '</span>' +
       '<button class="rs-x" type="button" aria-label="Close">✕</button></div>' +
       '<div class="rs-card">' + (q
-        ? '<p class="rs-q">“' + esc(q) + '”</p><div class="rs-by">— ' + esc(credit(title)) + '</div></div>'
+        ? '<p class="rs-q">“' + esc(q) + '”</p><div class="rs-by lbl">— ' + esc(credit(title)) + '</div></div>'
         : '<p class="rs-t">' + esc(title) + '</p>' + (o.sub ? '<p class="rs-s">' + esc(o.sub) + '</p>' : "") +
-          '<div class="rs-by">' + PRESS + '</div></div>') +
+          '<div class="rs-by lbl">' + PRESS + '</div></div>') +
       '<div class="rs-link"><input type="text" readonly aria-label="Link to this entry" value="' + esc(url) + '">' +
       '<button class="rs-b rs-main" type="button" data-a="link">Copy link</button></div>' +
       '<div class="rs-acts">' + (q ? '<button class="rs-b" type="button" data-a="quote">Copy quote</button>' : "") +

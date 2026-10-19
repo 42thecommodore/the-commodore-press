@@ -11,7 +11,8 @@
   @keyframes rs-in{from{opacity:0}to{opacity:1}}
   .rs-in{padding:22px 24px 20px;position:relative}
   .rs-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
-  .rs-lbl{line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;opacity:.85}
+  /* the labels here carry class="lbl" (build/label.mjs) and print in the livery's own ink */
+  .rs-lbl{color:inherit;opacity:.85}
   .rs-x{width:30px;height:30px;border-radius:0;border:1px solid currentColor;background:none;color:inherit;opacity:.85;
     font:var(--fs-2)/1 var(--mono);cursor:pointer;display:grid;place-items:center}
   .rs-x:hover{opacity:1}
@@ -19,7 +20,7 @@
   .rs-q{font-size:var(--fs-5);line-height:1.4;font-style:italic;margin:0 0 12px}
   .rs-t{font-size:var(--fs-5);line-height:1.2;font-weight:500;margin:0 0 4px}
   .rs-s{font-size:var(--fs-3);line-height:1.4;font-style:italic;opacity:.85;margin:0}
-  .rs-by{line-height:1.5;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;opacity:.85;margin-top:12px;padding-top:10px;
+  .rs-by{line-height:1.5;color:inherit;opacity:.85;margin-top:12px;padding-top:10px;
     border-top:1px solid color-mix(in srgb,currentColor 22%,transparent)}
   .rs-link{display:flex;gap:8px;margin-top:14px}
   .rs-link input{flex:1;min-width:0;font:var(--fs-1)/1 var(--mono);color:inherit;background:color-mix(in srgb,currentColor 7%,transparent);
@@ -53,7 +54,7 @@
 
   /* the end of an entry: where a reader who finished decides what to do with it */
   .rs-end{margin-top:72px;padding:34px 0 0;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent);text-align:center}
-  .rs-end .rs-fin{line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;opacity:.85}
+  .rs-end .rs-fin{color:inherit;opacity:.85}
   /* the press mark, drawn rather than set: the house fonts have no ornament glyph, and a
      fallback font printed it at half size. The mask token is filled from build/mark.mjs. */
   .rs-end .rs-fin::before{content:"";display:block;width:24px;height:24px;margin:0 auto 12px;background:currentColor;opacity:.75;
@@ -69,7 +70,7 @@
     border:1px solid color-mix(in srgb,currentColor 35%,transparent);border-radius:0;cursor:pointer;
     }
   .rs-next:hover{border-color:currentColor;background:color-mix(in srgb,currentColor 5%,transparent);}
-  .rs-next .rs-nk{display:block;line-height:1.4;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;opacity:.85;margin-bottom:8px}
+  .rs-next .rs-nk{display:block;color:inherit;opacity:.85;margin-bottom:8px}
   .rs-next .rs-nt{display:block;font-size:var(--fs-6);line-height:1.15;font-weight:500}
   .rs-next .rs-nd{display:block;font-size:var(--fs-3);line-height:1.45;font-style:italic;opacity:.9;margin-top:6px}
   .rs-next .rs-nm{display:flex;justify-content:space-between;gap:12px;font-size:var(--fs-2);line-height:1.4;opacity:.85;margin-top:14px}

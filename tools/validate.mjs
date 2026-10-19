@@ -581,6 +581,44 @@ for (const s of cssRules.filter(r => !r.sel.includes(" ") && /^[a-z]*\.[\w-]+$/.
   }
 }
 
+/* ---------- one label, one scale ----------
+   theme/press.css said "every size on the site is one of these ten" while 22 sizes were
+   typed off it (20 of them the house label's 13px, plus a 3.4em drop cap and an inline 16.5px),
+   and the label itself (Garamond capitals, 13px, .08em) had been copied by hand into 21 rules
+   under 21 names, at three weights. Both were comments, not rules. Now:
+   capitals come from class="lbl" alone (build/label.mjs), and a font size is a step of the
+   scale, var(--fs-0)…var(--fs-9). A heading that grows with the window may use clamp(). The
+   only other sizes allowed are the lettering printed on a book's cover and spine and on the
+   Atlas's chart, which are artwork drawn at their own scale, and are named here. */
+{
+  const ARTWORK = /^(\.ct\b|\.cfoot|\.spine|\.rbook \.(ctitle|csub|cfoot|spine)|\.ect\b|\.efoot|\.chart-svg|\.minimap)/;
+  const sizeOf = (prop, v) => {
+    v = v.trim();
+    if (prop === "font") { if (/^inherit$/.test(v)) return null; v = v.replace(/var\(--(serif|mono)\)/g, ""); }
+    if (/clamp\(/.test(v)) return null;
+    const m = v.match(/var\(--fs-\d(?:,[^)]*)?\)|\b\d*\.?\d+(?:px|em|rem|pt|%)/);
+    return m && !/^var\(--fs-\d/.test(m[0]) ? m[0] : null;
+  };
+  for (const f of ["theme/press.css", "theme/atlas.css", "theme/reading.css", "build/pages.mjs"]) {
+    for (const { sel, body } of rulesOf(cssOf(f))) {
+      if (ARTWORK.test(sel)) continue;
+      if (/text-transform:\s*uppercase/.test(body))
+        err(f, `\`${sel}\` sets its own capitals — a label is class="lbl" (build/label.mjs); give the element that class and keep only its colour, margin and opacity here`);
+      for (const d of body.matchAll(/(?:^|;)\s*(font-size|font)\s*:\s*([^;]+)/g)) {
+        const z = sizeOf(d[1], d[2]);
+        if (z) err(f, `\`${sel}\` sets a ${z} font size — sizes come from the scale in theme/press.css (var(--fs-0)…var(--fs-9); ${z === "13px" ? "13px is var(--fs-1)" : "pick the nearest step"}), or clamp() for a heading that grows with the window`);
+      }
+    }
+  }
+  for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "theme/reading.js", "build/pages.mjs"]) {
+    const src = cssOf(f);
+    for (const m of src.matchAll(/style="[^"]*\b(text-transform:\s*uppercase|font-size:\s*[0-9.]+(px|em|rem))/g)) {
+      const line = src.slice(0, m.index).split("\n").length;
+      err(f, `line ${line} sets ${m[1].startsWith("text") ? "capitals" : "a font size"} inline — use class="lbl" for a label, or a step of the scale (var(--fs-N)) in a stylesheet`);
+    }
+  }
+}
+
 /* ---------- an entry opens from a link a reader can keep ----------
    Until 2026-09-29 every book and face in the library was a <button onclick="openReader(…)">:
    144 of them on the front door, and not one link. Cmd-click, "open in new tab" and "copy

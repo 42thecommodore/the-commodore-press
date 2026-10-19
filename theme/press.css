@@ -1,25 +1,26 @@
   .skip{position:absolute;left:12px;top:-60px;z-index:999;padding:10px 14px;background:var(--ink);color:var(--paper);font:var(--fs-3) var(--serif);text-decoration:none}
   .skip:focus{top:12px}
   :root{
-    --paper:#F2EDE1; --paper-2:#E8E0CE; --paper-3:#EAE1CD;
+    --paper:#F2EDE1; --paper-2:#E8E0CE;
     --rule:#D3C9B2; --rule-soft:#E0D7C3;
     --ink:#1E1C18; --ink-soft:#5C5647; --ink-mid:#3A352C;
-    --oxblood:#8A2B25; --navy:#16305A; --brass:#A87B2E;
-    --iron:#2E4A6B; --coin:#A87B2E; --hail:#3E7A6B; --keel:#A8332A;
+    --oxblood:#8A2B25;
     --sky:#0A0E1B; --panel:#0E1426; --panel-2:#141C33; --line:#243049;
     --parchment:#ECE3D0; --parchment-dim:#9A917C; --nbrass:#D8A657; --nbrass-b:#F3CF8A;
     --serif:"EB Garamond","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
     --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
     --thick:34px;
-    /* the type scale: every size on the site is one of these ten. --fs-0 is the floor;
-       only the lettering printed on a book's cover or spine goes smaller, as artwork. */
+    /* the type scale: every fixed size on the site is one of these ten, and --fs-0 is the floor.
+       A heading that grows with the window uses clamp(); only the lettering printed on a book's
+       cover or spine, and on the Atlas's chart, is sized as artwork. npm run check holds it. */
     --fs-0:12px; --fs-1:13px; --fs-2:15px; --fs-3:17px; --fs-4:19px;
     --fs-5:21px; --fs-6:26px; --fs-7:34px; --fs-8:44px; --fs-9:64px;
     /* THE TYPE RULE. EB Garamond sets everything a reader reads or presses: prose, headings,
        the nav, buttons, filters, labels. IBM Plex Mono is kept for data only — a year, a date,
        a count, a source line — in its natural case. Labels are Garamond small capitals, never
        tracked mono capitals: Garamond capitals at 13px, lightly spaced (the Google Fonts cut has
-       no true small capitals, and a synthesised set comes out thin). Oxblood means a correction
+       no true small capitals, and a synthesised set comes out thin). A label is class="lbl",
+       set once in build/label.mjs; a rule here gives it colour and place only. Oxblood means a correction
        or a dispute and nothing else. */
     /* the mount a portrait sits in, and the lit edge a book gets at dusk (none by day) */
     --mount:#F7F3E9; --mount-rule:#B9AF9B; --mark-soft:#8C8471; --edge:transparent;
@@ -33,11 +34,10 @@
      glaring paper (16.4:1 → 1.12:1). tools/test-reading.mjs measures all three at dusk.
      build/pages.mjs carries the same values for the entry pages. */
   body.dusk{
-    --paper:#1C1A16; --paper-2:#26231D; --paper-3:#221F1A;
+    --paper:#1C1A16; --paper-2:#26231D;
     --rule:#3A352C; --rule-soft:#2D2A23;
     --ink:#EAE3D1; --ink-soft:#9C9582; --ink-mid:#CBC3AE;
-    --oxblood:#CE7B6E; --navy:#8FAEDC; --brass:#D8A657;
-    --iron:#7E9CC9; --coin:#D8A657; --hail:#7FB6A4; --keel:#D96C60;
+    --oxblood:#CE7B6E;
     --mount:#27241E; --mount-rule:#4D473B; --mark-soft:#9C9582; --edge:#766F5F;
   }
   body.dusk header.mast{background:rgba(28,26,22,.92)}
@@ -65,8 +65,8 @@
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   ::selection{background:var(--ink);color:var(--paper)}
   .mono{font-family:var(--mono)}
-  .lbl{font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:500;color:var(--ink-soft);line-height:1.3}
-  .lbl.q{color:var(--ink-soft)}
+  /* the label's letterforms are set once, in build/label.mjs; on the house walls it is the quieter ink */
+  .lbl{color:var(--ink-soft)}
   .wrap{max-width:1220px;margin:0 auto;padding:0 40px}
   .narrow{max-width:860px}
 
@@ -264,7 +264,7 @@
   .rmeta{margin-top:32px;font-family:var(--serif);font-size:var(--fs-2);opacity:.85;line-height:2}
   .rmeta div{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid currentColor;padding:5px 0}
   .rmeta div:last-child{border-bottom:0}
-  .rmeta b{font-weight:400;font-size:var(--fs-1);letter-spacing:.08em;text-transform:uppercase}
+  .rmeta b{color:inherit}
   .toc{margin-top:28px;font-family:var(--serif);font-size:var(--fs-3)}
   .toc a{display:block;padding:4px 0 4px 14px;text-decoration:none;opacity:.82;position:relative;}
   .toc a::before{content:"";position:absolute;left:0;top:50%;width:6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;}
@@ -321,7 +321,7 @@
   .endnav a:hover{opacity:1}
   /* No opacity of its own: it sits inside .endnav a, and opacity compounds. At .6 here
      under the button's old .75 it rendered at .45 — the worst label in the reader. */
-  .endnav small{font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;display:block;margin-bottom:4px;opacity:.8}
+  .endnav small{display:block;margin-bottom:4px;opacity:.8;color:inherit}
   .endnav em{font-style:normal;font-size:var(--fs-4)}
 
   /* ---------- atlas ---------- */
@@ -340,7 +340,6 @@
     box-shadow:-20px 0 60px rgba(0,0,0,.5);color:var(--parchment)}
   .drawer.on{transform:none;visibility:visible}
   .drawer .top{padding:26px 28px 18px;border-bottom:1px solid var(--line);border-top:3px solid var(--dcol,var(--nbrass));position:relative}
-  .drawer .top .region{font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;}
   .drawer .top h3{font-size:var(--fs-6);margin:7px 0 3px;line-height:1.03;font-weight:500}
   .drawer .top .role{font-size:var(--fs-1);color:var(--parchment-dim);line-height:1.4}
   .drawer .x{position:absolute;top:18px;right:22px;border:1px solid var(--line);color:var(--parchment-dim);width:32px;height:32px;border-radius:0;font-size:var(--fs-3);line-height:1}
@@ -362,9 +361,9 @@
 
   /* the mat is paper in every livery and every mode, so its caption is set in the house ink, never the livery's */
   figure.plate{float:right;width:212px;margin:6px 0 22px 38px}
-  figure.plate figcaption{color:#1E1C18;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;opacity:.85;padding:8px 3px 2px;text-align:center}
+  figure.plate figcaption{color:#1E1C18;opacity:.85;padding:8px 3px 2px;text-align:center}
   /* an object plate says what it is in a full sentence, so it is set to be read, not glanced at */
-  figure.plate figcaption.obj{font-family:var(--serif);font-size:var(--fs-1);font-style:italic;letter-spacing:0;text-transform:none;line-height:1.4;opacity:.8;max-width:260px;margin:0 auto}
+  figure.plate figcaption.obj{font-size:var(--fs-1);font-style:italic;line-height:1.4;opacity:.8;max-width:260px;margin:0 auto}
   figure.plate.mark{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:4/5;opacity:.85;color:#5C5647}
   .cplate{width:56%;margin:0 auto 9px;display:block;border:1px solid rgba(0,0,0,.28);position:relative;z-index:2}
 
@@ -399,7 +398,7 @@
   body.night .sres{border-bottom-color:var(--line)}
   .sres:hover,.sres.sel{background:var(--paper-2)}
   body.night .sres:hover,body.night .sres.sel{background:var(--panel-2)}
-  .sres .w{font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--ink-soft);flex:none;width:86px}
+  .sres .w{color:var(--ink-soft);flex:none;width:86px}
   body.night .sres .w{color:var(--parchment-dim)}
   .sres b{font-weight:500;font-size:var(--fs-3)}
   .sres span{font-size:var(--fs-1);color:var(--ink-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
