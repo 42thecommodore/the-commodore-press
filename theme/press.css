@@ -492,6 +492,9 @@
      Drawn by renderFront() in press.js. The captain is one of the crew the editor picked. */
   .captain{display:grid;grid-template-columns:168px minmax(0,7fr) minmax(0,5fr);gap:28px 44px;align-items:start;
     border-top:1px solid var(--ink);padding:18px 0 72px}
+  /* under the headline, the faces follow it: the shelf's own margin is the gap */
+  .front #bridge{margin-top:44px}
+  .front .captain{padding-bottom:0}
   .captain .sp-top{grid-column:1/-1}
   .captain h2{margin:0;font-size:var(--fs-8);line-height:1.02;font-weight:500;letter-spacing:-.02em}
   .cap-plate{display:block;padding:0;border:0;background:none;cursor:pointer}
@@ -586,7 +589,7 @@
   }
   @media (max-width:560px){
     .front{padding:28px 0 40px}
-    .front-shelf{margin-top:32px}
+    .front-shelf,.front #bridge{margin-top:32px}
     .shelf-dek{display:none}
     .captain{grid-template-columns:96px minmax(0,1fr);gap:16px;padding-bottom:44px}
     .cap-img{width:96px;height:120px}

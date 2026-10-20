@@ -18,8 +18,9 @@
  *   - Esc closes only what is open — the share sheet, then the reader, and a selected
  *     passage is let go before anything closes — and never takes the reader off the page;
  *     on the Atlas it shuts the drawer, then a lit lesson
- *   - the front door's first screen holds the Lives' faces, at 1440×900 and at 375×812, the
- *     Atlas follows them, and its one count is the corrections, opening the record it counts
+ *   - the front door's first screen holds the headline and the Captain of the day, at 1440×900
+ *     and at 375×812; the Lives' faces follow, then the key and the Atlas, and its one count is
+ *     the corrections, opening the record it counts
  *   - every face is a link to its own page; a plain click opens the reader in place,
  *     a Cmd-click is left to the browser; nothing on the front door leads to a retired title
  *   - the keep line on the Captain card is credited to the Press, never set beside the face alone
@@ -337,14 +338,14 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   // everyone opens on paper: the colophon says the reading wings are set on paper, and a dark device once overruled it
   if (localStorage.getItem("cp-theme") === null)
     t("a dark-mode device with no stored choice opens on paper", !document.body.classList.contains("dusk") && document.getElementById("themeBtn").getAttribute("aria-pressed") === "false", "dusk: " + document.body.classList.contains("dusk"));
-  const wall = document.querySelector(".front .wall"), r = wall && wall.getBoundingClientRect();
-  // 200px of faces is a shelf you can see; less is the top of something below the fold. Until
-  // 2026-10-14 the first screen was the Press's spines, and the faces began 1,851px down.
-  t("the first screen holds the faces (" + size + ")", r && innerHeight - r.top >= 200, r ? "the faces start at " + Math.round(r.top) + "px of " + innerHeight : "no faces on the front door");
-  // the Atlas is the next room down, before the Captain, the Log and the colophon (it began 3,286px down)
-  const order = ["#key", "#bAtlas", "#bridge", ".band.colo"].map(q => document.querySelector(q));
-  t("the Atlas follows the faces, before anything else (" + size + ")", order.every(Boolean) && order.every((e, i) => !i || order[i - 1].compareDocumentPosition(e) & Node.DOCUMENT_POSITION_FOLLOWING),
-    order.map((e, i) => (e ? "" : "missing ") + ["key", "Atlas", "Captain", "colophon"][i]).join(" → "));
+  // the Captain of the day sits straight under the headline, by the editor's choice (2026-10-19),
+  // and its face is on the first screen; the shelf of faces follows it
+  const cap = document.querySelector(".front #bridge .captain"), cr = cap && cap.getBoundingClientRect();
+  t("the first screen holds the headline and the Captain of the day (" + size + ")", cr && cr.top < innerHeight - 120, cr ? "the Captain starts at " + Math.round(cr.top) + "px of " + innerHeight : "no Captain under the headline");
+  // the Atlas is the next room down after the faces and the key, before the Log and the colophon
+  const order = [".front-top", "#bridge", "#frontShelf", "#key", "#bAtlas", ".band.colo"].map(q => document.querySelector(q));
+  t("headline, Captain, faces, key, then the Atlas (" + size + ")", order.every(Boolean) && order.every((e, i) => !i || order[i - 1].compareDocumentPosition(e) & Node.DOCUMENT_POSITION_FOLLOWING),
+    order.map((e, i) => (e ? "" : "missing ") + ["headline", "Captain", "faces", "key", "Atlas", "colophon"][i]).join(" → "));
   t("nothing on the front door leads to a retired title", !document.querySelector('.wing.on a[href^="t/"], .wing.on a[href="#press"], #nav a[href="#press"], footer a[href="#press"]'),
     [...document.querySelectorAll('a[href^="t/"], a[href="#press"]')].map(a => a.getAttribute("href")).slice(0, 4).join(", "));
   t("no sideways scroll (" + size + ")", document.documentElement.scrollWidth <= innerWidth, document.documentElement.scrollWidth + "px wide");
