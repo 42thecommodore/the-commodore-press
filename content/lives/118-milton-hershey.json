@@ -1,0 +1,83 @@
+{
+  "id": "milton-hershey",
+  "no": 118,
+  "keep": "Two bankruptcies before thirty, a caramel company sold for $1,000,000 in cash, and in 1918 his stock in the chocolate company handed quietly to a school.",
+  "n": "Milton Hershey",
+  "years": "1857–1945",
+  "place": "Lancaster and Hershey, Pennsylvania",
+  "field": "Chocolate & Enterprise",
+  "group": "famous",
+  "plateless": "No portrait has cleared: the copies on Commons come from the Hershey Community Archives with a public-domain tag supplied by the uploader, and no photographer or publication recorded. House decision, 2026-10-19.",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "He went bankrupt twice before the caramels worked: in Philadelphia in 1882, and in New York by 1886. The business he started when he went home to Lancaster he sold, in 1900, for a million dollars in cash.",
+  "copy": [
+    "Milton Hershey went to at least seven schools as his family moved, and came away with little from any of them. His father apprenticed him to the editor of a German-language newspaper in Gap; he was clumsy and was fired. His mother found him a place with Joseph Royer, a candy and ice-cream maker on King Street in Lancaster. The confectionery he opened in Philadelphia in 1876 went bankrupt in 1882. In Denver a confectioner showed him how to make caramels with fresh milk. His second business, in New York, had failed by 1886. Back in Lancaster, the fresh-milk caramels sold.",
+    "At the Chicago exposition of 1893 he stood in front of an exhibit of German chocolate machinery and bought two pieces of it for the Lancaster factory. On 10 August 1900 he sold the Lancaster Caramel Company to the American Caramel Company for $1,000,000 in cash, having turned down three earlier offers paid partly in stock. He kept the chocolate machinery. In 1902 he began buying land in Derry Township, and the factory he started there in 1903 was finished in 1905, with a town laid out around it. In 1909 came the deed of trust for a school. On 13 November 1918 he quietly gave the school his stock in the Hershey Chocolate Company, which made it the majority shareholder. When sugar ran short in the First World War he bought a sugar mill in Cuba, in January 1916, and by 1946 his Cuban holdings ran to 60,000 acres, five mills and 251 miles of track.",
+    "The town was his, and so were its terms. Through the Depression his Great Building Campaign kept more than 600 men in work. In the spring of 1937 the Army asked his company for an emergency ration, a four-ounce bar that would not flow in the heat, and by 1945 more than three billion units of it had been made. The same spring the factory struck. On 2 April 1937 about 500 workers sat down inside it, and on 7 April they were put out. The Hershey Archives' own account ties the strike to wage and hour cuts under the National Recovery Administration. A few weeks later the workers voted on the union. The Eckenroth journals in the Hershey Archives record the count on 23 April: the C.I.O. 786, the Loyal 1,542."
+  ],
+  "bio": {
+    "t": "Hershey: Milton S. Hershey's Extraordinary Life of Wealth, Empire, and Utopian Dreams",
+    "a": "Michael D'Antonio",
+    "y": "2006",
+    "why": "The full life, the bankruptcies and the 1937 strike beside the town and the school; Kirkus called it balanced, and it is the book behind the Founders episode. For the documents themselves, the Hershey Community Archives publishes its own, the Titanic cheque among them, at hersheyarchives.org."
+  },
+  "contested": "Whether he was booked on the Titanic. The Hershey Community Archives hold a cancelled cheque for $300 made out to the White Star Line on 18 December 1911, and read it as a 10 per cent deposit on a first-class stateroom; he sailed instead on the German liner Amerika and was home by 7 April 1912. The cheque does not name a ship, and no ticket or passenger list has been read here, so the Titanic is the Archives' inference from the sum and the date, a strong one but an inference. The line that caramels were a fad and chocolate was permanent is usually quoted as his; the Archives use it without a source, and it is given here after Hershey, not as a quotation. How many workers struck in 1937 depends on who counted: the Archives give about 500, and the union's and the company's own figures have not been read here in a document. The value of the 1918 gift, often printed as $60 million, has been seen only as a later newspaper figure and is left out. The Archives' history of the Cuban mills says nothing of the men who cut the cane, and nothing opened here does either; that is a gap, not a finding.",
+  "across": [
+    {
+      "to": "lives:andrew-carnegie",
+      "label": "Andrew Carnegie",
+      "txt": "— another fortune given away by its maker, and another company town that struck."
+    },
+    {
+      "to": "lives:samuel-zemurray",
+      "label": "Samuel Zemurray",
+      "txt": "— whose company also grew its own crop in the Caribbean, on its own railroad."
+    }
+  ],
+  "facts": [
+    {
+      "b": "seven · 1876 · 1882 · 1886",
+      "s": "His schooling, the apprenticeships and the two failures: Hershey Community Archives, 'Milton Snavely Hershey, 1857-1945', hersheyarchives.org, 6 September 2018"
+    },
+    {
+      "b": "1893 · two",
+      "s": "The Chicago machinery: Hershey Community Archives, 'Milton Snavely Hershey, 1857-1945', hersheyarchives.org"
+    },
+    {
+      "b": "10 August 1900 · $1,000,000",
+      "s": "The sale, its price and the refused offers: Hershey Community Archives, 'HersheyArchives@30, Part 4: Selling the Lancaster Caramel Company', 23 February 2015"
+    },
+    {
+      "b": "1902 · 1903 · 1905",
+      "s": "The land, the factory and the town: Hershey Community Archives, 'HersheyArchives@30, Part 6: Planning a Town', 9 March 2015"
+    },
+    {
+      "b": "1909 · 13 November 1918",
+      "s": "The deed of trust and the gift of his stock: Hershey Community Archives, 'HersheyArchives@30, Part 11: The Gift', 27 April 2015"
+    },
+    {
+      "b": "January 1916 · 60,000 acres · five · 251 miles",
+      "s": "The Cuban mills and their sale in 1946: Hershey Community Archives, 'Cuba: Central Hershey 1916-1946', 5 September 2018"
+    },
+    {
+      "b": "more than 600",
+      "s": "The Great Building Campaign: Hershey Community Archives, 'Milton Snavely Hershey, 1857-1945'"
+    },
+    {
+      "b": "four-ounce · over three billion",
+      "s": "The Ration D bar, 1937–1945: Hershey Community Archives, 'HersheyArchives@30, Part 19: Serving the Nation, Hershey and the Ration D Bar', 20 July 2015"
+    },
+    {
+      "b": "2 April · 7 April · about 500 · 786 · 1,542",
+      "s": "The sit-down strike and the vote, from the Eckenroth journals: Hershey Community Archives, 'HersheyArchives@30, Part 20: Eckenroth Journals', 3 August 2015"
+    },
+    {
+      "b": "$300 · 18 December 1911 · 10 percent · $3,000 and $4,000",
+      "s": "The cheque to the White Star Line and the Amerika: Hershey Community Archives, 'Milton S. Hershey and the RMS Titanic', hersheyarchives.org/?p=9032"
+    }
+  ]
+}

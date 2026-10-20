@@ -401,3 +401,36 @@ Each entry was cut back to what an opened document says. These would let a cut l
 | Flagler | Laws of Florida, 1901 and 1905; House passage of the repeal | The repeal's final date; Senate vote printed |
 | Flagler | House Report 1287 (1908); outcome of the peonage trial | In `contested` only |
 | Flagler | A sourced total of deaths on the Key West Extension | Only the 1906 hurricane's printed |
+
+## 2026-10-19 — seven Founders lives, № 115–121: what was named but not opened
+
+Researched by seven press-researcher sweeps. Pages marked opened were read through the fetch tool's summary unless noted; the Pujo exchange (Morgan) and the two Wright v. Herring-Curtiss opinions were read as raw text.
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Rothschild | Kaplan, *Nathan Mayer Rothschild and the Creation of a Dynasty* (2006); Ferguson, *The House of Rothschild* (1998) | The commission, Branda's £10,000; Ferguson's view of Waterloo week, not characterised |
+| Rothschild | Rothschild Archive FAQ on pigeons; 'ar2007bankingcrises.pdf' (would not decode) | The c. 1820–1850 pigeon post; the 1825 gold; in `contested` only |
+| Rothschild | UCL Legacies of British Slavery, Antigua record | The £2,571 and 158 enslaved; not printed |
+| Rothschild | Parys, *Cambridge Journal of Economics* 48:2 (2024), full text | The 1819 loan bid and 1818–19 Consols totals (garbled in the working paper); not printed |
+| Morgan | Treasury annual reports, 1895 and 1907; the 1895 syndicate contract | Whether the syndicate was named as Morgan's; the 1907 deposits ($25m / $29m / $42m) |
+| Morgan | 'Report on purchase of Hall's carbines', 12 June 1862 (Cornell) | What the House committee found about Morgan |
+| Morgan | NYT 1913 and 1916 on the estate appraisal; Strouse (1999) | $68.3m–$80m; Rockefeller's remark; not printed |
+| Morgan | Plate decision, 2026-10-19: Holl, 1888 (Morgan Library), {{PD-Art}}, painter died 1888. The Steichen 1903 was passed over: a snippet reports the Morgan Library marking it © Estate of Edward Steichen | Closed by decision |
+| Pulitzer | *New York World*, 11 August 1885; the will; Columbia's 'School of Journalism Founding Documents, 1892–1912' | Donor count; agreement dates; the 1892 approach to Low |
+| Pulitzer | Swanberg, *Pulitzer* (1967), pp. 60–69 | $346,000 to Gould; staff pay; not printed |
+| Pulitzer | W. Joseph Campbell, *Yellow Journalism* (2001) | The war question, in `contested` only |
+| Hershey | Hershey Trust Company history PDF; NYT 1923 | The 1918 gift's value ($60m); not printed |
+| Hershey | NYT, 3, 8 and 16 April 1937; D'Antonio (2006); Off, *Bitter Chocolate* (2006) | Strike counts (400 / 1,200); the Cuban mills' labour |
+| Hershey | Hershey Archives digital library items 124 and 125, own rights terms | The plate; held back |
+| Watson | IBM Archives FAQ, January 2002, p. 18 | Watson Jr.'s 1953 '18 orders' remark |
+| Watson | Dayton History Books; University of Dayton blog; Chronicling America, 1913 | Watson's own sentence; the 1916 dismissal |
+| Watson | Black, *IBM and the Holocaust* (2001); Turner, *Business History Review*; Belden (1962), p. 207 | The medal's return letter; the Dehomag argument |
+| Watson | Plate decision, 2026-10-19: Nationaal Archief / Anefo 901-2941, 28 December 1945, CC0, cropped to Watson. The NPG Oscar White (1950) is tagged CC0 on Commons but si.edu refused every read | Closed by decision |
+| Hughes | Senate hearings, 'Investigation of the National Defense Program', Part 40 (1947) | The delivery record; the Brewster exchange |
+| Hughes | LA Times, 3 November 1947; Francillon (1990) | 70 feet and 26 seconds; not printed |
+| Hughes | Barlett and Steele, *Empire* (1979); 1976 probate | Inheritance split, XF-11 injuries, wealth at death |
+| Hughes | ASME HK-1 landmark PDF (saved, not parsed) | The contract figure and the cost split |
+| Wright | Smithsonian Institution Archives, RU 31: the 1899 letter in full and Rathbun's reply | The letter quoted only in paraphrase |
+| Wright | Virginian-Pilot, 18 December 1903 (front page) | Moore or Dean |
+| Wright | Katznelson and Howells (2015) full; Goldstone, *Birdmen* (2014); Crouch, 'Blaming Wilbur and Orville' (2000) | The hold-up argument, read only in abstract and reviews |
+| Wright | McCullough (2015), p. 14 | The hockey assault version; not printed |

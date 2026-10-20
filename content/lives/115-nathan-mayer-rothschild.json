@@ -1,0 +1,66 @@
+{
+  "id": "nathan-mayer-rothschild",
+  "no": 115,
+  "keep": "The legend needed a man on the battlefield and a bird in the sky. The ledger has a letter from Ghent, a modest week, and no Consols traded at all between 12 May and 18 July 1815.",
+  "n": "Nathan Mayer Rothschild",
+  "years": "1777–1836",
+  "place": "Frankfurt, Manchester and London",
+  "field": "Banking",
+  "group": "famous",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "The story is that he watched Waterloo and beat the news home by pigeon. He was not at Waterloo, England had no organised pigeon post in 1815, and his Consols account shows no trade from 12 May to 18 July.",
+  "copy": [
+    "Nathan Rothschild was one of the five sons of Mayer Amschel Rothschild of Frankfurt. In 1798 he settled in Manchester with a credit of £20,000, bought raw materials and dyes, had goods made to order and sold them abroad. By 1805 he was in London. His brothers stayed on the Continent.",
+    "In January 1814 a letter from Vansittart to Herries commissioned him as the government's agent. The brothers became, in the historian Herbert Kaplan's account, unofficial bankers and paymasters to Britain, moving its money to the armies on the Continent for a rich commission. In the weeks after Waterloo the government offered him a knighthood. His brother James wrote in August 1815 that he could hardly believe Nathan had turned it down.",
+    "The news itself reached him by letter. He was one of several men in London with private word of the battle before Wellington's dispatch arrived on the night of Wednesday 21 June; his came from Ghent, and the first man in London to know, by the newspapers, was a Mr C of Dover. Brian Cathcart, writing for the Rothschild Archive, finds no special arrangement for early news, by pigeon or by anything else, and a price for Omnium, the new loan stock, that never slumped as a faked panic would have made it. Any profit that week was modest beside what others made. The legend came later. A pamphlet of 1846, signed Satan, gave him twenty million in a single coup; a book of 1887 put him beside a pillar, pocketing nearly a million sterling. The Archive notes how much use the story has been to antisemites since. What his house did do, with Montefiore's, was lead the syndicate that raised £15 million to compensate slave-owners after abolition. Britain finished repaying that debt in 2015."
+  ],
+  "bio": {
+    "t": "The House of Rothschild: Money's Prophets, 1798–1848",
+    "a": "Niall Ferguson",
+    "y": "1998",
+    "why": "The standard history, written with the family archive open to him; the Archive itself calls it the official one, which is reason to read it with the two narrower books beside it. For the war years in the letters, Herbert H. Kaplan's Nathan Mayer Rothschild and the Creation of a Dynasty (2006); for the legend, Brian Cathcart's The News from Waterloo (2015)."
+  },
+  "contested": "Whether he made money on Waterloo at all. The empty ledger covers only his own account in Consols: Parys, reading the Bank of England stock ledgers in 2020, finds a £10,000 purchase on 12 May 1815 and nothing more until July, and a note Sraffa made on the same ledger in 1932 records not a single transaction between 12 May and 18 July. Cathcart thinks his likely purchase that week was Omnium, which those ledgers do not cover, and his employee John Roworth wrote in late July 1815 that Rothschild had done well by his early news. So the record shows no killing and no trickery, and probably a small gain; it does not show that he made nothing. Pierre Branda of the Fondation Napoléon puts his June income at no more than £10,000, following Kaplan, whose book has not been read here. Where his news came from is argued too: Wellington's own table-talk named a Rothschild agent at Ghent, which Cathcart calls hearsay at best. Niall Ferguson's position on the week is often summarised, but his book has not been read here, so it is not characterised. The Archive's own page on pigeons, which reportedly says the house used them between about 1820 and 1850, was down when this was written. Whether Rothschild gold or the Banque de France's saved the Bank of England in the panic of 1825 is unsettled, and no sum is printed. That he was paid compensation as the mortgagee of an Antigua plantation is recorded in the Legacies of British Slavery database at University College London, which could not be opened.",
+  "across": [
+    {
+      "to": "lives:napoleon",
+      "label": "Napoleon",
+      "txt": "— whose wars made the brothers' business, and whose last battle made the legend."
+    },
+    {
+      "to": "lives:jakob-fugger",
+      "label": "Jakob Fugger",
+      "txt": "— another house that grew rich lending to sovereigns, three centuries earlier."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1798 · £20,000 · 1805",
+      "s": "Manchester and the move to London: 'Rothschild', The Jewish Encyclopedia (1901–1906)"
+    },
+    {
+      "b": "January 1814 · August 1815",
+      "s": "Vansittart's letter commissioning him and James's letter on the knighthood: captions in Brian Cathcart, 'Nathan Rothschild and the Battle of Waterloo', The Rothschild Archive"
+    },
+    {
+      "b": "21 June",
+      "s": "The arrival of Wellington's dispatch, the letter from Ghent, Mr C of Dover, Omnium and the modest gains: Brian Cathcart, 'Nathan Rothschild and the Battle of Waterloo', The Rothschild Archive"
+    },
+    {
+      "b": "12 May · 18 July 1815 · £10,000",
+      "s": "His Consols account, from Bank of England stock ledger AC27/2649 and Sraffa's note of 6 October 1932: Brian Parys, University of Antwerp working paper, 2020"
+    },
+    {
+      "b": "1846 · twenty million · 1887 · nearly a million sterling",
+      "s": "Dairnvaell's pamphlet and Reeves's The Rothschilds: The Financial Rulers of Nations, as quoted in Cathcart (Rothschild Archive) and Parys (2020)"
+    },
+    {
+      "b": "£15 million · 2015",
+      "s": "The compensation loan and its final repayment, quoting the historian Nicholas Draper: Claire Milne, Full Fact, 2 July 2020, corrected 21 July 2020"
+    }
+  ]
+}

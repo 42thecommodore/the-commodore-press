@@ -1,0 +1,78 @@
+{
+  "id": "joseph-pulitzer",
+  "no": 117,
+  "keep": "He offered Columbia a school of journalism before the yellow-press war, not after it; and the pedestal fund that made his name also sold his paper.",
+  "n": "Joseph Pulitzer",
+  "years": "1847–1911",
+  "place": "St. Louis and New York",
+  "field": "Newspapers",
+  "group": "famous",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "The prizes with his name on them are often explained as penance for the yellow press. He first took the idea of a school of journalism to Columbia in the early 1890s, before Hearst reached New York, and Columbia turned him down.",
+  "copy": [
+    "Joseph Pulitzer was an immigrant who fought for the Union and left the army with an honourable discharge on 5 June 1865. In St. Louis, Carl Schurz gave him his first newspaper job, on the German-language Westliche Post; in 1872 he took a share of it and the managing editor's chair. On 9 December 1878 he bought the St. Louis Dispatch at auction for $2,500 and merged it with John A. Dillon's Evening Post. By November 1879 he owned Dillon's half too. On 11 May 1883 the first New York World under his ownership came off the press.",
+    "In 1885 the American committee for the Statue of Liberty was $100,000 short of the $250,000 its pedestal needed. The World appealed to the people, asked them to give something, however little, and printed the name of almost every donor. By 11 August more than 120,000 people had given more than $100,000, most of them about a dollar or less. The names sold papers. By the 1890s he was nearly blind, and Don Seitz, who worked for him, later wrote that for all but four of his twenty-eight years as the World's owner he was an invalid. In the early 1890s he took a school of journalism to Seth Low at Columbia, and the trustees refused. In 1903, under Nicholas Murray Butler, they accepted his offer of $2 million, part of its income to pay for annual prizes. The terms were settled after his death; the first prizes were given in 1917.",
+    "The rivalry cost him and others. In 1895 William Randolph Hearst bought the New York Journal, which had belonged to Pulitzer's brother Albert, and in March 1896 the World's own manager, Solomon Carvalho, left to join him. When the newsboys struck both papers in July 1899, Seitz cabled in cipher that 344 extra men had been put on the streets and the damage to circulation was $80,000; two days later he cabled that the strike was broken. On 15 December 1908 President Roosevelt told Congress that Pulitzer should be prosecuted for libel over the World's reporting of the Panama canal purchase. A grand jury indicted his company on 4 March 1909, over six issues of the paper. On 3 January 1911 the Supreme Court upheld the quashing of the indictment, because the law it was brought under did not reach the case. He died that year. The Court never said who was right about Panama."
+  ],
+  "bio": {
+    "t": "Pulitzer: A Life in Politics, Print, and Power",
+    "a": "James McGrath Morris",
+    "y": "2010",
+    "why": "The most recent full life, written from the Pulitzer and World papers at Columbia and his secretaries' shorthand transcripts; it is the book behind the Founders episode. Columbia's online exhibition, Joseph Pulitzer and The World, prints many of the documents themselves."
+  },
+  "contested": "Why he endowed the prizes. The claim that they atone for the yellow press of 1895–98 is common and has no document behind it in anything read here; Columbia's own account dates his approach to Seth Low to the early 1890s and gives his reason as respect for journalism as a profession, and the agreement with Butler was drafted in 1903. The agreement dates usually quoted from his will (April 1903, March and April 1904) come from a will not yet opened here. How far the World and the Journal drove the country into war with Spain is argued: W. Joseph Campbell, in Yellow Journalism (2001), holds that they did not, against an older view that they inflamed it; neither side has been read here in full. Roosevelt's case was lost on jurisdiction, so the truth of the World's Panama stories was never tried. The price of the World, usually given as $346,000 paid to Jay Gould, rests on W. A. Swanberg's 1967 biography and is not printed above; nor is any circulation figure, since none has been read in a primary. The pedestal fund's speed is also told two ways: six months by the National Park Service, five by Columbia Magazine. And the most quoted life, Seitz's of 1924, was written by his own employee.",
+  "across": [
+    {
+      "to": "lives:william-randolph-hearst",
+      "label": "William Randolph Hearst",
+      "txt": "— who bought his brother's Journal in 1895 and took the World's own manager the next spring."
+    },
+    {
+      "to": "lives:theodore-roosevelt",
+      "label": "Theodore Roosevelt",
+      "txt": "— who asked Congress in December 1908 to see him prosecuted for libel, and lost in the Supreme Court."
+    }
+  ],
+  "facts": [
+    {
+      "b": "5 June 1865 · 1872 · $2,500",
+      "s": "His discharge, the Westliche Post and the Dispatch auction: Laura R. Jolley, 'Joseph Pulitzer', Historic Missourians, State Historical Society of Missouri"
+    },
+    {
+      "b": "9 December 1878 · November 1879 · 11 May 1883",
+      "s": "The auction, the merger, Dillon's half and the first World: Columbia University Libraries, 'Joseph Pulitzer and The World', online exhibition"
+    },
+    {
+      "b": "$100,000 · $250,000",
+      "s": "The pedestal shortfall and its cost: Columbia University Libraries, 'Joseph Pulitzer and The World', 'The Statue of Liberty'"
+    },
+    {
+      "b": "more than 120,000 · more than $100,000 · 11 August",
+      "s": "The donors and the total: National Park Service, 'Joseph Pulitzer' (2015) and 'Pulitzer – In Depth' (2025), Statue of Liberty National Monument"
+    },
+    {
+      "b": "four · twenty-eight years",
+      "s": "His blindness and illness: Don C. Seitz, Joseph Pulitzer: His Life & Letters (1924), as quoted in Columbia University Libraries, 'Joseph Pulitzer and The World'"
+    },
+    {
+      "b": "1903 · $2 million · 1917",
+      "s": "The school and the prizes: Columbia University Libraries, 'Joseph Pulitzer and The World', 'School of Journalism'; the first award year, State Historical Society of Missouri"
+    },
+    {
+      "b": "1895 · March 1896 · July 1899 · 344 · $80,000",
+      "s": "Hearst, Carvalho and Seitz's strike telegrams: Columbia University Libraries, 'Joseph Pulitzer and The World', 'Rivalry with Hearst' and 'Newsboys' Strike'"
+    },
+    {
+      "b": "15 December 1908",
+      "s": "Roosevelt's call for prosecution: Theodore Roosevelt, Special Message to Congress, 15 December 1908, American Presidency Project"
+    },
+    {
+      "b": "4 March 1909 · six · 3 January 1911",
+      "s": "The indictment and its quashing: United States v. Press Publishing Co., 219 U.S. 1 (1911), Legal Information Institute, Cornell"
+    }
+  ]
+}

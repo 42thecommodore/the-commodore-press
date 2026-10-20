@@ -40,6 +40,11 @@
       "to": "lives:henry-flagler",
       "label": "Henry Flagler",
       "txt": "— who built his own railroad down the Florida coast, and out over the sea to Key West."
+    },
+    {
+      "to": "lives:j-p-morgan",
+      "label": "J. Pierpont Morgan",
+      "txt": "— his partner, with Harriman, in Northern Securities."
     }
   ],
   "facts": [

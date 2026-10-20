@@ -1,0 +1,78 @@
+{
+  "id": "wilbur-wright",
+  "no": 121,
+  "keep": "The longest flight that day was Wilbur's, 852 feet in 59 seconds, and the telegram that told the world got the number wrong. He died before any court called the brothers pioneers.",
+  "n": "Wilbur Wright",
+  "years": "1867–1912",
+  "place": "Dayton and Kitty Hawk",
+  "field": "Aviation",
+  "group": "famous",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "conic",
+  "lede": "The telegram home from Kitty Hawk said the longest flight had lasted 57 seconds. It lasted 59, and the man flying it was Wilbur, not the brother who signed the telegram.",
+  "copy": [
+    "In the winter of 1885–86 a hockey injury kept Wilbur Wright at home in Dayton, and he stayed there three years, nursing his mother through the tuberculosis that killed her in 1889. In the spring of 1893 he and his brother Orville opened a bicycle shop. On 30 May 1899 he wrote to the Smithsonian Institution asking for whatever it had published on flight, and called himself an enthusiast who meant to learn what was already known and add what he could. On 22 June its assistant secretary, Richard Rathbun, sent back a reading list and four pamphlets, Lilienthal's and Langley's among them.",
+    "The brothers did what the pamphlets could not. In the winter of 1901–02 they built a wind tunnel, little more than a wooden box, and ran more than 200 wing shapes through it. They filed their patent on 23 March 1903. On 17 December 1903, at Kitty Hawk, they flew four times. Orville took the first, at 10.35 in the morning, for about twelve seconds. Wilbur took the last, at noon: 852 feet in 59 seconds, by Orville's diary. Orville's telegram to their father reported four flights against a twenty-one mile wind, the longest 57 seconds, a slip in transmission. An Associated Press man, told of the telegram, said it might have been news at fifty-seven minutes. The patent was granted on 22 May 1906. The Army signed for a machine in 1908, and on 30 July 1909, after it averaged 42.583 miles an hour over the course, paid $25,000 and a $5,000 bonus for speed.",
+    "Then the brothers went to court, chiefly against Glenn Curtiss. Wilbur died of typhoid in Dayton on 30 May 1912, aged forty-five. On 21 February 1913 Judge Hazel found for the Wright Company, and wrote that even if the patentees were not strictly pioneers, they had 'strikingly surpassed their predecessors in devising means for restoring lateral balance'. On 13 January 1914 the appeals court went further: they 'may fairly be considered pioneers in the practical art of flying with heavier-than-air machines'. In 1917 American officials called the brothers' enforcement injurious to the aircraft industry. In that war the only American-built military aeroplane to reach Europe was the DH-4, over 4,500 of them built by Dayton-Wright and Fisher Body, mostly in the war's last months."
+  ],
+  "bio": {
+    "t": "The Bishop's Boys: A Life of Wilbur and Orville Wright",
+    "a": "Tom D. Crouch",
+    "y": "1989",
+    "why": "Written by a Smithsonian curator, from diaries and letters other Wright biographers had passed over, and later the author of an essay on the patent suits, 'Blaming Wilbur and Orville'. David McCullough's account of the patents was called not exact by Boyne, reviewing it for HistoryNet in 2015. Still, McCullough's book (2015) is the readable one, and the book behind the Founders episode."
+  },
+  "contested": "Whether the patent war held American aviation back. The charge is old: in 1917 American officials called the Wrights' enforcement injurious to the industry, and Goldstone's Birdmen (2014) makes the modern case. Ron Katznelson and John Howells, in Industrial and Corporate Change (2015), answer that manufacturers faced no patent barrier worth the name in a market made by government orders, and that the hold-up story was built afterwards to justify the pool; this house has read their abstract and their own summary, not the paper, and has read Goldstone only in reviews. The war record does not settle it either way: the DH-4 shortfall had other causes, synchronised guns and mass production among them, and the phrase that the suits set American flying back a decade has no source in anything opened here. What happened on 17 December is better documented than who first misreported it: the Virginian-Pilot's story of a flight of three miles, which the brothers called fictitious and incorrect in almost every detail, is credited to Harry Moore by the Park Service and to Ed Dean by the Wright brothers' heritage site. The often printed 120 feet for the first flight is not in Orville's diary as read here, so it is left out.",
+  "across": [
+    {
+      "to": "lives:glenn-curtiss",
+      "label": "Glenn Curtiss",
+      "txt": "— the rival the brothers sued, who lost in 1914 and then flew Langley's machine for the Smithsonian."
+    },
+    {
+      "to": "lives:charles-kettering",
+      "label": "Charles Kettering",
+      "txt": "— whose Dayton-Wright company, with Edward Deeds, built DH-4s in the brothers' old buildings; Orville lent the name and held no stake."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1885–86 · three years · 1889 · 1893 · 30 May 1912",
+      "s": "The injury, his mother, the shop and his death: National Park Service, Dayton Aviation Heritage National Historical Park, 'Wilbur Wright's Life Story' and 'Wilbur Wright'"
+    },
+    {
+      "b": "30 May 1899 · 22 June · four",
+      "s": "His letter to the Smithsonian and Rathbun's reply: Smithsonian Education, 'The Wright Brothers' background essay; wright-brothers.org, 'Request to the Smithsonian'"
+    },
+    {
+      "b": "1901–02 · more than 200",
+      "s": "The wind tunnel: wright-brothers.org, '1901 Wind Tunnel'"
+    },
+    {
+      "b": "23 March 1903 · 22 May 1906",
+      "s": "Filing and grant: US Patent 821,393, 'Flying-machine', Google Patents"
+    },
+    {
+      "b": "10.35 · about twelve seconds · 852 feet · 59 seconds",
+      "s": "The four flights: Orville Wright's diary, 17 December 1903, transcribed at wright-brothers.org"
+    },
+    {
+      "b": "twenty-one mile · 57 seconds",
+      "s": "Orville's telegram and its transmission error: Milton Wright's diary, Papers of Wilbur and Orville Wright, Library of Congress, Box 115 (East Carolina University transcription); National Park Service, What Dreams We Have, chapter 7"
+    },
+    {
+      "b": "30 July 1909 · 42.583 miles an hour · $25,000 · $5,000",
+      "s": "The Army's trial and payment: National Archives, 'The United States Army Buys Its First Aeroplane, 1909', 19 March 2019; Smithsonian National Air and Space Museum, '1909 Wright Military Flyer'"
+    },
+    {
+      "b": "21 February 1913 · 13 January 1914",
+      "s": "Judge Hazel's decision and the appeal: Wright Co. v. Herring-Curtiss Co., 204 F. 597 (W.D.N.Y. 1913) and 211 F. 654 (2d Cir. 1914), Caselaw Access Project"
+    },
+    {
+      "b": "1917 · over 4,500",
+      "s": "The officials' charge and the DH-4: Ron Katznelson and John Howells, OUPblog, 30 December 2014; National Park Service, 'Dayton Aviation and the First World War', 6 November 2018"
+    }
+  ]
+}

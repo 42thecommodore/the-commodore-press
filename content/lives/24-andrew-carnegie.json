@@ -49,6 +49,16 @@
       "to": "lives:henry-clay-frick",
       "label": "Henry Clay Frick",
       "txt": "— the partner he left the Homestead instructions with, and later tried to force out at below the value of his stock."
+    },
+    {
+      "to": "lives:milton-hershey",
+      "label": "Milton Hershey",
+      "txt": "— who also gave his company's fortune away, in his case to a school, and whose factory also struck."
+    },
+    {
+      "to": "lives:j-p-morgan",
+      "label": "J. Pierpont Morgan",
+      "txt": "— whose syndicate paid his asking price for Carnegie Steel in 1901."
     }
   ]
 }

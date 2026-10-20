@@ -40,6 +40,11 @@
       "to": "lives:george-westinghouse",
       "label": "George Westinghouse",
       "txt": "— who bought his motor patents in 1888, when his own alternating current had been lighting Buffalo for nineteen months."
+    },
+    {
+      "to": "lives:j-p-morgan",
+      "label": "J. Pierpont Morgan",
+      "txt": "— who backed the Long Island tower, and declined to back it further."
     }
   ],
   "facts": [

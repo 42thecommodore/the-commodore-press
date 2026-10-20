@@ -1,0 +1,71 @@
+{
+  "id": "howard-hughes",
+  "no": 120,
+  "keep": "The nickname got the wood wrong and the record got the flight right: one mile, once, in a boat of birch.",
+  "n": "Howard Hughes",
+  "years": "1905–1976",
+  "place": "Houston, Los Angeles and Las Vegas",
+  "field": "Aviation & Film",
+  "group": "famous",
+  "plateless": "No portrait has cleared: the Library of Congress print is a Wide World Photos agency picture whose rights it has not evaluated, and the public-domain tag on the Commons copy is an uploader's inference. House decision, 2026-10-19.",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "lede": "The papers called his flying boat the Spruce Goose. It was built almost entirely of birch, and it flew once, for about a mile, on 2 November 1947.",
+  "copy": [
+    "Howard Hughes was sixteen when his mother died, on 29 March 1922, and eighteen when his father died suddenly in Houston, on 14 January 1924. The money was in his father's tool company. On 26 December 1924, two days after his nineteenth birthday, a court declared him a legal adult, and he took control of the company. Its lawyers bought out his relatives.",
+    "He spent it on films and on speed. His film Hell's Angels had cost about $4 million by 1930, by the American Film Institute's count, more than any film before it. On 13 September 1935, at Santa Ana, he flew the H-1 racer, designed by himself and Richard Palmer and built by Glenn Odekirk, at 352.322 miles an hour, a record. On 10 July 1938 he left New York to fly round the world, and he landed on 14 July, three days, nineteen hours and seventeen minutes later.",
+    "The war made him a contractor, and the contracts made him enemies. The flying boat began as Henry Kaiser's idea, designated HK-1, and Kaiser brought Hughes in to build it; by the time it flew, Kaiser was gone. On 7 July 1946 Hughes crashed the first XF-11 prototype in Beverly Hills and pulled himself out of the burning wreck. On 6 August 1947 he testified to a Senate committee investigating his war contracts, after running a campaign against Senator Brewster through the Hearst papers. Three months later he lifted the flying boat off the water for about a mile at 135 miles an hour. It never flew again. In 1966 he sold his stock in TWA for $546 million. He died in the air, on 5 April 1976, on the way to Houston."
+  ],
+  "bio": {
+    "t": "Empire: The Life, Legend, and Madness of Howard Hughes",
+    "a": "Donald L. Barlett and James B. Steele",
+    "y": "1979",
+    "why": "The standard life, by two investigative reporters; later reissued as Howard Hughes: His Life and Madness. The book behind the Founders episode is a different one, a biography of 2001 whose subtitle is the source of the phrase 'the first American billionaire'."
+  },
+  "contested": "Most of what is repeated about him rests on his biographers rather than on documents read here. The title of first American billionaire is a book's subtitle, not a figure anyone has shown; estimates of what he was worth at his death vary widely, and no probate record or contemporary estimate has been opened. Hell's Angels' cost is given as $2.8 million, $3.5 million, $3.8 million and $4 million; the Texas State Historical Association adds that he lost $1.5 million on it. How high and how long the flying boat flew is usually given as 70 feet and 26 seconds, from a 1990 aircraft history that has not been read here. Some accounts hold that the flight was meant only as a taxi test; the people who say so are not named in anything opened. What the flying boat cost is not settled either: one aviation historian gives $23–25 million, and the split between Hughes's money and the government's is unresolved. The Senate fight is framed by the University of Nevada, Las Vegas's special collections as Brewster protecting Pan Am's monopoly against Hughes's TWA; the printed hearings, which would show the delivery record under his contracts, have not been opened. That the drugs given him after the XF-11 crash began his later addiction is often said and not documented here, and nor is anything about the cause of his death beyond the date.",
+  "across": [
+    {
+      "to": "lives:henry-j-kaiser",
+      "label": "Henry J. Kaiser",
+      "txt": "— whose idea the flying boat was, and who had left it by the time it flew."
+    },
+    {
+      "to": "lives:william-randolph-hearst",
+      "label": "William Randolph Hearst",
+      "txt": "— whose newspapers carried his campaign against Senator Brewster in 1947."
+    }
+  ],
+  "facts": [
+    {
+      "b": "29 March 1922 · 14 January 1924 · 26 December 1924",
+      "s": "His parents' deaths, his majority and the tool company: 'Hughes, Howard Robard, Jr.', Handbook of Texas, Texas State Historical Association"
+    },
+    {
+      "b": "$4,000,000 · 1930",
+      "s": "The cost of Hell's Angels: AFI Catalog of Feature Films, 'Hell's Angels'"
+    },
+    {
+      "b": "13 September 1935 · 352.322 miles an hour",
+      "s": "The H-1 record: Smithsonian National Air and Space Museum, 'Hughes H-1 Racer', object A19750840000"
+    },
+    {
+      "b": "10 July 1938 · 14 July · three days, nineteen hours and seventeen minutes · 1966 · $546 million · 5 April 1976",
+      "s": "The round-the-world flight, the TWA sale and his death: 'Hughes, Howard Robard, Jr.', Handbook of Texas, Texas State Historical Association"
+    },
+    {
+      "b": "7 July 1946",
+      "s": "The XF-11 crash: Wikipedia, 'Hughes XF-11', with the Handbook of Texas for the year and place"
+    },
+    {
+      "b": "6 August 1947",
+      "s": "His Senate testimony and the Hearst campaign against Brewster: University of Nevada, Las Vegas, Special Collections, 'Howard Hughes: The Senate Hearings'"
+    },
+    {
+      "b": "2 November 1947 · about one mile · 135 miles an hour",
+      "s": "The flight, from the Los Angeles Times of 3 November 1947: Bryan R. Swopes, '2 November 1947', This Day in Aviation"
+    }
+  ]
+}

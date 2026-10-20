@@ -35,6 +35,11 @@
       "to": "lives:robert-goddard",
       "label": "Robert Goddard",
       "txt": "— whose rocket paper the Smithsonian published in 1919, while it still claimed Langley's machine could fly."
+    },
+    {
+      "to": "lives:wilbur-wright",
+      "label": "Wilbur Wright",
+      "txt": "— who died in 1912, before the courts decided the patent case against Curtiss."
     }
   ],
   "facts": [

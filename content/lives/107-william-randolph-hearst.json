@@ -35,6 +35,16 @@
       "to": "lives:p-t-barnum",
       "label": "P. T. Barnum",
       "txt": "— another showman whose best-known line was put in his mouth by someone else."
+    },
+    {
+      "to": "lives:joseph-pulitzer",
+      "label": "Joseph Pulitzer",
+      "txt": "— whose World he fought from 1895, and whose manager he hired away in 1896."
+    },
+    {
+      "to": "lives:howard-hughes",
+      "label": "Howard Hughes",
+      "txt": "— who ran his 1947 campaign against Senator Brewster through the Hearst papers."
     }
   ],
   "facts": [

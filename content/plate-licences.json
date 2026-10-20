@@ -149,5 +149,11 @@
     "by": "Harris & Ewing, Library of Congress (LCCN 2016872437, hec.23465)",
     "credit": "the 1937 photograph of Walter Chrysler is by Harris &amp; Ewing, held by the Library of Congress, which states that there are no known restrictions on its publication",
     "checked": "2026-10-16"
+  },
+  "wilbur-wright": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Attributed to Wilbur and/or Orville Wright, Library of Congress (LCCN 2001696613, LC-DIG-ppprs-00683)",
+    "credit": "the photograph of Wilbur Wright of about 1905, attributed to Wilbur or Orville Wright themselves, is held by the Library of Congress, which states that there are no known restrictions on its publication",
+    "checked": "2026-10-19"
   }
 }

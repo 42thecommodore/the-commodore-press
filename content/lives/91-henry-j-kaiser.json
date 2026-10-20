@@ -35,6 +35,11 @@
       "to": "lives:walter-chrysler",
       "label": "Walter Chrysler",
       "txt": "— the railroad mechanic who did break into the car industry, in 1924, under his own name."
+    },
+    {
+      "to": "lives:howard-hughes",
+      "label": "Howard Hughes",
+      "txt": "— whom he brought in to build the HK-1, and who flew it once, in 1947, after Kaiser had gone."
     }
   ],
   "facts": [

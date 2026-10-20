@@ -1,0 +1,57 @@
+{
+  "id": "thomas-j-watson",
+  "no": 119,
+  "keep": "The line about five computers has no source before 1981. What he did leave on paper is harder to quote: a conviction set aside for a new trial, the Social Security contract, and a Nazi medal he kept until June 1940.",
+  "n": "Thomas J. Watson Sr.",
+  "years": "1874–1956",
+  "place": "Dayton and New York",
+  "field": "Business Machines",
+  "group": "famous",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "Every history of computing gives him the forecast of a world market for about five computers. The line first appears in print with his name on it in 1981, a quarter of a century after he died, with no source attached.",
+  "copy": [
+    "Thomas Watson learned to sell at the National Cash Register Company in Dayton, under John H. Patterson, and rose to be its sales manager. In 1913 the company's leaders were convicted in an antitrust case, and Watson was among the defendants. Patterson's sentence was a $35,000 fine and a year in prison. On 13 March 1915 the Sixth Circuit reversed the judgment and sent it back for a new trial. By then Watson had left NCR. In 1914 he joined the Computing-Tabulating-Recording Company.",
+    "He brought NCR with him. The slogan THINK, which IBM's own history traces to a meeting he ran in Dayton, became the new company's slogan soon after he arrived. In 1924 he renamed it International Business Machines. Through the Depression it grew, and in 1934 its factory workers moved from piecework to hourly pay. On 16 September 1936 IBM won the contract to keep the records of the new Social Security system, with 400 of its machines in a former Coca-Cola bottling plant in Baltimore. When Harvard announced Howard Aiken's Mark I calculator, its press release slighted IBM's contribution, and that was where the bitterness between the two men began.",
+    "In 1937, while the International Chamber of Commerce met in Germany, the German government gave him the Merit Cross of the German Eagle with Star, its highest decoration for a foreigner. IBM owned all but a tenth of its German subsidiary, Dehomag. Watson kept the medal through Kristallnacht and the invasion of Poland. He sent it back in June 1940."
+  ],
+  "bio": {
+    "t": "The Maverick and His Machine: Thomas Watson, Sr. and the Making of IBM",
+    "a": "Kevin Maney",
+    "y": "2003",
+    "why": "Written with access to Watson's papers, and the biography that says plainly there is no evidence for the five-computers line. For the case against him read Edwin Black's IBM and the Holocaust (2001); for the case against Black, Frederick E. Allen's 'Hitler and IBM' in American Heritage (July/August 2001)."
+  },
+  "contested": "What IBM's German business amounted to. Edwin Black, in IBM and the Holocaust (2001), argues from what he describes as some 20,000 documents in seven countries that IBM's machines and Watson's management made the Nazi census and the camps run, and that the medal's return in June 1940 was public relations. Frederick E. Allen, reviewing the book in American Heritage in 2001, calls its framing hyperbolic, says the evidence never quite adds up, and finds Watson far from the active collaborator Black suggests, while conceding that he behaved poorly before the war. Black has replied that later documents confirm him; those documents have not been read here. Watson's own sentence in 1913 is usually given as a year in prison; the appeal court's opinion, read here, records Patterson's and does not show his. The five-computers line has other claimants: Howard Aiken was reported in 1944 as supposing only one such calculator would ever be built, and the IBM 701 remark often offered as the origin belongs to his son, Thomas Watson Jr., in 1953, in a document not yet opened here. How many people C-T-R employed when Watson arrived depends on whether the count is of one company or of the group, and the figures range from a few hundred to about 1,300; none is printed. IBM's own page dates the THINK meeting to 1915, after he had left Dayton, so the year is left out.",
+  "across": [
+    {
+      "to": "lives:charles-kettering",
+      "label": "Charles Kettering",
+      "txt": "— who worked at NCR in the same years, beside Edward Deeds, Watson's co-defendant in 1913."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1981",
+      "s": "The earliest printed attribution of the five-computers line to Watson, in Morgan and Langford's Facts and Fallacies, p. 44, with Kevin Maney's finding that no evidence exists he said it: Quote Investigator, 'Quote Origin: I Think There Is a World Market for About Five Computers', 29 August 2026"
+    },
+    {
+      "b": "$35,000 · one year · 13 March 1915",
+      "s": "The sentence on Patterson and the reversal and remand: Patterson et al. v. United States, 222 F. 599 (6th Cir. 1915), via the Caselaw Access Project"
+    },
+    {
+      "b": "1914 · 1924 · 1934",
+      "s": "His joining C-T-R, the rename, and hourly pay: IBM, 'Thomas J. Watson Sr.', ibm.com/history"
+    },
+    {
+      "b": "16 September 1936 · 400",
+      "s": "The Social Security contract and the Baltimore plant: IBM, 'The birth of Social Security', ibm.com/history"
+    },
+    {
+      "b": "1937 · June 1940",
+      "s": "The medal, Dehomag's ownership and the return: Frederick E. Allen, 'Hitler and IBM', American Heritage, July/August 2001; Edwin Black, History News Network, 29 February 2012"
+    }
+  ]
+}

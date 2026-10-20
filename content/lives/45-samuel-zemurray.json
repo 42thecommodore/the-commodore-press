@@ -61,6 +61,11 @@
       "to": "lives:aristotle-onassis",
       "label": "Aristotle Onassis",
       "txt": "— the other immigrant trader in this wing who went around a government rather than through it, and whose settlement with Washington came out smaller than the legend."
+    },
+    {
+      "to": "lives:milton-hershey",
+      "label": "Milton Hershey",
+      "txt": "— whose company also ran its own mills and railroad in the Caribbean, in Cuba from 1916."
     }
   ]
 }

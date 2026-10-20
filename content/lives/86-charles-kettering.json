@@ -35,6 +35,16 @@
       "to": "lives:clair-patterson",
       "label": "Clair Patterson",
       "txt": "— who measured where the lead went, against forty years of the case made from a laboratory with Kettering's name on it."
+    },
+    {
+      "to": "lives:thomas-j-watson",
+      "label": "Thomas J. Watson Sr.",
+      "txt": "— NCR's sales manager in the same years, convicted beside Edward Deeds in 1913 and freed on appeal."
+    },
+    {
+      "to": "lives:wilbur-wright",
+      "label": "Wilbur Wright",
+      "txt": "— whose name Dayton-Wright carried, and whose old buildings it used to build DH-4s."
     }
   ],
   "plateOf": "12 August 1936.",

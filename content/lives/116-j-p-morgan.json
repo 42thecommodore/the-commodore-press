@@ -1,0 +1,67 @@
+{
+  "id": "j-p-morgan",
+  "no": 116,
+  "keep": "He never said that a man who has to ask the price of a yacht cannot afford one. He did say, under oath, that a man he did not trust could not get money from him on all the bonds in Christendom.",
+  "n": "J. Pierpont Morgan",
+  "years": "1837–1913",
+  "place": "New York",
+  "field": "Banking",
+  "group": "famous",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "conic",
+  "lede": "The line about the yacht, that if you have to ask what it costs you cannot afford it, is the most quoted thing he never said. What he did say, under oath on 19 December 1912, was that credit rests on character first.",
+  "copy": [
+    "By 1895 the United States Treasury was running out of gold. On 8 February President Cleveland announced the remedy: bonds to the amount of a little less than $62,400,000, at 4 per cent, payable in coin in thirty years, sold to a syndicate of bankers for gold slightly in excess of $65,000,000. That came to 3¾ per cent on the gold, and it put the reserve back above $100,000,000. The President's message named no banker; his biographers put Pierpont Morgan at the syndicate's head.",
+    "In 1901 he bought Carnegie Steel at Andrew Carnegie's asking price, $480 million, and made it the core of United States Steel. In October 1907 the New York trust companies began to fail. Morgan looked at the Knickerbocker Trust, judged it unsound and refused to aid it; it failed. Then he changed his mind about the others and released aid quickly, as the Clearing House banks did, and the Federal Reserve's own history says the Stock Exchange stayed open largely because of his actions. Largely is the word. The Treasury put federal money into the banks too.",
+    "Five years later Congress asked whether a few men controlled the country's credit. Untermyer, questioning him for the Pujo committee, put it to Morgan on 19 December 1912 that commercial credit was based primarily on money or property. 'No, sir; the first thing is character,' Morgan answered. 'Before money or anything else. Money can not buy it.' Untermyer pressed him: surely a man with government or railroad bonds got credit on the bonds. 'Because a man I do not trust could not get money from me on all the bonds in Christendom.'"
+  ],
+  "bio": {
+    "t": "Morgan: American Financier",
+    "a": "Jean Strouse",
+    "y": "1999",
+    "why": "The full life; its reviewers note that it draws on the family papers and the Morgan Library's records. For the firm rather than the man, Chernow's The House of Morgan; for his own words, the Pujo hearings themselves, Money Trust Investigation, Part 15, free at the Internet Archive."
+  },
+  "contested": "How much of 1907 was his. The popular version has him ending the panic alone from his library; Moen and Tallman, writing the Federal Reserve's history of it in 2015, have him refusing the Knickerbocker, then acting with the Clearing House banks while the Treasury deposited federal money, and the size of that deposit is itself reported three ways, at about $25 million, $29 million or $42 million depending on the account and the days counted. None of those is printed above, because the Treasury's own report for 1907 has not been opened. The Hall carbine affair of 1861, in which carbines bought for $12.50 each were sold to Frémont for $22 on a loan from Morgan, divides his historians: Wasson, who later worked for the Morgan firm, found no evidence Morgan knew; Josephson and Morris hold that he must have; Vincent Carosso found no evidence he shared in the profit but called him careless. The 1862 House report on it has not been read here. His estate at death is given as $68.3 million, $69.5 million, $78.1 million and $80 million, depending on the appraisal and whether the art is counted, and Rockefeller's supposed remark that Morgan was not even a rich man has no source opened here. That the 1895 syndicate was his is the biographers' account; the President's message does not say so. The yacht line is first tied to him in the Wall Street Journal of 14 September 1926, thirteen years after his death, in a different form; Ralph Keyes calls it Morgan's sentiments, not his words.",
+  "across": [
+    {
+      "to": "lives:andrew-carnegie",
+      "label": "Andrew Carnegie",
+      "txt": "— who named his price for Carnegie Steel in 1901, and was paid it."
+    },
+    {
+      "to": "lives:nikola-tesla",
+      "label": "Nikola Tesla",
+      "txt": "— whose wireless tower on Long Island he backed, and would not back further."
+    },
+    {
+      "to": "lives:james-j-hill",
+      "label": "James J. Hill",
+      "txt": "— his partner, with Harriman, in Northern Securities in 1901."
+    }
+  ],
+  "facts": [
+    {
+      "b": "8 February 1895 · $62,400,000 · 4 per cent · thirty years · $65,000,000 · 3¾ per cent · $100,000,000",
+      "s": "The bond sale's terms: Grover Cleveland, 'Announcement of Treasury Bond Sale', 8 February 1895, Miller Center, University of Virginia"
+    },
+    {
+      "b": "$480 million · 1901",
+      "s": "Carnegie's asking price, accepted by Morgan: 'The Deal of the Century', American Heritage, July/August 1998; PBS American Experience, 'Timeline: Rags to Riches'"
+    },
+    {
+      "b": "October 1907",
+      "s": "The Knickerbocker refusal, the aid and the Stock Exchange: Moen and Tallman, 'The Panic of 1907', Federal Reserve History, 4 December 2015"
+    },
+    {
+      "b": "19 December 1912",
+      "s": "The character exchange, pp. 1084–85: Money Trust Investigation, Part 15, House Committee on Banking and Currency (Government Printing Office, 1913), Internet Archive aeu8665.0015.001.umich.edu"
+    },
+    {
+      "b": "14 September 1926",
+      "s": "The first dated tie of the yacht line to Morgan, and Keyes's verdict: Barry Popik, 'If you have to ask, then you probably can't afford it (J. P. Morgan?)', barrypopik.com"
+    }
+  ]
+}
