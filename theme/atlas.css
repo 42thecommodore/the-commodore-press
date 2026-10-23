@@ -153,6 +153,8 @@
   .ic-go,.ic-x{align-self:flex-start;font-family:var(--serif);font-size:var(--fs-2,15px);color:var(--nbrass);
     border:1px solid var(--line);border-radius:2px;padding:8px 14px;transition:.15s}
   .ic-go:hover,.ic-x:hover{border-color:var(--nbrass);color:var(--nbrass-b)}
+  /* the drawer's way to send a person: a thumb's height, since the drawer is a phone's whole screen */
+  .d-share .ic-x{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;background:none;cursor:pointer}
   .key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:var(--fs-1,13px);color:var(--parchment-dim)}
   .key li{display:flex;align-items:center;gap:10px}
   .key svg{flex:none}

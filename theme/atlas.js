@@ -922,11 +922,20 @@ function openDrawer(p) {
      ${near.length ? `<div>${lbl("Most alike in what they taught me")}<div style="display:flex;flex-direction:column;gap:7px">${near.map(x => `<button class="clink" onclick="openDrawer(PEOPLE.find(z=>z.id==='${x.q.id}'))"><span class="g" style="color:${x.q.color}">●</span><span><b>${x.q.name}</b><span>${x.both.length} lessons in common: ${x.both.map(id => P_BY_ID[id].name).join(", ")}</span></span></button>`).join("")}</div></div>` : ""}
      ${keptHTML(p)}
      ${p.corrected && p.corrected.length ? `<div>${lbl("Corrected")}<div class="corrbox">${p.corrected.map(n => { const c = CORRECTIONS[n - 1]; return c ? `<div><b>№ ${n} · ${c.d} · ${c.t}</b><span>${c.b}</span></div>` : ""; }).join("")}</div></div>` : ""}
+     <div class="ic-row d-share"><button class="ic-x" type="button" onclick="sharePerson(this)">Share ${p.name}</button><a class="ic-x" href="a/${slug(p.name)}/">Their own page</a></div>
      <div class="caveat">I chart people as sources and pass no verdict on them. The islands are my own sorting of what they taught. When several people land on one island, the lesson is my claim, and the people are where I heard it.</div>`;
   document.getElementById("scrim").classList.add("on");
   document.getElementById("drawer").classList.add("on");
   document.getElementById("drawer").setAttribute("aria-hidden", "false");
   showRoute(p);
+}
+/* a person is sent as their own page (build/pages.mjs, dist/a/<name>/), which previews as
+   them; the library's address previews as the front door */
+function sharePerson(btn) {
+  const p = selectedPerson; if (!p) return;
+  const url = new URL(`a/${slug(p.name)}/`, location.href.split("#")[0]).href;
+  Reading.share({ url, title: p.name, sub: p.role || "The Atlas", text: `${p.name}, in the Atlas — ${p.take}`,
+    theme: { bg: "#0E1426", ink: "#ECE3D0", accent: "#D8A657" }, from: btn, kind: "entry" });
 }
 function closeDrawer() {
   document.getElementById("scrim").classList.remove("on");

@@ -57,7 +57,7 @@ The Commodore/
 ├── templates/shell.html        # the page frame; <!--CSS--> <!--DATA--> <!--ENGINE--> are the seams
 ├── build/build.mjs             # assembles everything into dist/index.html; each entry's body (essay, timeline,
 │                               # facts, dispute, reading list…) goes to dist/library.<hash>.js, loaded on first open
-├── build/pages.mjs             # one crawlable page per entry: dist/t/<id>/, dist/l/<id>/ — plus about/, log/, feed.xml (the Log),
+├── build/pages.mjs             # one crawlable page per entry: dist/t/<id>/, dist/l/<id>/, and per Atlas person dist/a/<name>/ — plus about/, log/, feed.xml (the Log),
 │                               # and updates.xml: every title, life and correction, dated from git, newest first
 ├── build/log.mjs               # reads content/log/ — shared by build, check, links and proofread
 ├── tools/                      # validate, new, plate, correct, stats, serve, json (friendly parse errors)

@@ -9,7 +9,7 @@ import { fillMark, faviconSvg, ICON_FILES } from "./mark.mjs";
 import { fontFaces, fontPreload, FONT_FILES } from "./fonts.mjs";
 import { motifSVG } from "./motif.mjs";
 import { LABEL_CSS } from "./label.mjs";
-import { writeEntryPages, writeAbout, writeLog, writeContents, writeUpdates, UPDATES_LINK, EDITOR, minsOf } from "./pages.mjs";
+import { writeEntryPages, writeAtlasPages, writeAbout, writeLog, writeContents, writeUpdates, UPDATES_LINK, EDITOR, minsOf } from "./pages.mjs";
 import crypto from "node:crypto";
 import { execSync } from "node:child_process";
 import { publishedLog } from "./log.mjs";
@@ -258,15 +258,17 @@ for (const f of ICON_FILES.filter(f => f.endsWith(".png"))) {
 /* The library routes by hash, which a crawler reads as one page, so every title and life
    also gets a real page of its own (build/pages.mjs). The sitemap lists all of them. */
 const ENTRY_URLS = writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout: !!ABOUT_URL, NEWS, hasLog: LOG.length > 0, CORR: CORRECTIONS });
+// the Atlas's people, at dist/a/<name>/, so one can be sent and previews as themselves
+const ATLAS_URLS = writeAtlasPages({ ROOT, SITE, PEOPLE, PRINCIPLES, DOMAINS, ECHOES, LIVES, CORR: CORRECTIONS, hasAbout: !!ABOUT_URL, NEWS, hasLog: LOG.length > 0 });
 const LOG_URLS = writeLog({ ROOT, SITE, pieces: LOG, BOOKS, ADJACENT, LIVES, PRINCIPLES, hasAbout: !!ABOUT_URL, NEWS }).urls;
-const CONTENTS_URL = writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG });
+const CONTENTS_URL = writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, PEOPLE, LOG });
 // after the entry pages, which copy the share cards the feed's items show
 const UPDATES = writeUpdates({ ROOT, SITE, BOOKS, ADJACENT, LIVES, CORR: CORRECTIONS });
 // lastmod only where it is known: entry pages carry their file's git date, the rest none
 const U = x => typeof x === "string" ? { loc: x } : x;
 fs.writeFileSync(p("dist/sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  [`${SITE}/`, CONTENTS_URL, ...(ABOUT_URL ? [ABOUT_URL] : []), ...LOG_URLS, ...ENTRY_URLS].map(U)
+  [`${SITE}/`, CONTENTS_URL, ...(ABOUT_URL ? [ABOUT_URL] : []), ...LOG_URLS, ...ENTRY_URLS, ...ATLAS_URLS].map(U)
     .map(u => `  <url><loc>${u.loc}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ""}</url>\n`).join("") + `</urlset>\n`);
 
 /* Anything in assets/root/ is copied to the top of the site as it is — the place for a
@@ -277,7 +279,7 @@ if (fs.existsSync(ROOTFILES)) for (const f of fs.readdirSync(ROOTFILES).filter(f
 const kb = n => (n / 1024).toFixed(0) + " KB";
 console.log(`built dist/index.html — ${kb(Buffer.byteLength(out))}, and ${LIBRARY_FILE} — ${kb(Buffer.byteLength(LIBRARY))}, fetched when a book or search is opened`);
 console.log(`  ${LIVES.length} lives · ${BOOKS.length + ADJACENT.length} retired titles, on their own pages only`);
-console.log(`  ${ENTRY_URLS.length} entry pages in dist/t/ and dist/l/, a contents page, llms.txt`);
+console.log(`  ${ENTRY_URLS.length} entry pages in dist/t/ and dist/l/, ${ATLAS_URLS.length} Atlas pages in dist/a/, a contents page, llms.txt`);
 if (UPDATES) console.log(`  updates.xml — ${UPDATES.items} items, the newest ${UPDATES.newest}`);
 console.log(LOG.length ? `  the Log: ${LOG.length} published piece(s), feed.xml` : `  the Log: nothing published yet — held back`);
 console.log(ABOUT_URL ? `  about page at dist/about/` : `  about page held back — content/about.md still says TODO`);
