@@ -434,3 +434,27 @@ Researched by seven press-researcher sweeps. Pages marked opened were read throu
 | Wright | Virginian-Pilot, 18 December 1903 (front page) | Moore or Dean |
 | Wright | Katznelson and Howells (2015) full; Goldstone, *Birdmen* (2014); Crouch, 'Blaming Wilbur and Orville' (2000) | The hold-up argument, read only in abstract and reviews |
 | Wright | McCullough (2015), p. 14 | The hockey assault version; not printed |
+
+---
+
+## Plastic Tide's last two source lines, 2026-10-23
+
+`npm run check` warns that two lines in `content/books/19-plastic-tide.json` (a retired
+title, still built at `/t/plastic-tide/`) name no document. Neither paper could be opened
+this session: the shell's proxy refused every outside host, and the fetch tool failed DNS on
+nejm.org, europepmc.org, pubmed and wikipedia.org alike. Only search worked, and a search
+snippet is not a reading. So both stay leads.
+
+- **`~8 Mt`**. Jambeck et al., "Plastic waste inputs from land into the ocean", *Science*
+  347(6223), 2015, doi:10.1126/science.1260352. Confirm from the abstract that 8 Mt (range
+  4.8–12.7) is the 2010 estimate of plastic entering the ocean, and which year it counts.
+  Rewrite the line as "what it counts: where it was read".
+- **`4.5×`**. Marfella et al., "Microplastics and Nanoplastics in Atheromas and
+  Cardiovascular Events", *NEJM* 390(10), 2024, doi:10.1056/NEJMoa2309822. Search reports
+  quote the abstract as a hazard ratio of 4.53 (95% CI 2.00 to 10.27) for the composite of
+  myocardial infarction, stroke or death, with 257 patients followed for a mean 33.7 months.
+  That is unconfirmed until someone reads the abstract. If it holds, the line can say so
+  and keep "observational".
+
+When both land, the queue row "Wing I source lines name no document" can close and the
+warning can become an error, as that row proposes.
