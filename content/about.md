@@ -1,6 +1,6 @@
 # About the Press
 
-The Commodore Press is a working library in {{W_WINGS}} wings: {{N_BOOKS}} titles on the ideas people spent their lives inside, {{N_LIVES}} lives, and an Atlas of {{N_PEOPLE}} people the house listens to now. Where the people who know most still disagree, the disagreement is printed in the entry instead of smoothed over.
+The Commodore Press is a working library in {{W_WINGS}} wings: {{N_LIVES}} lives, and an Atlas of {{N_PEOPLE}} people the house listens to now. Where the people who know most still disagree, the disagreement is printed in the entry instead of smoothed over.
 
 ## What the house promises
 

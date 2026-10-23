@@ -447,6 +447,128 @@ export function writeEntryPages({ ROOT, SITE, BOOKS, ADJACENT, LIVES, hasAbout, 
   return urls;
 }
 
+/* ---------- The Atlas: one page per person ----------
+   The Atlas lives inside the library, and a person in it was reachable only as a drawer —
+   no address at all until #atlas/p/<name>, and that one a link preview reads as the front
+   door. So a person the editor listens to could not be sent to anyone. dist/a/<name>/ is
+   their page: the same drawer, printed — the take (the editor's, and labelled so), their
+   lessons, the Lives they name, and what was kept, with the quotation/note line drawn
+   exactly as theme/atlas.js keptHTML() draws it. The slug is the drawer route's, so
+   /a/<name>/ and #atlas/p/<name> always name the same person.
+   No select-a-passage quoting here: the take is the house's line, and a quote lifted from a
+   page headed with someone's name would credit it to them. */
+export const personSlug = t => strip(t).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const ATLAS_LIVERY = { cover: "#0E1426", ink: "#ECE3D0", accent: "#D8A657" };   // the chart's panel, parchment and brass (theme/press.css)
+const ATLAS_CAVEAT = "I chart people as sources and pass no verdict on them. The islands are my own sorting of what they taught. When several people land on one island, the lesson is my claim, and the people are where I heard it.";
+const ATLAS_NOTECAP = "I copied these from my listening notes. I did not record the episode, so I give them as notes, not quotations.";
+const ATLAS_CSS = `
+.take{margin:0 0 36px;padding:24px 26px;background:color-mix(in srgb,var(--cover) 9%,var(--paper));border-left:4px solid var(--cover)}
+.take p{font-size:var(--fs-6);line-height:1.3;margin:0}
+.take .lbl{display:block;margin-bottom:8px}
+.take small{display:block;margin-top:12px;font-size:var(--fs-2);color:var(--ink-soft)}
+ul.kl{padding-left:1.1em;margin:0}ul.kl li{margin:0 0 10px}ul.kl .ks{display:block;font-size:var(--fs-2);color:var(--ink-soft)}
+.caveat{margin-top:40px;font-size:var(--fs-3);line-height:1.55;color:var(--ink-soft)}
+${DUSK(".take", "background:color-mix(in srgb,var(--cover) 30%,var(--paper))")}
+`;
+export function writeAtlasPages({ ROOT, SITE, PEOPLE, PRINCIPLES, DOMAINS, ECHOES = [], LIVES, CORR = [], hasAbout, NEWS, hasLog }) {
+  const dir = path.join(ROOT, "dist/a");
+  fs.rmSync(dir, { recursive: true, force: true });
+  const PR = Object.fromEntries(PRINCIPLES.map(p => [p.id, p])), DOM = Object.fromEntries(DOMAINS.map(d => [d.id, d]));
+  const LIFE = Object.fromEntries(LIVES.map(l => [l.id, l]));
+  const bySlug = new Map(PEOPLE.map(p => [personSlug(p.name), p]));
+  if (bySlug.size !== PEOPLE.length) throw new Error("two people in content/atlas/people.json share a page address — names must differ in letters, not punctuation");
+  const urls = [];
+  PEOPLE.forEach((p, i) => {
+    const slug = personSlug(p.name), url = `${SITE}/a/${slug}/`, name = strip(p.name);
+    const prev = PEOPLE[(i - 1 + PEOPLE.length) % PEOPLE.length], next = PEOPLE[(i + 1) % PEOPLE.length];
+    const lessons = (p.p || []).map(id => PR[id]).filter(Boolean);
+    const domain = DOM[p.domain] ? DOM[p.domain].label : "The Atlas";
+    // clipped as it will be printed: an & becomes &amp; in the tag, and the test counts that
+    const said = `${name}${p.role ? ", " + strip(p.role) : ""}, in the Commodore Press Atlas. The editor’s take: ${strip(p.take)}`;
+    const desc = clip(said, 158 - 4 * (said.match(/&/g) || []).length);
+    const S = [], toc = [];
+    let n = 0;
+    const sec = (id, h, inner, cls = "") => { n++; toc.push([id, h]); S.push(`<section class="s ${cls}" id="${id}"><h2><span class="n">${String(n).padStart(2, "0")}</span>${h}</h2>${inner}</section>`); };
+    S.push(`<aside class="take" aria-label="The editor’s take"><span class="lbl">The editor’s take</span><p>${p.take}</p><small>${EDITOR}, on ${p.name}. The take is the house’s, not their words.</small></aside>`);
+    if (lessons.length) sec("s-lessons", lessons.length === 1 ? "Their lesson" : "Their lessons", lessons.map(l => `<div class="row"><b><a href="../../#atlas/${l.id}">${l.name}</a></b><span>${l.gloss}</span></div>`).join(""));
+    const echoes = ECHOES.filter(e => e.notes.some(x => x.who === p.name))
+      .map(e => [e, e.notes.filter(x => x.who !== p.name).map(x => PEOPLE.find(q => q.name === x.who)).filter(Boolean)]).filter(([, o]) => o.length);
+    if (echoes.length) sec("s-echoes", "Heard the same from", echoes.map(([e, o]) => `<div class="row"><b>${e.idea}</b><span>also ${o.map(q => `<a href="../${personSlug(q.name)}/">${q.name}</a>`).join(", ")}</span></div>`).join(""));
+    const mentions = (p.mentions || []).map(m => [m, LIFE[m.to.replace(/^lives:/, "")]]).filter(([, l]) => l);
+    if (mentions.length) sec("s-lives", "Names someone on the Lives shelf", mentions.map(([m, l]) => `<div class="row"><b><a href="../../l/${l.id}/">${l.n}</a></b><span>${m.note}</span></div>`).join(""));
+    const quoted = (p.kept || []).filter(k => typeof k !== "string"), notes = (p.kept || []).filter(k => typeof k === "string");
+    const src = k => /^https?:/.test(k.s) ? `<a href="${k.s}" rel="noopener">${k.s.replace(/^https?:\/\/(www\.)?/, "").slice(0, 44)} ↗</a>` : k.s;
+    if (quoted.length) sec("s-lines", "Lines I kept", `<ul class="kl">${quoted.map(k => `<li>${k.k}<span class="ks">${src(k)}</span></li>`).join("")}</ul>`);
+    if (notes.length) sec("s-notes", `Notes I kept · after ${p.name}`, `<ul class="kl">${notes.map(k => `<li>${k}</li>`).join("")}</ul><p class="why">${ATLAS_NOTECAP}</p>`);
+    if (p.corrected && p.corrected.length) sec("s-corrected", "Corrected", `<p class="why">Corrections are appended, never patched. What was wrong, and what is true now:</p>` + p.corrected.map(k => [k, CORR[k - 1]]).filter(x => x[1]).map(([k, c]) => `<details class="corrd" id="c-${k}"><summary><b>№ ${k}</b> · ${c.d} · ${c.t}</summary><p>${c.b}</p></details>`).join(""), "callout corr");
+    const shareText = `${name}, in the Atlas — ${strip(p.take)}`;
+    const nextCard = `<a class="rs-next" href="../${personSlug(next.name)}/"><span class="rs-nk lbl">Next in the Atlas</span><span class="rs-nt">${next.name}</span>${next.role ? `<span class="rs-nd">${next.role}</span>` : ""}<span class="rs-nm"><span>${(next.p || []).length} ${(next.p || []).length === 1 ? "lesson" : "lessons"}</span><b>Read →</b></span></a>`;
+    const conf = { url, title: name, sub: strip(p.role || domain), text: shareText, keep: "", mins: 2, key: null, theme: { bg: ATLAS_LIVERY.cover, ink: ATLAS_LIVERY.ink, accent: ATLAS_LIVERY.accent } };
+    const ld = [{
+      "@context": "https://schema.org", "@type": "ProfilePage", name: `${name} — The Atlas`, url, description: desc, inLanguage: "en",
+      mainEntity: { "@type": "Person", name, ...(p.role ? { description: strip(p.role) } : {}) },
+      author: { "@type": "Person", name: EDITOR, jobTitle: "Editor", ...(hasAbout ? { url: `${SITE}/about/` } : {}) },
+      isPartOf: { "@type": "WebSite", name: "The Commodore Press", url: SITE + "/" },
+    }, {
+      "@context": "https://schema.org", "@type": "BreadcrumbList",
+      itemListElement: [["The Commodore Press", SITE + "/"], ["The Atlas", `${SITE}/contents/#atlas`], [name, url]]
+        .map(([t, u], k) => ({ "@type": "ListItem", position: k + 1, name: t, item: u })),
+    }];
+    const title = `${name}${p.role ? ` (${strip(p.role)})` : ""}`;
+    const docTitle = (title.length <= 52 ? title : name) + " — the Atlas, The Commodore Press";
+    const d = path.join(dir, slug);
+    fs.mkdirSync(d, { recursive: true });
+    fs.writeFileSync(path.join(d, "index.html"), `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+${THEME_BOOT}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${attr(docTitle)}</title>
+<meta name="description" content="${attr(desc)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="The Commodore Press">
+<meta property="og:title" content="${attr(name + " — the Atlas")}">
+<meta property="og:description" content="${attr(desc)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${SITE}/og.png">
+${CARD_TAGS(SITE, name + " — the Atlas", desc)}
+<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
+${FONTS(SITE, "../../")}
+<style>${CSS}${ENTRY_CSS}${ATLAS_CSS}${READING_CSS}</style>
+<script>document.documentElement.classList.add("rs-js")</script>
+</head>
+<body style="--cover:${ATLAS_LIVERY.cover};--cink:${ATLAS_LIVERY.ink};--accent:${ATLAS_LIVERY.accent}">
+<nav class="top entry" aria-label="Breadcrumb"><span class="crumbs"><a href="../../">The Commodore Press</a><i>/</i><a href="../../contents/#atlas">The Atlas</a><i>/</i><span>${p.name}</span></span><span class="tr"><button class="rs-go rs-js-only" type="button" data-rs="share">${SHARE_ICON}Share</button><a class="wl" href="../../#atlas">The Atlas →</a></span><span class="rs-bar" id="rbar"></span></nav>
+<header class="band"><div class="in"><div class="btxt">
+  <div class="kick lbl">The Atlas · ${domain}</div>
+  <h1>${p.name}</h1>
+  ${p.role ? `<p class="sub">${p.role}</p>` : ""}
+  <div class="glance"><span>${lessons.length} ${lessons.length === 1 ? "lesson" : "lessons"}</span>${notes.length + quoted.length ? `<span>${notes.length + quoted.length} kept</span>` : ""}${mentions.length ? `<span><a href="#s-lives">Names ${mentions.length === 1 ? "a life" : mentions.length + " lives"} on the shelf</a></span>` : ""}</div>
+</div></div></header>
+<div class="layout">
+<aside class="rail" aria-label="On this page"><span class="lbl">On this page</span>${toc.map(([id, h]) => `<a href="#${id}">${h}</a>`).join("")}</aside>
+<main class="body">
+${S.join("\n")}
+<p class="caveat">${ATLAS_CAVEAT}</p>
+${endBlock(url, p.name, `${name} — the Atlas, The Commodore Press`, shareText, nextCard)}
+<a class="cta" href="../../#atlas/p/${slug}">Open on the chart →</a>
+<nav class="pn">${[[prev, "←"], [next, "→"]].map(([e, arrow]) => `<a href="../${personSlug(e.name)}/"><span class="lbl">${arrow === "←" ? "← Previous" : "Next →"}</span>${e.name}</a>`).join("")}</nav>
+${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../../", "Follow the Press", hasLog) : ""}
+</main>
+</div>
+<script>${READING_JS.replace(/<\/script/gi, "<\\/script")}
+Reading.page(${JSON.stringify(conf).replace(/</g, "\\u003c")})</script>
+<footer>The Commodore Press · edited by ${hasAbout ? `<a href="../../about/">${EDITOR}</a>` : EDITOR} · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a> · <a href="../../updates.xml">follow by RSS</a> · ${DUSK_SWITCH}</footer>
+</body>
+</html>
+`);
+    urls.push(url);
+  });
+  return urls;
+}
+
 /* ---------- About ----------
    content/about.md is plain Markdown so the editor can write it without touching JSON:
    # title, ## headings, paragraphs, "- " lists, *italic*, **bold**, [links](url).
@@ -717,14 +839,14 @@ ${pieces.map(p => {
    One plain page linking every entry page. The library is JavaScript and links nothing a
    crawler can follow, so until this page existed the only way a search engine found an
    entry was the sitemap. Linked from the library's footer and every entry page. */
-export function writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, LOG }) {
+export function writeContents({ ROOT, SITE, BOOKS, ADJACENT, LIVES, PEOPLE = [], LOG }) {
   const out = path.join(ROOT, "dist/contents");
   fs.rmSync(out, { recursive: true, force: true }); fs.mkdirSync(out, { recursive: true });
   const item = (href, t, s) => `<li><a href="${href}"><span class="t">${t}</span><span class="k">${s}</span></a></li>`;
   const url = `${SITE}/contents/`;
-  const desc = `Every life in the Commodore Press — ${LIVES.length} people, each sourced and argued in the open — and the ${BOOKS.length + ADJACENT.length} retired titles of the Press.`;
+  const desc = `Every life in the Commodore Press — ${LIVES.length} people, each sourced and argued in the open — the ${PEOPLE.length} people of the Atlas, and the retired titles of the Press.`;
   // the contents as a list a search engine can read without following every link
-  const entries = LIVES.map(l => [strip(l.n), `${SITE}/l/${l.id}/`]).concat(BOOKS.concat(ADJACENT).map(b => [strip(b.title), `${SITE}/t/${b.id}/`]));
+  const entries = LIVES.map(l => [strip(l.n), `${SITE}/l/${l.id}/`]).concat(PEOPLE.map(q => [strip(q.name), `${SITE}/a/${personSlug(q.name)}/`])).concat(BOOKS.concat(ADJACENT).map(b => [strip(b.title), `${SITE}/t/${b.id}/`]));
   const ld = { "@context": "https://schema.org", "@type": "CollectionPage", name: "Contents — The Commodore Press", url, description: desc,
     isPartOf: { "@type": "WebSite", name: "The Commodore Press", url: SITE + "/" },
     mainEntity: { "@type": "ItemList", numberOfItems: entries.length,
@@ -758,9 +880,10 @@ ${FONTS(SITE, "../")}
 <body style="--cover:#1E1C18;--cink:#F2EDE1;--accent:#D8A657">
 <nav class="top"><a href="../">The Commodore Press</a><a href="../">The library →</a></nav>
 <header class="band"><div class="in"><div class="kick lbl">Contents</div><h1>Everything on the shelves</h1>
-<p class="sub">${LIVES.length} lives, and the retired titles of the Press. Every figure carries its source.</p></div></header>
+<p class="sub">${LIVES.length} lives, the ${PEOPLE.length} people of the Atlas, and the retired titles of the Press. Every figure carries its source.</p></div></header>
 <main class="body">
 <h2 class="lbl" id="lives">Lives · people</h2><ul class="list">${LIVES.map(l => item(`../l/${l.id}/`, l.n, `№ ${l.no} · ${l.field} · ${l.years}`)).join("")}</ul>
+${PEOPLE.length ? `<h2 class="lbl" id="atlas">The Atlas · the people the house listens to now</h2><ul class="list">${PEOPLE.map(q => item(`../a/${personSlug(q.name)}/`, q.name, q.role || "")).join("")}</ul>` : ""}
 ${LOG.length ? `<h2 class="lbl">The Log · the editor's column</h2><ul class="list">${LOG.map(x => item(`../log/${x.slug}/`, inline(x.meta.title), inline(x.meta.dek))).join("")}</ul>` : ""}
 <h2 class="lbl" id="press">The Press · retired</h2><p>The Press was retired from the library on 14 October 2026. Its titles stay at their addresses, with their sources, their disputes and any corrections, for anyone who holds a link. Nothing in them was withdrawn as wrong.</p><ul class="list">${BOOKS.concat(ADJACENT).map(b => item(`../t/${b.id}/`, b.title, inline(strip(b.claim || b.sub || "")))).join("")}</ul>
 </main>
@@ -784,7 +907,10 @@ ${LOG.length ? `- [The Log](${SITE}/log/): the editor's signed column ([feed](${
 ## Lives
 ${LIVES.map(l => `- [${strip(l.n)}](${SITE}/l/${l.id}/): ${strip(l.lede)}`).join("\n")}
 
-## The Press (retired 14 October 2026; the pages stay)
+${PEOPLE.length ? `## The Atlas: the people the editor listens to now
+${PEOPLE.map(q => `- [${strip(q.name)}](${SITE}/a/${personSlug(q.name)}/): ${strip(q.role || "")}. The editor's take: ${strip(q.take)}`).join("\n")}
+
+` : ""}## The Press (retired 14 October 2026; the pages stay)
 ${BOOKS.concat(ADJACENT).map(b => `- [${strip(b.title)}](${SITE}/t/${b.id}/): ${strip(b.claim || b.sub || "")}`).join("\n")}
 `);
   return `${SITE}/contents/`;
