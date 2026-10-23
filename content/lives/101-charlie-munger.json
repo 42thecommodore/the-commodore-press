@@ -7,11 +7,11 @@
   "place": "Omaha and Los Angeles",
   "field": "Law & Investing",
   "group": "famous",
-  "cover": "#3A3020",
-  "spineC": "#282114",
-  "ink": "#F6F0E2",
-  "accent": "#E8C987",
-  "motif": "grid",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
   "lede": "He left college for the war without a degree, and Harvard Law School took him anyway. In 1965 he owned no Berkshire stock and had no money with Buffett, and he told him that buying it had been a dumb decision. Then he told him how to fix it.",
   "copy": [
     "Charles Munger was born in Omaha in 1924, and as a boy he worked at Buffett & Son, the Buffett family's grocery. He left the University of Michigan in 1943 for the Army Air Corps, which sent him to Caltech to study meteorology. He had no degree when he applied to Harvard Law School. It took him, and he graduated in 1948. He practised law in Los Angeles. In the 1950s his first marriage ended and his son Teddy died of leukaemia at nine. In 1962 he helped found the law firm that became Munger, Tolles & Olson, and in the same year he decided, as Buffett later put it, that he should take up managing money.",
@@ -58,5 +58,6 @@
       "b": "$200 million",
       "s": "His pledge toward the Munger Hall dormitory, and the university's call for a new project on the site: 'The Death Knell for Dormzilla', Santa Barbara Independent, 27 July 2023"
     }
-  ]
+  ],
+  "plateOf": "2010."
 }

@@ -7,11 +7,11 @@
   "place": "Brooklyn and Los Angeles",
   "field": "Music & Film",
   "group": "famous",
-  "cover": "#22182A",
-  "spineC": "#160F1C",
-  "ink": "#F3EEF4",
-  "accent": "#D7B98A",
-  "motif": "dots",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
   "lede": "He dropped out of college, wrote a UCLA degree onto his application, and then came in early for six months to catch the letter that would expose him. The retelling calls it a forged diploma. By his own account it was a swapped letter.",
   "copy": [
     "David Geffen was born in Brooklyn in 1943 to Jewish immigrants. His mother ran a corset shop. He dropped out of college, and in 1964 he talked his way into the mailroom of the William Morris Agency, having claimed on his application a degree from UCLA. The agency wrote to check. He came in early every day for six months and went through the mail before anyone else. When the letter from UCLA came, saying it had never heard of him, he took it out and put in a letter saying he had graduated.",
@@ -66,5 +66,6 @@
       "b": "well over a billion dollars",
       "s": "What he had given away, by his own account, financed mostly by selling paintings: Geffen to Patrick Radden Keefe, 'How Larry Gagosian Reshaped the Art World', The New Yorker, 24 July 2023"
     }
-  ]
+  ],
+  "plateOf": "Under the Roxy marquee, 1973. Los Angeles Times Photographic Collection, UCLA Library."
 }
