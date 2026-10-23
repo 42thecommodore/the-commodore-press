@@ -7,11 +7,11 @@
   "place": "Norfolk, Wiltshire and Singapore",
   "field": "Invention & Industry",
   "group": "famous",
-  "cover": "#403A1E",
-  "spineC": "#2C2814",
-  "ink": "#F5F2E4",
-  "accent": "#F2D04A",
-  "motif": "rings",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
   "lede": "His father died when he was nine, and his first company made wheelbarrows. The cyclone he is said to have invented was patented in 1886. What he did was build 5,127 versions of a vacuum cleaner, and 5,126 of them failed.",
   "copy": [
     "James Dyson's father, Alec, taught Classics at Gresham's School in Norfolk and kept teaching through his illness. He died when James was nine. The boy stayed at the school until 1965, then went to art school and on to the Royal College of Art, where he moved into furniture and interior design. At Rotork Marine in the early 1970s he worked on the Sea Truck, a fast landing craft. In 1974 he started a company with his sister and her husband to make the Ballbarrow, a wheelbarrow that ran on a ball instead of a wheel. He ran it until 1979.",
@@ -57,5 +57,6 @@
       "b": "£12 billion · £8.8 billion",
       "s": "His family's estimated wealth on the 2026 Sunday Times Rich List, and the fall from 2025: Retail Gazette, 15 May 2026, reporting the list"
     }
-  ]
+  ],
+  "plateOf": "29 August 2011."
 }

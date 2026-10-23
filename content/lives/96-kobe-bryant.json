@@ -7,11 +7,11 @@
   "place": "Italy and Los Angeles",
   "field": "Sport",
   "group": "famous",
-  "cover": "#3A1F5C",
-  "spineC": "#281542",
-  "ink": "#F6F0FA",
-  "accent": "#F2C14E",
-  "motif": "conic",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
   "lede": "He skipped college, was drafted by a team that did not keep him, and played twenty seasons for the one that did. The famous line about his sports-drink bet folds two deals and an estimate into one.",
   "copy": [
     "Kobe Bryant was born in 1978, the son of Joe Bryant, who had played in the NBA and then went to play in Italy. The family moved to Rieti when Kobe was six. He grew up in the towns his father's clubs played in: Rieti, Reggio Calabria, Pistoia, Reggio Emilia. He came back to finish at Lower Merion High School, outside Philadelphia, and went straight from there to the 1996 draft. Charlotte took him thirteenth and sent him to the Los Angeles Lakers. He played his first game on 3 November 1996, aged eighteen years and seventy-two days.",
@@ -58,5 +58,6 @@
       "b": "9",
       "s": "Dead in the crash at Calabasas, 26 January 2020, and the probable cause: National Transportation Safety Board, press release NR20210209, 9 February 2021"
     }
-  ]
+  ],
+  "plateOf": "At the Lakers' game in Washington, 3 December 2014."
 }

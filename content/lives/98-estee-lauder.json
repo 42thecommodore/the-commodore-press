@@ -7,11 +7,11 @@
   "place": "Queens and New York",
   "field": "Beauty & Business",
   "group": "famous",
-  "cover": "#1E3A6E",
-  "spineC": "#142850",
-  "ink": "#EEF3FB",
-  "accent": "#BFD3F2",
-  "motif": "lines",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
   "lede": "She grew up above a hardware store in Queens and let the press believe she was a European of good family. She never gave her birth date. Her company now prints 1908; when she died, its spokeswoman said she was 97.",
   "copy": [
     "Josephine Esther Mentzer grew up in Corona, Queens, in the rooms above her father's hardware store. Her uncle, John Schotz, was a chemist. He mixed skin creams in a makeshift laboratory in a stable behind the family house, and she sold them. In 1946 she and her husband, Joseph Lauder, founded a company to sell creams of their own. He made them, first in the kitchen and later at a plant on Long Island. She sold them.",
@@ -58,5 +58,6 @@
       "b": "1908 · 1947",
       "s": "Her birth year and the year of the first Saks order, as the company gives them: The Estée Lauder Companies, 'Our Founder' (read October 2026)"
     }
-  ]
+  ],
+  "plateOf": "At a cosmetics counter, 1966. Library of Congress."
 }
