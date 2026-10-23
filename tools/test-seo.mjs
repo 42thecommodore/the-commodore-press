@@ -49,6 +49,14 @@ for (const f of pages) {
   // Google prints about 155-160 characters; past that the house's own sentence is cut mid-word
   need(!desc || desc.length <= 160, rel, `description is ${desc && desc.length} characters — a search result cuts it at 160; shorten it`);
   need(canon, rel, "no canonical link");
+  // A count or field the build could not fill prints as a word. From 15 October 2026, when the
+  // Lives passed a hundred, the front door, its description, share text and JSON-LD read
+  // "Undefined-one lives", and every check passed. Read the page as a reader and a preview do:
+  // text, meta, JSON-LD, and the engine's own sentences (where `undefined` as code is fine,
+  // but "Undefined-one" is not).
+  const read = h.replace(/<script(?![^>]*ld\+json)[\s\S]*?<\/script>/g, "").replace(/<style[\s\S]*?<\/style>/g, "");
+  const unfilled = new Set([...read.matchAll(/.{0,40}\b(?:undefined|NaN)\b.{0,20}/g), ...h.matchAll(/.{0,40}(?:\b[Uu]ndefined-[a-z]|[a-z]-undefined\b).{0,20}/g)].map(m => m[0].trim()));
+  for (const s of unfilled) fails.push(`${rel}: prints "${s}" — a value the build did not fill; find the {{TOKEN}} or field behind it`);
   if (rel !== "404.html") {
     need(!canon || sitemap.includes(`<loc>${canon}</loc>`), rel, `canonical ${canon} is not in sitemap.xml`);
     if (title) titles.set(title, (titles.get(title) || []).concat(rel));

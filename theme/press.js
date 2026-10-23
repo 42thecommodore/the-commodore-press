@@ -175,18 +175,18 @@ function renderFront(){
         ${plateOrMark(b,"fp-img")}<span class="fn">${b.n}${fresh.has(b.id)?`<em class="nw">new</em>`:""}</span></a>`).join("")}</div>`;
   const latest=CORRECTIONS[CORRECTIONS.length-1];
   document.getElementById("tally").innerHTML=latest?
-    `<a ${toCorrections}><b>${CORRECTIONS.length}</b> corrections so far, each one printed, none quietly patched. The latest: ${latest.t}&nbsp;<span class="arw">→</span></a>`:"";
+    `<a ${toCorrections}><b>${CORRECTIONS.length}</b> corrections so far. The latest: ${latest.t}&nbsp;<span class="arw">→</span></a>`:"";
   /* What this is, and what is in it: one plain line per part, under the shelf. Until this key,
      a first visitor met the nav words with no gloss, and on a phone the tagline that says
      whose library this is was hidden; each wing explained itself only once you had scrolled to
      it. Counts are filled by the build, never typed. tools/test-reading.mjs holds it. */
   const key=[
-    ["#lives","go('lives')","Lives",`${LIVES.length} people. What they did, what it cost, and the one book on them worth reading.`],
+    ["#lives","go('lives')","Lives",`${LIVES.length} people. What each did, what it cost, and where it is still argued.`],
     ["#atlas","go('atlas')","The Atlas",`The people I learn from now, and the lessons I took from them, drawn as a sea chart.`],
     ...(LOG.length?[[`log/`,"","The Log","My own column. Signed, dated, and held to the same rules."]]:[]),
-    ["#corrections",null,"Corrections","Every mistake, printed where you can see it. Nothing is quietly fixed."]];
+    ["#corrections",null,"Corrections","Each one dated, saying what the page got wrong and what it says now."]];
   document.getElementById("key").innerHTML=
-    `<p class="key-h"><b>What this is.</b> A working library, edited by {{EDITOR}}, in {{W_WINGS}} wings. All of it is about people, and every claim says where it came from.</p>
+    `<p class="key-h"><b>What this is.</b> A working library in {{W_WINGS}} wings, both about people, edited by {{EDITOR}}.</p>
     <ul>${key.map(([h,on,n,d])=>`<li><a ${on===null?toCorrections:`href="${h}"${on?` onclick="${on};return false;"`:""}`}><b>${n}</b><span>${d}</span></a></li>`).join("")}</ul>`;
   // the Atlas comes straight after the shelf: the people the house listens to now, beside the lives
   document.getElementById("atlasBand").innerHTML=
