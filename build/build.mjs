@@ -122,8 +122,16 @@ const DATA = safe([
   K("LOG", LOG.map(x => ({ slug: x.slug, title: x.meta.title, date: x.meta.date, dek: x.meta.dek }))),
 ].join("\n"));
 
-const words = n => n < 20 ? ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"][n]
-  : n % 10 === 0 ? ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"][n / 10] : words(n - n % 10) + "-" + words(n % 10);
+/* Counts in running prose are spelled out, British style ("one hundred and twenty-one", as the
+   entries write "a hundred and forty-six"). It knew nothing past ninety-nine, and when the Lives
+   reached 121 the front door, its search description and its share text printed
+   "Undefined-one lives". A count it cannot spell now stops the build instead of printing. */
+const words = n => {
+  if (!Number.isInteger(n) || n < 0 || n > 999) throw new Error(`words(): cannot spell ${n} — extend build/build.mjs before the count passes 999`);
+  if (n >= 100) return words(Math.floor(n / 100)) + " hundred" + (n % 100 ? " and " + words(n % 100) : "");
+  return n < 20 ? ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"][n]
+    : n % 10 === 0 ? ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"][n / 10] : words(n - n % 10) + "-" + words(n % 10);
+};
 const cap = s => s[0].toUpperCase() + s.slice(1);
 
 /* Where the site actually lives. Social cards and canonical links need an absolute URL,
@@ -142,6 +150,8 @@ const fill = s => fillMark(s)
   .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{W_BOOKS_CAP}}/g, cap(words(BOOKS.length)))
   .replace(/{{W_LIVES_CAP}}/g, cap(words(LIVES.length))).replace(/{{W_PEOPLE_CAP}}/g, cap(words(PEOPLE.length)))
   .replace(/{{N_LIVES}}/g, words(LIVES.length)).replace(/{{N_PEOPLE}}/g, words(PEOPLE.length))
+  // in digits where length is budgeted: a search description is cut at 160, and "one hundred and twenty-one" took it past
+  .replace(/{{D_LIVES}}/g, LIVES.length).replace(/{{D_PEOPLE}}/g, PEOPLE.length)
   // the famous/obscure split is counted, not typed: a typed "twenty-one famous" went stale the day two lives shipped
   .replace(/{{W_FAMOUS_CAP}}/g, cap(words(LIVES.filter(l => l.group === "famous").length)))
   .replace(/{{N_OBSCURE}}/g, words(LIVES.filter(l => l.group === "obscure").length))
