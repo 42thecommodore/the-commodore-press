@@ -463,3 +463,21 @@ when, where it is held), add a `plate-licences.json` entry if the record carries
 credit or condition, and correct the colophon's list of portrait-less Lives through
 `npm run correct`. If a record cannot be found, the plate comes down and the entry carries
 the press mark, as the colophon already says it does.
+
+**Closed 2026-10-24.** All three records were opened (through the Apify connector, at
+Luca's instruction, because this environment's network refuses Commons), and each plate
+was compared with the record's own image and matched:
+
+- `vasily-arkhipov` → Commons `File:Soviet b-59 submarine.jpg`: "Soviet submarine B-59,
+  forced to the surface by U.S. Naval forces in the Caribbean near Cuba. U.S. National
+  Archives, Still Pictures Branch, Record Group 428, Item 428-N-711200", 28–29 October 1962,
+  U.S. Navy photographer, public domain. (The item is -711200, not the -711201 the lead had.)
+- `ibn-khaldun` → Commons `File:Ibn Khaldūn autograph, al-Muqaddima, MS Atıf Efendi 1936,
+  f. 7a.png`, credited "Süleymaniye Kütüphanesi, Istanbul", public domain.
+- `emily-warren-roebling` → Commons `File:Brooklyn Museum - Portrait of Emily Warren
+  Roebling - Charles-Émile-Auguste Carolus-Duran (cropped).jpg`, Brooklyn Museum 1994.69.1,
+  "Photo: Brooklyn Museum", uploaded by the museum, which considers it to have "no known
+  copyright restrictions". Recorded in `plate-licences.json` as a narrower claim, like the
+  Smithsonian and Science History Institute plates.
+
+Correction 21 prints what the colophon had said.
