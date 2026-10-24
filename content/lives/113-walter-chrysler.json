@@ -35,6 +35,11 @@
       "to": "lives:soichiro-honda",
       "label": "Soichiro Honda",
       "txt": "— another mechanic who learned the trade in the shop and put his own name on the car."
+    },
+    {
+      "to": "lives:billy-durant",
+      "label": "Billy Durant",
+      "txt": "— the founder of General Motors who hired him for Buick, and lost GM himself the same year Chrysler walked out."
     }
   ],
   "facts": [

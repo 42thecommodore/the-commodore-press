@@ -1,0 +1,70 @@
+{
+  "id": "billy-durant",
+  "no": 126,
+  "keep": "Durant was bankrupt on paper in 1936, with $250 of clothes against nearly a million in debts, and still kept two apartments. What ended him was a stroke, not a bowling alley.",
+  "n": "Billy Durant",
+  "years": "1861–1947",
+  "place": "Flint and New York",
+  "field": "Automobiles",
+  "group": "obscure",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "conic",
+  "lede": "The story ends with the founder of General Motors running a bowling alley, broke. He did go bankrupt. He also kept two apartments, and the bowling alley was meant to be the first of a chain.",
+  "copy": [
+    "William Durant was born in Boston on 8 December 1861. When he was seven his father went fishing one day and never came back. At sixteen he left school for his grandfather's mill at 75 cents a day. He went into road carts on $2,000 borrowed, buying them from a maker at $8 and selling them at $12.50, and by 1900 Durant-Dort had fourteen branch plants and was turning out more than 150,000 vehicles a year. On 1 November 1904 he took over Buick, which had sold sixteen cars that year.",
+    "He bought companies the way he had sold carts. General Motors was incorporated in New Jersey on 16 September 1908 with a nominal capital of $2,000, and paid $4.5 million in cash for Cadillac. It also paid $7 million in its own stock for the Heany lamp, whose patent turned out to be fraudulent. By 1910 the company owed the banks too much, and for a cash loan of $12.75 million a bankers' syndicate took more than $6 million of GM stock, $15 million of notes and a five-year voting trust. Durant started Chevrolet with Louis Chevrolet in 1911, offered five Chevrolet shares for every GM share, and took GM back. In 1919 it earned $60,517,519.",
+    "In 1920 GM's stock fell and he kept buying it on margin, until he owed more than $20 million to twenty-one brokers and three banks. His holdings, about 3,000,000 shares, went to the du Pont interests through J. P. Morgan & Co., and he resigned as president on 30 November 1920. He was not left with nothing: about $3 million of GM stock and a loan of $500,000 from Pierre du Pont, and within forty-eight hours sixty-seven friends gave him $7 million for Durant Motors. His brokers sold him out in 1930, and on 8 February 1936 he filed in bankruptcy with debts of close to $1,000,000 and his clothes, worth $250. The United Press headline gave him the philosopher's name, Will Durant. He kept his apartments in New York and at the Hotel Durant in Flint. The picture of him washing dishes was a stunt at a lunch counter he owned. In 1940, at seventy-eight, he opened a bowling centre in Flint meant to become a national chain, and a stroke in 1942 ended it. He died in New York on 18 March 1947."
+  ],
+  "bio": {
+    "t": "Billy Durant: Creator of General Motors",
+    "a": "Lawrence R. Gustin",
+    "y": "1973 / 2008",
+    "why": "The book behind the Founders episode, by a Flint journalist who worked from Durant's own autobiographical notes. John Steele Gordon, in American Heritage, calls Bernard Weisberger's The Dream Maker (1979) the best full life; neither book has been read here."
+  },
+  "contested": "How poor he was at the end. Niemeyer and Flink say he kept enough for a comfortable living; the Detroit Historical Society and the Durant Motors museum foundation say Walter Chrysler and Alfred Sloan helped support him, and both can be true. Whether 1920 was his fall alone. GM's own heritage page tells it that way and says he left without any money; Niemeyer and Flink answer that the du Pont interests held 28.7 per cent of the common stock by 1919 and that John Raskob was at least as responsible for the expansion as Durant. What he lost is given as $90 million by Gordon and by GM, against holdings Niemeyer and Flink put at $105 million on paper; the two figures count different things. The exact debt of $914,000 often printed for 1936 comes from no document opened here. GM's founding is dated 16 September 1908 by GM and 8 September by the Detroit Historical Society, and his death 18 March 1947 or the 19th.",
+  "across": [
+    {
+      "to": "lives:henry-m-leland",
+      "label": "Henry M. Leland",
+      "txt": "— whose Cadillac Durant bought for $4.5 million in cash in 1909, and who left GM in 1917 after quarrelling with him."
+    },
+    {
+      "to": "lives:walter-chrysler",
+      "label": "Walter Chrysler",
+      "txt": "— whom Durant paid $500,000 a year to run Buick, and who sold his stock back to him and left in 1920."
+    }
+  ],
+  "facts": [
+    {
+      "b": "seven · sixteen · 75 cents · $2,000 · $8 · $12.50 · fourteen · more than 150,000 · sixteen cars",
+      "s": "His childhood, the carts, Durant-Dort and Buick's 1904 sales: Glenn A. Niemeyer and James J. Flink, 'The General of General Motors', American Heritage 24:5, August 1973"
+    },
+    {
+      "b": "16 September 1908 · $2,000 · $4.5 million · $7 million",
+      "s": "GM's incorporation, Cadillac and the Heany lamp: Glenn A. Niemeyer and James J. Flink, 'The General of General Motors', American Heritage 24:5, August 1973"
+    },
+    {
+      "b": "$12.75 million · more than $6 million · $15 million · five-year · five for one",
+      "s": "The 1910 loan and the Chevrolet exchange: Glenn A. Niemeyer and James J. Flink, 'The General of General Motors', American Heritage 24:5, August 1973"
+    },
+    {
+      "b": "$60,517,519 · about 3,000,000 shares · 30 November 1920",
+      "s": "GM's 1919 profit and the takeover of his stock: New-York Tribune, 1 December 1920, p. 9 (Chronicling America)"
+    },
+    {
+      "b": "more than $20 million · twenty-one · three · about $3 million · $500,000 · forty-eight hours · sixty-seven · $7 million",
+      "s": "His 1920 debts, what he kept and Durant Motors' capital: Glenn A. Niemeyer and James J. Flink, 'The General of General Motors', American Heritage 24:5, August 1973"
+    },
+    {
+      "b": "8 February 1936 · close to $1,000,000 · $250",
+      "s": "The bankruptcy: United Press, New York, 8 February, in the Imperial Valley Press, 9 February 1936, p. 1 (Chronicling America)"
+    },
+    {
+      "b": "1940 · seventy-eight · 1942 · 18 March 1947",
+      "s": "The bowling centre, the stroke and his death: Glenn A. Niemeyer and James J. Flink, 'The General of General Motors', American Heritage 24:5, August 1973; Durant Motors Automobile Museum Foundation, 'Durant history'"
+    }
+  ]
+}

@@ -54,6 +54,16 @@
       "to": "lives:p-t-barnum",
       "label": "P. T. Barnum",
       "txt": "— the showman's version of the trade: no surveys, only the crowd talking and the receipts counted after."
+    },
+    {
+      "to": "lives:albert-lasker",
+      "label": "Albert Lasker",
+      "txt": "— the Chicago agency man of the generation before, who took his definition of advertising from a copywriter and sold cigarettes to women as a way to stay slim."
+    },
+    {
+      "to": "lives:claude-c-hopkins",
+      "label": "Claude C. Hopkins",
+      "txt": "— whose Scientific Advertising Ogilvy introduced in 1965 and gave away by the hundred."
     }
   ]
 }

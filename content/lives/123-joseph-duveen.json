@@ -1,0 +1,62 @@
+{
+  "id": "joseph-duveen",
+  "no": 123,
+  "keep": "Duveen made the price part of the picture: the dearer an Old Master, the more an American buyer wanted it. The line about Europe's art and America's money was his biographer's, not his.",
+  "n": "Joseph Duveen",
+  "years": "1869–1939",
+  "place": "London and New York",
+  "field": "Art & Dealing",
+  "group": "obscure",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "The sentence everyone quotes as his, that Europe had plenty of art and America plenty of money, is not his. It is his biographer's, printed twelve years after he died.",
+  "copy": [
+    "Joseph Duveen was born in Hull in 1869, the eldest son of a Dutch-Jewish importer. From seventeen, S. N. Behrman wrote, he was perpetually journeying between Europe, where he stocked up, and America, where he sold. The firm kept galleries in London, Paris and New York. Its customers were the men who had made the American fortunes: Frick, Huntington, Mellon, Kress.",
+    "He sold the price as much as the picture. In 1916 he outbid Knoedler's for Gainsborough's The Mall in St. James's Park at $300,000, then sold it to Frick, who had been trying to buy it through Knoedler's. In 1921 he bought Gainsborough's The Blue Boy from the Duke of Westminster and sold it to Henry and Arabella Huntington for $728,000, the Huntington's own figure. In 1926 he paid $377,000 for Lawrence's Pinkie. Behrman counted 95 of the 115 pictures in the Mellon collection, American portraits aside, as having come through him, and more than 150 of the 700 in the Kress. Behrman also gave him a motto: 'When you pay high for the priceless, you're getting it cheap.' Behind the attributions stood Bernard Berenson, who advised him from 1906 and was paid, Colin Simpson found in the firm's files, a quarter of the sale.",
+    "His word cost him money once. In 1920 Andrée Hahn brought a version of Leonardo's La Belle Ferronnière to America, and Duveen condemned it without having seen it. She sued for $500,000. The case came to trial in 1929, the jury could not agree, and he settled for $60,000. He was right: the Louvre's picture is the Leonardo, and Hahn's sold at Sotheby's in 2010 for $1,538,500. He fell ill with cancer in 1934 and knew, Behrman wrote, that he could not recover. He had paid for a gallery for the Parthenon sculptures at the British Museum, and in 1937 and 1938 men working for him scraped the marbles with copper tools. The museum's own inquiry found the damage and kept it quiet. He died on 25 May 1939, a baron since 1933."
+  ],
+  "facts": [
+    {
+      "b": "seventeen · 95 of the 115 · more than 150 of the 700 · $300,000 · $377,000",
+      "s": "His travels, the Mellon and Kress counts, the Gainsborough of 1916 and Pinkie in 1926: S. N. Behrman, 'The Days of Duveen', The New Yorker, 29 September 1951"
+    },
+    {
+      "b": "$728,000",
+      "s": "The Huntingtons' price for The Blue Boy in 1921: The Huntington Library, Art Museum, and Botanical Gardens, 'The Blue Boy', huntington.org"
+    },
+    {
+      "b": "a quarter · 1906",
+      "s": "Berenson's share and the start of his advice: Lee Sorensen, 'Berenson, Bernard', Dictionary of Art Historians (arthistorians.info), from Colin Simpson, Artful Partners, 1986"
+    },
+    {
+      "b": "1920 · $500,000 · 1929 · $60,000 · $1,538,500",
+      "s": "The Hahn picture, the suit, the settlement and the 2010 sale: Emmabeth Nanol, 'The Man of La Belle Ferronière', The Getty Iris, 23 May 2013; Charlotte Gere, review of John Brewer's The American Leonardo, The Art Newspaper, 30 September 2009"
+    },
+    {
+      "b": "1934",
+      "s": "His illness: S. N. Behrman, 'The Days of Duveen: The Silent Men', The New Yorker, 3 November 1951"
+    }
+  ],
+  "bio": {
+    "t": "Duveen",
+    "a": "S. N. Behrman",
+    "y": "1952",
+    "why": "The book behind the Founders episode, grown out of six New Yorker pieces, and the source of nearly every Duveen story, the art-and-money sentence among them. It is light and admiring, and the marbles are barely in it; Meryle Secrest's Duveen: A Life in Art (2004) is the full life, unread here."
+  },
+  "contested": "How badly the marbles were damaged. The museum's board of inquiry wrote in November 1938 that the damage was obvious and could not be exaggerated, and William St Clair, who found the papers in the 1990s, calls what followed an institutional cover-up; Ian Jenkins of the British Museum answered in 1999 that the damage was far from obvious and much exaggerated. Andrew Oddy, its former chief conservator, thinks it likely Duveen paid museum staff, which is not proved. This house has read all four only as quoted and summarised, not in their own pages. Berenson's quarter rests on Simpson's reading of the Duveen files, and Michael Thomas, reviewing the book in The New Criterion in 1987, said it presented its information in a way that precluded checking it. The Blue Boy's price is $728,000 at the Huntington, $728,800 on Duveen's bill as James Thorpe gives it, and $640,000 in The New York Times of the time; the last two are unread here. The art-and-money sentence first appears, in what this house has found, as Behrman's own narration in The New Yorker of 29 September 1951. Earlier newspapers were not searched page by page.",
+  "across": [
+    {
+      "to": "lives:henry-clay-frick",
+      "label": "Henry Clay Frick",
+      "txt": "— who wanted a Gainsborough through Knoedler's in 1916 and had to buy it from Duveen."
+    },
+    {
+      "to": "lives:larry-gagosian",
+      "label": "Larry Gagosian",
+      "txt": "— the dealer of the next century, selling new work to new fortunes the way Duveen sold old pictures to the old ones."
+    }
+  ]
+}
