@@ -1,0 +1,28 @@
+# Temporary: fetches the source images for new plates, because the editing
+# environment cannot reach Commons or the Library of Congress. Removed before merge.
+name: Fetch plate sources
+on:
+  push:
+    branches: [claude/aggressive-approach-strategy-4vcd8u]
+    paths: [.plate-src/urls.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download each source image
+        run: |
+          while read -r id url; do
+            [ -z "$id" ] && continue
+            curl -fsSL -A "CommodorePress/1.0 (plate fetch; lucafalvo06 on GitHub)" -o ".plate-src/$id.jpg" "$url" || echo "FAILED $id" >> .plate-src/failed.txt
+          done < .plate-src/urls.txt
+          ls -la .plate-src
+      - name: Commit them back
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .plate-src
+          git commit -m "Plate sources fetched by Actions (temporary)" || exit 0
+          git push

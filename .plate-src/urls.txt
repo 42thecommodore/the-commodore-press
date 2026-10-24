@@ -1,0 +1,5 @@
+billy-durant https://upload.wikimedia.org/wikipedia/commons/d/d6/WilliamCDurant.jpg
+henry-m-leland https://upload.wikimedia.org/wikipedia/commons/f/f4/Henry_M_Leland.jpg
+albert-lasker https://tile.loc.gov/storage-services/service/pnp/ggbain/31700/31731v.jpg
+joseph-duveen https://upload.wikimedia.org/wikipedia/commons/d/df/Joseph_Duveen.jpg
+carl-bosch https://upload.wikimedia.org/wikipedia/commons/9/93/1908_Carl_Bosch_%281874-1940%29.jpg
