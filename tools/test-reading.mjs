@@ -401,6 +401,11 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   t("…and it sits under the shelf, not above it", key && document.getElementById("frontShelf").compareDocumentPosition(key) & Node.DOCUMENT_POSITION_FOLLOWING);
   const faces = [...document.querySelectorAll(".wall a.wface")];
   t("every face on the front door links its own page", faces.length === LIVES.length && faces.every((a, i) => a.getAttribute("href") === "l/" + LIVES[i].id + "/"), faces.length + " links for " + LIVES.length + " lives");
+  // the names under the faces: 128 of them at 13px were most of the text on the front door,
+  // and the hardest to read (2026-10-24). They are set at --fs-2 or larger.
+  const tinyNames = faces.map(a => a.querySelector(".fn")).filter(n => n && parseFloat(getComputedStyle(n).fontSize) < 15);
+  t("the names under the faces are 15px or larger (" + size + ")", faces.length && !tinyNames.length,
+    tinyNames.length + " names under 15px, e.g. " + tinyNames.slice(0, 3).map(n => n.firstChild.textContent + " at " + getComputedStyle(n).fontSize).join(", ") + " — set .wface .fn at var(--fs-2) or larger in theme/press.css");
   t("nothing on the page opens an entry from a button", !document.querySelector('button[onclick*="openReader"],button[onclick*="openLife"]'));
   let left = null; addEventListener("click", e => { left = !e.defaultPrevented; e.preventDefault(); }, { once: true });
   faces[1].dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, metaKey: true })); await wait(200);
