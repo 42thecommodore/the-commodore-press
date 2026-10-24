@@ -16,7 +16,7 @@ jobs:
         run: |
           while read -r id url; do
             [ -z "$id" ] && continue
-            curl -fsSL -A "CommodorePress/1.0 (plate fetch; lucafalvo06 on GitHub)" -o ".plate-src/$id.jpg" "$url" || echo "FAILED $id" >> .plate-src/failed.txt
+            curl -fsSL -A "CommodorePress/1.0 (+https://github.com/42thecommodore/the-commodore-press)" -o ".plate-src/$id.jpg" "$url" || echo "FAILED $id" >> .plate-src/failed.txt
           done < .plate-src/urls.txt
           ls -la .plate-src
       - name: Commit them back
