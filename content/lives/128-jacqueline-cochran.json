@@ -1,0 +1,85 @@
+{
+  "id": "jacqueline-cochran",
+  "no": 128,
+  "keep": "The orphan story was hers, and the Air Force printed it. The library that keeps her papers names her parents, and says she paid to support their children and grandchildren.",
+  "n": "Jacqueline Cochran",
+  "years": "c. 1906–1980",
+  "place": "Florida and California",
+  "field": "Aviation",
+  "group": "obscure",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "The Air Force's biography says she was orphaned young and raised by a foster family. The library that keeps her papers names her parents, Ira and Mary Pittman, and her place among their five children.",
+  "copy": [
+    "Jacqueline Cochran was born Bessie Pittman in northwest Florida around 1906, the youngest of five children of Ira and Mary Pittman, a poor family that moved from town to town for work. The name Cochran came from a marriage at fourteen. She dropped the Pittman name, and never said publicly who had raised her. She got her pilot's licence in 1932, started a cosmetics company, and in 1936 married Floyd Odlum, a financier whose contacts in the aircraft industry later put her into jets.",
+    "In 1938 she won the Bendix race, against fourteen men. In 1941 she flew a bomber to Britain, and the next year she took twenty-five American women to fly for the British Air Transport Auxiliary. From 1943 she directed the Women Airforce Service Pilots, more than a thousand of them, until they were disbanded in December 1944; thirty-eight died in service. On 18 May 1953, coached by Chuck Yeager, who flew beside her, she became the first woman to fly faster than sound. The aircraft was not an Air Force F-86 but its Canadian cousin, the Canadair Sabre No. 19200, with a Canadian engine. By 1962 she listed well over a hundred records.",
+    "On 17 July 1962 she testified to a House subcommittee on the qualifications for astronauts. 'I do not believe there has been any intentional or actual discrimination against women in the astronaut program to date,' she said. She believed women would prove as fit as men, 'But such proof is presently lacking.' She wanted a separate programme, and warned that training many women would waste money 'because you lose them through marriage.' In 1975, before her papers went to the Eisenhower Library, she took out the folders on her business affairs, and the archivists believe she had them destroyed. How much of her flying Odlum paid for is unknown. She died in Indio, California, on 9 August 1980."
+  ],
+  "bio": {
+    "t": "Jackie Cochran: Pilot in the Fastest Lane",
+    "a": "Doris L. Rich",
+    "y": "2007",
+    "why": "The one scholarly life, and the one its publisher says carries new material on her childhood and first marriage, which is where the fix lies; this house has not read it. The book behind the Founders episode is her own Jackie Cochran: An Autobiography (1987), which keeps the foster-family story."
+  },
+  "contested": "Whether she invented the orphan story or believed it. The Eisenhower Library's archivists write that she resented her lot especially after she was told the Pittmans were not her real parents, and then call them her foster family themselves; the National WWII Museum says she told people she was an orphan for the rest of her life. Stephanie Nolen, in Promised the Moon, says she was not adopted, and Rich is said to settle it; neither has been read here, and the library's file on the family is not online. Why she spoke as she did in 1962. Martha Ackmann, in The Mercury 13, holds that she turned against the women's programme to stay the leading woman flier; her own testimony says she wanted women tested, in a programme of their own, slowly. Her trophies are counted three ways: some ten Harmons in her 1962 sketch, fourteen in later accounts, five in others, depending on which Harmon awards are counted. Her records are well over a hundred in 1962 and over two hundred in her obituary's headline. The Eisenhower chronology dates her death 19 August; she died on the 9th.",
+  "across": [
+    {
+      "to": "lives:estee-lauder",
+      "label": "Estée Lauder",
+      "txt": "— the other cosmetics founder on the shelf who chose the story of her own beginning, and sold it."
+    }
+  ],
+  "facts": [
+    {
+      "b": "c. 1906 · five",
+      "s": "Her birth and family: Dwight D. Eisenhower Library, 'Jacqueline Cochran Papers, 1932–1975: Scope and Content Note', 1989, p. 2"
+    },
+    {
+      "b": "fourteen",
+      "s": "Her first marriage: Kali Martin, 'Wings to Beauty', The National WWII Museum, 26 March 2021"
+    },
+    {
+      "b": "1932",
+      "s": "Her licence: her own statement, Qualifications for Astronauts: Hearings before the Special Subcommittee on the Selection of Astronauts, House Committee on Science and Astronautics, 17 and 18 July 1962 (GPO, 1962), pp. 22–30"
+    },
+    {
+      "b": "1936",
+      "s": "Her marriage to Odlum: Dwight D. Eisenhower Library, 'Jacqueline Cochran Papers, 1932–1975: Scope and Content Note', 1989"
+    },
+    {
+      "b": "1938 · fourteen men",
+      "s": "The Bendix: biographical sketch printed in Qualifications for Astronauts: Hearings before the Special Subcommittee on the Selection of Astronauts, House Committee on Science and Astronautics, 17 and 18 July 1962 (GPO, 1962), pp. 22–30, p. 25"
+    },
+    {
+      "b": "1941 · twenty-five",
+      "s": "The bomber to Britain and the women for the ATA: Dwight D. Eisenhower Library, 'Jacqueline Cochran Papers, 1932–1975: Scope and Content Note', 1989, chronology; Qualifications for Astronauts: Hearings before the Special Subcommittee on the Selection of Astronauts, House Committee on Science and Astronautics, 17 and 18 July 1962 (GPO, 1962), pp. 22–30, pp. 26–27"
+    },
+    {
+      "b": "more than a thousand · December 1944",
+      "s": "The WASP: her statement, Qualifications for Astronauts: Hearings before the Special Subcommittee on the Selection of Astronauts, House Committee on Science and Astronautics, 17 and 18 July 1962 (GPO, 1962), pp. 22–30, p. 22; Dwight D. Eisenhower Library, 'Jacqueline Cochran Papers, 1932–1975: Scope and Content Note', 1989"
+    },
+    {
+      "b": "thirty-eight",
+      "s": "WASP deaths: U.S. Air Force official biography, reprinted in full by This Day in Aviation, 'Jacqueline Cochran (11 May 1906–9 August 1980)'"
+    },
+    {
+      "b": "18 May 1953 · No. 19200",
+      "s": "The flight past Mach 1 and the aircraft: This Day in Aviation, '23 May 1953', quoting her The Stars at Noon (1954)"
+    },
+    {
+      "b": "well over a hundred",
+      "s": "Her records as of 1962: biographical sketch, Qualifications for Astronauts: Hearings before the Special Subcommittee on the Selection of Astronauts, House Committee on Science and Astronautics, 17 and 18 July 1962 (GPO, 1962), pp. 22–30, p. 25"
+    },
+    {
+      "b": "1975",
+      "s": "The removed folders: Dwight D. Eisenhower Library, 'Jacqueline Cochran Papers, 1932–1975: Scope and Content Note', 1989, pp. 5–6"
+    },
+    {
+      "b": "9 August 1980",
+      "s": "Her death: This Day in Aviation; The New York Times obituary, 10 August 1980, p. 40 (headline read)"
+    }
+  ]
+}
