@@ -1,0 +1,79 @@
+{
+  "id": "henry-m-leland",
+  "no": 124,
+  "keep": "Leland's name is not on the Dewar Trophy, and his suit against Ford was never lost on the facts. The court threw out a bargain that left the $3 shareholders behind.",
+  "n": "Henry M. Leland",
+  "years": "1843–1932",
+  "place": "Detroit",
+  "field": "Automobiles",
+  "group": "obscure",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "The trophy Cadillac is famous for winning in 1908 is not in Cadillac's name. The Royal Automobile Club gave it to the London firm that entered three of Henry Leland's cars.",
+  "copy": [
+    "Henry Leland was born in Vermont in 1843 and learned precision at Brown & Sharpe in Providence, after years in the gun trade. The company that became Cadillac was Henry Ford's. William Murphy's group formed the Henry Ford Company on 30 November 1901 with Ford as its engineer, and Ford left on 10 March 1902 with the use of his name, $900 and the drawings for a racer. That August Murphy brought in Leland to value the plant for sale. Leland told him to keep it and build a car around the engine his own machine shop made. The company took the name Cadillac.",
+    "His standard was tested in England. On 29 February 1908 three 10hp Cadillacs were taken from the London agent's stock and driven to Brooklands. They were taken apart, their 721 parts each were mixed, 89 were swapped for spares off the shelf, and the rebuilt cars ran 500 miles. The Club's own list of winners gives the 1908 Dewar Trophy to The Anglo-American Motor Company Limited, for a standardisation test of three 10hp Cadillac cars. General Motors bought Cadillac in 1909. Leland left in 1917, in a quarrel with Billy Durant over building the Liberty aircraft engine, and founded Lincoln to build it.",
+    "After the armistice the engine contract was cancelled and the tax claims came. Lincoln's board voted six to three for receivership on 8 November 1921, and Ford bought the company for $8,000,000. In June 1922 both Lelands were out. Henry and his son Wilfred said Ford had promised to repay Lincoln's stockholders, and sued with probably 2,000 others. The Michigan Supreme Court never decided whether he had. In 1929 it held the bargain they described void, because it left out everyone who had bought shares at $3 or less: 'The man who bought a share of stock for $3 acquired the same interest in the company as the man who paid $50 for his share of stock.' The amended suit failed in December 1930. He died in Detroit on 26 March 1932."
+  ],
+  "bio": {
+    "t": "Master of Precision: Henry M. Leland",
+    "a": "Mrs. Wilfred C. Leland and Minnie Dubbs Millbrook",
+    "y": "1966",
+    "why": "The book behind the Founders episode and the only full life, written from the family papers by his daughter-in-law. It is the family's case against Ford, so read the two Michigan opinions of 1929 and 1930 beside it; they are short, and they are free."
+  },
+  "contested": "Whether Leland's arrival drove Ford out. Ford R. Bryan, for the Henry Ford Heritage Association, has Murphy bringing Leland in as a consultant before Ford left in March 1902, to Ford's annoyance; Aaron Severson has him hired that August, after Ford had gone, to value the plant for sale. Whether Ford bid low for Lincoln out of revenge. Wikipedia says so, citing Bak's Henry and Edsel (2003), unread here; against it, the 1929 court found the sale brought more money and better results for creditors than the receivership would have. Whether Cadillac won the Dewar Trophy twice. Many accounts add a second award in 1912 for the electric starter; the Club's list has no 1912 entry and gives 1913 to F.S. Bennett Limited for a 1914 model Cadillac, naming neither starter nor lights. And whether Ford made the promise at all: the court took it as alleged and never tested it, and Justices Wiest and Clark wanted the case heard on the evidence.",
+  "across": [
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— whose first company became Leland's Cadillac, and who bought Leland's Lincoln out of receivership twenty years later."
+    },
+    {
+      "to": "lives:charles-kettering",
+      "label": "Charles Kettering",
+      "txt": "— whose ignition sets went into Leland's Cadillacs from 1909."
+    },
+    {
+      "to": "lives:billy-durant",
+      "label": "Billy Durant",
+      "txt": "— who bought Cadillac for General Motors in 1909, and with whom Leland quarrelled over the Liberty engine."
+    }
+  ],
+  "facts": [
+    {
+      "b": "30 November 1901 · 10 March 1902 · $900",
+      "s": "The Henry Ford Company and Ford's departure: Ford R. Bryan, 'The Birth of Ford Motor Company', Henry Ford Heritage Association, hfha.org"
+    },
+    {
+      "b": "August 1902",
+      "s": "Leland's appraisal and the renaming: Aaron Severson, 'The 19th Century Man', Ate Up With Motor, ateupwithmotor.com"
+    },
+    {
+      "b": "29 February 1908 · 721 · 89 · 500 miles",
+      "s": "The standardisation test: Dennis Simanaitis, 'Cadillac's Dewar Trophy', SimanaitisSays, 9 December 2015"
+    },
+    {
+      "b": "1908",
+      "s": "The trophy's recorded winner: Royal Automobile Club, 'The Dewar Trophy and Simms Medal', royalautomobileclub.co.uk"
+    },
+    {
+      "b": "six to three · 8 November 1921",
+      "s": "Lincoln's receivership vote: Aaron Severson, 'The 19th Century Man', Ate Up With Motor"
+    },
+    {
+      "b": "$8,000,000 · probably 2,000 · $3 · $50",
+      "s": "The sale and the suit: Leland v. Ford, 245 Mich. 599, 223 N.W. 218 (1 February 1929), CourtListener"
+    },
+    {
+      "b": "June 1922",
+      "s": "The Lelands' departure: Wikipedia, 'Henry M. Leland', citing Robert Lacey, Ford: The Men and the Machine (1986), p. 280, unread here"
+    },
+    {
+      "b": "December 1930",
+      "s": "The amended suit: Leland v. Ford, 252 Mich. 547, 233 N.W. 410 (2 December 1930), CourtListener"
+    }
+  ]
+}

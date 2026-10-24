@@ -437,6 +437,67 @@ Researched by seven press-researcher sweeps. Pages marked opened were read throu
 
 ---
 
+## Plastic Tide's last two source lines, 2026-10-23
+
+`npm run check` warns that two lines in `content/books/19-plastic-tide.json` (a retired
+title, still built at `/t/plastic-tide/`) name no document. Neither paper could be opened
+this session: the shell's proxy refused every outside host, and the fetch tool failed DNS on
+nejm.org, europepmc.org, pubmed and wikipedia.org alike. Only search worked, and a search
+snippet is not a reading. So both stay leads.
+
+- **`~8 Mt`**. Jambeck et al., "Plastic waste inputs from land into the ocean", *Science*
+  347(6223), 2015, doi:10.1126/science.1260352. Confirm from the abstract that 8 Mt (range
+  4.8–12.7) is the 2010 estimate of plastic entering the ocean, and which year it counts.
+  Rewrite the line as "what it counts: where it was read".
+- **`4.5×`**. Marfella et al., "Microplastics and Nanoplastics in Atheromas and
+  Cardiovascular Events", *NEJM* 390(10), 2024, doi:10.1056/NEJMoa2309822. Search reports
+  quote the abstract as a hazard ratio of 4.53 (95% CI 2.00 to 10.27) for the composite of
+  myocardial infarction, stroke or death, with 257 patients followed for a mean 33.7 months.
+  That is unconfirmed until someone reads the abstract. If it holds, the line can say so
+  and keep "observational".
+
+When both land, the queue row "Wing I source lines name no document" can close and the
+warning can become an error, as that row proposes.
+
+---
+
+## 2026-10-24: seven Founders lives, № 122–128, what was named but not opened
+
+Research ran through Apify's web-fetch from outside the sandbox, which could reach none of
+these hosts directly. Every source line in the seven entries names a page that was opened
+that way. These were named in the research and **not** opened:
+
+| Life | Document | What it would settle |
+|---|---|---|
+| Bosch | nobelprize.org's own copy of the Nobel lecture (the gwern.net scan of *Nobel Lectures* was read) | Cite the Foundation's copy directly |
+| Bosch | Guinness; UBA chronicle; Reichstag inquiry report | The 561 dead at Oppau, against BASF's "over 500" |
+| Bosch | Hager, *The Alchemy of Air*, and its endnote; Holdermann, *Im Banne der Chemie* (1953) | The Hitler meeting of 1933; both lines stay out of quotation marks |
+| Bosch | Peter Hayes, *Industry and Ideology* (1987) | The December 1933 fuel guarantee |
+| Duveen | NYT, 5 Nov 1921, "$500,000 Suit Hangs on da Vinci Fingers"; NYT, 11 Nov 1921 | The Hahn suit's filing; the Blue Boy at $640,000 |
+| Duveen | Thorpe, *Henry Edwards Huntington* (1994), p. 438 | $728,800 on Duveen's bill |
+| Duveen | Simpson, *Artful Partners* (1986); Samuels (1987) | Berenson's quarter |
+| Duveen | St Clair (1998); Jenkins (2001); Oddy (2002); Kehoe (2004) | The marbles: damage, concealment, and whether staff were paid |
+| Leland | J. P. Holland, *Manchester Courier*, 5, 13 and 19 March 1908; *The Motor* 1908 | The contemporary record of the test |
+| Leland | Lacey, *Ford: The Men and the Machine* (1986), pp. 60–61, 277, 280 | Ford's departure; the $5M first offer; June 1922 |
+| Leland | Goodman (2004), p. 33; RAC minutes for 1912–13 | Whether there was a second Dewar for the starter |
+| Lasker | *The Lasker Story: As He Told It* | Kennedy's exact words |
+| Lasker | Gunther, *Taken at the Flood* (1960); USSB annual reports 1921 and 1923 | The 2,300 ships and the $30 a ton |
+| Durant | Bankruptcy schedules, S.D.N.Y., February 1936 | The exact debt ($914,000 is printed; not seen) |
+| Durant | Sloan, *My Years with General Motors*; Chrysler, *Life of an American Workman* | The Niagara line and the office-door line, both kept out of quotation marks |
+| Hopkins | A scan of the 1923 Lord & Thomas *Scientific Advertising* | Chapter 10 verbatim; a typed transcription was read |
+| Hopkins | Duhigg, *The Power of Habit*, ch. 2 endnotes | His source, and the 7 → 65 per cent figure |
+| Hopkins | UCLA Library record ark:/21198/zz002cxng5 | The 1928 negative's licence, for a plate |
+| Cochran | Eisenhower Library, Cochran Papers, Special File, boxes 256–263 | Her family, from her own files |
+| Cochran | Rich (2007); Nolen (2002), pp. 32, 34; Ackmann (2003), pp. 152–155 | Whether she believed the orphan story; why she spoke as she did in 1962 |
+| Cochran | FAI record files for the 1953 Sabre flights | Mach 1.04 and the speed records |
+
+**Method note.** `tools/plate.mjs` needs macOS `sips`. The six plates were made with a
+Python port of the same steps (cover-scale, centre crop to 260×325, luminance stretch,
+smoothstep, 0.06 floor, ink-to-paper map, JPEG q60), after a hand crop for Lasker's
+caption strip and the edge of a second figure beside Duveen.
+
+---
+
 ## Three plates on the shelf with no record, opened 2026-10-23
 
 **These plates are live and nobody has written down where they came from.** Commit

@@ -45,6 +45,11 @@
       "to": "lives:alfred-nobel",
       "label": "Alfred Nobel",
       "txt": "— an earlier chemist whose explosive cut tunnels and whose fortune bought a weapons works, then paid for prizes, peace among them."
+    },
+    {
+      "to": "lives:carl-bosch",
+      "label": "Carl Bosch",
+      "txt": "— who found that hydrogen ate the steel of the first tubes, and built the reactor that held it."
     }
   ]
 }

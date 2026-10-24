@@ -156,6 +156,24 @@
     "credit": "the photograph of Wilbur Wright of about 1905, attributed to Wilbur or Orville Wright themselves, is held by the Library of Congress, which states that there are no known restrictions on its publication",
     "checked": "2026-10-19"
   },
+  "carl-bosch": {
+    "licence": "CC BY-SA 3.0",
+    "by": "BASF Corporate History (© BASF; BASF-Negativnummer 12508-alt), Wikimedia Commons, VRT ticket #2020050610003591",
+    "credit": "the 1927 photograph of Carl Bosch is © BASF (BASF-Negativnummer 12508-alt), from BASF Corporate History, under CC BY-SA 3.0",
+    "checked": "2026-10-24"
+  },
+  "albert-lasker": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Bain News Service, George Grantham Bain Collection, Library of Congress (LC-DIG-ggbain-31731)",
+    "credit": "the photograph of Albert Lasker, made by the Bain News Service between about 1915 and 1920, is from the George Grantham Bain Collection at the Library of Congress, which states that there are no known restrictions on its publication",
+    "checked": "2026-10-24"
+  },
+  "joseph-duveen": {
+    "licence": "loc-no-known-restrictions",
+    "by": "Bain News Service, George Grantham Bain Collection, Library of Congress (LC-USZ62-103851)",
+    "credit": "the 1920s photograph of Joseph Duveen on board ship, by the Bain News Service and cropped from a picture of him with his wife and daughter, is from the George Grantham Bain Collection at the Library of Congress, which states that there are no known restrictions on its publication",
+    "checked": "2026-10-24"
+  },
   "emily-warren-roebling": {
     "licence": "brooklyn-no-known-copyright-restrictions",
     "by": "Brooklyn Museum",
