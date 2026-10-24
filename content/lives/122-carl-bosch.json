@@ -1,0 +1,69 @@
+{
+  "id": "carl-bosch",
+  "no": 122,
+  "keep": "Haber showed that ammonia could be made from air. Feeding anyone took an iron catalyst found in 20,000 tests and a steel tube hydrogen could not eat, and both came out of Bosch's works.",
+  "n": "Carl Bosch",
+  "years": "1874–1940",
+  "place": "Ludwigshafen and Oppau",
+  "field": "Chemistry & Industry",
+  "group": "obscure",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "Haber's best catalyst was osmium, and the whole world's supply came to a few kilograms. The man who made his ammonia feed anyone had trained in an ironworks.",
+  "copy": [
+    "Carl Bosch was born in Cologne in 1874 and spent a year at an ironworks in Silesia before university. He read metallurgy and mechanical engineering at Charlottenburg, then chemistry at Leipzig, and joined BASF in April 1899. In 1908 the company bought Fritz Haber's method of making ammonia from the nitrogen in the air at high pressure, and gave Bosch the job of making it an industry. Haber's chemistry worked on a bench. His small production converter had run for one or two hours before it failed. His catalysts were osmium, of which the world held only a few kilograms, and uranium, which oxygen and water spoiled.",
+    "BASF ran 24 small converters day and night for years, and Alwin Mittasch's laboratory put them through 20,000 separate examinations to find and tune a cheap iron catalyst. The first two steel tubes, drawn by Mannesmann, burst after 80 hours. Bosch cut them open and saw why: hydrogen had entered the carbon steel and made it brittle. He knew to look, he said in 1932, only 'because I had begun my career as a metallurgist'. His answer, in March 1911, was to give the wall's two jobs to two parts: a soft-steel lining to keep the gas in, and a steel jacket drilled with holes to hold the pressure and let the hydrogen out. The plant at Oppau started on 9 September 1913 and was making 40 tonnes a day in 1914. In 1931 he shared the Nobel Prize in chemistry with Friedrich Bergius.",
+    "In September 1914 Bosch promised the army saltpetre made from ammonia, in return for money and a guarantee to buy it, and the first nitric acid plant ran at Oppau in May 1915. By the end of the war nearly half of BASF's revenue came from ammonia, nitric acid and saltpetre. On 21 September 1921 blasting to loosen about 4,500 tonnes of fertiliser salt in an Oppau silo set it off: more than 500 dead, about 2,000 hurt, a crater 18.5 metres deep, 1,036 buildings destroyed. He led BASF into IG Farben in 1925 and chaired it. Under Hitler he argued for Jewish scientists, and IG Farben contracted to supply the regime with synthetic fuel. In 1932 he wrote that he often wondered, in BASF's translation, 'whether it would have been better had we have failed'. He died in Heidelberg on 26 April 1940, worn down, BASF says, by illness, drink and depression."
+  ],
+  "facts": [
+    {
+      "b": "April 1899 · 1908",
+      "s": "His joining BASF and the purchase of Haber's process: Nobel Foundation, 'Carl Bosch – Biographical', nobelprize.org"
+    },
+    {
+      "b": "one or two hours · a few kilograms",
+      "s": "Haber's converter and the osmium supply: Carl Bosch, Nobel Lecture, 21 May 1932, 'The development of the chemical high pressure method during the establishment of the new ammonia industry', Nobel Lectures, Chemistry 1922–1941, pp. 197–241 (read in the scan at gwern.net)"
+    },
+    {
+      "b": "24 · 20,000 · 80 hours",
+      "s": "The test converters, the examinations for the catalyst and the burst Mannesmann tubes: Bosch, Nobel Lecture, 1932, pp. 199–200"
+    },
+    {
+      "b": "March 1911",
+      "s": "The first converter with a lining: Bosch, Nobel Lecture, 1932, Fig. 5; BASF Corporate History, 'Carl Bosch (1874–1940)', basf.com, dates the double tube to early 1911"
+    },
+    {
+      "b": "9 September 1913 · nearly half",
+      "s": "Oppau's start, the saltpetre promise and the wartime revenue: BASF Corporate History, 'Carl Bosch (1874–1940) – Nobel Prize laureate, scientist, business leader', basf.com"
+    },
+    {
+      "b": "40 tonnes a day",
+      "s": "Oppau's output in 1914: Max Planck Society, 'Carl Bosch – President of the Kaiser Wilhelm Society (1937–1940)', mpg.de"
+    },
+    {
+      "b": "about 4,500 tonnes · more than 500 · about 2,000 · 18.5 metres · 1,036",
+      "s": "The explosion of 21 September 1921: BASF Corporate History, '100th anniversary of the Oppau explosion', basf.com"
+    },
+    {
+      "b": "26 April 1940",
+      "s": "His death: Nobel Foundation, 'Carl Bosch – Biographical'; BASF Corporate History, 'Carl Bosch (1874–1940)'"
+    }
+  ],
+  "bio": {
+    "t": "The Alchemy of Air",
+    "a": "Thomas Hager",
+    "y": "2008",
+    "why": "The book behind the Founders episode, and the one that tells Haber and Bosch as a pair, from the saltpetre trade to Leuna. Read Bosch's own Nobel lecture beside it: forty-five pages, and the burst tubes are in it. Hager is also where Hitler's most quoted reply to Bosch comes from, and BASF's archive does not carry it."
+  },
+  "contested": "Whose process it was. The name puts Haber first, and the Haber–Bosch shorthand that Haber fed the world leaves out the plant. Bosch's lecture is fairer than either: he calls Haber's equilibrium work and catalyst lead decisive for BASF, and names Mittasch and Lappe for the catalyst and its development, so the industry was not Bosch's alone either. Whether he opposed the regime or partnered it is argued at BASF itself. Its history says his help for Jewish scientists was confined to people in his own circle, calls IG Farben's tie to the regime from 1933 a close economic partnership grown out of his high-pressure projects, and says a conclusive answer is difficult. Peter Hayes's Industry and Ideology is the scholarly account; this house has not read it. Their meeting of 1933 survives only at second hand: Bosch told friends, after his biographer Karl Holdermann, that Hitler ended it by saying the Privy Councillor wished to leave, and the more famous reply about a hundred years without physics and chemistry rests on Hager, unread here. The dead at Oppau are given as more than 500 by BASF and as 561 elsewhere, in sources this house has not opened. BASF dates Leuna's start to 1916, the Nobel Foundation to 1917.",
+  "across": [
+    {
+      "to": "lives:fritz-haber",
+      "label": "Fritz Haber",
+      "txt": "— whose ammonia worked on a bench for an hour or two; Bosch's plant made it by the tonne."
+    }
+  ]
+}
