@@ -1,0 +1,75 @@
+{
+  "id": "claude-c-hopkins",
+  "no": 127,
+  "keep": "Hopkins is credited with teaching America to brush its teeth. He wrote that the toothpaste he sold made no attempt to: it took brushers from its rivals with a promise of beauty.",
+  "n": "Claude C. Hopkins",
+  "years": "1866–1932",
+  "place": "Chicago",
+  "field": "Advertising & Research",
+  "group": "obscure",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "Claude Hopkins is credited with teaching America to brush its teeth. In 1923 he wrote that the toothpaste maker who had tested the idea made no attempt to, because each new brusher cost $20 to $25.",
+  "copy": [
+    "Claude Hopkins was born in Michigan in 1866 and wrote that he had supported himself since the age of nine. His mother, he said, was left a widow and taught school; Rob Schorman, reading the census and the records, thinks the father may simply have left. He started at the Bissell Carpet Sweeper Company in Grand Rapids as an assistant bookkeeper at $40 a month, and found he could sell. In Racine, writing for a patent-medicine maker, he wrote Schlitz beer advertisements on the side, telling readers how every bottle was cleaned four times by machinery. Then Liquozone, for a quarter of the company and no salary. Samuel Hopkins Adams reported in Collier's in 1905 that it was mostly water, and that guinea pigs given it died a little earlier than those that were not.",
+    "Albert Lasker hired him for Lord & Thomas at $1,000 a week, and they soon moved him to commission. 'Under that plan I earned in commissions as high as $185,000 in a year,' he wrote, the figure later printed as his salary. His method was the coupon: key every advertisement, count the replies, and spend more only on what paid. For Pepsodent he took a block of stock, and 'resolved to advertise this tooth paste as a creator of beauty. To deal with that cloudy film.' The first test city cost $1,000 and paid for itself before the advertising bills were due. In Scientific Advertising, in 1923, he wrote that teaching people to brush was too costly to try: the most successful maker of dentifrice spent not one line on it, and took its customers from the others. Charles Duhigg said in 2012 that Hopkins started the tooth-brushing habit in America.",
+    "Nearly every success in his books is his own report. His preface says the businesses he had served protested that he would claim excessive credit, and that he rewrote some chapters. He opened his chapter on patent medicine by saying he no longer approved of it, and still called Liquozone harmless. 'I have always been an addict to work,' he wrote. 'I love work as other men love play.' And of his commissions: 'I have often figured what I would have made had I invested just my commissions in the stock of enterprises which I fostered. The amount runs into many millions.' He died in Spring Lake, Michigan, in 1932."
+  ],
+  "bio": {
+    "t": "My Life in Advertising",
+    "a": "Claude C. Hopkins",
+    "y": "1927",
+    "why": "The book behind the Founders episode, and the source of nearly everything known about him, which is its weakness: no full biography exists. Read Rob Schorman's article in the Journal of the Gilded Age and Progressive Era (2008) beside it; it is the one archival check on his early years."
+  },
+  "contested": "Whether he made Americans brush. Charles Duhigg, in The Power of Habit (2012), says so, and so do most summaries of it; Hopkins's own 1923 book says the successful campaign made no attempt to teach the habit, and his Pepsodent chapter never mentions habit, flavour or tingle. The figure often printed with Duhigg's, that toothpaste went from 7 to 65 per cent of homes, has no source this house has found. How scientific he was: David Ogilvy, who gave away 379 copies of the book, quoted Alfred Politz in 1965 that Hopkins did not mark where his experiments ended and his reasoning began, and Earnest Elmo Calkins privately called his books bluster and brag, in a letter this house has not read. Whether he wrote the Schlitz line about bottles washed with live steam: it is in neither of his books, which say four times by machinery. The Scientific Advertising read here is a typed transcription, not a scan of the 1923 edition, though its wording matches Ogilvy's quotations of it.",
+  "across": [
+    {
+      "to": "lives:albert-lasker",
+      "label": "Albert Lasker",
+      "txt": "— who hired him for Lord & Thomas at $1,000 a week."
+    },
+    {
+      "to": "lives:david-ogilvy",
+      "label": "David Ogilvy",
+      "txt": "— who wrote the 1965 introduction to Scientific Advertising, and repeated the salary figure Hopkins's own book corrects."
+    }
+  ],
+  "plateless": "No photograph of him has cleared. Commons holds none, and the 1928 Los Angeles Times negative at UCLA carries a rights statement this house has not been able to read.",
+  "facts": [
+    {
+      "b": "nine · $40 a month",
+      "s": "His self-support and his Bissell pay: Claude C. Hopkins, My Life in Advertising (Harper & Brothers, 1927), read in the scan at archive.org, chapters 1 and 4"
+    },
+    {
+      "b": "four times",
+      "s": "The Schlitz bottles: Claude C. Hopkins, My Life in Advertising (Harper & Brothers, 1927), read in the scan at archive.org, chapter 7; Claude C. Hopkins, Scientific Advertising (1923), chapter 7"
+    },
+    {
+      "b": "a quarter",
+      "s": "His Liquozone share: Claude C. Hopkins, My Life in Advertising (Harper & Brothers, 1927), read in the scan at archive.org, chapter 8"
+    },
+    {
+      "b": "1905",
+      "s": "Liquozone tested: Samuel Hopkins Adams, The Great American Fraud, chapter III, from Collier's Weekly, 18 November 1905 (Wikisource)"
+    },
+    {
+      "b": "$1,000 a week · $185,000",
+      "s": "His starting pay and his best year of commissions: Claude C. Hopkins, My Life in Advertising (Harper & Brothers, 1927), read in the scan at archive.org, chapter 16"
+    },
+    {
+      "b": "$1,000",
+      "s": "Pepsodent's first test city: Claude C. Hopkins, My Life in Advertising (Harper & Brothers, 1927), read in the scan at archive.org, chapter 14"
+    },
+    {
+      "b": "1923 · $20 to $25",
+      "s": "The cost of a new brusher and the maker who did not try: Claude C. Hopkins, Scientific Advertising (Lord & Thomas, 1923), chapter 10, read in a typed transcription at archive.org"
+    },
+    {
+      "b": "2012",
+      "s": "Duhigg's claim: NPR Morning Edition, 'How You Can Harness The Power Of Habit', 27 February 2012"
+    }
+  ]
+}
