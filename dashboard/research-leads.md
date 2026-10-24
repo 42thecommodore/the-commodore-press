@@ -495,3 +495,50 @@ that way. These were named in the research and **not** opened:
 Python port of the same steps (cover-scale, centre crop to 260×325, luminance stretch,
 smoothstep, 0.06 floor, ink-to-paper map, JPEG q60), after a hand crop for Lasker's
 caption strip and the edge of a second figure beside Duveen.
+
+---
+
+## Three plates on the shelf with no record, opened 2026-10-23
+
+**These plates are live and nobody has written down where they came from.** Commit
+`f8b77a5` (2026-09-22, a commit about reading tools) added `emily-warren-roebling.jpg`,
+`ibn-khaldun.jpg` and `vasily-arkhipov.jpg` to `assets/plates/`. No file records their
+source, `content/plate-licences.json` has no entry for them, and the queue still listed all
+three as undecided. Meanwhile the colophon says no image of Ibn Khaldun, Arkhipov or
+Roebling has been cleared, and the entry pages describe a submarine and a manuscript page as
+"Portrait of …", because neither entry sets `plateOf`.
+
+A `press-researcher` sweep ran on 2026-10-23. Every fetch was refused by the network
+policy (commons.wikimedia.org, upload.wikimedia.org, wikidata.org, loc.gov,
+catalog.archives.gov, brooklynmuseum.org, nsarchive2.gwu.edu, archive.org), so it opened
+nothing. What follows came from search snippets only.
+
+| Plate | What it shows | Lead | What would close it |
+|---|---|---|---|
+| `emily-warren-roebling` | A painted three-quarter portrait in a white gown: not the rejected Library of Congress photograph (item 98502685) | Carolus-Duran, *Portrait of Emily Warren Roebling*, signed "Paris 1896", Brooklyn Museum 1994.69.1, gift of Paul Roebling (https://brooklynmuseum.org/objects/4960). The snippet paraphrases the rights box as "no known copyright restrictions". | Open the museum record and the Commons file the plate was cut from; compare the images; quote the rights box. Carolus-Duran died in 1917, so the painting is public domain; the question is the photograph of it. |
+| `ibn-khaldun` | A page of an Arabic manuscript, two seals, "1936" written beside them | A Medievalists.net caption (https://www.medievalists.net/?p=111662) credits a Commons image as "a page from the Muqaddimah written by him, Manuscript Atıf Efendi 1936, fol. 7a". The "1936" on the plate is probably the shelfmark. | Open the Commons file page and the Süleymaniye Library record. "Written by him" (an autograph) is a separate claim; do not print it on one blog caption. |
+| `vasily-arkhipov` | A Foxtrot-class submarine running surfaced, a ship on the horizon: the boat, not the man | The National Security Archive credits a B-59 photograph to the U.S. National Archives, Still Pictures, RG 428, item 428-N-711201, about 28–29 October 1962. That caption describes a close-up with crew visible, so it may be another frame. | Open the NARA catalogue for 428-N-711201 and the frames around it; match the frame; confirm the Navy, not an agency, made it. Do not caption it "B-59" until then. B-130, B-4 and B-36 were also photographed that week. |
+
+When each closes: set `plateOf` on the entry from the record's own wording (what it is,
+when, where it is held), add a `plate-licences.json` entry if the record carries any
+credit or condition, and correct the colophon's list of portrait-less Lives through
+`npm run correct`. If a record cannot be found, the plate comes down and the entry carries
+the press mark, as the colophon already says it does.
+
+**Closed 2026-10-24.** All three records were opened (through the Apify connector, at
+Luca's instruction, because this environment's network refuses Commons), and each plate
+was compared with the record's own image and matched:
+
+- `vasily-arkhipov` → Commons `File:Soviet b-59 submarine.jpg`: "Soviet submarine B-59,
+  forced to the surface by U.S. Naval forces in the Caribbean near Cuba. U.S. National
+  Archives, Still Pictures Branch, Record Group 428, Item 428-N-711200", 28–29 October 1962,
+  U.S. Navy photographer, public domain. (The item is -711200, not the -711201 the lead had.)
+- `ibn-khaldun` → Commons `File:Ibn Khaldūn autograph, al-Muqaddima, MS Atıf Efendi 1936,
+  f. 7a.png`, credited "Süleymaniye Kütüphanesi, Istanbul", public domain.
+- `emily-warren-roebling` → Commons `File:Brooklyn Museum - Portrait of Emily Warren
+  Roebling - Charles-Émile-Auguste Carolus-Duran (cropped).jpg`, Brooklyn Museum 1994.69.1,
+  "Photo: Brooklyn Museum", uploaded by the museum, which considers it to have "no known
+  copyright restrictions". Recorded in `plate-licences.json` as a narrower claim, like the
+  Smithsonian and Science History Institute plates.
+
+Correction 21 prints what the colophon had said.
