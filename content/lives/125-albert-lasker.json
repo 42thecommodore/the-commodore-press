@@ -1,0 +1,65 @@
+{
+  "id": "albert-lasker",
+  "no": 125,
+  "keep": "The three words he is remembered for were a copywriter's, and the medical research he is credited with was mostly his wife's work. What was his was the selling, cigarettes to women included.",
+  "n": "Albert Lasker",
+  "years": "1880–1952",
+  "place": "Chicago",
+  "field": "Advertising & Business",
+  "group": "obscure",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "The three words Albert Lasker is remembered for, salesmanship in print, were not his. A copywriter named John E. Kennedy gave them to him in 1904, and Lasker built Lord & Thomas on them.",
+  "copy": [
+    "Albert Lasker was born in Freiburg on 1 May 1880 and grew up in Galveston, Texas, where his father Morris was a banker. In 1898 he went to Lord & Thomas in Chicago as an office clerk, then sold its services across Indiana, Ohio and Michigan, and in 1903 bought out Daniel Lord to become a partner. In 1904 John E. Kennedy sent up a note offering to tell him what advertising was. Kennedy's answer, after Lasker's own retelling, was salesmanship in print, and with it went copy that gave the reader a reason to buy. Kennedy stayed a little over two years, and the agency's sales rose from $2.5 million to $3.2 million. In 1908 Lasker hired Claude Hopkins.",
+    "He ran the publicity for Warren Harding's campaign in 1920, and Harding made him chairman of the United States Shipping Board. His resignation took effect on 12 June 1923. Back at Lord & Thomas his accounts included Pepsodent, Kimberly-Clark and American Tobacco's Lucky Strike. In 1928 Lucky Strike told women to reach for a Lucky instead of a sweet, and a 1929 advertisement promised a slender figure. By 1930 the word sweet had gone, under threat of lawsuits from the candy makers.",
+    "He retired as president in 1938, and in 1942 closed Lord & Thomas so that the name would end with him; Foote, Cone & Belding took the clients. He had married Mary Woodard Reinhardt on 22 June 1940, and the two founded the Lasker awards in 1945. The American Society for the Control of Cancer had 1,000 members and a budget of $102,000, none of it for research, when the Laskers took over its board. Renamed the American Cancer Society in 1944, it raised $14 million in 1948, a quarter of it for research. Most of the campaigning that took the National Institutes of Health from $8 million in 1947 to more than $1 billion in 1966 was Mary's, and most of it came after him. He died of cancer on 30 May 1952, aged seventy-two."
+  ],
+  "bio": {
+    "t": "The Man Who Sold America",
+    "a": "Jeffrey L. Cruikshank and Arthur W. Schultz",
+    "y": "2010",
+    "why": "The book behind the Founders episode and the only modern life, with the Shipping Board, the illness and the giving in one place; this house has read about it, not in it. John Gunther's Taken at the Flood (1960) is the older one, written close to the family."
+  },
+  "contested": "Who made the Lucky Strike campaign. Stanford's tobacco-advertising archive credits the slogan to Hill and Lasker together, calls George Washington Hill's own stories of its birth apocryphal, and traces the line to Lydia Pinkham's 1891 advice to reach for a vegetable instead of a sweet; Edward Bernays's claim to have broken the taboo on women smoking has not been read here. Who built the medical research. Popular accounts credit Albert; the National Library of Medicine credits Mary, and records the critics, among them the NIH director James Shannon, who complained of science policy made by uncritical zealots and experts in advertisement. And some things are printed about him that the house cannot yet check: his biographers' posthumous diagnosis of bipolar disorder, and the Shipping Board figures of more than 2,300 ships sold off at about $30 a ton, both from Cruikshank and Schultz. Even his dates drift: one hall of fame gives his age at death as seventy-three, and the Library of Medicine puts his chairmanship in the wrong world war.",
+  "across": [
+    {
+      "to": "lives:david-ogilvy",
+      "label": "David Ogilvy",
+      "txt": "— the next century's adman, who began by selling cookers door to door and writing the maker a pamphlet on how to do it."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1898 · 1903",
+      "s": "His start at Lord & Thomas and his partnership: American National Business Hall of Fame, 'Albert Lasker', anbhf.org"
+    },
+    {
+      "b": "1904 · $2.5 million · $3.2 million",
+      "s": "Kennedy's arrival and the agency's sales while he stayed: Advertising Hall of Fame, 'John E. Kennedy', advertisinghalloffame.org"
+    },
+    {
+      "b": "12 June 1923",
+      "s": "His resignation from the Shipping Board: TIME, 'Shipping: From Chicago; to Chicago', 19 May 1923"
+    },
+    {
+      "b": "1928 · 1929 · 1930",
+      "s": "The Lucky Strike campaign and the dropped word: Stanford Research into the Impact of Tobacco Advertising, images 1093 and 1163, tobacco.stanford.edu"
+    },
+    {
+      "b": "22 June 1940 · 1945",
+      "s": "The marriage and the awards: National Library of Medicine, Profiles in Science, 'Mary Lasker: Biographical Overview'; Lasker Foundation, 'About the Awards'"
+    },
+    {
+      "b": "1,000 · $102,000 · 1944 · $14 million · a quarter",
+      "s": "The cancer society before and after: National Library of Medicine, Profiles in Science, 'Mary Lasker: Cancer Wars'"
+    },
+    {
+      "b": "$8 million · more than $1 billion",
+      "s": "The NIH budget, 1947 and 1966: NIH Office of History, 'A Short History of NIH, 1887–1987', history.nih.gov"
+    }
+  ]
+}
