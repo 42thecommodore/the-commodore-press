@@ -165,6 +165,7 @@ Its sentence-length and punctuation targets were **measured off `content/`**, no
 
 Three rules for the front door and the shelves, each held by a check:
 
+- **The faces are named at 15px.** The names under the portraits on the front door are `--fs-2` or larger: at 13px they were most of the text on the page and the hardest to read. `npm test` holds it at both sizes.
 - **An entry opens from a link.** Every book, face and Life is `<a ${entryAttrs(how, id)}>`, pointing at its own page; `press.js` turns a plain click into the reader. `npm run check` fails on an entry opened from a `<button>`.
 - **The house's line is never set beside a face as if it were theirs.** A `keep` or `across` line shown next to a portrait is roman and, where it stands alone, credited through `Reading.credit` ("— The Commodore Press, on <name>"). `npm test` holds it.
 - **The first screen is the promise and the Captain.** The Captain of the day sits straight under the headline, and starts on the first screen at 1440×900 and 375×812; the Lives' faces follow it (on a phone, three rows that scroll sideways). Nothing in the headline block is a button or a link, and the only count on the door is the corrections, linked to the record. `npm test` measures it in an exact-size frame. (Luca's choice, 19 October 2026: until then the faces held the first screen and the Captain sat below the Atlas.)

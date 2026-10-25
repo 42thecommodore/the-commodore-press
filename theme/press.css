@@ -606,7 +606,9 @@
   .wface .fp-img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--mount-rule);background:var(--mount);padding:3px;
     }
   .wface:hover .fp-img,.wface:focus-visible .fp-img{filter:none;}
-  .wface .fn{font-size:var(--fs-1);line-height:1.25;color:var(--ink-mid)}
+  /* 15px, not 13: 128 names at 13px were most of the text on the front door and the hardest
+     to read. Wider columns would cure the wrapping but cost 350-1,200px of wall at a desk. */
+  .wface .fn{font-size:var(--fs-2);line-height:1.25;color:var(--ink-mid)}
   .wface:hover .fn{color:var(--ink)}
   .nomark{display:flex !important;align-items:center;justify-content:center;color:var(--mark-soft)}
   .nomark svg{width:42%;height:auto}
@@ -621,7 +623,7 @@
     /* On the front door a phone gets the faces as three rows that scroll sideways, as the
        Press's spines did, so the Atlas is still a short scroll below them; the whole wall,
        four to a row, is the Lives wing's own page. */
-    .front .wall{grid-template-columns:none;grid-template-rows:repeat(3,auto);grid-auto-flow:column;grid-auto-columns:72px;
+    .front .wall{grid-template-columns:none;grid-template-rows:repeat(3,auto);grid-auto-flow:column;grid-auto-columns:84px;
       overflow-x:auto;scrollbar-width:none;margin-right:-20px;padding-right:20px}
     .front .wall::-webkit-scrollbar{display:none}
     /* The nav used to scroll sideways with a fade, which hid Search and night reading off
