@@ -1,0 +1,61 @@
+{
+  "id": "ignacy-lukasiewicz",
+  "no": 138,
+  "keep": "Łukasiewicz's lamp lit a pharmacy window four months before the famous night in the hospital. His own museum claims the first distillery on Polish land, not in the world.",
+  "n": "Ignacy Łukasiewicz",
+  "years": "1822–1882",
+  "place": "Lwów and Galicia",
+  "field": "Oil & Pharmacy",
+  "group": "obscure",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "A pharmacist who spent two years in an Austrian prison for conspiracy, he learned to distil lamp oil from crude, and built an industry around it in the hills of Galicia.",
+  "copy": [
+    "Ignacy Łukasiewicz was born in 1822 at Zaduszniki, in the parish of Padew Narodowa, in Austrian Galicia. His studies stopped in 1836, after his father's death. He worked in pharmacies and joined the conspiracy for Polish independence, and in 1846 he was arrested; he spent two years in the prison at Rzeszów and was released at the end of 1847 for want of evidence. He went back to pharmacy, studied at the Jagiellonian University from 1850, and on 30 July 1852 took a master's degree in pharmacy in Vienna.",
+    "At Mikolasch's pharmacy in Lwów he worked on distilling crude oil, and made from it a lamp fuel, kerosene. He had a lamp made to burn it, by the sheet-metal worker Adam Bratkowski. In March 1853 the lamp lit the window of Mikolasch's shop. On 31 July 1853 lamps of his design lit an operation at night in the hospital in the Łyczaków district of Lwów, the date the Polish oil industry now keeps as its birthday. In 1854 a lamp of his lit a street in Gorlice.",
+    "In 1854, with Tytus Trzecieski, he founded an oil company to work the field at Bóbrka, near Krosno. In 1856 he built a refinery at Ulaszowice near Jasło, three boilers. At Bóbrka he set up a fund that insured his workers, paid for by three cents of every gulden they earned, with savings banks that lent to them without interest, and schools for their children; his wife ran a lace school for girls at Chorkówka. He sat in the Galician parliament in Lwów from 1877 to 1881. He died of pneumonia at Chorkówka on 7 January 1882."
+  ],
+  "bio": {
+    "t": "A Prometheus on a Human Scale: Ignacy Łukasiewicz",
+    "a": "Piotr Franaszek and others",
+    "y": "2019",
+    "why": "The only book-length life in English, from Polish historians, published by Peter Lang. The standard Polish biography is Wiesław Bonusiak's Szejk z Galicji (2019). This house has read neither; the Bóbrka museum, on the site of his field, is where his story is kept."
+  },
+  "contested": "Whose refinery was first. The English Wikipedia calls Ulaszowice the world's first industrial oil refinery; the museum at Bóbrka, which has every reason to claim more, says the first on Polish land. Around it, on the dates as Wikipedia gives them, are James Young's 1850 patent for oils and paraffin wax from coal and his works at Bathgate in Scotland, a refinery at Ploieşti in Romania in 1856–57, and Baku's wells and refineries; whether any of them counts depends on whether oil from coal counts, and on what a refinery is. The famous night in the hospital is a tradition rather than a document: the date is fixed, but the surgeon's name is spelt two ways, the patient's name comes from one uncited source, and the first account of it has not been found here. One of his partners, the pharmacist Jan Zeh, is reported to have claimed the lamp and the distillation for himself, and an Austrian patent of 1853 is described differently by different sources; neither has been opened.",
+  "across": [
+    {
+      "to": "lives:john-d-rockefeller",
+      "label": "John D. Rockefeller",
+      "txt": "— who made his fortune refining the same lamp oil, kerosene, a few years later and an ocean away."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1822 · 1846 · 1847",
+      "s": "Birth at Zaduszniki and the arrest: Bóbrka Museum of the Oil and Gas Industry, 'About Łukasiewicz'; release at the end of 1847, Małopolska Institute of Culture, 'Oil City' (oilcity.mik.krakow.pl), on Łukasiewicz as a pioneer of social responsibility. The museum gives 1848"
+    },
+    {
+      "b": "1836 · 1850 · 30 July 1852",
+      "s": "His interrupted studies, the Jagiellonian University and the Vienna degree: Małopolska Institute of Culture, 'Oil City'"
+    },
+    {
+      "b": "March 1853 · 31 July 1853 · 1854",
+      "s": "The pharmacy window, the hospital and the Gorlice street lamp: Małopolska Institute of Culture, 'Oil City'; the hospital and Bratkowski also Bóbrka Museum, 'About Łukasiewicz'"
+    },
+    {
+      "b": "1854 · 1856 · three boilers",
+      "s": "The Bóbrka company and the Ulaszowice refinery: Bóbrka Museum, 'About Łukasiewicz', which calls it 'the first oil distillery on the Polish land'; Małopolska Institute of Culture, 'Oil City'"
+    },
+    {
+      "b": "3 cents of every gulden",
+      "s": "The workers' insurance contribution at Bóbrka: Małopolska Institute of Culture, 'Oil City'"
+    },
+    {
+      "b": "1877–1881 · 7 January 1882",
+      "s": "His seat in the parliament in Lwów and his death: Małopolska Institute of Culture, 'Oil City'; Bóbrka Museum, 'About Łukasiewicz'"
+    }
+  ]
+}

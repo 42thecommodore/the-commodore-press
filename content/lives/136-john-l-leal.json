@@ -1,0 +1,61 @@
+{
+  "id": "john-l-leal",
+  "no": 136,
+  "keep": "Chlorine went into an American city's water for good because a court asked a water company for a cheaper plan. Leal's answer cost about 14 cents per million gallons.",
+  "n": "John L. Leal",
+  "years": "1858–1914",
+  "place": "Paterson and Jersey City, New Jersey",
+  "field": "Public Health",
+  "group": "obscure",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "He was a health officer in Paterson, New Jersey, working for a water company that had just lost in court. His way out of the judgment put chlorine into an American city's water every day, for good.",
+  "copy": [
+    "John L. Leal was born on 5 May 1858 in Andes, New York, the son of a doctor who came home from the Civil War with a disease of the gut, likely dysentery, that he never shook off. Leal trained in medicine, and in Paterson, New Jersey, became a public health officer and adviser to the Jersey City Water Supply Company, which drew Jersey City's water from the Boonton reservoir. Jersey City sued, saying sewage from the towns upstream made the water unsafe. On 1 May 1908 Vice Chancellor Stevens of the New Jersey Court of Chancery largely agreed. Leal had testified that taking such water unpurified would be 'dangerous and inexcusable'; the court thought he took too kind a view of the towns upstream.",
+    "The decree of 4 June 1908 left a door open. Leal had advised the company to ask for it: within ninety days the company could offer 'other plans or devices for maintaining the purity of the water'. Leal proposed adding a small dose of bleaching powder to the whole supply. On 16 June he engaged the engineers Hering and Fuller to design the works, and George A. Johnson of that firm to run them. The plant started on 26 September 1908. Johnson reported that it began at 1.4 parts per million of available chlorine, 36 pounds of bleaching powder per million gallons, and was brought down to about 0.2 parts, 5 pounds. Leal put the cost at about 14 cents per million gallons. He called it the first time, to his knowledge, that such a process had been applied as a permanent one to a water supply.",
+    "Chlorine had been used before, in emergencies: at Maidstone in England during the typhoid epidemic of 1897, and at Lincoln in 1904–05. What was new was a city's whole supply, every day. Leal died in Paterson on 13 March 1914, aged 55. By David Cutler and Grant Miller's study of thirteen American cities from 1900 to 1936, clean water, filtered and chlorinated together, accounts for nearly half the fall in total mortality, three-quarters of the fall in infant mortality and nearly two-thirds of the fall in child mortality."
+  ],
+  "bio": {
+    "t": "The Chlorine Revolution: Water Disinfection and the Fight to Save Lives",
+    "a": "Michael J. McGuire",
+    "y": "2013",
+    "why": "The only full account of the Jersey City case, by an engineer who read the trial record. Its author also campaigns for Leal's credit, and his blog gets two of the case's dates wrong, so check its dates against the 1909 Proceedings, which are free and short. This house has not opened the book."
+  },
+  "contested": "Who should get the credit. McGuire argues that George Johnson, who ran the plant and outlived Leal by about twenty years, took the credit that belonged to Leal; the historian M. N. Baker, in The Quest for Pure Water, is cited for the same view. The 1909 papers this house has read do not show a quarrel yet: there Leal claims the idea, and Rudolph Hering, in discussion, thanks Leal, Fuller and Johnson together. What Johnson wrote later has not been opened here. What the numbers can bear is the other question. Cutler and Miller combine filtration and chlorination, say filtration was the more effective, and say they have little variation with which to measure chlorination alone; their estimate of the drop in total mortality is a regression result with a wide interval. No figure in this entry is a Jersey City typhoid rate, because no before-and-after count for the city was opened. Nor was the special master's report of 1910.",
+  "across": [
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— who showed in 1854 that cholera travelled in water; Leal made a city's water safe without waiting for the sewers."
+    }
+  ],
+  "facts": [
+    {
+      "b": "5 May 1858 · 13 March 1914",
+      "s": "Birth at Andes and death at Paterson: Wikipedia, 'John L. Leal'; Michael J. McGuire, safedrinkingwater.com, 25 September 2012"
+    },
+    {
+      "b": "1 May 1908 · 4 June 1908 · ninety days",
+      "s": "The Chancery opinion and the decree: opinion of Vice Chancellor Stevens, Jersey City v. Jersey City Water Supply Co., filed 1 May 1908 (Internet Archive scan); the decree as Leal quotes it, 'The Sterilization Plant of the Jersey City Water Supply Company at Boonton, N.J.', Proceedings of the American Water Works Association, 1909, p. 104"
+    },
+    {
+      "b": "16 June 1908 · 26 September 1908 · 14 cents",
+      "s": "Engaging Hering and Fuller, the start of the plant and the cost: Leal, Proceedings of the American Water Works Association, 1909, pp. 100–09 (Internet Archive scan); other accounts date the engagement 19 June"
+    },
+    {
+      "b": "1.4 parts per million · 36 pounds · 0.2 parts · 5 pounds",
+      "s": "The first and later doses: George A. Johnson, in the same Proceedings, 1909, 'Amounts of chemical applied'; Leal, p. 107, gives 0.2 as usual and 0.35 in high water"
+    },
+    {
+      "b": "1897 · 1904–05",
+      "s": "Earlier, temporary chlorination at Maidstone and Lincoln: Leal, Proceedings, 1909, pp. 100–01"
+    },
+    {
+      "b": "thirteen cities · 1900–1936 · nearly half · three-quarters · nearly two-thirds",
+      "s": "Clean water's share of the mortality decline, filtration and chlorination counted together: David M. Cutler and Grant Miller, 'The Role of Public Health Improvements in Health Advances', NBER Working Paper 10511, May 2004, abstract"
+    }
+  ]
+}

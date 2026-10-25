@@ -1,0 +1,47 @@
+{
+  "id": "raphael-lemkin",
+  "no": 134,
+  "keep": "Lemkin's first proposal to make the destruction of a people a crime was never argued in person. Poland refused him a visa to Madrid in 1933, and the delegates turned it down.",
+  "n": "Raphael Lemkin",
+  "years": "1900–1959",
+  "place": "Poland and New York",
+  "field": "Law & Human Rights",
+  "group": "obscure",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "conic",
+  "lede": "A Polish lawyer who had to leave Poland in 1939, he invented a word in a book of occupation law. Four years later the United Nations made it a crime.",
+  "copy": [
+    "Raphael Lemkin was born in 1900 and practised law in Poland. In 1933, the year Hitler came to power, he drafted proposals for an international conference on criminal law in Madrid, held under the League of Nations. He wanted two new crimes: barbarity, acts directed against people as members of a national, religious or racial group, and vandalism, the destruction of a group's art and culture. The Polish government refused him a visa, for fear, as one account puts it, of 'anti-German propaganda'. His papers went to Madrid without him, and the states there did not accept them.",
+    "After the invasion of 1939 he got out, and reached the United States. In 1944 the Carnegie Endowment for International Peace published his Axis Rule in Occupied Europe, a long study of the laws the Germans imposed in the countries they took. In its ninth chapter he joined the Greek genos, a race or tribe, to the Latin -cide, killing, and made the word genocide. Then he spent the rest of his life lobbying for a treaty.",
+    "On 9 December 1948 the United Nations General Assembly adopted the Convention on the Prevention and Punishment of the Crime of Genocide, Resolution 260 (III) A. It was to come into force ninety days after the twentieth state ratified it. The definition protects national, ethnical, racial and religious groups; political groups were in the drafts and were taken out. The United States did not pass the law to ratify it until 1988. Lemkin died in New York in 1959, poor."
+  ],
+  "bio": {
+    "t": "Totally Unofficial: The Autobiography of Raphael Lemkin",
+    "a": "Raphael Lemkin, edited by Donna-Lee Frieze",
+    "y": "2013",
+    "why": "His own account, published more than fifty years after his death. Douglas Irvin-Erickson's Raphael Lemkin and the Concept of Genocide (2017) is the scholarly life; Philippe Sands's East West Street (2016) sets him beside another lawyer of the period, Hersch Lauterpacht. This house has read none of the three, and checks the autobiography against them."
+  },
+  "contested": "What genocide was meant to cover. A. Dirk Moses argues, in The Problems of Genocide (2021), that the Convention's definition, shaped by the Holocaust, narrowed Lemkin's wider concept, which took in colonial conquest and the destruction of cultures; this house has read only summaries of that argument. Why political groups were dropped is told as a Soviet campaign, and the drafting records that would show it were not opened. The poignant details of his life are softer than they are usually printed. That he lost forty-nine relatives in the Holocaust is repeated everywhere, but no one opened here gives its origin; a brother, his wife and their two children survived. That seven people came to his funeral is attributed to A. M. Rosenthal of the New York Times, in a column not found. His death is dated 27, 28 and 29 August 1959 in different sources. The Nobel archive is reported to list ten nominations between 1950 and 1959; its pages refused every read here. Whether he presented at Madrid in 1933 is itself argued: older accounts say he did, while Waller, followed by the Getty paper, says Poland kept him home.",
+  "across": [],
+  "facts": [
+    {
+      "b": "1933",
+      "s": "The Madrid proposals, the refused visa and their rejection: Edward C. Luck, 'Cultural Genocide and the Protection of Cultural Heritage', J. Paul Getty Trust Occasional Papers in Cultural Heritage Policy, no. 2, 2018, citing Lemkin, Axis Rule, p. xiii and p. 91, and James Waller, Confronting Evil (2016), pp. 6–7"
+    },
+    {
+      "b": "1944",
+      "s": "Axis Rule in Occupied Europe and the coining of the word: Luck, Getty Occasional Papers, 2018, citing Axis Rule, p. xi; the book itself not opened"
+    },
+    {
+      "b": "9 December 1948 · ninety days · twentieth",
+      "s": "Adoption and entry into force: Convention on the Prevention and Punishment of the Crime of Genocide, header and Article XIII, Avalon Project, Yale Law School"
+    },
+    {
+      "b": "1948 · 1988",
+      "s": "American signature and the implementing act: Wikipedia, 'Genocide Convention Implementation Act of 1987'; the deposit of ratification not opened"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "benjamin-lay",
+  "no": 132,
+  "keep": "The famous blood-filled Bible is in neither of the two first accounts. One has a bladder of blood, the other poke-berry juice in a hollowed book, and neither writer was there.",
+  "n": "Benjamin Lay",
+  "years": "c. 1682–1759",
+  "place": "Barbados and Abington, Pennsylvania",
+  "field": "Abolition & Religion",
+  "group": "obscure",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "A sailor who called himself illiterate, about four feet tall and hunchbacked, disowned by the Quakers of his own day. He told them that keeping slaves was apostasy, decades before they agreed.",
+  "copy": [
+    "Benjamin Lay was an English Quaker and a sailor. In 1717, by his first biographer's account, his own meeting in England disowned him; no charge of immoral conduct was ever laid against him. In 1718 he moved to Barbados and went into trade. He was there thirteen years, and left in 1731 for Philadelphia. Roberts Vaux, writing in 1815, gives his height as four feet seven inches, with a large head, a hunched back and a projecting chest. Benjamin Rush, writing in 1798, put him at not much above four feet.",
+    "In Pennsylvania he made himself impossible to ignore. His book, All Slave-Keepers That Keep the Innocent in Bondage, Apostates, came out in Philadelphia dated 1737; he gave it away. Its last page asks the reader to remember that it was written 'by one that was a poor common sailor, and an illiterate man'. Rush says he took the manuscript to Benjamin Franklin to print. The scene everyone knows came at an annual meeting at Burlington, New Jersey. By Vaux's account Lay hid a bladder of poke-berry juice inside a large book with its pages cut out, wore a sword under his greatcoat, and ran the book through in front of the meeting. Rush's version, printed in 1798, has a bladder of blood, the sword, and women fainting. Vaux had it from a doctor, who had it from a neighbour who saw it.",
+    "For a time he lived in a cave, where, Vaux says, the governor and Franklin came to visit him. Late in his life a friend told him that the Quakers had resolved to disown members who would not give up holding or trading slaves. Vaux records his answer: 'Thanksgiving and praise be rendered unto the Lord God,' and then, 'I can now die in peace.' He died on 3 February 1759, and was buried in the Friends' ground at Abington. He left the Abington Friends forty pounds by spoken will for the schooling of poor children. His whole estate came to £518 12s 9d."
+  ],
+  "bio": {
+    "t": "The Fearless Benjamin Lay: The Quaker Dwarf Who Became the First Revolutionary Abolitionist",
+    "a": "Marcus Rediker",
+    "y": "2017",
+    "why": "The only modern life, drawing on the Quaker meetings' own minutes. Read Vaux's short memoir of 1815 alongside it; it is free, and it is where most of the stories start. This house has read Vaux and Rush, not Rediker."
+  },
+  "contested": "Two things. First, what Rediker's subtitle claims. Stephen Angell, reviewing the book in Quaker Theology, says Lay did not think of himself as a radical, owed a large debt to earlier Quakers, and that Rediker's stress on non-Quaker sources is profoundly misleading; he still calls the book a great advance on anything before it. Vaux himself paired Lay with Ralph Sandiford, an earlier Philadelphia writer against slavery, which is reason to hedge the word first. Second, what the Quakers decided in 1758. Vaux's friend reported a resolution to disown members who would not stop holding or importing slaves. Haverford College's guide to the Quakers and slavery, read here only in a search summary, says the 1758 minute reached the trade, and that holding slaves became a ground for disownment only in 1776. This house has not read the minute. The details of the Burlington scene are unsettled too: the place and props come from Vaux, the date usually given, September 1738, from neither early source, and the word Bible from neither.",
+  "across": [
+    {
+      "to": "lives:benjamin-franklin",
+      "label": "Benjamin Franklin",
+      "txt": "— who printed Lay's book, by Rush's account, and visited him in his cave, by Vaux's."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1717 · 1718 · thirteen years · 1731",
+      "s": "The disownment in England, Barbados and the move to Philadelphia: Roberts Vaux, Memoirs of the Lives of Benjamin Lay and Ralph Sandiford (Philadelphia, 1815), read in the Internet Archive scan"
+    },
+    {
+      "b": "four feet seven inches · not much above four feet",
+      "s": "His height: Vaux (1815); Benjamin Rush, 'Biographical anecdotes of Benjamin Lay', in Essays, Literary, Moral and Philosophical (Philadelphia, 1798), pp. 305–10, read in the Internet Archive scan"
+    },
+    {
+      "b": "1737",
+      "s": "The book's date and title: Vaux (1815), transcribing the title and last page; the University of Geneva's Virtual Library of Slavery, which gives the imprint as Philadelphia, Benjamin Franklin, 1737 [1738]"
+    },
+    {
+      "b": "3 February 1759 · forty pounds · £518 12s 9d",
+      "s": "His death, the bequest and the inventory of his estate: Vaux (1815)"
+    }
+  ]
+}

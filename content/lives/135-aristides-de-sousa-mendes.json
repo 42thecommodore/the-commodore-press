@@ -1,0 +1,55 @@
+{
+  "id": "aristides-de-sousa-mendes",
+  "no": 135,
+  "keep": "Nobody counted the people Sousa Mendes saved. The 30,000 first appears in a 1964 article; his foundation has found 4,103 names, and says thousands more were never written down.",
+  "n": "Aristides de Sousa Mendes",
+  "years": "1885–1954",
+  "place": "Bordeaux and Lisbon",
+  "field": "Diplomacy",
+  "group": "obscure",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "Told in writing which refugees not to help, he helped them anyway, and was ruined for it.",
+  "copy": [
+    "Aristides de Sousa Mendes was born on 19 July 1885 in Cabanas de Viriato, in the Portuguese district of Viseu, and joined his country's consular service. In 1940 he was Portugal's consul in Bordeaux. Portugal, under Salazar, was neutral and wary. On 11 November 1939 the government had sent its consuls Circular 14, which listed refugees to be refused visas without Lisbon's say: among them, in Wikipedia's rendering, 'Jews expelled from their countries or those from whence they issue, stateless persons'.",
+    "He bent the rule from the start. On 29 May 1940 he gave visas to three refugee families after a telegram from Salazar had turned them down. In mid-June, with the German army advancing and Bordeaux full of people trying to reach Spain and Portugal, he began signing visas for anyone who asked, in Bordeaux and then at Bayonne. On 22 June Lisbon sent two cablegrams ordering him to stop. He was at Hendaye, on the border, and missed them, and went on issuing visas on the road home. He reached Portugal on 8 July.",
+    "On 19 October 1940 a disciplinary board found him guilty of disobeying higher orders and recommended demotion. Salazar made it harsher: on 30 October he was sentenced to a year's inactivity on half his rank's pay, and then forced retirement. He died in Lisbon on 3 April 1954, owing money and still in disgrace. In 1966 Yad Vashem recognised him as Righteous Among the Nations. On 18 March 1988 Portugal's parliament, unanimously, dismissed the charges. In 2020 he was voted into the National Pantheon in Lisbon, with a ceremony the next year. His foundation has so far identified 4,103 people by name who received his visas."
+  ],
+  "bio": {
+    "t": "A Good Man in Evil Times: The Story of Aristides de Sousa Mendes",
+    "a": "José-Alain Fralon",
+    "y": "2000",
+    "why": "The English life, by a French journalist, and the book most later accounts cite for the trial and sentence. Rui Afonso's Portuguese biography is the archival one. This house has read neither, and chose the one an English reader can find."
+  },
+  "contested": "How many he saved. The figure on memorials and in newspapers, 30,000 people of whom 10,000 were Jews, is traced by the Yad Vashem historian Avraham Milgram to a 1964 article by the lawyer Harry Ezratty, who, on Milgram's reading, took the whole number of Jewish refugees who passed through Portugal and credited it to one man. Milgram and Neill Lochery count 2,862 visas issued at Bordeaux between 1 January and 22 July 1940. Eric Lebreton replies that this leaves out Bayonne, Hendaye and Toulouse, where no registers were kept; the Sousa Mendes Foundation says the same of the missing registers, and cites an eyewitness who saw 5,000 people in line at Bayonne. Olivia Mattis, for the Foundation, argues that tens of thousands is the right order of magnitude, and a 2021 resolution of the United States Senate says tens of thousands of visas. The units differ, people against visas, one city against several, and nobody's number can be subtracted from anyone else's. This house has opened the Foundation's page and the Senate's resolution, and none of the historians' work.",
+  "across": [],
+  "facts": [
+    {
+      "b": "19 July 1885 · 11 November 1939 · 29 May 1940 · 22 June · 8 July",
+      "s": "His birth, Circular 14, the May visas, the cablegrams and his return: Wikipedia, 'Aristides de Sousa Mendes', citing Spared Lives (2000) and Rui Afonso; the circular's Portuguese text not opened"
+    },
+    {
+      "b": "19 October 1940 · 30 October 1940 · 3 April 1954",
+      "s": "Verdict, sentence and death: Wikipedia, 'Aristides de Sousa Mendes', citing José-Alain Fralon (2000), pp. 114–15, and Mordecai Paldiel (2007), p. 268"
+    },
+    {
+      "b": "1966 · 18 March 1988 · 2020",
+      "s": "Yad Vashem, the parliamentary vote and the Pantheon: Wikipedia, 'Aristides de Sousa Mendes'; the Yad Vashem record refused every read"
+    },
+    {
+      "b": "4,103",
+      "s": "Visa recipients identified by name: Sousa Mendes Foundation, 'Visa Recipients', read 23 October 2026; the figure grows as names are found"
+    },
+    {
+      "b": "30,000 · 10,000 · 1964",
+      "s": "The origin of the large figure: Harry Ezratty, Jewish Life, 1964, as Avraham Milgram traces it, in Wikipedia, 'Aristides de Sousa Mendes'; neither Ezratty nor Milgram opened"
+    },
+    {
+      "b": "2,862",
+      "s": "Visas issued at Bordeaux from 1 January to 22 July 1940, Bayonne and the other towns excluded: Avraham Milgram and Neill Lochery, as cited in Wikipedia, 'Aristides de Sousa Mendes'"
+    }
+  ]
+}

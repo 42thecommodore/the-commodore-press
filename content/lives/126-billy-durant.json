@@ -24,7 +24,7 @@
     "y": "1973 / 2008",
     "why": "The book behind the Founders episode, by a Flint journalist who worked from Durant's own autobiographical notes. John Steele Gordon, in American Heritage, calls Bernard Weisberger's The Dream Maker (1979) the best full life; neither book has been read here."
   },
-  "contested": "How poor he was at the end. Niemeyer and Flink say he kept enough for a comfortable living; the Detroit Historical Society and the Durant Motors museum foundation say Walter Chrysler and Alfred Sloan helped support him, and both can be true. Whether 1920 was his fall alone. GM's own heritage page tells it that way and says he left without any money; Niemeyer and Flink answer that the du Pont interests held 28.7 per cent of the common stock by 1919 and that John Raskob was at least as responsible for the expansion as Durant. What he lost is given as $90 million by Gordon and by GM, against holdings Niemeyer and Flink put at $105 million on paper; the two figures count different things. The exact debt of $914,000 often printed for 1936 comes from no document opened here. GM's founding is dated 16 September 1908 by GM and 8 September by the Detroit Historical Society, and his death 18 March 1947 or the 19th.",
+  "contested": "How poor he was at the end. Niemeyer and Flink say he kept enough for a comfortable living; the Detroit Historical Society and the Durant Motors museum foundation say Walter Chrysler and Alfred Sloan helped support him, and both can be true. Whether 1920 was his fall alone. GM's own heritage page tells it that way and says he left without any money; Niemeyer and Flink answer that the du Pont interests held 28.7 per cent of the common stock by 1919 and that John Raskob was at least as responsible for the expansion as Durant. What he lost is given as $90 million by Gordon and by GM, against holdings Niemeyer and Flink put at $105 million on paper; the two figures count different things. What he owed in 1920 is counted two ways as well: more than $20 million to twenty-one brokers and three banks by Niemeyer and Flink, and $27 million to forty-four brokerage houses by Dow, Jones & Co. at the time, as Lawrence Seltzer reported it in 1928. Seltzer also puts the bankers’ terms of 1910 lower: about $12.5 million in cash for the $15 million of notes, and a bonus of $5,169,200 in preferred stock at par. The exact debt of $914,000 often printed for 1936 comes from no document opened here. GM's founding is dated 16 September 1908 by GM and 8 September by the Detroit Historical Society, and his death 18 March 1947 or the 19th.",
   "across": [
     {
       "to": "lives:henry-m-leland",
@@ -35,6 +35,11 @@
       "to": "lives:walter-chrysler",
       "label": "Walter Chrysler",
       "txt": "— whom Durant paid $500,000 a year to run Buick, and who sold his stock back to him and left in 1920."
+    },
+    {
+      "to": "lives:charles-kettering",
+      "label": "Charles Kettering",
+      "txt": "— whose Delco was sold to Durant’s United Motors in 1916."
     }
   ],
   "facts": [
@@ -65,6 +70,14 @@
     {
       "b": "1940 · seventy-eight · 1942 · 18 March 1947",
       "s": "The bowling centre, the stroke and his death: Glenn A. Niemeyer and James J. Flink, 'The General of General Motors', American Heritage 24:5, August 1973; Durant Motors Automobile Museum Foundation, 'Durant history'"
+    },
+    {
+      "b": "forty-four · $27 million",
+      "s": "Durant’s debt to brokers in 1920, as Dow, Jones & Co. estimated it: Lawrence H. Seltzer, A Financial History of the American Automobile Industry (Houghton Mifflin, 1928), p. 205 (read in the Internet Archive scan)"
+    },
+    {
+      "b": "about $12.5 million · $5,169,200",
+      "s": "The cash for General Motors’ 1910 notes and the bankers’ bonus of preferred stock, at par: Seltzer (1928), p. 165"
     }
   ]
 }

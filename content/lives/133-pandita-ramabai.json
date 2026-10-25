@@ -1,0 +1,59 @@
+{
+  "id": "pandita-ramabai",
+  "no": 133,
+  "keep": "Ramabai promised her American backers a school that would leave Hindu girls' faith alone. When pupils asked to be baptised she held them back, and twenty-five were taken away anyway.",
+  "n": "Pandita Ramabai",
+  "years": "1858–1922",
+  "place": "Poona and Kedgaon, India",
+  "field": "Religion & Education",
+  "group": "obscure",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "lede": "A Brahmin widow who knew the Sanskrit scriptures well enough that the pundits of Calcutta named her after the goddess of learning. She spent the rest of her life on the widows her religion left with nothing.",
+  "copy": [
+    "Ramabai was born in 1858 into a Brahmin family, and learned the sacred books in Sanskrit. In Calcutta Ramabai so impressed the city's learned men that, in Helen Dyer's account of 1900, 'a solemn conclave of Pandits bestowed on her the title of Sarasvati'. Dyer adds that she was the only woman permitted to call herself Pandita. Married, then widowed with a baby daughter, she went to Poona. When the government's Education Commission sat there in September 1882, she told it that girls' schools needed trained women teachers and women inspectors, and that women should be able to study medicine.",
+    "In England, at Wantage, she was baptised into the Church of England on 29 September 1883. In Philadelphia in 1887 she published The High-Caste Hindu Woman, an attack on the treatment of widows and an appeal for money. Supporters in Boston formed the Ramabai Association, whose circles pledged a sum every year for ten years. The school was to be neutral: Hindu pupils, Dyer writes, 'were to have full liberty to retain their caste, and perform their religious observances'. She landed in Bombay on 1 February 1889, and six weeks later opened the Sharada Sadan, the Abode of Wisdom, for widows.",
+    "It did not stay neutral in anyone's eyes. When girls who had heard her read the Bible asked for baptism, she wanted them to remain unbaptised while they were pupils. The Hindu members of the school's advisory board still resigned, and wrote to parents asking them not to send their girls; about twenty-five were taken away. In the famine of 1897 she set out to rescue three hundred girls; her helpers gathered five to six hundred starving women and children, and she passed the rest to other missions. That work became Mukti, her settlement at Kedgaon. She spent her last years translating the Bible into Marathi from the Hebrew and Greek, and died at Kedgaon on 5 April 1922."
+  ],
+  "bio": {
+    "t": "Rewriting History: The Life and Times of Pandita Ramabai",
+    "a": "Uma Chakravarti",
+    "y": "1998",
+    "why": "The scholar's book, which places her among the Brahmin reformers and the patriarchy she argued with, and reads her against the missionary accounts. Dyer's life of 1900, free to read, is the missionary account: warm, close to its subject and on one side. This house has read Dyer and not Chakravarti."
+  },
+  "contested": "Whether she kept her promise. The High-Caste Hindu Woman and the Boston association promised a school that would neither disturb its pupils' religion nor speak irreverently of any. Her Hindu supporters left because, in their reading, a school run by a Christian convert could not be neutral; Ramabai told a Madras paper that she would not restrict her contact with the girls, and that under a Christian head they must be more or less under Christian influence. Nationalist critics read her baptism as a betrayal; the missionary books, Dyer's above all, read her as a saint. Uma Chakravarti argues that Indian history long suppressed her for the first reason. Several things usually printed about her are less certain than they look. The title Pandita is often said to have been conferred by Calcutta University; Dyer and Bodley both describe a gathering of pundits, and Dyer has her permitted the word, not given it. Mukti's numbers range from 1,400 to 2,400 in different sources and years, so none is printed here. That she finished the Bible translation hours before she died comes from devotional accounts, not from the mission's records.",
+  "across": [],
+  "facts": [
+    {
+      "b": "September 1882",
+      "s": "Her evidence to the Education Commission at Poona: Rachel Bodley's introduction to The High-Caste Hindu Woman (Philadelphia, 1887), read in the Lehigh University transcription; what she argued, Helen S. Dyer, Pandita Ramabai: The Story of Her Life (1900), read in the Internet Archive scan"
+    },
+    {
+      "b": "29 September 1883",
+      "s": "Her baptism at Wantage: Dyer (1900)"
+    },
+    {
+      "b": "1887",
+      "s": "The book: title page of The High-Caste Hindu Woman, Pundita Ramabai Sarasvati (Philadelphia: Jas. B. Rodgers Printing Co., 1887)"
+    },
+    {
+      "b": "ten years · 1 February 1889 · six weeks",
+      "s": "The Boston circles' pledge, her landing at Bombay and the opening of the Sharada Sadan: Dyer (1900)"
+    },
+    {
+      "b": "about twenty-five",
+      "s": "Girls withdrawn after the advisory board resigned: Dyer (1900), chapter V, quoting Ramabai's interview in a Madras paper"
+    },
+    {
+      "b": "three hundred · five to six hundred · 1897",
+      "s": "The famine rescue: Dyer (1900), chapters VIII–IX"
+    },
+    {
+      "b": "5 April 1922",
+      "s": "Her death at Kedgaon: Keith J. White, 'Jesus Was Her Guru', Christian History 87; Wikipedia, 'Pandita Ramabai'"
+    }
+  ]
+}

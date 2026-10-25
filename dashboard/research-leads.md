@@ -542,3 +542,48 @@ was compared with the record's own image and matched:
   Smithsonian and Science History Institute plates.
 
 Correction 21 prints what the colophon had said.
+
+## 2026-10-24: ten lives, № 129–138, what was named but not opened
+Written as part of a batch numbered № 122–135 and renumbered 2026-10-25, before publication. The batch’s rows for Durant, Lasker, Duveen and Bosch are under the reconciliation below.
+
+Researched by fifteen press-researcher sweeps (Durant twice). Pages marked opened were read through the fetch tool's summary unless noted; Bosch's Nobel lecture, the HUAC volume, Hopkins (1927), Behrman (1952), Seltzer (1928), the 1909 AWWA Proceedings, Vaux (1815), Rush (1798) and Dyer (1900) were read as raw text.
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Disney | Michael Barrier, *Hollywood Cartoons* (1999), pp. 125–26, 229; Gabler (2006) | Snow White's cost, read through Wikipedia |
+| Disney | Los Angeles County death certificate; Forest Lawn record | The cremation, from Korkis only |
+| Disney | *The Disneyland Story*, ABC, 27 October 1954 | 'It was all started by a mouse'; not printed |
+| Disney | NLRB findings, 1941; Sito (2006); Friedman | The strike, in `contested` only |
+| Ferrari | Act of birth no. 287/1898, Archivio di Stato di Modena; Osservatorio Geofisico, February 1898 | The snow story |
+| Ferrari | Baime, *Go Like Hell* (2009); Ford Motor Company Archives, May 1963 | The price, $10m or $18m |
+| Ferrari | Cocconcelli (2024), full; Brescia court record, 1957–61 | Dismissed before trial, or acquitted |
+| Ritz | Levy, *Daily Telegraph*, 9 June 2012; the Savoy archive | £3,400 or £3,476 |
+| Ritz | ODNB (Allen); Historisches Lexikon der Schweiz; *The Times*, 24 July 1899 | Family size, the Brig story, the Carlton |
+| Lay | PYM minutes 1738 and 1758; Abington and Philadelphia monthly meeting minutes; Rediker's endnotes | The date, the 1758 minute's reach, the disownments |
+| Lay | Library of Congress title page (66038906); Franklin Papers | Franklin as printer; 1737 or 1738 |
+| Ramabai | Report of the Indian Education Commission (1882–83), Bombay evidence; Shah, *Letters and Correspondence* (1977) | Her testimony verbatim; her quarrel with Anglican authority |
+| Ramabai | Mukti annual reports; Massachusetts Historical Society, Andrews correspondence | Numbers and money; not printed |
+| Lemkin | *Axis Rule in Occupied Europe* (1944), ch. IX; Madrid conference proceedings, 1933; Waller (2016) | The definition verbatim; the visa |
+| Lemkin | nobelprize.org nomination archive (403); NYT obituary, August 1959; Frieze (2013) | Ten nominations; the death date; the 49 relatives |
+| Sousa Mendes | Milgram (1999, 2011); Ezratty (1964); *Spared Lives* (2000), pp. 81–82; Fralon pp. 114–15 | Every count; Circular 14 in Portuguese; the sentence |
+| Sousa Mendes | Yad Vashem Righteous record (403); Assembleia da República, 1988 | Recognition and rehabilitation, read through Wikipedia |
+| Leal | Magie's special master report, 1910; McGuire (2013); Johnson's later writings | The finding; the credit dispute |
+| Leal | Cutler and Miller, *Demography* 42:1 (2005) | The published wording, against the 2004 working paper read |
+| Landsteiner | The 1901 paper (LITFL translation, 403); Levine and Stetson, *JAMA* 1939; Landsteiner and Wiener, 1940 | Group count, people tested, Rh priority |
+| Landsteiner | Concise Dictionary of American Jewish Biography | The 1937 suit's outcome |
+| Łukasiewicz | Austrian privilege registers, 1853–54; Kozicka-Kołaczkowska (2022, 403); Bonusiak (2019); Tomanek (1928) | The patent; the hospital story's first account; Zeh's claim |
+| Plates | Lemkin (Center for Jewish History P-154), Sousa Mendes (sousamendes.org photo bank), Leal (Commons, 'own work') | Held back; a cleared source would end the gap |
+
+## 2026-10-25: reconciling two drafts of Durant, Lasker, Duveen and Bosch
+Opened and read as raw text by a press-researcher sweep: Seltzer (1928), Internet Archive `financialhistory00selt`; Behrman, *Duveen*, Internet Archive `dli.ernet.523209` (catalogued 1953); Getty, 'Knoedler, Mellon, and an Unlikely Sale' (Meyer-Roux, 30 July 2013, now at getty.edu/news/treasures-from-the-vault-knoedler-mellon-and-an-unlikely-sale/). Read through the fetch tool's summary: American Heritage, Niemeyer and Flink (1973); ANBHF, 'Albert Lasker'; TIME, 'Shipping: The Next Move', 18 June 1923.
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Duveen | Behrman, 'The Days of Duveen', *The New Yorker*, 29 September 1951 (the fetch tool is refused) | The live page's 95 of 115; the book says 55 |
+| Duveen | National Gallery of Art provenance records, Mellon gift | Behrman's count is a journalist's, not a catalogue |
+| Duveen | Getty, the sentence naming Knoedler as Mellon's route | Only 'Duveen did not succeed in purchasing a single painting from the Hermitage' was read |
+| Durant | Evening Star (Washington), 9 February 1936, AP; Carolina Watchman, 14 February 1936 | The $914,231, from the unpublished draft; not found on page 1 of the Star |
+| Durant | Seltzer (1928), pp. 205–07, Du Pont's 1920 annual report | 2,504,273 shares for $23,790,600 and 40,000 Du Pont Securities shares, against 'about 3,000,000' in the New-York Tribune |
+| Bosch | Umweltbundesamt, *Umweltchronik*, 'Oppau'; BASF, '100th anniversary of the Oppau explosion' | 561 dead is quoted by Rheinpfalz and chemie.de, 559 elsewhere; the agency page was not found |
+| Bosch | Erisman et al., *Nature Geoscience* 1:636, 2008 | The 48 per cent, read by the unpublished draft and not reopened |
+| Lasker | TIME, 'Shipping: From Chicago; to Chicago', 19 May 1923 | The live page's 12 June 1923; the sweep could not find the article |

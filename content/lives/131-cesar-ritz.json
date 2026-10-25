@@ -1,0 +1,65 @@
+{
+  "id": "cesar-ritz",
+  "no": 131,
+  "keep": "The Savoy sacked him in March 1898 and the Paris Ritz opened that June. The confessions came later, and stayed in an envelope for eighty-three years.",
+  "n": "César Ritz",
+  "years": "1850–1918",
+  "place": "Niederwald, London and Paris",
+  "field": "Hotels",
+  "group": "obscure",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "Born in a mountain village in the Valais, and told at fifteen, his widow wrote, that he had no flair for hotels. He gave his name to the word for luxury, and signed a confession for theft.",
+  "copy": [
+    "César Ritz was born on 23 February 1850 in Niederwald, a village in the Swiss Valais, At fifteen he spent a summer as a wine waiter. In his widow's memoir of 1938 the proprietor tells him, 'You'll never make anything of yourself in the hotel business.' Paul Levy, who quotes it, calls the memoir unreliable, so the line is hers. He went on to the Savoy in London, where D'Oyly Carte, having courted him for some time, offered him £1,200 a year as general manager. He brought Louis Echenard, his deputy and wine buyer, and the chef Auguste Escoffier.",
+    "On 7 March 1898 the Savoy sacked all three, in Levy's words 'for larceny, embezzlement, and fraud.' Ritz answered by persuading the other two to sue for wrongful dismissal. The Savoy countersued. On 3 January 1900 all three signed confessions. Ritz's, as Levy describes it, admits to wine worth £3,476, some of it poured for investors in his own schemes. Escoffier took a 5 per cent commission in cash from suppliers, who made it up by shorting their deliveries. He paid back £500 of the £8,000 he owed. The Savoy recovered £19,137, by Luke Barr's count, in a year when the hotel's whole profit was £20,276.",
+    "None of this slowed him. The Hôtel Ritz in Paris opened on 1 June 1898, three months after the sacking. The Carlton in London followed in 1899, with Escoffier in its kitchen. In 1902 Ritz had what Barr calls a final nervous breakdown. He died in a clinic at Küssnacht am Rigi on 26 October 1918, aged 68. The Savoy never published the confessions. Copies reached Levy, then food and wine editor of the Observer, in an envelope from an Observer colleague, Sarah Howell, on condition that he did not inquire into their sources. The story came out in 1983."
+  ],
+  "facts": [
+    {
+      "b": "23 February 1850 · 26 October 1918 · 68",
+      "s": "Birth at Niederwald and death at Küssnacht am Rigi: swissinfo.ch, on the centenary of his death, 2018; the Historisches Lexikon der Schweiz entry (not opened) gives the same dates"
+    },
+    {
+      "b": "£1,200",
+      "s": "D'Oyly Carte's salary offer: Paul Levy, 'Ritzy Business', New York Review of Books, 19 July 2018"
+    },
+    {
+      "b": "7 March 1898 · 3 January 1900",
+      "s": "The sacking and the signed confessions: Levy, New York Review of Books, 19 July 2018. Wikipedia's Escoffier article gives 8 March"
+    },
+    {
+      "b": "£3,476 · 5 per cent · £500 · £8,000",
+      "s": "Ritz's wine, Escoffier's commission and repayment, as Levy describes the confessions and supporting papers he was given: Levy, New York Review of Books, 19 July 2018"
+    },
+    {
+      "b": "£19,137 · £20,276",
+      "s": "Sums recovered and the Savoy's profit that year: Luke Barr, Ritz and Escoffier (2018), as quoted by Levy, New York Review of Books, 19 July 2018"
+    },
+    {
+      "b": "1 June 1898",
+      "s": "The Paris opening: Wikipedia, 'Hôtel Ritz Paris', citing Ryersson and Yaccarino (2004) and Metzelthin (1981); no contemporary notice opened"
+    },
+    {
+      "b": "1899 · 1902 · 1983",
+      "s": "The Carlton, the breakdown and the date the scandal emerged: Levy, New York Review of Books, 19 July 2018; the Carlton's year also Wikipedia, 'Carlton Hotel, London'"
+    }
+  ],
+  "bio": {
+    "t": "Ritz & Escoffier: The Hotelier, the Chef, and the Rise of the Leisure Class",
+    "a": "Luke Barr",
+    "y": "2018",
+    "why": "The book behind the Founders episode, and the first to tell the Savoy affair from the hotel's side. Read it with Levy's review beside it: Barr narrates what his characters are thinking with no source cited. Marie Louise Ritz's César Ritz: Host to the World (1938) is the widow's book, and gives the version in which he was never sacked."
+  },
+  "contested": "How much was taken, and from whom. The figures do not reconcile. Levy, who holds copies of the confessions, puts Ritz's wine at £3,476; the Daily Telegraph, in a 2012 piece by Levy that this house has not opened, is reported as giving £3,400 in the first half of 1897; Barr has the Savoy recovering £19,137; Wikipedia's Escoffier article says the hotel lost more than £16,000 and that Ritz repaid £4,173, a figure found nowhere else opened here. Nobody outside the Savoy has published the ledgers. Escoffier's defence, that kickbacks were the custom of the trade, is answered by the supplier Bellamy's complaint, which Levy calls the best-attested charge: it could not allow the Savoy its discount, pay the chef his cut and supply the managers' homes for nothing. Even the date of the sacking differs by a day, 7 or 8 March, and how Levy got the papers is told two ways: by Levy as an envelope passed on by an Observer colleague, by others as an intern's find. This house follows Levy, who was there.",
+  "across": [
+    {
+      "to": "lives:henry-flagler",
+      "label": "Henry Flagler",
+      "txt": "— who built resort hotels in Florida for the same new leisure class."
+    }
+  ]
+}

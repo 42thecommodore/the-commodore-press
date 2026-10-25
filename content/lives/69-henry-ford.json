@@ -60,6 +60,11 @@
       "to": "lives:henry-m-leland",
       "label": "Henry M. Leland",
       "txt": "— who turned Ford's first company into Cadillac, and lost Lincoln to him in 1922."
+    },
+    {
+      "to": "lives:enzo-ferrari",
+      "label": "Enzo Ferrari",
+      "txt": "— who turned down the Ford company's plan for two companies in 1963, to keep his say over the racing."
     }
   ],
   "plateOf": "About 1919.",

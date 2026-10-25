@@ -1,0 +1,53 @@
+{
+  "id": "enzo-ferrari",
+  "no": 130,
+  "keep": "Ford did not try to buy Ferrari outright in 1963. It offered two companies, and the racing one would have been his; he said no because it would limit his freedom, in racing too.",
+  "n": "Enzo Ferrari",
+  "years": "1898–1988",
+  "place": "Modena and Maranello",
+  "field": "Motor Racing",
+  "group": "famous",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "He was a racing driver who stopped racing at thirty-four and ran a team for Alfa Romeo for ten years. He was forty-nine before a car carrying his own name won a race.",
+  "copy": [
+    "Enzo Ferrari was born in Modena on 20 February 1898, by the date the Italian national biography gives. In 1920 he joined Alfa Romeo at its Portello works in Milan. In 1929 he founded the Scuderia Ferrari as a company to race Alfas. He stopped driving in 1932, the year his son Dino was born. At the end of 1939 he left Alfa, and set up a firm of his own, Auto Avio Costruzioni. In 1943 a law dispersing industry away from the cities moved its production to Maranello.",
+    "His first racing car, the 125, was ready in the spring of 1947. That year his cars won six of the fourteen races they entered, and he sold seven. On 30 June 1956, after a slow decline, Dino died. On 12 May 1957, during the Mille Miglia, a tyre on de Portago's Ferrari burst near Guidizzolo and the car went into the crowd. Eleven people died, the driver and his co-driver among them. Ferrari was charged with failing to fit tyres suited to the car's speed, and was cleared before trial.",
+    "In 1963 Ford came to Maranello. By the account in the Italian national biography, it proposed two companies: one, with a clear American majority, would make road cars; the other, with the stakes reversed in Ferrari's favour, would race. After several months there was no agreement. Ferrari judged that the deal would seriously restrict his freedom of action, in racing too. On 21 June 1969 he and Fiat announced a company with equal shareholdings: Fiat took the road cars, and Ferrari, as president, kept the racing. He died in Modena on 14 August 1988, aged ninety."
+  ],
+  "facts": [
+    {
+      "b": "20 February 1898 · 1920 · 1929 · 1932 · 1939 · 1943",
+      "s": "Birth, Alfa Romeo, the Scuderia, retirement, departure from Alfa and the move to Maranello: Franco Amatori, 'Ferrari, Enzo', Dizionario Biografico degli Italiani, vol. 46 (Treccani, 1996)"
+    },
+    {
+      "b": "six of fourteen · seven · 30 June 1956",
+      "s": "The 1947 season, road cars sold that year, and Dino's death: Amatori, Dizionario Biografico degli Italiani"
+    },
+    {
+      "b": "12 May 1957 · eleven",
+      "s": "The Mille Miglia accident: Amatori, Dizionario Biografico degli Italiani ('la morte di undici persone', driver and co-driver included); the same count in the abstract of Marco Cocconcelli's paper on the three technical reports, History of Mechanism and Machine Science (Springer, 2024), doi 10.1007/978-3-031-54876-5_25"
+    },
+    {
+      "b": "1963 · 21 June 1969 · 14 August 1988",
+      "s": "The Ford proposal, the Fiat company and his death: Amatori, Dizionario Biografico degli Italiani"
+    }
+  ],
+  "bio": {
+    "t": "Enzo Ferrari: The Man, the Cars, the Races, the Machine",
+    "a": "Brock Yates",
+    "y": "1991",
+    "why": "The unauthorised life, and the one that took the myth apart: Publishers Weekly found in it a hot-tempered megalomaniac, none of whose racing cars was a glittering example of daring technology. Check its stories against a second source. Ferrari's own My Terrible Joys (1962) is his side, and Luca Dal Monte's life (2018) was written by a man who once worked for the company."
+  },
+  "contested": "Almost every famous Ferrari line and figure. The price Ford would have paid in 1963 is printed as $10 million and as $18 million; this house found no document giving either, and Ford's own archive and A. J. Baime's Go Like Hell (2009) were not opened. The film version, in which Ford tries to buy Ferrari outright, does not match the two-company plan in the Italian national biography. The lines 'aerodynamics are for people who can't build engines' and 'I build engines and put wheels on them' have no source older than a 2013 blog found here; neither is in Wikiquote, and Amatori has him asking Pininfarina for bodies that would bring out the engine's power, which cuts the other way. His birthday is a third case. Ferrari told the story that snow kept his father from registering him on the 18th, so the register says the 20th; a Ferrari history site says the act, no. 287 of 1898, was filed by the midwife, and that Modena's observatory recorded no snow all that February. The act and the weather record were not opened. Over the Mille Miglia, Wikipedia says he was tried and acquitted in 1961; Amatori says the case was dismissed before trial. Brock Yates's picture of a man who drove his drivers to their deaths has no named rebuttal that this house has found.",
+  "across": [
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— whose company came to Maranello in 1963 with a plan for two companies, and left without either."
+    }
+  ]
+}

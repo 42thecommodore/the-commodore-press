@@ -64,6 +64,11 @@
       "to": "lives:fritz-haber",
       "label": "Fritz Haber",
       "txt": "— whose ammonia worked on a bench for an hour or two; Bosch's plant made it by the tonne."
+    },
+    {
+      "to": "lives:alfred-nobel",
+      "label": "Alfred Nobel",
+      "txt": "— another chemist whose nitrogen went into fields and shells alike, and whose prize Bosch shared in 1931."
     }
   ]
 }

@@ -48,6 +48,11 @@
       "to": "lives:mary-seacole",
       "label": "Mary Seacole",
       "txt": "— who was treating cholera in Jamaica and on the Isthmus of Panama in the years he was working out how it spread."
+    },
+    {
+      "to": "lives:john-l-leal",
+      "label": "John L. Leal",
+      "txt": "— who in 1908 put chlorine into a whole city's water every day, in place of the sewers a court had ordered."
     }
   ]
 }

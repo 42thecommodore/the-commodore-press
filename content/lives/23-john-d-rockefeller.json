@@ -60,6 +60,11 @@
       "to": "lives:henry-flagler",
       "label": "Henry Flagler",
       "txt": "— the partner whose line, a friendship founded on business, Rockefeller wrote down and agreed with."
+    },
+    {
+      "to": "lives:ignacy-lukasiewicz",
+      "label": "Ignacy Łukasiewicz",
+      "txt": "— the Galician pharmacist who distilled lamp oil and built a refinery in 1856, before Standard Oil existed."
     }
   ]
 }

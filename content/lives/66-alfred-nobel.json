@@ -30,6 +30,11 @@
       "to": "lives:fritz-haber",
       "label": "Fritz Haber",
       "txt": "— another chemist whose work cut both ways. Dynamite cut tunnels, and Nobel bought a weapons works."
+    },
+    {
+      "to": "lives:carl-bosch",
+      "label": "Carl Bosch",
+      "txt": "— who turned Haber's ammonia into a works, and shared Nobel's chemistry prize in 1931."
     }
   ],
   "plateOf": "Photograph by Gösta Florman, before 1896, from the Royal Library, via Sweden's image bank.",

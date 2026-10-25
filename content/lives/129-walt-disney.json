@@ -1,0 +1,73 @@
+{
+  "id": "walt-disney",
+  "no": 129,
+  "keep": "Under oath he named an organisation as a Communist front. Ten days later he wrote that he had meant a different one, and the correction is printed in the same volume.",
+  "n": "Walt Disney",
+  "years": "1901–1966",
+  "place": "Kansas City and Burbank",
+  "field": "Animation & Film",
+  "group": "famous",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "His first studio went under in Kansas City in 1923. Five years later he found he no longer owned his own character, and many of his animators had been signed away behind his back.",
+  "copy": [
+    "Laugh-O-gram Films, Walt Disney's first studio, collapsed in July 1923. On 16 October he signed a contract with Winkler. In 1927 his studio's Oswald the Lucky Rabbit reached the screen. In 1928 he went to New York and learned that he did not own the rights to Oswald, and that Mintz had secretly signed many of his artists. He came home and made a mouse. Steamboat Willie opened at the Colony Theater in New York on 18 November 1928.",
+    "In June 1934 Disney put the cost of a feature-length Snow White at $250,000. By the premiere, at the Carthay Circle Theatre on 21 December 1937, it had cost $1,488,422.74, by Michael Barrier's count. At the end of its first run it had earned $7,846,000. For Disneyland the money was harder. In 1954 Walt and his wife Lillian borrowed $60,000 against his life insurance. The park's company was owned in roughly three parts: Walt Disney Productions and the television network ABC–Paramount held about 34.5 per cent each, Western Publishing 13.8, and Walt himself 16.55, for $250,000. The park cost $17 million. It was dedicated before an invited audience on 17 July 1955, and opened to the public the next day.",
+    "In 1941 his animators went on strike. On 24 October 1947 he gave evidence to the House Committee on Un-American Activities. He told it the studio had about 600 people and close to 1,400 at times. Of two union men he said, 'In my opinion they are Communists. No one has any way of proving those things.' Of the groups that put him on the unfair list during the strike, he said 'one that is clear in my mind is the League of Women Voters'. Days later the committee read a telegram from him: he had meant 1941, and had 'no intention of criticizing the League of Women Voters as of now'. On 3 November he wrote from Burbank: 'I regret that I named The League of Women Voters when I intended to name the League of Women Shoppers.'"
+  ],
+  "facts": [
+    {
+      "b": "July 1923 · 16 October 1923",
+      "s": "Laugh-O-gram's collapse and the Winkler contract: Walt Disney Family Museum, blog, on Mrs Davis's letter for the company's hundredth anniversary"
+    },
+    {
+      "b": "1927 · 1928",
+      "s": "Oswald and what Disney found in New York: The Walt Disney Company, 'Happy 85th Anniversary, Oswald the Lucky Rabbit'"
+    },
+    {
+      "b": "18 November 1928",
+      "s": "Steamboat Willie at the Colony Theater: D23, the Disney encyclopedia, 'Steamboat Willie (film)'"
+    },
+    {
+      "b": "$250,000 · $1,488,422.74 · 21 December 1937",
+      "s": "Snow White's estimate, cost and premiere: Michael Barrier, Hollywood Cartoons (1999), pp. 125–26 and 229, as cited in Wikipedia, 'Snow White and the Seven Dwarfs (1937 film)'; the book not opened"
+    },
+    {
+      "b": "$7,846,000",
+      "s": "Snow White's earnings at the end of its original release, attributed to RKO: Wikipedia, 'Snow White and the Seven Dwarfs (1937 film)'; the same article's lead says more than $8 million"
+    },
+    {
+      "b": "$60,000 · 1954",
+      "s": "The loan against his life insurance: Commerce Bank, 'The story of the loan that helped build Disneyland', 20 October 2021, describing the loan record sold by Van Eaton Galleries in May 2021; the record itself not seen"
+    },
+    {
+      "b": "about 34.5 per cent · 13.8 · 16.55 · $250,000",
+      "s": "Disneyland, Inc.'s owners: Bob Thomas, Walt Disney: An American Original (1994), as cited in Wikipedia, 'Disneyland, Inc.', which gives the two large stakes as 34.48 and 34.49 per cent"
+    },
+    {
+      "b": "$17 million · 17 July 1955",
+      "s": "Construction cost and the dedication: Wikipedia, 'Disneyland', citing Katherine and Richard Fanning (1994), p. 102, for the cost"
+    },
+    {
+      "b": "24 October 1947 · about 600 · close to 1,400 · 3 November 1947",
+      "s": "His testimony, the telegram and the letter: House Committee on Un-American Activities, Hearings Regarding the Communist Infiltration of the Motion Picture Industry, 80th Congress, 1st session, 1947, pp. 280–86 and 329, and the appendix exhibit headed 'Exhibit 58. Note: Correction' (read in the Internet Archive scan)"
+    }
+  ],
+  "bio": {
+    "t": "The Animated Man: A Life of Walt Disney",
+    "a": "Michael Barrier",
+    "y": "2007",
+    "why": "By the historian whose figures for Snow White everyone else repeats, and the shorter book on what Disney did in his studio. Neal Gabler's biography (2006) is longer and better known; the house has read neither in full, and goes by reviews in choosing between them."
+  },
+  "contested": "What the 1941 strike was. Disney told Congress in 1947 that it was a Communist takeover led by the union organiser Herbert Sorrell, of whom he said 'If he isn't a Communist he sure should be one.' The animators' side, given by Art Babbitt, whom the studio fired in 1941, and by the Hollywood League of Women Shoppers in a letter the committee printed, was that it was a labour dispute, and the League's letter cites his 'admitted firing of an artist for union activities'. Tom Sito's Drawing the Line (2006) and Jake Friedman's The Disney Revolt tell it from the union side; this house has not read them. The committee's own appendix also carries an informer's report claiming the cartoonists' guild was organised by Communists, so the record contains both cases. What is not contested is the frozen head. By Jim Korkis's reading of the death certificate, Disney died on 15 December 1966 and was cremated at Forest Lawn, Glendale, two days later. The story of the freezer first appeared in the French magazine Ici Paris in 1969, by Korkis's account; the house has not seen the certificate.",
+  "across": [
+    {
+      "to": "lives:steve-jobs",
+      "label": "Steve Jobs",
+      "txt": "— whose Pixar was bought by the company Walt Disney founded."
+    }
+  ]
+}

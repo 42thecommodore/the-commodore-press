@@ -1,0 +1,61 @@
+{
+  "id": "karl-landsteiner",
+  "no": 137,
+  "keep": "Landsteiner's 1901 paper did not give the four blood groups. Two colleagues found the fourth a year later In 1937 he sued to keep his name out of a who's who of American Jews.",
+  "n": "Karl Landsteiner",
+  "years": "1868–1943",
+  "place": "Vienna and New York",
+  "field": "Medicine",
+  "group": "obscure",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "A Vienna pathologist with thousands of autopsies behind him, he wrote a three-page paper in 1901 that explained why one person's blood could kill another.",
+  "copy": [
+    "Karl Landsteiner was born in Vienna in 1868. In 1890 he left Judaism and was baptised a Catholic. He became a pathologist, and by one count performed about 3,600 autopsies between 1897 and 1908. Blood was a side interest. In 1900 he first touched on it, in a footnote to a paper on the effects of blood serum and lymph.",
+    "In 1901 he followed it with a short paper in the Wiener klinische Wochenschrift, three pages long, on the clumping of normal human blood: the serum of some healthy people clumped the red cells of others, in a regular pattern, and the pattern sorted people into groups. The fourth group, AB, was identified in 1902 by his colleagues Decastello and Sturli. In 1908 and 1909, with Erwin Popper, he transmitted poliomyelitis to monkeys and showed it was caused by a virus. In 1922 he left Vienna for the Rockefeller Institute in New York. In 1930 he won the Nobel Prize in Physiology or Medicine for the blood groups.",
+    "In 1940, with Alexander Wiener, he described the Rhesus factor. In April 1937 he went to court to keep his name out of a book called Who's Who in American Jewry. He sought an injunction and $100,000 if it was printed, saying it would be 'detrimental to me to emphasize publicly the religion of my ancestors'. On 24 June 1943 he had a heart attack in his laboratory. He died two days later, on 26 June."
+  ],
+  "bio": {
+    "t": "Karl Landsteiner, Entdecker der Blutgruppen und Pionier der Immunologie",
+    "a": "Paul Speiser and Ferdinand G. Smekal",
+    "y": "1975",
+    "why": "The one full biography, by two Viennese who could use the papers he left there, with a bibliography of everything he published. It is in German; this house has found no English edition and has not read it. In English, the 1901 paper itself is short and has been translated."
+  },
+  "contested": "Who found the Rh factor, and what was found. Philip Levine and Rufus Stetson reported in 1939 an antibody in a mother whose baby had died in the womb, a year before Landsteiner and Wiener described the rhesus antigen in 1940, and Levine argued for the rest of his life that the clinical discovery was his. The two antibodies were first taken to be the same and both called anti-Rh; by the account of later reviews, read here only in summary, they are not, and the one in rabbits immunised with rhesus monkey blood was renamed anti-LW, while the one that kills newborns is anti-D. Neither the 1939 nor the 1940 paper was opened. Smaller things are unsettled too. How many people's blood went into the 1901 table is given as five or six; no one opened here has counted the rows. He moved to New York in 1922 by one account and in the spring of 1923 by another. And the date of the first cross-matched transfusion, credited to Reuben Ottenberg in 1907, is given differently by different hospitals. The outcome of the 1937 suit is reported as a failure by Wikipedia, which cites a dictionary this house has not opened.",
+  "across": [
+    {
+      "to": "lives:maurice-hilleman",
+      "label": "Maurice Hilleman",
+      "txt": "— another laboratory name almost nobody knows, behind something done to almost everybody."
+    }
+  ],
+  "facts": [
+    {
+      "b": "about 3,600 · 1897–1908",
+      "s": "His autopsies: LITFL (Life in the Fast Lane), 'Karl Landsteiner', biography and timeline"
+    },
+    {
+      "b": "1900 · 1901 · 1902",
+      "s": "The footnote in Centralblatt für Bakteriologie 27 (1900), pp. 357–62; the paper in Wiener klinische Wochenschrift 14 (1901), pp. 1132–34; Decastello and Sturli's fourth group, 1902: LITFL, 'Karl Landsteiner'"
+    },
+    {
+      "b": "1922 · 1930 · 1940",
+      "s": "The move to New York, the Nobel Prize and the Rh factor: Dariush D. Farhud, 'Karl Landsteiner (1868–1943)', Iranian Journal of Public Health 47:6, 2018, pp. 777–78; LITFL"
+    },
+    {
+      "b": "$100,000",
+      "s": "The 1937 suit: Jewish Telegraphic Agency, 'Dr. Landsteiner sues to escape being labelled Jew', 6 April 1937"
+    },
+    {
+      "b": "24 June 1943 · 26 June 1943",
+      "s": "The heart attack in his laboratory and his death: Farhud, Iranian Journal of Public Health, 2018"
+    },
+    {
+      "b": "1890",
+      "s": "His baptism: Wikipedia, 'Karl Landsteiner', citing Anna L. Staudacher, '... meldet den Austritt aus dem mosaischen Glauben' (2009), p. 349"
+    }
+  ]
+}

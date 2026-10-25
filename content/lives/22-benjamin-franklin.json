@@ -40,6 +40,11 @@
       "to": "lives:charlie-munger",
       "label": "Charlie Munger",
       "txt": "— whose collected talks were published as Poor Charlie's Almanack, after Poor Richard's."
+    },
+    {
+      "to": "lives:benjamin-lay",
+      "label": "Benjamin Lay",
+      "txt": "— the Quaker who brought him a book against slavery to print, and whose cave he visited."
     }
   ]
 }
