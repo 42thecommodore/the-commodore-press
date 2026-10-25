@@ -128,12 +128,9 @@
      at 375×812 (tools/test-reading.mjs holds both). Of the old strip of counts only the
      corrections are kept — the one number that proves anything — and it opens the record. */
   .front{padding:56px 0 64px}
-  .front-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,360px);gap:24px 56px;align-items:end}
-  .front h1{font-size:clamp(48px,7.2vw,104px);line-height:.96;letter-spacing:-.03em;margin:0;font-weight:500}
-  .front h1 span{display:block;overflow:hidden}
-  .front h1 span i{display:block;font-style:normal}
-  .front h1 span.em i{font-style:italic;color:var(--ink-soft)}
-  .front .stand{font-size:clamp(19px,1.5vw,21px);line-height:1.5;color:var(--ink-mid);max-width:44ch;margin:0}
+  .front-top{display:grid;grid-template-columns:1fr;gap:20px}
+  .front h1{font-size:clamp(38px,5.4vw,72px);line-height:1.04;letter-spacing:-.02em;margin:0;font-weight:500;max-width:22ch}
+  .front .stand{font-size:clamp(19px,1.5vw,21px);line-height:1.5;color:var(--ink-mid);max-width:52ch;margin:0}
   .front-shelf{margin-top:44px}
   .shelf-h{display:flex;justify-content:space-between;align-items:center;gap:8px 24px;border-top:1px solid var(--rule);padding-top:4px}
   .shelf-h p{margin:0;font-size:var(--fs-3);line-height:1.45;color:var(--ink-soft)}
