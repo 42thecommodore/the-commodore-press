@@ -41,6 +41,29 @@
     --mount:#27241E; --mount-rule:#4D473B; --mark-soft:#9C9582; --edge:#766F5F;
   }
   body.dusk header.mast{background:rgba(28,26,22,.92)}
+  /* THE HOLIDAYS change the walls the way dusk does, by the reader's date and on their own
+     (build/season.mjs sets body.hol-<id>): a tint of the paper, its rules and mount, and the
+     holiday's colour in the masthead drawing and a selected passage. Ink stays; books, plates,
+     readers and the Atlas keep their liveries. Dusk is the reader's own choice, so it wins: the
+     walls stay dusk and the drawing is set in ink. npm run check holds every one: --ink-soft at 4.5:1 on its
+     paper, --hol at 3:1 (it draws, it never sets text), and --hol no nearer oxblood than 20° of
+     hue, because a red heart or a red tree would read as a correction. */
+  body.hol-new-year:not(.dusk){--paper:#EFEDE6;--paper-2:#E3E0D5;--rule:#CCC7B8;--rule-soft:#DCD8CC;--mount:#F6F4EE}
+  body.hol-new-year{--hol:#957528}
+  body.hol-valentine:not(.dusk){--paper:#F5E9E6;--paper-2:#EDDCD7;--rule:#DCC3BC;--rule-soft:#E7D3CD;--mount:#F9F0EE}
+  body.hol-valentine{--hol:#A3456A}
+  body.hol-easter:not(.dusk){--paper:#EEF0E2;--paper-2:#E2E6D2;--rule:#C9D0B4;--rule-soft:#D9DEC7;--mount:#F5F6EC}
+  body.hol-easter{--hol:#6E5A9A}
+  body.hol-fourth:not(.dusk){--paper:#EEF0F2;--paper-2:#E1E5EA;--rule:#C3CBD5;--rule-soft:#D5DBE2;--mount:#F5F7F8}
+  body.hol-fourth{--hol:#2C4A7A}
+  body.hol-halloween:not(.dusk){--paper:#F3E6D3;--paper-2:#EAD7BD;--rule:#D8BE9A;--rule-soft:#E4CFB2;--mount:#F8EEE1}
+  body.hol-halloween{--hol:#B25A17}
+  body.hol-thanksgiving:not(.dusk){--paper:#F1E7D6;--paper-2:#E7D9C1;--rule:#D2BF9E;--rule-soft:#DFCFB4;--mount:#F7F0E4}
+  body.hol-thanksgiving{--hol:#8A5A22}
+  body.hol-christmas:not(.dusk){--paper:#EAEFE6;--paper-2:#DCE4D7;--rule:#BFCCB8;--rule-soft:#D1DBCB;--mount:#F3F6F0}
+  body.hol-christmas{--hol:#2E6047}
+  body[class*="hol-"]:not(.dusk) header.mast{background:color-mix(in srgb,var(--paper) 90%,transparent)}
+  body[class*="hol-"]:not(.dusk) ::selection{background:color-mix(in srgb,var(--hol) 24%,var(--paper))}
   /* a book at dusk catches the lamp: a hairline of light round the spine and the cover */
   body.dusk .book .cover,body.dusk .book .spine{outline:1px solid var(--edge);outline-offset:0}
   body.dusk .card{box-shadow:0 2px 10px rgba(0,0,0,.35)}
@@ -84,6 +107,11 @@
   /* the pennant catches the wind on hover; the seal itself stays put */
   .mark svg .pn{transform-origin:9px 6.8px;}
   @media (prefers-reduced-motion:reduce){.mark svg .pn{}}
+  /* the holidays (build/season.mjs): the drawing in the holiday's colour, the mark's hairline */
+  .mark .season{display:flex;margin-left:-2px;color:var(--hol,var(--ink-mid))}
+  .mark .season[hidden]{display:none}
+  body.night .mark .season{color:var(--parchment-dim)}
+  body.dusk .mark .season{color:var(--ink-mid)}
   .mark b{font-weight:600;font-size:var(--fs-5);letter-spacing:.004em;white-space:nowrap}
   .mark .tagline{font-style:italic;font-size:var(--fs-3);color:var(--ink-soft);white-space:nowrap;padding-left:12px;margin-left:2px;border-left:1px solid var(--rule)}
   body.night .mark .tagline{color:var(--parchment-dim);border-left-color:var(--line)}

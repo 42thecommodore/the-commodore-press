@@ -8,6 +8,7 @@ import { readJSON } from "../tools/json.mjs";
 import { fillMark, faviconSvg, ICON_FILES } from "./mark.mjs";
 import { fontFaces, fontPreload, FONT_FILES } from "./fonts.mjs";
 import { motifSVG } from "./motif.mjs";
+import { season } from "./season.mjs";
 import { LABEL_CSS } from "./label.mjs";
 import { writeEntryPages, writeAbout, writeLog, writeContents, writeUpdates, UPDATES_LINK, EDITOR, minsOf } from "./pages.mjs";
 import crypto from "node:crypto";
@@ -145,6 +146,7 @@ const SITE = (process.env.SITE_URL || "https://42thecommodore.github.io/the-comm
 const lean = s => s.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^[ \t]+/gm, "").replace(/\n{2,}/g, "\n");
 const fill = s => fillMark(s)
   .replace(/{{MOTIF_FN}}/g, () => motifSVG.toString())
+  .replace(/{{SEASON_FN}}/g, () => season.toString())
   .replace(/{{SITE}}/g, SITE)
   .replace(/{{EDITOR}}/g, EDITOR)
   .replace(/{{N_BOOKS}}/g, words(BOOKS.length)).replace(/{{W_BOOKS_CAP}}/g, cap(words(BOOKS.length)))

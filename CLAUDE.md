@@ -173,6 +173,7 @@ Three rules for the front door and the shelves, each held by a check:
 - **The Atlas comes next.** Straight after the key, before the Log and the colophon. `npm test` holds the order at both sizes, and that nothing on the front door links a retired title.
 - **Quotes are typographic.** `build/typeset.mjs` curls every prose field, the page frame and Markdown at build time; `content/` stays as typed. `npm test` fails if a straight quote reaches any page.
 - **Reading comes first on a phone.** The reader's lede starts on the first screen at 375×812, prose runs the full width, and nothing scrolls sideways; the book stands small beside the title. `npm test` holds it.
+- **The house keeps the major holidays, on its own.** New Year, Valentine's Day, Easter, the Fourth, Halloween, Thanksgiving, Christmas: by the reader's own date, `build/season.mjs` puts a small drawing beside the name and tints the walls (`body.hol-<id>` in `press.css`), the way dusk changes them; books, plates, readers and the Atlas keep their liveries, and dusk wins. `?day=12-25` previews one. `npm run check` holds each palette (text 4.5:1 on its paper, the drawing 3:1, never within 20° of oxblood) and the calendar.
 - **Search matches letters, not typography.** Curly and straight quotes are folded on both sides.
 - **Nothing floats over the text.** Offers like "You stopped here before" are lines in the flow, above where the reading starts.
 

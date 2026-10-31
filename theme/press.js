@@ -628,8 +628,20 @@ document.getElementById("sinput").addEventListener("keydown",e=>{
 });
 document.getElementById("smodal").addEventListener("click",e=>{if(e.target.id==="smodal")closeSearch()});
 
+/* ---------- the holidays ---------- */
+/* A small drawing beside the name on the major holidays, by the reader's own date: build/season.mjs. */
+{{SEASON_FN}}
+function initSeason(){
+  let d=new Date();
+  const q=/[?&]day=(\d\d)-(\d\d)/.exec(location.search);   // ?day=12-25 shows any one
+  if(q)d=new Date(d.getFullYear(),+q[1]-1,+q[2]);
+  const s=season(d), el=document.getElementById("season");
+  if(!s||!el)return;
+  el.innerHTML=s.svg;el.title=s.line;el.hidden=false;document.body.classList.add("hol-"+s.id);
+}
+
 /* ---------- boot ---------- */
-initTheme();renderNav();renderFront();
+initTheme();initSeason();renderNav();renderFront();
 renderLivesControls();renderLivesShelf();
 renderAtlas();
 

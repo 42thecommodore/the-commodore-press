@@ -661,6 +661,42 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
   }
 }
 
+/* ---------- the holidays: a tinted wall still reads, and never says "correction" ----------
+   Each body.hol-<id> in theme/press.css tints the paper the whole house is read on, so the
+   faintest text is measured again on it; --hol draws the masthead's holiday and is held to the
+   3:1 a drawing needs, and kept 20° of hue clear of oxblood, the house's colour for a correction.
+   build/season.mjs is checked against dates worked out by hand, and must name every palette. */
+{
+  const css = fs.readFileSync(p("theme/press.css"), "utf8");
+  const tok = (block, name) => (block.match(new RegExp(`--${name}:(#[0-9A-Fa-f]{6})`)) || [])[1];
+  const root = css.match(/:root\{([\s\S]*?)\}/)[1];
+  const inkSoft = tok(root, "ink-soft"), ink = tok(root, "ink"), ox = tok(root, "oxblood");
+  const hue = h => { const [r, g, b] = rgb(h).map(v => v / 255), M = Math.max(r, g, b), d = M - Math.min(r, g, b);
+    if (!d) return 0; const H = M === r ? ((g - b) / d) % 6 : M === g ? (b - r) / d + 2 : (r - g) / d + 4; return (H * 60 + 360) % 360; };
+  const walls = Object.fromEntries([...css.matchAll(/body\.hol-([a-z-]+):not\(\.dusk\)\{([^}]*)\}/g)].map(m => [m[1], m[2]]));
+  const hols = Object.fromEntries([...css.matchAll(/body\.hol-([a-z-]+)\{--hol:(#[0-9A-Fa-f]{6})\}/g)].map(m => [m[1], m[2]]));
+  const { season } = await import("../build/season.mjs");
+  const ids = new Set();
+  for (let t = new Date(2026, 0, 1); t < new Date(2028, 0, 1); t.setDate(t.getDate() + 1)) { const s = season(t); if (s) ids.add(s.id); }
+  for (const id of ids) {
+    const paper = tok(walls[id] || "", "paper"), hol = hols[id];
+    if (!paper || !hol) { err("theme/press.css", `build/season.mjs keeps "${id}" but there is no body.hol-${id}:not(.dusk){--paper:…} and body.hol-${id}{--hol:…} — add both`); continue; }
+    const soft = contrast(inkSoft, paper), faint = contrast(blend(ink, paper, FLOOR), paper);
+    if (soft < AA) err("theme/press.css", `body.hol-${id}: --ink-soft reads ${soft.toFixed(2)}:1 on its paper ${paper}; it needs ${AA}:1 — lighten the paper`);
+    if (faint < AA) err("theme/press.css", `body.hol-${id}: the faintest text (${WEAKEST}) reads ${faint.toFixed(2)}:1 on ${paper}; it needs ${AA}:1 — lighten the paper`);
+    if (contrast(hol, paper) < 3) err("theme/press.css", `body.hol-${id}: --hol ${hol} is ${contrast(hol, paper).toFixed(2)}:1 on ${paper}; the drawing needs 3:1 — darken it`);
+    const dh = Math.abs(hue(hol) - hue(ox)), gap = Math.min(dh, 360 - dh);
+    if (gap < 20) err("theme/press.css", `body.hol-${id}: --hol ${hol} sits ${gap.toFixed(0)}° of hue from oxblood ${ox}, which means a correction on this site — move it toward orange, pink or another colour`);
+  }
+  const want = { "2026-10-31": "halloween", "2026-10-24": null, "2026-11-26": "thanksgiving", "2024-12-01": "thanksgiving",
+    "2026-11-30": null, "2026-04-05": "easter", "2027-03-28": "easter", "2026-12-25": "christmas", "2027-01-01": "new-year",
+    "2026-07-04": "fourth", "2026-07-05": null, "2026-02-14": "valentine" };
+  for (const [day, id] of Object.entries(want)) {
+    const got = season(new Date(day + "T12:00"))?.id ?? null;
+    if (got !== id) err("build/season.mjs", `${day} should be ${id || "no holiday"}, and the calendar says ${got || "no holiday"}`);
+  }
+}
+
 /* ---------- report ---------- */
 const c = { r: "\x1b[31m", y: "\x1b[33m", g: "\x1b[32m", d: "\x1b[2m", x: "\x1b[0m" };
 if (warns.length) { console.log(`\n${c.y}${warns.length} warning(s)${c.x}`); warns.forEach(w => console.log(`  ${c.y}·${c.x} ${w}`)); }
