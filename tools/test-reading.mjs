@@ -23,7 +23,11 @@
  *     the corrections, opening the record it counts
  *   - every face is a link to its own page; a plain click opens the reader in place,
  *     a Cmd-click is left to the browser; nothing on the front door leads to a retired title
+ *   - the key's Lives line counts what this browser has finished and started, and is silent
+ *     for a first visitor
  *   - the keep line on the Captain card is credited to the Press, never set beside the face alone
+ *   - a book flying to or from the reader turns round where it is when the reader changes its
+ *     mind: one book in the air, never two
  *   - a life's reader prints its own permanent №
  *   - every retired title's page says, above its text, that the Press is retired
  * and, without a browser, that every entry page's share link, end block and read-next link
@@ -324,6 +328,36 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
 }), 600));
 </script>`;
 
+/* A book in the air can be called back. Closing the reader while the book was still flying in
+   once left it flying on to a reader that had gone, and sent a second book home from where the
+   first would have landed: two books on screen. One book, turned round where it is. */
+const FLIGHT = String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  // --dump-dom never paints, so the document's clock never moves and no flight ever lands. A timer
+  // stands in for it, as the harness does for requestAnimationFrame; the page's own logic is unchanged.
+  setInterval(() => document.getAnimations().forEach(a => { if (a.playState === "running") a.currentTime += 16 * a.playbackRate; }), 16);
+  await loadLibrary(); go("lives", false); await wait(400);
+  const slot = document.querySelector("#livesShelf .slot"), id = slot.dataset.id, book = slot.querySelector(".book");
+  slot.scrollIntoView({ block: "center" }); await wait(200);
+  const ghosts = () => document.querySelectorAll("#flip .ghostwrap").length;
+  openReader("lives", id, { src: slot }); await wait(250);
+  t("opening a life sends its book flying to the reader", ghosts() === 1 && flight && flight.dir === "in", ghosts() + " in the air");
+  closeReader(); await wait(60);
+  t("closing mid-flight turns the same book round: one book in the air, not two", ghosts() === 1 && flight && flight.dir === "out", ghosts() + " in the air, heading " + (flight && flight.dir));
+  await wait(1000);
+  t("…and it lands home, leaving the shelf's own book showing", ghosts() === 0 && flight === null && book.style.opacity === "", ghosts() + " still in the air, shelf book opacity \"" + book.style.opacity + "\"");
+  openReader("lives", id, { src: slot }); await wait(1000);
+  closeReader(); await wait(150);
+  openReader("lives", id, { src: slot }); await wait(60);
+  t("reopening while it flies home turns it back to the reader", ghosts() === 1 && flight && flight.dir === "in", ghosts() + " in the air, heading " + (flight && flight.dir));
+  await wait(1000);
+  const rb = document.querySelector("#sheet .rbook");
+  t("…and the reader's book is showing once it lands", ghosts() === 0 && rb && rb.style.opacity === "" && book.style.opacity === "", ghosts() + " in the air, reader book \"" + (rb && rb.style.opacity) + "\", shelf book \"" + book.style.opacity + "\"");
+  closeReader(false); await wait(900);
+}), 600));
+</script>`;
+
 /* The front door, at a desk and on a phone. */
 const FRONT = String.raw`
 <script>
@@ -398,6 +432,16 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   const keyHas = h => keyRows.some(a => a.getAttribute("href") === h && a.querySelector("b") && (a.querySelector("span")?.textContent.trim().length || 0) > 20);
   t("the front door says what this is, and names each part in a line that opens it", key && /working library/i.test(key.querySelector(".key-h")?.textContent || "") && ["#lives", "#atlas", "#corrections"].every(keyHas),
     keyRows.map(a => a.getAttribute("href")).join(", ") || "no key on the front door");
+  // The reader's own tally rides in the key's Lives line, counted from cp-read: finished, partway,
+  // and nothing at all for a first visitor, so the door's one public count stays the corrections.
+  const seedRead = m => { localStorage.setItem("cp-read", JSON.stringify(m)); dispatchEvent(new StorageEvent("storage", { key: "cp-read" })); markRead(); return document.getElementById("keyYou")?.textContent.trim() || ""; };
+  const hadRead = localStorage.getItem("cp-read"), L = i => "l/" + LIVES[i].id;
+  const youSome = seedRead({ [L(0)]: { p: 1, d: 1, t: 1 }, [L(1)]: { p: 1, d: 1, t: 1 }, [L(2)]: { p: .4, d: 0, t: 1 }, "t/retired": { p: 1, d: 1, t: 1 } });
+  const youNone = seedRead({});
+  if (hadRead === null) localStorage.removeItem("cp-read"); else localStorage.setItem("cp-read", hadRead);
+  dispatchEvent(new StorageEvent("storage", { key: "cp-read" })); markRead();
+  t("the key counts what this reader has finished and started, lives only", youSome === "You have finished 2 of them, and are partway through 1.", youSome || "no tally");
+  t("…and says nothing to a first visitor", youNone === "", youNone);
   t("…and it sits under the shelf, not above it", key && document.getElementById("frontShelf").compareDocumentPosition(key) & Node.DOCUMENT_POSITION_FOLLOWING);
   const faces = [...document.querySelectorAll(".wall a.wface")];
   t("every face on the front door links its own page", faces.length === LIVES.length && faces.every((a, i) => a.getAttribute("href") === "l/" + LIVES[i].id + "/"), faces.length + " links for " + LIVES.length + " lives");
@@ -534,6 +578,7 @@ if (!CHROME) {
       size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>`
         // the desk run is a dark-mode device with no stored choice: it must still open on paper
         : `<script>try{localStorage.removeItem("cp-theme")}catch(e){}var __mm=matchMedia.bind(window);window.matchMedia=function(q){return /prefers-color-scheme: ?dark/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__mm(q)}</script>`));
+  report("The book in flight", drive(fs.readFileSync(dist("index.html"), "utf8"), FLIGHT, null, `<script>try{localStorage.removeItem("cp-theme")}catch(e){}</script>`));
   // a life with a plate and a keep line, and a retired title: the two shapes an entry page comes in.
   // Only the life opens in the library's reader; the Press's titles are read on their own pages.
   for (const [k, kind, id] of [["l", "lives", "charles-darwin"], ["t", "press", "compounding-machines"]]) {

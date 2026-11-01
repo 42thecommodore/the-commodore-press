@@ -181,13 +181,14 @@ function renderFront(){
      whose library this is was hidden; each wing explained itself only once you had scrolled to
      it. Counts are filled by the build, never typed. tools/test-reading.mjs holds it. */
   const key=[
-    ["#lives","go('lives')","Lives",`${LIVES.length} people. What each did, what it cost, and where it is still argued.`],
+    ["#lives","go('lives')","Lives",`${LIVES.length} people. What each did, what it cost, and where it is still argued.<span class="key-you" id="keyYou"></span>`],
     ["#atlas","go('atlas')","The Atlas",`The people I learn from now, and the lessons I took from them, drawn as a sea chart.`],
     ...(LOG.length?[[`log/`,"","The Log","My own column. Signed, dated, and held to the same rules."]]:[]),
     ["#corrections",null,"Corrections","Each one dated, saying what the page got wrong and what it says now."]];
   document.getElementById("key").innerHTML=
     `<p class="key-h"><b>What this is.</b> A working library in {{W_WINGS}} wings, both about people, edited by {{EDITOR}}.</p>
     <ul>${key.map(([h,on,n,d])=>`<li><a ${on===null?toCorrections:`href="${h}"${on?` onclick="${on};return false;"`:""}`}><b>${n}</b><span>${d}</span></a></li>`).join("")}</ul>`;
+  readTally();
   // the Atlas comes straight after the shelf: the people the house listens to now, beside the lives
   document.getElementById("atlasBand").innerHTML=
    `<section class="band night" aria-labelledby="bAtlas"><div class="wrap">
@@ -284,6 +285,20 @@ function readNextHTML(kind,b,next){
 /* Entries this browser has finished get a mark on the shelf (Reading.memory, theme/reading.js). */
 function markRead(){
   document.querySelectorAll("#livesShelf .slot").forEach(s=>s.classList.toggle("read",Reading.memory.done("l/"+s.dataset.id)));
+  readTally();
+}
+/* The reader's own tally, in the key's Lives line: what this browser has finished and is partway
+   through, counted from the same memory as the shelf's marks. A first visitor sees nothing, so the
+   door's one public count stays the corrections. Only lives on the shelf count; a retired title's
+   page remembers too, but it is not one of the "people" the line counts. */
+function readTally(){
+  const el=document.getElementById("keyYou");if(!el)return;
+  let done=0,part=0;
+  for(const b of LIVES){const r=Reading.memory.get("l/"+b.id);if(!r)continue;if(r.d)done++;else if(r.p>0)part++}
+  el.textContent=done===LIVES.length?" You have finished every one."
+    :done&&part?` You have finished ${done} of them, and are partway through ${part}.`
+    :done?` You have finished ${done} of them.`
+    :part?` You are partway through ${part} of them.`:"";
 }
 function acrossHTML(b){
   if(!b.across||!b.across.length)return "";
@@ -408,9 +423,24 @@ function tiltBooks(){
 }
 tiltBooks();
 /* Opening a title: the book lifts off the shelf and flies to its place in the reader; closing sends it back. */
+let flight=null;   // the book in the air: {dir, id, anims, hidden}
+function launch(dir,id,wrap,anims,hidden){
+  const f={dir,id,anims,hidden};flight=f;
+  const done=()=>{f.hidden.forEach(el=>el.style.opacity="");wrap.remove();if(flight===f)flight=null};
+  anims[0].finished.then(done).catch(done);
+}
+/* A book in the air can be called back: it turns round where it is and goes home along the
+   path it came, instead of a second book setting off while the first still flies. */
+function recall(dir,id,hide){
+  const f=flight;if(!f)return false;
+  if(f.dir===dir||f.id!==id){f.anims.forEach(x=>x.finish());return false}
+  f.dir=dir;if(hide){hide.style.opacity="0";f.hidden.push(hide)}
+  f.anims.forEach(x=>x.playbackRate=-x.playbackRate);return true;   // the rate, not reverse(): it turns at once, from where it is
+}
 function flyIn(slot,kind){
   const target=document.querySelector("#sheet .rbook"),sBook=slot&&slot.querySelector(".book");
   if(!target||!sBook)return;
+  if(recall("in",slot.dataset.id,target))return;
   const sr=slot.getBoundingClientRect(),tr=target.getBoundingClientRect();
   const fw=slot.clientWidth,fh=sBook.offsetHeight,tw=tr.width;
   if(!fw||!tw)return;
@@ -422,11 +452,11 @@ function flyIn(slot,kind){
   document.getElementById("flip").appendChild(wrap);target.style.opacity="0";
   const s=tw/fw,opt={duration:660,easing:EASE_IO,fill:"forwards"};
   const a=wrap.animate([{transform:"translate(0,0) scale(1)"},{transform:`translate(${tr.left-sr.left}px,${tr.top-sr.top}px) scale(${s})`}],opt);
-  clone.animate([{transform:`rotateY(${ry0}) rotateX(${rx0})`},{transform:"rotateY(21deg) rotateX(4deg)"}],opt);
-  const done=()=>{target.style.opacity="";wrap.remove()};
-  a.finished.then(done).catch(done);
+  const c=clone.animate([{transform:`rotateY(${ry0}) rotateX(${rx0})`},{transform:"rotateY(21deg) rotateX(4deg)"}],opt);
+  launch("in",slot.dataset.id,wrap,[a,c],[target]);
 }
 function flyOut(kind,id,after){
+  if(recall("out",id)){after();return}
   const slot=document.querySelector(`#livesShelf .slot[data-id="${id}"]`);
   const source=document.querySelector("#sheet .rbook");
   if(reduce||!slot||!source||!slot.offsetParent){after();return}
@@ -442,9 +472,8 @@ function flyOut(kind,id,after){
   document.getElementById("flip").appendChild(wrap);tBook.style.opacity="0";after();
   const s=tw/fw,opt={duration:560,easing:EASE_IO,fill:"forwards"};
   const a=wrap.animate([{transform:"translate(0,0) scale(1)"},{transform:`translate(${tr.left-sr.left}px,${tr.top-sr.top}px) scale(${s})`}],opt);
-  clone.animate([{transform:`rotateY(${ry0}) rotateX(4deg)`},{transform:"rotateY(26deg) rotateX(3deg)"}],opt);
-  const done=()=>{tBook.style.opacity="";wrap.remove()};
-  a.finished.then(done).catch(done);
+  const c=clone.animate([{transform:`rotateY(${ry0}) rotateX(4deg)`},{transform:"rotateY(26deg) rotateX(3deg)"}],opt);
+  launch("out",id,wrap,[a,c],[tBook]);
 }
 function openReader(kind,id,opts){
   opts=opts||{};
