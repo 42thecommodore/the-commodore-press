@@ -333,8 +333,8 @@ function readerHTML(kind,b){
   const plate = (PLATES[b.id]
     ? (b.plateOf
       ? `<figure class="plate"><img src="${PLATES[b.id]}" alt="${b.plateOf.replace(/"/g,"&quot;")}"><figcaption class="obj">${b.plateOf}</figcaption></figure>`
-      : `<figure class="plate"><img src="${PLATES[b.id]}" alt="Portrait of ${b.n}"><figcaption class="lbl">Plate · ${b.n}</figcaption></figure>`)
-    : `<figure class="plate mark">{{MARK size=84 sw=0.8 pn aria opacity=0.7}}<figcaption class="lbl">No plate — see colophon</figcaption></figure>`);
+      : `<figure class="plate"><img src="${PLATES[b.id]}" alt="Portrait of ${b.n}"><figcaption class="lbl">${b.n}</figcaption></figure>`)
+    : `<figure class="plate mark">{{MARK size=84 sw=0.8 pn aria opacity=0.7}}<figcaption class="lbl">No portrait — see colophon</figcaption></figure>`);
   return `<div class="wrap">
     <div class="rbar">
       <button class="back" onclick="closeReader()"><span class="arw">←</span> All lives</button>
