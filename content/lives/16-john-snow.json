@@ -58,6 +58,11 @@
       "to": "lives:ignaz-semmelweis",
       "label": "Ignaz Semmelweis",
       "txt": "— who in 1847 traced deaths in a Vienna maternity clinic to students' hands, and is remembered, like Snow, by a legend his own figures complicate."
+    },
+    {
+      "to": "lives:joseph-bazalgette",
+      "label": "Joseph Bazalgette",
+      "txt": "— whose sewers were still unfinished in the East End when cholera came back in 1866, and Farr blamed the water, as Snow would have."
     }
   ]
 }

@@ -30,6 +30,11 @@
       "to": "lives:john-snow",
       "label": "John Snow",
       "txt": "— who showed in 1854 that cholera travelled in water; Leal made a city's water safe without waiting for the sewers."
+    },
+    {
+      "to": "lives:joseph-bazalgette",
+      "label": "Joseph Bazalgette",
+      "txt": "— the other answer to dirty water: London built 82 miles of intercepting sewers to keep the sewage out of the Thames."
     }
   ],
   "facts": [
