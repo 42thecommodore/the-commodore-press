@@ -1,7 +1,7 @@
 {
   "id": "isaac-newton",
   "no": 6,
-  "keep": "Progress does not require tidy people. The revolution was made with one foot in the medieval world.",
+  "keep": "The judge of the calculus quarrel was the Royal Society, and the Society's account of the verdict was written, anonymously, by Newton.",
   "across": [
     {
       "to": "lives:ibn-al-haytham",
@@ -24,17 +24,38 @@
   "ink": "#EFF1FA",
   "accent": "#9FD3EC",
   "motif": "grid",
-  "lede": "He was no cool rationalist. His physics grew partly out of a conviction that he was decoding the mind of God.",
+  "lede": "The apple is his own story, told over tea in a Kensington garden the year before he died. The alchemy he never published, in about a million words.",
   "copy": [
-    "Newton did more than anyone to make the modern idea of a law-governed universe thinkable. A solitary, secretive and famously prickly man, he worked out the laws of motion and universal gravitation, invented calculus in parallel with Leibniz, and demonstrated that white light is a mixture of colours — any one of which would have secured his fame. The Principia Mathematica of 1687 showed that the same force pulling an apple to the ground holds the moon in its orbit, binding heaven and earth under a single mathematics.",
-    "He poured decades into alchemy and biblical chronology. The contradiction is the point: the Scientific Revolution was made by a man with one foot in the medieval world.",
-    "For more than two centuries his framework simply was physics. Even after Einstein, Newtonian mechanics remains the engineering bedrock on which bridges stand and spacecraft fly."
+    "Isaac Newton was born on Christmas Day by the English calendar of the time, a posthumous child, with no father living. He worked out the laws of motion and universal gravitation, and showed that white light is a mixture of colours. The Principia of 1687 put the fall of a stone and the orbit of the moon under one mathematics. He also worked out calculus, which he called the method of fluxions, in 1665 and 1666 by his own account. Leibniz claimed it too, and the argument over who came first ran for years.",
+    "The Royal Society judged it. At the end of 1712 it published the Commercium Epistolicum, the letters bearing on the dispute. Early in 1715 the Society's Philosophical Transactions printed an anonymous Account of them, which is known to have been written by Newton himself. His working papers for it survive. 'For second Inventors have no right,' he wrote. 'It lay upon Mr Leibnitz therefore to prove that he was the first inventor.' The plaintiff wrote the judgment.",
+    "The apple is better sourced than its reputation. William Stukeley dined with him on 15 April 1726 at Kensington, and they took tea under some apple trees. Newton said he was in the same situation as when the notion of gravitation first came to him: 'why should that apple always descend perpendicularly to the ground'. What he did with the other half of his working life stayed in a box. Sotheby's sold the papers in July 1936 for just over £9,000. John Maynard Keynes bought back about half. In a lecture read after his death in 1946 he called Newton 'the last of the magicians', said the alchemy was 'wholly magical and wholly devoid of scientific value', and gave him 'one foot in the Middle Ages'. There are about a million words of it."
   ],
   "bio": {
     "t": "Never at Rest: A Biography of Isaac Newton",
     "a": "Richard S. Westfall",
     "y": "1980",
-    "why": "Twenty years of work; the first biography built on the full manuscript record, including the alchemy and theology. Demanding but definitive. For a shorter entry point, James Gleick's Isaac Newton (2003) is superb."
+    "why": "The first biography built on the full manuscript record, the alchemy and theology included. Demanding. For a shorter entry point, James Gleick's Isaac Newton (2003). This house has read Stukeley, Keynes and Newton's own papers on the Newton Project, not Westfall."
   },
-  "contested": "Westfall is genuinely the scholarly standard and little disputed as such — but it is forty-five years old, and the study of Newton's alchemy has moved considerably since (William Newman's work in particular). Read it as the frame and the newer scholarship as the update."
+  "contested": "Keynes's verdict on the alchemy. He had glanced, by his own count, through at least 100,000 words of it, and found it wholly devoid of scientific value, a sidelight on a genius and nothing more. The editors now putting the papers online read them as chemistry. William Newman's Newton the Alchemist (2018) is the full case that the laboratory work fed his science; this house has not yet read it, and states its thesis only as a lead. What is settled is the scale. The Chymistry of Isaac Newton project at Indiana counts about a million words in the alchemical manuscripts, against the four million the Newton Project has transcribed of his physics, mathematics and theology. Keynes also thought the papers would be dispersed for good. His own purchases are why half of them are in Cambridge.",
+  "facts": [
+    {
+      "b": "15 April 1726",
+      "s": "The apple conversation: William Stukeley, 'Memoirs of Sir Isaac Newton's Life', revised manuscript of 1752, Royal Society MS/142, read in the Newton Project's normalized transcription (OTHE00001)"
+    },
+    {
+      "b": "1712 · 1715",
+      "s": "The Commercium Epistolicum and the anonymous Account in Philosophical Transactions: D. R. Wilkins's edition of the Account, Trinity College Dublin, History of Mathematics; Newton's draft, Newton Project NATP00353"
+    },
+    {
+      "b": "July 1936 · just over £9,000 · about half",
+      "s": "The Sotheby's sale and Keynes's purchases: Newton Project, 'The Sotheby Sale'; Keynes, 'Newton, the Man', read on MacTutor (St Andrews)"
+    },
+    {
+      "b": "about a million words · four million · 100,000",
+      "s": "The alchemical manuscripts and the Newton Project's transcriptions: James R. Voelkel, 'Chasing the Clues in Isaac Newton's Manuscripts', Distillations, Science History Institute; what Keynes read: 'Newton, the Man'"
+    }
+  ],
+  "corrected": [
+    25
+  ]
 }

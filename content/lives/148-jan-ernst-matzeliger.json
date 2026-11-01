@@ -1,0 +1,63 @@
+{
+  "id": "jan-ernst-matzeliger",
+  "no": 148,
+  "keep": "He wrote the boy or girl into the patent. The machine that sold needed a training school, and it sold anyway.",
+  "n": "Jan Ernst Matzeliger",
+  "years": "1852–1889",
+  "place": "Paramaribo and Lynn",
+  "field": "Invention & Industry",
+  "group": "obscure",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "lede": "Three churches in Lynn turned him away. He solved the one step of shoemaking a quarter of a million dollars had failed to mechanise, and signed away two-thirds of it before the patent was issued.",
+  "copy": [
+    "He was born on 15 September 1852 in Surinam, the son of a white Dutch engineer who ran the government's machine works in Paramaribo and a woman enslaved on a plantation outside it. He was apprenticed in a machine shop at ten. He landed in Philadelphia in late 1873 or early 1874, speaking little English, in the depression that followed the Panic of 1873, and in 1876 or 1877 he moved to Lynn, Massachusetts, the shoe capital. He ran a McKay stitching machine at the M. H. Harney Company. One step in the factory no machine could do. A laster pulled the leather upper around a wooden last by hand and tacked it down, five or six minutes a shoe, fifty or sixty pairs a day for a good one. Gordon McKay's association had spent $120,000 on a lasting machine and $130,000 more fighting a rival over it. What came out was useless for pointed toes and thin leather, which is what Lynn made.",
+    "By 1880 Matzeliger had a model of cigar boxes, elastic and wire. Someone offered him fifty dollars for it sight unseen, and he refused. He took a job at Beal Brothers because it let him use the machine tools, and built a working model from parts out of junkyards, living largely on cornmeal mush. He filed on 24 January 1882. The patent says his machine needed 'only the service of a boy or girl or other unskilled labor to attend the machine.' To pay for one good enough for a factory he took two backers, Charles H. Delnow and Melville S. Nichols, at two-thirds of all eventual profits. Patent No. 274,207, dated 20 March 1883, names him 'assignor of two-thirds' to them. On 29 May 1885 the machine lasted seventy-five pairs of women's shoes at a minute a shoe.",
+    "The production model missed his own goal. It needed so much skill that the company, the Consolidated Hand-Method Lasting Machine Company, set up a school to train its operators. Around 1885 he sold it all rights in his patents for stock worth more than $15,000. A good operator could last as many as 700 pairs a day; 200 to 300 was typical. He had been turned away by Lynn's Roman Catholic, Unitarian and Episcopal churches; North Congregational took him in 1884. He was found to have tuberculosis in 1886 and died on 24 August 1889, weeks short of thirty-seven. His will left about a third of his estate to North Congregational, on condition, as Dennis Karwatka prints it, that 'it shall not knowingly be given or expended for any member of the Roman Catholic, Unitarian or Episcopal churches.' In 1899 the company merged with forty others into the United Shoe Machinery Corporation. Lynn named a bridge for him in 1984."
+  ],
+  "bio": {
+    "t": "Against All Odds",
+    "a": "Dennis Karwatka",
+    "y": "1991",
+    "u": "https://www.inventionandtech.com/node/85489",
+    "why": "There is no scholarly life of Matzeliger; what is in print beyond this is mostly written for children. Karwatka's essay in Invention & Technology (Winter 1991) is the fullest narrative, and it says where its own stories are doubtful. It names no sources, so its figures are his. This house has read it and the patent, not the will."
+  },
+  "contested": "The numbers, first. The figure most often repeated is 700 pairs a day. Karwatka gives that as what a competent operator could reach, and 200 to 300 as typical; the first public trial did seventy-five. None of the three has been traced here to a document of the time. Then what he was paid. Karwatka puts his stock at more than $15,000 and writes that he earned a fraction of what his financiers made but died with financial security, a house on Albany Street and shares to leave. Neither 'he got nothing' nor 'he turned down a fortune' survives that; the fifty dollars he refused was for the cigar-box model. Karwatka also passes on a story that an earlier railway-coupler design was stolen from him, and marks it 'True or not.' His birth year is 1852 in Karwatka and 1854 on the Commons page that carries his portrait. The will itself this house has not read.",
+  "across": [
+    {
+      "to": "lives:charles-goodyear",
+      "label": "Charles Goodyear",
+      "txt": "— who also solved a problem better-funded men had failed at, and saw others make the money."
+    },
+    {
+      "to": "lives:chester-carlson",
+      "label": "Chester Carlson",
+      "txt": "— who also gave a backer most of what his machine might earn; Battelle took 60 per cent of the royalties, Delnow and Nichols two-thirds of Matzeliger's profits."
+    }
+  ],
+  "facts": [
+    {
+      "b": "No. 274,207 · 24 January 1882 · 20 March 1883 · two-thirds",
+      "s": "The lasting-machine patent, its filing date, its date and the assignment to Nichols and Delnow: US Patent 274,207, J. E. Matzeliger, 'Lasting-Machine', read on Google Patents"
+    },
+    {
+      "b": "fifty or sixty pairs a day · five or six minutes · $120,000 · $130,000",
+      "s": "Hand lasting, and what McKay's association spent: Dennis Karwatka, 'Against All Odds', Invention & Technology 6:3 (Winter 1991), inventionandtech.com"
+    },
+    {
+      "b": "fifty dollars · 29 May 1885 · seventy-five pairs · one minute",
+      "s": "The offer for the model and the first demonstration: Karwatka (1991)"
+    },
+    {
+      "b": "$15,000 · 700 pairs · 200 to 300 · forty other companies · 1984",
+      "s": "The stock, the machine's output, the 1899 merger and the bridge: Karwatka (1991)"
+    },
+    {
+      "b": "15 September 1852 · 1884 · 1886 · 24 August 1889 · about a third",
+      "s": "His birth, church membership, illness, death and the bequest: Karwatka (1991)"
+    }
+  ]
+}

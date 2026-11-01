@@ -1,0 +1,58 @@
+{
+  "id": "joseph-bazalgette",
+  "no": 149,
+  "keep": "He did not build for every storm. He built for a London not yet built, and gave the storms back to the river.",
+  "n": "Joseph Bazalgette",
+  "years": "1819–1891",
+  "place": "London",
+  "field": "Engineering",
+  "group": "obscure",
+  "cover": "#2E3B33",
+  "spineC": "#1F2923",
+  "ink": "#EEF0EA",
+  "accent": "#CDBB88",
+  "motif": "conic",
+  "lede": "The story says he worked out how big London's sewers had to be, and then doubled it. His own paper says he sized them for a city not yet built, and let the storms run into the Thames.",
+  "copy": [
+    "London had buried 18,036 people from cholera in 1849 and nearly 20,000 in 1854, by Bazalgette's own count. For centuries its sewers had been run by commissions the government appointed and the ratepayers could not remove. Builders, especially south of the river, had put houses on cheap land where there was no outlet for a sewer at all. In 1856 a Metropolitan Board of Works took over, forty-five members sent up from thirty-nine districts, and made him its engineer. His plan for the drainage of London was approved by the Board and then vetoed by the First Commissioner of Works on a technical point. The Commissioner sent it to a commission of engineers, who drew up a plan of their own. That plan went to Bidder, Hawksley and Bazalgette, whose report sank it. Work began in 1859.",
+    "The design was a series of intercepting sewers running east along both banks, catching the old sewers before they reached the Thames and carrying everything to outfalls below the city. He sized them from the water supply. In 1850 London drew 20 to 25 gallons a head a day; he planned for 5 cubic feet, 31¼ gallons. Where a district held fewer than 30,000 people to the square mile, he provided for it to fill up to 30,000; the outlying districts he built for 20,000. Storms he did not try to carry. It 'would not have been wise, or practicable,' he wrote, to make the intercepting sewers much larger for rare thunderstorms, so overflow weirs at the junctions act 'as safety-valves', and the surplus runs through the old channels into the river. By 1865 the works ran to 82 miles of main intercepting sewers and 318 million bricks, with 2,380 nominal horsepower of pumping, at a cost he put at about £4,100,000.",
+    "In the summer of 1866 cholera came back to the East End, and William Farr, at the General Register Office, wrote to him. Part of the stricken district had no use of the new low-level sewer. 'It is unfortunately just the locality where our main drainage works are not complete,' Bazalgette replied. 'The low-level sewer is constructed through the locality, but the pumping station at Abbey Mills will not be completed until next summer.' He proposed a temporary pumping station, about three weeks' work. Farr laid the outbreak on the East London Company's water, not on the drains; the unfinished section was, he wrote, a further aggravation. Cholera deaths in one week reached 1,053. In London that year they came to 5,596."
+  ],
+  "bio": {
+    "t": "The Great Stink of London: Sir Joseph Bazalgette and the Cleansing of the Victorian Metropolis",
+    "a": "Stephen Halliday",
+    "y": "1999",
+    "why": "The full account, and the book the popular retellings draw their figures from, so it is the place to check them. For the design in his own words, his paper 'On the Main Drainage of London' (Minutes of Proceedings of the Institution of Civil Engineers, vol. 24, 1865) is free and readable. This house has read the paper and Farr's report, not Halliday."
+  },
+  "contested": "Two things. First, the doubling. A History channel biography says he calculated the size of tunnel needed for every citizen's waste 'And then he doubles it,' and the line is everywhere. His paper of 1865 says nothing of the kind. The generosity in it is in the inputs: 31¼ gallons a head where London drew 20 to 25 in 1850, and a population allowance for districts not yet built. On storms he says the opposite of the legend, and chose overflow into the Thames over larger sewers. Whether a later account finds a doubling in his working papers this house cannot say; it has not found one. Second, 1866. Farr's case was the water, and he said so in the letter that drew Bazalgette's reply. Thomas Orton, medical officer for Limehouse, published a special report the same year arguing for 'a primary atmospheric influence' travelling east, acting on the filth of the district. On Farr's reading the unfinished sewer made a water-borne outbreak worse; it did not cause it.",
+  "across": [
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— who showed in 1854 that cholera travelled in water; in 1866 Farr used that reading against the East London Company while Bazalgette's sewers were still unfinished."
+    },
+    {
+      "to": "lives:john-l-leal",
+      "label": "John L. Leal",
+      "txt": "— the other answer to dirty water: chlorine in the supply, where London had answered with brick."
+    }
+  ],
+  "facts": [
+    {
+      "b": "18,036 · nearly 20,000 · forty-five members · thirty-nine districts",
+      "s": "Cholera deaths in 1849 and 1854, and the shape of the Metropolitan Board: J. W. Bazalgette, 'On the Main Drainage of London, and the Interception of the Sewage from the River Thames', Minutes of Proceedings of the Institution of Civil Engineers 24 (1865), pp. 285–286, read in the Internet Archive scan (minutesofproceed24inst)"
+    },
+    {
+      "b": "20 to 25 gallons · 5 cubic feet · 31¼ gallons · 30,000 · 20,000",
+      "s": "The water supply of 1850 and the design allowances: Bazalgette (1865), pp. 290–291"
+    },
+    {
+      "b": "82 miles · 318 million bricks · 2,380 nominal horsepower · £4,100,000",
+      "s": "The works and their cost when complete: Bazalgette (1865), the closing pages of the paper"
+    },
+    {
+      "b": "1,053 · 5,596",
+      "s": "The peak week of 1866 and London's cholera deaths that year: William Farr, Report on the Cholera Epidemic of 1866 in England (London: Eyre and Spottiswoode, 1868), read in the Internet Archive scan (b24976854); Bazalgette's letter is printed in the same report"
+    }
+  ]
+}

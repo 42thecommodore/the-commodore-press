@@ -30,6 +30,11 @@
       "to": "lives:benjamin-franklin",
       "label": "Benjamin Franklin",
       "txt": "— who printed Lay's book, by Rush's account, and visited him in his cave, by Vaux's."
+    },
+    {
+      "to": "lives:paul-cuffe",
+      "label": "Paul Cuffe",
+      "txt": "— a sailor whose parents followed the Quaker meeting, who carried thirty-eight Black Americans to Sierra Leone in 1815."
     }
   ],
   "facts": [

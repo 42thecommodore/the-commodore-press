@@ -1,0 +1,71 @@
+{
+  "id": "e-h-harriman",
+  "no": 147,
+  "keep": "The Union Pacific he took over was not a ruin. It was a cheap railroad, and he made it a straight one, by spending money other men would have taken out.",
+  "n": "E. H. Harriman",
+  "years": "1848–1909",
+  "place": "New York and the Union Pacific",
+  "field": "Railroads",
+  "group": "obscure",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "He left school at fourteen for an office boy's job on Wall Street at five dollars a week. When the bankrupt Union Pacific was reorganised, the bankers refused him the chair he asked for. He took a $900,000 share instead, and within a year he ran the road.",
+  "copy": [
+    "At fourteen, after two years at Trinity School in New York, he told his father, as his biographer has it, 'I am going to work.' He went to D. C. Hays, a Stock Exchange house, as office boy at five dollars a week, and rose to messenger, clerk and chief clerk before opening an office of his own. In 1897 the Union Pacific was sold at foreclosure to a committee backed by the bankers Kuhn, Loeb. Jacob Schiff refused to make Harriman chairman of its executive committee. Harriman took a $900,000 participation in the syndicate. By the summer of 1898 he had the chair, and he went over the whole line by daylight. On the main line he found seven miles of 90-pound rail. Eighty per cent of the track was 60- and 70-pound, and almost eighty per cent of the main line had no ballast at all.",
+    "The legend says he bought a streak of rust. His own biographer's figures describe a cheap road, not a dead one, and what he did was spend on it. Between 1898 and 1902 the Union Pacific put nearly $45 million into betterments. Between Omaha and Ogden it abandoned more than 150 miles of old line, took out 22 complete circles of curvature and saved nearly 40 miles of distance. Collis Huntington died in August 1900. In February 1901 his associate Edwin Hawley agreed, for himself and the Huntington estate, to transfer 475,000 Southern Pacific shares, and by 31 March the Union Pacific held 750,000, or 38 per cent. The cut-off across the Great Salt Lake that Harriman then pushed through was not his idea. Huntington's chief engineer, William Hood, had drawn it years before. In May 1901 Harriman tried to buy control of the Northern Pacific out from under James J. Hill and J. P. Morgan. On 9 May its stock touched $1,000 a share, and the men caught short settled at $150.",
+    "On 8 October 1906 Theodore Roosevelt wrote to Representative James Sherman about a conversation Sherman had reported. Harriman, Sherman said, had boasted that he 'could buy Congress' and 'the judiciary.' Roosevelt allowed it was 'doubtless said partly in boastful cynicism'. He still called Harriman 'at least as undesirable a citizen as Debs, or Moyer, or Haywood,' and told Sherman he was welcome to show Harriman the letter. Two months later Roosevelt needed him. The Colorado River had broken through the California Development Company's own intake in 1905 and was filling the Salton Sink, and on 20 December 1906 the President asked the Southern Pacific to close the break. Harriman said yes the same day. The river was closed on 10 February 1907. Kennan puts the whole cost at approximately $3,100,000. A bill to repay it died in the House in 1911."
+  ],
+  "bio": {
+    "t": "The Life and Legend of E. H. Harriman",
+    "a": "Maury Klein",
+    "y": "2000",
+    "why": "The modern life, by the historian of the Union Pacific, and the one that sets out to separate the man from the legend. This house has read reviews of it, not the book. Every figure here is from George Kennan's 1922 life, commissioned by the family and full of the letters, and to be read knowing who paid for it."
+  },
+  "contested": "Each side of the Northern Pacific fight had an authorised biographer, and each blames the other. Pyle, for Hill, says Harriman started it after he was refused a share of the Burlington. Kennan, for Harriman, says Harriman's side bought nothing after Friday 3 May, and that the Morgan side's buying on the 6th and 7th made the spike. Both agree it was not a deliberate corner. The Roosevelt letter rests on Sherman's report of a private conversation, which Roosevelt never heard himself, and it reached the public as a weapon: Roosevelt gave it to the press in April 1907, after the New York World printed Harriman's own account of their dealings, to 'strike Mr. Harriman a counter-blow', in Kennan's words, with a letter 'based largely upon information that Sherman had given him orally.' Klein's verdict, as Churella summarised it in a review for EH.Net in 2000, is that Harriman mostly carried out other men's ideas superbly, and that Klein stands sometimes too close to his subject. The Salt Lake cut-off and its engineer bear that out. Even his fortune is unsettled: published estimates of the estate run from $70 million to more than $200 million, and this house has opened no probate record.",
+  "across": [
+    {
+      "to": "lives:james-j-hill",
+      "label": "James J. Hill",
+      "txt": "— his opponent in the Northern Pacific fight of May 1901, and then his partner in Northern Securities."
+    },
+    {
+      "to": "lives:collis-p-huntington",
+      "label": "Collis P. Huntington",
+      "txt": "— whose estate's block of Southern Pacific stock the Union Pacific took, and whose engineer's plan for the Great Salt Lake Harriman finished."
+    },
+    {
+      "to": "lives:theodore-roosevelt",
+      "label": "Theodore Roosevelt",
+      "txt": "— who called him an undesirable citizen in October 1906, and asked for his help two months later."
+    }
+  ],
+  "facts": [
+    {
+      "b": "five dollars a week · $900,000",
+      "s": "His first job and his share in the reorganisation syndicate: George Kennan, E. H. Harriman: A Biography, vol. 1 (Boston: Houghton Mifflin, 1922), pp. 11–12 and 126, read in the Internet Archive's scan. Kennan wrote for the family"
+    },
+    {
+      "b": "seven miles · eighty per cent · almost eighty per cent",
+      "s": "The Union Pacific's main line as Harriman found it in 1898: Kennan (1922), vol. 1, p. 144"
+    },
+    {
+      "b": "nearly $45 million · 150 miles · 22 circles · nearly 40 miles",
+      "s": "Betterments 1898–1902 and the relocated line, Omaha to Ogden: Kennan (1922), vol. 1, pp. 159–160 and 169, citing the Commercial & Financial Chronicle"
+    },
+    {
+      "b": "475,000 shares · 750,000 · 38 per cent",
+      "s": "The Southern Pacific purchase of 1901: Kennan (1922), vol. 1, pp. 238–240"
+    },
+    {
+      "b": "$1,000 · $150",
+      "s": "The Northern Pacific price of 9 May 1901 and the shorts' settlement: Kennan (1922), vol. 1, pp. 313–314; the $1,000 also in Joseph Gilpin Pyle, The Life of James J. Hill, vol. 2 (1917), p. 150, Hill's authorised life"
+    },
+    {
+      "b": "approximately $3,100,000",
+      "s": "The Southern Pacific's outlay on the Colorado, of which about $1,600,000 came after Roosevelt's appeal, and the failed reimbursement bill: Kennan (1922), vol. 2, pp. 159 and 171, citing House Report No. 1936, part 2, 61st Congress, 3rd session; the Sherman letter's release, vol. 2, pp. 200–201 and 209"
+    }
+  ]
+}

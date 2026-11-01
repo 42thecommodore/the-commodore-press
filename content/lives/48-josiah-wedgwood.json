@@ -49,6 +49,11 @@
       "to": "lives:benjamin-franklin",
       "label": "Benjamin Franklin",
       "txt": "— in 1788 Wedgwood sent him a batch of the medallions his works gave away at abolitionist meetings."
+    },
+    {
+      "to": "lives:richard-arkwright",
+      "label": "Richard Arkwright",
+      "txt": "— building a factory and a village round it at Cromford in the same years, and losing his patent in court in 1785."
     }
   ]
 }

@@ -1,0 +1,58 @@
+{
+  "id": "paul-cuffe",
+  "no": 150,
+  "keep": "The oldest account says his tax protest won Black men a law. It names no law, and gives no date.",
+  "n": "Paul Cuffe",
+  "years": "1759–1817",
+  "place": "Westport, Massachusetts, and Sierra Leone",
+  "field": "Trade & Abolition",
+  "group": "obscure",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "He could not read a line when his father died, and twice lost his cargo to raiders before he made a dollar. By fifty he owned a ship, two brigs and several smaller vessels.",
+  "copy": [
+    "Paul Cuffe was born in 1759 on Cuttyhunk, off Cape Cod. His father had been brought from Africa as a slave, owned by a man named Slocum, and had bought his own freedom; his mother, Ruth Moses, was Wampanoag. His father left a hundred-acre farm on the Westport River with debts on it, and Paul, about fourteen, with his mother and younger brothers to keep. He went whaling at sixteen. Then he built an open boat with his own hands, loaded it and sailed for Nantucket. Raiders the memoir calls the Refugees took boat and cargo. The next time they robbed him and beat him. He could not read until after his father's death, and an old friend taught him the first principles of navigation in two weeks.",
+    "He built a trade on the coasting voyages that had ruined him. In 1795 he launched the Ranger, a schooner of 69 tons, and took her to Vienna, Maryland, for corn. A ship owned, commanded and crewed by men of colour alarmed the town, and a group tried to keep him out; his papers were in order and the customs officers had to enter him. He sailed home with 3,000 bushels and cleared $1,000. By 1806 he owned three-quarters of the Alpha, 268 tons, crewed by seven men of colour, all related to him. When his neighbours could not agree on a school, he built one on his own ground and opened it to everyone. In 1811 he took the Traveller to Sierra Leone, then to Liverpool and London, where the African Institution asked his advice. In 1815, with his own money and his own brig, he carried thirty-eight Black Americans in nine families to Sierra Leone. He meant to carry more, and died in September 1817.",
+    "The famous episode is the taxes. He and his brother John refused to pay a personal tax, on the ground that men denied the vote should not be taxed like those who had it. The first account of it, a memoir published by the Delaware Society for the abolition of slavery and reprinted in Belfast in 1811, says they paid in the end, petitioned the legislature, and won a law making free persons of colour liable to tax like white men and 'granting them all the privileges belonging to other citizens'. Its author says plainly that the time when this took place is unknown to him. The National Park Service tells it differently: the brothers were jailed at Taunton, and a state court established in 1783 that Black taxpayers could vote. In both, the vote comes later and from somebody else's hand."
+  ],
+  "bio": {
+    "t": "Rise to Be a People: A Biography of Paul Cuffe",
+    "a": "Lamont D. Thomas",
+    "y": "1986",
+    "why": "The modern life, from the logs, letters and deeds. Read beside it the 1811 memoir, free on the Internet Archive in the Belfast Monthly Magazine's reprint, which is where most of the stories start and where the tax story first claims a law. This house has read the memoir, not Thomas."
+  },
+  "contested": "Two things. First, what the tax protest won. The 1811 memoir credits the petition with a law granting Black citizens full privileges, and Britannica repeats its words. The National Park Service credits a court in 1783. Encyclopedia summaries this house has not traced to their sources say the petition was simply dismissed. The petition and the jailing are documented; the line from either to the franchise is not, and the memoir's own author could not date it. The surviving draft of a request to the selectmen of Dartmouth, 22 April 1781, asks only 'To know whether all free negroes or mulattoes shall have the same privileges in this town of Dartmouth as the white population have', which reads like a question still open. Second, Africa. The Park Service records that the American Colonization Society, founded in 1816 by men most of whom held slaves, sought his advice and got it. Cuffe, it says, believed African Americans would never receive full equality in the United States. Secondary accounts, which this house has not traced to the letters, report free Black Philadelphians rejecting emigration in 1817. Whether that makes him the first Pan-Africanist or a recruit for the slaveholders' scheme is the argument Thomas's later title, Paul Cuffe: Black Entrepreneur and Pan-Africanist, takes a side in.",
+  "across": [
+    {
+      "to": "lives:benjamin-lay",
+      "label": "Benjamin Lay",
+      "txt": "— a Quaker sailor two generations earlier, who argued against slavery inside the meetings Cuffe's parents followed."
+    },
+    {
+      "to": "lives:robert-smalls",
+      "label": "Robert Smalls",
+      "txt": "— the other Black captain who used a ship as an argument."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1759 · a hundred acres · about fourteen · sixteen · two weeks",
+      "s": "His birth, his father's farm and debts, the whaling voyages and the navigation lessons: 'Memoirs of the Life of Paul Cuffee, the Interesting Negro Navigator', published by the Delaware Society for the abolition of Slavery, reprinted in The Belfast Monthly Magazine 7 (October 1811), read in JSTOR's Early Journal Content on the Internet Archive"
+    },
+    {
+      "b": "1795 · 69 tons · 3,000 bushels · $1,000 · 1806 · 268 tons · three-quarters · seven men",
+      "s": "The Ranger, the Vienna voyage and the Alpha: the 1811 memoir"
+    },
+    {
+      "b": "Cuttyhunk · 1783 · nine families · thirty-eight · September 1817",
+      "s": "His birthplace, the Taunton jail and the 1783 court, the 1815 voyage and his death: National Park Service, New Bedford Whaling National Historical Park, 'Paul Cuffe', nps.gov"
+    },
+    {
+      "b": "22 April 1781",
+      "s": "The request to the selectmen of Dartmouth, draft, in the New Bedford Free Public Library, as reproduced by the Paul Cuffe Heritage Trail, paulcuffe.org"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "william-walker",
+  "no": 144,
+  "keep": "The decree never says slavery. He did, in his own book: by that act, he wrote, his government must be judged.",
+  "n": "William Walker",
+  "years": "1824–1860",
+  "place": "Nashville, San Francisco and Nicaragua",
+  "field": "Filibuster",
+  "group": "obscure",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "conic",
+  "lede": "He sailed with fifty-eight men under a grant to settle colonists, and fourteen months later he was president of Nicaragua. The decree said to have restored slavery there never uses the word.",
+  "copy": [
+    "His first republic lasted six months. In October 1853 the brig Caroline slipped out of San Francisco with 45 men aboard. They landed at La Paz on 3 November, took the governor prisoner and raised the flag of the Republic of Lower California. On 18 January 1854 he annexed Sonora, on the mainland, by decree. On 8 May 1854, his thirtieth birthday, he surrendered to the United States, and 33 men signed the parole with him. Then the Democrats in Nicaragua, losing a civil war, sent an agent, Byron Cole, to hire 300 Americans for military duty. Walker turned the contract down as a breach of the neutrality law of 1818. He suggested a colonization grant instead. Francisco Castellón signed one on 29 December 1854, for 300 colonists who were to have 'forever the privilege of bearing arms.'",
+    "The Vesta was towed out of San Francisco shortly after midnight on 4 May 1855. The papers counted 56 men aboard, and the men gloried afterward as the 'Fifty-six Immortals.' The number actually carried was fifty-eight. Within months he controlled the army. The richest thing in the country was Vanderbilt's Accessory Transit Company, which carried gold-rush passengers across the isthmus by river and lake. On 18 February 1856 Walker revoked its charter: the company had paid its $10,000 a year but never the tenth of its profits it owed the state. On the 19th he granted a new one to Charles Morgan and Cornelius Garrison. Publication was held back so that they would hear first. 'Thus Morgan and Garrison had news of the acts before they were known to the companies,' Walker wrote. On 14 May President Pierce received the government's envoy, Padre Vijil. On 12 July Walker became president himself.",
+    "On 22 September 1856 he declared every act of the old Central American federation null and void. One of them had abolished slavery. The decree does not say so. Walker conceded that reading it as restoring slavery 'may be doubted' as a strictly legal deduction, then said the repeal 'clearly prepared the way for the introduction of slavery.' And: 'By this act must the Walker administration be judged; for it is the key to its whole policy.' Vanderbilt answered with agents. Two of his men reached San José on 28 November and planned with President Mora of Costa Rica to take the river steamers. On Christmas Day Vanderbilt told his stockholders that the company would be 'speedily restored to their rights.' The armies of the Central American states did the fighting. Walker surrendered at Rivas to an American naval officer on 1 May 1857, with powder and shot to spare. On 12 September 1860 a Honduran firing squad shot him at Trujillo. A report said to be his adjutant-general's counted 2,288 enlistments up to February 1857. His general Charles Henningsen counted 2,518 to the surrender. One thousand died of disease or were killed."
+  ],
+  "bio": {
+    "t": "Filibusters and Financiers: The Story of William Walker and His Associates",
+    "a": "William O. Scroggs",
+    "y": "1916",
+    "why": "Old, free, and still the fullest narrative from the papers, with its authorities named and its doubtful stories flagged as doubtful. It leans on Walker's own book in places. The current scholarly reading is Michel Gobat's Empire by Invitation (2018), which this house has not yet opened."
+  },
+  "contested": "What he was for. Scroggs (1916) held that 'the chief end and aim of the measure was to make slavery no longer unlawful in Nicaragua', a bid for sympathy in the South when the Central American states had allied against him. But Scroggs did not think slavery was the point of the venture. Walker went to Nicaragua, he wrote, 'neither as the agent of capitalists nor as the tool of slavery propagandists'; it was Walker's own book of 1860 that led historians to take slavery for the end, when it was a means. Michel Gobat's Empire by Invitation (2018), as its reviewers describe it, argues that earlier historians underrated how many Nicaraguans invited and backed him, and reads the project as liberal empire more than proslavery expansion. This house has read the reviews, not the book. How much Vanderbilt did is argued too. Scroggs's chapter is called 'The Vengeance of Vanderbilt', but its pages show Costa Rica's army and four others doing the fighting, cholera and desertion doing the rest, and an American commander arranging the surrender. The story of Vanderbilt announcing the war at a New York dinner Scroggs calls 'of doubtful authenticity', first published twenty years after the events.",
+  "across": [
+    {
+      "to": "lives:cornelius-vanderbilt",
+      "label": "Cornelius Vanderbilt",
+      "txt": "— whose transit company he took and gave away, and who sent the agents that took the river steamers back."
+    },
+    {
+      "to": "atlas:story",
+      "label": "The Atlas · Story is leverage",
+      "txt": "— fifty-eight men sailed and fifty-six became the legend, because the papers printed fifty-six and the men liked it."
+    }
+  ],
+  "facts": [
+    {
+      "b": "45 men · 33 men",
+      "s": "Lower California and Sonora, 1853–54: William O. Scroggs, Filibusters and Financiers: The Story of William Walker and His Associates (New York: Macmillan, 1916), read in the Internet Archive's scan"
+    },
+    {
+      "b": "300 men · 300 colonists",
+      "s": "The first contract and the colonization grant of 29 December 1854: William Walker, The War in Nicaragua (Mobile: S. H. Goetzel, 1860), Project Gutenberg #76898; Scroggs (1916)"
+    },
+    {
+      "b": "fifty-eight · 56",
+      "s": "The Vesta's passengers: Scroggs (1916), footnote to the chapter on the voyage: 'The number actually carried was fifty-eight, though the newspaper accounts at the time gave it as fifty-six.' Walker gives the sailing as after midnight on 4 May 1855"
+    },
+    {
+      "b": "$10,000 · ten per cent",
+      "s": "The Transit Company's annual dues, paid 1849–55, and the share of profits it never paid: Scroggs (1916), chapter on the Transit Company, p. 136"
+    },
+    {
+      "b": "2,288 · 2,518 · one thousand",
+      "s": "Enlistments to 24 February 1857, from a report 'purported to have been prepared by Walker's adjutant-general', and Charles Henningsen's total of 2,518 to the surrender, with what became of them, 'One thousand died of disease or were killed; 700 deserted': Scroggs (1916), chapter 'In the Last Ditch'"
+    }
+  ]
+}

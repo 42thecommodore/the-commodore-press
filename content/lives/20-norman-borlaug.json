@@ -1,7 +1,7 @@
 {
   "id": "norman-borlaug",
   "no": 20,
-  "keep": "Applied science, done patiently in a field, can change the fate of nations.",
+  "keep": "India's farmers did not want his wheat as it came. The grain was red and made dark rotis, and Indian breeders turned it into Sonalika and Kalyan Sona.",
   "n": "Norman Borlaug",
   "years": "1914–2009",
   "place": "United States",
@@ -12,22 +12,23 @@
   "ink": "#EEF6EC",
   "accent": "#C3DEB4",
   "motif": "grid",
-  "lede": "Frequently called the man who saved more human lives than anyone who has ever lived — and most people have never heard of him.",
+  "lede": "Frequently called the man who saved more lives than anyone who ever lived. Nobody has shown the sum, and the wheat that fed India had to be bred again before Indians would eat it.",
   "copy": [
-    "An Iowa farm boy and plant pathologist, Borlaug spent the 1940s and 50s in Mexico. He crossbred thousands of wheat varieties. The goal was high-yielding, disease-resistant, short-stalked strains that could carry heavy heads of grain without toppling.",
-    "When famine threatened India and Pakistan in the 1960s, his wheat — paired with modern methods — roughly doubled harvests within years. Looming mass starvation turned into self-sufficiency. This was the Green Revolution, and it spread across Asia and Latin America.",
-    "He won the Nobel Peace Prize in 1970. He spent his remaining decades fighting hunger in Africa and defending agricultural science against critics, while acknowledging the environmental trade-offs of intensive farming. Borlaug is the quiet patron saint of the idea that applied science, done patiently in the field, can change the fate of nations."
+    "An Iowa farm boy and plant pathologist, Norman Borlaug spent the 1940s and 50s in Mexico, breeding wheat. The goal was high-yielding, disease-resistant, short-stalked strains that could carry heavy heads of grain without toppling. In 1964 he and his Mexican colleague Ignacio Narvaez went to Pakistan, where Mexican wheat was already growing on President Ayub Khan's farm. Borlaug told him Pakistan could be self-sufficient in wheat by 1970. Ayub Khan released money for seed, fertiliser, training and price supports.",
+    "India's account comes from M. S. Swaminathan, who ran its programme. In 1966 the government approved a high-yielding varieties programme for wheat, rice and bajra, to cover 32 million hectares, and India imported 18,000 tonnes of seed of two Mexican varieties because farmers were asking for it. The grain had a problem. It was red, Swaminathan said, and people did not like dark rotis. Indian breeders crossed it into Sonalika and Kalyan Sona. Production went, in his telling, from 10 million tonnes to 17 million. At independence it had been 6 million.",
+    "The Nobel Peace Prize of 1970 went to him 'for having given a well-founded hope — the green revolution'. The best measure of what that hope bought is in yields and prices, not lives. Prabhu Pingali's review of 2012 gives wheat yields across developing countries up 208 per cent between 1960 and 2000. Without the crop breeding, he estimates, food production there would have been almost 20 per cent lower, and world food and feed prices 35 to 65 per cent higher."
   ],
   "bio": {
     "t": "The Man Who Fed the World",
     "a": "Leon Hesser",
     "y": "2006",
-    "why": "Hesser, an agricultural economist who worked alongside Borlaug in Pakistan, wrote the authorized biography with first-hand knowledge of the work. Warmly written and the fullest popular account."
+    "why": "Hesser, an agricultural economist and a colleague of Borlaug's, wrote the fullest popular account with first-hand knowledge of the work. Warmly written. This house has read Swaminathan, Pingali and the Borlaug archive at Minnesota, not Hesser."
   },
   "corrected": [
-    11
+    11,
+    29
   ],
-  "contested": "An authorized biography by a colleague is not an independent one. The 'saved a billion lives' figure is repeated everywhere and calculated nowhere the house could find, so this entry does not print it; how many lives the Green Revolution saved is argued, not measured. The critics — on water depletion, fertiliser runoff, seed dependency and the concentration of gains among larger landholders — make arguments Hesser does not seriously engage. Both the achievement and the critique are real.",
+  "contested": "Two things. First, the number. The 'saved a billion lives' figure is repeated everywhere and calculated nowhere the house could find, so this entry does not print it. It is usually traced to Gregg Easterbrook's 'Forgotten Benefactor of Humanity' in The Atlantic (January 1997); the magazine's site refused this house's reader, so whether he wrote a billion, or something more careful, is not yet checked. Pingali's counterfactuals are about food and prices, which is as close to a measurement as anyone has come. Second, who gained. Pingali, no enemy of the Green Revolution, names how the technology bypassed the poor: inequitable land distribution with insecure tenancy, weak markets for credit and inputs, and policies that favoured larger farms. In South Asia the rain-fed areas were slowest to benefit, and the gaps between regions widened. The critics on water, fertiliser runoff and seed dependency go further. Both the achievement and the critique are real.",
   "across": [
     {
       "to": "lives:fritz-haber",
@@ -43,6 +44,25 @@
       "to": "lives:tu-youyou",
       "label": "Tu Youyou",
       "txt": "— artemisinin, found inside a secret military programme and credited, contentiously, to one person."
+    },
+    {
+      "to": "lives:cyrus-mccormick",
+      "label": "Cyrus McCormick",
+      "txt": "— the other half of the harvest: the machine that cut it, a century before Borlaug's seed."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1964 · self-sufficient by 1970",
+      "s": "Borlaug and Narvaez in Pakistan, and his forecast to Ayub Khan: University of Minnesota, 'Taking the Mexican Miracle Wheat to the World's Farmers: 1961–1969', borlaug.cfans.umn.edu"
+    },
+    {
+      "b": "1966 · 32 million hectares · 18,000 tonnes · 10 to 17 million tonnes · 6 million",
+      "s": "India's programme, the seed imports and the harvest: M. S. Swaminathan, interview published by the Indian Council of Agricultural Research, icar.org.in"
+    },
+    {
+      "b": "208% · almost 20% · 35–65%",
+      "s": "Wheat yields in developing countries, 1960–2000, and the counterfactuals for food production and prices: Prabhu L. Pingali, 'Green Revolution: Impacts, limits, and the path ahead', PNAS 109 (2012), read on PubMed Central"
     }
   ]
 }

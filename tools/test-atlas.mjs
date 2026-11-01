@@ -72,10 +72,13 @@ setTimeout(async () => {
       document.querySelectorAll(".tn.co").length + " named of " + P_BY_ID.hard.members.length);
     t("the card lists who taught it", document.querySelectorAll("#isleCard .who").length === P_BY_ID.hard.members.length);
     // the Life beside a lesson: a link to its page, and the house's line under it in roman —
-    // in italic beside a face it read as the person's own words
+    // in italic beside a face it read as the person's own words. Read off the lesson with the most
+    // Lives, not a named one: "hard" lost its only Life when correction 26 cut the line it rested on
+    const withLives = Object.keys(P_BY_ID).sort((a, b) => P_BY_ID[b].ports.length - P_BY_ID[a].ports.length)[0];
+    selectIsle(null); await wait(800); atlasRoute(withLives); await wait(900);
     const rows = [...document.querySelectorAll("#isleCard .portrow")];
     t("a Life beside a lesson links its page, and its line is set in roman", rows.length > 0 && rows.every(a => a.tagName === "A" && a.getAttribute("href").startsWith("l/")
-      && getComputedStyle(a.querySelector(".pr-t > :last-child")).fontStyle !== "italic"), rows.length + " rows");
+      && getComputedStyle(a.querySelector(".pr-t > :last-child")).fontStyle !== "italic"), rows.length + " rows on " + withLives);
     selectIsle(null); await wait(800);
     const e2 = E[1]; atlasRoute("c/" + slug(e2.idea)); await wait(900);
     t("#atlas/c/<idea> opens that constellation", document.querySelector(".feat-i").textContent === e2.idea, document.querySelector(".feat-i").textContent);

@@ -1,0 +1,53 @@
+{
+  "id": "cyrus-mccormick",
+  "no": 143,
+  "keep": "He did not build the first reaper or, at first, the best. He won by letting farmers pay after the harvest the machine had brought in.",
+  "n": "Cyrus McCormick",
+  "years": "1809–1884",
+  "place": "Walnut Grove, Virginia, and Chicago",
+  "field": "Industry",
+  "group": "famous",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "lede": "The inventor of the reaper, says the schoolbook. He was beaten to the patent by a Quaker-reared whaling hand with a patch over one eye, and the patent office later refused to extend his own.",
+  "copy": [
+    "Cyrus McCormick grew up on Walnut Grove, his family's 1,200-acre farm in the Shenandoah Valley. His father, Robert, a tinkerer, had worked at a mechanical reaper on and off since Cyrus was born, and was about ready to give up when Cyrus, then twenty-two, took it over in May 1831. By July he had cut a patch of oats in a neighbour's field. 'I found in practice innumerable difficulties,' he admitted. It took him until 1833 to cut all the grain at Walnut Grove.",
+    "In early 1834, ready to apply for a patent, he found a picture in Mechanics' Magazine of Obed Hussey's reaper, patented on the last day of 1833 and already being made in New York and Ohio. Hussey's machine, Joseph Gies writes, was viable when McCormick's was still marginal. McCormick got his own patent anyway, in 1834, since the office could not then refuse one on those grounds. The war between them began there. When McCormick's patent came up for extension in 1848, Hussey petitioned against it and farmers and editors joined him. The extension was refused: the reaper was held too valuable to be monopolised. By 1851 it had run seventeen years. At the Great Exhibition in London that year The Times called his machine a cross between a flying machine, a wheelbarrow and a chariot, then, after the field trials, 'the most valuable contribution from abroad'.",
+    "Chicago, not the patent, made him. He had reapers built there for the harvest of 1847 and was soon manufacturing alone. He sold on terms a farmer could meet: $35 down on a price of $125, the balance due on 1 December, after the harvest the machine had paid for. During the Civil War Edwin Stanton called the reaper to the North what slavery was to the South. McCormick himself was an outspoken enemy of the war and of abolition. After the iron venture of 1837 failed, he was said to have come out of it with his honour, one slave, a horse and saddle, and $300."
+  ],
+  "bio": {
+    "t": "Cyrus Hall McCormick",
+    "a": "William T. Hutchinson",
+    "y": "1930 / 1935",
+    "why": "Two volumes, Seed-Time and Harvest, from the company's own papers; every later account cites it for dates. It is a company history as much as a life. For the rivalry, Joseph Gies's 'The Great Reaper War' (Invention & Technology, 1990) is short, fair to Hussey and free. This house has read Gies, not Hutchinson."
+  },
+  "contested": "Who invented the reaper. The documents settle less than the schoolbook claims. Patrick Bell, a Scottish clergyman, built one in 1828 that never worked well and fell into disuse; Gies notes that neither Hussey nor McCormick had seen it. Hussey had a machine running in 1831 and patented first. Inside the family it became a feud: his brother Leander, Gies notes, quarrelled with him and wrote a book that gave the credit elsewhere. This house has not read Leander's book. What is not disputed is that the reaper that took the market was McCormick's, sold by an army of local salesmen under commissioned state agents, warranted against rivals, and paid for on credit.",
+  "across": [
+    {
+      "to": "lives:norman-borlaug",
+      "label": "Norman Borlaug",
+      "txt": "— the other American who changed how much grain a man could harvest, a century later and with seed instead of steel."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1,200 acres · May 1831 · 1833 · last day of 1833 · seventeen years",
+      "s": "Walnut Grove, the first trials and Hussey's patent: Joseph Gies, 'The Great Reaper War', Invention & Technology 5:3 (Winter 1990), inventionandtech.com"
+    },
+    {
+      "b": "1847 · 1848 · 1851",
+      "s": "The Chicago works, the refused extension and the Great Exhibition trials: Gies (1990)"
+    },
+    {
+      "b": "$35 down · $125 · 1 December",
+      "s": "McCormick's credit terms: Gies (1990)"
+    },
+    {
+      "b": "one slave · $300",
+      "s": "What he was said to have kept after the iron venture of 1837: Gies (1990), who gives it as hearsay and names no source"
+    }
+  ]
+}

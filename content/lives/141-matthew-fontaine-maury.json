@@ -1,0 +1,53 @@
+{
+  "id": "matthew-fontaine-maury",
+  "no": 141,
+  "keep": "The charts were made from captains' logs and shortened the passage to California. The same pen called the Amazon the safety-valve of the South.",
+  "n": "Matthew Fontaine Maury",
+  "years": "1806–1873",
+  "place": "Virginia, Washington and Mexico",
+  "field": "Oceanography",
+  "group": "obscure",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "A broken leg ended his career at sea, so he went to sea through other men's logbooks. The charts he made from them were real. So was what he wanted the Amazon for.",
+  "copy": [
+    "Matthew Fontaine Maury was a navy lieutenant when, on his way back to New York from Tennessee, he was thrown from the top of a stagecoach. His leg was broken at the knee, set badly, and he spent three months laid up at Somerset, Ohio. By 1842 he was running the navy's Depot of Charts in Washington, sitting on years of old ships' logs and the winds and currents they recorded.",
+    "He read them, and then made the trade that built his name. Any captain who kept an abstract log of his voyage in Maury's form and sent it back would get the Wind and Current Charts free, and every chart his data helped to make. Representatives of ten maritime nations met at Brussels on 23 August 1853 and adopted a common plan of observations. In The Physical Geography of the Sea (1855) he claimed the average passage to California had been 183 days before the charts and was now 135. He printed no table behind the figures. Arthur Clark's history of the clipper ships gives 159 days as the average for thirty-three ships arriving in the summer of 1850, none of them using the charts. The ships were getting faster at the same time.",
+    "In 1851 he signed an essay in the Southern Literary Messenger that saw the valley of the Amazon as 'the safety-valve of the South': a place to send slaves to if their numbers pressed too hard on the Union. 'We need not go there ourselves, nor send our slaves there immediately; but it is well to have the ability to go or to send.' He warned that the two races would one day 'join in the death struggle for the mastery'. On 20 April 1861 he resigned from the navy and went to Richmond, where he worked on electric torpedoes for the Confederacy. After the war Maximilian made him Imperial Commissioner for Colonization in Mexico, to settle Southern planters there. Robert E. Lee declined to come. By June 1866 the colony of Carlotta, near Córdoba, had been burned out by Mexican liberals after its settlers drove Indian labourers back to their fields with blows."
+  ],
+  "bio": {
+    "t": "Matthew Fontaine Maury: Scientist of the Sea",
+    "a": "Frances Leigh Williams",
+    "y": "1963",
+    "why": "The documented modern life, with the Amazon and Mexico in it. The admiring first life, by his daughter Diana Corbin (1888), prints his letters whole and is free; it is the source of much of this entry. This house has read Corbin and Maury's own writings, not Williams."
+  },
+  "contested": "Two things. First, the science. The charts were a real and lasting achievement, and Brussels made his log form an international standard. But the house could find no table behind the 183 and 135 days, and Clark's own figures, which credit Maury generously, cannot separate the charts from the faster hulls of the clipper era. The Physical Geography of the Sea also argued for an open, ice-free sea at the North Pole. Second, what he wanted. His family's defence is his own letter to a cousin of 24 December 1851: 'I am not seeking to make slave territory out of free'; Brazil was already a slave country. Penelope Hardy and Helen Rozwadowski, writing in Oceanography in 2020, answer that before and after his resignation he worked for the perpetuation and expansion of race-based slavery. The Messenger essay supports them: the point of the Amazon, as he wrote it, was to move American slavery out of the United States, not to free anyone.",
+  "across": [
+    {
+      "to": "lives:benjamin-franklin",
+      "label": "Benjamin Franklin",
+      "txt": "— whose explanation of the Gulf Stream, the trade winds piling water into the Caribbean, was the one Maury set out to replace."
+    }
+  ],
+  "facts": [
+    {
+      "b": "three months · 1842",
+      "s": "The stagecoach accident and the Depot of Charts: Diana Fontaine Maury Corbin, A Life of Matthew Fontaine Maury (London, 1888), read in the Internet Archive scan"
+    },
+    {
+      "b": "23 August 1853 · 183 days · 135 days",
+      "s": "Brussels and the California passage, as Maury claimed it: M. F. Maury, The Physical Geography of the Sea, 5th edition (New York: Harper, 1855), Introduction §§ XIII and XXXIX, read in the Internet Archive scan"
+    },
+    {
+      "b": "159 days · thirty-three ships · 26 June–28 July 1850",
+      "s": "Average passages to San Francisco before the charts: Arthur H. Clark, The Clipper Ship Era (1910), chapter 9, read on Wikisource"
+    },
+    {
+      "b": "20 April 1861 · 8 September 1865 · 6 June 1866",
+      "s": "His resignation and Lee's letter: Corbin (1888); the end of Carlotta: New York Tribune dispatch from Vera Cruz, reprinted in Papers Relating to Foreign Affairs, 1866, part 3, document 94, Office of the Historian, history.state.gov"
+    }
+  ]
+}

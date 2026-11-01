@@ -1,7 +1,7 @@
 {
   "id": "abraham-lincoln",
   "no": 9,
-  "keep": "Patience is a political weapon, and two minutes of the right words can outlive four years of war.",
+  "keep": "The Greeley letter is read as indifference to slavery. He wrote it a month after reading his cabinet the proclamation that would free people.",
   "n": "Abraham Lincoln",
   "years": "1809–1865",
   "place": "United States",
@@ -12,29 +12,54 @@
   "ink": "#EDEDEF",
   "accent": "#C6CBD4",
   "motif": "lines",
-  "lede": "Roughly a year of formal schooling, and a prose style of biblical economy.",
+  "lede": "He wrote that if he could save the Union without freeing any slave, he would. The draft that freed them was already in his hand.",
   "copy": [
-    "Born in a one-room Kentucky cabin, Lincoln became the president who held the United States together and ended American slavery. He was largely self-taught, and read law by firelight.",
-    "Elected in 1860, he watched the nation fracture and then led it through four years of the bloodiest war in its history. The Emancipation Proclamation turned the war into a struggle for freedom; the Gettysburg Address, two minutes long, redefined the country around the proposition that all men are created equal. He pushed the Thirteenth Amendment through Congress to abolish slavery permanently, and was assassinated days after the Confederacy's surrender, before he could shape the peace.",
-    "He endures as the central figure of the American experiment — proof, and also test, of whether a government “of the people, by the people, for the people” can survive its own contradictions."
+    "By the summer of 1862 Abraham Lincoln was being pressed by abolitionists and radical Republicans to free the slaves. On 17 July Congress passed the Second Confiscation Act, giving Union forces the right to free slaves held by rebels. He had already drafted what he called a preliminary proclamation. He read it first to William Seward and Gideon Welles on 13 July. Seward, by the Library of Congress's account, said it would be viewed as the last measure of an exhausted government. On 22 July Lincoln read it to the whole cabinet. Stanton wanted it out at once; Montgomery Blair foresaw defeat in the autumn elections. Lincoln kept it, and waited for a victory.",
+    "A month later Horace Greeley's Tribune printed 'The Prayer of Twenty Millions', accusing him of reluctance to use the powers Congress had given him. Lincoln answered on 22 August, in a rival paper. 'My paramount object in this struggle is to save the Union, and is not either to save or to destroy slavery. If I could save the Union without freeing any slave I would do it.' It is the most quoted proof that he did not care. He wrote it with the draft already written. The letter ends: 'I intend no modification of my oft-expressed personal wish that all men everywhere could be free.' The preliminary proclamation followed on 22 September, four days after the Union victory at Antietam.",
+    "The final text of 1 January 1863 freed people only where the states were in rebellion. It named the exceptions: thirteen Louisiana parishes, New Orleans among them, the forty-eight counties of West Virginia, and seven more in Virginia, including Norfolk and Portsmouth, all 'left precisely as if this proclamation were not issued'. The loyal border states it did not touch. Its promise depended on Union armies, and it opened those armies to Black men; by the end of the war almost 200,000 had served. The Thirteenth Amendment passed the Senate in April 1864 and the House on 31 January 1865, by 119 votes to 56. It was ratified on 6 December 1865, after his death."
   ],
   "bio": {
     "t": "Lincoln",
     "a": "David Herbert Donald",
     "y": "1995",
-    "why": "A two-time Pulitzer winner's finest single-volume life: strictly evidence-based, following Lincoln's own knowledge at each moment, capturing his growth and his limits. For the cabinet drama, pair it with Doris Kearns Goodwin's Team of Rivals (2005)."
+    "why": "A two-time Pulitzer winner's single-volume life, following Lincoln's own knowledge at each moment, capturing his growth and his limits. For the cabinet, pair it with Doris Kearns Goodwin's Team of Rivals (2005). This house has read the documents, not Donald."
   },
-  "contested": "Donald's governing thesis — that Lincoln was fundamentally reactive, shaped by events rather than shaping them — is itself an interpretation, and one plenty of historians resist. It is a reading, not a neutral record.",
+  "contested": "What the Greeley letter was for. One reading takes it at its word: Union first, slavery a means. Another, the one this entry leans on, reads it as cover, written by a man who had already decided and was preparing the North for it; the Library of Congress's account, that his mind was made up as to the substance by July, supports that. The sharpest case against both is Lerone Bennett Jr.'s Forced into Glory (2000), which argues that Lincoln was pushed into emancipation and never wanted it. Eric Foner's The Fiery Trial (2010) is the standard answer, that his views on slavery moved under pressure and that the movement is the story. This house has read neither book and states both only as leads. The documents settle the order of events. They do not settle what was in his head.",
   "across": [
     {
       "to": "lives:churchill",
       "label": "Winston Churchill",
-      "txt": "— the other wartime leader whose words did structural work; two minutes against a career of them."
+      "txt": "— the other wartime leader whose words did structural work, and who chose his moment for them."
     },
     {
       "to": "lives:frederick-douglass",
       "label": "Frederick Douglass",
       "txt": "— who came to the White House in August 1863 to ask for equal pay for Black soldiers, and who sat for more photographs than Lincoln did: 160 to 126, by Stauffer and Trodd's count."
     }
+  ],
+  "facts": [
+    {
+      "b": "13 July · 17 July · 22 July 1862 · 22 September 1862",
+      "s": "The draft read to Seward and Welles, the Second Confiscation Act, the cabinet meeting and the preliminary proclamation: Library of Congress Information Bulletin, 'Emancipation Proclamation on Display', March 1998"
+    },
+    {
+      "b": "22 August 1862",
+      "s": "Lincoln to Horace Greeley, as printed in the Daily National Intelligencer, 23 August 1862, read in the transcription at teachingamericanhistory.org, citing the Abraham Lincoln Papers, Library of Congress"
+    },
+    {
+      "b": "thirteen parishes · forty-eight counties · seven counties",
+      "s": "The exemptions: the Emancipation Proclamation, National Archives transcription"
+    },
+    {
+      "b": "almost 200,000",
+      "s": "Black soldiers and sailors in Union service by the end of the war: National Archives, 'The Emancipation Proclamation', featured document"
+    },
+    {
+      "b": "April 1864 · 31 January 1865 · 119–56 · 6 December 1865",
+      "s": "The Thirteenth Amendment's passage and ratification: National Archives, Milestone Documents, '13th Amendment to the U.S. Constitution'"
+    }
+  ],
+  "corrected": [
+    28
   ]
 }

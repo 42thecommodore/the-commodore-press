@@ -1,0 +1,58 @@
+{
+  "id": "ignaz-semmelweis",
+  "no": 139,
+  "keep": "Vienna did not stop the washing when it let him go. His successors kept the death rate near his own; what it rejected was his theory, and him.",
+  "n": "Ignaz Semmelweis",
+  "years": "1818–1865",
+  "place": "Vienna and Pest",
+  "field": "Medicine",
+  "group": "famous",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "conic",
+  "lede": "The legend says Vienna threw away his discovery when it threw him out. His successor kept the students washing, and the deaths stayed low.",
+  "copy": [
+    "The Vienna General Hospital ran two maternity clinics. Doctors and medical students worked in the first; the second trained midwives. Ignaz Semmelweis became an assistant in the first clinic in 1846, and printed in his book of 1861 what the arrangement cost. In the six years before any washing, 1,989 of the 20,042 women delivered in the doctors' clinic died. In the midwives' clinic it was 691 of 17,791. In 1846 alone the doctors lost 459 women of 4,010, the midwives 105 of 3,754.",
+    "On 20 March 1847 he came back from Venice to the news that Professor Kolletschka, who taught forensic medicine, was dead. A student's dissecting knife had nicked his finger during a post-mortem class. He died of pleurisy, pericarditis, peritonitis and meningitis, the same list Semmelweis had watched kill hundreds of women. His conclusion: not the wound but its contamination with matter from corpses had killed him. From about the middle of May he made every student wash in chlorine solution before examining a woman, and later switched to chlorinated lime because it was cheaper. In 1848, the first full year of washing, the doctors' clinic lost 45 women of 3,556. That was a lower rate than the midwives', 43 of 3,219.",
+    "He was not ignored. Ferdinand Hebra's medical journal printed the first announcement, and Skoda lectured on the discovery to the Academy of Sciences, which printed the lecture. His post was not renewed, and from 20 March 1849 Carl Braun held it. When Jadraque and K. Codell Carter counted the deaths after he left, his successors had kept a rate roughly like his own. The washing went on. What was resisted, on their reading, was his theory, and the side he was on in a faculty quarrel. His own book took until 1861. In it he wrote that whoever fails to prevent childbed fever is answerable for its ravages, and that the professor Scanzoni had placed himself among the guilty who kept the lying-in hospitals 'wahre Mörderhöhlen': true murderers' dens. He was committed to an asylum in 1865 and died there on 13 August."
+  ],
+  "bio": {
+    "t": "Childbed Fever: A Scientific Biography of Ignaz Semmelweis",
+    "a": "K. Codell Carter and Barbara R. Carter",
+    "y": "1994",
+    "why": "The life set against what medicine actually knew in the 1840s, which lets it explain the resistance instead of only deploring it. Sherwin Nuland's The Doctors' Plague (2003) is the readable alternative. This house has read Semmelweis's own German text of 1861, not either biography."
+  },
+  "contested": "Two things. First, why he was resisted. Jadraque and Carter's count (Epidemiology and Infection, 2017) says it was not doubt about the washing, since the washing continued. They name two other sources. One was political: in the years round 1848 he was caught in a struggle between the younger faculty and their seniors, and as a Hungarian he may have drawn suspicion. They reject the popular explanation, Nuland's, that his arrogance did it. The other source his own book shows. His theory was that childbed fever came from decaying animal matter carried on hands, a single cause for what his colleagues treated as many diseases, and he answered critics in print by calling them, in effect, accessories to the deaths. A doctor could keep washing and still reject that. Second, how he died. Three experts who examined his remains after the exhumation of 1963 concluded he died of sepsis from a slow infection of the right hand. In the 1970s György Silló-Seidl obtained the original Austrian autopsy report, which confirmed sepsis and nothing else, and then argued that he was beaten to death in the asylum. Képmás, summarising the Hungarian record, calls that version the most popular and the least supported. The psychiatrist István Benedek's suggestion that his last illness was late syphilis is a third reading. The autopsy report itself this house has not read.",
+  "across": [
+    {
+      "to": "lives:john-snow",
+      "label": "John Snow",
+      "txt": "— the other man of the 1840s and 50s who found the cause of a killer in a route of contamination, and was remembered for a gesture the evidence does not support."
+    },
+    {
+      "to": "lives:florence-nightingale",
+      "label": "Florence Nightingale",
+      "txt": "— who also argued hospital deaths down with tables of figures, and found the army's own hospitals were the killer."
+    }
+  ],
+  "facts": [
+    {
+      "b": "20,042 women · 1,989 deaths · 17,791 · 691",
+      "s": "Deaths in the two clinics over the six years before chlorine washing: Ignaz Semmelweis, Die Aetiologie, der Begriff und die Prophylaxis des Kindbettfiebers (Pest, Wien und Leipzig: Hartleben, 1861), read in the Internet Archive scan (b33953740)"
+    },
+    {
+      "b": "1846: 459 of 4,010 · 105 of 3,754 — 1848: 45 of 3,556 · 43 of 3,219",
+      "s": "The yearly figures before and after the washing: Semmelweis, Die Aetiologie (1861), the same scan"
+    },
+    {
+      "b": "20 March 1847 · mid-May 1847 · 20 March 1849",
+      "s": "His return from Venice, the start of the washing, and Carl Braun's appointment: Semmelweis, Die Aetiologie (1861)"
+    },
+    {
+      "b": "13 August 1865 · 1963",
+      "s": "His death and the exhumation findings: Képmás, 'One semi-true and one false myth about Ignác Semmelweis', kepmas.hu; the successors' death rates: Jadraque and Carter, Epidemiology and Infection 145 (2017), read in full on PubMed Central (PMC9203449)"
+    }
+  ]
+}

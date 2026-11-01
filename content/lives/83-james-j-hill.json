@@ -45,6 +45,11 @@
       "to": "lives:j-p-morgan",
       "label": "J. Pierpont Morgan",
       "txt": "— his partner, with Harriman, in Northern Securities."
+    },
+    {
+      "to": "lives:e-h-harriman",
+      "label": "E. H. Harriman",
+      "txt": "— who tried to buy the Northern Pacific out from under him in May 1901, and became his partner in Northern Securities."
     }
   ],
   "facts": [

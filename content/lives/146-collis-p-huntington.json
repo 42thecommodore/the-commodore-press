@@ -1,0 +1,67 @@
+{
+  "id": "collis-p-huntington",
+  "no": 146,
+  "keep": "The government paid by the mile and paid triple only in the mountains, so where the mountains began was worth money; his job was to be in the room where that was decided.",
+  "n": "Collis P. Huntington",
+  "years": "1821–1900",
+  "place": "Sacramento, Washington and New York",
+  "field": "Railroads",
+  "group": "obscure",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "He sold hardware in Sacramento. Asked under oath in 1887 about the contract that built his railroad across Nevada and Utah, he said: 'I am not certain that I ever saw the contract.'",
+  "copy": [
+    "Huntington & Hopkins were hardware and metal merchants in Sacramento, and in 1861 the two partners, with Leland Stanford and Charles Crocker, organised the Central Pacific Railroad. Huntington ran its business from New York. 'I used to go to California about once a year, and staid but a few days,' he told a federal commission in 1887. 'My business was here.' The money was the government's. The Pacific Railway Act of 1 July 1862 paid in $1,000 bonds, sixteen to the mile. On the plateau between the ranges the rate was doubled. For the 300 miles 'most mountainous and difficult of construction' it was trebled. The popular version gives $48,000 a mile for the line. The 1862 Act paid it for 300 miles at most.",
+    "Crocker took the first eighteen sections out of Sacramento, Huntington remembered, and six or eight smaller contractors about 13 miles more. They quarrelled over labour: 'it was pleasanter on the lower section and contractors there would scoop those men in' on their way up the line. The rest went to Crocker, who was soon losing money. Investors in New York would not share his risk without a company. 'Then I wrote to our people to organize under the laws of the State a building company, which they did.' That was the Contract and Finance Company, whose stock 'was nearly all held by Governor Stanford, Mr. Hopkins, Mr. Crocker, and myself.' The four partners were paying themselves to build their own road, with limited liability. Most of the men who did the work were Chinese. The National Park Service gives a first crew of 50; PBS gives a peak of 12,000 in 1868, at least 80 per cent of the Central Pacific's labour.",
+    "The rest of his career was spent in Washington. He wrote to his associate David Colton in San Francisco, and extracts from a few of them were later printed by his enemies as How Congressmen Are Bribed. Letter No. 389, of 20 November 1874, reads: 'Scott is prepared to pay, or promises to pay, a large amount of money to pass his bill, but I do not think he can pass it, although I think this coming session of Congress will be composed of the hungriest set of men that ever got together'. Of Luttrell, a congressman he wanted kept out of Washington, he wrote on 1 May 1875: 'he is a wild hog.' The letters show him expecting Congress to be bought. They do not show him paying, and the pamphlet's headline, 'Congressmen are for Sale', is the printer's, not his. He died on 13 August 1900, holding the largest single block of Southern Pacific stock. Within eight months Harriman's Union Pacific had agreed to take it, and held 38 per cent of the company."
+  ],
+  "bio": {
+    "t": "The Great Persuader",
+    "a": "David Lavender",
+    "y": "1970",
+    "why": "The standard life, written with access to family papers, which is its strength and its tilt. This house has not yet opened it. What it has read is Huntington's own sworn testimony of 1887 and the Colton letters, and those are where to start."
+  },
+  "contested": "Whether the Central Pacific's owners were robber barons or merely lucky ones. Richard White's Railroaded (2011) argues that the transcontinentals were badly built, badly run and kept alive by politics, and, on Hahn's account of the book, rejects the all-powerful Octopus of the cartoons as a model of how they worked. Steven Hahn, reviewing it in The New Republic, objects that the owners got rich on advantages the government handed them, and that public control deserved more room in the book. This house has read the review, not White. What the line cost is not settled either: the Contract and Finance Company's accounts were kept by the men it paid, and no one has disentangled them. The Colton letters are hostile evidence too. The pamphlet that prints them is undated, prints extracts chosen by his enemies, and says the Commission tried to have the letters put in evidence in 1888. One extract, of 17 January 1876, has him estimating that $200,000 would pass his own bill, and judging it not worth that much.",
+  "across": [
+    {
+      "to": "lives:e-h-harriman",
+      "label": "E. H. Harriman",
+      "txt": "— whose Union Pacific took the Huntington estate's block of Southern Pacific stock within a year of his death, and finished the cut-off across the Great Salt Lake that Huntington's engineer had planned."
+    },
+    {
+      "to": "lives:jay-gould",
+      "label": "Jay Gould",
+      "txt": "— who held the Union Pacific, the other end of the line, while Huntington held the Central."
+    },
+    {
+      "to": "atlas:connect",
+      "label": "The Atlas · Connect",
+      "txt": "— a hardware merchant whose real work was knowing which congressman wanted what, three thousand miles from the road."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$1,000 · sixteen to the mile · doubled · trebled · 300 miles",
+      "s": "The bond subsidy and its three rates: Pacific Railway Act, 1 July 1862, sections 5 and 11, 12 Stat. 489, read in the National Archives transcript, archives.gov"
+    },
+    {
+      "b": "eighteen sections · six or eight parties · 13 miles",
+      "s": "Huntington's testimony, New York, 21–22 September 1887: Report of the United States Pacific Railway Commission (Senate Ex. Doc. 51, 50th Cong., 1st sess.), pp. 3769–3770, read in the Internet Archive's OCR text (reportunitedsta02manngoog); the 'Camp 24' answer and the Contract and Finance stock as read back to a later witness, same report (reportunitedsta03manngoog)"
+    },
+    {
+      "b": "50 · 12,000 · at least 80 per cent",
+      "s": "The first Chinese crew: National Park Service, 'Chinese Labor and the Iron Road', Golden Spike National Historical Park, nps.gov. The 1868 peak and its share: PBS American Experience, 'Workers of the Central and Union Pacific Railroad'. Neither names its primary source"
+    },
+    {
+      "b": "No. 389 · 20 November 1874 · 1 May 1875 · $200,000 · 17 January 1876",
+      "s": "The letter to Colton on Scott and the hungry Congress: How Congressmen Are Bribed: The Colton Letters (undated pamphlet), read in the Internet Archive's scan. The pamphlet is a hostile reprint"
+    },
+    {
+      "b": "13 August 1900 · eight months · 38 per cent",
+      "s": "His death, his estate's block (more than 20 per cent of Southern Pacific stock) and the Union Pacific's 750,000 shares by 31 March 1901: George Kennan, E. H. Harriman: A Biography, vol. 1 (Boston: Houghton Mifflin, 1922), pp. 234–240, read in the Internet Archive's scan"
+    }
+  ]
+}

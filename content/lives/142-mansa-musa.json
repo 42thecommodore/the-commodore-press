@@ -1,0 +1,58 @@
+{
+  "id": "mansa-musa",
+  "no": 142,
+  "keep": "The gold did not crash and recover. Al-'Umari says its price fell and was still low twelve years later, when he was writing.",
+  "n": "Mansa Musa",
+  "years": "reigned 1312–1337",
+  "place": "Mali and Cairo",
+  "field": "Statecraft & Trade",
+  "group": "famous",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "The richest man who ever lived, worth $400 billion, says a celebrity website's list of 2012. The man who wrote down what he did in Cairo gave no total, only what it did to the price of gold.",
+  "copy": [
+    "Mansa Musa ruled the Mali Empire of West Africa from 1312 to 1337, over territories rich in gold and copper. In 1324 he crossed the Sahara on pilgrimage to Mecca and stopped at Cairo. The fullest account is by al-'Umari, who came to Cairo several years later and heard from the men who had dealt with him. One of them, the emir sent to receive him, said he spoke only through an interpreter though he could speak Arabic perfectly well, and sent many loads of unworked gold to the royal treasury.",
+    "He would not go up to the Citadel to meet the sultan. 'I came for the Pilgrimage and nothing else,' he said. The emir understood the real objection: he would have to kiss the ground and the sultan's hand. When they finally brought him in and told him to kiss the ground, he refused outright. A man beside him whispered something, and he said, 'I make obeisance to God who created me!', and prostrated himself. The sultan half rose and sat him at his side.",
+    "In Cairo he left no court emir or royal officer without a load of gold, and his people spent freely in the markets. Al-'Umari records the result. Before they came the mithqal of gold never went below 25 silver dirhams. After, it was about 22 or less, and it had stayed that cheap, he wrote, for about twelve years until the day he was writing. A popular history now says the gold 'crashed by 20%' and 'it would take 12 years for the flooded gold market to recover'. A fall from 25 to 22 is twelve per cent, not twenty. Al-'Umari's twelve years are not a recovery. They are how long the price had been low when he stopped counting."
+  ],
+  "bio": {
+    "t": "African Dominion: A New History of Empire in Early and Medieval West Africa",
+    "a": "Michael A. Gomez",
+    "y": "2018",
+    "why": "A history of the West African empires built from oral tradition and the Arabic sources together, with a chapter on Musa and global Mali. For the sources themselves, Levtzion and Hopkins's Corpus of Early Arabic Sources for West African History (1981). This house has read al-'Umari in the excerpt Boston University publishes from the Corpus, not Gomez."
+  },
+  "contested": "Two things. First, the fortune. The $400 billion figure first appears, as far as this house can trace it, in a list the website Celebrity Net Worth published in October 2012 and Fox News reported on 17 October, which ranked him first, the Rothschild family second at $350 billion, and John D. Rockefeller third at $340 billion, all 'adjusted for inflation'. No method was published with it, and no medieval source gives a total from which anyone could adjust; al-'Umari counts loads of gold and gifts, not wealth. Historians who have written on it, reported in summaries this house has not traced to their own words, say his wealth cannot be put to a number. That is the honest position, and it does not make him less rich. Second, the size of the gold shock. Al-'Umari is the only contemporary to give it at length, and he wrote from his informants, not from a price series. Warren Schultz's reappraisal of the story (2006) is the place to start, and this house has not yet read it.",
+  "across": [
+    {
+      "to": "lives:john-d-rockefeller",
+      "label": "John D. Rockefeller",
+      "txt": "— third on the same 2012 list, at $340 billion, behind Musa and the Rothschilds."
+    },
+    {
+      "to": "lives:jakob-fugger",
+      "label": "Jakob Fugger",
+      "txt": "— the other 'richest ever', where the title is a book's and the number under it a single year's balance."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1312 · 1337",
+      "s": "His reign: Mark Cartwright, 'Mansa Musa I', World History Encyclopedia"
+    },
+    {
+      "b": "at least 25 dirhams · about 22 or less · about twelve years · twelve per cent",
+      "s": "The price of a mithqal of gold before and after his visit: al-'Umari, Masalik al-absar, in Levtzion and Hopkins, Corpus of Early Arabic Sources for West African History (1981), read in the excerpt published by Boston University's African Studies Center, 'Kingdom of Mali'; the fall of twelve per cent is this house's arithmetic on his 25 and 22"
+    },
+    {
+      "b": "$400 billion · $350 billion · $340 billion",
+      "s": "The 2012 list: Fox News, 'Website names obscure 14th century African king the richest person in history', 17 October 2012, reporting Celebrity Net Worth"
+    },
+    {
+      "b": "20% · 12 years",
+      "s": "The popular version: Cartwright, 'Mansa Musa I', World History Encyclopedia"
+    }
+  ]
+}

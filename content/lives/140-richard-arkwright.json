@@ -1,0 +1,53 @@
+{
+  "id": "richard-arkwright",
+  "no": 140,
+  "keep": "The court that took his patent never said who invented the machine. The judge told the jury the question that mattered was whether he had described it honestly.",
+  "n": "Richard Arkwright",
+  "years": "1732–1792",
+  "place": "Preston, Nottingham and Cromford",
+  "field": "Industry",
+  "group": "famous",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "lede": "A barber from Bolton with very little schooling built the water-powered cotton mill at Cromford. When the Crown sued to cancel his patent, its counsel's summing-up was that he had been too clever.",
+  "copy": [
+    "Richard Arkwright was born in Preston in 1732, the youngest of thirteen children by the count of the 1911 Britannica, and had a very indifferent education. He set up as a barber in Bolton around 1750 and made a little money dealing in hair for wigs. In 1767 he hired John Kay, a clockmaker from Warrington, to help him build a spinning machine, and in 1769 he patented it. His first mill, in Nottingham, was turned by horses. Jedediah Strutt and Samuel Need put money in, and in 1771 the partners built a much larger mill at Cromford in Derbyshire, its machinery turned by a water-wheel.",
+    "Cromford was a factory in the modern sense, with a village built round it for the workers. The Derwent Valley Mills, now a World Heritage site, describe the day: work from six in the morning, six days a week, finishing twelve hours later. Children as young as seven were sometimes employed, though most started at about nine, and paid forfeits out of their wages for lateness or for looking out of the window. Arkwright and Strutt held that a child should be able to read and write before starting work. In 1779 a crowd destroyed a large mill he had put up near Chorley. He was knighted in 1786, and died in 1792 with a fortune estimated at over £500,000.",
+    "In 1785 the Crown sued to cancel his second patent, granted on 16 December 1775 for machines to prepare cotton for spinning. Mr Justice Buller gave the jury three questions: was the invention new, was it Arkwright's, and was it sufficiently described? The last, he said, was 'the question of the greatest importance'. If parts of the specification were 'thrown in merely to puzzle', the patent was void on that ground alone. Thomas Highs, spelled Hayes in the report, swore he had used rollers in 1767 and had Kay make him a model; Kay said he carried the idea to Arkwright. For the Crown, Bearcroft closed that Arkwright 'has been too clever'. The jury, without a minute's hesitation, found for the Crown."
+  ],
+  "bio": {
+    "t": "The Arkwrights: Spinners of Fortune",
+    "a": "R. S. Fitton",
+    "y": "1989",
+    "why": "The standard life of Arkwright and his son, from the family's business papers. Read it beside the printed report of the 1785 trial, which is free on the Internet Archive and gives both sides' witnesses at length. This house has read the trial report, not Fitton."
+  },
+  "contested": "Who invented the spinning frame. The trial does not say. The verdict was general, and the judge told the jury that the specification was the question that mattered most, so the jury may have found only that Arkwright had hidden his machine, not that he had taken it. Arkwright's counsel moved for a new trial on exactly that point, saying two earlier trials had turned on the specification alone and the evidence on originality had taken him by surprise; Lord Mansfield refused. Buller told the court that after four or five hours he had thought the defendant had not a leg to stand on. Highs's claim rests on his own testimony and Kay's, eighteen years after the fact. The 1911 Britannica sides with Arkwright. Fitton, by secondary accounts this house has not checked against his book, treats Highs's evidence with caution. What the report does show is that the Crown's case on obscurity was strong, and that the jury did not need long.",
+  "across": [
+    {
+      "to": "lives:josiah-wedgwood",
+      "label": "Josiah Wedgwood",
+      "txt": "— the other Midlands manufacturer of the 1770s, whose firm is explained by a costing, as Arkwright's is by a lawsuit."
+    }
+  ],
+  "facts": [
+    {
+      "b": "1732 · thirteen children · 1767 · 1769 · 1771 · 1779 · 1786",
+      "s": "His birth, schooling and trade, Kay, the patent, Cromford, the Chorley mill and the knighthood: 'Arkwright, Sir Richard', Encyclopædia Britannica, 11th edition (1911), read on Wikisource"
+    },
+    {
+      "b": "six in the morning · twelve hours · seven · nine",
+      "s": "The millworkers' day and children's ages: Derwent Valley Mills World Heritage Site, 'How the Derwent Valley changed the world', derwentvalleymills.org"
+    },
+    {
+      "b": "over £500,000",
+      "s": "His fortune at death, an estimate: Grace's Guide to British Industrial History, 'Richard Arkwright'"
+    },
+    {
+      "b": "16 December 1775 · three questions",
+      "s": "The patent in suit, the judge's charge and the verdict: The Trial of a Cause Instituted by Richard Pepper Arden, Esq., His Majesty's Attorney General, by Writ of Scire Facias, to Repeal a Patent Granted on the Sixteenth of December 1775, to Mr. Richard Arkwright (London, 1785), read in the Internet Archive's OCR text"
+    }
+  ]
+}

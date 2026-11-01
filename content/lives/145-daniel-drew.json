@@ -1,0 +1,63 @@
+{
+  "id": "daniel-drew",
+  "no": 145,
+  "keep": "The trick he is remembered for is in a book he did not write. The one he actually played, on his own railroad's stock, is in Adams, with the figures.",
+  "n": "Daniel Drew",
+  "years": "1797–1879",
+  "place": "Carmel, New York, and Wall Street",
+  "field": "Railroads & Finance",
+  "group": "obscure",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "He could barely write, and for most of two decades he kept the Erie's money. The story that he invented watered stock comes from a memoir printed thirty-one years after his death, whose editor admits he rewrote it.",
+  "copy": [
+    "He was born in 1797 in Carmel, Putnam County. As a boy he drove cattle down to the New York market, and for years he kept the Bull's Head Tavern. Like Cornelius Vanderbilt he made his first money in steamboats, then moved to railroads. Charles Francis Adams Jr., who wrote the account of him that lasted, called him 'Shrewd, unscrupulous, and very illiterate.' He sat on the Erie board from about 1850, by Adams's reckoning, and was usually its treasurer. When the road needed money no one else would lend, he lent it. Adams called him 'at once a good friend of the road and the worst enemy it had as yet known.' The name that stuck was the Speculative Director.",
+    "His method was to lend the Erie money and then sell its stock against it. In the spring of 1866, with Erie at about 95, he advanced the company $3,500,000. As security he took 28,000 unissued shares and $3,000,000 of bonds convertible into stock. He converted the bonds and sold 58,000 shares, and the price fell to 50. In 1868 Vanderbilt, who already held the New York Central, came for the Erie. The executive committee voted $10,000,000 in convertible bonds, enough for 100,000 new shares, at no less than 72½. Drew's broker bought the first five million, and Drew guaranteed him against loss. When the New York courts moved against them, the directors ran for the Jersey ferry. One of them carried six million dollars in greenbacks in a hackney coach. They held out at Taylor's Hotel in Jersey City, which had been dubbed Fort Taylor, until about 25 April. Drew settled, took a release in full and left the board.",
+    "He could not leave the stock alone. That November he went short again, against the men who now ran the road, and by the middle of the month he had promised to deliver some 70,000 shares at about 38. On the 14th they cornered him. He covered at 57, and Adams put his loss at nearly $1,500,000. Wikipedia dates this to 1870, but Adams printed it in July 1869. In 1876 Drew went bankrupt, and he died in 1879. The salting story came later. In Bouck White's The Book of Daniel Drew (1910), Drew feeds his herd salt before they drink, at 'A quart of salt to every pair of cattle,' and sells them heavy. White's own preface says the papers came 'in the most jumbled and helter-skelter form imaginable' and that he had to 'English' them. Adams, who had every reason to tell the story, never does."
+  ],
+  "facts": [
+    {
+      "b": "$3,500,000 · 28,000 shares · $3,000,000 · 58,000 shares · 95 to 50",
+      "s": "The Erie loan and sale of spring 1866: Charles Francis Adams Jr., 'A Chapter of Erie' (North American Review, July 1869), reprinted in Chapters of Erie, and Other Essays (1871), pp. 6–7, read in the Internet Archive's scan of the Holt reprint (chaptersoferieot00adam)"
+    },
+    {
+      "b": "$10,000,000 · 100,000 shares · 72½ · six million dollars",
+      "s": "The convertible bonds of February 1868, the broker's guaranty and the flight to Jersey City: Adams, Chapters of Erie, pp. 25, 30 and 58, the same scan. Adams does not say which director carried the greenbacks"
+    },
+    {
+      "b": "70,000 shares · about 38 · 57 · nearly $1,500,000",
+      "s": "The corner of November 1868: Adams, Chapters of Erie, pp. 69–75, the same scan. The loss is Adams's estimate, 'estimated at nearly a million and a half of dollars'; the essay is dated by its own footnote to the North American Review for July 1869"
+    },
+    {
+      "b": "A quart of salt to every pair of cattle",
+      "s": "Bouck White, The Book of Daniel Drew (New York: Doubleday, Page, 1910), p. 49, and White's preface on how he worked the papers, pp. v–vi; read in the Internet Archive's scan"
+    }
+  ],
+  "bio": {
+    "t": "The Money Game in Old New York: Daniel Drew and His Times",
+    "a": "Clifford Browder",
+    "y": "1986",
+    "why": "The first life built on documents rather than on Bouck White's 1910 book, which earlier writers quoted as if Drew had written it. This house has not yet opened Browder. What it has read is Adams's 'A Chapter of Erie' (1869), which is hostile, contemporary and free, and the source of every figure here."
+  },
+  "contested": "Nearly everything known about Drew's Erie years comes from one hostile witness. Adams wrote 'A Chapter of Erie' to indict the ring, and his figures are estimates he does not source; the $1,500,000 is his 'estimated at nearly'. Even the start date is soft: Adams puts Drew on the board some seventeen or eighteen years before 1868, and Wikipedia says 1857. Whether 'watered stock' began with him is not settled either way. The salting story is in White's book, which cannot be credited to him, and this house has found no earlier source tying him to the phrase. It has not yet traced the phrase's first printing. Browder, his only modern biographer, is the reader most likely to settle both, and this house has not read him.",
+  "across": [
+    {
+      "to": "lives:cornelius-vanderbilt",
+      "label": "Cornelius Vanderbilt",
+      "txt": "— his rival on the Hudson steamboats and then for the Erie, who in 1868 was sold a hundred thousand new shares issued against him."
+    },
+    {
+      "to": "lives:jay-gould",
+      "label": "Jay Gould",
+      "txt": "— his ally in the flight to Jersey City in March 1868, and by November the man who cornered him."
+    },
+    {
+      "to": "atlas:story",
+      "label": "The Atlas · Story is leverage",
+      "txt": "— the best-known thing about him is a cattle story from a book he never wrote, and it outlived the figures."
+    }
+  ]
+}

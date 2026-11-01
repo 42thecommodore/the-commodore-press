@@ -1,7 +1,7 @@
 {
   "id": "mandela",
   "no": 14,
-  "keep": "Refusing revenge can be the strongest move on the board — forgiveness, wielded as statecraft.",
+  "keep": "Botha's price for his freedom was that he renounce violence. He sent the demand back with Botha's name on it, and stayed in prison five more years.",
   "n": "Nelson Mandela",
   "years": "1918–2013",
   "place": "South Africa",
@@ -12,24 +12,37 @@
   "ink": "#EDF5F0",
   "accent": "#B7D8C4",
   "motif": "grid",
-  "lede": "He entered prison an angry young revolutionary and emerged an elder statesman whose greatest act was refusing the revenge his people had every reason to take.",
+  "lede": "Amnesty International stopped calling him a prisoner of conscience in 1964, because he had taken up arms. Twenty-one years later he was offered his freedom on the same condition, and refused it.",
   "copy": [
-    "Mandela spent twenty-seven years in prison. Eighteen of those were on Robben Island, breaking rocks. He was there for leading the armed wing of the struggle against apartheid, South Africa's system of legalized racial domination.",
-    "Released in 1990, he negotiated with the regime that had jailed him and steered a country widely expected to collapse into race war toward a peaceful, democratic transition. In 1994 he was elected its first Black president in the nation's first fully free vote. Then he served a single term and stepped down — a rarity among liberation heroes. The Truth and Reconciliation Commission he supported chose acknowledgment over retribution.",
-    "His enduring power lies in that discipline of forgiveness wielded as political strategy. It is proof that moral authority can be a form of statecraft, and that even the deepest injustice can sometimes be answered without perpetuating it."
+    "Nelson Mandela was acquitted of high treason on 29 March 1961, after a trial of four and a half years, and went underground. On 11 January 1962 he left South Africa for military training and to raise support for Umkhonto we Sizwe, the ANC's new armed wing. He came back through Botswana in July and was arrested at a roadblock near Howick on 5 August. The first sentence, five years, was for incitement and leaving the country illegally. While he served it he was tried again, at Rivonia, and on 11 June 1964 convicted of sabotage. The next day he was given life. He was on Robben Island from 12 June 1964 until 31 March 1982, then Pollsmoor, then Victor Verster.",
+    "Amnesty International had adopted him as a prisoner of conscience after the first sentence; one of its founders, the lawyer Louis Blom-Cooper, watched the trial. Rivonia put the organisation in a bind. Prisoners of conscience, by its own rule, are those who do not use or advocate violence. After a debate across its whole membership, Amnesty decided to stop considering him one, and so could not campaign for his release. It still pressed the government over the fairness of the trial and his prison conditions. It says now that if the case arose today, it would call for his release because the trial was not fair.",
+    "On 31 January 1985 P. W. Botha told parliament that Mandela could go free if he unconditionally rejected violence as a political weapon. It was the sixth reported offer; the earlier ones required him to live in the Transkei. His daughter Zinzi read his answer to a rally at Jabulani Stadium, Soweto, on 10 February. 'Let Botha show that he is different to Malan, Strijdom and Verwoerd,' it said. 'Let him renounce violence.' And: 'I cannot and will not give any undertaking at a time when I and you, the people, are not free.' Denis Goldberg, held apart from the others for more than twenty years, took the offer and was released on 28 February. Mandela walked out of Victor Verster on 11 February 1990, five years and a day after the reply was read."
   ],
   "bio": {
     "t": "Long Walk to Freedom",
     "a": "Nelson Mandela",
     "y": "1994",
-    "why": "Mandela's own autobiography, drafted secretly in prison, is the indispensable account — intimate, restrained, and revealing of the discipline behind the icon. For an independent scholarly view, Anthony Sampson's authorized Mandela (1999) is the standard biography."
+    "why": "Mandela's own autobiography, begun secretly in prison, is the indispensable account: intimate, restrained, and revealing of the discipline behind the icon. For an independent view, Anthony Sampson's authorised biography, Mandela (1999), is the standard."
   },
-  "contested": "Long Walk to Freedom is an autobiography, and its acknowledgements say how it was built. Mandela began it secretly on Robben Island in 1974; the copy he kept was confiscated, and a smuggled one survived. He finished it after his 1990 release with Richard Stengel, credited there with editing the early chapters and writing the later ones. It is a document of the transition as much as a record of a life. Read Sampson alongside it for the independent account.",
+  "contested": "Long Walk to Freedom is an autobiography, and its acknowledgements say how it was built. Mandela began it secretly on Robben Island in 1974; the copy he kept was confiscated, and a smuggled one survived. He finished it after his 1990 release with Richard Stengel, credited there with editing the early chapters and writing the later ones. It is a document of the transition as much as a record of a life. Read Sampson alongside it for the independent account. The older argument, over the armed struggle itself, Amnesty's own account states at its sharpest: its members were very distressed by his sentence, and felt they could not be seen to condone violence. Peter Benenson, its secretary-general, conceded at the time that people denied their rights by a government impervious to peaceful persuasion may find themselves forced into violence.",
   "across": [
     {
       "to": "lives:gandhi",
       "label": "Mohandas K. Gandhi",
       "txt": "— the method he inherited, and then had to practise from the winning side."
     }
+  ],
+  "facts": [
+    {
+      "b": "29 March 1961 · 5 August 1962 · 11–12 June 1964 · 12 June 1964 to 31 March 1982 · 11 February 1990",
+      "s": "The acquittal, arrest, Rivonia verdict and sentence, Robben Island and release: Nelson Mandela Foundation, 'Trials and prisons chronology', nelsonmandela.org"
+    },
+    {
+      "b": "31 January 1985 · sixth offer · 10 February 1985",
+      "s": "Botha's offer and the reply read at Jabulani Stadium: South African History Online, 'I am not prepared to sell the birthright of the people to be free', text as published by the ANC in London; Goldberg's release on 28 February 1985, Mandela Foundation chronology"
+    }
+  ],
+  "corrected": [
+    27
   ]
 }

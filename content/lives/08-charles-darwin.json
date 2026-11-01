@@ -1,7 +1,7 @@
 {
   "id": "charles-darwin",
   "no": 8,
-  "keep": "Spend twenty years looking for what would refute you. Then publish.",
+  "keep": "The twenty-year delay is a story historians told later. He was busy, mostly with barnacles, and when Wallace's essay forced his hand the Origin took him thirteen months.",
   "n": "Charles Darwin",
   "years": "1809–1882",
   "place": "England",
@@ -12,19 +12,19 @@
   "ink": "#EDF4EC",
   "accent": "#D5C27C",
   "motif": "grid",
-  "lede": "He spent more than twenty years quietly amassing evidence before he dared publish, knowing the storm it would bring.",
+  "lede": "The famous story has him sitting on his theory for twenty years, afraid of what it would do to him. He told his friends about it, and spent eight of those years on barnacles.",
   "copy": [
-    "Darwin changed humanity's understanding of its own place in nature more profoundly than any thinker since Copernicus. He was a comfortable, cautious gentleman-naturalist. He spent five years circling the globe aboard HMS Beagle, then two decades gathering evidence.",
-    "On the Origin of Species (1859) proposed that all living things descend, with modification, from common ancestors, and that the engine of this branching is natural selection: heritable variation winnowed by the struggle to survive and reproduce. The idea needed no designer to explain the appearance of design, and it reorganized biology into a single connected science. Everything from medicine to ecology to genetics now rests on it.",
-    "He was a meticulous, almost obsessive observer (of barnacles, earthworms, orchids, pigeons) and a gentle, anxious man tormented by the implications of his own theory. That tension between the modest naturalist and the world-shaking idea is the heart of his story."
+    "Charles Darwin sailed on HMS Beagle on 27 December 1831, after two false starts that month, and was back at Falmouth on 2 October 1836. Four years and nine months. He came home with specimens and notebooks, and a decade of publishing them, the zoology of the voyage and then its geology. He had natural selection by 1838, after reading Malthus. On the Origin of Species proposed that living things descend, with modification, from common ancestors, and that the engine of the branching is natural selection: heritable variation winnowed by the struggle to survive and reproduce.",
+    "The Origin came out in 1859. What happened in the gap became the centre of his modern legend. Adrian Desmond and James Moore's biography of 1991 summed it up later as a man who 'had buried evolution for twenty years, petrified for his respectability'. John van Wyhe went back to the letters in 2007 and found no clear evidence for it. Darwin's belief in evolution was not a secret; everyone he named as a possible editor of his 1844 sketch knew of it. He had planned to finish the Beagle books first, then a short spell on invertebrates from 1846. The invertebrates grew into the barnacle monograph, which ran until 1854. He was slow with everything. He saw what worms do to soil in 1837 and published the book in 1881.",
+    "Wallace's essay arrived in 1858 and forced the abstract out. Darwin spent, in van Wyhe's word, a gruelling thirteen months writing it. The legend has the first edition selling out to the public on publication day, Thursday 24 November 1859. Darwin did write to Huxley that day that Murray 'sold whole Edition of my Book on first day'. What sold was the trade sale two days earlier, to booksellers. Murray had printed 1,250 copies, and 1,192 of them were for sale."
   ],
   "bio": {
-    "t": "Charles Darwin: Voyaging and The Power of Place (2 vols.)",
+    "t": "Charles Darwin: Voyaging",
     "a": "Janet Browne",
-    "y": "1995 / 2002",
-    "why": "By near-universal agreement the biography against which all others are judged. It places the science inside the full texture of Darwin's domestic life, networks and Victorian world."
+    "y": "1995",
+    "why": "The first of two volumes; the second is The Power of Place (2002). It places the science inside Darwin's household, letters and Victorian world, and, as van Wyhe notes, largely downplays a delay after 1844. This house has read van Wyhe, Freeman and the letters, not Browne."
   },
-  "contested": "There is unusually little to dispute here — Browne is the consensus standard. The only real caveat is length: two volumes, and no one-volume substitute is nearly as good.",
+  "contested": "The delay itself. Desmond and Moore made it the central theme of their Darwin (1991): a man frightened for his respectability, holding back a theory he knew would be despised. John van Wyhe's 'Mind the gap' (Notes and Records of the Royal Society, 2007) answers that their case for the social climate is plausible but that no clear evidence ties it to anything Darwin thought or did; the gap was work in hand, done in the order he had planned. Van Wyhe was not first. Cannon argued in 1976 that Darwin needed the twenty years to build his case. And van Wyhe concedes his own explanation, that age and reputation made it easier to publish in 1859, has no evidence behind it either. Darwin's 1876 line that he would not write even a sketch for fear of prejudice is the strongest text for the fear reading; Browne suggests the prejudice he meant was his own.",
   "across": [
     {
       "to": "lives:leonardo",
@@ -36,5 +36,22 @@
       "label": "Josiah Wedgwood",
       "txt": "— his mother's father. The letter that talked his own father round to the Beagle came from the potter's son, his uncle Josiah."
     }
+  ],
+  "facts": [
+    {
+      "b": "27 December 1831 · 2 October 1836",
+      "s": "The Beagle's sailing and return to Falmouth: John van Wyhe, 'Itinerary of Charles Darwin', Darwin Online"
+    },
+    {
+      "b": "1846 · 1854 · 1837 · 1881 · thirteen months",
+      "s": "The invertebrate work becoming the barnacle monograph, the worms, and the Origin's writing: John van Wyhe, 'Mind the gap: did Darwin avoid publishing his theory for many years?', Notes and Records of the Royal Society 61 (2007), read on Darwin Online"
+    },
+    {
+      "b": "1,250 printed · 1,192 for sale · the trade sale on the 22nd",
+      "s": "The first edition: R. B. Freeman's introduction to On the Origin of Species, Darwin Online; Darwin to T. H. Huxley, 24 November 1859, Darwin Correspondence Project letter 2550"
+    }
+  ],
+  "corrected": [
+    23
   ]
 }

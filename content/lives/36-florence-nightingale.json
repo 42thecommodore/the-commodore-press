@@ -68,6 +68,11 @@
       "to": "lives:ida-b-wells",
       "label": "Ida B. Wells",
       "txt": "— the same instrument a generation later: her opponents’ own count, set against their explanation of the deaths."
+    },
+    {
+      "to": "lives:ignaz-semmelweis",
+      "label": "Ignaz Semmelweis",
+      "txt": "— the other reformer who counted the deaths a hospital caused, a decade earlier and in a maternity clinic."
     }
   ]
 }

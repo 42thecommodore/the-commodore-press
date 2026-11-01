@@ -1,7 +1,7 @@
 {
   "id": "marie-curie",
   "no": 10,
-  "keep": "Do the work so well that the establishment's locked doors become irrelevant.",
+  "keep": "The nomination that won her first Nobel did not have her name on it. A letter from her husband put it there.",
   "n": "Marie Curie",
   "years": "1867–1934",
   "place": "Poland / France",
@@ -12,24 +12,24 @@
   "ink": "#F0EBFA",
   "accent": "#CDB9EE",
   "motif": "conic",
-  "lede": "Her notebooks are still too radioactive to handle safely.",
+  "lede": "The French Academy's nomination for the 1903 prize named her husband and Henri Becquerel. She is on the prize because Pierre answered a letter from Sweden.",
   "copy": [
-    "Maria Skłodowska left Russian-occupied Poland, where universities were closed to women, to study in Paris on almost no money, sometimes fainting from hunger over her books. As Marie Curie she discovered polonium and radium, coined the word “radioactivity”, and showed that it was a property of atoms themselves — cracking open the interior of matter.",
-    "She remains the only person to win Nobel Prizes in two different sciences (Physics in 1903, Chemistry in 1911), and she did it while facing relentless sexism and xenophobia from the French establishment. During the First World War she equipped and drove mobile X-ray units to the front, personally bringing radiography to wounded soldiers. The radiation that made her famous eventually killed her.",
-    "Curie opened the door to nuclear physics and to cancer radiotherapy, and stands as the founding icon of women in science — not as a symbol but as a working experimentalist of the first rank."
+    "Maria Skłodowska came from Russian-ruled Poland to study in Paris, and as Marie Curie did the work two Nobel committees named. The Physics prize of 1903 was for research on the radiation Henri Becquerel had found. The Chemistry prize of 1911 was hers alone, for the discovery of radium and polonium, the isolation of radium and the study of its nature and compounds.",
+    "The first prize nearly went without her. Members of the Paris Academy of Sciences, among them Poincaré, Darboux, Lippmann and Mascart, proposed Becquerel and Pierre Curie. Marie was not on it. The Swedish mathematician Gösta Mittag-Leffler wrote to Pierre to tell him he was being considered. Pierre's reply is dated 6 August 1903. In the American Institute of Physics's translation: 'If it is true that one is seriously thinking about me [for the Nobel Prize], I very much wish to be considered together with Madame Curie with respect to our research on radioactive bodies.' A nomination of her from the year before was found and accepted. The prize was split: half to Becquerel, a quarter each to Pierre and Marie.",
+    "Her notebooks are famous for something else. The radioactive particles they absorbed in the laboratory are, says the Bibliothèque nationale de France, still active. The Curie papers came to its manuscripts department in 1967 and were assessed by radiation-protection experts on arrival. They are covered in plastic where needed, and may be consulted only on very particular requests under a strict protocol. Two of them sit in a case in the BnF's museum. A visitor who stands in front of them for ten minutes receives about 2 nanosieverts."
   ],
   "bio": {
     "t": "Marie Curie: A Life",
     "a": "Susan Quinn",
     "y": "1995",
-    "why": "The first biographer to use Curie's private papers and Polish-language sources, producing a fully human portrait — ambition, grief, scandal and genius alike."
+    "why": "A full human portrait, ambition, grief, scandal and genius alike, drawing on her private papers. This house has read the Nobel Foundation's record, the American Institute of Physics's history of her and the BnF's account of the notebooks, not Quinn."
   },
-  "contested": "Eve Curie's Madame Curie (1937) is the classic and is written by her daughter — beautiful, and hagiographic by design. Treat it as a memoir of a mother, not as an independent account.",
+  "contested": "Who saved the 1903 prize for her, and how near a thing it was. The American Institute of Physics calls Mittag-Leffler a member of the nominating committee; the Association Curie et Joliot-Curie says he was not on a Nobel committee at all, and wrote to Pierre unofficially. The Association names the nomination that rescued her: one sent the year before by Charles Bouchard of the Paris Faculty of Medicine, a corresponding member of the Stockholm Academy. Nor was she merely tolerated once in. On 8 September 1903 Mittag-Leffler asked Henri Poincaré whether it would be more just to give the prize to the Curies alone. Poincaré answered on the 12th that sharing it was fairer, since the Curies were more precise and advanced but Becquerel was the initiator. The Mittag-Leffler Institute holds those letters; this house has read them only as the Association quotes them.",
   "across": [
     {
       "to": "lives:einstein",
       "label": "Albert Einstein",
-      "txt": "— the other outsider of the same decade; a shed and a patent office, and the establishment irrelevant to both."
+      "txt": "— whose citation left off his best-known theory, as the 1903 nomination had left off her."
     },
     {
       "to": "atlas:hard",
@@ -46,5 +46,22 @@
       "label": "Barbara McClintock",
       "txt": "— the other woman of the first rank in her science, and the only woman to have won the Nobel in medicine unshared."
     }
+  ],
+  "facts": [
+    {
+      "b": "1903 · one half, one quarter, one quarter · 1911, unshared",
+      "s": "The two prizes, their citations and shares: Nobel Foundation, 'The Nobel Prize in Physics 1903' and 'The Nobel Prize in Chemistry 1911' summary pages, nobelprize.org"
+    },
+    {
+      "b": "6 August 1903 · 8 and 12 September 1903",
+      "s": "Pierre's letter to Mittag-Leffler, and the Mittag-Leffler–Poincaré exchange: Association Curie et Joliot-Curie, 'The 1903 Nobel Prize in Physics', curie-joliotcurie.fr, citing the Mittag-Leffler Institute; the letter's wording from the American Institute of Physics, 'Marie Curie: Recognition and Disappointment'"
+    },
+    {
+      "b": "1967 · ten minutes · about 2 nanosieverts",
+      "s": "The notebooks' arrival, consultation rules and the dose measured at the museum case by Marc Ammerich: Bibliothèque nationale de France, 'Les cahiers de Marie Curie conservés à la BnF sont-ils radioactifs ?', bnf.fr"
+    }
+  ],
+  "corrected": [
+    26
   ]
 }

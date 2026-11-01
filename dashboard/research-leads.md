@@ -574,6 +574,50 @@ Researched by fifteen press-researcher sweeps (Durant twice). Pages marked opene
 | Łukasiewicz | Austrian privilege registers, 1853–54; Kozicka-Kołaczkowska (2022, 403); Bonusiak (2019); Tomanek (1928) | The patent; the hospital story's first account; Zeh's claim |
 | Plates | Lemkin (Center for Jewish History P-154), Sousa Mendes (sousamendes.org photo bank), Leal (Commons, 'own work') | Held back; a cleared source would end the gap |
 
+---
+
+## 2026-10-31 — Lives № 144–147, documents not yet opened
+
+Each entry says in `bio` or `contested` that these were not read. Open them before any of it is promoted to a source.
+
+- `william-walker` — Michel Gobat, *Empire by Invitation* (Harvard, 2018): the liberal-empire reading, known here only from reviews. Stiles's endnotes on the Walker chapters. Library of Congress record for the Brady–Handy portrait (loc.gov refused, 403).
+- `daniel-drew` — Clifford Browder, *The Money Game in Old New York* (1986). The 1876 bankruptcy schedule (SDNY, National Archives NYC). NYT obituary, 19 September 1879. Earliest printing of "watered stock".
+- `collis-p-huntington` — David Lavender, *The Great Persuader* (1970). Richard White, *Railroaded* (2011), known only from Hahn's review. Pacific Railway Commission final Report (1887), pp. 69–70, for what the Contract and Finance Company was paid. Lincoln's decision of 12 January 1864 on the base of the Sierra. New York Sun, 29–30 December 1883, on the Colton letters. Bierce in the Examiner, 1896.
+- `e-h-harriman` — Maury Klein, *The Life and Legend of E. H. Harriman* (2000). Roosevelt to Sherman, 8 October 1906, in the Roosevelt Papers (read here only as Kennan prints it). Commercial & Financial Chronicle, 18 May 1901. A probate or transfer-tax appraisal for the estate.
+
+## 2026-10-31 — six lives, № 139–143 and 150, and eight founding lives rewritten: what was named but not opened
+
+Researched by fifteen press-researcher sweeps (Bazalgette's cut off by a usage limit and left to another session, which wrote № 149), then checked by the main session, which read every document it cites as raw text (curl), not through the fetch tool's summary. Semmelweis's *Die Aetiologie* (1861), the 1785 Arkwright trial report, Maury's 1851 *Southern Literary Messenger* essay and *Physical Geography of the Sea* (1855), Corbin's *Life of Maury* (1888) and the 1811 Cuffe memoir were read in the Internet Archive's OCR text.
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Borlaug | Gregg Easterbrook, 'Forgotten Benefactor of Humanity', *The Atlantic*, January 1997 | The 'billion lives' figure; the Atlantic's Cloudflare refused the reader. **A step only Luca can take, in his own browser** (the Ogilvy precedent) |
+| Borlaug | Hesser, *The Man Who Fed the World* (2006); Vietmeyer | The 'authorized' and 'Pakistan' claims, withdrawn in correction 29 until read |
+| Einstein | Einstein Papers, Collected Papers vol. 9, doc. 28 (12 June 1918) and doc. 6 | The Nobel money promised to Marić; the site serves a login portal, not the text |
+| Einstein | Nobel committee files for 1921–22 (Friedman, *The Politics of Excellence*, 2001) | Why relativity was left out, not only what the citation says |
+| Newton | William Newman, *Newton the Alchemist* (2018) | Stated in `contested` as a lead only |
+| Newton | Spence, *Anecdotes*; Newton and the Mint (Oxford) on the South Sea loss | The £20,000; not printed |
+| Darwin | Desmond and Moore, *Darwin* (1991), in their own words | The delay thesis, read only as van Wyhe quotes it |
+| Lincoln | *Collected Works* (quod.lib.umich.edu, 403): the 1859 autobiographical sketch | The 'year of schooling', cut in correction 28 |
+| Lincoln | Bennett, *Forced into Glory* (2000); Foner, *The Fiery Trial* (2010) | Both named in `contested` as leads |
+| Lincoln | Library of Congress, mal.1723200 (Cloudflare) | The 22 July draft itself; the bulletin that describes it was read |
+| Marie Curie | Nobel nomination archive, id 2993 (Bouchard); the Mittag-Leffler Institute letters | Who rescued the 1903 nomination, read only as the Association quotes them |
+| Marie Curie | *La Radiologie et la Guerre* (1921) | The war X-ray figures; cut in correction 26 |
+| Mandela | Nelson Mandela Foundation archive transcript of the Rivonia statement (403) | Not quoted until read |
+| Cleopatra | Strabo 17.1.10 (LacusCurtius 404); Weber et al. on the Ephesus skeleton | Not printed |
+| Semmelweis | Silló-Seidl's 1976 transcription of the Austrian autopsy report; Carter's 1983 translation | The cause of death; the open letters' wording |
+| Arkwright | A page image of the 1785 report (OCR reads 'Jux' and '1 185') | The trial and judgment dates; the entry prints the year only |
+| Arkwright | Fitton (1989), pp. 14, 130–37; Fitton and Wadsworth (1958) | Highs's credibility; the Cromford workforce counts |
+| Maury | Frances Leigh Williams (1963); *De Bow's Review*, 1853; Karp (2016) | The 'African with the American axe' line, found in neither text read, and not printed |
+| Maury | The 1923 Virginia memorial inscription; his 1855 *Southern Churchman* letter | The Psalm 8 'paths of the sea' story: absent from his 1855 book and from Corbin, so not printed. A good fix for a later edit, once the earliest telling is found |
+| Mansa Musa | Levtzion and Hopkins, *Corpus* (1981), al-'Umari pp. 267–73, Ibn Khaldun, al-Maqrizi; Schultz (2006); Gomez (2018) ch. 6 | The debts, the caravan figures, the other chroniclers' gold prices |
+| Mansa Musa | Celebrity Net Worth's 2012 list itself; NPR *Morning Edition*, 16 October 2012 | Read only as Fox News reported it |
+| McCormick | Encyclopedia Virginia, 1885 Jo Anderson interview (Cloudflare) | Read only in a researcher's summary; stated as such |
+| McCormick | Hutchinson (1930–35); US patents X8277 (1834) and Hussey (1833) | Dates read through Gies only |
+| Cuffe | Massachusetts Archives, the 1780 petition (digitalarchives.sec.state.ma.us, behind Incapsula) | Whether the petition was dismissed; the outcome is printed as unsettled |
+| Cuffe | Wiggins, *Captain Paul Cuffe's Logs and Letters* (1996); Thomas (1986) | The 1815 outlay ($4,000, $5,000 or $8,000), not printed |
+| Cuffe | Taunton jail record; the 1783 court case the Park Service means | Read only as the Park Service states it |
+
 ## 2026-10-25: reconciling two drafts of Durant, Lasker, Duveen and Bosch
 Opened and read as raw text by a press-researcher sweep: Seltzer (1928), Internet Archive `financialhistory00selt`; Behrman, *Duveen*, Internet Archive `dli.ernet.523209` (catalogued 1953); Getty, 'Knoedler, Mellon, and an Unlikely Sale' (Meyer-Roux, 30 July 2013, now at getty.edu/news/treasures-from-the-vault-knoedler-mellon-and-an-unlikely-sale/). Read through the fetch tool's summary: American Heritage, Niemeyer and Flink (1973); ANBHF, 'Albert Lasker'; TIME, 'Shipping: The Next Move', 18 June 1923.
 

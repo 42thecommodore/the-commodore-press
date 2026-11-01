@@ -35,6 +35,16 @@
       "to": "lives:henry-clay-frick",
       "label": "Henry Clay Frick",
       "txt": "— the other villain of the age, whose best-known line was also first printed long after, by someone who was not there."
+    },
+    {
+      "to": "lives:daniel-drew",
+      "label": "Daniel Drew",
+      "txt": "— his partner in the flight to Jersey City in March 1868, and his victim that November."
+    },
+    {
+      "to": "lives:collis-p-huntington",
+      "label": "Collis P. Huntington",
+      "txt": "— who held the Central Pacific while Gould held the Union, and wrote to his associate about which congressmen could be had."
     }
   ],
   "facts": [

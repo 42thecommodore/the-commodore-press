@@ -1,7 +1,7 @@
 {
   "id": "einstein",
   "no": 13,
-  "keep": "Four papers from a patent office outweighed every institution of the age. Position is not the same as leverage.",
+  "keep": "The prize named the photoelectric effect and left relativity to the philosophers. He accepted it, and gave his Nobel lecture on relativity.",
   "n": "Albert Einstein",
   "years": "1879–1955",
   "place": "Germany / United States",
@@ -12,24 +12,24 @@
   "ink": "#EAF3F6",
   "accent": "#A6D2E0",
   "motif": "conic",
-  "lede": "In 1905 an unknown patent clerk in Bern published four papers that remade physics.",
+  "lede": "The theory that made him the most famous scientist alive is not in his Nobel citation. The committee named a paper on light.",
   "copy": [
-    "The four 1905 papers were not variations on one idea. One explained the photoelectric effect and helped found quantum theory, another proved the reality of atoms, and another introduced special relativity with its almost unbelievable consequence that energy and mass are the same thing. A decade later his general theory of relativity reimagined gravity itself as the curving of space and time.",
-    "Einstein's ideas have been confirmed again and again — by bending starlight, by the GPS satellites that correct for relativistic time, by the detection of gravitational waves a century after he predicted them. He achieved something almost no scientist manages: he became a global symbol of human intellect, his face and wild hair instantly legible everywhere.",
-    "He was also a committed pacifist and a refugee from Nazi Germany. He warned about nuclear weapons whose possibility his own equation had revealed."
+    "In 1905 Albert Einstein was working at the patent office in Bern, after a degree at the ETH in Zurich. That year he sent the Annalen der Physik four papers that were not variations on one idea. The first treated light as if it came in separate quanta. The second explained the jiggling of particles suspended in a liquid, and gave a way to count the molecules knocking them about. The third was special relativity. The fourth, a short sequel, showed that a body's mass depends on the energy it holds. A decade later, by then in Berlin, he made gravity the curving of space and time.",
+    "Relativity made him famous, and the Nobel committee did not name it. In 1921 the Physics committee decided that none of the year's nominations met the terms of Nobel's will, and held the prize over. When it was announced, on 9 November 1922, it went to Einstein 'for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect'. Svante Arrhenius, presenting it, said most discussion of Einstein centred on relativity, which 'pertains essentially to epistemology'. He added that the philosopher Bergson had challenged it. Einstein was too far from Sweden to attend.",
+    "After the Nazis took power he moved to the United States, to the Institute for Advanced Study at Princeton. In 1939 he signed the letter to Roosevelt that Leo Szilard drafted. The prize he had collected late, and on his own terms. He gave his Nobel lecture in Gothenburg on 11 July 1923, to the Nordic Assembly of Naturalists. He called it Fundamental ideas and problems of the theory of relativity."
   ],
   "bio": {
     "t": "Einstein: His Life and Universe",
     "a": "Walter Isaacson",
     "y": "2007",
-    "why": "Written after the release of Einstein's personal letters, explaining the physics clearly while drawing a full human portrait — rebel, husband, refugee, sage."
+    "why": "The physics explained clearly inside a full human portrait: rebel, husband, refugee, sage. For the science itself, Abraham Pais's Subtle Is the Lord (1982) is more technical and better. This house has read the Nobel Foundation's record of the prize, not either book."
   },
-  "contested": "For the physics itself, specialists send you to Abraham Pais's Subtle Is the Lord (1982), which is far more technical and far better on the science. Isaacson is the life; Pais is the work.",
+  "contested": "Why relativity was left out. The committee's reasons are in its own files, which this house has not read, and the citation's phrase 'services to Theoretical Physics' is wide enough to be read either way: as room for relativity, or as a way round it. Arrhenius's speech gives two hints in passing. Relativity was a quarrel among philosophers, Bergson against its admirers, and its astrophysical implications were, he said, being rigorously examined at the present time. That is a committee waiting for proof, or one unwilling to reward a theory it did not trust; the speech will support either. A second argument runs under every life of him: how much of the 1905 work Mileva Marić, his first wife and a fellow student at Zurich, shared. Estelle Asmodelle's review (arXiv, 2015, revised 2023) collects the case for her involvement between 1900 and 1905. The case against it rests on the Einstein Papers editors, whom this house has not yet read.",
   "across": [
     {
       "to": "lives:marie-curie",
       "label": "Marie Curie",
-      "txt": "— the other scientist of 1905 for whom position was not leverage."
+      "txt": "— whom the 1903 nomination left off until Pierre objected. Nineteen years later a Nobel citation left off Einstein's best-known theory."
     },
     {
       "to": "lives:emmy-noether",
@@ -46,5 +46,18 @@
       "label": "Leo Szilard",
       "txt": "— his friend and co-patentee, who drafted the 1939 letter to Roosevelt that Einstein signed."
     }
+  ],
+  "facts": [
+    {
+      "b": "held over from 1921 · announced 9 November 1922",
+      "s": "The reserved prize and its announcement: Nobel Foundation, 'The Nobel Prize in Physics 1921' summary page and the presentation speech's notes, nobelprize.org"
+    },
+    {
+      "b": "11 July 1923",
+      "s": "His Nobel lecture, given at Gothenburg to the Nordic Assembly of Naturalists: Nobel Foundation, 'Albert Einstein – Nobel Lecture', nobelprize.org"
+    }
+  ],
+  "corrected": [
+    24
   ]
 }

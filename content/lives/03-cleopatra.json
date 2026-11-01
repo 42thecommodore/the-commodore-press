@@ -1,7 +1,7 @@
 {
   "id": "cleopatra",
   "no": 3,
-  "keep": "Check the motives of the sources before the sources — much of what you know arrived as propaganda.",
+  "keep": "The asp is Octavian's picture of her death, carried in his triumph. Plutarch, who passed it on, wrote that nobody knew how she died.",
   "n": "Cleopatra VII",
   "years": "69–30 BCE",
   "place": "Ptolemaic Egypt",
@@ -12,24 +12,45 @@
   "ink": "#FBEAF1",
   "accent": "#F2C2D6",
   "motif": "rings",
-  "lede": "Buried under two thousand years of someone else's storytelling — mostly Roman propaganda and male fantasy.",
+  "lede": "The Greek who left the fullest account of her said her beauty was not altogether incomparable. What held people was her talk. The asp, he admitted, nobody could vouch for.",
   "copy": [
-    "The real woman was the last pharaoh of Egypt. She was a Macedonian Greek who spoke perhaps nine languages, commanded a navy, and managed the wealthiest kingdom in the Mediterranean. She was reportedly the only Ptolemy in three centuries to bother learning Egyptian.",
-    "She allied with Caesar and then Antony — not as a seductress but as a head of state playing a desperate game against the rising power of Rome. She used marriage and alliance the way her male rivals used legions. For a time she nearly redirected the future of the ancient world. When Antony's cause collapsed at Actium, she chose suicide over being paraded through Rome in chains.",
-    "Her afterlife (in Plutarch, Shakespeare and Hollywood) reveals more about each era's anxieties about powerful women than about Cleopatra herself. That is precisely why recovering the historical queen matters."
+    "Cleopatra VII was the last of the Ptolemies, a Macedonian family that had ruled Egypt for generations without learning its language. Plutarch, whose Life of Antony is the fullest ancient account of her, says the kings of Egypt before her had not even made an effort to learn the native tongue, and some had given up their Macedonian. She answered most foreign envoys herself. He names Ethiopians, Troglodytes, Hebrews, Arabians, Syrians, Medes and Parthians, and says she knew the speech of many other peoples. That is seven, named. The nine languages of the modern books are somebody's arithmetic, not his.",
+    "Her power was money and ships. When Antony gathered his fleet at Ephesus for the war with Octavian, Plutarch counts eight hundred warships, and Cleopatra furnished two hundred of them. She added twenty thousand talents and supplies for the whole army. Antony's friends wanted her sent home to Egypt; she persuaded his general to let her stay. The famous first meeting with Caesar, rolled in a carpet, is a bed-sack in Plutarch's Life of Caesar, tied with a cord and carried in by Apollodorus the Sicilian. After Actium, Octavian wanted her alive. She would, Plutarch says, add greatly to the glory of his triumph.",
+    "How she died is the part nobody knew. Plutarch gives an asp hidden under figs, then an asp kept in a water jar, then poison carried in a hollow comb in her hair, and says 'the truth of the matter no one knows'. No snake was seen in the room. Some said her arm showed two faint punctures. Cassius Dio found only slight pricks on the arm. She was thirty-nine, by Plutarch's count, and had shared power with Antony for more than fourteen years. Octavian had an image of her with the asp clinging to her carried in his triumph. That is the picture that lasted."
   ],
   "bio": {
     "t": "Cleopatra: A Life",
     "a": "Stacy Schiff",
     "y": "2010",
-    "why": "A Pulitzer-winning biographer reading against hostile ancient sources to reconstruct a shrewd, capable ruler. Witty, rigorous, and it gives Cleopatra back her intelligence and agency."
+    "why": "A Pulitzer-winning biographer reading against hostile ancient sources to reconstruct a shrewd, capable ruler. Read Plutarch's Life of Antony beside it; it is free, it is short, and it is where nearly every story about her starts. This house has read Plutarch and Dio, not Schiff."
   },
-  "contested": "Schiff is a literary biographer rather than a classicist, and specialists note that she reconstructs interior life the sources cannot support. For the scholarly version, Duane Roller's Cleopatra: A Biography (2010) is drier and more cautious about what is actually known.",
+  "contested": "The witness is lost. Plutarch names one source from inside the room: her physician Olympus, who, Plutarch says, helped her plan her death and published a history of it. That book does not survive. Everything that does was written under the empire of the man who beat her, and the two main accounts disagree on detail. Plutarch has two slight and indistinct punctures and says Octavian seems to have believed in the asp; Dio has slight pricks and gives the asp as one story among others, beside a poisoned hairpin. Neither writer claims to know. The modern argument over whether to read her as a seducer or a head of state runs on these same few pages, and nothing new is likely to settle it.",
   "across": [
     {
       "to": "lives:julius-caesar",
       "label": "Julius Caesar",
       "txt": "— the same events from the other side, and the source of most of what was later said about her."
     }
+  ],
+  "facts": [
+    {
+      "b": "seven peoples",
+      "s": "The peoples she answered without an interpreter, and the kings before her who never learned Egyptian: Plutarch, Life of Antony 27.3–4, Loeb translation (Perrin), read on LacusCurtius"
+    },
+    {
+      "b": "200 of 800 warships · 20,000 talents",
+      "s": "What Cleopatra brought to the war with Octavian: Plutarch, Life of Antony 56.1, Loeb translation, read on LacusCurtius"
+    },
+    {
+      "b": "thirty-nine · more than fourteen years",
+      "s": "Her age at death and her years sharing power with Antony: Plutarch, Life of Antony 86.4, Loeb translation, read on LacusCurtius"
+    },
+    {
+      "b": "two slight and indistinct punctures",
+      "s": "The marks on her arm: Plutarch, Life of Antony 86.3; Cassius Dio, Roman History 51.14.1 ('slight pricks'), Loeb translation (Cary, 1917), both read on LacusCurtius"
+    }
+  ],
+  "corrected": [
+    22
   ]
 }
