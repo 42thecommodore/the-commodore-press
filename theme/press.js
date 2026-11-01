@@ -92,7 +92,7 @@ function goTo(ref){
 /* A life opens where the reader is. It used to switch to the Lives wing first: a face pressed
    1,147px down the front door opened over a shelf it had never seen, with the book "flying" from
    3,400px below the screen, and closing left the reader at the top of the Lives wing. */
-function openLife(id){openReader('lives',id)}
+function openLife(id,src){openReader('lives',id,src?{src}:undefined)}
 /* Every entry opens from a real link to its own page — t/<id>/ or l/<id>/, written by
    build/pages.mjs — so a reader can open it in a new tab or copy it, and a crawler can follow
    it from the front door. A plain click stays in the library and opens the reader; a modified
@@ -108,7 +108,7 @@ document.addEventListener("click",e=>{
   // the first open waits for the entries' text; the pressed look holds until it is here (press.css)
   if(!libLoaded){a.setAttribute("aria-busy","true");loadLibrary().catch(()=>{}).then(()=>a.removeAttribute("aria-busy"))}
   const i=a.dataset.open.indexOf(":"),how=a.dataset.open.slice(0,i),id=a.dataset.open.slice(i+1);
-  if(how==="life")openLife(id);else openReader(how,id,a.classList.contains("slot")?{src:a}:undefined);
+  if(how==="life")openLife(id,a);else openReader(how,id,a.classList.contains("slot")?{src:a}:undefined);
 });
 const plateOrMark=(b,cls)=>PLATES[b.id]
   ? `<img class="${cls}" src="${PLATES[b.id]}" alt="" loading="lazy">`
@@ -461,8 +461,35 @@ function flyIn(slot,kind){
   const c=clone.animate([{transform:`rotateY(${ry0}) rotateX(${rx0})`},{transform:"rotateY(21deg) rotateX(4deg)"}],opt);
   launch("in",slot.dataset.id,wrap,[a,c],[target]);
 }
+/* Opening a life from its portrait: the face lifts off the wall at its own size and becomes the
+   book. It flies to the reader inside the book, square to the reader, and as the book turns to
+   its reading angle the portrait gives way to the cover. Closing plays the same path backwards,
+   onto the face it came from. */
+let readerFrom=null;   // the face the open reader came from, while it is still the same life
+const portraitOf=a=>a&&a.querySelector&&a.querySelector(".fp-img,.cap-img");
+function flyFace(face,id,dir){
+  const pic=portraitOf(face),target=document.querySelector("#sheet .rbook"),tBook=target&&target.querySelector(".book");
+  if(!pic||!tBook)return false;
+  if(dir==="in"&&recall("in",id,target))return true;
+  const sr=pic.getBoundingClientRect(),tr=target.getBoundingClientRect(),tw=tr.width,th=tBook.offsetHeight;
+  if(!sr.width||!tw||!th||sr.bottom<0||sr.top>innerHeight)return false;
+  const wrap=document.createElement("div");wrap.className="ghostwrap";
+  wrap.style.cssText=`left:${tr.left}px;top:${tr.top}px;width:${tw}px;height:${th}px`;
+  const book=tBook.cloneNode(true);book.style.transform="none";
+  const p=pic.cloneNode(true);p.className="ghost-face"+(pic.classList.contains("nomark")?" nomark":"");p.removeAttribute("loading");
+  book.appendChild(p);wrap.appendChild(book);document.getElementById("flip").appendChild(wrap);
+  target.style.opacity="0";if(dir==="out")pic.style.opacity="0";
+  // the frames are written for the way in; the way home is the same frames, played backwards
+  const opt={duration:dir==="in"?660:560,easing:EASE_IO,fill:"forwards",direction:dir==="in"?"normal":"reverse"};
+  const a=wrap.animate([{transform:`translate(${sr.left-tr.left}px,${sr.top-tr.top}px) scale(${sr.width/tw},${sr.height/th})`},{transform:"none"}],opt);
+  const c=book.animate([{transform:"rotateY(0deg) rotateX(0deg)"},{transform:"rotateY(21deg) rotateX(4deg)"}],opt);
+  const f=p.animate([{opacity:1},{opacity:1,offset:.25},{opacity:0,offset:.6},{opacity:0}],opt);
+  launch(dir,id,wrap,[a,c,f],dir==="in"?[target]:[target,pic]);
+  return true;
+}
 function flyOut(kind,id,after){
   if(recall("out",id)){after();return}
+  if(readerFrom&&!reduce){const face=readerFrom;readerFrom=null;if(face.offsetParent&&flyFace(face,id,"out")){after();return}}
   const slot=document.querySelector(`#livesShelf .slot[data-id="${id}"]`);
   const source=document.querySelector("#sheet .rbook");
   if(reduce||!slot||!source||!slot.offsetParent){after();return}
@@ -503,9 +530,11 @@ function openReader(kind,id,opts){
   const hash="#l/"+id;
   if(opts.push!==false&&location.hash!==hash)history.pushState({kind:kind,id:id},"",hash);
   document.title=b.n+" — The Commodore Press";
+  readerFrom=!wasOpen&&portraitOf(opts.src)?opts.src:null;
   if(!wasOpen&&!reduce){
     const src=opts.src||document.querySelector(`#livesShelf .slot[data-id="${id}"]`);
-    if(src&&src.classList.contains("slot")&&src.offsetParent)requestAnimationFrame(()=>flyIn(src,kind));
+    if(readerFrom)requestAnimationFrame(()=>flyFace(readerFrom,id,"in"));
+    else if(src&&src.classList.contains("slot")&&src.offsetParent)requestAnimationFrame(()=>flyIn(src,kind));
   }
 }
 /* Shares the entry's own page, never the #hash: a hash previews as the front door, the page

@@ -26,6 +26,8 @@
  *   - the key's Lives line counts what this browser has finished and started, and is silent
  *     for a first visitor
  *   - the keep line on the Captain card is credited to the Press, never set beside the face alone
+ *   - a face opening its life lifts off the wall at its own size and turns into the reader's
+ *     book, and closing brings it back to the face
  *   - a face opens its life over the page it is on, and closing it returns the reader to the
  *     same place; a book off the screen does not fly in
  *   - a face, the Captain's plate and a book each give under a press, and a first open holds
@@ -332,6 +334,39 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
 }), 600));
 </script>`;
 
+/* A face becomes its book. Opening a life from its portrait used to fade the reader in from
+   nowhere: the face it came from played no part. Now the portrait lifts off the wall at its own
+   size, rides the book to the reader and gives way to the cover; closing brings it home. */
+const FACEFLIGHT = String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  setInterval(() => document.getAnimations().forEach(a => { if (a.playState === "running") a.currentTime += 16 * a.playbackRate; }), 16);
+  await loadLibrary(); go("home", false); await wait(300);
+  const face = document.querySelectorAll("a.wface")[3], pic = face.querySelector(".fp-img"), id = face.dataset.open.split(":")[1];
+  face.scrollIntoView({ block: "center" }); await wait(200);
+  const ghost = () => document.querySelector("#flip .ghostwrap"), n = () => document.querySelectorAll("#flip .ghostwrap").length;
+  const pr = pic.getBoundingClientRect();
+  face.click();
+  for (let i = 0; i < 60 && !ghost(); i++) await wait(5);
+  const g0 = ghost() && ghost().getBoundingClientRect();
+  t("a face lifts off the wall at its own size and place", g0 && Math.abs(g0.left - pr.left) < 6 && Math.abs(g0.top - pr.top) < 6 && Math.abs(g0.width - pr.width) < 6 && Math.abs(g0.height - pr.height) < 6,
+    g0 ? "starts " + [g0.left, g0.top, g0.width, g0.height].map(Math.round) + " vs the face " + [pr.left, pr.top, pr.width, pr.height].map(Math.round) : "nothing flew");
+  t("…carrying its portrait on the book", ghost() && ghost().querySelector(".book .ghost-face") && flight && flight.dir === "in");
+  await wait(1000);
+  const rb = document.querySelector("#sheet .rbook");
+  t("…and lands as the reader's book, the portrait gone", n() === 0 && flight === null && rb.style.opacity === "", n() + " in the air, reader book \"" + rb.style.opacity + "\"");
+  closeReader(); await wait(60);
+  t("closing sends the book home to its face", n() === 1 && flight && flight.dir === "out" && pic.style.opacity === "0", n() + " in the air, heading " + (flight && flight.dir));
+  await wait(900);
+  t("…and the face is back on the wall when it lands", n() === 0 && pic.style.opacity === "", n() + " in the air, face \"" + pic.style.opacity + "\"");
+  face.click(); for (let i = 0; i < 60 && !ghost(); i++) await wait(5); await wait(200);
+  closeReader(); await wait(60);
+  t("closing mid-flight turns the same book back into the face: one in the air", n() === 1 && flight && flight.dir === "out", n() + " in the air");
+  await wait(1000);
+  t("…and it lands on the face", n() === 0 && pic.style.opacity === "" && current === null, n() + " in the air, face \"" + pic.style.opacity + "\"");
+}), 600));
+</script>`;
+
 /* A life opens where the reader is. A face pressed 1,147px down the front door used to switch
    to the Lives wing first, fly a book in from 3,400px below the screen, and close onto the top
    of the Lives wing: the reader lost the page they were on. */
@@ -629,6 +664,7 @@ if (!CHROME) {
       size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>`
         // the desk run is a dark-mode device with no stored choice: it must still open on paper
         : `<script>try{localStorage.removeItem("cp-theme")}catch(e){}var __mm=matchMedia.bind(window);window.matchMedia=function(q){return /prefers-color-scheme: ?dark/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__mm(q)}</script>`));
+  report("A face becomes its book", drive(fs.readFileSync(dist("index.html"), "utf8"), FACEFLIGHT, null));
   report("A life opens where you are", drive(fs.readFileSync(dist("index.html"), "utf8"), WHERE, null));
   report("A press answers at once", drive(fs.readFileSync(dist("index.html"), "utf8"), PRESS, null));
   report("The book in flight", drive(fs.readFileSync(dist("index.html"), "utf8"), FLIGHT, null, `<script>try{localStorage.removeItem("cp-theme")}catch(e){}</script>`));
