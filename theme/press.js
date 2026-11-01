@@ -102,6 +102,8 @@ document.addEventListener("click",e=>{
   const a=e.target.closest&&e.target.closest("a[data-open]");
   if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
   e.preventDefault();
+  // the first open waits for the entries' text; the pressed look holds until it is here (press.css)
+  if(!libLoaded){a.setAttribute("aria-busy","true");loadLibrary().catch(()=>{}).then(()=>a.removeAttribute("aria-busy"))}
   const i=a.dataset.open.indexOf(":"),how=a.dataset.open.slice(0,i),id=a.dataset.open.slice(i+1);
   if(how==="life")openLife(id);else openReader(how,id,a.classList.contains("slot")?{src:a}:undefined);
 });

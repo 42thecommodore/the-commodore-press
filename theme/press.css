@@ -632,6 +632,13 @@
   .wface .fp-img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--mount-rule);background:var(--mount);padding:3px;
     }
   .wface:hover .fp-img,.wface:focus-visible .fp-img{filter:none;}
+  /* a press answers at once. No entry reacted to a finger: on a phone there is no hover, and the
+     first open waits for the entries' text with nothing to show the tap was heard. The face, plate
+     or book gives under the press, and holds while that text is on its way (aria-busy, press.js) */
+  .wface .fp-img,.cap-plate .cap-img{transition:transform .1s ease-out}
+  a.wface:active .fp-img,a.wface[aria-busy=true] .fp-img,
+  a.cap-plate:active .cap-img,a.cap-plate[aria-busy=true] .cap-img{transform:scale(.96)}
+  a.slot:active .book,a.slot[aria-busy=true] .book{--sc:.97;transition-duration:.1s}
   /* 15px, not 13: 128 names at 13px were most of the text on the front door and the hardest
      to read. Wider columns would cure the wrapping but cost 350-1,200px of wall at a desk. */
   .wface .fn{font-size:var(--fs-2);line-height:1.25;color:var(--ink-mid)}

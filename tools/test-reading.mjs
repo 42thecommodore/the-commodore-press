@@ -26,6 +26,8 @@
  *   - the key's Lives line counts what this browser has finished and started, and is silent
  *     for a first visitor
  *   - the keep line on the Captain card is credited to the Press, never set beside the face alone
+ *   - a face, the Captain's plate and a book each give under a press, and a first open holds
+ *     that look until the reader is up
  *   - a book flying to or from the reader turns round where it is when the reader changes its
  *     mind: one book in the air, never two
  *   - a life's reader prints its own permanent №
@@ -328,6 +330,28 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
 }), 600));
 </script>`;
 
+/* A press answers at once. Not one of the front door's 183 links reacted to a finger: a phone
+   has no hover, and the first open waits for the entries' text (672 KB in October 2026) with
+   nothing to show the tap was heard. Each kind of entry link gives under a press, and a first
+   open holds that look until the reader is up. */
+const PRESS = String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  const sel = [], walk = rs => { for (const r of rs) { if (r.cssRules && !r.selectorText) walk(r.cssRules); else if (r.selectorText) sel.push(r.selectorText); } };
+  for (const s of document.styleSheets) try { walk(s.cssRules); } catch (e) {}
+  const kinds = ["a.wface", "a.cap-plate", "a.slot"], silent = kinds.filter(k => !sel.some(x => x.split(",").some(p => p.includes(k + ":active"))));
+  t("every kind of entry link answers a press: a face, the Captain's plate, a book", !silent.length, "no :active rule for " + silent.join(", "));
+  const face = document.querySelector("a.wface");
+  t("the entries' text is not here before the first open", !libLoaded);
+  face.click();
+  t("a first open shows the press until the text is here", face.getAttribute("aria-busy") === "true", "aria-busy: " + face.getAttribute("aria-busy"));
+  for (let i = 0; i < 100 && !current; i++) await wait(50);
+  await wait(50);
+  t("…and lets it go once the reader is open", current && !face.hasAttribute("aria-busy"), "reader: " + current + ", aria-busy: " + face.getAttribute("aria-busy"));
+  closeReader(false); await wait(700);
+}), 600));
+</script>`;
+
 /* A book in the air can be called back. Closing the reader while the book was still flying in
    once left it flying on to a reader that had gone, and sent a second book home from where the
    first would have landed: two books on screen. One book, turned round where it is. */
@@ -578,6 +602,7 @@ if (!CHROME) {
       size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>`
         // the desk run is a dark-mode device with no stored choice: it must still open on paper
         : `<script>try{localStorage.removeItem("cp-theme")}catch(e){}var __mm=matchMedia.bind(window);window.matchMedia=function(q){return /prefers-color-scheme: ?dark/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__mm(q)}</script>`));
+  report("A press answers at once", drive(fs.readFileSync(dist("index.html"), "utf8"), PRESS, null));
   report("The book in flight", drive(fs.readFileSync(dist("index.html"), "utf8"), FLIGHT, null, `<script>try{localStorage.removeItem("cp-theme")}catch(e){}</script>`));
   // a life with a plate and a keep line, and a retired title: the two shapes an entry page comes in.
   // Only the life opens in the library's reader; the Press's titles are read on their own pages.
