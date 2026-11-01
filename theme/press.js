@@ -89,7 +89,10 @@ function goTo(ref){
    One screen that shows the method instead of describing it, then one band per wing showing
    what is actually in it, then the record of what the house got wrong. Everything is read
    from content/, so none of it can go stale. */
-function openLife(id){go('lives');setTimeout(()=>openReader('lives',id),340)}
+/* A life opens where the reader is. It used to switch to the Lives wing first: a face pressed
+   1,147px down the front door opened over a shelf it had never seen, with the book "flying" from
+   3,400px below the screen, and closing left the reader at the top of the Lives wing. */
+function openLife(id){openReader('lives',id)}
 /* Every entry opens from a real link to its own page — t/<id>/ or l/<id>/, written by
    build/pages.mjs — so a reader can open it in a new tab or copy it, and a crawler can follow
    it from the front door. A plain click stays in the library and opens the reader; a modified
@@ -444,6 +447,7 @@ function flyIn(slot,kind){
   if(!target||!sBook)return;
   if(recall("in",slot.dataset.id,target))return;
   const sr=slot.getBoundingClientRect(),tr=target.getBoundingClientRect();
+  if(sr.bottom<0||sr.top>innerHeight)return;   // a book the reader cannot see does not fly in from off the page
   const fw=slot.clientWidth,fh=sBook.offsetHeight,tw=tr.width;
   if(!fw||!tw)return;
   const cs=getComputedStyle(sBook);

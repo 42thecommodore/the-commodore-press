@@ -26,6 +26,8 @@
  *   - the key's Lives line counts what this browser has finished and started, and is silent
  *     for a first visitor
  *   - the keep line on the Captain card is credited to the Press, never set beside the face alone
+ *   - a face opens its life over the page it is on, and closing it returns the reader to the
+ *     same place; a book off the screen does not fly in
  *   - a face, the Captain's plate and a book each give under a press, and a first open holds
  *     that look until the reader is up
  *   - a book flying to or from the reader turns round where it is when the reader changes its
@@ -330,6 +332,31 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
 }), 600));
 </script>`;
 
+/* A life opens where the reader is. A face pressed 1,147px down the front door used to switch
+   to the Lives wing first, fly a book in from 3,400px below the screen, and close onto the top
+   of the Lives wing: the reader lost the page they were on. */
+const WHERE = String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  setInterval(() => document.getAnimations().forEach(a => { if (a.playState === "running") a.currentTime += 16 * a.playbackRate; }), 16);
+  await loadLibrary(); go("home", false); await wait(300);
+  const face = document.querySelectorAll("a.wface")[40], id = face.dataset.open.split(":")[1];
+  face.scrollIntoView({ block: "center" }); await wait(200);
+  const y = scrollY;
+  face.click();
+  for (let i = 0; i < 40 && current !== id; i++) await wait(50);
+  t("a face opens its life over the front door, not over the Lives wing", current === id && wing === "home", "reader: " + current + ", behind it: " + wing);
+  closeReader(); await wait(900);
+  t("closing it returns the reader to the same place on the front door", wing === "home" && Math.abs(scrollY - y) < 2 && location.hash === "", "on " + wing + " at " + Math.round(scrollY) + "px (was " + Math.round(y) + "), address ends \"" + location.hash + "\"");
+  // on the Lives wing, a book far down the shelf opened from the top of the page (search, Read next)
+  go("lives", false); scrollTo(0, 0); await wait(300);
+  const far = [...document.querySelectorAll("#livesShelf .slot")].pop();
+  openReader("lives", far.dataset.id); await wait(150);
+  t("a book off the screen does not fly in from off the page", far.getBoundingClientRect().top > innerHeight && !document.querySelector("#flip .ghostwrap"), "book at " + Math.round(far.getBoundingClientRect().top) + "px, " + document.querySelectorAll("#flip .ghostwrap").length + " in the air");
+  closeReader(false); await wait(900);
+}), 600));
+</script>`;
+
 /* A press answers at once. Not one of the front door's 183 links reacted to a finger: a phone
    has no hover, and the first open waits for the entries' text (672 KB in October 2026) with
    nothing to show the tap was heard. Each kind of entry link gives under a press, and a first
@@ -602,6 +629,7 @@ if (!CHROME) {
       size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>`
         // the desk run is a dark-mode device with no stored choice: it must still open on paper
         : `<script>try{localStorage.removeItem("cp-theme")}catch(e){}var __mm=matchMedia.bind(window);window.matchMedia=function(q){return /prefers-color-scheme: ?dark/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__mm(q)}</script>`));
+  report("A life opens where you are", drive(fs.readFileSync(dist("index.html"), "utf8"), WHERE, null));
   report("A press answers at once", drive(fs.readFileSync(dist("index.html"), "utf8"), PRESS, null));
   report("The book in flight", drive(fs.readFileSync(dist("index.html"), "utf8"), FLIGHT, null, `<script>try{localStorage.removeItem("cp-theme")}catch(e){}</script>`));
   // a life with a plate and a keep line, and a retired title: the two shapes an entry page comes in.
