@@ -272,6 +272,19 @@ The front door names one Captain of the day, taken in turn from a crew you pick 
 
 Use the life's id, the part of its filename after the number. Nobody is a captain unless you put them here; the card prints only what their own entry says, their act and not a lesson drawn from it. The check refuses a name that is not on the shelf, or one listed twice. An empty list takes the card away.
 
+### 16. The weekly agent
+
+Every **Sunday at 7:00**, Claude runs one improvement on its own while you are away. It might fix dead links, fact-check one Life, or bring one of the thin founding Lives (№ 01–26) up to standard. It works on its own branch, `weekly/<date>`, and never on your copy of the site. It never publishes: it pushes that branch and stops. On Sunday morning you get a report with a link. Open the link, read the changes, and click **Create pull request** if you want them. After merging, run `git pull` and then `npm run ship` as usual.
+
+- **Its brief** is [`dashboard/weekly-agent.md`](dashboard/weekly-agent.md). Each run reads it fresh from your `main`, so to change what the agent does, edit that file and commit it. It may *suggest* edits to its own brief in its report. It never makes them itself.
+- **Its log** is [`dashboard/agent-log.md`](dashboard/agent-log.md). Each run appends what it did, what it could not open, and a line or two of lessons. The next run reads those lessons before it chooses. That log is how it improves from week to week.
+- **To pause it**, open the Claude app, go to **Scheduled** in the sidebar, choose *Commodore Press — weekly improvement*, and switch it off. Switch it back on to resume. You can also ask Claude: *"Pause the weekly Press agent."*
+- **To change the day or time**, use the same place, or ask: *"Move the weekly Press agent to Saturday at 9."*
+- **To run it now**, click **Run now** there.
+- **It only runs while the Claude app is open.** If the Mac is asleep at 7:00, it runs the next time the app opens.
+- **What it will not do.** It does not choose new people for the shelf. It only drafts a Life you have marked `commissioned` in the queue. It does not touch the Atlas, the Log, the design or the tools. It does not cite a document it could not open; anything it could not open goes in `research-leads.md`. If it finds something wrong on a published page, it proposes a numbered correction on its branch. The correction reaches readers only when you ship.
+- **To throw a week away**, ignore the branch, or delete it on GitHub.
+
 ---
 
 ## The four rules of the file format

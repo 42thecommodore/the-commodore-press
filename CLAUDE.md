@@ -67,7 +67,9 @@ The Commodore/
 ├── PUBLISHING.md               # the editorial standard: what earns a place, what the house refuses,
 │                               # what finished means, and how to change a rule on this list
 ├── dashboard/                  # commissions.md (the queue), rhythm.md, changelog.md,
-│                               # research-leads.md (documents still to open — NOT sources)
+│                               # research-leads.md (documents still to open — NOT sources),
+│                               # weekly-agent.md (the Sunday agent's brief: one improvement, own branch, never ships)
+│                               # + agent-log.md (what each run did and learned; read before the next run chooses)
 ├── dist/                       # THE DEPLOYABLE — generated, never hand-edited, not committed (CI builds it)
 └── .claude/
     ├── settings.json           # permissions + the two hooks below
