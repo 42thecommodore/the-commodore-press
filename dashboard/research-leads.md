@@ -631,3 +631,52 @@ Opened and read as raw text by a press-researcher sweep: Seltzer (1928), Interne
 | Bosch | Umweltbundesamt, *Umweltchronik*, 'Oppau'; BASF, '100th anniversary of the Oppau explosion' | 561 dead is quoted by Rheinpfalz and chemie.de, 559 elsewhere; the agency page was not found |
 | Bosch | Erisman et al., *Nature Geoscience* 1:636, 2008 | The 48 per cent, read by the unpublished draft and not reopened |
 | Lasker | TIME, 'Shipping: From Chicago; to Chicago', 19 May 1923 | The live page's 12 June 1923; the sweep could not find the article |
+
+## 2026-11-03 — scouting: more from Founders, and the people in *The Lessons of History*
+
+Asked for by Luca 2026-11-03. Two press-researcher sweeps; nothing written to `content/`. **Opened** means the sweep read the passage itself; everything else is a lead. Durant quotations come from one archive.org OCR scan (`the-lessons-of-history-will-durant-ariel-durant`) and must be checked against print before anything is set in quotation marks.
+
+**Founders episode list.** founderspodcast.com/episodes shows only the newest ten; the full list (463 items) reads from the feed, `https://feeds.megaphone.fm/DSLLC6297708582`. *The Lessons of History* is Founders #342 (18 March 2024), page opened.
+
+### From Founders
+
+| Candidate | Episode | Fix, and its document | Plate | Risk |
+|---|---|---|---|---|
+| Horace (and John) Dodge | #119, Hyde | **Opened:** *Dodge v. Ford*, 204 Mich. 459 (1919), Caselaw Access Project JSON `static.case.law/mich/204/cases/0459-01.json`. The "profit of the stockholders" sentence is real, but the court affirmed only the dividend decree and reversed "in other respects" — Ford's expansion stood. Read the whole opinion before writing which injunction fell; the dividend amount was not extracted | Commons `Horace_Elgin_Dodge.jpg`, PD-US only, author and first publication unknown — Luca's call | two brothers, both dead 1920; cause of death unopened |
+| Hans Wilsdorf | #351 | Sotheby's page (opened, near-primary): Gleitze's October 1927 swim with the Oyster was abandoned after ten hours. That her successful crossing was without the watch, and the Daily Mail advert of 24 Nov 1927, are snippets — open the advert | Commons `Hans_Wilsdorf.jpg`, "PD", rationale not read | Rolex's own narrative is most of the record |
+| Sol Price (held since 2026-09-20) | #107, #304 | Supermarket News 2012 Hall of Fame (opened, trade press): FedMart opened 3 Dec 1954; first Price Club mid-1976. Not a primary; 1975 vs 1976 still disputed in snippets | not searched | the block that held him is half-lifted |
+| Mozart | #240, Johnson | Lead only: "pauper's grave" vs a third-class funeral and unmarked common grave; Michael Lorenz's work is the lead | Commons `Wolfgang-amadeus-mozart_1.jpg`, Krafft 1819, PD-Art (opened) | not a founder |
+| Socrates | #252, Johnson | **Opened:** Plato, *Apology* 21d (Perseus): "what I do not know I do not think I know either" — not "I know that I know nothing". Only 21d searched | Louvre bust photo is CC BY-SA 2.5 (credit owed) | everything comes through Plato |
+| Alexander | #232 | **Opened:** Plutarch, *De tranquillitate animi* 4 — he wept that he had not mastered "a single one" of infinite worlds. Where the popular phrasing starts was not traced | not checked | a nuance, not a correction; shelf has Caesar and Napoleon |
+| Michelin brothers | #393 | Weak: Michelin's own history page; the 1920 and 1921 guides on Gallica would settle the price and the workbench story | not checked | company telling its own story |
+
+Confirmed episodes, unscouted: Oppenheimer (#215), Bernays (#256, died 1995), Escoffier (#185), Henry Royce (#81, #287), Joseph P. Kennedy (#4), Ray Kroc (#7, #293), Frank Lloyd Wright (#112), Louis B. Mayer (#173), Alfred Sloan (#122). **Takeo Fujisawa has no Founders episode** and does not appear in the feed; scout him from outside it or drop him.
+
+### From *The Lessons of History*
+
+| Candidate | What the Durants use them for | Fix, and its document | Plate | Risk |
+|---|---|---|---|---|
+| Solon | Ch. VIII, debt relief | **Opened:** Plutarch, *Solon* 15 (LacusCurtius): Androtion held it was "a reduction of the interest", not a cancelling; *Ath. Pol.* 6 says all debts cancelled. Plutarch 15.6: his friends borrowed large sums before the decree. The mina: 73→100 drachmas (Plutarch), 70→100 (*Ath. Pol.* 10). The Durants' "twelve times" graduated tax not found in either | Commons `Solon.jpg` (Farnese bust), "PD", photographer unchecked; avoid the CC BY-SA Sailko photo | any figure needs both sources |
+| Pericles | Ch. X, "the aristocracy prevailed" | **Opened:** *Ath. Pol.* 27–28 — first to pay jurors, against Cimon's wealth; "leader of the people" | Commons Pio-Clementino / Chiaramonti busts (Jastrow), "PD", release not checked | heavily written |
+| Wang Mang | Ch. IX, nationalized land, ended slavery | **Opened (excerpt):** Han shu 99 in de Bary (Columbia PDF): land and slaves may not be bought or sold, slaves renamed "private retainers" — renamed, not freed. Hu Shih 1928 is the source of "socialist emperor": lead | coins, CC BY-SA 4.0 (Gary Lee Todd), credit owed; the "portrait" is modern | translator of the excerpt unnamed |
+| Tiberius Gracchus | Ch. VIII, land reform | **Opened:** Plutarch, *Tib. Gracchus* 9–10: the first law paid holders "the value"; after the veto he brought a harsher one, without compensation. Plutarch's limit is 500 *iugera*; the Durants' 333 acres unexplained | Promptuarii Iconum 1553, PD, imagined likeness | Gaius may be the better life |
+| Diocletian | Ch. IX, "socialist interlude", serfdom | **Opened:** Lactantius 7 is the witness for the edict's failure, and a hostile one. Open the edict itself (Kropff, Skidmore PDF; Crawford 2023; Erim and Reynolds, JRS 1970/73). Serf decrees usually Constantine's, *CTh* 5.17.1: lead | Istanbul bust CC BY-SA 4.0 (Yair-haklai), credit owed | the edict not yet read |
+| Augustus | Ch. X–XI, told Tiberius to stop in AD 9 | **Opened:** Tacitus, *Annals* 1.11 puts the advice to keep the frontiers in the papers read after his death, AD 14 | Rijksmuseum RP-F-F01143-CK, CC0 | heavily written |
+| Ashoka | Ch. XI, the Golden Rule among nations | **Opened (Hultzsch rendering, a mirror):** Rock Edict XIII keeps "the power to punish" the forest peoples despite his repentance; his own counts, 150,000 deported, 100,000 slain — print as his | none; press mark | the CII volume itself is a lead |
+| Hammurabi | Ch. IX, fixed wages | **Opened:** the code (King, Gutenberg #17150), §117 caps debt bondage at three years; §215–217 scale a surgeon's fee by the patient's rank | Louvre stele CC BY 3.0, credit owed | Westbrook et al. on monument vs statute: lead |
+| Wang An-shih | Ch. IX, commerce nationalized | Lead only: the New Policies outlasted his 1076 retirement until 1085. Open Song shi 327 (ctext), Liu (1959) | Commons `Wang Anshi.jpg`, Qing court album, PD | fix unopened |
+| Akhenaten | Ch. VII, Amon restored "within a year" | Lead only, from the researcher's memory — open the Restoration Stela (Cairo CG 34183) | CC BY-SA 4.0 reliefs | unverified |
+| Will and Ariel Durant | the book itself | The Lessons is a late distillation, and in several cases above it prints as settled what its own sources call disputed. Ariel's co-credit (from vol. 10) and the shared 1968 Pulitzer: from memory, check title pages and pulitzer.org | Commons `Ariel_and_Will_Durant.jpg`, CC BY 4.0 (Bill Murphy, LA Times; the UCLA archive doubt in the Lamarr row applies) | living heirs; plate doubt |
+
+**Documents to open next:** the full Dodge opinion; the Daily Mail, 24 Nov 1927; Lorenz on Mozart's burial; the Edict on Maximum Prices; Hu Shih 1928; Sargent's Han shu 99; Song shi 327; Liu, *Reform in Sung China*; *CTh* 5.17.1; Restoration Stela CG 34183; Hultzsch, CII vol. 1; *Caesar and Christ* p. 218; Durant's own source for Solon's tax (*The Life of Greece*).
+
+### 2026-11-03, later — № 151–154 written: what was opened, and what was not
+
+Opened and read as raw text by the main session: Plutarch's *Solon*, *Pericles* and *Tiberius Gracchus* (LacusCurtius, Perrin); *Athenian Constitution* (Gutenberg #26095); Thucydides 2.65 (Gutenberg #7142); Han shu 99B, Chinese, Wikisource `漢書/卷099中`; Hu Shih, 'Wang Mang' (1922), Wikisource; de Bary's excerpt of the land edict; the Columbia excerpt of Dubs, vol. 3 (through Apify; the page refuses plain fetches). Two scouting claims were wrong and are not printed: Hu Shih's essay is 1922 in *Dushu zazhi*, not only the 1928 English paper; and the Durants' 333 acres may be the same limit as the Loeb's five hundred 'acres', the Greek unit unchecked.
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Solon | Durant, *The Life of Greece*, pp. 112–18 | The source of the 'twelve times' graduated tax |
+| Pericles | Kagan (1991); Plutarch's Greek for the grain-gift year | The `bio`; the year Plutarch does not give |
+| Wang Mang | Dubs, vol. 3, in full; Bielenstein in *Cambridge History of China* vol. 1 | Read only in excerpt; the AD 12 edict in Dubs's English |
+| Tiberius Gracchus | Appian, *Civil Wars* 1.7–17; Plutarch's Greek at 8.2 | The other ancient account; which unit the 500 is |

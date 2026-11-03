@@ -35,6 +35,11 @@
       "to": "atlas:disc",
       "label": "The Atlas · Discipline is freedom",
       "txt": "— ritual as the rule you keep to yourself; the earliest recorded version."
+    },
+    {
+      "to": "lives:wang-mang",
+      "label": "Wang Mang",
+      "txt": "— the emperor who tried to rule by the sages' book five centuries later, and repealed his own land law in three years."
     }
   ],
   "corrected": [

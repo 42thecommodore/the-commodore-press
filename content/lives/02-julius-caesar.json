@@ -30,6 +30,11 @@
       "to": "lives:cleopatra",
       "label": "Cleopatra VII",
       "txt": "— the ally whose reputation Rome spent two thousand years rewriting."
+    },
+    {
+      "to": "lives:tiberius-gracchus",
+      "label": "Tiberius Gracchus",
+      "txt": "— where the century of land and debt fights that ended with Caesar began: a tribune killed with bench legs, 133 BCE."
     }
   ]
 }

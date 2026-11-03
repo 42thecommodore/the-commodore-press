@@ -1,0 +1,64 @@
+{
+  "id": "tiberius-gracchus",
+  "no": 154,
+  "keep": "His first land law paid the rich for land they held illegally. When a friend vetoed it, he answered with a harsher one and then deposed the friend, and that was the step that killed him.",
+  "n": "Tiberius Gracchus",
+  "years": "died 133 BCE",
+  "place": "Rome",
+  "field": "Politics & Statecraft",
+  "group": "obscure",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "plateOf": "An imagined likeness: a woodcut from Guillaume Rouillé's Promptuarii Iconum Insigniorum, Lyon, 1553. No portrait made in his lifetime is known to this house.",
+  "lede": "He wrote what Plutarch thought the mildest law ever drawn against so great a wrong. A friend vetoed it. Everything that followed came from what he did next.",
+  "copy": [
+    "Rome had a law that no one might hold more than five hundred acres of public land, in the Loeb's rendering, and the rich had got round it with fictitious tenants until they held most of it openly. Plutarch gives four reasons Tiberius took up the cause, and the list is the argument: the philosopher Blossius of Cumae; his mother Cornelia, who complained that Romans still called her Scipio's mother-in-law and not yet the mother of the Gracchi; a rival advocate, Spurius Postumius, who had outshone him; and his brother Gaius's own account, that crossing Etruria on the way to Numantia he saw the country emptied and worked by barbarian slaves. Above all, Plutarch says, the people wrote on porticoes, house walls and monuments, asking him to recover the public land.",
+    "He drafted the law with Crassus the chief priest, the consul Mucius Scaevola and his father-in-law Appius Claudius. It did not fine the men holding land illegally. It paid them its value and gave it to citizens who needed it. Marcus Octavius, a fellow tribune and an intimate friend, vetoed it under pressure from powerful men. Tiberius offered to pay Octavius for his own holding out of his own pocket. When that failed, he withdrew the mild law and brought one that ordered the holders to leave without compensation. Then he had the tribes vote Octavius out of office, a step Plutarch calls illegal and unseemly. The law passed, and three commissioners were chosen to survey and share out the land: Tiberius, Appius Claudius and Gaius. The Durants write that the Senate 'rejected his proposals as confiscatory'. In Plutarch, whom their note cites, the first proposal paid compensation. The confiscating version was his answer to the veto.",
+    "Deposing a tribune offended the multitude as well as the nobles, Plutarch says, because the office had been held sacred. When King Attalus of Pergamum left his kingdom to the Roman people, Tiberius proposed that the money go to the new settlers to stock their farms. A senator said Eudemus of Pergamum had brought him a royal diadem and a purple robe. He stood for a second term, and on the day of the vote, with the people on the Capitol, he put his hand to his head to show that his life was in danger. His opponents told the Senate he was asking for a crown. The senators took up the legs of broken benches and went for him. The first blow came from one of his own colleagues, Publius Satyreius. More than three hundred were killed with sticks and stones, and not one by the sword. His body was thrown into the river; his brother was refused leave to bury it. Plutarch calls it the first sedition at Rome since the kings to end in the death of citizens."
+  ],
+  "bio": {
+    "t": "Life of Tiberius Gracchus",
+    "a": "Plutarch",
+    "y": "Loeb translation, 1921",
+    "u": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Tiberius_Gracchus*.html",
+    "why": "Plutarch's Life, in the Loeb translation (Perrin), free on LacusCurtius, and the source the Durants cite. It is sympathetic: Plutarch paired the brothers with the Spartan reformers Agis and Cleomenes. Read Appian's Civil Wars, book 1, beside it for the other ancient account; this house has not."
+  },
+  "contested": "Who broke the republic first. Plutarch puts the guilt on the rich and calls their treatment of the body strong proof that hatred, not the law, drove them. He also concedes that deposing Octavius was illegal and displeased even the people, and that Tiberius's enemies accused him of seeking a crown. The Durants say his campaign for a second term was 'contrary to Roman law'; this house has not found that charge in Plutarch's Life, which speaks of his enemies' alarm, not a statute. The figure is unsettled too. Plutarch's limit appears as five hundred acres in the Loeb, and the Durants give 333. Plutarch wrote in Greek about a Roman measure, and this house has not checked which unit underlies either number.",
+  "across": [
+    {
+      "to": "lives:julius-caesar",
+      "label": "Julius Caesar",
+      "txt": "— the Durants run the line from the Gracchi to Caesar: a hundred years of land and debt fought out in the street."
+    },
+    {
+      "to": "lives:solon",
+      "label": "Solon",
+      "txt": "— the same quarrel in Athens, settled by a decree and a man who then left town for ten years."
+    }
+  ],
+  "facts": [
+    {
+      "b": "five hundred acres",
+      "s": "The legal limit on public land one man might hold, in the Loeb's rendering: Plutarch, Life of Tiberius Gracchus 8.2, Loeb translation (Perrin), read on LacusCurtius"
+    },
+    {
+      "b": "four reasons",
+      "s": "Blossius, Cornelia, Spurius Postumius and Gaius's pamphlet: Plutarch, Life of Tiberius Gracchus 8.5–7"
+    },
+    {
+      "b": "paid the value · without compensation",
+      "s": "The first law and the second: Plutarch, Life of Tiberius Gracchus 9.2 and 10.3"
+    },
+    {
+      "b": "more than three hundred · not more than three thousand",
+      "s": "The dead with him, and his armed supporters that day: Plutarch, Life of Tiberius Gracchus 19.6 and 20.2"
+    },
+    {
+      "b": "the hand to the head",
+      "s": "The diadem story and the gesture read as a request for a crown: Plutarch, Life of Tiberius Gracchus 14.2 and 19.2"
+    }
+  ]
+}

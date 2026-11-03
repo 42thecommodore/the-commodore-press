@@ -1,0 +1,60 @@
+{
+  "id": "solon",
+  "no": 151,
+  "keep": "Solon told three friends his debt law would spare the land, and they borrowed to buy it before the decree. The reform was sound; the leak came from his own circle.",
+  "n": "Solon",
+  "years": "c. 630–c. 560 BCE",
+  "place": "Athens",
+  "field": "Politics & Statecraft",
+  "group": "famous",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "conic",
+  "plateOf": "An imagined likeness: a woodcut from Guillaume Rouillé's Promptuarii Iconum Insigniorum, Lyon, 1553, made two thousand years after him.",
+  "lede": "He was given the power to make himself tyrant of Athens and refused it. His real mistake was smaller. He told three friends what his debt law would say.",
+  "copy": [
+    "Athens around 600 BCE was a city of debtors. Plutarch says all the common people were in debt to the rich. Some farmed for them and paid a sixth of the crop. Others had pledged their own bodies and could be seized: some were enslaved at home, some sold abroad. Solon was chosen to settle it because, Plutarch says, the rich accepted him as well-to-do and the poor as honest. His friends told him to take the tyranny. He answered, as Plutarch reports it, that a tyranny was a lovely place, but there was no way down from it.",
+    "What he did the Athenians called the seisachtheia, the shaking-off of burdens. He banned loans secured on the borrower's person, so no Athenian could again be sold for debt. What happened to the debts already owed was disputed in antiquity. The Athenian Constitution says he cancelled all debts, public and private. Plutarch says most writers agreed. He also names Androtion, who held that the poor were relieved by a reduction of the interest and a cheaper currency. Even that figure comes in two versions: Plutarch has the mina raised from seventy-three drachmas to a hundred, the Athenian Constitution from seventy. The laws were written on revolving wooden tablets, to stand a hundred years. Asked whether he had given the Athenians the best laws, he said they were the best they would receive. Then he sailed for ten years, so that nobody could make him change them.",
+    "The leak is the part usually left out. Before the decree, he told his friends Conon, Cleinias and Hipponicus that he would cancel debts and leave the land alone. They borrowed large sums from the wealthy, bought great estates, and when the law came out refused to pay their creditors. Solon was blamed as a party to it. Plutarch says the charge lifted when it was found he had lent five talents himself and was the first to remit them; Polyzelus of Rhodes put it at fifteen. The friends were called chreocopidae, debt-cutters, ever after. Nobody got what they wanted. The poor had expected a redistribution of all property, and the rich had hoped he would leave things as they were. Within a generation Pisistratus took the tyranny Solon had refused, and kept most of his laws."
+  ],
+  "bio": {
+    "t": "Life of Solon",
+    "a": "Plutarch",
+    "y": "Loeb translation, 1914",
+    "u": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Solon*.html",
+    "why": "Plutarch's Life, in the Loeb translation (Perrin), free on LacusCurtius. It is where nearly every story about him starts, including the friends who borrowed. Read the Athenian Constitution, Parts 5 to 12, beside it: it disagrees with Plutarch on the debts and the coinage, and judges the story about his friends more kindly."
+  },
+  "contested": "Two things. First, what the seisachtheia did to debts. The Athenian Constitution says it cancelled all of them; Plutarch reports Androtion's reading, a cut in interest paid off through a cheaper coinage, and sides with the majority against him. Solon's own surviving poems, which both writers lean on, speak of mortgage stones pulled up and people brought home from slavery, which fits cancellation better. Second, his part in his friends' profit. The Athenian Constitution says those who wished to attack his character claimed he shared in the fraud, and calls the accusation false. Plutarch rests his defence on the five talents. The Durants, in The Lessons of History (1968), give Solon 'a graduated income tax that made the rich pay at a rate twelve times' the poor's. This house found no such tax in Plutarch's Life or in the Athenian Constitution's account of his property classes. Their note points to their own Life of Greece, pp. 112–18, which has not been opened here.",
+  "across": [
+    {
+      "to": "lives:pericles",
+      "label": "Pericles",
+      "txt": "— the Athenian Constitution names Solon the first leader of the people; Pericles inherited the title, and the demand for more."
+    },
+    {
+      "to": "lives:tiberius-gracchus",
+      "label": "Tiberius Gracchus",
+      "txt": "— the same quarrel over debt and land in Rome, four centuries later, settled with benches instead of a decree."
+    }
+  ],
+  "facts": [
+    {
+      "b": "a sixth of the crop",
+      "s": "What the poorer farmers paid the rich before the reform: Plutarch, Life of Solon 13, Loeb translation (Perrin), read on LacusCurtius"
+    },
+    {
+      "b": "73 → 100 drachmas · 70 → 100",
+      "s": "The mina before and after his coinage reform, in the two ancient accounts: Plutarch, Life of Solon 15.4, read on LacusCurtius; Aristotle, Athenian Constitution, Part 10, Kenyon translation, Project Gutenberg #26095"
+    },
+    {
+      "b": "five talents · fifteen",
+      "s": "What Solon had lent and remitted under his own law, and Polyzelus's higher figure: Plutarch, Life of Solon 15.7, read on LacusCurtius"
+    },
+    {
+      "b": "a hundred years · ten years",
+      "s": "How long the laws were to stand, and how long he left Athens: Plutarch, Life of Solon 25.1; Athenian Constitution, Part 11"
+    }
+  ]
+}

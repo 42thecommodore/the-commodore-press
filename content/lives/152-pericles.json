@@ -1,0 +1,58 @@
+{
+  "id": "pericles",
+  "no": 152,
+  "keep": "He wrote the law that only the child of two Athenians was Athenian. Years later, his legitimate sons dead, he had to ask the city to waive it for his own son.",
+  "n": "Pericles",
+  "years": "died 429 BCE",
+  "place": "Athens",
+  "field": "Politics & Statecraft",
+  "group": "famous",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "plateOf": "A Roman marble copy of a Greek bust of about 430 BCE, inscribed 'Pericles, son of Xanthippus, Athenian'. Museo Pio-Clementino, Vatican, Inv. 269; photograph by Jastrow, 2006, public domain.",
+  "lede": "He could not match his rival's fortune, so he paid the people out of their own treasury. Then he wrote a citizenship law that would one day shut out his own son.",
+  "copy": [
+    "His rival was Cimon, son of Miltiades, whose wealth the Athenian Constitution calls regal. Any man of Cimon's deme could come to his house every day and be fed. His estate had no fences, so anyone could take the fruit. Pericles' own property was not equal to that. He took the advice of Damonides of Oia: if he was beaten in private possessions, he should give the people gifts from their own property. So he became the first to pay citizens for sitting on juries. The Athenian Constitution records the complaint that followed. Ordinary people put themselves forward for the juries more than men of position did, and bribery, it says, came in after.",
+    "He moved the law that no one should be a citizen unless both parents were. Plutarch says he stood first in Athens for forty years, and for fifteen of them held the generalship every year without a break. Pheidias oversaw his building programme; Callicrates and Ictinus built the Parthenon. When war with Sparta came, his advice was to wait, mind the fleet and attempt no new conquests. The Durants, in The Lessons of History, write that under him 'the aristocracy prevailed'. The Athenian Constitution says the opposite: he was leader of the people, and the constitution became more democratic under him. Thucydides says something else again. What was nominally a democracy became, in his hands, government by the first citizen: one man, not a class.",
+    "The law came back to him. When the king of Egypt sent forty thousand measures of grain to be shared among the citizens, there was a wave of prosecutions under it. Plutarch counts a little under five thousand convicted and sold into slavery, and 14,040 confirmed as Athenians. Then the plague came. The city fined him, fifteen talents in the lowest account and fifty in the highest, and took away his command. His legitimate sons died. At the funeral of the last, Paralus, he wept, Plutarch says, for the first time in his life. Recalled to office, he asked the Athenians to suspend his own law so that his son by Aspasia of Miletus could be enrolled under his name. They agreed, reading his losses as a penalty already paid. He died of the plague, two years and six months after the war began."
+  ],
+  "bio": {
+    "t": "Pericles of Athens and the Birth of Democracy",
+    "a": "Donald Kagan",
+    "y": "1991",
+    "why": "A one-volume life for the general reader by the historian of the Peloponnesian War, and openly an admirer; read it for the war years. This house has read Plutarch's Life, Thucydides 2.65 and the Athenian Constitution, Parts 26 to 28, not Kagan. Those three are free and short, and they disagree about him."
+  },
+  "contested": "What kind of rule his was. Thucydides, who lived under it, calls it nominally a democracy and in fact government by the first citizen, and praises it. The Athenian Constitution calls him leader of the people and dates the decline to the demagogues after him, but also calls jury pay a bid for popular favour and records the charge that it corrupted the courts. Plutarch keeps both pictures. He reads Thucydides as describing an administration 'rather aristocratic', then reports that many others say Pericles first led the people into land allotments, festival grants and fees for public service. He also has him change in mid-career, from yielding to the crowd to holding out against it. The Durants' 'the aristocracy prevailed' follows Plutarch's reading of Thucydides. It is one reading of three.",
+  "across": [
+    {
+      "to": "lives:solon",
+      "label": "Solon",
+      "txt": "— the first leader of the people, in the Athenian Constitution's list; Pericles was the last before the decline."
+    }
+  ],
+  "facts": [
+    {
+      "b": "first to pay jurors",
+      "s": "Jury pay as a bid against Cimon's wealth, on Damonides' advice: Aristotle, Athenian Constitution, Part 27, Kenyon translation, Project Gutenberg #26095"
+    },
+    {
+      "b": "forty years · fifteen",
+      "s": "His years as first man in Athens, and his unbroken run as general: Plutarch, Life of Pericles 16.2–3, Loeb translation (Perrin), read on LacusCurtius"
+    },
+    {
+      "b": "40,000 measures · under 5,000 · 14,040",
+      "s": "The Egyptian grain gift, those convicted and sold under his citizenship law, and those confirmed: Plutarch, Life of Pericles 37.3–4, read on LacusCurtius"
+    },
+    {
+      "b": "15 or 50 talents",
+      "s": "His fine after the plague, lowest and highest accounts: Plutarch, Life of Pericles 35.4, read on LacusCurtius"
+    },
+    {
+      "b": "two years and six months",
+      "s": "How long he outlived the start of the war: Thucydides 2.65, Crawley translation, Project Gutenberg #7142"
+    }
+  ]
+}

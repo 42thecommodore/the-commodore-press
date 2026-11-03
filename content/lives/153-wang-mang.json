@@ -1,0 +1,58 @@
+{
+  "id": "wang-mang",
+  "no": 153,
+  "keep": "Wang Mang banned the sale of land and slaves in AD 9 and lifted the ban himself in AD 12. The repeal the Durants credit to his killers was his own.",
+  "n": "Wang Mang",
+  "years": "died 23 CE",
+  "place": "Han China · the Xin dynasty",
+  "field": "Politics & Statecraft",
+  "group": "obscure",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "plateOf": "No contemporary likeness of him is known to this house. A huobu spade coin of his Xin dynasty, both faces; Gary Lee Todd collection, released CC0. The coinage, not the man.",
+  "lede": "He came up an orphan in a family of marquises, dressed like a Confucian scholar, and took the throne of the Han. His land law lasted three years.",
+  "copy": [
+    "His diagnosis is in his own edict, as the Han shu preserves it. Under the Han the land tax was nominally one-thirtieth of the crop. Because the powerful let their fields to sharecroppers at high rents, it came in practice to half. The strong measured their fields in thousands; the weak had not enough land to stick the point of an awl into. There were markets where slaves were penned up like cattle and horses. Wang Mang was the empress dowager's nephew. The Han shu says he was orphaned and poor, studied hard, and wore the garments of the Confucian masters. He governed for the boy emperor Ping, who came to the throne in his ninth year, and in January of AD 9 took the throne himself and named his dynasty Xin.",
+    "That year he decreed that all land be called 'king's fields' and all slaves 'private retainers'. Neither land nor slaves were to be bought or sold. A family of fewer than eight men holding more than one well-unit, nine hundred mu, was to divide the surplus among its relatives and neighbours. Anyone who criticised the system would be cast out beyond the four borders 'to face demons and evil spirits'. The Han shu says that those punished for buying and selling fields, houses and slaves, and for casting coin, from the lords down to the commoners, could not be counted. In AD 12 the palace gentleman Ou Bo told him that the well-field system had been dead for a thousand years and could not be revived without a hundred years' preparation. Wang Mang issued a new edict: holders of king's fields might sell them, and private sales of people would not be prosecuted. The Durants write that he 'put an end to slavery', and that the rebels who killed him repealed his laws. He had renamed the slaves, and he repealed the land law himself.",
+    "The rest of the reign was famine, flood and bandits. By the end of AD 15 more than two hundred thousand border troops depended on the government for food and clothes. In 17 a woman called Mother Lü raised a band to avenge her son and killed the county's ruler; in 18 the Red Eyebrows rose in Langye. In 19 he recruited convicts and the slaves of officials and commoners as soldiers. He took inventors on too. One man fixed a bird's quills to his body, flew several hundred paces and fell; Wang Mang gave them all titles and carriages anyway, because he wanted their reputation. In October of AD 23 rebel soldiers found him in a tower in the palace. A man named Tu Wu killed him, a colonel cut off his head, and the soldiers cut his body to pieces."
+  ],
+  "bio": {
+    "t": "The History of the Former Han Dynasty",
+    "a": "Pan Ku, translated by Homer H. Dubs",
+    "y": "1955",
+    "why": "Volume three holds the Han shu's memoir of Wang Mang in full, with Dubs's notes. It is hostile, written for the dynasty he interrupted, and it is nearly all there is. This house has read the Columbia excerpt of Dubs, the land edict in de Bary's Sources of Chinese Tradition, and the Chinese text of chapter 99 on Wikisource, not the whole volume."
+  },
+  "contested": "Whether he was a reformer or a usurper. The Han shu, written under the restored Han, calls his reign the limit of evil and his virtue a performance. Hu Shih answered it in 1922 in an essay titled 'Wang Mang: a socialist of nineteen hundred years ago'. He wrote that Wang Mang had suffered nineteen hundred years of injustice and was a great statesman, more forceful than Wang An-shih. The Durants file him under socialism in The Lessons of History, the reading Hu Shih argued for. Hu Shih quotes the AD 12 repeal edict in the same essay, so the repeal was never hidden; the Durants leave it out. Neither side has a second source. Everything about him comes through Ban Gu, writing for the family he deposed.",
+  "across": [
+    {
+      "to": "lives:confucius",
+      "label": "Confucius",
+      "txt": "— the sage-kings Wang Mang's edict appeals to are the ones Confucius taught from; he dressed as Confucius's heirs did, and ruled in their name."
+    }
+  ],
+  "facts": [
+    {
+      "b": "one-thirtieth · one-half",
+      "s": "The Han land tax in name and in practice, by Wang Mang's own account: his land edict, Han shu 99B, in de Bary, Sources of Chinese Tradition, vol. 1 (Columbia, 1960), excerpt read as a PDF; Chinese text on Wikisource, 漢書/卷099中"
+    },
+    {
+      "b": "900 mu · eight men",
+      "s": "The well-unit, and the family size above which surplus land was to be divided: the same edict, de Bary"
+    },
+    {
+      "b": "AD 9 · AD 12",
+      "s": "The ban on selling land and slaves, and his own edict lifting it after Ou Bo's warning: Han shu 99B, Chinese text read on Wikisource (始建國元年; 四年: 諸名食王田，皆得賣之，勿拘以法); the repeal is also quoted in Hu Shih, 'Wang Mang', Dushu zazhi 1 (1922), read on Wikisource"
+    },
+    {
+      "b": "more than 200,000",
+      "s": "Border troops fed by the government at the end of AD 15: Han shu 99, Dubs translation, vol. 3 (1955), Columbia University excerpt read in full"
+    },
+    {
+      "b": "several hundred paces",
+      "s": "How far the feathered inventor flew: the same Dubs excerpt"
+    }
+  ]
+}
