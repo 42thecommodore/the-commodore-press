@@ -1,0 +1,55 @@
+{
+  "id": "ashoka",
+  "no": 157,
+  "keep": "Ashoka published his remorse for Kalinga across India, but in Kalinga itself that edict was left off the rock. The people he had conquered were told instead that all men were his children.",
+  "n": "Ashoka",
+  "years": "born c. 304 BCE",
+  "place": "Maurya India",
+  "field": "Politics & Statecraft",
+  "group": "famous",
+  "cover": "#0F4C46",
+  "spineC": "#0A3833",
+  "ink": "#F4EFE2",
+  "accent": "#E4C57E",
+  "motif": "rings",
+  "plateOf": "Dhauli Rock, left pane: the First Separate Edict, carved in Kalinga where the confession was left out. Drawn for Cunningham's Corpus Inscriptionum Indicarum, vol. 1, 1877, plate VIII.",
+  "lede": "He counted his own dead: a hundred thousand killed in Kalinga, a hundred and fifty thousand deported. He published the count everywhere except Kalinga.",
+  "copy": [
+    "Ashoka conquered the Kalingas eight years after his coronation, and he says what it cost in his own Thirteenth Rock Edict. One hundred and fifty thousand were deported, one hundred thousand were killed, and many more died. Afterwards, the edict says, he came to feel deep remorse, and a love for the Dhamma, the moral law his edicts preach. The Durants make him their example of a ruler who dared 'to apply the Golden Rule to nations'. The edict is more careful than that.",
+    "In the same inscription he warns the forest people inside his domain. Despite his remorse, he has the power to punish them, so that they should be ashamed of their wrong and not be killed. He writes that he has had the edict carved so that his sons and great-grandsons may not consider making new conquests. If they do make them, they should do so with forbearance and light punishment. He claims a 'conquest by Dhamma' as far as six hundred yojanas away, in the lands of five Greek kings: Antiochos, Ptolemy, Antigonos, Magas and Alexander. In another edict he provides medical treatment for humans and for animals, inside his empire and beyond it.",
+    "The part usually left out is where the confession was carved. At Dhauli and Jaugada, the two sites in ancient Kalinga, the Archaeological Survey of India records the standard rock edicts one to ten and fourteen. Edicts eleven, twelve and thirteen are replaced with two special edicts. The first is addressed to the judicial officers of Tosali. 'All men are my children,' it says, in Dhammika's translation. It tells them that law-abiding people are being imprisoned and killed without cause, and promises an inspector every five years. The people who had lost a hundred thousand were not shown the count. They were shown a promise about their judges."
+  ],
+  "bio": {
+    "t": "The Edicts of King Asoka",
+    "a": "Ven. S. Dhammika",
+    "y": "1993",
+    "u": "https://www.accesstoinsight.org/lib/authors/dhammika/wheel386.html",
+    "why": "An English rendering of every edict, with notes, published by the Buddhist Publication Society (Wheel 386/387) and free online. Dhammika is a Buddhist monk and writes as an admirer; the edicts are what matter, and they are short. Read Rock Edict XIII and the two Kalinga edicts side by side."
+  },
+  "contested": "Why the confession was left out in Kalinga, and how much of the Dhamma was policy. No document gives a reason for the substitution at Dhauli and Jaugada. Accounts this house has seen only in search results guess at tact towards a grieving province, or at the order in which edicts were sent out for carving; none has been opened here. The 'conquest by Dhamma' among the Greek kings is his own claim, and nothing from their side has been found to confirm it. Even his dates are uncertain. Dhammika gives his birth as about 304 BCE and says the exact dates of his life are disputed among scholars. The Durants' 262 BCE for the Golden Rule is their date, not the edict's.",
+  "across": [
+    {
+      "to": "lives:marcus-aurelius",
+      "label": "Marcus Aurelius",
+      "txt": "— another ruler who wrote his conscience down. Marcus wrote to himself; Ashoka carved his on rocks across an empire."
+    }
+  ],
+  "facts": [
+    {
+      "b": "150,000 deported · 100,000 killed",
+      "s": "Ashoka's own count of the Kalinga war, and the eight years after his coronation: Rock Edict XIII, in S. Dhammika, The Edicts of King Asoka (Buddhist Publication Society, 1993), read on Access to Insight"
+    },
+    {
+      "b": "six hundred yojanas · five Greek kings",
+      "s": "How far he claims his conquest by Dhamma reached, and whose lands: Rock Edict XIII, Dhammika"
+    },
+    {
+      "b": "edicts XI, XII and XIII replaced",
+      "s": "What was left off the rock at Dhauli and Jaugada: Archaeological Survey of India documentation for the Rock Edicts of Asoka, Dhauli (IGNCA, OR/KDA/BSR-235), read as a PDF"
+    },
+    {
+      "b": "every five years",
+      "s": "The inspection promised to the judicial officers of Tosali: First Separate (Kalinga) Edict, Dhammika"
+    }
+  ]
+}

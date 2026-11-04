@@ -1,0 +1,55 @@
+{
+  "id": "diocletian",
+  "no": 155,
+  "keep": "His price edict says the barbarians were already beaten and that soldiers were losing a year's pay on one purchase. The famous failure has one witness, and he hated the man.",
+  "n": "Diocletian",
+  "years": "abdicated 305 CE",
+  "place": "Rome · Nicomedia",
+  "field": "Politics & Statecraft",
+  "group": "famous",
+  "cover": "#10305C",
+  "spineC": "#0A2242",
+  "ink": "#EFF2F8",
+  "accent": "#D6BE86",
+  "motif": "dots",
+  "plateOf": "A gold aureus of Diocletian, A.D. 293. Metropolitan Museum of Art, 08.170.444, released CC0.",
+  "lede": "He split the empire between four rulers and set a legal maximum on twelve hundred prices, from fodder to lions. The man who said it failed is the man who wrote a book on how persecutors die.",
+  "copy": [
+    "The Edict on Maximum Prices was issued between 20 November and 10 December 301, in the names of the four rulers who then shared the empire. It survives as broken inscriptions, from sites all but one of them in the east, where Diocletian lived. It sets ceilings for more than 1,200 goods, raw materials, wages, freight, animals and even slaves. The range runs from one denarius for green fodder to 150,000 for a male lion or for silk dyed purple. The Durants call it Rome's 'socialist interlude' and have Diocletian telling businessmen that 'the barbarians were at the gate'.",
+    "The edict's own preamble says something else. It opens on wars already won: the emperors have suppressed the raiders of the past 'by slaughtering the very peoples of the barbarian tribes', and the world sits 'tranquil, in the lap of the deepest quiet'. The grievance it names is the army's. Wherever the troops march, prices go up 'not fourfold or eightfold' but past counting, so that by one purchase a soldier is deprived of his bonus and his salary. It says plainly that it is not fixing prices, only setting a limit, so that places with plenty keep their low prices. The penalty is death, for the seller who exceeds the limit, for the buyer who colludes, and for anyone who hoards.",
+    "Almost everything said about its failure comes from one man. Lactantius, a Christian writing On the Deaths of the Persecutors, says Diocletian had made all things exceedingly dear by his own extortions, then tried to limit prices by ordinance. 'Much blood was shed for the veriest trifles', goods vanished from sale, and the ordinance was at last withdrawn from mere necessity. Lactantius blames the four armies: there began to be more men drawing wages than paying taxes, and farms went back to woodland. He also says the famous retirement was forced. In his account Galerius came to Nicomedia and said that if Diocletian would not resign, he must consult his own interests. He was enlarging his army. The old emperor burst into tears and said, 'Be it as you will.'"
+  ],
+  "bio": {
+    "t": "Of the Manner in Which the Persecutors Died",
+    "a": "Lactantius",
+    "y": "Fletcher translation, 1886",
+    "u": "https://www.newadvent.org/fathers/0705.htm",
+    "why": "The hostile contemporary account, short and free, in the Ante-Nicene Fathers translation. Read it beside the edict itself: Antony Kropff's English translation (2016, on Academia.edu) gives the preamble and every price, and asks in its own introduction whether Lactantius can be trusted on the outcome."
+  },
+  "contested": "Whether the edict failed, and how fast. Lactantius is the only ancient witness, and he wrote to show that God punished the emperors who persecuted Christians. Kropff's introduction to his translation puts the question directly: can we trust Lactantius on the outcome? The stones do not settle it. The edict was carved in the east, and Kropff notes that almost no fragment has been found in the west, where Maximian ruled, though the edict claims to apply to 'our whole realm'. The Durants also credit Diocletian with decrees binding the peasant to his field. This house has not found those decrees in anything it has opened, and has not opened the later law code where they would be.",
+  "across": [
+    {
+      "to": "lives:wang-mang",
+      "label": "Wang Mang",
+      "txt": "— the other ruler the Durants file under socialism: a price-and-land law, a hostile historian, and a repeal."
+    }
+  ],
+  "facts": [
+    {
+      "b": "20 Nov – 10 Dec 301 · more than 1,200 · 1 to 150,000 denarii",
+      "s": "When the edict was issued, how many items it prices, and its range from green fodder to a male lion or purple silk: Antony Kropff, An English translation of the Edict on Maximum Prices (Academia.edu, 2016), introduction, read as a PDF"
+    },
+    {
+      "b": "not fourfold or eightfold",
+      "s": "How far prices rose where the armies marched, by the edict's own account: preamble, Kropff translation"
+    },
+    {
+      "b": "a capital penalty",
+      "s": "The punishment for seller, colluding buyer and hoarder: preamble, Kropff translation"
+    },
+    {
+      "b": "four princes",
+      "s": "The armies multiplied when the empire was quartered, and more men drew wages than paid taxes: Lactantius, Of the Manner in Which the Persecutors Died 7, Fletcher translation, read on New Advent"
+    }
+  ]
+}
