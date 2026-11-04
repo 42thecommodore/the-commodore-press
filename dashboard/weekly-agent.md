@@ -93,8 +93,8 @@ Take the first item on this list that has real work in it:
    silently. If you cannot find a replacement, log it as a lead. A link that is genuinely
    http-only goes in `content/http-allowlist.json`, with its reason.
 3. **Fact-check one Life.** Follow `.claude/skills/press-factcheck/SKILL.md`. Pick the Life
-   whose figures were checked longest ago, or never, judging by `agent-log.md` and
-   `git log`. Prefer Lives № 01–60.
+   with the fewest commits touching it (`git log --oneline -- <file> | wc -l`), Lives
+   № 27–60 first, then № 01–26. Skip any Life `agent-log.md` shows was checked already.
 4. **Bring one founding Life (№ 01–26) up to house standard.** Several have no `facts`, no
    `reading` and around 300 words: Confucius, Julius Caesar, Genghis Khan, Leonardo,
    Napoleon, Gandhi and others. To find them:
