@@ -681,6 +681,17 @@ Opened and read as raw text by the main session: Plutarch's *Solon*, *Pericles* 
 | Wang Mang | Dubs, vol. 3, in full; Bielenstein in *Cambridge History of China* vol. 1 | Read only in excerpt; the AD 12 edict in Dubs's English |
 | Tiberius Gracchus | Appian, *Civil Wars* 1.7–17; Plutarch's Greek at 8.2 | The other ancient account; which unit the 500 is |
 
+### 2026-11-03 — № 155–157: what was named but not opened
+
+Opened as raw text: Lactantius, *De mortibus persecutorum*, Fletcher (New Advent); Kropff's translation of the Price Edict (PDF); Tacitus, *Annals* 1, Gordon (Gutenberg #7959); Suetonius, *Augustus*, and the *Res Gestae*, Loeb, both on LacusCurtius; Dhammika, *The Edicts of King Asoka*; the ASI/IGNCA documentation for Dhauli (OR/KDA/BSR-235).
+
+| Life | Document still to open | Why |
+|---|---|---|
+| Diocletian | Kropff's PDF at its Academia.edu home (academia.edu/23644199); Crawford, *Diocletian's Edict of Maximum Prices at the Civil Basilica in Aphrodisias* (2023) | The copy read here came from the scouting sweep, not its publisher; the Aphrodisias text |
+| Diocletian | *Codex Theodosianus* 5.17 | The Durants' decrees binding the peasant to his field |
+| Augustus | Tacitus, *Annals* 1.11 in Latin | Gordon's 'fear for the public, or by envy' against the Latin |
+| Ashoka | Hultzsch, *Corpus Inscriptionum Indicarum* vol. 1 (1925); Orissa Review, January 2007, pp. 44–47 | A scholarly translation; the reasons offered for the Kalinga substitution, seen only in search results |
+
 ### 2026-11-03 — weekly agent: Jamsetji Tata (№ 51)
 
 | Document | Why | Where to look |

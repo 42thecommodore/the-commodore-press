@@ -30,6 +30,11 @@
       "to": "lives:julius-caesar",
       "label": "Julius Caesar",
       "txt": "— the same events from the other side, and the source of most of what was later said about her."
+    },
+    {
+      "to": "lives:augustus",
+      "label": "Augustus",
+      "txt": "— Octavian, who wanted her alive for his triumph and had her image carried in it instead."
     }
   ],
   "facts": [

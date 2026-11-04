@@ -1,0 +1,60 @@
+{
+  "id": "augustus",
+  "no": 156,
+  "keep": "The advice to stop expanding was written in his own hand five years after Varus lost three legions, and read only at his funeral. Tacitus could not tell whether it was caution or envy.",
+  "n": "Augustus",
+  "years": "63 BCE–14 CE",
+  "place": "Rome",
+  "field": "Politics & Statecraft",
+  "group": "famous",
+  "cover": "#2A2F45",
+  "spineC": "#1B1F30",
+  "ink": "#F0EFEA",
+  "accent": "#C9B98E",
+  "motif": "conic",
+  "plateOf": "Marble portrait of Augustus, about A.D. 14–37, made after his death. Metropolitan Museum of Art, 08.258.47, released CC0.",
+  "lede": "The Durants hold him up as the emperor who told his heir to stop invading Germany. He gave that advice after losing three legions there, and it was read aloud after he died.",
+  "copy": [
+    "In The Lessons of History the Durants ask a modern president to show magnanimity, 'or at least do what Augustus did when he bade Tiberius desist from further invasion of Germany (A.D. 9)'. Suetonius gives the year its other meaning. Augustus suffered two severe defeats, he writes, both in Germany, and the second, under Varus, was almost fatal: three legions were cut to pieces with their general, his lieutenants and all the auxiliaries. Augustus set night watches in Rome against a rising and kept experienced governors in their provinces to hold the allies. For months he cut neither his beard nor his hair. Sometimes he struck his head against a door and cried, 'Quintilius Varus, give me back my legions!'",
+    "He had not been a man of fixed frontiers. In the Res Gestae, the record of his own deeds, he says he extended the boundaries of every province that bordered peoples not yet under Roman rule. He claims Gaul, Spain and Germany, bounded by the ocean from Gades to the mouth of the Elbe, as brought to peace. Suetonius says he found Rome built of brick and left it in marble. When he died, Tacitus writes, the only war still running was in Germany, kept up to wipe out the disgrace of Varus rather than to enlarge the empire.",
+    "The counsel itself was in a book. After his death Tiberius had the imperial register read to the Senate: the strength and revenue of the empire, the citizens and auxiliaries under arms, the fleet, the client kingdoms, the provinces and their taxes. It was all in Augustus's own hand. At the end he had added his advice that the boundaries should stand fixed with no further enlargement. Tacitus would not say why. Whether it came from fear for the state or envy of those who would follow him, he wrote, is uncertain. Augustus died thirty-five days before his seventy-sixth birthday."
+  ],
+  "bio": {
+    "t": "The Life of the Deified Augustus",
+    "a": "Suetonius",
+    "y": "Loeb translation, 1913",
+    "u": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Augustus*.html",
+    "why": "Suetonius's Life, in the Loeb translation, free on LacusCurtius: a biographer's anecdotes, the Varus scene among them. Read Augustus's own Res Gestae beside it (the 1924 Loeb, also on LacusCurtius), and the first book of Tacitus's Annals for the register and the doubt."
+  },
+  "contested": "What the advice meant. The Durants read it as restraint chosen from strength. Tacitus, the only ancient writer who reports it, refused to choose between fear for the empire and envy of his successors. It also sits awkwardly beside his own Res Gestae, which boasts of extending every frontier that touched unconquered peoples. Even that boast is hedged by its modern editor: the Loeb edition's note calls the push from the Rhine to the Elbe temporary. The Durants date the advice to AD 9, the year of Varus. Tacitus places it in a document read after Augustus died in 14, and this house has found no ancient source that dates the advice itself.",
+  "across": [
+    {
+      "to": "lives:julius-caesar",
+      "label": "Julius Caesar",
+      "txt": "— the man who adopted him; Suetonius records Antony's taunt about how the adoption was earned, and the war over Caesar's inheritance made him."
+    },
+    {
+      "to": "lives:cleopatra",
+      "label": "Cleopatra VII",
+      "txt": "— the enemy whose image he carried in his triumph, with the asp."
+    }
+  ],
+  "facts": [
+    {
+      "b": "three legions",
+      "s": "Lost with Varus, his lieutenants and the auxiliaries, and the months without cutting beard or hair: Suetonius, Augustus 23, Loeb translation (1913), read on LacusCurtius"
+    },
+    {
+      "b": "from Gades to the mouth of the Elbe",
+      "s": "The frontier he claims to have brought to peace: Res Gestae 26, Loeb translation (1924), read on LacusCurtius"
+    },
+    {
+      "b": "thirty-five days before his seventy-sixth birthday",
+      "s": "When he died: Suetonius, Augustus 100"
+    },
+    {
+      "b": "in his own hand",
+      "s": "The register read to the Senate, with his advice that the boundaries stand fixed: Tacitus, Annals 1.11, Gordon translation, Project Gutenberg #7959"
+    }
+  ]
+}

@@ -40,6 +40,11 @@
       "to": "atlas:disc",
       "label": "The Atlas · Discipline is freedom",
       "txt": "— Stoicism as a discipline performed daily, in writing, under pressure, by the one man in the empire nobody could hold to it."
+    },
+    {
+      "to": "lives:ashoka",
+      "label": "Ashoka",
+      "txt": "— a king who also wrote his conscience down, and carved it on rocks for his subjects to read."
     }
   ]
 }

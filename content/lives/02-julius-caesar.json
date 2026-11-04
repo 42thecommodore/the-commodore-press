@@ -35,6 +35,11 @@
       "to": "lives:tiberius-gracchus",
       "label": "Tiberius Gracchus",
       "txt": "— where the century of land and debt fights that ended with Caesar began: a tribune killed with bench legs, 133 BCE."
+    },
+    {
+      "to": "lives:augustus",
+      "label": "Augustus",
+      "txt": "— the heir his will made, and the man who ruled what his murder left."
     }
   ]
 }
