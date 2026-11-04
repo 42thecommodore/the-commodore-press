@@ -680,3 +680,12 @@ Opened and read as raw text by the main session: Plutarch's *Solon*, *Pericles* 
 | Pericles | Kagan (1991); Plutarch's Greek for the grain-gift year | The `bio`; the year Plutarch does not give |
 | Wang Mang | Dubs, vol. 3, in full; Bielenstein in *Cambridge History of China* vol. 1 | Read only in excerpt; the AD 12 edict in Dubs's English |
 | Tiberius Gracchus | Appian, *Civil Wars* 1.7–17; Plutarch's Greek at 8.2 | The other ancient account; which unit the 500 is |
+
+### 2026-11-03 — weekly agent: Jamsetji Tata (№ 51)
+
+| Document | Why | Where to look |
+|---|---|---|
+| **Saklatvala's 1970 life of Tata**, as the entry names it (author list and publisher not confirmed: a search on 2026-11-03 found nothing) | The lede and copy say the Watson's Hotel story is in "none of the three older lives". Harris and Wacha were searched (OCR) on 2026-11-03 and it is in neither; Saklatvala was not opened, and nothing on file says it ever was | Internet Archive / NBT; a library copy |
+| *Life of Swami Vivekananda*, vol. iii, p. 315 (Harris p. 130, n. 2 points here) | The 23 November 1898 letter was read only as a summary of the tata.com transcript, which names no edition; "already public" in `contested` is the entry's reading, not the letter's words | archive.org, Advaita Ashrama editions |
+| IISc, "Origin" PDF (iisc.ac.in/wp-content/uploads/2018/03/ORIGIN.pdf) | Reported to cite Subbarayappa that Vivekananda's reply cannot be traced; would strengthen `contested`. The fetch returned binary | open the PDF directly |
+| Wacha, *The Life and Life Work of J. N. Tata*, 2nd ed. — its date | Opened (Rare Book Society of India scan), but the title page is undated; catalogues give 1914 or 1915. Date it from a catalogue before printing a year | WorldCat, British Library |
