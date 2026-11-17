@@ -691,3 +691,15 @@ Opened as raw text: Lactantius, *De mortibus persecutorum*, Fletcher (New Advent
 | Diocletian | *Codex Theodosianus* 5.17 | The Durants' decrees binding the peasant to his field |
 | Augustus | Tacitus, *Annals* 1.11 in Latin | Gordon's 'fear for the public, or by envy' against the Latin |
 | Ashoka | Hultzsch, *Corpus Inscriptionum Indicarum* vol. 1 (1925); Orissa Review, January 2007, pp. 44–47 | A scholarly translation; the reasons offered for the Kalinga substitution, seen only in search results |
+
+## 2026-11-17 — scouting: LGBTQ lives, what was named but not opened
+
+From the `press-researcher` sweep for the queue row of the same date. Opened: Newsom EO N-24-20 (Rustin pardon); gov.uk release on the Turing pardon (summary only); the Estée Lauder Companies release of 15 Nov 2022 (Tom Ford, $2.8bn enterprise value); hirschfeld.in-berlin.de; connecticuthistory.org on Hart; the Berry letter as reproduced by the Volokh Conspiracy. Everything else came through Wikipedia or a refused page.
+
+- `turing`: Hodges, *Alan Turing: The Enigma* (1983), pp. 463, 471, 590–593; Gordon Brown's 2009 apology as published; BBC 20 Oct 2016 for the Turing Law figure; Pease, BBC 23 Jun 2012, for Copeland's accident case. Plate: `Alan_Turing_(1951).jpg` (Elliott & Fry, tagged unknown author: check) and `Alan_Turing_Aged_16.jpg`.
+- `rustin`: NPR 6 Jan 2019 on the 60 days served; *Washington Post* 21 Aug 2011 on Powell; the whitehouse.gov archive for the Medal of Freedom date (8 Aug or 20 Nov 2013?); Britannica (403).
+- `kameny`: the National Archives petition in *Kameny v. Brucker* (DocsTeach, 403); the cert denial in U.S. Reports (365 U.S. 843 is unconfirmed); the OPM release (404); the date of Berry's letter.
+- `hirschfeld`: USHMM exhibit pages (502); Britannica on the Institute (403); the "10,000 books" figure (search snippet only). Plate `Magnus_Hirschfeld_(1928).jpg`: its pre-1931 publication is untraced.
+- `alan-l-hart`: Oregon Encyclopedia (403); *Scientific American* 2021; Archives West finding aid; Spokesman-Review 6 Feb 1918; Historic Saranac Lake wiki on Sampson's 1912 radiography. No plate found.
+- `keynes`: Chambers, Dimson & Foo, *JFQA* 50(4) 2015, 843–868, for the 15.2% / 8.1% figures (read only in CXO Advisory's summary); Chambers & Dimson, *JEP* 27(3) 2013 (AEA PDF 403). Plate `Keynes_1933.jpg`: URAA-restored in the US, do not use.
+- Held back, leads only: Halston (NYT and LA Times obituaries 1990; Gaines, *Simply Halston*); Glenn Burke (SABR 2 Oct 1977 game page; Maraniss, *Singled Out*); Tim Cook ("Tim Cook Speaks Up", Bloomberg Businessweek 30 Oct 2014, 403; Wikipedia's claim that he stepped down 31 Aug 2026 is unverified); Barry Diller (Dowd, NYT 10 May 2025); Pierre Bergé (NYT obituary 2017).
