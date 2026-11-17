@@ -661,6 +661,29 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
   }
 }
 
+/* ---------- a portrait on the front door catches the light ----------
+   Until 2026-11-17 the 158 portraits on the front door changed nothing under a pointer: the only
+   hover rule on them was a filter left over from when they rested grey, and it did nothing. Now
+   each sits in a .lit frame (a lamp follows the pointer, the plate leans and springs back). A
+   new portrait drawn without the frame would quietly be the one dead face on the wall, so every
+   plateOrMark() in the engine is held to one; and the light stays a light: no shadow on a plate
+   (shadows are the books' alone), and no lean for a reader who has asked for less motion. */
+{
+  const js = cssOf("theme/press.js"), css = cssOf("theme/press.css");
+  for (const m of js.matchAll(/\$\{plateOrMark\(/g)) {
+    const before = js.slice(Math.max(0, m.index - 160), m.index), open = before.slice(before.lastIndexOf("<"));
+    if (!/^<(a|span)\b[^>]*class="[^"]*\blit\b[^"]*"[^>]*>\s*$/.test(open)) {
+      const line = js.slice(0, m.index).split("\n").length;
+      err("theme/press.js", `line ${line} draws a portrait outside a .lit frame, so it is the one face that does not catch the light — wrap it: <span class="lit">\${plateOrMark(…)}</span>`);
+    }
+  }
+  for (const m of css.matchAll(/([^{}]*\.lit\b[^{}]*)\{([^}]*)\}/g))
+    if (/box-shadow/.test(m[2])) err("theme/press.css", `${m[1].trim()} gives a portrait a shadow — the light on a plate is a light; shadows are the books' alone (CLAUDE.md → Design)`);
+  const calm = (css.match(/@media \(prefers-reduced-motion:\s*reduce\)\{([\s\S]*?)\n  \}/g) || []).join("");
+  if (!/\.lit\b[^{]*\{[^}]*transform:none/.test(calm))
+    err("theme/press.css", "the portraits lean under the pointer even for a reader who asked for less motion — add .lit{transform:none} inside @media (prefers-reduced-motion:reduce)");
+}
+
 /* ---------- the holidays: a tinted wall still reads, and never says "correction" ----------
    Each body.hol-<id> in theme/press.css tints the paper the whole house is read on, so the
    faintest text is measured again on it; --hol draws the masthead's holiday and is held to the

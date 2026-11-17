@@ -24,6 +24,8 @@
        or a dispute and nothing else. */
     /* the mount a portrait sits in, and the lit edge a book gets at dusk (none by day) */
     --mount:#F7F3E9; --mount-rule:#B9AF9B; --mark-soft:#8C8471; --edge:transparent;
+    /* the lamp a portrait catches under the pointer: daylight on paper, lamplight at dusk */
+    --glare:255,251,238; --glare-a:.62;
     --ease:cubic-bezier(.19,.9,.22,1);
     --ease-io:cubic-bezier(.62,.02,.2,1);
   }
@@ -38,7 +40,7 @@
     --rule:#3A352C; --rule-soft:#2D2A23;
     --ink:#EAE3D1; --ink-soft:#9C9582; --ink-mid:#CBC3AE;
     --oxblood:#CE7B6E;
-    --mount:#27241E; --mount-rule:#4D473B; --mark-soft:#9C9582; --edge:#766F5F;
+    --mount:#27241E; --mount-rule:#4D473B; --mark-soft:#9C9582; --edge:#766F5F; --glare:255,214,150; --glare-a:.34;
   }
   body.dusk header.mast{background:rgba(28,26,22,.92)}
   /* THE HOLIDAYS change the walls the way dusk does, by the reader's date and on their own
@@ -632,9 +634,30 @@
 
   .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:14px 12px}
   .wface{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
-  .wface .fp-img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--mount-rule);background:var(--mount);padding:3px;
-    }
-  .wface:hover .fp-img,.wface:focus-visible .fp-img{filter:none;}
+  .wface .fp-img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--mount-rule);background:var(--mount);padding:3px}
+  /* A PLATE CATCHES THE LIGHT. Every portrait on the front door sits in a .lit frame: under the
+     pointer a lamp follows it across the paper, and the plate leans a few degrees away from it
+     (press.js sets --mx --my --rx --ry). Pressed, it leans further and the light comes up; let
+     go, it springs back. It is the plate's motion, an object's, and it runs only under a hand.
+     Until 2026-11-17 a portrait changed nothing under a pointer: 158 of them, one dead rule.
+     npm run check holds that every portrait on the front door is .lit and that the light is
+     never a shadow. */
+  .wface .lit{display:block;width:100%}
+  .lit{position:relative;transform:perspective(520px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+    transition:transform .7s var(--ease)}
+  .lit::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
+    transition:opacity .5s var(--ease);
+    background:
+      radial-gradient(circle at var(--mx,50%) var(--my,28%),rgba(var(--glare),var(--glare-a)),rgba(var(--glare),calc(var(--glare-a)*.22)) 34%,transparent 62%),
+      linear-gradient(115deg,transparent calc(var(--mx,50%) - 34%),rgba(var(--glare),calc(var(--glare-a)*.28)) var(--mx,50%),transparent calc(var(--mx,50%) + 30%))}
+  a:hover>.lit,a.lit:hover{transition-duration:.14s}
+  a:hover>.lit::after,a.lit:hover::after{opacity:1;transition-duration:.18s}
+  a:focus-visible>.lit::after,a.lit:focus-visible::after{opacity:.7}
+  /* pressed: the plate leans twice as far into the finger and the lamp brightens on it */
+  a:active>.lit,a.lit:active{transform:perspective(520px) rotateX(calc(var(--rx,0deg)*2)) rotateY(calc(var(--ry,0deg)*2));transition-duration:.08s}
+  a:active>.lit::after,a.lit:active::after{opacity:1;filter:brightness(1.35);transition-duration:.06s}
+  .cap-plate.lit{width:max-content}
+  .fl-life>.lit{display:block;flex:none}
   /* a press answers at once. No entry reacted to a finger: on a phone there is no hover, and the
      first open waits for the entries' text with nothing to show the tap was heard. The face, plate
      or book gives under the press, and holds while that text is on its way (aria-busy, press.js) */
@@ -673,5 +696,6 @@
     .mast-in{padding-left:20px;padding-right:20px}
   }
   @media (prefers-reduced-motion:reduce){
-    
+    /* the light still follows the hand; the plate does not lean */
+    .lit,a:active>.lit,a.lit:active{transform:none}
   }

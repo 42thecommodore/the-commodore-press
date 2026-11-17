@@ -128,7 +128,7 @@ function captainOfTheDay(){
 function captainHTML(b){
   return `<article class="captain" aria-labelledby="capN">
     <div class="sp-top"><span class="lbl q">Captain of the day</span><span class="sp-n">${b.years}</span></div>
-    <a class="cap-plate" ${entryAttrs("life",b.id)} aria-label="Read the life of ${b.n}">${plateOrMark(b,"cap-img")}</a>
+    <a class="cap-plate lit" ${entryAttrs("life",b.id)} aria-label="Read the life of ${b.n}">${plateOrMark(b,"cap-img")}</a>
     <div class="cap-main"><h2 id="capN">${b.n}</h2><div class="sp-sub">${b.field}</div><p class="cap-ld">${b.lede}</p></div>
     <div class="cap-side">${b.keep?`<figure class="cap-keep"><p>${b.keep}</p><figcaption class="cap-by">— ${Reading.credit(b.n)}</figcaption></figure>`:""}<a class="sp-go" ${entryAttrs("life",b.id)}>Read the life →</a>
       ${b._crew>1?`<p class="watch">One of a crew of ${b._crew}, chosen by the editor. The watch changes at midnight; next, <a ${entryAttrs("life",b._next.id)}>${b._next.n}</a>.</p>`:""}</div>
@@ -161,7 +161,7 @@ function lessonHTML(){
         ${names.length?`<span class="fl-who">From ${names.slice(0,3).join(", ")}${more>0?` and ${more} more`:""}.</span>`:""}
         <a class="band-go" ${open}>Show it on the chart →</a></div>
       <div class="fl-lives"><div class="lbl">From the Lives shelf</div>
-        ${ports.filter(p=>p.pr===pr).map(p=>`<a class="fl-life" ${entryAttrs("life",p.l.id)}>${plateOrMark(p.l,"fl-img")}<span><b>${p.l.n}</b><small>${p.l.years}</small><span class="fl-txt">${p.txt}</span></span></a>`).join("")}</div>
+        ${ports.filter(p=>p.pr===pr).map(p=>`<a class="fl-life" ${entryAttrs("life",p.l.id)}><span class="lit">${plateOrMark(p.l,"fl-img")}</span><span><b>${p.l.n}</b><small>${p.l.years}</small><span class="fl-txt">${p.txt}</span></span></a>`).join("")}</div>
     </div>
     <p class="fc-foot">The lesson is my note of what they said, not their words. The Lives are entries, with their sources and the places they are argued.</p>`;
 }
@@ -177,7 +177,7 @@ function renderFront(){
     `<div class="shelf-h"><p><b>{{W_LIVES_CAP}} lives, on one shelf.</b><span class="shelf-dek"> Pick a face. {{W_FAMOUS_CAP}} famous, {{N_OBSCURE}} you have never heard of, and the one book on each worth your time.</span></p>
       <button class="band-go" onclick="go('lives')">All lives →</button></div>
     <div class="wall">${LIVES.map(b=>`<a class="wface" ${entryAttrs("life",b.id)} aria-label="${b.n}, ${b.years}, number ${b.no}${fresh.has(b.id)?", new on the shelf":""}" title="№ ${b.no} · ${b.n} · ${b.years}">
-        ${plateOrMark(b,"fp-img")}<span class="fn">${b.n}${fresh.has(b.id)?`<em class="nw">new</em>`:""}</span></a>`).join("")}</div>`;
+        <span class="lit">${plateOrMark(b,"fp-img")}</span><span class="fn">${b.n}${fresh.has(b.id)?`<em class="nw">new</em>`:""}</span></a>`).join("")}</div>`;
   const latest=CORRECTIONS[CORRECTIONS.length-1];
   document.getElementById("tally").innerHTML=latest?
     `<a ${toCorrections}><b>${CORRECTIONS.length}</b> corrections so far. The latest: ${latest.t}&nbsp;<span class="arw">→</span></a>`:"";
@@ -274,6 +274,29 @@ function loadLibrary(){
    usually in hand before the click lands */
 {const warm=e=>{if(!libLoaded&&e.target.closest&&e.target.closest(".slot,.wface,.cap-plate,.sp-go,#nav,.rs-next,.watch"))loadLibrary().catch(()=>{})};
   addEventListener("pointerover",warm,{passive:true});addEventListener("focusin",warm);}
+/* A portrait is a printed plate, and a plate catches the light. Until 2026-11-17 the 158 on the
+   front door changed nothing under a pointer: the only hover rule on them was a dead filter left
+   from when they rested grey. Now the lamp follows the pointer across the paper (--mx, --my) and
+   the plate leans away from it a few degrees (--rx, --ry), the way a card gives under a finger;
+   a press leans it further (press.css), and letting go springs it back. The light is in
+   press.css; this only says where the pointer is. Reduced motion keeps the light, not the lean. */
+{let raf=0,lit=null,pt=null;
+  const place=()=>{raf=0;if(!lit||!pt)return;
+    const r=lit.getBoundingClientRect();if(!r.width)return;
+    const x=Math.min(1,Math.max(0,(pt.x-r.left)/r.width)),y=Math.min(1,Math.max(0,(pt.y-r.top)/r.height)),st=lit.style;
+    st.setProperty("--mx",(x*100).toFixed(1)+"%");st.setProperty("--my",(y*100).toFixed(1)+"%");
+    if(!reduce){st.setProperty("--ry",((x-.5)*-12).toFixed(2)+"deg");st.setProperty("--rx",((y-.5)*12).toFixed(2)+"deg")}};
+  const rest=el=>{if(!el)return;for(const p of["--rx","--ry"])el.style.removeProperty(p)};
+  const track=e=>{const el=e.target.closest&&e.target.closest(".lit");
+    if(el!==lit){rest(lit);lit=el}
+    pt={x:e.clientX,y:e.clientY};if(lit&&!raf)raf=requestAnimationFrame(place)};
+  addEventListener("pointermove",track,{passive:true});
+  addEventListener("pointerdown",track,{passive:true});
+  addEventListener("pointerout",e=>{if(lit&&!lit.contains(e.relatedTarget)){rest(lit);lit=null}},{passive:true});
+  // the plate comes back up past where it rested and settles, so the hand feels it give back
+  addEventListener("pointerup",e=>{const el=e.target.closest&&e.target.closest(".lit");
+    if(!el||reduce||!el.animate)return;
+    el.animate([{scale:".96"},{scale:"1.045",offset:.4},{scale:".99",offset:.72},{scale:"1"}],{duration:520,easing:"cubic-bezier(.3,.7,.4,1)"})},{passive:true});}
 /* Read next: the first entry this one reads across to — a link that exists because the two
    argue (PUBLISHING.md) — and the next on the shelf only when there is none. Same choice as
    readNext() in build/pages.mjs. */
