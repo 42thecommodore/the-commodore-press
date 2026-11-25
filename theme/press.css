@@ -643,9 +643,11 @@
      npm run check holds that every portrait on the front door is .lit and that the light is
      never a shadow. */
   .wface .lit{display:block;width:100%}
-  .lit{position:relative;transform:perspective(520px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  .lit{position:relative;transform:perspective(520px) rotateX(calc(var(--rx,0deg) + var(--fx,0deg))) rotateY(calc(var(--ry,0deg) + var(--fy,0deg)));
     transition:transform .7s var(--ease)}
-  .lit::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
+  /* --spill is the lamp falling on a plate near the pointer (THE WALL FEELS THE HAND, below);
+     --breath is the Captain's (ONE THING BREATHES). Under the hand the full light wins. */
+  .lit::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:max(var(--spill,0),calc(var(--breath,0) * .4));
     transition:opacity .5s var(--ease);
     background:
       radial-gradient(circle at var(--mx,50%) var(--my,28%),rgba(var(--glare),var(--glare-a)),rgba(var(--glare),calc(var(--glare-a)*.22)) 34%,transparent 62%),
@@ -657,6 +659,27 @@
   a:active>.lit,a.lit:active{transform:perspective(520px) rotateX(calc(var(--rx,0deg)*2)) rotateY(calc(var(--ry,0deg)*2));transition-duration:.08s}
   a:active>.lit::after,a.lit:active::after{opacity:1;filter:brightness(1.35);transition-duration:.06s}
   .cap-plate.lit{width:max-content}
+  /* THE HOUSE'S MOTION, in six rules. npm run check holds 2–5; the numbers are the check's.
+     1 OBJECTS ONLY. What moves is a plate, a book, the mark: never a line of text, never a page
+       or a section arriving for show.
+     2 A HAND MOVES IT. Whatever turns, leans or lights does so because a pointer, a finger or a key
+       is on it or near it; it follows within a frame and settles back on --ease when the hand goes.
+     3 THE WALL FEELS THE HAND. Faces within FIELD.r of the pointer turn toward it and the lamp
+       spills onto them, falling off with distance (press.js). A neighbour never leans as far as
+       the face under the hand (6°), and never at all where there is no hover (a phone).
+     4 ONE THING BREATHES. Only the Captain of the day moves at rest: a slow breath, no faster
+       than 5s and no larger than 2%, its lamp rising and falling with it. It holds still under a
+       hand and while a reader is open. Nothing else on the site may loop forever.
+     5 REDUCED MOTION IS STILL. Lean, field and breath all stop for a reader who asked; the light
+       may stay, because light is not motion.
+     6 READING IS STILL. Nothing inside the reader or an entry page's prose moves at rest.
+     Until 2026-11-25 the house stood still unless a hand was on the one object under it: a wall
+     of 157 faces, and one of them alive at a time. */
+  @property --breath{syntax:"<number>";inherits:true;initial-value:0}
+  @keyframes breathe{0%,100%{--breath:0}50%{--breath:1}}
+  .cap-plate.lit{animation:breathe 6.4s ease-in-out infinite}
+  .cap-plate .cap-img{scale:calc(1 + var(--breath,0) * .016)}
+  a.cap-plate:hover,a.cap-plate:focus-visible,body:has(#reader.on) .cap-plate{animation-play-state:paused}
   .fl-life>.lit{display:block;flex:none}
   /* a press answers at once. No entry reacted to a finger: on a phone there is no hover, and the
      first open waits for the entries' text with nothing to show the tap was heard. The face, plate
@@ -698,4 +721,6 @@
   @media (prefers-reduced-motion:reduce){
     /* the light still follows the hand; the plate does not lean */
     .lit,a:active>.lit,a.lit:active{transform:none}
+    /* and the Captain does not breathe */
+    .cap-plate.lit{animation:none}
   }

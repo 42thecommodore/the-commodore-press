@@ -76,7 +76,19 @@ flag it and ask, unless the user has already said to go ahead.
 | a livery | the entry's `cover` / `ink` / `accent` in `content/` | the CSS |
 
 The type rule, in full, is at the top of `theme/press.css` and in `CLAUDE.md` → Design.
-Motion belongs to objects (a book turning, flying to the reader), never to entrances.
+Motion has six rules, stated in `theme/press.css` above the Captain's breath. Before adding any
+motion, say which rule allows it:
+
+| Want | Allowed as | Never |
+|---|---|---|
+| something to react | a plate, book or the mark answering a pointer, finger or key (rule 2) | text, labels or a section moving |
+| the page to feel alive | the wall's field: neighbours turn toward the hand (rule 3, `FIELD` in `press.js`) | a neighbour out-leaning the face under the hand |
+| motion at rest | the Captain's breath, the only one (rule 4) | a second loop, a pulse to beg a click, anything faster than 5s or larger than 2% |
+| delight on press | a give and a spring back, an object flying where it goes | an entrance for show: fade-ins, slide-ups, staggered reveals |
+
+Every new motion stops under `prefers-reduced-motion` (rule 5; the light may stay) and nothing
+moves inside the reader (rule 6). The check holds rules 2–5; a new loop or a new field needs
+its own line there, proved by breaking it.
 
 ## 6. Enforce — a rule that is not a check is a wish
 

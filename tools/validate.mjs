@@ -684,6 +684,45 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     err("theme/press.css", "the portraits lean under the pointer even for a reader who asked for less motion — add .lit{transform:none} inside @media (prefers-reduced-motion:reduce)");
 }
 
+/* ---------- the house's motion: one thing breathes, the wall feels the hand ----------
+   The six rules are stated in theme/press.css above the breath. Until 2026-11-25 nothing on the
+   site moved at rest, and nothing said what could: the day one thing was allowed to breathe, the
+   next edit could have set the whole wall pulsing. So: only the Captain loops, slowly and a little,
+   and stops for a reader who asked for less motion; the wall's neighbours never out-lean the face
+   under the hand, and the field never runs without that request checked. */
+{
+  const BREATHERS = [".cap-plate.lit"];   // motion rule 4: the one object allowed to move at rest
+  const css = cssOf("theme/press.css"), js = cssOf("theme/press.js");
+  for (const f of ["theme/press.css", "theme/atlas.css", "theme/reading.css", "build/pages.mjs"])
+    for (const m of cssOf(f).matchAll(/([^{}]*)\{([^{}]*animation[^{}]*)\}/g))
+      if (/\binfinite\b/.test(m[2]) && !BREATHERS.includes(m[1].trim()))
+        err(f, `${m[1].trim()} loops forever — only the Captain of the day breathes (motion rule 4, theme/press.css); give it a hand to answer instead, or a single run`);
+  for (const f of ["theme/press.js", "theme/atlas.js", "theme/reading.js", "build/pages.mjs"])
+    if (/iterations\s*:\s*Infinity/.test(cssOf(f)))
+      err(f, "an animation loops forever from the script — only the Captain of the day breathes (motion rule 4, theme/press.css)");
+  const kf = (css.match(/@keyframes breathe\{([\s\S]*?)\}\s*\n/) || [])[1];
+  const run = (css.match(/\.cap-plate\.lit\{animation:breathe ([\d.]+)s/) || [])[1];
+  const amp = (css.match(/\.cap-plate \.cap-img\{scale:calc\(1 \+ var\(--breath,0\) \* ([\d.]+)\)/) || [])[1];
+  if (!kf || !run || !amp) err("theme/press.css", "the Captain's breath is missing or rewritten past the check — keep @keyframes breathe, .cap-plate.lit{animation:breathe <s>s …} and .cap-plate .cap-img{scale:calc(1 + var(--breath,0) * <amp>)}");
+  else {
+    if (+run < 5) err("theme/press.css", `the Captain breathes every ${run}s — a breath is 5s or slower (motion rule 4); faster reads as a pulse asking to be clicked`);
+    if (+amp > .02) err("theme/press.css", `the Captain's breath swells it ${(+amp * 100).toFixed(1)}% — 2% at most (motion rule 4); more and the plate is bouncing, not breathing`);
+  }
+  const calm = (css.match(/@media \(prefers-reduced-motion:\s*reduce\)\{([\s\S]*?)\n  \}/g) || []).join("");
+  for (const b of BREATHERS)
+    if (!calm.includes(`${b}{animation:none}`))
+      err("theme/press.css", `${b} still breathes for a reader who asked for less motion — add ${b}{animation:none} inside @media (prefers-reduced-motion:reduce) (motion rule 5)`);
+  const field = js.match(/const FIELD=\{r:(\d+),lean:([\d.]+),spill:([\d.]+)\}/);
+  if (!field) err("theme/press.js", "the wall's field is missing or rewritten past the check — keep const FIELD={r:<px>,lean:<deg>,spill:<0–1>} (motion rule 3)");
+  else {
+    if (+field[2] >= 6) err("theme/press.js", `a neighbour on the wall leans ${field[2]}° — less than the 6° the face under the hand takes, or the hand is lost in the crowd (motion rule 3)`);
+    if (+field[3] > .6) err("theme/press.js", `the lamp spills ${field[3]} onto the neighbours — .6 at most, so the face under the hand stays the brightest (motion rule 3)`);
+    const at = js.indexOf("const FIELD="), guard = js.slice(at, at + 200);
+    if (!/if\(!reduce&&matchMedia\("\(hover:hover\)"\)\.matches\)/.test(guard))
+      err("theme/press.js", "the wall's field runs without asking first — open it with if(!reduce&&matchMedia(\"(hover:hover)\").matches) (motion rules 3 and 5)");
+  }
+}
+
 /* ---------- the holidays: a tinted wall still reads, and never says "correction" ----------
    Each body.hol-<id> in theme/press.css tints the paper the whole house is read on, so the
    faintest text is measured again on it; --hol draws the masthead's holiday and is held to the

@@ -297,6 +297,32 @@ function loadLibrary(){
   addEventListener("pointerup",e=>{const el=e.target.closest&&e.target.closest(".lit");
     if(!el||reduce||!el.animate)return;
     el.animate([{scale:".96"},{scale:"1.045",offset:.4},{scale:".99",offset:.72},{scale:"1"}],{duration:520,easing:"cubic-bezier(.3,.7,.4,1)"})},{passive:true});}
+/* THE WALL FEELS THE HAND (press.css, motion rule 3). The face under the pointer leans and takes
+   the lamp (above); its neighbours, within FIELD.r, turn a little toward the pointer and catch the
+   spill of that lamp, less the further away they are, so a hand moving over the wall passes like a
+   lamp carried along a gallery. Each face's centre is measured once per visit to the wall, in page
+   coordinates, so scrolling does not re-measure. Only where there is hover, never with reduced motion. */
+const FIELD={r:260,lean:5,spill:.6};
+if(!reduce&&matchMedia("(hover:hover)").matches){
+  let wall=null,faces=[],on=new Set(),raf=0,pt=null;
+  const measure=w=>{wall=w;faces=[...w.querySelectorAll(".wface .lit")].map(el=>{const r=el.getBoundingClientRect();
+    return {el,x:r.left+scrollX+r.width/2,y:r.top+scrollY+r.height/2,w:r.width,h:r.height}})};
+  const calm=f=>{for(const p of["--fx","--fy","--spill"])f.el.style.removeProperty(p);on.delete(f)};
+  const place=()=>{raf=0;if(!pt)return;const now=new Set();
+    for(const f of faces){const dx=pt.x-f.x,dy=pt.y-f.y,d=Math.hypot(dx,dy);
+      if(d>=FIELD.r||(Math.abs(dx)<f.w/2&&Math.abs(dy)<f.h/2))continue;   // out of reach, or under the hand itself
+      const k=(1-d/FIELD.r)**1.3,st=f.el.style;
+      st.setProperty("--fy",(-dx/d*FIELD.lean*k).toFixed(2)+"deg");st.setProperty("--fx",(dy/d*FIELD.lean*k).toFixed(2)+"deg");
+      st.setProperty("--mx",(50+dx/f.w*100).toFixed(0)+"%");st.setProperty("--my",(50+dy/f.h*100).toFixed(0)+"%");
+      st.setProperty("--spill",(FIELD.spill*k).toFixed(3));now.add(f)}
+    for(const f of on)if(!now.has(f))calm(f);on=now};
+  addEventListener("pointermove",e=>{
+    const w=e.target.closest&&e.target.closest(".wall");
+    if(!w){if(on.size){pt=null;for(const f of[...on])calm(f)}return}
+    if(w!==wall||!faces.length||!faces[0].el.isConnected)measure(w);
+    pt={x:e.pageX,y:e.pageY};if(!raf)raf=requestAnimationFrame(place)},{passive:true});
+  addEventListener("resize",()=>{wall=null},{passive:true});
+}
 /* Read next: the first entry this one reads across to — a link that exists because the two
    argue (PUBLISHING.md) — and the next on the shelf only when there is none. Same choice as
    readNext() in build/pages.mjs. */
