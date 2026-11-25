@@ -40,6 +40,11 @@
       "to": "lives:walter-chrysler",
       "label": "Walter Chrysler",
       "txt": "— another mechanic who learned the trade in the shop and put his own name on the car."
+    },
+    {
+      "to": "lives:jiro-ono",
+      "label": "Jiro Ono",
+      "txt": "— born in Hamamatsu, where Honda made his name, and sent out to learn a trade at seven, where Honda went at fifteen."
     }
   ],
   "plateOf": "Asahi Shimbun, 1954, from Asahigraph, New Year 1955.",

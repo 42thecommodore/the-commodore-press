@@ -1,0 +1,55 @@
+{
+  "id": "jiro-ono",
+  "no": 160,
+  "keep": "Michelin did not take Jiro's stars for the food. It dropped the restaurant because an ordinary diner could no longer book it.",
+  "n": "Jiro Ono",
+  "years": "born 1925",
+  "place": "Japan",
+  "field": "Food & Craft",
+  "group": "famous",
+  "cover": "#3F4A24",
+  "spineC": "#2C3418",
+  "ink": "#F1F3E2",
+  "accent": "#D6E39C",
+  "motif": "dots",
+  "lede": "He was sent out to work at seven, too young, he said, \"to apprentice with the gardener or carpenter. The local restaurant was the only place that would take me.\"",
+  "copy": [
+    "Jiro Ono was born in Hamamatsu in 1925. His father left, and his struggling family sent him to live and work at the restaurant of a local inn when he was seven. He moved to Tokyo, became a sushi chef, and in 1965 opened Sukiyabashi Jiro, a counter of ten seats in the basement of an office building in Ginza. \"I was determined to make sure my children would never have to suffer as I did,\" he told CBS.",
+    "In 2007 Michelin gave the restaurant three stars, and the AP reports that he was the first sushi chef to hold them. David Gelb's documentary Jiro Dreams of Sushi made the counter famous; he was 85 when it was shot in 2010. On 23 April 2014 Barack Obama ate there with Shinzo Abe, at a counter where twenty pieces cost at least $300. \"That's some good sushi right there,\" Obama said. In 2019 Guinness World Records named him the oldest head chef of a three-star restaurant, at 93 years and 128 days. He turned 100 on 27 October 2025 and told the AP he could no longer come in every day. \"I believe the best medicine is to work.\" His son Yoshikazu now runs the Ginza counter.",
+    "The cost was paid at home. CBS called him an absentee father and a stranger to his own family, through eighteen-hour days, year after year. CBS found Yoshikazu, at fifty, still waiting to take over; his brother Takashi runs a cheaper branch in Roppongi. The legend rests on a film whose meal was arranged for it: Gelb did not shoot during regular business hours, NPR's review noted. And Michelin did not take the stars away. In November 2019 it left the Ginza restaurant out of the Tokyo guide for the first time, explaining, the Japan Times reported, that bookings had become unavailable to general clientele. Overseas guests could reserve only through their hotel's concierge."
+  ],
+  "bio": {
+    "t": "Jiro Dreams of Sushi",
+    "a": "David Gelb",
+    "y": "2011",
+    "u": "https://www.npr.org/2012/03/08/147972050/jiro-dreams-of-sushi-perfection-carefully-sliced",
+    "why": "An 81-minute documentary from Magnolia Pictures, and the record the legend is built on. Watch it knowing that its centrepiece meal was arranged for the camera, overseen by the critic Masuhiro Yamamoto, outside regular business hours. The link is NPR's review, which says so."
+  },
+  "contested": "Whether the counter is a craft or a closed room. Michelin removed it in 2019 because the public could not reserve, and the restaurant said overseas guests could book only through hotel concierges. Yoshikazu gives the house's answer plainly, to CBS: \"People who are serious about sushi love our restaurant. Those who prefer to linger over their meals or drink, don't. That's why opinions about us are so divided.\" The family's cost is argued the same way. CBS calls him a stranger to his own family; NPR's review finds two sons who \"have accepted Dad's profession and techniques\". Neither son is quoted saying what it cost him. The often-told story from the film of an apprentice who made egg sushi some two hundred times before it was accepted is in no source the house could open, so it is not printed here.",
+  "across": [
+    {
+      "to": "lives:yo-yo-ma",
+      "label": "Yo-Yo Ma",
+      "txt": "— the other master here whose famous performance was arranged: a meal shot outside business hours, a quartet heard on a two-day-old tape."
+    },
+    {
+      "to": "lives:soichiro-honda",
+      "label": "Soichiro Honda",
+      "txt": "— another apprentice who never left the bench: Honda went to Tokyo at fifteen and made his name in Hamamatsu, the city where Jiro was born."
+    }
+  ],
+  "facts": [
+    {
+      "b": "10 seats · $300",
+      "s": "The counter, and the minimum for twenty pieces, April 2014: NPR, The Salt, 23 April 2014"
+    },
+    {
+      "b": "93 years 128 days",
+      "s": "His age when Guinness World Records named him the oldest head chef of a three-star restaurant: AP, published by PBS NewsHour, 27 October 2025"
+    },
+    {
+      "b": "18 hours",
+      "s": "The length of his working days, year after year: CBS Sunday Morning, 'A master sushi chef', March 2013"
+    }
+  ]
+}

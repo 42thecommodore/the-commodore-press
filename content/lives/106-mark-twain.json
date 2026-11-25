@@ -35,6 +35,11 @@
       "to": "lives:p-t-barnum",
       "label": "P. T. Barnum",
       "txt": "— another American whose best-known line turns out to be someone else's."
+    },
+    {
+      "to": "lives:ernest-hemingway",
+      "label": "Ernest Hemingway",
+      "txt": "— another writer best known for words that are not his: six of them, about baby shoes."
     }
   ],
   "facts": [

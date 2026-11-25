@@ -1,0 +1,50 @@
+{
+  "id": "ernest-hemingway",
+  "no": 158,
+  "keep": "No one is known to have tied the six words to him before 1974, thirteen years after he died. What he left instead was forty-seven endings for one novel.",
+  "n": "Ernest Hemingway",
+  "years": "1899–1961",
+  "place": "United States",
+  "field": "Literature",
+  "group": "famous",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "The six-word story everyone credits to him is not his. A Michigan paper printed its ancestor in 1906, when he was six, and nobody put his name to it in print until the 1980s.",
+  "copy": [
+    "Ernest Hemingway started on a newspaper in Kansas City at seventeen. When the United States entered the First World War he joined a volunteer ambulance unit serving with the Italian army. He was wounded at the front, decorated by the Italian government, and spent a long time in hospitals. He married Hadley Richardson and moved to Paris. His second novel, A Farewell to Arms, made him. He told the Paris Review in 1958 that he had rewritten its ending 39 times. In 2012 a new edition printed the alternatives; his grandson Seán had found 47 among his papers, some of them fragments. While Hemingway was rewriting the book, his father shot himself.",
+    "The Old Man and the Sea appeared first in a single issue of Life magazine. The biographer Jeffrey Meyers told NPR that it sold 5,300,000 copies in two days. It won the Pulitzer Prize for fiction in 1953. In 1954 the Nobel Prize in Literature went to him \"for his mastery of the art of narrative, most recently demonstrated in The Old Man and the Sea, and for the influence that he has exerted on contemporary style\". By then, NPR said on the fiftieth anniversary of his death, he had battered his brain in car, motorbike and aeroplane accidents, and had drunk too much for too long. He was later given electroshock treatment for depression. In January 1961 he told his wife Mary that he could no longer write a single good sentence. He shot himself on 2 July 1961, aged 61.",
+    "The six words, \"For sale: baby shoes, never worn\", travel with a story about a bet over lunch. Quote Investigator traced the shape back past him. In 1906 the Ironwood News Record in Michigan printed \"For sale, baby carriage; never been used.\" In 1910 a Spokane paper found a whole tragedy in a classified ad offering a baby's bed and trousseau, never used. In 1917 William R. Kane proposed \"Little Shoes, Never Worn\" as the title for a story about a wife who has lost her baby. Hemingway's name arrives with the playwright John De Groot, whose Papa was copyrighted in 1984 and released in 1989, and with the literary agent Peter Miller, who wrote in 1991 that a newspaper syndicator had told him the tale around 1974. Quote Investigator found no substantive evidence that Hemingway wrote it. The earliest date anyone gives for the story is thirteen years after his death."
+  ],
+  "bio": {
+    "t": "Hemingway",
+    "a": "Ken Burns and Lynn Novick",
+    "y": "2021",
+    "u": "https://www.pbs.org/kenburns/hemingway/",
+    "why": "Three parts and about five and a half hours, first shown on PBS on 5 April 2021. NPR's review notes that each of his four wives is heard, and their side is the one the legend leaves out. The house has not yet read a printed life it can stand behind; Mary V. Dearborn's Ernest Hemingway: A Biography (Knopf, 2017) is the next on the list."
+  },
+  "contested": "Two texts that came out after he died, and who shaped them. A Moveable Feast had no title, no finished introduction and no final chapter when he died; his fourth wife, Mary, and an editor made it into the book published in 1964. In 2009 Seán Hemingway, Pauline Pfeiffer's grandson, encouraged by her son Patrick, published a \"restored\" edition. Maureen Corrigan, reviewing it on NPR's Fresh Air, said the sections hostile to Pauline were \"muffled and shuffled\" and that \"remixed\" would be the more accurate word. The same grandson counted the forty-seven Farewell to Arms endings, and says they bear out the thirty-nine Hemingway claimed \"depending on your definition of an ending, since some of them are fragments\". The thirty-nine comes from the 1958 Paris Review interview, which the house has not opened; it is printed here as his own count, relayed by his grandson. On the six words, the case for him is a restaurant, Luchow's, and a newspaper syndicator Miller says told him the tale. Arthur C. Clarke, in a letter printed in 1992, set the bet in the 1920s. Nobody has produced a document from Hemingway's lifetime.",
+  "across": [
+    {
+      "to": "lives:mark-twain",
+      "label": "Mark Twain",
+      "txt": "— another American writer best known for a line he never wrote."
+    }
+  ],
+  "facts": [
+    {
+      "b": "39 · 47",
+      "s": "Endings he said he wrote for A Farewell to Arms, and the alternate endings his grandson found among his papers, some fragments: Seán Hemingway interviewed on NPR, 22 July 2012"
+    },
+    {
+      "b": "5,300,000",
+      "s": "Copies of the issue of Life carrying The Old Man and the Sea sold in two days, as the biographer Jeffrey Meyers put it: NPR Weekend Edition, 4 March 2006"
+    },
+    {
+      "b": "1906 · 1974 · 1991",
+      "s": "The earliest 'never used' classified Quote Investigator found, the year Peter Miller says he heard the Hemingway version, and the year Miller printed it: Quote Investigator, 'For Sale, Baby Shoes, Never Worn', 28 January 2013"
+    }
+  ]
+}
