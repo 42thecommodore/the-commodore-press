@@ -323,6 +323,40 @@ if(!reduce&&matchMedia("(hover:hover)").matches){
     pt={x:e.pageX,y:e.pageY};if(!raf)raf=requestAnimationFrame(place)},{passive:true});
   addEventListener("resize",()=>{wall=null},{passive:true});
 }
+/* THE WALL FEELS THE FINGER (motion rule 3, on a phone). With no hover the field above never
+   runs, and a phone's wall was dead but for the face pressed. So while a finger is on the wall,
+   the lamp stands where the finger is and the faces passing under it, as the wall scrolls,
+   catch its spill and turn toward it; lifted, they settle back on --ease. Each face's place in
+   the wall is measured once per touch; a frame reads only the wall's box and scroll, then writes,
+   so a sideways scroll is never made to wait on layout. Every listener is passive. Never with
+   reduced motion. */
+const TOUCH={r:200,lean:5,spill:.6};
+if(!reduce&&!matchMedia("(hover:hover)").matches){
+  let wall=null,faces=[],on=new Set(),raf=0,pt=null;
+  const clamp=v=>Math.min(96,Math.max(4,v));
+  const calm=f=>{for(const p of["--fx","--fy","--spill"])f.el.style.removeProperty(p);on.delete(f)};
+  const place=()=>{raf=0;if(!pt||!wall)return;const b=wall.getBoundingClientRect(),sx=wall.scrollLeft,now=new Set();
+    for(const f of faces){const dx=pt.x-(b.left+f.x-sx),dy=pt.y-(b.top+f.y),d=Math.hypot(dx,dy);
+      if(d>=TOUCH.r||(Math.abs(dx)<f.w/2&&Math.abs(dy)<f.h/2))continue;   // out of reach, or under the finger itself
+      const k=(1-d/TOUCH.r)**1.3,st=f.el.style;
+      st.setProperty("--fy",(-dx/d*TOUCH.lean*k).toFixed(2)+"deg");st.setProperty("--fx",(dy/d*TOUCH.lean*k).toFixed(2)+"deg");
+      // the lamp lands on the plate's edge nearest the finger, not off it: a phone's faces sit a column apart
+      st.setProperty("--mx",clamp(50+dx/f.w*100).toFixed(0)+"%");st.setProperty("--my",clamp(50+dy/f.h*100).toFixed(0)+"%");
+      st.setProperty("--spill",(TOUCH.spill*k).toFixed(3));now.add(f)}
+    for(const f of on)if(!now.has(f))calm(f);on=now};
+  const ask=()=>{if(pt&&!raf)raf=requestAnimationFrame(place)};
+  const at=e=>{const t=e.touches[0];if(t)pt={x:t.clientX,y:t.clientY};ask()};
+  addEventListener("touchstart",e=>{const w=e.target.closest&&e.target.closest(".wall");if(!w){pt=null;return}
+    if(w!==wall||!faces.length||!faces[0].el.isConnected){wall=w;const b=w.getBoundingClientRect(),sx=w.scrollLeft;
+      faces=[...w.querySelectorAll(".wface .lit")].map(el=>{const r=el.getBoundingClientRect();
+        return {el,x:r.left-b.left+sx+r.width/2,y:r.top-b.top+r.height/2,w:r.width,h:r.height}})}
+    at(e)},{passive:true});
+  addEventListener("touchmove",e=>{if(pt)at(e)},{passive:true});
+  addEventListener("scroll",ask,{passive:true,capture:true});   // the wall carries faces under a finger that has stopped
+  const lift=()=>{pt=null;for(const f of[...on])calm(f)};
+  addEventListener("touchend",e=>{if(!e.touches.length)lift()},{passive:true});
+  addEventListener("touchcancel",lift,{passive:true});
+}
 /* Read next: the first entry this one reads across to — a link that exists because the two
    argue (PUBLISHING.md) — and the next on the shelf only when there is none. Same choice as
    readNext() in build/pages.mjs. */

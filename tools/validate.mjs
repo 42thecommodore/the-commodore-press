@@ -721,6 +721,43 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     if (!/if\(!reduce&&matchMedia\("\(hover:hover\)"\)\.matches\)/.test(guard))
       err("theme/press.js", "the wall's field runs without asking first — open it with if(!reduce&&matchMedia(\"(hover:hover)\").matches) (motion rules 3 and 5)");
   }
+
+  /* The finger's field. FIELD needs hover, so until 2026-11-25 a phone's wall was dead but for
+     the face pressed (1 of 157 answered a drag). TOUCH runs while a finger scrolls the wall, and
+     scrolling is the one thing a phone must never feel stick: a touch listener that is not
+     passive makes the browser wait on the script before it scrolls. So its numbers are held as
+     FIELD's are, it asks reduced motion first, and every touch listener in the engine is passive (the Atlas's ctrl-wheel zoom is not a touch, and must cancel). */
+  const touch = js.match(/const TOUCH=\{r:(\d+),lean:([\d.]+),spill:([\d.]+)\}/);
+  if (!touch) err("theme/press.js", "the finger's field on the wall is missing or rewritten past the check — keep const TOUCH={r:<px>,lean:<deg>,spill:<0–1>} (motion rule 3, on a phone)");
+  else {
+    if (+touch[2] >= 6) err("theme/press.js", `a face passing under a finger leans ${touch[2]}° — keep it under the 6° the pressed face takes (motion rule 3)`);
+    if (+touch[3] > .6) err("theme/press.js", `the lamp spills ${touch[3]} onto the faces under a finger — .6 at most (motion rule 3)`);
+    const at = js.indexOf("const TOUCH="), guard = js.slice(at, at + 200);
+    if (!/if\(!reduce&&!matchMedia\("\(hover:hover\)"\)\.matches\)/.test(guard))
+      err("theme/press.js", "the finger's field runs without asking first — open it with if(!reduce&&!matchMedia(\"(hover:hover)\").matches) (motion rules 3 and 5)");
+  }
+  for (const f of ["theme/press.js", "theme/atlas.js", "theme/reading.js"])
+    for (const m of cssOf(f).matchAll(/addEventListener\(\s*["'](touch(?:start|move)|scroll)["']/g)) {
+      const src = cssOf(f); let i = m.index + m[0].length, depth = 1;   // read to the call's own closing paren
+      for (; i < src.length && depth; i++) depth += src[i] === "(" ? 1 : src[i] === ")" ? -1 : 0;
+      const opts = src.slice(m.index, i).match(/,\s*(\{[^{}]*\})\s*\)$/);
+      if (!opts || !/passive\s*:\s*true/.test(opts[1]))
+        err(f, `a ${m[1]} listener is not passive — the browser must wait on it before it scrolls; end it with {passive:true} (motion rule 3)`);
+    }
+
+  /* The flag stirs. The masthead's comment promised "the pennant catches the wind on hover" from
+     September to 25 November 2026 over an empty rule, and the mark did nothing under a hand. It
+     answers now with one gust: held to a single run, short, and off for reduced motion. */
+  const stir = css.match(/a\.mark:hover svg \.pn[^{]*\{animation:stir ([\d.]+)s [^;}]*?(\S+)\}/);
+  if (!/@keyframes stir\{/.test(css) || !stir) err("theme/press.css", "the mark's flag no longer stirs when pointed at — keep @keyframes stir and a.mark:hover svg .pn{animation:stir <s>s <easing> 1} (motion rule 2)");
+  else {
+    if (stir[2] !== "1") err("theme/press.css", `the mark's flag stirs ${stir[2]} times — once, then still (motion rule 4: only the Captain loops)`);
+    if (+stir[1] > 1.5) err("theme/press.css", `the mark's flag stirs for ${stir[1]}s — 1.5s at most, a gust, not a weather`);
+  }
+  if (!/@media \(prefers-reduced-motion:reduce\)\{\.mark svg \.pn\{animation:none\}\}/.test(css))
+    err("theme/press.css", "the mark's flag stirs for a reader who asked for less motion — add @media (prefers-reduced-motion:reduce){.mark svg .pn{animation:none}} (motion rule 5)");
+  if (!/\{\{MARK [^}]*\bpn\b[^}]*\}\}/.test(cssOf("templates/shell.html").match(/<a class="mark"[\s\S]*?<\/a>/)?.[0] || ""))
+    err("templates/shell.html", "the masthead's {{MARK}} has lost its pn flag, so the pennant has no class to stir — keep {{MARK size=22 sw=1.2 pn aria}}");
 }
 
 /* ---------- the holidays: a tinted wall still reads, and never says "correction" ----------
