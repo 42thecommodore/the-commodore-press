@@ -720,6 +720,37 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     const at = js.indexOf("const FIELD="), guard = js.slice(at, at + 200);
     if (!/if\(!reduce&&matchMedia\("\(hover:hover\)"\)\.matches\)/.test(guard))
       err("theme/press.js", "the wall's field runs without asking first — open it with if(!reduce&&matchMedia(\"(hover:hover)\").matches) (motion rules 3 and 5)");
+    /* The Lives' shelf feels the hand too (2026-11-25): the same field, run on the books. Until
+       then only the book under the pointer moved; the day its neighbours did, nothing said they
+       had to stay quieter than it, ask about hover and reduced motion first, or stand still in
+       the spines view. */
+    const gi = js.indexOf("if(!reduce&&matchMedia", at), fields = js.indexOf("const FIELDS=");
+    if (fields < 0 || fields < gi || js.slice(gi, fields).includes("\n}"))
+      err("theme/press.js", "FIELDS (where the field runs) sits outside the reduce/hover guard — declare const FIELDS=[…] inside if(!reduce&&matchMedia(\"(hover:hover)\").matches){…} (motion rules 3 and 5)");
+    else {
+      const table = js.slice(fields, js.indexOf("];", fields));
+      const shelfSpec = (table.match(/\{on:"\.shelf"[^}]*\}/) || [])[0];
+      if (!shelfSpec) err("theme/press.js", "the Lives' shelf is missing from FIELDS — keep {on:\".shelf\",…} so the books beside the one under the hand answer it (motion rule 3)");
+      else if (!/still:\(\)=>document\.body\.classList\.contains\("spines"\)/.test(shelfSpec))
+        err("theme/press.js", "the shelf's field turns books in the spines view — give its FIELDS entry still:()=>document.body.classList.contains(\"spines\") (motion rule 3)");
+      const reach = (shelfSpec || "").match(/reach:([\d.]+)/);
+      if (reach && +reach[1] > 3) err("theme/press.js", `the shelf's field reaches ${reach[1]}× FIELD.r — 3 at most, or the whole shelf turns and the book under the hand is lost (motion rule 3)`);
+    }
+    // a neighbour book never turns as far as the book under the hand: its follow (tiltBooks) and its turn off the rest
+    const tb = js.slice(js.indexOf("function tiltBooks("), js.indexOf("tiltBooks();"));
+    if (!/if\(reduce\|\|!matchMedia\("\(hover:hover\)"\)\.matches\)return;/.test(tb))
+      err("theme/press.js", "tiltBooks turns books without asking first — open it with if(reduce||!matchMedia(\"(hover:hover)\").matches)return; (motion rule 5)");
+    const follow = (tb.match(/"--ry",\(10\+\(x-\.5\)\*-([\d.]+)\)/) || [])[1];
+    const restRy = (css.match(/\.book\{[^}]*rotateY\(calc\(var\(--ry,([\d.]+)deg\) \+ var\(--fy,0deg\)\)\)/) || [])[1];
+    const hoverRy = (css.match(/\.slot:hover \.book,\.slot:focus-visible \.book\{--ry:([\d.]+)deg/) || [])[1];
+    if (!follow || !restRy || !hoverRy)
+      err("theme/press.css", "the book's turn is rewritten past the check — keep .book{transform:rotateY(calc(var(--ry,<deg>) + var(--fy,0deg))) …}, .slot:hover .book{--ry:<deg>…} and tiltBooks' (10+(x-.5)*-<deg>) (motion rule 3)");
+    else {
+      const hand = Math.min(+follow / 2, Math.abs(+restRy - +hoverRy));
+      if (+field[2] >= hand) err("theme/press.js", `a neighbour book turns ${field[2]}°, as far as the ${hand}° the book under the hand takes — keep FIELD.lean below it, or the hand is lost along the shelf (motion rule 3)`);
+    }
+    if (!/\.gloss\{[^}]*opacity:var\(--spill,0\)/.test(css) || !/\.slot:hover \.gloss\{opacity:1\}/.test(css))
+      err("theme/press.css", "a book's gloss no longer takes the spill, or the book under the hand no longer takes the whole lamp — keep .gloss{opacity:var(--spill,0)…} and .slot:hover .gloss{opacity:1} (motion rule 3)");
   }
 }
 

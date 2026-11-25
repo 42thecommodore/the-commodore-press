@@ -297,31 +297,46 @@ function loadLibrary(){
   addEventListener("pointerup",e=>{const el=e.target.closest&&e.target.closest(".lit");
     if(!el||reduce||!el.animate)return;
     el.animate([{scale:".96"},{scale:"1.045",offset:.4},{scale:".99",offset:.72},{scale:"1"}],{duration:520,easing:"cubic-bezier(.3,.7,.4,1)"})},{passive:true});}
-/* THE WALL FEELS THE HAND (press.css, motion rule 3). The face under the pointer leans and takes
-   the lamp (above); its neighbours, within FIELD.r, turn a little toward the pointer and catch the
-   spill of that lamp, less the further away they are, so a hand moving over the wall passes like a
-   lamp carried along a gallery. Each face's centre is measured once per visit to the wall, in page
-   coordinates, so scrolling does not re-measure. Only where there is hover, never with reduced motion. */
+/* THE WALL FEELS THE HAND (press.css, motion rule 3). The thing under the pointer leans and takes
+   the lamp (a face, above; a book, tiltBooks); its neighbours, within reach, turn a little toward
+   the pointer and catch the spill of that lamp, less the further away they are, so a hand moving
+   over the wall passes like a lamp carried along a gallery, and over the Lives' shelf like one
+   carried along the books. One field on two surfaces: FIELD is the rule, FIELDS says where it runs.
+   `reach` scales FIELD.r to the thing's size (a book stands at about twice a face's pitch); `tip`
+   is the sign of the vertical turn the thing under the hand already takes, so a neighbour answers
+   the same way; `spot` is where the lamp's centre is said (a plate's ::after, a book's gloss), and
+   both read --spill in press.css. Each centre is measured once per visit to its surface, in page
+   coordinates, so scrolling does not re-measure: 157 books are read once, not on every move.
+   Only where there is hover, never with reduced motion, and never in the spines view, where the
+   books stand edge-out and do not turn (tiltBooks holds still there too). */
 const FIELD={r:260,lean:5,spill:.6};
 if(!reduce&&matchMedia("(hover:hover)").matches){
-  let wall=null,faces=[],on=new Set(),raf=0,pt=null;
-  const measure=w=>{wall=w;faces=[...w.querySelectorAll(".wface .lit")].map(el=>{const r=el.getBoundingClientRect();
-    return {el,x:r.left+scrollX+r.width/2,y:r.top+scrollY+r.height/2,w:r.width,h:r.height}})};
+  const FIELDS=[{on:".wall",hand:".wface .lit",el:h=>h,reach:1,tip:1,spot:el=>[el,"--mx","--my"]},
+    {on:".shelf",hand:".slot",el:h=>h.querySelector(".book"),reach:2,tip:-1,spot:el=>[el.querySelector(".gloss")||el,"--gx","--gy"],
+     still:()=>document.body.classList.contains("spines")}];
+  let surf=null,spec=null,things=[],on=new Set(),raf=0,pt=null;
+  const measure=(w,s)=>{surf=w;spec=s;things=[...w.querySelectorAll(s.hand)].map(h=>{const el=s.el(h);if(!el)return null;
+    const r=el.getBoundingClientRect(),b=h.getBoundingClientRect();
+    return {el,spot:s.spot(el),x:r.left+scrollX+r.width/2,y:r.top+scrollY+r.height/2,w:r.width,h:r.height,
+      l:b.left+scrollX,t:b.top+scrollY,R:b.right+scrollX,B:b.bottom+scrollY}}).filter(Boolean)};
   const calm=f=>{for(const p of["--fx","--fy","--spill"])f.el.style.removeProperty(p);on.delete(f)};
-  const place=()=>{raf=0;if(!pt)return;const now=new Set();
-    for(const f of faces){const dx=pt.x-f.x,dy=pt.y-f.y,d=Math.hypot(dx,dy);
-      if(d>=FIELD.r||(Math.abs(dx)<f.w/2&&Math.abs(dy)<f.h/2))continue;   // out of reach, or under the hand itself
-      const k=(1-d/FIELD.r)**1.3,st=f.el.style;
-      st.setProperty("--fy",(-dx/d*FIELD.lean*k).toFixed(2)+"deg");st.setProperty("--fx",(dy/d*FIELD.lean*k).toFixed(2)+"deg");
-      st.setProperty("--mx",(50+dx/f.w*100).toFixed(0)+"%");st.setProperty("--my",(50+dy/f.h*100).toFixed(0)+"%");
+  const quiet=()=>{for(const f of[...on])calm(f)};
+  const place=()=>{raf=0;if(!pt||!spec)return;
+    if(spec.still&&spec.still()){quiet();return}
+    const now=new Set(),R=FIELD.r*spec.reach;
+    for(const f of things){const dx=pt.x-f.x,dy=pt.y-f.y,d=Math.hypot(dx,dy);
+      if(d>=R||(pt.x>=f.l&&pt.x<f.R&&pt.y>=f.t&&pt.y<f.B))continue;   // out of reach, or under the hand itself
+      const k=(1-d/R)**1.3,st=f.el.style,[sp,sx,sy]=f.spot;
+      st.setProperty("--fy",(-dx/d*FIELD.lean*k).toFixed(2)+"deg");st.setProperty("--fx",(spec.tip*dy/d*FIELD.lean*k).toFixed(2)+"deg");
+      sp.style.setProperty(sx,(50+dx/f.w*100).toFixed(0)+"%");sp.style.setProperty(sy,(50+dy/f.h*100).toFixed(0)+"%");
       st.setProperty("--spill",(FIELD.spill*k).toFixed(3));now.add(f)}
     for(const f of on)if(!now.has(f))calm(f);on=now};
-  addEventListener("pointermove",e=>{
-    const w=e.target.closest&&e.target.closest(".wall");
-    if(!w){if(on.size){pt=null;for(const f of[...on])calm(f)}return}
-    if(w!==wall||!faces.length||!faces[0].el.isConnected)measure(w);
+  addEventListener("pointermove",e=>{let w=null,s=null;
+    if(e.target.closest)for(const x of FIELDS)if((w=e.target.closest(x.on))){s=x;break}
+    if(!w){if(on.size){pt=null;quiet()}surf=null;return}   // the hand has gone: the next visit measures afresh
+    if(w!==surf||!things.length||!things[0].el.isConnected){quiet();measure(w,s)}
     pt={x:e.pageX,y:e.pageY};if(!raf)raf=requestAnimationFrame(place)},{passive:true});
-  addEventListener("resize",()=>{wall=null},{passive:true});
+  addEventListener("resize",()=>{surf=null},{passive:true});
 }
 /* Read next: the first entry this one reads across to — a link that exists because the two
    argue (PUBLISHING.md) — and the next on the shelf only when there is none. Same choice as
