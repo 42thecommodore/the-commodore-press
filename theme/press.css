@@ -106,9 +106,14 @@
   .mark{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
   .mark svg{display:block;color:var(--ink);}
   body.night .mark svg{color:var(--parchment)}
-  /* the pennant catches the wind on hover; the seal itself stays put */
-  .mark svg .pn{transform-origin:9px 6.8px;}
-  @media (prefers-reduced-motion:reduce){.mark svg .pn{}}
+  /* THE FLAG STIRS (motion rule 2). Pointed at, focused or pressed, the pennant takes one gust
+     from the mast and settles: one run, never a loop, the seal and the name stay put. This
+     comment promised it from 2026-09 to 2026-11-25 over an empty rule, and the mark did nothing. */
+  .mark svg .pn{transform-origin:9px 6.8px}
+  @keyframes stir{0%,100%{transform:none}18%{transform:skewY(-9deg) scaleX(.84)}40%{transform:skewY(6deg) scaleX(1.05)}
+    62%{transform:skewY(-3deg) scaleX(.95)}82%{transform:skewY(1.5deg)}}
+  a.mark:hover svg .pn,a.mark:focus-visible svg .pn,a.mark:active svg .pn{animation:stir 1.1s cubic-bezier(.3,.6,.4,1) 1}
+  @media (prefers-reduced-motion:reduce){.mark svg .pn{animation:none}}
   /* the holidays (build/season.mjs): the drawing in the holiday's colour, the mark's hairline */
   .mark .season{display:flex;margin-left:-2px;color:var(--hol,var(--ink-mid))}
   .mark .season[hidden]{display:none}
@@ -669,8 +674,11 @@
      3 THE WALL FEELS THE HAND. Faces on the wall, and books on the Lives' shelf, near the pointer
        turn toward it and the lamp spills onto them (a plate's light, a book's gloss), falling off
        with distance: one field, FIELD in press.js, run on each surface in FIELDS. A neighbour never
-       turns as far as the thing under the hand (a face's 6°, a book's 9° of follow), never at all
-       where there is no hover (a phone), and a book not in the spines view.
+       turns as far as the thing under the hand (a face's 6°, a book's 9° of follow), and a book not
+       in the spines view. On a phone, where there is no hover, the finger is the hand: only while
+       it is on the wall, the faces passing under it catch the spill (TOUCH, press.js), from passive
+       listeners, one read and one write a frame.
+     The mark answers too: pointed at or pressed, its flag stirs once (masthead, above).
      4 ONE THING BREATHES. Only the Captain of the day moves at rest: a slow breath, no faster
        than 5s and no larger than 2%, its lamp rising and falling with it. It holds still under a
        hand and while a reader is open. Nothing else on the site may loop forever.
