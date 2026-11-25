@@ -138,6 +138,23 @@ window.__run = async function (tests) {
   // progress line (which updates on frames) would sit at "N min read" forever. A timer
   // stands in for the frame; the page's own logic is unchanged.
   window.requestAnimationFrame = cb => setTimeout(() => cb(performance.now()), 16);
+  // A flight is timed by the harness, never by the document's clock. Under --virtual-time-budget
+  // that clock is not the page's: it stands still between the frames Chrome happens to produce,
+  // then leaps (330ms ahead of performance.now() in one frame, measured 2026-11-25), so a 560ms
+  // flight home could land before the test's next line ran. Any looping animation (the Captain's
+  // breath) keeps frames coming and makes the leaps more frequent. So every animation the page
+  // starts with animate() is held still, and a 16ms timer moves it on 16ms at its own rate and
+  // direction, finishing it at its end: the page's finished promise, finish() and playbackRate
+  // turn-round are exactly what a reader's browser runs, on one clock instead of two.
+  window.__clock = () => {
+    const held = new Set(), animate = Element.prototype.animate;
+    Element.prototype.animate = function (...args) { const a = animate.apply(this, args); a.pause(); held.add(a); return a; };
+    setInterval(() => held.forEach(a => {
+      if (a.playState !== "paused") { held.delete(a); return; }   // finished, or finished by the page
+      const end = a.effect.getComputedTiming().endTime, next = a.currentTime + 16 * a.playbackRate;
+      if (a.playbackRate > 0 ? next >= end : next <= 0) a.finish(); else a.currentTime = next;
+    }), 16);
+  };
   try { Object.defineProperty(navigator, "clipboard", { configurable: true, value: { writeText: v => { window.__copied = v; return Promise.resolve(); } } }); } catch (e) {}
   const esc = () => document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
   // what a reader presses is at least 24px each way at a desk and 44px tall on a phone. Exempt: a
@@ -340,7 +357,7 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait, esc) => {
 const FACEFLIGHT = String.raw`
 <script>
 addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
-  setInterval(() => document.getAnimations().forEach(a => { if (a.playState === "running") a.currentTime += 16 * a.playbackRate; }), 16);
+  __clock();   // the harness times the flights: see HARNESS
   await loadLibrary(); go("home", false); await wait(300);
   const face = document.querySelectorAll("a.wface")[3], pic = face.querySelector(".fp-img"), id = face.dataset.open.split(":")[1];
   face.scrollIntoView({ block: "center" }); await wait(200);
@@ -373,7 +390,7 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
 const WHERE = String.raw`
 <script>
 addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
-  setInterval(() => document.getAnimations().forEach(a => { if (a.playState === "running") a.currentTime += 16 * a.playbackRate; }), 16);
+  __clock();   // the harness times the flights: see HARNESS
   await loadLibrary(); go("home", false); await wait(300);
   const face = document.querySelectorAll("a.wface")[40], id = face.dataset.open.split(":")[1];
   face.scrollIntoView({ block: "center" }); await wait(200);
@@ -420,9 +437,7 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
 const FLIGHT = String.raw`
 <script>
 addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
-  // --dump-dom never paints, so the document's clock never moves and no flight ever lands. A timer
-  // stands in for it, as the harness does for requestAnimationFrame; the page's own logic is unchanged.
-  setInterval(() => document.getAnimations().forEach(a => { if (a.playState === "running") a.currentTime += 16 * a.playbackRate; }), 16);
+  __clock();   // the harness times the flights: see HARNESS
   await loadLibrary(); go("lives", false); await wait(400);
   const slot = document.querySelector("#livesShelf .slot"), id = slot.dataset.id, book = slot.querySelector(".book");
   slot.scrollIntoView({ block: "center" }); await wait(200);
