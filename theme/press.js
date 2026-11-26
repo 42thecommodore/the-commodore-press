@@ -359,7 +359,7 @@ function loadLibrary(){
    settles it within 1.2s (the envelope e^(-damp·t/2) falls to 2% by 7.8/damp seconds). The swing
    writes `rotate` and `translate`, not `transform`, so the lean's transition never smooths the
    spring away. One spring for the wall, the shelf and the phone. Never with reduced motion. */
-const SPRING={k:140,damp:7.2,max:3.5,kick:11,slow:.5,rest:.03};
+const SPRING={k:140,damp:8.2,max:3.5,kick:11,slow:.5,rest:.03};
 const swing=(()=>{const on=new Map();let raf=0,last=0;
   const still=el=>{on.delete(el);el.style.removeProperty("rotate");el.style.removeProperty("translate")};
   const step=t=>{const dt=last?Math.min(.034,(t-last)/1000):1/60;last=t;

@@ -814,7 +814,10 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     const [, k, damp, max, , slow, rest] = spring.map(Number);
     if (max >= 6) err("theme/press.js", `a face swings ${max}° — keep SPRING.max under the 6° the face under the hand leans (motion rule 3)`);
     if (field && max + +field[2] >= 9) err("theme/press.js", `a neighbour book can turn ${max + +field[2]}° (SPRING.max + FIELD.lean) — keep the sum under the 9° the book under the hand turns (motion rule 3)`);
-    if (damp < 6.5) err("theme/press.js", `the swing settles in ${(7.8 / damp).toFixed(2)}s — 1.2s at most, so SPRING.damp ≥ 6.5; a frame that keeps swinging is a loop (motion rule 4)`);
+    // the loop stops when the swing is under SPRING.rest, so time to rest is measured from the largest
+    // swing down to rest, not to 2% of it: the 2% reckoning said 1.08s while faces moved until ~1.3s
+    const toRest = 2 * Math.log(max / rest) / damp;
+    if (toRest > 1.2) err("theme/press.js", `a full swing takes ${toRest.toFixed(2)}s to come to rest (2·ln(SPRING.max/SPRING.rest)/SPRING.damp) — 1.2s at most; raise SPRING.damp to ${(2 * Math.log(max / rest) / 1.2).toFixed(2)} or more (motion rule 4: a frame that keeps swinging is a loop)`);
     if (damp >= 2 * Math.sqrt(k)) err("theme/press.js", `SPRING.damp ${damp} is at or past critical (2√k = ${(2 * Math.sqrt(k)).toFixed(1)}): the frames creep back instead of swinging, and the weight is lost`);
     if (!(rest > 0) || !(slow > 0)) err("theme/press.js", "SPRING.rest and SPRING.slow must be above 0 — with no rest the loop never stops, with no slow every drift sets the wall swinging (motion rules 2 and 4)");
     const sw = js.slice(js.indexOf("const swing="), js.indexOf("})();", js.indexOf("const swing=")));
