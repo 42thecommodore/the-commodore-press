@@ -60,6 +60,11 @@
       "to": "lives:henry-flagler",
       "label": "Henry Flagler",
       "txt": "— who built resort hotels in Florida for the same new leisure class."
+    },
+    {
+      "to": "lives:auguste-escoffier",
+      "label": "Auguste Escoffier",
+      "txt": "— his chef, whose own book counts four great sauces where the English edition counts five."
     }
   ]
 }

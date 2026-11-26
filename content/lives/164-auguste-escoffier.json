@@ -1,0 +1,50 @@
+{
+  "id": "auguste-escoffier",
+  "no": 164,
+  "keep": "He named four great sauces in French and five in English, in books published the same year. The cooks' catechism kept the English count.",
+  "n": "Auguste Escoffier",
+  "years": "1846–1935",
+  "place": "France and England",
+  "field": "Food & Craft",
+  "group": "famous",
+  "cover": "#26262B",
+  "spineC": "#171719",
+  "ink": "#EDEDEF",
+  "accent": "#C6CBD4",
+  "motif": "grid",
+  "lede": "Every cook is taught that he set down five mother sauces. His own Guide culinaire names four; the fifth arrives in the English book of 1907.",
+  "copy": [
+    "Auguste Escoffier ran the kitchens of César Ritz's hotels in London, first the Savoy and then the Carlton. He signed the preface to Le Guide culinaire on 1 November 1902. The book holds, he wrote, \"près de 5.000 formules\", nearly five thousand, and he did not claim it was complete. At the back he set down how the work of a large kitchen is divided, from the kitchen secretary to the chefs of each station. With a brigade of 60 men, he wrote, a kitchen could serve 400 and 500 people from the menu in an hour or an hour and a half. He described the brigade as a way of working; he did not say he had invented it.",
+    "The sauces are where the legend outruns the book. The second French edition, dated 1 February 1907, lists \"Les Grandes Sauces de Base, comme Espagnole, Velouté, Béchamel, Tomate\": four. Hollandaise sits among the small sauces, and mayonnaise is called \"Sauce froide mère\", a cold mother sauce. The same year Heinemann published A Guide to Modern Cookery, by \"A. Escoffier of the Carlton Hotel\". There the list reads \"Espagnole, Veloute, Bechamel, Tomato, and Hollandaise\", and the leading sauces are \"also called 'mother sauces.'\" Five is the English count, and the English count is the one cooking schools teach.",
+    "The peach is plainer than its story too. The first Guide gives Pêches Melba as peaches poached in vanilla syrup, set on vanilla ice cream and coated with raspberry purée. It names no singer and no swan of ice. A Carlton menu of November 1902, printed in the same book, already offers Poires Melba. Of his Savoy years his book keeps one boast: a way of serving cold entrées in jelly, \"which I inaugurated at the Savoy Hotel\". The Savoy sacked him with Ritz in 1898; their side of that story, and the suppliers', is in Ritz's entry."
+  ],
+  "bio": {
+    "t": "Le Guide culinaire",
+    "a": "Auguste Escoffier",
+    "y": "1903",
+    "u": "https://archive.org/details/b21525912",
+    "why": "Start with the book, which is free to read and settles more than any biography: the four sauces, the brigade, the first Melba. The link is the second edition of 1907; his English A Guide to Modern Cookery (Heinemann, 1907) is on archive.org as cu31924000610117. Kenneth James's Escoffier: The King of Chefs (2002) is the full life; the house has not read it."
+  },
+  "contested": "How much was his. Nothing he printed claims the brigade as an invention: he gives it as an account of how a large kitchen is run, and the word is already ordinary in his text. The usual story that he drew it from army kitchens is in no source the house opened. Whether the English book's five sauces came from a French edition the house has not read is open; what is certain is that the French editions of 1903 and 1907 name four. The swan of ice under the first Pêche Melba, and the date of the dinner for Nellie Melba, rest on his own later telling and on cookery histories the house has not opened; in his Guide the dish has neither. The Savoy affair is argued in Ritz's entry, from Paul Levy's reading of the confessions.",
+  "across": [
+    {
+      "to": "lives:cesar-ritz",
+      "label": "César Ritz",
+      "txt": "— his partner at the Savoy and the Carlton, sacked with him in 1898; the confessions are in Ritz's entry."
+    }
+  ],
+  "facts": [
+    {
+      "b": "~5,000",
+      "s": "Formulas in the book, by his own count: A. Escoffier, Le Guide culinaire (1903), preface dated 1 November 1902, archive.org b21525730"
+    },
+    {
+      "b": "60 · 400–500",
+      "s": "The brigade, and the covers it served from the menu in an hour to an hour and a half: Le Guide culinaire (1903), on dividing the work of a large brigade"
+    },
+    {
+      "b": "4 · 5",
+      "s": "Grandes sauces de base in Le Guide culinaire, 2nd ed. (1907), and basic sauces in A Guide to Modern Cookery (Heinemann, 1907), archive.org cu31924000610117"
+    }
+  ]
+}
