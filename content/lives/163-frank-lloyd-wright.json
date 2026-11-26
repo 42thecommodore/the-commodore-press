@@ -1,0 +1,48 @@
+{
+  "id": "frank-lloyd-wright",
+  "no": 163,
+  "keep": "Taliesin's own foundation records 1914 as fire damage. It was the afternoon seven people were murdered there, and he rebuilt on the same hill.",
+  "n": "Frank Lloyd Wright",
+  "years": "1867–1959",
+  "place": "United States",
+  "field": "Architecture",
+  "group": "famous",
+  "cover": "#3C2C5C",
+  "spineC": "#2A1D44",
+  "ink": "#F0EBFA",
+  "accent": "#CDB9EE",
+  "motif": "lines",
+  "lede": "The foundation that keeps his name says Taliesin suffered significant fire damage in 1914. That afternoon seven people were murdered there.",
+  "copy": [
+    "Frank Lloyd Wright was born in Richland Center, Wisconsin, on 8 June 1867, the son of a preacher and a teacher. He went to the University of Wisconsin and left; his own account runs from \"Freshman\" to \"part-time Senior\". By his foundation's count he designed 1,114 works of architecture, and 532 were built. The Robie House in Chicago has a cantilevered roof that reaches twenty feet past its walls. Its owner, Frederick Robie, was 28 when he commissioned it, and was forced to sell after fourteen months.",
+    "In 1911 newspaper headlines about his affair with Mamah Borthwick Cheney drove him from Chicago to the Wisconsin valley of his mother's family, where he built Taliesin. On 15 August 1914, while Wright was in Chicago finishing Midway Gardens, his servant Julian Carlton set fire to the living quarters after serving lunch and murdered seven people, most of them with a hatchet. The Taliesin historian Keiran Murphy names them: Mamah Borthwick; her children John and Martha Cheney, eleven and eight; the draftsman Emil Brodelle; the foreman Thomas Brunker; the gardener David Lindblom; and Ernest Weston, thirteen, the carpenter's son. A third of the building burned. Carlton died on 7 October, before any trial. Wright called it \"a charred and ugly scar upon my own life\", and rebuilt. Taliesin burned again in 1925, and he rebuilt it again.",
+    "He told the story of his own buildings the way he wanted them told. Of his Imperial Hotel in Tokyo after the Great Kantō earthquake of 1923, he wrote: \"The building was undamaged. A transit put on the foundation levels showed no deviation whatever.\" His foundation says it survived \"with minimal damage\". It was demolished in 1968, and the entrance lobby was rebuilt at the Meiji Mura museum near Nagoya. The Guggenheim took sixteen years and more than 700 sketches. Critics called it a washing machine and a giant toilet bowl; he said it would make the Metropolitan Museum \"look like a Protestant barn\". It opened after both Solomon Guggenheim and Wright were dead."
+  ],
+  "bio": {
+    "t": "An Autobiography",
+    "a": "Frank Lloyd Wright",
+    "y": "1932; revised 1943",
+    "u": "https://archive.org/details/FrankLloydWrightAnAutobiography",
+    "why": "Read in full here, in the 1943 edition, and to be read the way he wrote it: as the case for himself. It is where the undamaged Imperial Hotel comes from. PBS's reading list for the Ken Burns film includes Brendan Gill's Many Masks (1987); Paul Hendrickson's Plagued by Fire (2019) is the one that traced Julian Carlton's birth. The house has read neither yet."
+  },
+  "contested": "Why Carlton did it. Nobody knows: he died before trial, and the two survivors, Billy Weston and the draftsman Herbert Fritz, never talked about it. Keiran Murphy lists the theories that circulate, and calls them unsubstantiated: that Carlton disapproved of Wright's life with Mamah; that he feared deportation to fight in the war; that it was a Chicago mob hit over Midway Gardens; that Wright arranged it himself. She rejects each, the last most firmly, since Wright would hardly have burned his own house. Even Carlton's origin was wrong for a century: reported as Barbadian, he was born in Alabama, by the evidence Paul Hendrickson published in Plagued by Fire. The house has not read Hendrickson's book; the finding is reported here as Murphy reports it.",
+  "across": [],
+  "facts": [
+    {
+      "b": "1,114 · 532",
+      "s": "Works of architecture he designed, and those built: Frank Lloyd Wright Foundation, 'About Frank Lloyd Wright', franklloydwright.org"
+    },
+    {
+      "b": "7 · one-third",
+      "s": "The people murdered at Taliesin on 15 August 1914, and the share of the building the fire destroyed: Keiran Murphy, 'The First Fire', keiranmurphy.com"
+    },
+    {
+      "b": "700+ · 16 years",
+      "s": "The sketches, and the years, between commission and opening of the Guggenheim: Frank Lloyd Wright Foundation, 'Solomon R. Guggenheim Museum'"
+    },
+    {
+      "b": "20 ft · 14 months",
+      "s": "The Robie House's cantilevered roof, and how long Frederick Robie kept the house: Frank Lloyd Wright Foundation, 'Robie House'"
+    }
+  ]
+}
