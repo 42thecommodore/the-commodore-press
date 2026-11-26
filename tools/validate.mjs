@@ -795,6 +795,39 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     err("templates/shell.html", "the masthead's {{MARK}} has lost its pn flag, so the pennant has no class to stir — keep {{MARK size=22 sw=1.2 pn aria}}");
 }
 
+/* ---------- a life finished is stamped ----------
+   Until 2026-11-26 finishing a life changed nothing a reader could see: "Read ✓" appeared under
+   the book the instant the reader closed, while the book was still in the air. Now, once it is
+   home, the mark is pressed into it once (stampHome, press.js). A stamp is the kind of motion that
+   drifts into a loop or a welcome, so: one run, never infinite; started only from closeReader,
+   never on load; held back for a reader who asked for less motion; and ink, never oxblood, which
+   means a correction on this site. */
+{
+  const css = cssOf("theme/press.css"), js = cssOf("theme/press.js");
+  const rules = [...css.matchAll(/([^{}]*\.stamp\b[^{}]*)\{([^{}]*)\}/g)].map(m => [m[1].trim(), m[2]]);
+  const kfs = [...css.matchAll(/@keyframes (stamp[\w-]*)\{([\s\S]*?\})\}/g)];
+  const runs = rules.filter(([, b]) => /\banimation:/.test(b) && !/animation:none/.test(b));
+  if (!kfs.length || !runs.length) err("theme/press.css", "the stamp is missing or rewritten past the check — keep @keyframes stamp{…} and .slot.stamp .book{animation:stamp <s>s <easing> 1} (motion rule 2)");
+  for (const [sel, b] of runs) {
+    const a = b.match(/animation:\s*([^;}]*)/)[1];
+    if (!/ 1$/.test(a.trim()) || /infinite/.test(a)) err("theme/press.css", `${sel} stamps more than once (${a.trim()}) — a stamp runs once: end its animation with 1 (motion rule 4: only the Captain loops)`);
+    const s = +(a.match(/([\d.]+)s/) || [])[1]; if (s > 1) err("theme/press.css", `${sel} stamps for ${s}s — 1s at most: a press, not a show`);
+  }
+  for (const [where, b] of [...rules.map(([s, b]) => [s, b]), ...kfs.map(m => ["@keyframes " + m[1], m[2]])])
+    if (/oxblood|#8A2B25|#CE7B6E/i.test(b)) err("theme/press.css", `${where} stamps in oxblood — oxblood means a correction or a dispute and nothing else; ink the mark with var(--ink)`);
+  if (!/@media \(prefers-reduced-motion:reduce\)\{\.stamp \.book,[^{]*\{animation:none\}\}/.test(css))
+    err("theme/press.css", "the stamp presses for a reader who asked for less motion — keep @media (prefers-reduced-motion:reduce){.stamp .book,…{animation:none}} (motion rule 5)");
+  const sh = js.slice(js.indexOf("function stampHome("), js.indexOf("\n}\n", js.indexOf("function stampHome(")));
+  if (!sh || !/if\(reduce\|\|[^)]*\)return;[^]*classList\.add\("stamp"\)/.test(sh))
+    err("theme/press.js", "stampHome adds the stamp without asking first — return before classList.add(\"stamp\") with if(reduce||…)return; (motion rule 5)");
+  const adds = [...js.matchAll(/classList\.(add|toggle)\([^)]*["']stamp["']/g)].filter(m => m.index < js.indexOf("function stampHome(") || m.index > js.indexOf("function stampHome(") + sh.length);
+  if (adds.length) err("theme/press.js", "the stamp is set outside stampHome — only a reader closing a life they just finished presses the mark (motion rule 2)");
+  const calls = [...js.matchAll(/\bstampHome\(/g)].map(m => m.index).filter(i => i !== js.indexOf("function stampHome(") + 9);
+  const close = js.indexOf("function closeReader("), closeEnd = js.indexOf("\n}\n", close);
+  if (!calls.length || calls.some(i => i < close || i > closeEnd))
+    err("theme/press.js", "stampHome is called from somewhere other than closeReader — a stamp is never on load and never for a life already finished; call it only from the close path (motion rule 2)");
+}
+
 /* ---------- the holidays: a tinted wall still reads, and never says "correction" ----------
    Each body.hol-<id> in theme/press.css tints the paper the whole house is read on, so the
    faintest text is measured again on it; --hol draws the masthead's holiday and is held to the
