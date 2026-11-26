@@ -1,0 +1,53 @@
+{
+  "id": "john-and-horace-dodge",
+  "no": 161,
+  "keep": "The Dodges won the dividend and lost the argument they are remembered for winning. The court let Ford build what they sued to stop.",
+  "n": "John and Horace Dodge",
+  "years": "1864–1920 · 1868–1920",
+  "place": "United States",
+  "field": "Automobiles",
+  "group": "famous",
+  "cover": "#264653",
+  "spineC": "#17323D",
+  "ink": "#EAF1F4",
+  "accent": "#A8CBD6",
+  "motif": "conic",
+  "lede": "They sued their own company over money it would not pay them, and won. The sentence they won with is quoted to this day; the same decision let Henry Ford build what they had sued to stop.",
+  "copy": [
+    "John Dodge was born in 1864 and his brother Horace in 1868. In June 1911 the Ford Motor Company photographed seven of its most prominent stockholders, and the two brothers were among them. By July 1916 the company's authorized capital stock was $2,000,000, while the capital it actually employed, in property and receivables, came to $78,278,418.65. It held nearly $54,000,000 more in cash or its equivalent. It could make and sell more than 500,000 cars a year and expected a profit of upwards of $60,000,000. Its regular dividend was sixty per cent on the $2,000,000, which came to $1,200,000.",
+    "Henry Ford wanted the rest. His plan cut the price of a car by $80, from $440 to $360, voted $11,825,000 for a smelter, and aimed one day at a million cars a year. \"My ambition,\" he said, \"is to employ still more men, to spread the benefits of this industrial system to the greatest possible number.\" Asked when special dividends would come again, he answered that it \"was indefinite, yes, sir.\" The brothers filed a bill to compel the dividends and to enjoin the expansion. The Michigan Supreme Court decided it on 7 February 1919. \"A business corporation is organized and carried on primarily for the profit of the stockholders,\" Justice Ostrander wrote. The court affirmed the lower court's decree on the dividend, with interest at five per cent.",
+    "Then it stopped. \"We are not, however, persuaded that we should interfere with the proposed expansion of the business of the Ford Motor Company,\" the same opinion says. \"The judges are not business experts.\" In every other respect the lower court's decree was reversed. The smelter on the River Rouge was left alone. Over the following years, The Henry Ford's own catalogue notes, Ford methodically and clandestinely bought up the minority shares; by 1919 he had complete control. Both brothers died in 1920. The case is taught as the rule that a company must be run for its shareholders. The shareholders who brought it got a dividend, and the founder kept his factory."
+  ],
+  "bio": {
+    "t": "The Dodge Brothers: The Men, the Motor Cars, and the Legacy",
+    "a": "Charles K. Hyde",
+    "y": "2005",
+    "why": "A university-press history (Wayne State) with some thirty pages of notes, running from Niles, through their years as suppliers to Ransom Olds and Henry Ford, to the sale of their company and its merger with Chrysler. The house has read its catalogue record and contents, not yet the text; the lawsuit itself is free to read in full as 204 Mich. 459."
+  },
+  "contested": "What the case decided. The sentence about stockholders' profit is unhedged: directors' discretion, Ostrander wrote, \"does not extend to a change in the end itself, to the reduction of profits or to the nondistribution of profits among stockholders in order to devote them to other purposes.\" Read that way, Dodge v. Ford states shareholder primacy as law. Read by its disposition, it refused to touch a single business decision except the size of a dividend held back from a company with a surplus of almost $112,000,000. Even the bench was split on the reasoning: Justice Moore, concurring, agreed about the smelter but wrote, \"I do not agree with all that is said by him in his discussion of the question of dividends.\" The best-known modern argument that the case is mistaught is Lynn Stout's \"Why We Should Stop Teaching Dodge v. Ford\" (2008), answered by Stephen Bainbridge; the house has not yet read either, so neither is stated here at full strength.",
+  "across": [
+    {
+      "to": "lives:henry-ford",
+      "label": "Henry Ford",
+      "txt": "— the defendant, whose testimony the court printed, and who lost the dividend and kept the plant."
+    }
+  ],
+  "facts": [
+    {
+      "b": "$78,278,418.65 · $2,000,000",
+      "s": "Capital employed in July 1916 against authorized capital stock: Dodge v. Ford Motor Co., 204 Mich. 459 (1919), Ostrander, J."
+    },
+    {
+      "b": "$112,000,000 · $54,000,000",
+      "s": "The company's surplus, and its cash and municipal bonds, before the decree: Dodge v. Ford Motor Co., 204 Mich. 459 (1919)"
+    },
+    {
+      "b": "$440 → $360 · $11,825,000",
+      "s": "The price cut Ford's plan called for, and the sum voted for the smelter: Dodge v. Ford Motor Co., 204 Mich. 459 (1919)"
+    },
+    {
+      "b": "60% · $1,200,000",
+      "s": "The regular dividend on $2,000,000 of capital stock: Dodge v. Ford Motor Co., 204 Mich. 459 (1919), quoting a statement attributed to Ford"
+    }
+  ]
+}
