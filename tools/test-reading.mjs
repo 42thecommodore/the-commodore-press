@@ -422,6 +422,49 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
 }), 600));
 </script>`;
 
+/* The shelf has weight too (2026-11-26). The books ride the wall's one spring, and until now only
+   the faces were driven. A sweep that a test harness sent slowly (about 300ms for 600px) read as a
+   1.1° rock and looked like a shelf too heavy to push; swept truly in 120ms the books peak 2.1–2.9°
+   in a browser, beside the faces' 2.7–3.1°, so the shelf needs no push of its own. This holds it
+   there: a fast sweep along a row at 1440×900 peaks in [1.8°, SPRING.max], the swing plus the
+   field's lean stays under the 9° the book under the hand turns, the loop ends once they settle,
+   and a slow drift and the spines view rock nothing (proved: a shelf push of .4× fails the first
+   at 1.13°; a shelf field with no spines `still` fails the last at 2.82°). */
+const WEIGHT_SHELF = String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  go("lives", false); await wait(400);
+  let frames = 0; const raf = window.requestAnimationFrame;
+  window.requestAnimationFrame = cb => { if (cb && cb.name === "step") frames++; return raf(cb); };
+  const slots = [...document.querySelectorAll(".shelf .slot")], books = slots.map(s => s.querySelector(".book")).filter(Boolean);
+  const s0 = slots[0]; s0.scrollIntoView({ block: "center" }); await wait(100);
+  const r0 = s0.getBoundingClientRect(), y = r0.top + r0.height / 2;
+  const sweep = async (ms, dist) => { const n = Math.max(8, Math.round(ms / 16));
+    for (let i = 0; i <= n; i++) { const x = r0.left + 20 + dist * i / n, el = document.elementFromPoint(x, y) || document.body;
+      el.dispatchEvent(new PointerEvent("pointermove", { clientX: x, clientY: y, bubbles: true })); await wait(ms / n); } };
+  const ang = e => { const m = /(-?[\d.]+)deg/.exec(e.style.rotate || ""); return m ? +m[1] : 0; };
+  const angles = () => books.map(ang);
+  const t0 = performance.now(); await sweep(120, 600);
+  let peak = 0, sum = 0, last = t0;
+  for (let i = 0; i < 100; i++) { for (const b of books) { const a = Math.abs(ang(b)); if (a > .03) last = performance.now();
+      peak = Math.max(peak, a); sum = Math.max(sum, a + Math.abs(parseFloat(b.style.getPropertyValue("--fy")) || 0)); } await wait(16); }
+  window.__shelfPeak = peak; window.__shelfSettle = last - t0;
+  t("a fast hand rocks the books it passes on their spines, as the faces swing", peak >= 1.8 && peak <= 3.5, "peak " + peak.toFixed(2) + "°");
+  t("…a book's swing and its turn toward the hand stay under the 9° the book under the hand turns", sum < 9, sum.toFixed(2) + "°");
+  const atRest = frames; await wait(400);
+  t("…and they settle within 1.2s of the hand, the spring's frame loop ended", last - t0 < 1320 && angles().every(a => a === 0) && frames === atRest,
+    "last move " + Math.round(last - t0) + "ms after the sweep began, " + angles().filter(a => a).length + " still rocking, " + (frames - atRest) + " frames after settling");
+  await sweep(2000, 600); await wait(50);
+  const slow = Math.max(...angles().map(Math.abs));
+  t("a slow hand along the shelf rocks nothing", slow < .2, slow.toFixed(2) + "°");
+  await wait(1400); document.body.classList.add("spines"); await wait(100);
+  await sweep(120, 600); await wait(80);
+  const sp = Math.max(...angles().map(Math.abs));
+  t("…and in the spines view a fast hand rocks nothing", sp === 0, sp.toFixed(2) + "°");
+  document.body.classList.remove("spines");
+}), 600));
+</script>`;
+
 /* A life opens where the reader is. A face pressed 1,147px down the front door used to switch
    to the Lives wing first, fly a book in from 3,400px below the screen, and close onto the top
    of the Lives wing: the reader lost the page they were on. */
@@ -779,8 +822,11 @@ if (!CHROME) {
         // the desk run is a dark-mode device with no stored choice: it must still open on paper
         : `<script>try{localStorage.removeItem("cp-theme")}catch(e){}var __mm=matchMedia.bind(window);window.matchMedia=function(q){return /prefers-color-scheme: ?dark/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__mm(q)}</script>`));
   // headless Chrome answers (hover:hover) false, so the field would never run: this frame says it has a mouse
-  report("The wall has weight", drive(fs.readFileSync(dist("index.html"), "utf8"), WEIGHT, null,
-    `<script>var __hm=matchMedia.bind(window);window.matchMedia=function(q){return /^\\(hover: ?hover\\)$/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__hm(q)}</script>`));
+  {
+    const hover = `<script>var __hm=matchMedia.bind(window);window.matchMedia=function(q){return /^\\(hover: ?hover\\)$/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__hm(q)}</script>`;
+    const front = fs.readFileSync(dist("index.html"), "utf8");
+    report("The wall has weight", [...drive(front, WEIGHT, null, hover), ...drive(front, WEIGHT_SHELF, [1440, 900], hover)]);
+  }
   report("A face becomes its book", drive(fs.readFileSync(dist("index.html"), "utf8"), FACEFLIGHT, null));
   report("A life opens where you are", drive(fs.readFileSync(dist("index.html"), "utf8"), WHERE, null));
   report("A press answers at once", drive(fs.readFileSync(dist("index.html"), "utf8"), PRESS, null));
