@@ -800,6 +800,33 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     if (!/if\(!reduce&&!matchMedia\("\(hover:hover\)"\)\.matches\)/.test(guard))
       err("theme/press.js", "the finger's field runs without asking first — open it with if(!reduce&&!matchMedia(\"(hover:hover)\").matches) (motion rules 3 and 5)");
   }
+  /* The wall's weight (2026-11-26). A fast hand sets what it passes swinging on a spring. A spring
+     is the one motion here that runs on after the hand has gone, so it is the one that could
+     become a loop nobody asked for, a swing larger than the hand's lean, or a wobble that never
+     stops. So: the swing stays under the 6° the face under the hand leans, and with FIELD.lean
+     under the 9° a book under the hand turns; the damping settles it within 1.2s (its envelope
+     e^(-damp·t/2) reaches 2% at 7.8/damp s, so damp ≥ 6.5) and is under critical (2√k), or it
+     creeps back instead of swinging; the frame loop asks for another frame only while something
+     still moves, and removes the swing when it settles; and it asks reduced motion first. */
+  const spring = js.match(/const SPRING=\{k:([\d.]+),damp:([\d.]+),max:([\d.]+),kick:([\d.]+),slow:([\d.]+),rest:([\d.]+)\}/);
+  if (!spring) err("theme/press.js", "the wall's weight is missing or rewritten past the check — keep const SPRING={k:<1/s²>,damp:<1/s>,max:<deg>,kick:<deg/s per px/ms>,slow:<px/ms>,rest:<deg>} (motion rule 3)");
+  else {
+    const [, k, damp, max, , slow, rest] = spring.map(Number);
+    if (max >= 6) err("theme/press.js", `a face swings ${max}° — keep SPRING.max under the 6° the face under the hand leans (motion rule 3)`);
+    if (field && max + +field[2] >= 9) err("theme/press.js", `a neighbour book can turn ${max + +field[2]}° (SPRING.max + FIELD.lean) — keep the sum under the 9° the book under the hand turns (motion rule 3)`);
+    if (damp < 6.5) err("theme/press.js", `the swing settles in ${(7.8 / damp).toFixed(2)}s — 1.2s at most, so SPRING.damp ≥ 6.5; a frame that keeps swinging is a loop (motion rule 4)`);
+    if (damp >= 2 * Math.sqrt(k)) err("theme/press.js", `SPRING.damp ${damp} is at or past critical (2√k = ${(2 * Math.sqrt(k)).toFixed(1)}): the frames creep back instead of swinging, and the weight is lost`);
+    if (!(rest > 0) || !(slow > 0)) err("theme/press.js", "SPRING.rest and SPRING.slow must be above 0 — with no rest the loop never stops, with no slow every drift sets the wall swinging (motion rules 2 and 4)");
+    const sw = js.slice(js.indexOf("const swing="), js.indexOf("})();", js.indexOf("const swing=")));
+    if (!/if\(Math\.abs\(s\.a\)<SPRING\.rest&&Math\.abs\(s\.w\)<SPRING\.rest\*\d+\)\{still\(el\);continue\}/.test(sw)
+      || !/if\(on\.size\)raf=requestAnimationFrame\(step\);else\{raf=0/.test(sw)
+      || (sw.match(/requestAnimationFrame\(step\)/g) || []).length !== 2)
+      err("theme/press.js", "the swing's frame loop has no settle exit — a frame under SPRING.rest must still(el), and step must ask for a frame only if(on.size) (motion rule 4: only the Captain moves at rest)");
+    if (!/Math\.abs\(s\.a\)>SPRING\.max\)\{s\.a=Math\.sign\(s\.a\)\*SPRING\.max/.test(sw))
+      err("theme/press.js", "the swing is not held at SPRING.max — clamp s.a to ±SPRING.max in step, or a hard push swings a face past the hand's lean (motion rule 3)");
+    if (!/return \(el,vx,k,z,h\)=>\{if\(reduce\)return;/.test(sw))
+      err("theme/press.js", "the swing runs without asking first — open its push with if(reduce)return; (motion rule 5)");
+  }
   for (const f of ["theme/press.js", "theme/atlas.js", "theme/reading.js"])
     for (const m of cssOf(f).matchAll(/addEventListener\(\s*["'](touch(?:start|move)|scroll)["']/g)) {
       const src = cssOf(f); let i = m.index + m[0].length, depth = 1;   // read to the call's own closing paren

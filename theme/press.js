@@ -347,12 +347,44 @@ function loadLibrary(){
    coordinates, so scrolling does not re-measure: 157 books are read once, not on every move.
    Only where there is hover, never with reduced motion, and never in the spines view, where the
    books stand edge-out and do not turn (tiltBooks holds still there too). */
+/* THE WALL HAS WEIGHT (motion rule 3). Until 2026-11-26 the field set where each thing should lean
+   and a CSS transition eased it there, so a swipe across the wall and a slow drift felt the same.
+   Now a hand moving fast gives what it passes a push in its direction of travel: a face swings on
+   its nail (in its own plane, about the top of the frame), a book rocks on its spine, and a damped
+   spring brings it back past rest once or twice, then still. A slow hand pushes nothing (`slow`,
+   px/ms). The spring runs on its own frame loop that exists only while something is moving: when
+   every angle and speed is under `rest`, the loop stops and the inline rotate is removed, so at
+   rest nothing runs but the Captain's breath (rule 4). `max` caps the swing below the 6° the face
+   under the hand leans, and with FIELD.lean below the 9° a book under the hand turns; `damp` ≥ 6.5
+   settles it within 1.2s (the envelope e^(-damp·t/2) falls to 2% by 7.8/damp seconds). The swing
+   writes `rotate` and `translate`, not `transform`, so the lean's transition never smooths the
+   spring away. One spring for the wall, the shelf and the phone. Never with reduced motion. */
+const SPRING={k:140,damp:7.2,max:3.5,kick:11,slow:.5,rest:.03};
+const swing=(()=>{const on=new Map();let raf=0,last=0;
+  const still=el=>{on.delete(el);el.style.removeProperty("rotate");el.style.removeProperty("translate")};
+  const step=t=>{const dt=last?Math.min(.034,(t-last)/1000):1/60;last=t;
+    for(const [el,s] of on){s.w+=(-SPRING.k*s.a-SPRING.damp*s.w)*dt;s.a+=s.w*dt;
+      if(Math.abs(s.a)>SPRING.max){s.a=Math.sign(s.a)*SPRING.max;s.w*=-.5}   // the nail holds: never past max
+      if(Math.abs(s.a)<SPRING.rest&&Math.abs(s.w)<SPRING.rest*20){still(el);continue}
+      if(s.z){const r=s.a*Math.PI/180,h=s.h/2;   // about the nail at the top of the frame, not the plate's centre
+        el.style.rotate=s.a.toFixed(2)+"deg";el.style.translate=`${(-h*Math.sin(r)).toFixed(2)}px ${(-h*(1-Math.cos(r))).toFixed(2)}px`}
+      else el.style.rotate="y "+s.a.toFixed(2)+"deg"}
+    if(on.size)raf=requestAnimationFrame(step);else{raf=0;last=0}};   // settled: the loop ends here
+  /* push el with the hand's speed along the row, vx in px/ms, k its nearness 0–1; z: hung on a nail
+     (a face, of height h) or turning on its spine (a book). A push only ever adds speed in its own
+     direction, so a hand that lingers does not keep winding it up. */
+  return (el,vx,k,z,h)=>{if(reduce)return;const v=Math.abs(vx)-SPRING.slow;if(v<=0||k<=0)return;
+    const w=-Math.sign(vx)*Math.min(SPRING.max*16,SPRING.kick*v*k);
+    const s=on.get(el)||{a:0,w:0,z,h};if(Math.abs(s.w)>=Math.abs(w)&&Math.sign(s.w)===Math.sign(w))return;
+    s.w=w;on.set(el,s);if(!raf)raf=requestAnimationFrame(step)}})();
+/* how fast the hand is going along the row, px/ms, smoothed over a frame or two; a pause resets it */
+const pace=()=>{let x=0,t=0,v=0;return (nx,nt)=>{const dt=nt-t;v=t&&dt>0&&dt<100?v*.4+.6*(nx-x)/dt:0;x=nx;t=nt;return v}};
 const FIELD={r:260,lean:5,spill:.6};
 if(!reduce&&matchMedia("(hover:hover)").matches){
-  const FIELDS=[{on:".wall",hand:".wface .lit",el:h=>h,reach:1,tip:1,spot:el=>[el,"--mx","--my"]},
+  const FIELDS=[{on:".wall",hand:".wface .lit",el:h=>h,reach:1,tip:1,hung:1,spot:el=>[el,"--mx","--my"]},
     {on:".shelf",hand:".slot",el:h=>h.querySelector(".book"),reach:2.5,tip:-1,spot:el=>[el.querySelector(".gloss")||el,"--gx","--gy"],
      still:()=>document.body.classList.contains("spines")}];
-  let surf=null,spec=null,things=[],on=new Set(),raf=0,pt=null;
+  let surf=null,spec=null,things=[],on=new Set(),raf=0,pt=null,vx=0;const speed=pace();
   const edge=v=>Math.min(96,Math.max(4,v));
   const measure=(w,s)=>{surf=w;spec=s;things=[...w.querySelectorAll(s.hand)].map(h=>{const el=s.el(h);if(!el)return null;
     const r=el.getBoundingClientRect(),b=h.getBoundingClientRect();
@@ -362,8 +394,9 @@ if(!reduce&&matchMedia("(hover:hover)").matches){
   const quiet=()=>{for(const f of[...on])calm(f)};
   const place=()=>{raf=0;if(!pt||!spec)return;
     if(spec.still&&spec.still()){quiet();return}
-    const now=new Set(),R=FIELD.r*spec.reach;
+    const now=new Set(),R=FIELD.r*spec.reach,P=R/2;
     for(const f of things){const dx=pt.x-f.x,dy=pt.y-f.y,d=Math.hypot(dx,dy);
+      if(d<P)swing(f.el,vx,1-d/P,spec.hung,f.h);   // the hand's weight: what it passes swings after it
       if(d>=R||(pt.x>=f.l&&pt.x<f.R&&pt.y>=f.t&&pt.y<f.B))continue;   // out of reach, or under the hand itself
       const k=(1-d/R)**1.3,st=f.el.style,[sp,sx,sy]=f.spot;
       st.setProperty("--fy",(-dx/d*FIELD.lean*k).toFixed(2)+"deg");st.setProperty("--fx",(spec.tip*dy/d*FIELD.lean*k).toFixed(2)+"deg");
@@ -375,7 +408,8 @@ if(!reduce&&matchMedia("(hover:hover)").matches){
     if(e.target.closest)for(const x of FIELDS)if((w=e.target.closest(x.on))){s=x;break}
     if(!w){if(on.size){pt=null;quiet()}surf=null;return}   // the hand has gone: the next visit measures afresh
     if(w!==surf||!things.length||!things[0].el.isConnected){quiet();measure(w,s)}
-    pt={x:e.pageX,y:e.pageY};if(!raf)raf=requestAnimationFrame(place)},{passive:true});
+    // not pageX: an event a script makes reports pageX without the scroll
+    pt={x:e.clientX+scrollX,y:e.clientY+scrollY};vx=speed(pt.x,e.timeStamp);if(!raf)raf=requestAnimationFrame(place)},{passive:true});
   addEventListener("resize",()=>{surf=null},{passive:true});
 }
 /* THE WALL FEELS THE FINGER (motion rule 3, on a phone). With no hover the field above never
@@ -387,11 +421,13 @@ if(!reduce&&matchMedia("(hover:hover)").matches){
    reduced motion. */
 const TOUCH={r:200,lean:5,spill:.6};
 if(!reduce&&!matchMedia("(hover:hover)").matches){
-  let wall=null,faces=[],on=new Set(),raf=0,pt=null;
+  let wall=null,faces=[],on=new Set(),raf=0,pt=null,speed=pace();
   const clamp=v=>Math.min(96,Math.max(4,v));
   const calm=f=>{for(const p of["--fx","--fy","--spill"])f.el.style.removeProperty(p);on.delete(f)};
-  const place=()=>{raf=0;if(!pt||!wall)return;const b=wall.getBoundingClientRect(),sx=wall.scrollLeft,now=new Set();
+  const place=()=>{raf=0;if(!pt||!wall)return;const b=wall.getBoundingClientRect(),sx=wall.scrollLeft,now=new Set(),P=TOUCH.r/2;
+    const vx=speed(pt.x-b.left+sx,performance.now());   // the finger's pace across the faces, the wall's scroll included
     for(const f of faces){const dx=pt.x-(b.left+f.x-sx),dy=pt.y-(b.top+f.y),d=Math.hypot(dx,dy);
+      if(d<P)swing(f.el,vx,1-d/P,1,f.h);
       if(d>=TOUCH.r||(Math.abs(dx)<f.w/2&&Math.abs(dy)<f.h/2))continue;   // out of reach, or under the finger itself
       const k=(1-d/TOUCH.r)**1.3,st=f.el.style;
       st.setProperty("--fy",(-dx/d*TOUCH.lean*k).toFixed(2)+"deg");st.setProperty("--fx",(dy/d*TOUCH.lean*k).toFixed(2)+"deg");
@@ -408,7 +444,7 @@ if(!reduce&&!matchMedia("(hover:hover)").matches){
     at(e)},{passive:true});
   addEventListener("touchmove",e=>{if(pt)at(e)},{passive:true});
   addEventListener("scroll",ask,{passive:true,capture:true});   // the wall carries faces under a finger that has stopped
-  const lift=()=>{pt=null;for(const f of[...on])calm(f)};
+  const lift=()=>{pt=null;speed=pace();for(const f of[...on])calm(f)};
   addEventListener("touchend",e=>{if(!e.touches.length)lift()},{passive:true});
   addEventListener("touchcancel",lift,{passive:true});
 }
