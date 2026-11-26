@@ -5,7 +5,7 @@ const EASE="cubic-bezier(.19,.9,.22,1)", EASE_IO="cubic-bezier(.62,.02,.2,1)";
    anyone holding the link (build/pages.mjs marks them retired); the library itself is Lives and
    the Atlas. route() sends an old #press or #t/<id> address to the page that still holds it. */
 const WINGS=[["home","Home"],["lives","Lives"],["atlas","The Atlas"],["colophon","Colophon"]];
-let wing="home", searchFocus=null, readerFocus=null, current=null, currentKind=null, activeConst=null, activeRegion=null, selectedPerson=null;
+let wing="home", searchFocus=null, readerFocus=null, readThisOpen=[], current=null, currentKind=null, activeConst=null, activeRegion=null, selectedPerson=null;
 
 /* ---------- derive ---------- */
 PEOPLE.forEach((p,i)=>{p.id="p"+i;p.color=DCOLOR[p.domain];p.degree=0});
@@ -359,7 +359,7 @@ function loadLibrary(){
    settles it within 1.2s (the envelope e^(-damp·t/2) falls to 2% by 7.8/damp seconds). The swing
    writes `rotate` and `translate`, not `transform`, so the lean's transition never smooths the
    spring away. One spring for the wall, the shelf and the phone. Never with reduced motion. */
-const SPRING={k:140,damp:7.2,max:3.5,kick:11,slow:.5,rest:.03};
+const SPRING={k:140,damp:8.2,max:3.5,kick:11,slow:.5,rest:.03};
 const swing=(()=>{const on=new Map();let raf=0,last=0;
   const still=el=>{on.delete(el);el.style.removeProperty("rotate");el.style.removeProperty("translate")};
   const step=t=>{const dt=last?Math.min(.034,(t-last)/1000):1/60;last=t;
@@ -462,40 +462,53 @@ function readNextHTML(kind,b,next){
     <span class="rs-nm"><span>Lives · ${n.b.mins} min</span><b>Read →</b></span></a>`;
 }
 /* Entries this browser has finished get a mark on the shelf (Reading.memory, theme/reading.js).
-   held: the life the reader is closing. If it was finished during this open (unmarked until now),
-   its mark and its count are held back and returned, for stampHome to press in once the book is home. */
+   held: the lives the reader is closing, the one on screen first, then the others it stepped through
+   in this open. Any of them finished during this open (unmarked until now) has its mark and its count
+   held back and returned, for stampHome to press in once the book is home. */
 function markRead(held){
-  let fresh=null;
+  held=held||[];const fresh=[];
   document.querySelectorAll("#livesShelf .slot").forEach(s=>{const d=Reading.memory.done("l/"+s.dataset.id);
-    if(d&&held&&s.dataset.id===held&&!s.classList.contains("read"))fresh=s;else s.classList.toggle("read",d)});
-  readTally(fresh&&held);
+    if(d&&held.includes(s.dataset.id)&&!s.classList.contains("read"))fresh.push(s);else s.classList.toggle("read",d)});
+  fresh.sort((a,b)=>held.indexOf(a.dataset.id)-held.indexOf(b.dataset.id));
+  readTally(fresh.map(s=>s.dataset.id));
   return fresh;
 }
-/* A LIFE FINISHED IS STAMPED. Closing a life finished in this open sends its book home, and once it
-   has landed (never mid-air) the read mark is pressed into it: the book, or the face it flew back
-   to, gives and springs back once, the mark inks in, and the key's tally ticks over. Never on load,
-   never for a life already finished, never for a reader who asked for less motion: then the mark
-   is simply there. Nothing is stored for it; the shelf's own class is the memory of what was marked. */
-const STAMP_MS=560;
-function stampHome(slot,id,face){
+/* A LIFE FINISHED IS STAMPED. Closing the reader on lives finished in this open sends its book home,
+   and once it has landed (never mid-air) the read mark is pressed in: the book, or the face it flew
+   back to, gives and springs back once, the mark inks in, and the key's tally ticks over. A life
+   finished and then left by the arrows or Read next is pressed too, after the one that flew home,
+   one after another (STAMP_GAP apart, nearest first), but only where its book or face is on screen;
+   one off screen simply shows its mark. Never on load, never for a life already finished, never
+   twice, never for a reader who asked for less motion: then the marks are simply there. Nothing is
+   stored for it; the shelf's own class is the memory of what was marked, and the lives passed
+   through live only in readThisOpen, which the next open empties. */
+const STAMP_MS=560,STAMP_GAP=140;
+function stampHome(fresh,id,face){
   const f=flight&&flight.id===id&&flight.dir==="out"?flight:null;
+  const seen=el=>{if(!el||!el.offsetParent)return false;const r=el.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth};
   const land=()=>{
-    slot.classList.add("read");readTally();
-    if(reduce||!f||current===id)return;   // no flight home, or the reader took it back: the mark simply appears
-    const pic=portraitOf(face),on=pic&&f.hidden.includes(pic)?face:f.hidden.includes(slot.querySelector(".book"))?slot:face||slot;
-    if(!on.offsetParent)return;
-    on.classList.add("stamp");setTimeout(()=>on.classList.remove("stamp"),STAMP_MS+120);
+    fresh.forEach(s=>s.classList.add("read"));readTally();
+    if(reduce||current)return;   // less motion, or a reader open again: the marks simply appear
+    const at=[],home=fresh.find(s=>s.dataset.id===id);
+    if(home&&f){const pic=portraitOf(face),on=pic&&f.hidden.includes(pic)?face:f.hidden.includes(home.querySelector(".book"))?home:face||home;
+      if(on.offsetParent)at.push(on)}   // no flight home: the one closed simply shows its mark
+    const o=at[0]&&at[0].getBoundingClientRect(),d=el=>{if(!o)return 0;const r=el.getBoundingClientRect();return Math.hypot(r.left-o.left,r.top-o.top)};
+    fresh.filter(s=>s!==home).map(s=>seen(s)?s:document.querySelector(`a.wface[data-open="life:${s.dataset.id}"]`))
+      .filter(seen).sort((a,b)=>d(a)-d(b)).forEach(el=>at.push(el));
+    at.forEach((on,i)=>setTimeout(()=>{if(current)return;
+      on.classList.add("stamp");setTimeout(()=>on.classList.remove("stamp"),STAMP_MS+120)},i*STAMP_GAP));
   };
   f?f.anims[0].finished.then(land,land):land();
 }
 /* The reader's own tally, in the key's Lives line: what this browser has finished and is partway
    through, counted from the same memory as the shelf's marks. A first visitor sees nothing, so the
    door's one public count stays the corrections. Only lives on the shelf count; a retired title's
-   page remembers too, but it is not one of the "people" the line counts. */
+   page remembers too, but it is not one of the "people" the line counts. held: lives whose count
+   waits for their stamp. */
 function readTally(held){
   const el=document.getElementById("keyYou");if(!el)return;
-  let done=0,part=0;
-  for(const b of LIVES){const r=Reading.memory.get("l/"+b.id);if(!r)continue;if(r.d&&b.id!==held)done++;else if(r.p>0)part++}
+  held=held||[];let done=0,part=0;
+  for(const b of LIVES){const r=Reading.memory.get("l/"+b.id);if(!r)continue;if(r.d&&!held.includes(b.id))done++;else if(r.p>0)part++}
   el.textContent=done===LIVES.length?" You have finished every one."
     :done&&part?` You have finished ${done} of them, and are partway through ${part}.`
     :done?` You have finished ${done} of them.`
@@ -712,7 +725,8 @@ function openReader(kind,id,opts){
   // the body is not here yet: fetch it, then open; if it cannot come, the entry's own page has it all
   if(!libLoaded){loadLibrary().then(()=>openReader(kind,id,opts),()=>{location.href="l/"+id+"/"});return}
   const wasOpen=!!current;
-  if(!wasOpen)readerFocus=document.activeElement;
+  if(!wasOpen){readerFocus=document.activeElement;readThisOpen=[]}
+  if(!readThisOpen.includes(id))readThisOpen.push(id);   // the lives this open passes through, for the stamp
   current=id;currentKind=kind;
   const r=document.getElementById("reader");
   document.getElementById("sheet").innerHTML=readerHTML(kind,b);
@@ -750,18 +764,18 @@ Reading.quotes({root:document.getElementById("reader"),scroller:document.getElem
   meta:()=>current?entryMeta("l",current):null});
 function closeReader(push){
   if(!current)return;
-  const kind=currentKind,id=current,face=readerFrom;let fresh=null;
+  const kind=currentKind,id=current,face=readerFrom,held=[id,...readThisOpen.filter(x=>x!==id).reverse()];let fresh=[];
   const finish=()=>{current=null;currentKind=null;
     const r=document.getElementById("reader");
     r.classList.remove("on");r.setAttribute("aria-hidden","true");
     document.body.style.overflow="";document.body.style.paddingRight="";
     document.title=(wing==="home"?"The Commodore Press":(WINGS.find(x=>x[0]===wing)[1]+" — The Commodore Press"));
     if(readProg){readProg.destroy();readProg=null}
-    fresh=markRead(id);
+    fresh=markRead(held);readThisOpen=[];
     const el=readerFocus;readerFocus=null;giveBack(el)};
   if(push!==false)history.pushState({w:wing},"",wingURL(wing));
   flyOut(kind,id,finish);
-  if(fresh)stampHome(fresh,id,face);
+  if(fresh.length)stampHome(fresh,id,face);
 }
 function step(d){
   const i=LIVES.findIndex(x=>x.id===current); if(i<0)return;

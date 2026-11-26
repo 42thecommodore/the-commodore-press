@@ -814,7 +814,10 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     const [, k, damp, max, , slow, rest] = spring.map(Number);
     if (max >= 6) err("theme/press.js", `a face swings ${max}° — keep SPRING.max under the 6° the face under the hand leans (motion rule 3)`);
     if (field && max + +field[2] >= 9) err("theme/press.js", `a neighbour book can turn ${max + +field[2]}° (SPRING.max + FIELD.lean) — keep the sum under the 9° the book under the hand turns (motion rule 3)`);
-    if (damp < 6.5) err("theme/press.js", `the swing settles in ${(7.8 / damp).toFixed(2)}s — 1.2s at most, so SPRING.damp ≥ 6.5; a frame that keeps swinging is a loop (motion rule 4)`);
+    // the loop stops when the swing is under SPRING.rest, so time to rest is measured from the largest
+    // swing down to rest, not to 2% of it: the 2% reckoning said 1.08s while faces moved until ~1.3s
+    const toRest = 2 * Math.log(max / rest) / damp;
+    if (toRest > 1.2) err("theme/press.js", `a full swing takes ${toRest.toFixed(2)}s to come to rest (2·ln(SPRING.max/SPRING.rest)/SPRING.damp) — 1.2s at most; raise SPRING.damp to ${(2 * Math.log(max / rest) / 1.2).toFixed(2)} or more (motion rule 4: a frame that keeps swinging is a loop)`);
     if (damp >= 2 * Math.sqrt(k)) err("theme/press.js", `SPRING.damp ${damp} is at or past critical (2√k = ${(2 * Math.sqrt(k)).toFixed(1)}): the frames creep back instead of swinging, and the weight is lost`);
     if (!(rest > 0) || !(slow > 0)) err("theme/press.js", "SPRING.rest and SPRING.slow must be above 0 — with no rest the loop never stops, with no slow every drift sets the wall swinging (motion rules 2 and 4)");
     const sw = js.slice(js.indexOf("const swing="), js.indexOf("})();", js.indexOf("const swing=")));
@@ -908,6 +911,25 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
   else if (+swell > .6) err("theme/atlas.css", `a mark under the hand swells ${(+swell * 100).toFixed(0)}% — 60% at most, or the chart bounces instead of catching the light`);
   if (!/@media \(prefers-reduced-motion:reduce\)\{\.chart-svg \.town\{scale:none\}\}/.test(css))
     err("theme/atlas.css", "the chart's marks still swell for a reader who asked for less motion — add @media (prefers-reduced-motion:reduce){.chart-svg .town{scale:none}}; the light may stay (motion rule 5)");
+  /* The lanes glint from the same lamp. Until 2026-11-26, 0 of 27 drawn lanes answered a hand on
+     open water. A glint is held like a neighbour mark: no brighter than LAMP.spill (rule 3), set
+     only in lampTick, so it rides the lamp's one frame per move and never asks for its own (rule 4),
+     dark when nothing set it, and light only — no lane moves or thickens, so there is nothing for
+     reduced motion to stop (rule 5) and the lettering above stays put. */
+  const tick = js.slice(js.indexOf("function lampTick("), js.indexOf("function lampOff("));
+  if (!/glint\.set\(L\.el, LAMP\.spill \* \(1 - d \/ R\) \*\* 1\.5\);/.test(tick))
+    err(F, "a lane's glint is not bounded by the lamp's spill — keep glint.set(L.el, LAMP.spill * (1 - d / R) ** 1.5); in lampTick, so no lane outshines the mark under the hand (motion rule 3)");
+  const gsets = (js.match(/setProperty\("--glint"/g) || []).length;
+  if (gsets !== 1 || !/setProperty\("--glint"/.test(tick))
+    err(F, `a lane's glint is set ${gsets === 1 ? "outside lampTick" : gsets + " times"} — set --glint only in lampTick, on the lamp's own frame; a glint lit from anywhere else can stay lit with no hand there (motion rule 4)`);
+  const gcode = js.slice(js.indexOf("let lampLanes"), js.indexOf("function lampMove("));
+  if (!gcode || /requestAnimationFrame|setTimeout|setInterval/.test(gcode))
+    err(F, "the lanes' glint keeps a timer or a frame of its own — it is read in lampTick and asks for nothing (motion rule 4)");
+  const grule = (css.match(/\.chart-svg \.glint\{([^}]*)\}/) || [])[1];
+  if (!grule || !/stroke-opacity:var\(--glint,0\)/.test(grule))
+    err("theme/atlas.css", "the lanes' glint is missing or lit at rest — keep .chart-svg .glint{…stroke-opacity:var(--glint,0)…}, dark until the lamp sets it");
+  else if (/transform|scale|translate|animation|stroke-width:var|stroke-dashoffset/.test(grule) || /transition:(?![^;]*stroke-opacity)|transition:[^;]*,/.test(grule))
+    err("theme/atlas.css", "the lanes' glint moves — it is light only: stroke-opacity may change (and settle on a transition of stroke-opacity alone), nothing else (motion rules 5 and 1)");
 }
 
 /* ---------- a life finished is stamped ----------
@@ -941,6 +963,19 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
   const close = js.indexOf("function closeReader("), closeEnd = js.indexOf("\n}\n", close);
   if (!calls.length || calls.some(i => i < close || i > closeEnd))
     err("theme/press.js", "stampHome is called from somewhere other than closeReader — a stamp is never on load and never for a life already finished; call it only from the close path (motion rule 2)");
+  // A life finished and then left by the arrows or Read next is pressed too when the reader closes
+  // (2026-11-26: until then it was marked and never stamped). The lives an open passes through are
+  // held in memory only, emptied by the next open, and handed to markRead by the close.
+  const open = js.slice(js.indexOf("function openReader("), js.indexOf("\n}\n", js.indexOf("function openReader(")));
+  const closeFn = js.slice(close, closeEnd);
+  if (!/if\(!wasOpen\)\{[^}]*readThisOpen=\[\]/.test(open) || !/readThisOpen\.push\(id\)/.test(open))
+    err("theme/press.js", "openReader no longer remembers the lives this open passes through — on a first open set readThisOpen=[], and push each id, so a life finished and stepped past is stamped on close");
+  if (!/held=\[id,\.\.\.readThisOpen[^\]]*\]/.test(closeFn) || !/markRead\(held\)/.test(closeFn))
+    err("theme/press.js", "closeReader hands markRead only the life on screen — pass held=[id,...readThisOpen…] to markRead(held), or a life finished and stepped past is marked but never stamped");
+  if (js.split("\n").some(l => /readThisOpen/.test(l) && /Storage|Reading\.memory|cookie/.test(l)))
+    err("theme/press.js", "readThisOpen is stored — the lives an open passes through live in memory only; the colophon names cp-read and nothing more");
+  const gap = +(js.match(/STAMP_GAP=(\d+)/) || [])[1];
+  if (!gap || gap > 200) err("theme/press.js", `the stamps after the first are ${gap ? gap + "ms" : "not"} apart — keep STAMP_GAP at 200ms or less: one press after another, not a procession`);
 }
 
 /* ---------- the holidays: a tinted wall still reads, and never says "correction" ----------
