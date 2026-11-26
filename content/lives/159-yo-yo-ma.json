@@ -1,0 +1,53 @@
+{
+  "id": "yo-yo-ma",
+  "no": 159,
+  "keep": "He played at the inauguration, unamplified, in the cold. Of every act on the Capitol steps that day, the quartet alone chose to broadcast its tape.",
+  "n": "Yo-Yo Ma",
+  "years": "born 1955",
+  "place": "France and the United States",
+  "field": "Music",
+  "group": "famous",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "The world heard him play at Barack Obama's inauguration, and he was playing. What it heard was a tape made two days before.",
+  "copy": [
+    "Yo-Yo Ma was born in Paris on 7 October 1955. The Obama White House's page for his Presidential Medal of Freedom calls him a child prodigy, who began serious study in New York in the early 1960s and made his Carnegie Hall debut at nine. He won his first Grammy at the 1985 ceremony, for Bach: The Unaccompanied Cello Suites. In 2018 he set out on a two-year journey to play those six suites in 36 locations around the world. By November 2026 grammy.com counted 20 wins from 33 nominations.",
+    "On 16 October 1999 he left a cello made in Venice in 1733 in the trunk of a New York taxi. A police source valued it at between $2 million and $2.5 million; Ma declined to estimate. The cab pulled away at 1:20 p.m. Police traced its medallion to a garage in Queens and had the cello back to him by 5:15, in time for a concert beneath the Brooklyn Bridge. \"I did something really stupid,\" he said. He had the receipt.",
+    "On 20 January 2009 he played John Williams's Air and Simple Gifts with Itzhak Perlman, Gabriela Montero and Anthony McGill. The temperature hovered around 30 degrees on the Capitol steps, the AP reported, too cold for clarinet, cello or violin to hold true pitch. The piano, Florman said, will not hold its tune below 55 degrees for more than two hours. Every act had laid down a tape. At the sound checks the day before, all but the quartet chose to broadcast their live performances. The four played at 11:43 a.m., unamplified. Guests near them heard the instruments as well as the tape; the rest of the crowd and the broadcast heard only the recording. It became public that week, when the New York Times reported it. \"A broken string was not an option,\" Ma said. \"It was wicked cold.\""
+  ],
+  "bio": {
+    "t": "Bach: The Unaccompanied Cello Suites",
+    "a": "Yo-Yo Ma",
+    "u": "https://www.grammy.com/artists/yo-yo-ma/11918",
+    "why": "No printed life the house could stand behind turned up, so start with the record. It won his first Grammy, at the 1985 ceremony, and it is the music he took around the world again in 2018."
+  },
+  "contested": "Whether the tape was a precaution or a deception. Carole Florman, the inaugural committee's spokeswoman, told the AP: \"This isn't Milli Vanilli. They had to perform in such cold weather, the instruments couldn't possibly be in tune. They were able to play in sync with the tape. It's not unusual.\" She added that the four \"were very insistent on playing live until it became clear that it would be too cold\". Perlman told the Times, \"It would have been a disaster if we had done it any other way.\" Against them stands the AP's own account: the Marine Band, the youth choruses and the Navy Band Sea Chanters performed live in the same cold, though Aretha Franklin was accompanied by taped music. The house found no named critic of the decision in what it opened, so none is printed. The argument over whether his crossover records and the Silkroad project widen him or dilute him is real, but nothing the house has read states it at full strength.",
+  "across": [
+    {
+      "to": "lives:jiro-ono",
+      "label": "Jiro Ono",
+      "txt": "— another master the public met through a performance arranged for it: a recording two days old, a meal shot outside business hours."
+    }
+  ],
+  "facts": [
+    {
+      "b": "~30°F · 55°F",
+      "s": "The temperature at the ceremony, and the point below which a piano will not hold tune for more than two hours, per the inaugural committee: AP, as published by NBC News, 23 January 2009"
+    },
+    {
+      "b": "$2m–$2.5m",
+      "s": "A police source's value for the 1733 Venetian cello left in a taxi on 16 October 1999: CBS News, 17 October 1999"
+    },
+    {
+      "b": "36",
+      "s": "Locations planned for his two-year Bach tour, begun in 2018: NPR, 13 April 2019"
+    },
+    {
+      "b": "20 of 33",
+      "s": "Grammy wins from nominations, as of November 2026: grammy.com, Yo-Yo Ma artist page"
+    }
+  ]
+}
