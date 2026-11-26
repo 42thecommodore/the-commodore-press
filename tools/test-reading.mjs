@@ -686,8 +686,10 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
    appeared the instant the reader closed, under a book still in the air. Now the mark is held
    until the book is home, then pressed into that one book, once, and the key's tally ticks over;
    on a reload, for a life already finished, or for a reader who asked for less motion, nothing is
-   pressed and the mark is simply there. mode: "finish", "reload" (a finished life in memory) or
-   "reduce" (the page told the reader asked for less motion). */
+   pressed and the mark is simply there. A life finished and then left by the arrows (or Read next)
+   is pressed too when the reader finally closes, after the book that flew home. mode: "finish",
+   "reload" (a finished life in memory), "reduce" (the page told the reader asked for less motion),
+   "step" (finish A, step to B, close), "step-both" (finish both) or "step-reduce". */
 const STAMP = mode => String.raw`
 <script>
 addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
@@ -704,6 +706,35 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   const reader = document.getElementById("reader");
   reader.scrollTop = reader.scrollHeight; reader.dispatchEvent(new Event("scroll")); await wait(400);
   t("reading to the end finishes the life", Reading.memory.done("l/" + id));
+  if (/^step/.test(${JSON.stringify(mode)})) {
+    // finish A, then leave it by the arrows for B; A's book is on screen beside B's when the reader closes
+    const slotB = document.querySelectorAll("#livesShelf .slot")[2];
+    step(1); await wait(600);
+    t("the arrows step on to the next life", current === slotB.dataset.id, "current: " + current);
+    if (${JSON.stringify(mode)} === "step-both") { reader.scrollTop = reader.scrollHeight; reader.dispatchEvent(new Event("scroll")); await wait(400); }
+    const bDone = !!Reading.memory.done("l/" + slotB.dataset.id);
+    t(bDone ? "…and reading that one to the end finishes it too" : "…which is not finished just by opening it", bDone === (${JSON.stringify(mode)} === "step-both"), "B finished: " + bDone);
+    t("while the reader is open, the life stepped past waits for its mark", !slot.classList.contains("read") && __stamps.length === 0, "marked: " + slot.classList.contains("read") + ", " + __stamps.length + " stamps");
+    closeReader(); await wait(1600);
+    const marks = __stamps.map(s => s && (s.dataset.id || s.className));
+    if (${JSON.stringify(mode)} === "step-reduce") {
+      t("for a reader who asked for less motion, the life stepped past is simply marked: nothing is pressed", __stamps.length === 0 && slot.classList.contains("read"), __stamps.length + " stamps, marked: " + slot.classList.contains("read"));
+      return;
+    }
+    if (${JSON.stringify(mode)} === "step") {
+      t("closing on B stamps A, the life finished and stepped past, once; B, unfinished, is not pressed", __stamps.length === 1 && __stamps[0] === slot && slot.classList.contains("read") && !slotB.classList.contains("read"),
+        __stamps.length + " stamps (" + marks.join(", ") + "), A marked: " + slot.classList.contains("read") + ", B marked: " + slotB.classList.contains("read"));
+      t("…and the key's tally counts it", document.getElementById("keyYou").textContent.trim() === "You have finished 1 of them.", document.getElementById("keyYou").textContent.trim());
+    } else {
+      t("both finished: the book that flew home is pressed first, then A, each once", __stamps.length === 2 && __stamps[0] === slotB && __stamps[1] === slot,
+        __stamps.length + " stamps (" + marks.join(", ") + ")");
+      t("…and the key's tally counts both", document.getElementById("keyYou").textContent.trim() === "You have finished 2 of them.", document.getElementById("keyYou").textContent.trim());
+    }
+    const n = __stamps.length;
+    openReader("lives", id, { src: slot }); await wait(1000); closeReader(); await wait(1400);
+    t("opening and closing again presses nothing more", __stamps.length === n, __stamps.length + " stamps");
+    return;
+  }
   closeReader(); await wait(60);
   if (${JSON.stringify(mode)} === "reduce") {
     await wait(1000);
@@ -791,7 +822,11 @@ if (!CHROME) {
     report("A life finished is stamped", [
       ...drive(front, STAMP("finish"), null, STAMP_HEAD("{}", false)),
       ...drive(front, STAMP("reload"), null, STAMP_HEAD(JSON.stringify({ ["l/" + second]: { p: 1, d: 1, t: 1 } }), false)),
-      ...drive(front, STAMP("reduce"), null, STAMP_HEAD("{}", true))]);
+      ...drive(front, STAMP("reduce"), null, STAMP_HEAD("{}", true)),
+      // finished, then left by the arrows: the reader closes on the next life, and the one stepped past is pressed too
+      ...drive(front, STAMP("step"), null, STAMP_HEAD("{}", false)),
+      ...drive(front, STAMP("step-both"), null, STAMP_HEAD("{}", false)),
+      ...drive(front, STAMP("step-reduce"), null, STAMP_HEAD("{}", true))]);
   }
   // a life with a plate and a keep line, and a retired title: the two shapes an entry page comes in.
   // Only the life opens in the library's reader; the Press's titles are read on their own pages.

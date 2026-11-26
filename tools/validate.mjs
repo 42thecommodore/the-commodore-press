@@ -941,6 +941,19 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
   const close = js.indexOf("function closeReader("), closeEnd = js.indexOf("\n}\n", close);
   if (!calls.length || calls.some(i => i < close || i > closeEnd))
     err("theme/press.js", "stampHome is called from somewhere other than closeReader — a stamp is never on load and never for a life already finished; call it only from the close path (motion rule 2)");
+  // A life finished and then left by the arrows or Read next is pressed too when the reader closes
+  // (2026-11-26: until then it was marked and never stamped). The lives an open passes through are
+  // held in memory only, emptied by the next open, and handed to markRead by the close.
+  const open = js.slice(js.indexOf("function openReader("), js.indexOf("\n}\n", js.indexOf("function openReader(")));
+  const closeFn = js.slice(close, closeEnd);
+  if (!/if\(!wasOpen\)\{[^}]*readThisOpen=\[\]/.test(open) || !/readThisOpen\.push\(id\)/.test(open))
+    err("theme/press.js", "openReader no longer remembers the lives this open passes through — on a first open set readThisOpen=[], and push each id, so a life finished and stepped past is stamped on close");
+  if (!/held=\[id,\.\.\.readThisOpen[^\]]*\]/.test(closeFn) || !/markRead\(held\)/.test(closeFn))
+    err("theme/press.js", "closeReader hands markRead only the life on screen — pass held=[id,...readThisOpen…] to markRead(held), or a life finished and stepped past is marked but never stamped");
+  if (js.split("\n").some(l => /readThisOpen/.test(l) && /Storage|Reading\.memory|cookie/.test(l)))
+    err("theme/press.js", "readThisOpen is stored — the lives an open passes through live in memory only; the colophon names cp-read and nothing more");
+  const gap = +(js.match(/STAMP_GAP=(\d+)/) || [])[1];
+  if (!gap || gap > 200) err("theme/press.js", `the stamps after the first are ${gap ? gap + "ms" : "not"} apart — keep STAMP_GAP at 200ms or less: one press after another, not a procession`);
 }
 
 /* ---------- the holidays: a tinted wall still reads, and never says "correction" ----------
