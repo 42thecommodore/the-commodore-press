@@ -35,6 +35,11 @@
       "to": "lives:vannevar-bush",
       "label": "Vannevar Bush",
       "txt": "— whose differential analyzer he ran at MIT, and who suggested he spend a summer on genetics."
+    },
+    {
+      "to": "lives:alan-turing",
+      "label": "Alan Turing",
+      "txt": "— the English mathematician who spent the same war on codes, and was shut out of the work afterwards."
     }
   ],
   "facts": [

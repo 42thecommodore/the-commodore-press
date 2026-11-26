@@ -1,0 +1,75 @@
+{
+  "id": "bayard-rustin",
+  "no": 158,
+  "keep": "Twice he resigned because of who he was. In 1963 the movement gave him the march to run.",
+  "n": "Bayard Rustin",
+  "years": "1912–1987",
+  "place": "United States",
+  "field": "Civil Rights",
+  "group": "obscure",
+  "cover": "#232E78",
+  "spineC": "#18205A",
+  "ink": "#EFF1FA",
+  "accent": "#9FD3EC",
+  "motif": "lines",
+  "lede": "Twice he resigned because of who he was, in 1953 and in 1960. In 1963 the movement's leaders handed him the March on Washington to run.",
+  "copy": [
+    "Bayard Rustin was born on 17 March 1912 and raised by his grandparents, Janifer and Julia Rustin, in West Chester, Pennsylvania. His non-violence began in their Quaker house. He joined the Fellowship of Reconciliation, the pacifist society, and helped found the Congress of Racial Equality. In 1947 he rode CORE's Journey of Reconciliation, an integrated bus trip through the upper South, and was arrested with the others. He served 22 days on a North Carolina chain gang. His published account of it led to reform of the chain gangs. Then, in January 1953, he gave a speech in Pasadena and was arrested afterwards in a parked car. On 22 January the Los Angeles County Superior Court convicted him of misdemeanour vagrancy. He got 60 days in jail and an order to register as a sex offender. The Fellowship asked him to resign.",
+    "He went south anyway. In Montgomery in 1956 he became a key adviser to Martin Luther King Jr., and brought the boycott the method he had practised since his Quaker childhood. In March 1960 King wrote that Bayard's \"expertness and commitment\" would be \"of inestimable value\". That June, Congressman Adam Clayton Powell said in public that King had been under \"undue influences ever since Bayard Rustin\" went to Alabama. On 27 June Rustin resigned as King's special assistant and as director of the Southern Christian Leadership Conference's New York office. He could not, he said, \"permit a situation to endure\" in which his place was used to cloud the issues. That year A. Philip Randolph directed the March on Washington, and Rustin was his deputy and its chief organiser. Randolph called him \"Mr. March-on-Washington\". More than 200,000 people came.",
+    "The record was used against him to the end. On 13 August 1963, two weeks before the march, Senator Strom Thurmond attacked him by name. From 1965 to 1979 he led the A. Philip Randolph Institute, as president and then co-chair. He died on 24 August 1987. In 2013 President Obama named him for the Presidential Medal of Freedom, noting that as an openly gay African American he stood at the intersection of several of the fights for equal rights. On 4 February 2020 Governor Gavin Newsom of California pardoned the 1953 conviction. The order says what the record had been for: his opponents used it \"to try to undermine him, his associates, and the civil rights movement.\""
+  ],
+  "bio": {
+    "t": "Lost Prophet: The Life and Times of Bayard Rustin",
+    "a": "John D'Emilio",
+    "y": "2003",
+    "why": "The standard life, and the one that takes his sexuality as part of the politics rather than a scandal beside it. This house has not read it; this entry rests on the King Papers, the King Institute's encyclopedia and the California pardon. Read the pardon too. It is two pages, and it names what the conviction was used for."
+  },
+  "contested": "How he lost his job in 1960. The famous version is that Powell threatened to tell the press King and Rustin were lovers unless the convention protests were called off. That story rests on Rustin's own recollection, in his oral history for Columbia, pages 160–161 and 267, as the King Papers' editors note. What the record from the time shows is Powell's public charge of 'undue influences' and Rustin's resignation statement of 27 June 1960. Whether King pushed him or he left before King decided is argued by his biographers, and this house has not opened the accounts on either side. Where Thurmond spoke on 13 August 1963, and in what words, is in the Congressional Record, which this house has not read; it prints none of them here. Even the Rustin entry at the King Institute says only that the Fellowship 'asked' him to resign in 1953.",
+  "across": [
+    {
+      "to": "lives:mlk",
+      "label": "Martin Luther King Jr.",
+      "txt": "— whose boycott he came to advise in 1956, whose side he left in 1960 under Powell's charge, and whose march he ran in 1963."
+    },
+    {
+      "to": "lives:alan-turing",
+      "label": "Alan Turing",
+      "txt": "— convicted a year earlier, on the other side of the Atlantic, for the same thing, and pardoned by a government decades after he died."
+    },
+    {
+      "to": "atlas:backup",
+      "label": "Get back up",
+      "txt": "— asked to resign in 1953 and again in 1960, he ran the march three years later."
+    }
+  ],
+  "facts": [
+    {
+      "b": "17 March 1912 · 22 days · 1965–1979 · 24 August 1987",
+      "s": "His birth, the chain gang after the 1947 Journey of Reconciliation, the Randolph Institute and his death: Martin Luther King, Jr. Research and Education Institute, Stanford, 'Rustin, Bayard'"
+    },
+    {
+      "b": "more than 200,000",
+      "s": "The crowd at the March on Washington, and Randolph's name for him: King Institute, 'Rustin, Bayard'"
+    },
+    {
+      "b": "22 January 1953 · 60 days",
+      "s": "The conviction in Los Angeles County Superior Court and the sentence: Equal Justice Initiative, 'Civil Rights Leader Bayard Rustin Pardoned for Conviction Under Anti-Gay Laws', eji.org"
+    },
+    {
+      "b": "27 June 1960",
+      "s": "His resignation from the SCLC, Powell's charge and the resignation statement: The Martin Luther King, Jr. Papers Project, 'To Adam Clayton Powell, Jr.', 24 June 1960, editorial note and notes 3–4"
+    },
+    {
+      "b": "13 August 1963",
+      "s": "Thurmond's attack: OutHistory, 'Strom Thurmond attacks Bayard Rustin', outhistory.org, item 2583"
+    },
+    {
+      "b": "8 August 2013",
+      "s": "The Medal of Freedom, posthumous: The White House, Office of the Press Secretary, 'President Obama Names Presidential Medal of Freedom Recipients', 8 August 2013"
+    },
+    {
+      "b": "4 February 2020 · section 647.5",
+      "s": "The pardon: State of California, Executive Order N-24-20, signed by Governor Gavin Newsom"
+    }
+  ]
+}

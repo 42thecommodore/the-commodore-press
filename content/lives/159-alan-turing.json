@@ -1,0 +1,70 @@
+{
+  "id": "alan-turing",
+  "no": 159,
+  "keep": "The pardon of 2013 covered one famous man. The law for the others came four years later.",
+  "n": "Alan Turing",
+  "years": "1912–1954",
+  "place": "England",
+  "field": "Mathematics & Computing",
+  "group": "famous",
+  "cover": "#6B1E2A",
+  "spineC": "#4E141E",
+  "ink": "#F7EBDF",
+  "accent": "#E7BE8A",
+  "motif": "grid",
+  "lede": "The government that read Germany's signals with his methods convicted him for loving a man and shut him out of the secret work. It pardoned him alone, sixty-one years later.",
+  "copy": [
+    "Alan Turing was born in a nursing home in Paddington on 23 June 1912. He went up to King's College, Cambridge, in 1931, took a distinguished degree in 1934 and a fellowship in 1935. His paper \"On Computable Numbers\", held back until August 1936 so it could cite Alonzo Church's parallel work, did something no one else's did. It defined computation by operations a person or a machine could actually perform.",
+    "At Bletchley Park in the war he took the Polish Bombe, a machine for testing Enigma settings, and made it into a far more powerful device. He broke the logic of the naval Enigma in late 1939. Reading it regularly took until mid-1941, and needed material captured by the Navy and new statistical methods. After the war he designed the Automatic Computing Engine, approved early in 1946. At the National Physical Laboratory not one component of it was assembled. Manchester gave the first practical demonstration of his principle in June 1948, and he went there. In 1950 he published \"Computing Machinery and Intelligence\" in the journal Mind, which Hodges calls a classic of artificial intelligence research.",
+    "From 1948, known homosexuals could not hold security clearance. In 1952 the police learned of his relationship with a young Manchester man. He was tried on 31 March. Rather than go to prison he accepted a year of oestrogen injections, meant to reduce his libido, and he was shut out of the secret work he had done since the war. On 8 June 1954 his cleaner found him dead of cyanide poisoning, a half-eaten apple beside the bed. The coroner returned suicide. In September 2009 Gordon Brown apologised for the government: \"we're sorry, you deserved so much better.\" On 24 December 2013 the Queen pardoned him under the Royal Prerogative of Mercy, at the Justice Secretary's request. The pardon covered one man. Section 164 of the Policing and Crime Act 2017 extended posthumous pardons in England and Wales to others convicted of the same abolished offences."
+  ],
+  "bio": {
+    "t": "Alan Turing: The Enigma",
+    "a": "Andrew Hodges",
+    "y": "1983",
+    "why": "The life that made him known, by a mathematician who could follow the work. This house has read Hodges' own summary, his entry for the Oxford Dictionary of National Biography on his website, not the book. Start there; it is short and it does not overclaim."
+  },
+  "contested": "Two things. First, his death. The coroner said suicide. His mother believed he had swallowed cyanide by accident in one of his chemistry experiments. Hodges rejects that, and thinks it more credible that Turing arranged his death so she could believe the accident. In June 2012 the philosopher Jack Copeland told a conference in Oxford that the inquest's evidence was insufficient to rule it a suicide, that Turing was cheerful and had written a list of things to do the next week, and that the apple, the image in every retelling, was never tested for cyanide. Second, what the war work was worth. The government's own pardon notice says it arguably shortened the war 'by at least two years'. The notice names no historian for it. It is a counterfactual, carried with its 'arguably', not a measurement, and it is usually repeated without it. The popular version also credits him alone with Enigma. Hodges' account gives the Poles the Bombe and the Navy the captures that made the naval key readable.",
+  "across": [
+    {
+      "to": "lives:bayard-rustin",
+      "label": "Bayard Rustin",
+      "txt": "— convicted a year later in California for the same thing, and pardoned by its governor decades after his death."
+    },
+    {
+      "to": "lives:claude-shannon",
+      "label": "Claude Shannon",
+      "txt": "— the other mathematician who spent the war on codes and came out of it with a theory of what machines could do."
+    }
+  ],
+  "facts": [
+    {
+      "b": "23 June 1912 · 1931 · 1934 · 1935 · August 1936",
+      "s": "His birth, King's College and the computable numbers paper: Andrew Hodges, 'Alan Mathison Turing', Oxford Dictionary of National Biography, as published at turing.org.uk"
+    },
+    {
+      "b": "late 1939 · mid-1941 · early 1946 · June 1948 · 1950",
+      "s": "Naval Enigma, the ACE and the Manchester machine, and 'Computing Machinery and Intelligence': Hodges, Oxford DNB"
+    },
+    {
+      "b": "31 March 1952 · a year · 8 June 1954",
+      "s": "The trial, the oestrogen injections, his death and the inquest: Hodges, Oxford DNB"
+    },
+    {
+      "b": "11 September 2009",
+      "s": "Brown's apology: The University of Manchester, 'Gordon Brown issues apology for treatment of Alan Turing', 11 September 2009"
+    },
+    {
+      "b": "24 December 2013 · at least two years",
+      "s": "The pardon, and the government's own estimate of the war work: Ministry of Justice, 'Royal pardon for WW2 code-breaker Dr Alan Turing', gov.uk"
+    },
+    {
+      "b": "June 2012",
+      "s": "Copeland's objection to the verdict: The Advocate, 23 June 2012"
+    },
+    {
+      "b": "section 164",
+      "s": "Posthumous pardons for the others: Policing and Crime Act 2017, section 164, legislation.gov.uk"
+    }
+  ]
+}
