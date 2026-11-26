@@ -1,0 +1,49 @@
+{
+  "id": "alfred-p-sloan",
+  "no": 162,
+  "keep": "The phrase pinned on him belongs to a 1932 pamphlet that wanted the state to destroy old goods. His own rule was harder to live with: business abroad without regard to politics.",
+  "n": "Alfred P. Sloan",
+  "years": "1875–1966",
+  "place": "United States",
+  "field": "Automobiles",
+  "group": "famous",
+  "cover": "#5A3A21",
+  "spineC": "#402714",
+  "ink": "#F6EEDF",
+  "accent": "#E0C08A",
+  "motif": "rings",
+  "lede": "The phrase everyone pins on him, planned obsolescence, is not his. It was the title of a pamphlet a New Yorker published in 1932, asking the government to give every pair of shoes a legal date of death.",
+  "copy": [
+    "Alfred P. Sloan took charge of General Motors in the middle of the 1920s, after leading it out of a financial crisis, and made it America's largest automotive producer. In 1928, by the historian Henry Ashby Turner's count, GM took close to 40 percent of the American market and made well over a quarter of a billion dollars in profit on more than 1.8 million trucks and cars. That autumn he toured Europe looking for a place to build, and chose Germany. He negotiated an option on Opel while he was there. GM exercised it in March 1929, bought 80 percent of the shares, and took the rest two years later. The total came to slightly over $33.3 million, more than a third of GM's after-tax profit in 1931.",
+    "Then Opel went on working in Hitler's Germany. Sloan set out his rule in a letter to a shareholder: an international business \"should conduct its operations in strictly business terms, without regard to the political beliefs of its management, or the political beliefs of the countries in which it is operating.\" He added that an American company abroad should \"govern its operations, wherever they may be, in accordance with the foreign policy of the United States.\" Turner's judgement is that Sloan \"despised the Nazis as outlaws but set the tone in the corporation\" with that insistence, at a time when American policy gave GM's men little guidance. An FBI inquiry in 1941 into Sloan and two other GM executives found nothing that incriminated any of them.",
+    "The phrase came from elsewhere. Bernard London, writing from 21 East Fortieth Street in New York, copyrighted Ending the Depression Through Planned Obsolescence in 1932. He complained that people were driving their old cars and wearing their old clothes for too long. His cure was a law. \"I would have the Government assign a lease of life to shoes and homes and machines,\" he wrote; when it ran out, the goods would be legally \"dead\", taken over by a government agency, and destroyed if unemployment was widespread. Sloan's name is not in it. What Sloan himself argued about the yearly model change is in his memoir, My Years with General Motors, which the house has not yet read."
+  ],
+  "bio": {
+    "t": "General Motors and the Nazis: The Struggle for Control of Opel, Europe's Biggest Carmaker",
+    "a": "Henry Ashby Turner Jr.",
+    "y": "2005",
+    "why": "Not a life, but the one book the house has read that puts Sloan's own words on its hardest question on the page, with the documents cited. The full biography is David Farber's Sloan Rules (2002), and his own account is My Years with General Motors; the house has read neither yet."
+  },
+  "contested": "How much GM, and Sloan with it, owed for Opel. The case against was made in Bradford Snell's paper \"American Ground Transport\" for a Senate antitrust subcommittee in 1974, and taken up by Charles Higham's Trading with the Enemy (1983) and others. Turner, working from GM's own files, calls Snell's paper \"the source of many of the gravest allegations\" and says the claims that GM went on controlling Opel after Hitler declared war on the United States in December 1941 are \"unfounded\": the last American had left months before, and telephone contact with Opel's lawyer in Berlin ended in the summer of 1941. Turner does not acquit the rule itself: in adapting to the regime, he writes, the Americans in charge of Opel \"reflected the outlook of GM's senior executive, Alfred P. Sloan.\" Whether a rule of doing business \"without regard to\" politics is neutral is the argument still open.",
+  "across": [
+    {
+      "to": "lives:billy-durant",
+      "label": "Billy Durant",
+      "txt": "— who founded General Motors and lost it; Sloan built the company Durant left behind."
+    }
+  ],
+  "facts": [
+    {
+      "b": "~40% · 1.8 million",
+      "s": "GM's share of the American market in 1928, and the trucks and cars it sold: Henry Ashby Turner Jr., General Motors and the Nazis (Yale, 2005), ch. 1"
+    },
+    {
+      "b": "$33.3 million · 80%",
+      "s": "What GM paid for Opel in all, and the share it bought in March 1929: Turner, General Motors and the Nazis, ch. 1"
+    },
+    {
+      "b": "1932",
+      "s": "The year Bernard London copyrighted Ending the Depression Through Planned Obsolescence: the pamphlet itself, Project Gutenberg #72003, from the HathiTrust scan"
+    }
+  ]
+}
