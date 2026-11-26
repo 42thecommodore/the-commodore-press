@@ -324,6 +324,7 @@ function renderChart() {
   });
   host.querySelectorAll(".town").forEach(t => t.addEventListener("click", e => { e.stopPropagation(); if (!chartDragged) openDrawerById(t.dataset.p); }));
   host.querySelectorAll(".oldport").forEach(t => t.addEventListener("click", e => { e.stopPropagation(); if (!chartDragged) openLife(t.dataset.l); }));
+  lampOff(); lampMarks = [...svg.querySelectorAll(".town")].map(t => ({ t, x: +t.getAttribute("cx"), y: +t.getAttribute("cy") }));
   wireChart(svg);
   clampView(chartView); applyView();
   if (isleSel) selectIsle(isleSel, false, !relaid);   /* after a relayout, sail to the island where it now is */
@@ -446,6 +447,8 @@ function wireChart(svg) {
     }
   };
   svg.addEventListener("pointerup", end); svg.addEventListener("pointercancel", end);
+  /* the lamp follows a hand that hovers; a finger has none to follow */
+  if(matchMedia("(hover:hover)").matches){svg.addEventListener("pointermove",lampMove,{passive:true});svg.addEventListener("pointerleave",lampOff,{passive:true});}
   /* how to move shows once, on first arrival, then gets out of the chart's way */
   svg.addEventListener("pointerenter", () => { const h = document.getElementById("chartHint"); if (h && !h.dataset.shown) { h.dataset.shown = "1"; h.classList.add("flash"); clearTimeout(h.t); h.t = setTimeout(() => h.classList.remove("flash"), 3500); } }, { once: true });
   svg.addEventListener("pointerleave", e => { if (e.pointerType === "mouse") boatOff(); if (e.pointerType !== "touch") { hideTip(); if (routeOf && !selectedPerson && hoverPerson) { hoverPerson = null; showRoute(null); } } });
@@ -508,6 +511,33 @@ function sailRoute() {
   };
   boat.sail = requestAnimationFrame(step);
 }
+
+/* ---------- the lamp: a hand passed over the chart ----------
+   Until 2026-11-26 a pointer on the chart lit one person's marks (their route) and nothing
+   near it: 3 of 92 survey marks answered, none for being close. Now the mark under the hand
+   takes the whole lamp, and the marks around it catch some of its light and swell a little,
+   falling off with distance and never as far as the one under the hand (motion rule 3). One
+   write a frame, asked for only by a moving pointer; nothing runs at rest (rule 4). The swell
+   stops for reduced motion and the light stays (rule 5, atlas.css). */
+const LAMP={r:120,spill:.55};
+let lampMarks = [], lampLit = new Set(), lampRaf = 0, lampAt = null;
+function lampMove(e) {
+  if (e.pointerType === "touch") return;
+  const svg = e.currentTarget, p = svgPt(svg, e.clientX, e.clientY);
+  lampAt = { svg, x: p.x, y: p.y, under: e.target.closest && e.target.closest(".town") };
+  if (!lampRaf) lampRaf = requestAnimationFrame(lampTick);
+}
+function lampTick() {
+  lampRaf = 0; const a = lampAt; if (!a) return;
+  const v = chartView, s = (a.svg.clientWidth || chartW) / chartW * v.k, R = LAMP.r / s;
+  const wx = (a.x - v.x) / v.k, wy = (a.y - v.y) / v.k, next = new Map();
+  for (const m of lampMarks) { const d = Math.hypot(m.x - wx, m.y - wy); if (d < R) next.set(m.t, LAMP.spill * (1 - d / R) ** 1.5); }
+  if (a.under) next.set(a.under, 1);
+  lampLit.forEach(t => { if (!next.has(t)) t.style.removeProperty("--lamp"); });
+  next.forEach((l, t) => t.style.setProperty("--lamp", l.toFixed(2)));
+  lampLit = new Set(next.keys());
+}
+function lampOff() { cancelAnimationFrame(lampRaf); lampRaf = 0; lampAt = null; lampLit.forEach(t => t.style.removeProperty("--lamp")); lampLit = new Set(); }
 
 /* ---------- the hover card: who, what, and why they are here ---------- */
 function hideTip() { const t = document.getElementById("chartTip"); if (t) t.hidden = true; }

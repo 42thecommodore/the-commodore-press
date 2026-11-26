@@ -13,6 +13,7 @@
  *   - a chosen island names every one of its people
  *   - notes print as notes, never as quotations
  *   - the crossing's dial reads each port's own year as the ship passes it
+ *   - the lamp lights the mark under the hand most, its neighbours less, and goes with it
  *   - zoom stays inside the chart, and nothing throws
  * Runs on dist/, so build first. Needs Chrome (tools/chrome.mjs); without it, it says so. */
 import fs from "node:fs";
@@ -100,6 +101,16 @@ setTimeout(async () => {
     t("zoom stops at its limit", chartView.k <= 5.0001, "k=" + chartView.k);
     zoomAt(chartW, chartH, .01);
     t("zooming out returns to the whole chart", chartView.k === 1 && chartView.x === 0 && chartView.y === 0, JSON.stringify(chartView));
+
+    // the lamp: the mark under the hand takes all of it, its neighbours some and less, and it all goes with the hand
+    const towns = [...svg.querySelectorAll(".town")], hand = towns[Math.floor(towns.length / 2)];
+    lampAt = { svg, x: +hand.getAttribute("cx"), y: +hand.getAttribute("cy"), under: hand }; lampTick();
+    const lit = towns.map(c => +(c.style.getPropertyValue("--lamp") || 0)), others = lit.filter((v, i) => towns[i] !== hand && v > 0);
+    t("the mark under the hand takes the whole lamp", lit[towns.indexOf(hand)] === 1, lit[towns.indexOf(hand)]);
+    t("the marks near the hand catch its light, and less of it", others.length >= 3 && Math.max(...others) <= LAMP.spill,
+      others.length + " lit, brightest " + Math.max(0, ...others));
+    lampOff();
+    t("the lamp goes with the hand", towns.every(c => !c.style.getPropertyValue("--lamp")) && !lampRaf);
 
     // the crossing's dial (the site scrolls smoothly; a test has to land, not glide)
     document.documentElement.style.scrollBehavior = "auto";

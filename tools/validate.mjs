@@ -795,6 +795,36 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     err("templates/shell.html", "the masthead's {{MARK}} has lost its pn flag, so the pennant has no class to stir — keep {{MARK size=22 sw=1.2 pn aria}}");
 }
 
+/* ---------- the Atlas's motion: a lamp passed over the chart ----------
+   Until 2026-11-26 a pointer on the chart lit one person's route and nothing for being near it:
+   3 of 92 survey marks answered. LAMP (theme/atlas.js) now lights the marks around the hand. It
+   is held to the house's rules like the wall's field: the mark under the hand takes the whole lamp
+   and the neighbours less (rule 3), it runs only for a hand that hovers, from passive listeners,
+   and only a moving pointer asks for its frame (rules 2 and 4), and its swell stops for a reader
+   who asked for less motion while the light stays (rule 5). */
+{
+  const js = cssOf("theme/atlas.js"), css = cssOf("theme/atlas.css"), F = "theme/atlas.js";
+  const lamp = js.match(/const LAMP=\{r:(\d+),spill:([\d.]+)\}/);
+  if (!lamp) err(F, "the Atlas's lamp is missing or rewritten past the check — keep const LAMP={r:<px>,spill:<0–1>} (motion rule 3)");
+  else {
+    if (+lamp[2] > .6) err(F, `the lamp spills ${lamp[2]} onto the marks near the hand — .6 at most, so the mark under the hand stays the brightest (motion rule 3)`);
+    if (+lamp[1] > 200) err(F, `the lamp reaches ${lamp[1]}px — 200 at most, or half the chart lights and the hand is lost on it (motion rule 3)`);
+  }
+  if (!/if \(a\.under\) next\.set\(a\.under, 1\);/.test(js))
+    err(F, "the mark under the hand no longer takes the whole lamp — keep if (a.under) next.set(a.under, 1); in lampTick (motion rule 3)");
+  if (!/if\(matchMedia\("\(hover:hover\)"\)\.matches\)\{svg\.addEventListener\("pointermove",lampMove,\{passive:true\}\);svg\.addEventListener\("pointerleave",lampOff,\{passive:true\}\);\}/.test(js))
+    err(F, "the lamp is wired without asking for a hand that hovers, or not passively — keep if(matchMedia(\"(hover:hover)\").matches){svg.addEventListener(\"pointermove\",lampMove,{passive:true});svg.addEventListener(\"pointerleave\",lampOff,{passive:true});} (motion rules 2 and 3)");
+  const mv = js.slice(js.indexOf("function lampMove("), js.indexOf("function lampTick("));
+  const asks = (js.match(/requestAnimationFrame\(lampTick\)/g) || []).length;
+  if (asks !== 1 || !/requestAnimationFrame\(lampTick\)/.test(mv))
+    err(F, `the lamp asks for a frame ${asks === 1 ? "outside lampMove" : asks + " times"} — only a moving pointer may ask, once, from lampMove; a lamp that asks for itself runs at rest (motion rule 4)`);
+  const swell = (css.match(/\.chart-svg \.town\{transform-box:fill-box;transform-origin:center;scale:calc\(1 \+ var\(--lamp,0\) \* ([\d.]+)\)/) || [])[1];
+  if (!swell) err("theme/atlas.css", "the lamp's swell is missing or rewritten past the check — keep .chart-svg .town{transform-box:fill-box;transform-origin:center;scale:calc(1 + var(--lamp,0) * <amount>);…}");
+  else if (+swell > .6) err("theme/atlas.css", `a mark under the hand swells ${(+swell * 100).toFixed(0)}% — 60% at most, or the chart bounces instead of catching the light`);
+  if (!/@media \(prefers-reduced-motion:reduce\)\{\.chart-svg \.town\{scale:none\}\}/.test(css))
+    err("theme/atlas.css", "the chart's marks still swell for a reader who asked for less motion — add @media (prefers-reduced-motion:reduce){.chart-svg .town{scale:none}}; the light may stay (motion rule 5)");
+}
+
 /* ---------- the holidays: a tinted wall still reads, and never says "correction" ----------
    Each body.hol-<id> in theme/press.css tints the paper the whole house is read on, so the
    faintest text is measured again on it; --hol draws the masthead's holiday and is held to the

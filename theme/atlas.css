@@ -50,6 +50,13 @@
   /* a person is a survey mark in the chart's one ink; the field they work in is in the legend
      and their drawer, not splashed across the islands in six colours */
   .chart-svg .town{fill:#1b1810;stroke:var(--nbrass-b);stroke-width:1.1;vector-effect:non-scaling-stroke}
+  /* the lamp (LAMP, atlas.js): a mark near the hand catches its light, --lamp 0–1, and swells a
+     little; the mark under the hand takes all of it. Settles back on --ease when the hand goes */
+  .chart-svg .town{transform-box:fill-box;transform-origin:center;scale:calc(1 + var(--lamp,0) * .5);
+    fill:color-mix(in srgb,#1b1810,var(--nbrass-b) calc(var(--lamp,0) * 100%));
+    stroke:color-mix(in srgb,var(--nbrass-b),var(--parchment) calc(var(--lamp,0) * 100%));
+    transition:scale .3s var(--ease),fill .3s var(--ease),stroke .3s var(--ease)}
+  @media (prefers-reduced-motion:reduce){.chart-svg .town{scale:none}}
   .chart-svg .town.me{fill:var(--parchment);stroke:var(--parchment)}
   .chart-svg .oldport circle{fill:var(--panel);stroke:var(--nbrass-b);stroke-width:1.1}
   .chart-svg .oldport path{fill:none;stroke:var(--nbrass-b);stroke-width:.9;stroke-linecap:round}
