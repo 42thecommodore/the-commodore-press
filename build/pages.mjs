@@ -89,7 +89,32 @@ const hrefFor = (to, known) => {
    boot line runs before the first paint; with no stored choice, the page opens on paper — the
    device's dark setting used to decide, which made the colophon's "set on paper" untrue for
    everyone whose phone was dark. */
-const DUSK_VARS = "--paper:#1C1A16;--rule:#3A352C;--ink:#EAE3D1;--ink-soft:#9C9582;--oxblood:#CE7B6E";
+/* THE LAMP, lifted from the library, not drawn twice. On the front door every portrait sits in a
+   .lit frame: a lamp follows the pointer across the plate and the plate leans away from it, a
+   press leans it further and letting go springs it back. Until 2026-11-26 the book at the head of
+   an entry page, the first thing a friend's link shows, answered nothing: 0° of turn and no light
+   under a hand. So the cover is .lit too, and its light and its hand are the library's own, read
+   out of theme/press.css (the lamp, --glare by day and lamplight at dusk, --ease) and theme/press.js
+   (the block that says where the pointer is) at build time. The engine itself is not loaded here,
+   so the block is lifted alone, with the one name it needs (reduce). If either is rewritten past
+   these patterns the build stops, rather than print a book that has gone dead again. */
+const PRESS_CSS = fs.readFileSync(new URL("../theme/press.css", import.meta.url), "utf8");
+const PRESS_JS = fs.readFileSync(new URL("../theme/press.js", import.meta.url), "utf8");
+const lift = (m, what) => { if (!m) throw new Error(`build/pages.mjs: could not lift ${what} for the entry pages' cover — keep it where the comment above THE LAMP says`); return m; };
+const LAMP = lift(PRESS_CSS.match(/\.lit::after\{[^}]*\}/), "the lamp (.lit::after{…}) from theme/press.css")[0];
+const GLARE_DAY = lift(PRESS_CSS.match(/:root\{[^}]*?(--glare:[^;]+;\s*--glare-a:[^;}]+)/), "--glare/--glare-a from :root in theme/press.css")[1].replace(/\s+/g, "");
+const GLARE_DUSK = lift(PRESS_CSS.match(/body\.dusk\{[^}]*?(--glare:[^;]+;\s*--glare-a:[^;}]+)/), "--glare/--glare-a from body.dusk in theme/press.css")[1].replace(/\s+/g, "");
+const EASE = lift(PRESS_CSS.match(/--ease:[^;]+/), "--ease from theme/press.css")[0];
+const HAND = (() => {
+  const at = PRESS_JS.indexOf("A portrait is a printed plate"), open = PRESS_JS.indexOf("*/", at) + 2;
+  let i = PRESS_JS.indexOf("{", open), depth = 0, end = -1;
+  if (at < 0 || i < 0) lift(null, "the pointer block (\"A portrait is a printed plate\") from theme/press.js");
+  for (; i < PRESS_JS.length; i++) { const c = PRESS_JS[i]; if (c === "{") depth++; else if (c === "}" && !--depth) { end = i + 1; break; } }
+  const code = `{const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;${PRESS_JS.slice(PRESS_JS.indexOf("{", open), end)}}`;
+  try { new Function(code); } catch (e) { lift(null, `the pointer block from theme/press.js (${e.message})`); }
+  return code;
+})();
+const DUSK_VARS = `--paper:#1C1A16;--rule:#3A352C;--ink:#EAE3D1;--ink-soft:#9C9582;--oxblood:#CE7B6E;${GLARE_DUSK}`;
 const DUSK = (sel, body = DUSK_VARS) => `${sel === ":root" ? ":root" : ""}[data-theme=dark]${sel === ":root" ? "" : " " + sel}{${body}}`;
 const THEME_BOOT = `<script>try{var t=localStorage.getItem("cp-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>`;
 /* the same switch as the library's, in the page's footer */
@@ -99,7 +124,7 @@ const CSS = `
 ${LABEL_CSS}
 .lbl{color:var(--ink-soft)}
 .dusk-sw{font:inherit;color:inherit;background:none;border:0;padding:0 2px;min-height:44px;cursor:pointer;text-decoration:underline 1px;text-underline-offset:3px}.dusk-sw[aria-pressed=true]{font-weight:600}
-:root{--fs-0:12px;--fs-1:13px;--fs-2:15px;--fs-3:17px;--fs-4:19px;--fs-5:21px;--fs-6:26px;--fs-7:34px;--fs-8:44px;--fs-9:64px;--paper:#F2EDE1;--rule:#D3C9B2;--ink:#1E1C18;--ink-soft:#5C5647;--oxblood:#8A2B25;
+:root{--fs-0:12px;--fs-1:13px;--fs-2:15px;--fs-3:17px;--fs-4:19px;--fs-5:21px;--fs-6:26px;--fs-7:34px;--fs-8:44px;--fs-9:64px;--paper:#F2EDE1;--rule:#D3C9B2;--ink:#1E1C18;--ink-soft:#5C5647;--oxblood:#8A2B25;${GLARE_DAY};${EASE};
   --serif:"EB Garamond","Iowan Old Style",Palatino,Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
 ${DUSK(":root")}
 *{box-sizing:border-box}
@@ -183,7 +208,19 @@ html{scroll-padding-top:64px}
   display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:16% 11% 10%;text-align:center;
   transform:rotateY(21deg) rotateX(4deg);transform-origin:left center;
   box-shadow:inset 5px 0 9px rgba(0,0,0,.34),inset -1px 0 0 rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.2),22px 26px 44px -16px rgba(0,0,0,.6)}
-.ebk::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(255,255,255,.13),rgba(255,255,255,0) 28%,rgba(0,0,0,.16))}
+.ebk::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(255,255,255,.13),rgba(255,255,255,0) 28%,rgba(0,0,0,.16))}
+/* The cover catches the light (THE LAMP, above): the library's lamp, over the plate and the board,
+   and the book turns a few degrees from where it stands as the hand crosses it (press.js says
+   where: --mx --my --rx --ry). Pressed, it turns twice as far and the lamp comes up; let go, it
+   springs back. The shadow stays the book's; the plate set in it gets none. */
+${LAMP}
+.ebk.lit::after{z-index:2}
+.ebk.lit{transform:rotateY(calc(21deg + var(--ry,0deg))) rotateX(calc(4deg + var(--rx,0deg)));transition:transform .7s var(--ease)}
+@media (hover:hover){.ebk.lit:hover{transition-duration:.14s}.ebk.lit:hover::after{opacity:1;transition-duration:.18s}}
+.ebk.lit:active{transform:rotateY(calc(21deg + var(--ry,0deg) * 2)) rotateX(calc(4deg + var(--rx,0deg) * 2));transition-duration:.08s}
+.ebk.lit:active::after{opacity:1;filter:brightness(1.35);transition-duration:.06s}
+/* the light still follows the hand; the book does not turn */
+@media (prefers-reduced-motion:reduce){.ebk.lit,.ebk.lit:active{transform:rotateY(21deg) rotateX(4deg)}}
 .ebk .motif{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;
   -webkit-mask-image:linear-gradient(to bottom,transparent 42%,#000 64%,#000 76%,transparent 84%);mask-image:linear-gradient(to bottom,transparent 42%,#000 64%,#000 76%,transparent 84%)}
 .ect{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
@@ -378,6 +415,7 @@ ${NEWS && NEWS.action || hasLog ? signupHTML(NEWS, "../../", "Follow the Press",
 </main>
 </div>
 <script>${READING_JS.replace(/<\/script/gi, "<\\/script")}
+;${HAND.replace(/<\/script/gi, "<\\/script")}
 Reading.page(${JSON.stringify(conf).replace(/</g, "\\u003c")})</script>
 <footer>The Commodore Press · edited by ${hasAbout ? `<a href="../../about/">${EDITOR}</a>` : EDITOR} · <a href="../../contents/">contents</a> · every figure carries its source · <a href="../../#colophon">colophon &amp; corrections</a> · <a href="../../updates.xml">follow by RSS</a> · ${DUSK_SWITCH}</footer>
 </body>
@@ -392,7 +430,7 @@ Reading.page(${JSON.stringify(conf).replace(/</g, "\\u003c")})</script>
 function coverHTML(b, isPress, plateFile) {
   const title = isPress ? b.title : b.n, sub = isPress ? b.sub : b.field;
   const plate = plateFile ? `<img class="eplate" src="../../plates/${plateFile}" alt="${attr(b.plateOf || "Portrait of " + b.n)}" width="260" height="325">` : "";
-  return `<figure class="ecov"><div class="ebk">${motifSVG(b.motif, b.accent)}
+  return `<figure class="ecov"><div class="ebk lit">${motifSVG(b.motif, b.accent)}
     <div class="ect">${plate}<b aria-hidden="true">${title}</b><i style="background:${b.accent}"></i><span aria-hidden="true" style="color:${b.accent}">${sub || ""}</span></div>
     <span class="efoot" aria-hidden="true">Commodore Press</span></div>${b.plateOf ? `<figcaption>${b.plateOf}</figcaption>` : ""}</figure>`;
 }

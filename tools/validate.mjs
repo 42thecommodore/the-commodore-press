@@ -684,6 +684,35 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
     err("theme/press.css", "the portraits lean under the pointer even for a reader who asked for less motion — add .lit{transform:none} inside @media (prefers-reduced-motion:reduce)");
 }
 
+/* ---------- the book on an entry page catches the light too ----------
+   The entry pages are the link other people receive, and until 2026-11-26 the book at the head
+   of one (a Life's plate set in its cover) did nothing under a hand: 0° of turn, no lamp, while
+   every face on the front door answered. Now the cover is .lit, with the library's own lamp and
+   pointer block lifted at build time (THE LAMP, build/pages.mjs), so the two cannot drift. Held
+   here: the cover carries the frame and the lifted light and hand, the lamp is lamplight at dusk,
+   it lights only for a real hover, the book stops turning for reduced motion, and no rule on the
+   cover's light or its plate gives a shadow (shadows are the books' alone: the board keeps its own). */
+{
+  const f = "build/pages.mjs", src = cssOf(f);
+  if (!/class="ebk\b[^"]*\blit\b[^"]*">[\s\S]{0,200}\$\{plate\}/.test(src))
+    err(f, "the book on an entry page is drawn outside a .lit frame, so the cover a shared link opens on is the one plate that does not catch the light — keep <div class=\"ebk lit\"> around ${plate} in coverHTML()");
+  if (!/\$\{LAMP\}/.test(src) || !/\.lit::after\\\{/.test(src))
+    err(f, "the entry page's cover no longer carries the library's lamp — keep const LAMP lifted from .lit::after in theme/press.css, and ${LAMP} in the page's CSS (one lamp, not two)");
+  if (!/\$\{HAND\b/.test(src) || !/A portrait is a printed plate/.test(src))
+    err(f, "the entry page's cover no longer hears the hand — keep const HAND lifted from press.js's \"A portrait is a printed plate\" block, and ${HAND…} in the page's script");
+  if (!/const DUSK_VARS = [^\n]*\$\{GLARE_DUSK\}/.test(src))
+    err(f, "the entry page's lamp is daylight at dusk — keep ${GLARE_DUSK} (body.dusk's --glare, lifted from theme/press.css) in DUSK_VARS");
+  const outsideHover = src.replace(/@media \(hover:hover\)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, "");
+  if (/\.lit:hover/.test(outsideHover))
+    err(f, "the cover's lamp lights on a bare :hover, which sticks on a phone after a tap — put .ebk.lit:hover rules inside @media (hover:hover){…} (motion rule 2)");
+  const calm = (src.match(/@media \(prefers-reduced-motion:\s*reduce\)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g) || []).join("");
+  const still = calm.match(/\.ebk\.lit\b[^{]*\{([^}]*)\}/);
+  if (!still || !/transform:/.test(still[1]) || /var\(--r[xy]/.test(still[1]))
+    err(f, "the book on an entry page turns under the pointer even for a reader who asked for less motion — add .ebk.lit{transform:rotateY(21deg) rotateX(4deg)} (its resting turn, no --rx/--ry) inside @media (prefers-reduced-motion:reduce) (motion rule 5)");
+  for (const m of src.matchAll(/([^{}]*(?:\.lit\b|\.eplate\b)[^{}]*)\{([^{}]*)\}/g))
+    if (/box-shadow|drop-shadow/.test(m[2])) err(f, `${m[1].trim()} gives the cover's plate or its light a shadow — the light on a plate is a light; shadows are the books' alone, and the board (.ebk) already has its own (CLAUDE.md → Design)`);
+}
+
 /* ---------- the house's motion: one thing breathes, the wall feels the hand ----------
    The six rules are stated in theme/press.css above the breath. Until 2026-11-25 nothing on the
    site moved at rest, and nothing said what could: the day one thing was allowed to breathe, the
