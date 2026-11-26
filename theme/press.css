@@ -253,6 +253,15 @@
   .slot:hover .meta h3::after{transform:none;transform-origin:left}
   .meta p{margin:4px 0 0;font-size:var(--fs-2);color:var(--ink-soft)}
   .slot.read .meta p::after{content:" · Read ✓"}
+  /* A LIFE FINISHED IS STAMPED (stampHome, press.js). Closing a life finished in this open, once its
+     book is home: the book, or the face it flew back to, is pressed once, gives and springs back,
+     and the shelf's mark inks in where it stands. Objects only (the mark does not travel, it takes
+     its ink); one run, started by the hand that closed the reader; ink, never oxblood. */
+  @keyframes stamp{0%{scale:1;translate:0 0}32%{scale:.9;translate:0 3px}64%{scale:1.035;translate:0 -1px}100%{scale:1;translate:0 0}}
+  @keyframes stamp-ink{0%,30%{color:transparent}46%{color:var(--ink)}}
+  .slot.stamp .book,a.wface.stamp .fp-img,a.cap-plate.stamp .cap-img{animation:stamp .56s var(--ease) 1}
+  .slot.stamp .meta p::after{animation:stamp-ink .56s ease-out 1}
+  @media (prefers-reduced-motion:reduce){.stamp .book,.stamp .fp-img,.stamp .cap-img,.stamp .meta p::after{animation:none}}
 
   /* ---------- adjacent cards ---------- */
   .sec-head{display:flex;align-items:baseline;gap:16px;padding:52px 0 4px}

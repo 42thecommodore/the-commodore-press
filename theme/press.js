@@ -461,19 +461,41 @@ function readNextHTML(kind,b,next){
     ${n.why?`<span class="rs-nd">${n.why.replace(/^\s*[—–-]\s*/,"")}</span>`:""}
     <span class="rs-nm"><span>Lives · ${n.b.mins} min</span><b>Read →</b></span></a>`;
 }
-/* Entries this browser has finished get a mark on the shelf (Reading.memory, theme/reading.js). */
-function markRead(){
-  document.querySelectorAll("#livesShelf .slot").forEach(s=>s.classList.toggle("read",Reading.memory.done("l/"+s.dataset.id)));
-  readTally();
+/* Entries this browser has finished get a mark on the shelf (Reading.memory, theme/reading.js).
+   held: the life the reader is closing. If it was finished during this open (unmarked until now),
+   its mark and its count are held back and returned, for stampHome to press in once the book is home. */
+function markRead(held){
+  let fresh=null;
+  document.querySelectorAll("#livesShelf .slot").forEach(s=>{const d=Reading.memory.done("l/"+s.dataset.id);
+    if(d&&held&&s.dataset.id===held&&!s.classList.contains("read"))fresh=s;else s.classList.toggle("read",d)});
+  readTally(fresh&&held);
+  return fresh;
+}
+/* A LIFE FINISHED IS STAMPED. Closing a life finished in this open sends its book home, and once it
+   has landed (never mid-air) the read mark is pressed into it: the book, or the face it flew back
+   to, gives and springs back once, the mark inks in, and the key's tally ticks over. Never on load,
+   never for a life already finished, never for a reader who asked for less motion: then the mark
+   is simply there. Nothing is stored for it; the shelf's own class is the memory of what was marked. */
+const STAMP_MS=560;
+function stampHome(slot,id,face){
+  const f=flight&&flight.id===id&&flight.dir==="out"?flight:null;
+  const land=()=>{
+    slot.classList.add("read");readTally();
+    if(reduce||!f||current===id)return;   // no flight home, or the reader took it back: the mark simply appears
+    const pic=portraitOf(face),on=pic&&f.hidden.includes(pic)?face:f.hidden.includes(slot.querySelector(".book"))?slot:face||slot;
+    if(!on.offsetParent)return;
+    on.classList.add("stamp");setTimeout(()=>on.classList.remove("stamp"),STAMP_MS+120);
+  };
+  f?f.anims[0].finished.then(land,land):land();
 }
 /* The reader's own tally, in the key's Lives line: what this browser has finished and is partway
    through, counted from the same memory as the shelf's marks. A first visitor sees nothing, so the
    door's one public count stays the corrections. Only lives on the shelf count; a retired title's
    page remembers too, but it is not one of the "people" the line counts. */
-function readTally(){
+function readTally(held){
   const el=document.getElementById("keyYou");if(!el)return;
   let done=0,part=0;
-  for(const b of LIVES){const r=Reading.memory.get("l/"+b.id);if(!r)continue;if(r.d)done++;else if(r.p>0)part++}
+  for(const b of LIVES){const r=Reading.memory.get("l/"+b.id);if(!r)continue;if(r.d&&b.id!==held)done++;else if(r.p>0)part++}
   el.textContent=done===LIVES.length?" You have finished every one."
     :done&&part?` You have finished ${done} of them, and are partway through ${part}.`
     :done?` You have finished ${done} of them.`
@@ -728,17 +750,18 @@ Reading.quotes({root:document.getElementById("reader"),scroller:document.getElem
   meta:()=>current?entryMeta("l",current):null});
 function closeReader(push){
   if(!current)return;
-  const kind=currentKind,id=current;
+  const kind=currentKind,id=current,face=readerFrom;let fresh=null;
   const finish=()=>{current=null;currentKind=null;
     const r=document.getElementById("reader");
     r.classList.remove("on");r.setAttribute("aria-hidden","true");
     document.body.style.overflow="";document.body.style.paddingRight="";
     document.title=(wing==="home"?"The Commodore Press":(WINGS.find(x=>x[0]===wing)[1]+" — The Commodore Press"));
     if(readProg){readProg.destroy();readProg=null}
-    markRead();
+    fresh=markRead(id);
     const el=readerFocus;readerFocus=null;giveBack(el)};
   if(push!==false)history.pushState({w:wing},"",wingURL(wing));
   flyOut(kind,id,finish);
+  if(fresh)stampHome(fresh,id,face);
 }
 function step(d){
   const i=LIVES.findIndex(x=>x.id===current); if(i<0)return;

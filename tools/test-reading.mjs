@@ -34,6 +34,9 @@
  *     that look until the reader is up
  *   - a book flying to or from the reader turns round where it is when the reader changes its
  *     mind: one book in the air, never two
+ *   - closing a life finished in this open presses its read mark into that one book, once, after
+ *     the book is home, and the key's tally ticks over; a reload, a life already finished and
+ *     reduced motion press nothing
  *   - a life's reader prints its own permanent №
  *   - every retired title's page says, above its text, that the Press is retired
  * and, without a browser, that every entry page's share link, end block and read-next link
@@ -679,6 +682,53 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
 }), 600));
 </script>`;
 
+/* A life finished is stamped. Finishing a life once changed nothing a reader could see: "Read ✓"
+   appeared the instant the reader closed, under a book still in the air. Now the mark is held
+   until the book is home, then pressed into that one book, once, and the key's tally ticks over;
+   on a reload, for a life already finished, or for a reader who asked for less motion, nothing is
+   pressed and the mark is simply there. mode: "finish", "reload" (a finished life in memory) or
+   "reduce" (the page told the reader asked for less motion). */
+const STAMP = mode => String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  __clock();   // the harness times the flights: see HARNESS
+  await loadLibrary(); go("lives", false); await wait(400);
+  const slot = document.querySelectorAll("#livesShelf .slot")[1], id = slot.dataset.id;
+  if (${JSON.stringify(mode)} === "reload") {
+    await wait(1500);
+    t("a reload stamps nothing: a life finished before is simply marked", __stamps.length === 0 && slot.classList.contains("read"), __stamps.length + " stamps, marked: " + slot.classList.contains("read"));
+    return;
+  }
+  slot.scrollIntoView({ block: "center" }); await wait(200);
+  openReader("lives", id, { src: slot }); await wait(1000);
+  const reader = document.getElementById("reader");
+  reader.scrollTop = reader.scrollHeight; reader.dispatchEvent(new Event("scroll")); await wait(400);
+  t("reading to the end finishes the life", Reading.memory.done("l/" + id));
+  closeReader(); await wait(60);
+  if (${JSON.stringify(mode)} === "reduce") {
+    await wait(1000);
+    t("for a reader who asked for less motion, the mark is simply there: nothing is pressed", __stamps.length === 0 && slot.classList.contains("read"), __stamps.length + " stamps, marked: " + slot.classList.contains("read"));
+    return;
+  }
+  t("while the book flies home, its mark and the tally wait", flight && flight.dir === "out" && !slot.classList.contains("read") && __stamps.length === 0 && !/finished/.test(document.getElementById("keyYou").textContent),
+    "in the air: " + !!flight + ", marked: " + slot.classList.contains("read") + ", " + __stamps.length + " stamps, tally \"" + document.getElementById("keyYou").textContent.trim() + "\"");
+  await wait(1000);
+  t("once it is home, the mark is pressed into that one book, once", flight === null && __stamps.length === 1 && __stamps[0] === slot && slot.classList.contains("read"),
+    __stamps.length + " stamps" + (__stamps[0] ? " on " + (__stamps[0].dataset.id || __stamps[0].className) : "") + ", marked: " + slot.classList.contains("read"));
+  t("…and the key's tally ticks over", document.getElementById("keyYou").textContent.trim() === "You have finished 1 of them.", document.getElementById("keyYou").textContent.trim());
+  openReader("lives", id, { src: slot }); await wait(1000);
+  closeReader(); await wait(1200);
+  t("closing a life already finished stamps nothing", __stamps.length === 1, __stamps.length + " stamps");
+}), 600));
+</script>`;
+// counts every stamp the page presses, from before the engine runs; and starts each run with an empty memory
+const STAMP_HEAD = (seed, reduce) => `<script>try{localStorage.setItem("cp-read",JSON.stringify(${seed}));localStorage.removeItem("cp-theme")}catch(e){}
+window.__stamps=[];const __owner=new WeakMap(),__cl=Object.getOwnPropertyDescriptor(Element.prototype,"classList"),__add=DOMTokenList.prototype.add;
+Object.defineProperty(Element.prototype,"classList",{configurable:true,get(){const l=__cl.get.call(this);__owner.set(l,this);return l}});
+DOMTokenList.prototype.add=function(...c){if(c.includes("stamp")&&!this.contains("stamp"))__stamps.push(__owner.get(this)||null);return __add.apply(this,c)};
+${reduce ? `const __mm=matchMedia.bind(window);window.matchMedia=q=>/prefers-reduced-motion: ?reduce/.test(q)?{matches:true,media:q,addEventListener(){},removeEventListener(){},addListener(){},removeListener(){}}:__mm(q);` : ""}
+</script>`;
+
 /* `frame` is [width, height]: the page runs in an iframe of exactly that size. Headless Chrome
    will not make a window narrower than 500px, and its window size is not its viewport, so a
    phone is measured the way a phone sees it only from inside a frame. */
@@ -735,6 +785,14 @@ if (!CHROME) {
   report("A life opens where you are", drive(fs.readFileSync(dist("index.html"), "utf8"), WHERE, null));
   report("A press answers at once", drive(fs.readFileSync(dist("index.html"), "utf8"), PRESS, null));
   report("The book in flight", drive(fs.readFileSync(dist("index.html"), "utf8"), FLIGHT, null, `<script>try{localStorage.removeItem("cp-theme")}catch(e){}</script>`));
+  {
+    const second = JSON.parse(fs.readFileSync(path.join(ROOT, "content/lives", fs.readdirSync(path.join(ROOT, "content/lives")).filter(f => f.endsWith(".json")).sort()[1]), "utf8")).id;
+    const front = fs.readFileSync(dist("index.html"), "utf8");
+    report("A life finished is stamped", [
+      ...drive(front, STAMP("finish"), null, STAMP_HEAD("{}", false)),
+      ...drive(front, STAMP("reload"), null, STAMP_HEAD(JSON.stringify({ ["l/" + second]: { p: 1, d: 1, t: 1 } }), false)),
+      ...drive(front, STAMP("reduce"), null, STAMP_HEAD("{}", true))]);
+  }
   // a life with a plate and a keep line, and a retired title: the two shapes an entry page comes in.
   // Only the life opens in the library's reader; the Press's titles are read on their own pages.
   for (const [k, kind, id] of [["l", "lives", "charles-darwin"], ["t", "press", "compounding-machines"]]) {
