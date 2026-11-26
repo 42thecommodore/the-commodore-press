@@ -13,7 +13,8 @@
  *   - a chosen island names every one of its people
  *   - notes print as notes, never as quotations
  *   - the crossing's dial reads each port's own year as the ship passes it
- *   - the lamp lights the mark under the hand most, its neighbours less, and goes with it
+ *   - the lamp lights the mark under the hand most, its neighbours less, the lanes near it
+ *     glint no brighter than its spill, and it all goes with it
  *   - zoom stays inside the chart, and nothing throws
  * Runs on dist/, so build first. Needs Chrome (tools/chrome.mjs); without it, it says so. */
 import fs from "node:fs";
@@ -109,8 +110,16 @@ setTimeout(async () => {
     t("the mark under the hand takes the whole lamp", lit[towns.indexOf(hand)] === 1, lit[towns.indexOf(hand)]);
     t("the marks near the hand catch its light, and less of it", others.length >= 3 && Math.max(...others) <= LAMP.spill,
       others.length + " lit, brightest " + Math.max(0, ...others));
+    // …and the lanes near the hand glint from it, none brighter than the spill, the nearest most
+    const glints = [...svg.querySelectorAll(".glint[data-a]")], gl = glints.map(g => +(g.style.getPropertyValue("--glint") || 0));
+    const near = glints.map(g => { const Lg = g.getTotalLength(); let d = Infinity; for (let i = 0; i <= 40; i++) { const q = g.getPointAtLength(Lg * i / 40); d = Math.min(d, Math.hypot(q.x - lampAt.x, q.y - lampAt.y)); } return d; });
+    const lane = near.indexOf(Math.min(...near)), lanesLit = gl.filter(v => v > 0);
+    t("the lanes near the hand glint, none brighter than the lamp's spill", lanesLit.length >= 1 && Math.max(...lanesLit) <= LAMP.spill && gl[lane] === Math.max(...gl),
+      lanesLit.length + " of " + glints.length + " lanes lit, brightest " + Math.max(0, ...lanesLit) + ", nearest " + gl[lane]);
+    t("a lane far from the hand stays dark", gl.every((v, i) => near[i] < LAMP.r * chartW / svg.clientWidth || !v));
     lampOff();
     t("the lamp goes with the hand", towns.every(c => !c.style.getPropertyValue("--lamp")) && !lampRaf);
+    t("the lanes go dark with it", glints.every(g => !g.style.getPropertyValue("--glint")) && !svg.querySelector('.glint[style*="--glint"]'));
 
     // the crossing's dial (the site scrolls smoothly; a test has to land, not glide)
     document.documentElement.style.scrollBehavior = "auto";

@@ -207,12 +207,18 @@ function closest(p, k = 3) {
 }
 
 /* ---------- the chart ---------- */
-function lanePath(A, B) {
+function laneQ(A, B) {
   const dx = B.x - A.x, dy = B.y - A.y, d = Math.hypot(dx, dy);
   const ux = dx / d, uy = dy / d, bend = (seedOf(A.pr.id + B.pr.id) > Math.PI ? 1 : -1) * d * .14;
   const sx = A.x + ux * (A.r + 6), sy = A.y + uy * (A.r + 6), ex = B.x - ux * (B.r + 6), ey = B.y - uy * (B.r + 6);
-  const mx = (sx + ex) / 2 - uy * bend, my = (sy + ey) / 2 + ux * bend;
-  return `M${f1(sx)} ${f1(sy)}Q${f1(mx)} ${f1(my)} ${f1(ex)} ${f1(ey)}`;
+  return [sx, sy, (sx + ex) / 2 - uy * bend, (sy + ey) / 2 + ux * bend, ex, ey];
+}
+function lanePath(A, B) { const [sx, sy, mx, my, ex, ey] = laneQ(A, B); return `M${f1(sx)} ${f1(sy)}Q${f1(mx)} ${f1(my)} ${f1(ex)} ${f1(ey)}`; }
+/* a lane as points the lamp can measure against, worked out once per drawing, never per frame */
+function laneSamples(A, B, n = 24) {
+  const [sx, sy, mx, my, ex, ey] = laneQ(A, B), pts = [];
+  for (let i = 0; i <= n; i++) { const t = i / n, u = 1 - t; pts.push([u * u * sx + 2 * u * t * mx + t * t * ex, u * u * sy + 2 * u * t * my + t * t * ey]); }
+  return pts;
 }
 function roseSVG(x, y, s) {
   let rays = "", star = "";
@@ -296,6 +302,8 @@ function renderChart() {
       <g class="rhumb">${r1.rays}</g>
       <g class="lanes">${lanes.map(l => `<path class="lane${l.s.length < 2 ? " minor" : ""}" data-a="${l.a.pr.id}" data-b="${l.b.pr.id}" d="${lanePath(l.a, l.b)}" stroke-width="${f1(.7 + l.s.length / maxS * 3.2)}" style="--o:${(.12 + .5 * l.s.length / maxS).toFixed(2)}"/>`).join("")}</g>
       <path class="route" id="chartRoute" d=""/>
+      <defs><radialGradient id="lampGlow" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1"><stop offset="0"/><stop offset=".45"/><stop offset="1"/></radialGradient></defs>
+      <g class="glints" aria-hidden="true">${lanes.filter(l => l.s.length >= 2).map(l => `<path class="glint" data-a="${l.a.pr.id}" data-b="${l.b.pr.id}" d="${lanePath(l.a, l.b)}"/>`).join("")}<path class="glint g-route" id="routeGlint" d=""/></g>
       <g class="isles">${isles}</g>
       <g class="labels" aria-hidden="true">${labels}</g>
       <path class="const-line" id="constLine" d=""/>
@@ -325,6 +333,9 @@ function renderChart() {
   host.querySelectorAll(".town").forEach(t => t.addEventListener("click", e => { e.stopPropagation(); if (!chartDragged) openDrawerById(t.dataset.p); }));
   host.querySelectorAll(".oldport").forEach(t => t.addEventListener("click", e => { e.stopPropagation(); if (!chartDragged) openLife(t.dataset.l); }));
   lampOff(); lampMarks = [...svg.querySelectorAll(".town")].map(t => ({ t, x: +t.getAttribute("cx"), y: +t.getAttribute("cy") }));
+  const glints = [...svg.querySelectorAll(".glint:not(.g-route)")];
+  lampLanes = lanes.filter(l => l.s.length >= 2).map((l, k) => laneGeom(glints[k], laneSamples(l.a, l.b)));
+  lampRoute = laneGeom(svg.querySelector("#routeGlint"), []); lampLanes.push(lampRoute); lampGlow = svg.querySelector("#lampGlow");
   wireChart(svg);
   clampView(chartView); applyView();
   if (isleSel) selectIsle(isleSel, false, !relaid);   /* after a relayout, sail to the island where it now is */
@@ -518,9 +529,29 @@ function sailRoute() {
    takes the whole lamp, and the marks around it catch some of its light and swell a little,
    falling off with distance and never as far as the one under the hand (motion rule 3). One
    write a frame, asked for only by a moving pointer; nothing runs at rest (rule 4). The swell
-   stops for reduced motion and the light stays (rule 5, atlas.css). */
+   stops for reduced motion and the light stays (rule 5, atlas.css).
+   The lanes glint from the same lamp (2026-11-26; until then 0 of 27 drawn lanes answered a hand
+   on open water): the stretch of a lane nearest the hand brightens, falling off along it with the
+   one gradient centred on the hand (#lampGlow), each lane no brighter than LAMP.spill, so never as
+   bright as the mark under the hand. A person's route, while drawn, glints the same way. Light
+   only: no lane moves or thickens, and the lettering above them stays put. The geometry is
+   sampled once per drawing (laneSamples, lampRouteSet) and read in the same lampTick, so a glint
+   asks for no frame of its own. */
 const LAMP={r:120,spill:.55};
 let lampMarks = [], lampLit = new Set(), lampRaf = 0, lampAt = null;
+let lampLanes = [], lampGlint = new Set(), lampGlow = null, lampRoute = null;
+function laneGeom(el, pts) {
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const [x, y] of pts) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+  return { el, pts, x0, y0, x1, y1 };
+}
+function lampRouteSet(path) {
+  const g = document.getElementById("routeGlint"); if (!g || !lampRoute) return;
+  const d = path.getAttribute("d") || "", L = d ? path.getTotalLength() : 0, pts = [];
+  g.setAttribute("d", d);
+  for (let i = 0, n = Math.ceil(L / 12); L && i <= n; i++) { const q = path.getPointAtLength(i / n * L); pts.push([q.x, q.y]); }
+  Object.assign(lampRoute, laneGeom(g, pts));
+}
 function lampMove(e) {
   if (e.pointerType === "touch") return;
   const svg = e.currentTarget, p = svgPt(svg, e.clientX, e.clientY);
@@ -536,8 +567,18 @@ function lampTick() {
   lampLit.forEach(t => { if (!next.has(t)) t.style.removeProperty("--lamp"); });
   next.forEach((l, t) => t.style.setProperty("--lamp", l.toFixed(2)));
   lampLit = new Set(next.keys());
+  const glint = new Map();
+  for (const L of lampLanes) {
+    if (wx < L.x0 - R || wx > L.x1 + R || wy < L.y0 - R || wy > L.y1 + R) continue;
+    let d = Infinity; for (const [x, y] of L.pts) { const e = Math.hypot(x - wx, y - wy); if (e < d) d = e; }
+    if (d < R) glint.set(L.el, LAMP.spill * (1 - d / R) ** 1.5);
+  }
+  if (lampGlow && glint.size) { lampGlow.setAttribute("cx", f1(wx)); lampGlow.setAttribute("cy", f1(wy)); lampGlow.setAttribute("r", f1(R)); }
+  lampGlint.forEach(g => { if (!glint.has(g)) g.style.removeProperty("--glint"); });
+  glint.forEach((l, g) => g.style.setProperty("--glint", l.toFixed(2)));
+  lampGlint = new Set(glint.keys());
 }
-function lampOff() { cancelAnimationFrame(lampRaf); lampRaf = 0; lampAt = null; lampLit.forEach(t => t.style.removeProperty("--lamp")); lampLit = new Set(); }
+function lampOff() { cancelAnimationFrame(lampRaf); lampRaf = 0; lampAt = null; lampLit.forEach(t => t.style.removeProperty("--lamp")); lampLit = new Set(); lampGlint.forEach(g => g.style.removeProperty("--glint")); lampGlint = new Set(); }
 
 /* ---------- the hover card: who, what, and why they are here ---------- */
 function hideTip() { const t = document.getElementById("chartTip"); if (t) t.hidden = true; }
@@ -582,7 +623,7 @@ function fitCard() {
 function litLanes(id) {
   const svg = document.querySelector("#chartSvgHost svg"); if (!svg) return;
   svg.classList.toggle("focus", !!id);
-  svg.querySelectorAll(".lane").forEach(l => l.classList.toggle("on", !!id && (l.dataset.a === id || l.dataset.b === id)));
+  svg.querySelectorAll(".lane,.glint[data-a]").forEach(l => l.classList.toggle("on", !!id && (l.dataset.a === id || l.dataset.b === id)));
   svg.querySelectorAll(".isle,.lbl-i").forEach(g => {
     const near = id && (g.dataset.i === id || shared(P_BY_ID[id], P_BY_ID[g.dataset.i]).length);
     g.classList.toggle("sel", g.dataset.i === id); g.classList.toggle("dim", !!id && !near);
@@ -595,9 +636,10 @@ function showRoute(p) {
   routeOf = p || null;
   const path = document.getElementById("chartRoute"); if (!path) return;
   document.querySelectorAll("#chartSvgHost .town").forEach(t => t.classList.toggle("me", !!p && t.dataset.p === (p && p.id)));
-  if (!p) { path.setAttribute("d", ""); cancelAnimationFrame(boat.sail); boat.sail = 0; return; }
+  if (!p) { path.setAttribute("d", ""); lampRouteSet(path); cancelAnimationFrame(boat.sail); boat.sail = 0; return; }
   const v = voyage(p);
   path.setAttribute("d", v.length > 1 ? linePath(v.map(n => [n.x, n.y])) : "");
+  lampRouteSet(path);
   if (v.length > 1) requestAnimationFrame(sailRoute);
   if (!reduce && v.length > 1) { const L = path.getTotalLength(); path.style.strokeDasharray = `${L}`; path.style.strokeDashoffset = `${L}`; path.getBoundingClientRect(); path.style.transition = "stroke-dashoffset 1.1s cubic-bezier(.62,.02,.2,1)"; path.style.strokeDashoffset = "0"; setTimeout(() => { path.style.strokeDasharray = ""; path.style.transition = ""; }, 1150); }
 }
