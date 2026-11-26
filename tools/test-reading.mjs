@@ -384,6 +384,41 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
 }), 600));
 </script>`;
 
+/* The wall has weight (2026-11-26). Until then a swipe and a drift across the faces did the
+   same thing. A fast hand now sets the faces it passes swinging on a spring; a slow one does not;
+   and the spring's frame loop must end when they settle, or the wall becomes a second thing
+   moving at rest (motion rule 4). This drives the pointer across one row at both speeds and
+   counts the spring's frames after it has gone still. */
+const WEIGHT = String.raw`
+<script>
+addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
+  go("home", false); await wait(300);
+  let frames = 0; const raf = window.requestAnimationFrame;
+  window.requestAnimationFrame = cb => { if (cb && cb.name === "step") frames++; return raf(cb); };
+  const lits = [...document.querySelectorAll(".wall .wface .lit")], f0 = lits[0];
+  f0.scrollIntoView({ block: "center" }); await wait(100);
+  const r0 = f0.getBoundingClientRect(), y = r0.top + r0.height / 2;
+  const sweep = async (ms, dist) => { const n = Math.max(8, Math.round(ms / 16));
+    for (let i = 0; i <= n; i++) { const x = r0.left + 20 + dist * i / n, el = document.elementFromPoint(x, y) || document.body;
+      el.dispatchEvent(new PointerEvent("pointermove", { clientX: x, clientY: y, bubbles: true })); await wait(ms / n); } };
+  const angles = () => lits.map(e => parseFloat(e.style.rotate) || 0);
+  await sweep(120, 600);
+  let lo = 0, hi = 0;
+  for (let i = 0; i < 90; i++) { for (const a of angles()) { lo = Math.min(lo, a); hi = Math.max(hi, a); } await wait(16); }
+  const swung = Math.max(-lo, hi);
+  t("a fast hand sets the faces it passes swinging, the way it went", lo < -1, "swung " + lo.toFixed(2) + "° to " + hi.toFixed(2) + "°");
+  t("…they swing back past rest before they settle", hi > .1, "overshoot " + hi.toFixed(2) + "°");
+  t("…never as far as the 6° the face under the hand leans", swung < 6, swung.toFixed(2) + "°");
+  const atRest = frames; await wait(600);
+  t("…and settle within 1.5s, the spring's frame loop ended", angles().every(a => a === 0) && frames === atRest,
+    angles().filter(a => a).length + " still swinging, " + (frames - atRest) + " frames asked for after settling");
+  await sweep(2000, 600);
+  await wait(50);
+  const slow = Math.max(...angles().map(Math.abs));
+  t("a slow hand sets nothing swinging", slow < .2, slow.toFixed(2) + "°");
+}), 600));
+</script>`;
+
 /* A life opens where the reader is. A face pressed 1,147px down the front door used to switch
    to the Lives wing first, fly a book in from 3,400px below the screen, and close onto the top
    of the Lives wing: the reader lost the page they were on. */
@@ -679,6 +714,9 @@ if (!CHROME) {
       size[0] < 600 ? `<script>try{localStorage.setItem("cp-theme","dark")}catch(e){}</script>`
         // the desk run is a dark-mode device with no stored choice: it must still open on paper
         : `<script>try{localStorage.removeItem("cp-theme")}catch(e){}var __mm=matchMedia.bind(window);window.matchMedia=function(q){return /prefers-color-scheme: ?dark/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__mm(q)}</script>`));
+  // headless Chrome answers (hover:hover) false, so the field would never run: this frame says it has a mouse
+  report("The wall has weight", drive(fs.readFileSync(dist("index.html"), "utf8"), WEIGHT, null,
+    `<script>var __hm=matchMedia.bind(window);window.matchMedia=function(q){return /^\\(hover: ?hover\\)$/.test(q)?{matches:true,media:q,addEventListener:function(){},removeEventListener:function(){},addListener:function(){},removeListener:function(){}}:__hm(q)}</script>`));
   report("A face becomes its book", drive(fs.readFileSync(dist("index.html"), "utf8"), FACEFLIGHT, null));
   report("A life opens where you are", drive(fs.readFileSync(dist("index.html"), "utf8"), WHERE, null));
   report("A press answers at once", drive(fs.readFileSync(dist("index.html"), "utf8"), PRESS, null));

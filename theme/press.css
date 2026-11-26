@@ -678,6 +678,12 @@
        in the spines view. On a phone, where there is no hover, the finger is the hand: only while
        it is on the wall, the faces passing under it catch the spill (TOUCH, press.js), from passive
        listeners, one read and one write a frame.
+       The wall has weight: a fast hand (or finger) sets what it passes swinging the way it went, a
+       face on its nail, a book on its spine, and a damped spring (SPRING, press.js) brings it back
+       past rest once or twice and stops it within 1.2s. A slow hand pushes nothing. The swing stays
+       under the hand's 6° (and, with the field's turn, under a book's 9°), its frame loop ends when
+       everything is still, and it writes `rotate` and `translate`, never this transform, so the
+       lean's transition does not smooth the spring away.
      The mark answers too: pointed at or pressed, its flag stirs once (masthead, above).
      4 ONE THING BREATHES. Only the Captain of the day moves at rest: a slow breath, no faster
        than 5s and no larger than 2%, its lamp rising and falling with it. It holds still under a
