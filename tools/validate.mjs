@@ -809,6 +809,35 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
         err(f, `a ${m[1]} listener is not passive — the browser must wait on it before it scrolls; end it with {passive:true} (motion rule 3)`);
     }
 
+  /* The lamps are lit. Until 2026-11-26 pressing Dusk swapped the colours and nothing was lit.
+     Now the press sends a wave of lamplight out from the switch (lightTheHouse, press.js). A wave
+     is the easiest motion to let slip: called from initTheme it would play on every page load
+     for a reader who chose dusk once (and everyone opens on paper, still), unguarded it would
+     sweep the wall for a reader who asked for less motion, and a long one is a show, not an
+     answer. So it is held: called from the switch's press alone, reduce asked first, on screen
+     only, over in 1.2s, played once, and a light, never a shadow. */
+  {
+    const lamps = js.match(/const LAMPS=\{spread:(\d+),flare:(\d+),out:(\d+)\}/);
+    const at = js.indexOf("function lightTheHouse("), body = at < 0 ? "" : js.slice(at, js.indexOf("\n}\n", at));
+    if (!lamps || !body) err("theme/press.js", "the lamps' wave is missing or rewritten past the check — keep const LAMPS={spread:<ms>,flare:<ms>,out:<ms>} and function lightTheHouse(on){…} (motion rule 2)");
+    else {
+      const total = +lamps[1] + Math.max(+lamps[2], +lamps[3]);
+      if (total > 1200) err("theme/press.js", `the lamps take ${total}ms to light the house — 1200ms at most (LAMPS.spread + LAMPS.flare); longer and the press becomes a show (motion rule 2)`);
+      if (!/^function lightTheHouse\(on\)\{\s*for\(const a of lampsNow\)a\.cancel\(\);lampsNow=\[\];\s*if\(reduce\|\|/.test(body))
+        err("theme/press.js", "the lamps' wave runs without asking first — open lightTheHouse with if(reduce||…)return; right after cancelling the last wave (motion rule 5: a travelling wave is motion)");
+      const calls = [...js.matchAll(/lightTheHouse\(/g)].map(m => m.index).filter(i => i !== at + "function ".length);
+      const press = js.slice(js.indexOf("function toggleTheme("), js.indexOf("\n}\n", js.indexOf("function toggleTheme(")));
+      if (calls.length !== 1 || !press.includes("lightTheHouse("))
+        err("theme/press.js", `lightTheHouse is called ${calls.length} time(s) — once, from toggleTheme (the switch's press) and nowhere else: a page load in dusk from cp-theme must not play the wave (motion rule 2)`);
+      if (!/r\.bottom<0\|\|r\.top>H\|\|r\.right<0\|\|r\.left>W/.test(body))
+        err("theme/press.js", "the lamps' wave lights things off screen — keep the viewport test (r.bottom<0||r.top>H||r.right<0||r.left>W) so only what a reader can see is animated");
+      if (/requestAnimationFrame|setInterval|iterations/.test(body))
+        err("theme/press.js", "the lamps' wave loops or keeps a frame loop running — it plays once, on the Web Animations API, and nothing is left running when it ends (motion rule 4)");
+      if (/box-?shadow|boxShadow|drop-shadow|brightness\(0?\.\d/.test(body))
+        err("theme/press.js", "the lamps' wave casts a shadow or dims a plate — a lamp is a light: brighten (brightness above 1) and glow, never shade (CLAUDE.md → Design)");
+    }
+  }
+
   /* The flag stirs. The masthead's comment promised "the pennant catches the wind on hover" from
      September to 25 November 2026 over an empty rule, and the mark did nothing under a hand. It
      answers now with one gust: held to a single run, short, and off for reduced motion. */

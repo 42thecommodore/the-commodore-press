@@ -467,9 +467,23 @@ addEventListener("load", () => setTimeout(() => __run(async (t, wait) => {
   const size = innerWidth + "×" + innerHeight;
   // the phone run starts from a stored dusk: the switch is drawn after the theme is applied, and
   // it once came up "off" in a house that was already dark
-  if (localStorage.getItem("cp-theme") === "dark")
+  const waapi = () => document.getAnimations().filter(a => a.constructor.name === "Animation").length;
+  if (localStorage.getItem("cp-theme") === "dark") {
     t("a stored dusk opens at dusk, with the switch pressed", document.body.classList.contains("dusk") && document.getElementById("themeBtn").getAttribute("aria-pressed") === "true",
       "dusk: " + document.body.classList.contains("dusk") + ", pressed: " + document.getElementById("themeBtn").getAttribute("aria-pressed"));
+    // the lamps are lit by a hand: a page that opens at dusk plays no wave
+    t("a stored dusk opens already lit, with no wave of lamps", waapi() === 0, waapi() + " animations running on load");
+  }
+  // pressing Dusk lights the lamps on screen in one wave out from the switch, and it is over in 1.2s
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // timed by each animation's own end, not the clock: this headless page draws frames when it can
+    const ends = () => document.getAnimations().filter(a => a.constructor.name === "Animation").map(a => a.effect.getComputedTiming().endTime);
+    toggleTheme(); await wait(30); const lit = ends();
+    toggleTheme(); await wait(30); const out = ends(); const longest = Math.max(...lit, ...out);
+    t("pressing Dusk lights the house in one wave, and puts it out the same way, each over in 1.2s (" + size + ")", lit.length > 0 && out.length > 0 && longest <= 1200,
+      lit.length + " lamps lit, " + out.length + " put out, the last ends at " + Math.round(longest) + "ms");
+    for (const a of document.getAnimations()) if (a.constructor.name === "Animation") a.finish();
+  }
   // everyone opens on paper: the colophon says the reading wings are set on paper, and a dark device once overruled it
   if (localStorage.getItem("cp-theme") === null)
     t("a dark-mode device with no stored choice opens on paper", !document.body.classList.contains("dusk") && document.getElementById("themeBtn").getAttribute("aria-pressed") === "false", "dusk: " + document.body.classList.contains("dusk"));

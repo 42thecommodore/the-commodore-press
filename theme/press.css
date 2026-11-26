@@ -679,6 +679,10 @@
        it is on the wall, the faces passing under it catch the spill (TOUCH, press.js), from passive
        listeners, one read and one write a frame.
      The mark answers too: pointed at or pressed, its flag stirs once (masthead, above).
+     The switch answers too: pressing Dusk lights the lamps, a wave of lamplight running out from
+       the switch across the plates and books on screen, each flaring once and settling to dusk;
+       pressed off, they go out the other way, back toward the switch (lightTheHouse, press.js).
+       Only from the press, never on a page load, never with reduced motion, over in 1.2s.
      4 ONE THING BREATHES. Only the Captain of the day moves at rest: a slow breath, no faster
        than 5s and no larger than 2%, its lamp rising and falling with it. It holds still under a
        hand and while a reader is open. Nothing else on the site may loop forever.
