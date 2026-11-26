@@ -908,6 +908,25 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
   else if (+swell > .6) err("theme/atlas.css", `a mark under the hand swells ${(+swell * 100).toFixed(0)}% — 60% at most, or the chart bounces instead of catching the light`);
   if (!/@media \(prefers-reduced-motion:reduce\)\{\.chart-svg \.town\{scale:none\}\}/.test(css))
     err("theme/atlas.css", "the chart's marks still swell for a reader who asked for less motion — add @media (prefers-reduced-motion:reduce){.chart-svg .town{scale:none}}; the light may stay (motion rule 5)");
+  /* The lanes glint from the same lamp. Until 2026-11-26, 0 of 27 drawn lanes answered a hand on
+     open water. A glint is held like a neighbour mark: no brighter than LAMP.spill (rule 3), set
+     only in lampTick, so it rides the lamp's one frame per move and never asks for its own (rule 4),
+     dark when nothing set it, and light only — no lane moves or thickens, so there is nothing for
+     reduced motion to stop (rule 5) and the lettering above stays put. */
+  const tick = js.slice(js.indexOf("function lampTick("), js.indexOf("function lampOff("));
+  if (!/glint\.set\(L\.el, LAMP\.spill \* \(1 - d \/ R\) \*\* 1\.5\);/.test(tick))
+    err(F, "a lane's glint is not bounded by the lamp's spill — keep glint.set(L.el, LAMP.spill * (1 - d / R) ** 1.5); in lampTick, so no lane outshines the mark under the hand (motion rule 3)");
+  const gsets = (js.match(/setProperty\("--glint"/g) || []).length;
+  if (gsets !== 1 || !/setProperty\("--glint"/.test(tick))
+    err(F, `a lane's glint is set ${gsets === 1 ? "outside lampTick" : gsets + " times"} — set --glint only in lampTick, on the lamp's own frame; a glint lit from anywhere else can stay lit with no hand there (motion rule 4)`);
+  const gcode = js.slice(js.indexOf("let lampLanes"), js.indexOf("function lampMove("));
+  if (!gcode || /requestAnimationFrame|setTimeout|setInterval/.test(gcode))
+    err(F, "the lanes' glint keeps a timer or a frame of its own — it is read in lampTick and asks for nothing (motion rule 4)");
+  const grule = (css.match(/\.chart-svg \.glint\{([^}]*)\}/) || [])[1];
+  if (!grule || !/stroke-opacity:var\(--glint,0\)/.test(grule))
+    err("theme/atlas.css", "the lanes' glint is missing or lit at rest — keep .chart-svg .glint{…stroke-opacity:var(--glint,0)…}, dark until the lamp sets it");
+  else if (/transform|scale|translate|animation|stroke-width:var|stroke-dashoffset/.test(grule) || /transition:(?![^;]*stroke-opacity)|transition:[^;]*,/.test(grule))
+    err("theme/atlas.css", "the lanes' glint moves — it is light only: stroke-opacity may change (and settle on a transition of stroke-opacity alone), nothing else (motion rules 5 and 1)");
 }
 
 /* ---------- a life finished is stamped ----------
