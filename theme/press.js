@@ -59,7 +59,45 @@ function initTheme(){
 function toggleTheme(){
   const dark=!document.body.classList.contains("dusk");
   applyTheme(dark);
+  lightTheHouse(dark);
   try{localStorage.setItem("cp-theme",dark?"dark":"light")}catch(e){}
+}
+/* THE LAMPS ARE LIT (motion rule 2). Pressing Dusk used to swap the colours and nothing was lit:
+   the house was simply dark. Now the press lights it: a wave runs out from the switch, and each
+   plate on screen (the faces, the Captain) and each book (its gloss and its edge) flares with
+   lamplight as the wave reaches it, then settles to the dusk it already is. Pressed off, the
+   lamps go out the other way, a gentler glow travelling back toward the switch. It plays once,
+   from the press only (never on a page load from cp-theme: everyone opens on paper), only on
+   what is on screen, never with reduced motion or while a reader is open, and is over in
+   LAMPS.spread + LAMPS.flare ms. The walls change at once; only the objects carry the wave.
+   npm run check holds all of it. */
+const LAMPS={spread:700,flare:480,out:420};
+let lampsNow=[];
+function lightTheHouse(on){
+  for(const a of lampsNow)a.cancel();lampsNow=[];
+  if(reduce||!document.body.animate||document.getElementById("reader")?.classList.contains("on"))return;
+  const sw=document.getElementById("themeBtn"),s=sw&&sw.getBoundingClientRect();if(!s||!s.width)return;
+  const sx=s.left+s.width/2,sy=s.top+s.height/2,W=innerWidth,H=innerHeight;
+  // read every box first, then write: one layout, and only what is on screen is lit
+  const seen=[...document.querySelectorAll(".lit, .slot .book")].map(el=>{const r=el.getBoundingClientRect();
+    if(!r.width||r.bottom<0||r.top>H||r.right<0||r.left>W)return null;
+    const x=r.left+r.width/2,y=r.top+r.height/2;return {el,r,x,y,d:Math.hypot(x-sx,y-sy)}}).filter(Boolean);
+  if(!seen.length)return;
+  // the nearest lamp lights at once, so the press is answered within a frame; the farthest at LAMPS.spread
+  const d0=Math.min(...seen.map(t=>t.d)),span=Math.max(1,Math.max(...seen.map(t=>t.d))-d0);
+  const lamp="255,214,150",dur=on?LAMPS.flare:LAMPS.out,peak=on?1:.5;
+  for(const {el,r,x,y,d} of seen){
+    // the lamp lands on the edge facing the switch, the way the light arrives
+    const mx=Math.min(96,Math.max(4,50+(sx-x)/r.width*40)).toFixed(0)+"%",my=Math.min(96,Math.max(4,50+(sy-y)/r.height*40)).toFixed(0)+"%";
+    const k=(d-d0)/span,delay=(on?k:1-k)*LAMPS.spread,o={duration:dur,delay,easing:"ease-out"};
+    const lampA=on?".72":".5",glow=[{offset:0,"--glare":lamp,"--glare-a":lampA,"--mx":mx,"--my":my},{opacity:peak,offset:.28},{offset:1,"--glare":lamp,"--glare-a":lampA,"--mx":mx,"--my":my}];
+    // a light, never a shadow: the plate brightens as the lamp reaches it, and the lamp falls on it
+    const up=on?[{filter:"brightness(1.2)",offset:.28}]:[{filter:"brightness(1.08)",offset:.28}];
+    if(el.classList.contains("lit")){lampsNow.push(el.animate(glow,{...o,pseudoElement:"::after"}),el.animate(up,o))}
+    else{const g=el.querySelector(".gloss");if(g)lampsNow.push(g.animate([{opacity:peak*.9,offset:.28}],o));
+      for(const f of el.querySelectorAll(".cover,.spine"))lampsNow.push(f.animate(on?[{outlineColor:`rgb(${lamp})`,...up[0]}]:up,o))}
+  }
+  lampsNow.forEach(a=>a.finished.then(()=>{lampsNow=lampsNow.filter(b=>b!==a)},()=>{}));
 }
 // The front door lives at the bare address — the one the share card, the canonical link and
 // every pasted URL name. "#home" still routes there; the house just never writes it.
