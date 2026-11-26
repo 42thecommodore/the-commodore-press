@@ -736,6 +736,10 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
       const reach = (shelfSpec || "").match(/reach:([\d.]+)/);
       if (reach && +reach[1] > 3) err("theme/press.js", `the shelf's field reaches ${reach[1]}× FIELD.r — 3 at most, or the whole shelf turns and the book under the hand is lost (motion rule 3)`);
     }
+    // the lamp lands on a neighbour, not beside it: until 2026-11-26 the nearest face's light was
+    // centred at -29%, off the plate, and changed it by 2.7 of 255; held to the plate's edge, 4.5
+    if (!/const edge=v=>Math\.min\(96,Math\.max\(4,v\)\)/.test(js) || !/setProperty\(sx,edge\(/.test(js) || !/setProperty\(sy,edge\(/.test(js))
+      err("theme/press.js", "the field's lamp can fall off a neighbour's plate — keep const edge=v=>Math.min(96,Math.max(4,v)) and say the spot through it: setProperty(sx,edge(…)), setProperty(sy,edge(…)) (motion rule 3)");
     // a neighbour book never turns as far as the book under the hand: its follow (tiltBooks) and its turn off the rest
     const tb = js.slice(js.indexOf("function tiltBooks("), js.indexOf("tiltBooks();"));
     if (!/if\(reduce\|\|!matchMedia\("\(hover:hover\)"\)\.matches\)return;/.test(tb))

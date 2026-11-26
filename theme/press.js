@@ -312,9 +312,10 @@ function loadLibrary(){
 const FIELD={r:260,lean:5,spill:.6};
 if(!reduce&&matchMedia("(hover:hover)").matches){
   const FIELDS=[{on:".wall",hand:".wface .lit",el:h=>h,reach:1,tip:1,spot:el=>[el,"--mx","--my"]},
-    {on:".shelf",hand:".slot",el:h=>h.querySelector(".book"),reach:2,tip:-1,spot:el=>[el.querySelector(".gloss")||el,"--gx","--gy"],
+    {on:".shelf",hand:".slot",el:h=>h.querySelector(".book"),reach:2.5,tip:-1,spot:el=>[el.querySelector(".gloss")||el,"--gx","--gy"],
      still:()=>document.body.classList.contains("spines")}];
   let surf=null,spec=null,things=[],on=new Set(),raf=0,pt=null;
+  const edge=v=>Math.min(96,Math.max(4,v));
   const measure=(w,s)=>{surf=w;spec=s;things=[...w.querySelectorAll(s.hand)].map(h=>{const el=s.el(h);if(!el)return null;
     const r=el.getBoundingClientRect(),b=h.getBoundingClientRect();
     return {el,spot:s.spot(el),x:r.left+scrollX+r.width/2,y:r.top+scrollY+r.height/2,w:r.width,h:r.height,
@@ -328,7 +329,8 @@ if(!reduce&&matchMedia("(hover:hover)").matches){
       if(d>=R||(pt.x>=f.l&&pt.x<f.R&&pt.y>=f.t&&pt.y<f.B))continue;   // out of reach, or under the hand itself
       const k=(1-d/R)**1.3,st=f.el.style,[sp,sx,sy]=f.spot;
       st.setProperty("--fy",(-dx/d*FIELD.lean*k).toFixed(2)+"deg");st.setProperty("--fx",(spec.tip*dy/d*FIELD.lean*k).toFixed(2)+"deg");
-      sp.style.setProperty(sx,(50+dx/f.w*100).toFixed(0)+"%");sp.style.setProperty(sy,(50+dy/f.h*100).toFixed(0)+"%");
+      // the lamp lands on the edge nearest the hand, not off it: at -29% a neighbour's light fell beside the plate
+      sp.style.setProperty(sx,edge(50+dx/f.w*100).toFixed(0)+"%");sp.style.setProperty(sy,edge(50+dy/f.h*100).toFixed(0)+"%");
       st.setProperty("--spill",(FIELD.spill*k).toFixed(3));now.add(f)}
     for(const f of on)if(!now.has(f))calm(f);on=now};
   addEventListener("pointermove",e=>{let w=null,s=null;
