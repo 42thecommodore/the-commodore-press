@@ -908,6 +908,8 @@ for (const f of ["templates/shell.html", "theme/press.js", "theme/atlas.js", "th
   else if (+swell > .6) err("theme/atlas.css", `a mark under the hand swells ${(+swell * 100).toFixed(0)}% — 60% at most, or the chart bounces instead of catching the light`);
   if (!/@media \(prefers-reduced-motion:reduce\)\{\.chart-svg \.town\{scale:none\}\}/.test(css))
     err("theme/atlas.css", "the chart's marks still swell for a reader who asked for less motion — add @media (prefers-reduced-motion:reduce){.chart-svg .town{scale:none}}; the light may stay (motion rule 5)");
+}
+
 /* ---------- a life finished is stamped ----------
    Until 2026-11-26 finishing a life changed nothing a reader could see: "Read ✓" appeared under
    the book the instant the reader closed, while the book was still in the air. Now, once it is
