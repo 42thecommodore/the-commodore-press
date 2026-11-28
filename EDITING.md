@@ -190,7 +190,7 @@ npm run new life "Their Name"
 npm run plate -- ~/Downloads/portrait.jpg their-name
 ```
 
-The last word must match the life's `id`.
+The last word must match the life's `id`. It needs Google Chrome or Chromium, the same as `npm run card`, and works on a Mac, on Linux and in a cloud session; on a Mac with no Chrome it uses the Mac's own `sips` instead. The picture can be a JPEG, PNG, WebP, GIF or AVIF. A TIFF from an archive has to be saved as a PNG first (or run it on a Mac with `--engine sips` on the end). The tool crops to the centre, so if the face is off to one side, crop the picture roughly around the head and shoulders before you run it.
 
 ### 8. The About page
 

@@ -53,9 +53,12 @@ site that stops building on a schedule set by other people. This one will build 
 years on whatever Node exists then, and if it does not, `dist/index.html` is still a
 complete, readable website on its own.
 
-The plate-maker is the sharp edge of that: `tools/plate.mjs` does duotone conversion with
-macOS `sips` for scaling and a hand-rolled PNG decode over `zlib` for the pixels, rather
-than pulling in an image library.
+The plate-maker is the sharp edge of that: `tools/plate.mjs` does the duotone itself over a
+hand-rolled PNG decode on `zlib`, rather than pulling in an image library, and borrows a tool
+the machine already has for decoding, scaling and the JPEG: the headless Chrome that `npm run
+card` uses (a canvas, read back with `--dump-dom`), or macOS `sips` where there is no Chrome.
+It was `sips` only until 2026-11-28, which meant no plate could be made on Linux or in a cloud
+session.
 
 ## The style guide is measured, not asserted
 
