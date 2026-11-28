@@ -1,6 +1,10 @@
 /* Commodore Press plate-maker — turns any portrait into the house duotone.
-   Usage: node tools/plate.mjs <image> <life-id> [--w 260] [--h 325] [--q 60]
-   Uses macOS `sips` for scaling and JPEG encoding; the duotone is done here.
+   Usage: node tools/plate.mjs <image> <life-id> [--w 260] [--h 325] [--q 60] [--engine chrome|sips]
+   The duotone is done here, in plain JS, the same on every machine. Decoding, scaling, the centred
+   crop and the JPEG are done by an engine: headless Chrome or Chromium (any OS; the same browser
+   `npm run card` uses, found by tools/chrome.mjs) by default, or macOS `sips` where there is no
+   Chrome or when asked for with --engine sips. Until 2026-11-28 it was sips only, so it failed with
+   `spawnSync sips ENOENT` on Linux and in cloud sessions.
    Only feed it public-domain or properly licensed images — see CLAUDE.md. */
 import fs from "node:fs";
 import path from "node:path";
@@ -8,35 +12,84 @@ import zlib from "node:zlib";
 import os from "node:os";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { CHROME } from "./chrome.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const flag = (n, d) => { const i = args.indexOf("--" + n); return i < 0 ? d : args[i + 1]; };
-const [src, id] = args.filter(a => !a.startsWith("--") && args[args.indexOf(a) - 1]?.startsWith("--") !== true);
-if (!src || !id) { console.error("usage: node tools/plate.mjs <image> <life-id> [--w 260] [--h 325] [--q 60]"); process.exit(1); }
+const [src, id] = args.filter((a, i) => !a.startsWith("--") && !args[i - 1]?.startsWith("--"));
+if (!src || !id) { console.error("usage: node tools/plate.mjs <image> <life-id> [--w 260] [--h 325] [--q 60] [--engine chrome|sips]"); process.exit(1); }
 if (!fs.existsSync(src)) { console.error("no such image: " + src); process.exit(1); }
 if (!/^[a-z0-9][a-z0-9-]*$/.test(id)) { console.error("life-id must be lowercase-kebab, matching the life's `id`"); process.exit(1); }
 
 const W = +flag("w", 260), H = +flag("h", 325), Q = +flag("q", 60);
 const INK = [0x1e, 0x1c, 0x18], PAPER = [0xee, 0xe7, 0xd6];   // house plate range
 
+const hasSips = (process.env.PATH || "").split(path.delimiter).some(d => d && fs.existsSync(path.join(d, "sips")));
+const ENGINE = flag("engine", CHROME ? "chrome" : hasSips ? "sips" : null);
+if (!ENGINE) { console.error("\n  Needs Chrome or Chromium (any OS) or macOS sips to scale and encode the plate.\n  Set CHROME=/path to a Chrome or Chromium binary.\n"); process.exit(1); }
+if (ENGINE === "chrome" && !CHROME) { console.error("  --engine chrome: no Chrome or Chromium found; set CHROME=/path"); process.exit(1); }
+if (ENGINE === "sips" && !hasSips) { console.error("  --engine sips: sips is macOS only and is not on this machine"); process.exit(1); }
+if (ENGINE !== "chrome" && ENGINE !== "sips") { console.error("  --engine is chrome or sips"); process.exit(1); }
+
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "plate-"));
+const fail = msg => { fs.rmSync(tmp, { recursive: true, force: true }); console.error("  " + msg); process.exit(1); };
 const sips = (...a) => execFileSync("sips", a, { stdio: ["ignore", "ignore", "pipe"] });
 const g = f => {
   const out = execFileSync("sips", ["-g", "pixelWidth", "-g", "pixelHeight", f], { encoding: "utf8" });
   return { w: +/pixelWidth: *(\d+)/.exec(out)[1], h: +/pixelHeight: *(\d+)/.exec(out)[1] };
 };
 
+/* Chrome as an image tool: a page draws on a canvas and prints the result as a data URL, read back
+   with --dump-dom, the way tools/icons.mjs makes the icons. The image goes in as a data URI, not a
+   file:// URL, because a file:// image taints the canvas and toDataURL then refuses. */
+const MIME = b => b[0] === 0xff && b[1] === 0xd8 ? "image/jpeg"
+  : b.readUInt32BE(0) === 0x89504e47 ? "image/png"
+  : b.toString("ascii", 0, 4) === "RIFF" && b.toString("ascii", 8, 12) === "WEBP" ? "image/webp"
+  : b.toString("ascii", 0, 3) === "GIF" ? "image/gif"
+  : b.toString("ascii", 4, 12) === "ftypavif" ? "image/avif" : null;
+function chrome(imgBuf, body, tag) {
+  const mime = MIME(imgBuf);
+  if (!mime) fail("Chrome reads JPEG, PNG, WebP, GIF and AVIF. Convert this image first (a TIFF from an archive: export it as PNG), or use --engine sips on a Mac.");
+  const page = path.join(tmp, tag + ".html");
+  // the script sits in <head> and only the body is read back, so its own "OUT:"/"ERR:" never match
+  fs.writeFileSync(page, `<!DOCTYPE html><html><head><script>
+const W = ${W}, H = ${H}, Q = ${Q};
+const i = new Image();
+i.onerror = () => { document.body.textContent = "ERR:could not decode the image"; };
+i.onload = () => { const c = document.createElement("canvas"), x = c.getContext("2d"); ${body} };
+i.src = "data:${mime};base64,${imgBuf.toString("base64")}";
+</script></head><body></body></html>`);
+  const dom = execFileSync(CHROME, ["--headless=new", "--disable-gpu", "--no-sandbox", "--virtual-time-budget=10000",
+    "--dump-dom", `file://${page}`], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"], maxBuffer: 256 << 20 })
+    .split("<body>").pop();
+  const err = dom.match(/ERR:([^<]*)/); if (err) fail(err[1]);
+  const m = dom.match(/OUT:data:image\/\w+;base64,([A-Za-z0-9+/=]+)/);
+  if (!m) fail("Chrome drew nothing; try again, or set CHROME=/path to another Chrome or Chromium");
+  return Buffer.from(m[1], "base64");
+}
+
 /* ---- 1. scale to cover the plate, crop centred, hand back 8-bit PNG ---- */
 const work = path.join(tmp, "w.png");
-fs.copyFileSync(src, work);
-sips("-s", "format", "png", work, "--out", work);
-let d = g(work);
-const scale = Math.max(W / d.w, H / d.h);
-sips("--resampleHeightWidth", String(Math.max(H, Math.round(d.h * scale))), String(Math.max(W, Math.round(d.w * scale))), work, "--out", work);
-sips("-c", String(H), String(W), work, "--out", work);   // centred crop to exact plate size
+if (ENGINE === "sips") {
+  fs.copyFileSync(src, work);
+  sips("-s", "format", "png", work, "--out", work);
+  let d = g(work);
+  const scale = Math.max(W / d.w, H / d.h);
+  sips("--resampleHeightWidth", String(Math.max(H, Math.round(d.h * scale))), String(Math.max(W, Math.round(d.w * scale))), work, "--out", work);
+  sips("-c", String(H), String(W), work, "--out", work);   // centred crop to exact plate size
+} else {
+  // the same cover-scale and centred crop: take the centred W:H window of the source, drawn at W×H.
+  // A flat white canvas first, so a transparent PNG prints on white, as sips gives it.
+  fs.writeFileSync(work, chrome(fs.readFileSync(src), `
+    const s = Math.max(W / i.naturalWidth, H / i.naturalHeight), sw = W / s, sh = H / s;
+    c.width = W; c.height = H; x.fillStyle = "#fff"; x.fillRect(0, 0, W, H);
+    x.imageSmoothingEnabled = true; x.imageSmoothingQuality = "high";
+    x.drawImage(i, (i.naturalWidth - sw) / 2, (i.naturalHeight - sh) / 2, sw, sh, 0, 0, W, H);
+    document.body.textContent = "OUT:" + c.toDataURL("image/png");`, "scale"));
+}
 
-/* ---- 2. minimal PNG decode (8-bit, non-interlaced — what sips writes) ---- */
+/* ---- 2. minimal PNG decode (8-bit, non-interlaced — what sips and a canvas write) ---- */
 function decodePNG(buf) {
   if (buf.readUInt32BE(0) !== 0x89504e47) throw new Error("not a PNG");
   let o = 8, ihdr = null, idat = [], pal = null, trns = null;
@@ -107,15 +160,19 @@ for (let i = 0; i < px; i++) {
   for (let c = 0; c < 3; c++) rgb[o + c] = Math.round(INK[c] + (PAPER[c] - INK[c]) * t);
 }
 
-/* ---- 4. write, then let sips do the JPEG ---- */
+/* ---- 4. write, then let the engine do the JPEG ---- */
 const duo = path.join(tmp, "duo.png");
-fs.writeFileSync(duo, encodePNG(img.w, img.h, rgb));
+const duoPNG = encodePNG(img.w, img.h, rgb);
+fs.writeFileSync(duo, duoPNG);
 const dest = path.join(ROOT, "assets/plates", id + ".jpg");
 fs.mkdirSync(path.dirname(dest), { recursive: true });
-sips("-s", "format", "jpeg", "-s", "formatOptions", String(Q), duo, "--out", dest);
+if (ENGINE === "sips") sips("-s", "format", "jpeg", "-s", "formatOptions", String(Q), duo, "--out", dest);
+else fs.writeFileSync(dest, chrome(duoPNG, `
+    c.width = i.naturalWidth; c.height = i.naturalHeight; x.drawImage(i, 0, 0);
+    document.body.textContent = "OUT:" + c.toDataURL("image/jpeg", Q / 100);`, "jpeg"));
 fs.rmSync(tmp, { recursive: true, force: true });
 
 const kb = fs.statSync(dest).size / 1024;
-console.log(`plate: assets/plates/${id}.jpg — ${img.w}×${img.h}, ${kb.toFixed(1)} KB`);
+console.log(`plate: assets/plates/${id}.jpg — ${img.w}×${img.h}, ${kb.toFixed(1)} KB (${ENGINE})`);
 if (kb > 60) console.log(`  heavy — try --q ${Math.max(35, Q - 15)}`);
 console.log(`  remember the credit line in the colophon if this image is not public domain.`);

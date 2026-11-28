@@ -34,7 +34,9 @@ Prefer a head-and-shoulders framing — the plate is a centred crop to a 4:5 por
 npm run plate -- ~/Downloads/portrait.jpg marcus-aurelius
 ```
 
-The id must match the life's `id` exactly, or the plate silently never appears. Options: `--w`, `--h`, `--q` (JPEG quality, default 60).
+The id must match the life's `id` exactly, or the plate silently never appears. Options: `--w`, `--h`, `--q` (JPEG quality, default 60), `--engine chrome|sips`.
+
+The duotone maths are the tool's own and the same everywhere. Decoding, the cover-scale, the centred crop and the JPEG go to an engine: headless Chrome or Chromium by default, found by `tools/chrome.mjs` as for `npm run card` (`CHROME=/path` overrides). That works on macOS, Linux and in cloud sessions, where the Playwright Chromium is at `/opt/pw-browsers/chromium`. macOS `sips` is the fallback when no Chrome is found, or on request with `--engine sips`. Do not hand-port the steps to another language; that was the workaround before 2026-11-28. Chrome reads JPEG, PNG, WebP, GIF and AVIF, not TIFF: save an archive TIFF as PNG first. The crop is centred. When the subject sits off-centre, crop the source by hand first and keep that crop with the record, because a centred crop of the full image will not reproduce the plate.
 
 ## 4. Look at it
 
